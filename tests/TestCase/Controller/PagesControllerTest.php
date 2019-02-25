@@ -14,7 +14,7 @@
  */
 namespace App\Test\TestCase\Controller;
 
-use App\Controller\PagesController;
+use App\Controller\ArticlesController;
 use Cake\Core\App;
 use Cake\Core\Configure;
 use Cake\Http\Response;
