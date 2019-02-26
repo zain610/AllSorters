@@ -1,3 +1,7 @@
+<?php
+$this->assign('title', 'Foundation System Build');
+?>
+
 <div class="container">
     <div class="jumbotron">
         <div class="row">
@@ -21,6 +25,10 @@
                 <p>
                     Follow the guidelines on Moodle to make a copy of this website, set it up on your local laptop, make the requested changes,
                     then deploy those changes to the IE web server.
+                </p>
+                <p>
+                    View the <?= $this->Html->link('Properties For Sale', ['controller' => 'Properties', 'action' => 'index']) ?> listing, so that
+                    you can start adding a page to display the details of each property.
                 </p>
             </div>
         </div>
