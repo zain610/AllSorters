@@ -19,7 +19,7 @@
             <div class="col-lg-4">
                 <h2>What should you do?</h2>
                 <p>
-                    Follow the guidelines on Moodle to make a copy of this website, set it up on your local laptop, make some changes,
+                    Follow the guidelines on Moodle to make a copy of this website, set it up on your local laptop, make the requested changes,
                     then deploy those changes to the IE web server.
                 </p>
             </div>

@@ -6,3 +6,18 @@ h1 {
 pre {
     padding: 12px;
 }
+
+.list-group-item.property {
+    display: flex;
+}
+
+.property .image {
+    max-width: 200px;
+    max-height: 150px;
+    flex-grow: 1;
+}
+
+.property .description {
+    flex-grow: 2;
+    padding: 12px;
+}
