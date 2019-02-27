@@ -21,3 +21,17 @@ pre {
     flex-grow: 2;
     padding: 12px;
 }
+
+.mvc-file-locations {
+    font-size: 10pt;
+    margin: 12px 0;
+    padding: 8px 0;
+    border-top: solid 1px #ccc;
+    border-bottom: solid 1px #ccc;
+    color: #666;
+}
+
+pre {
+    background-color: #fafafa;
+    border-radius: 6px;
+}

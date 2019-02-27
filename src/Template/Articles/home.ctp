@@ -77,11 +77,16 @@ $this->assign('title', 'Foundation System Build');
         <div class="row">
             <p>
                 MVC (Model/View/Controller) is one of many different architectures you might use to build a modern application.
+                Many web frameworks make use of this architecture.
+                Below is a <em>very</em> brief introduction to the purpose of each layer of an MVC application.
             </p>
         </div>
         <div class="row">
             <div class="col-lg-4">
                 <h2>Model</h2>
+                <p class="mvc-file-locations">
+                    CakePHP Models are in <code>src/Model/*.php</code>
+                </p>
                 <p>
                     The Model in MVC refers to application logic which is responsible for talking to the database.
                     In CakePHP, you might talk to a model like this:
@@ -102,6 +107,9 @@ ORDER BY created_date</pre>
             </div>
             <div class="col-lg-4">
                 <h2>View</h2>
+                <p class="mvc-file-locations">
+                    CakePHP, Views are in <code>src/Template/*.ctp</code>
+                </p>
                 <p>
                     Views are responsible for outputing something (usually) visual to the user, such as HTML.
                 </p>
@@ -144,6 +152,9 @@ ORDER BY created_date</pre>
             <div class="col-lg-4">
                 <a name="mvc-controller" />
                 <h2>Controller</h2>
+                <p class="mvc-file-locations">
+                    CakePHP Controllers are in <code>src/Controller/*.php</code>
+                </p>
                 <p>Can be thought of as the "glue" which connects models with views, depending on what the user requested. It is responsible for:</p>
                 <ul>
                     <li>Processes incoming requests from a user (usually HTTP requests from a web browser)</li>
