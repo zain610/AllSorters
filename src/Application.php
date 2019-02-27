@@ -15,6 +15,7 @@
 namespace App;
 
 use Cake\Core\Configure;
+use Cake\Core\Exception\MissingPluginException;
 use Cake\Error\Middleware\ErrorHandlerMiddleware;
 use Cake\Http\BaseApplication;
 use Cake\Routing\Middleware\AssetMiddleware;
@@ -29,6 +30,29 @@ use Cake\Routing\Middleware\RoutingMiddleware;
 class Application extends BaseApplication
 {
     /**
+     * {@inheritDoc}
+     */
+    public function bootstrap()
+    {
+        // Call parent to load bootstrap from files.
+        parent::bootstrap();
+
+        if (PHP_SAPI === 'cli') {
+            $this->bootstrapCli();
+        }
+
+        /*
+         * Only try to load DebugKit in development mode
+         * Debug Kit should not be installed on a production system
+         */
+        if (Configure::read('debug')) {
+            $this->addPlugin(\DebugKit\Plugin::class);
+        }
+
+        // Load more plugins here
+    }
+
+    /**
      * Setup the middleware queue your application will use.
      *
      * @param \Cake\Http\MiddlewareQueue $middlewareQueue The middleware queue to setup.
@@ -39,14 +63,35 @@ class Application extends BaseApplication
         $middlewareQueue
             // Catch any exceptions in the lower layers,
             // and make an error page/response
-            ->add(ErrorHandlerMiddleware::class)
+            ->add(new ErrorHandlerMiddleware(null, Configure::read('Error')))
 
             // Handle plugin/theme assets like CakePHP normally does.
-            ->add(AssetMiddleware::class)
+            ->add(new AssetMiddleware([
+                'cacheTime' => Configure::read('Asset.cacheTime')
+            ]))
 
             // Add routing middleware.
-            ->add(new RoutingMiddleware($this));
+            // Routes collection cache enabled by default, to disable route caching
+            // pass null as cacheConfig, example: `new RoutingMiddleware($this)`
+            // you might want to disable this cache in case your routing is extremely simple
+            ->add(new RoutingMiddleware($this, '_cake_routes_'));
 
         return $middlewareQueue;
+    }
+
+    /**
+     * @return void
+     */
+    protected function bootstrapCli()
+    {
+        try {
+            $this->addPlugin('Bake');
+        } catch (MissingPluginException $e) {
+            // Do not halt if the plugin is missing
+        }
+
+        $this->addPlugin('Migrations');
+
+        // Load more plugins here
     }
 }
