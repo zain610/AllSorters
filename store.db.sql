@@ -1,3 +1,4 @@
+drop table if exists Client;
 create table Client
 (
 	Client_id int auto_increment,
