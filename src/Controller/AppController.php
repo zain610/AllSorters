@@ -64,7 +64,7 @@ class AppController extends Controller
             ],
             'authorize' => 'Controller',
             'loginAction' => [
-                'controller' => 'users',
+                'controller' => 'admin',
                 'action' => 'login'
             ],
             //default redirect setting

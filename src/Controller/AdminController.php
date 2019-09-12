@@ -111,4 +111,27 @@ class AdminController extends AppController
         // If you are a user, you can access this dashboard.
         return Role::isUser($user['role']);
     }
+
+    public function login(){
+        if($this->request->is('post')){
+            //check the auth
+            $user = $this->Auth->identify();
+            debug($user);
+//            $this->Auth->user("username");
+            if($user){
+                //check the role of user
+                //more details are in App\Model\Entity\Role
+                if(Role::isAdmin($user['role'])){
+                    $this->Auth->setUser($user);
+                    //if successfully login then redirect to the admin page
+                    //should change to dashboard page
+                    return $this->redirect(['controller' => 'admin', 'action' => 'add']);
+                } else {
+                    $this->Flash->error("you do not have rights to access");
+                }
+            } else{
+                $this->Flash->error('pwd incorrect');
+            }
+        }
+    }
 }
