@@ -50,20 +50,36 @@ class AppController extends Controller
          */
         //$this->loadComponent('Security');
         //$this->loadComponent('Csrf');
-        $this->loadComponent('Auth',[
+        $this->loadComponent('Auth', [
             'authenticate' => [
                 'Form' => [
                     'fields' => [
                         'username' => 'username',
                         'password' => 'password'
-                    ]
+                    ],
+                    'userModel' => 'admin'
                 ]
             ],
-            'authorize' => ['Controller'],
+            'authorize' => 'Controller',
             'loginAction' => [
                 'controller' => 'Users',
                 'action' => 'login'
-            ]
+            ],
+            'loginRedirect' => array('controller' => 'admin', 'action' => 'add'),
+
+            'unauthorizedRedirect' => $this->referer()
         ]);
+//
     }
+
+//    public function beforeFilter(Event $event)
+//    {
+//        // We really want the site settings and the current user (if any) to be available in all templates.
+//        // This achieves that (see https://stackoverflow.com/a/1384697).
+//        $this->set('settings', TableRegistry::get('Settings')->find()->firstOrFail());
+//        $this->set('currentUser', $this->Auth->user());
+//
+//        return parent::beforeFilter($event);
+//    }
+
 }
