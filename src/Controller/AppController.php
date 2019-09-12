@@ -54,17 +54,20 @@ class AppController extends Controller
             'authenticate' => [
                 'Form' => [
                     'fields' => [
+                        //get the username and password from admin table
                         'username' => 'username',
                         'password' => 'password'
                     ],
+                    //link to the table we want to reach
                     'userModel' => 'admin'
                 ]
             ],
             'authorize' => 'Controller',
             'loginAction' => [
-                'controller' => 'Users',
+                'controller' => 'users',
                 'action' => 'login'
             ],
+            //default redirect setting
             'loginRedirect' => array('controller' => 'admin', 'action' => 'add'),
 
             'unauthorizedRedirect' => $this->referer()

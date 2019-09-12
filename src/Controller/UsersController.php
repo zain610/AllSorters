@@ -116,6 +116,8 @@ class UsersController extends AppController
                 //more details are in App\Model\Entity\Role
                 if(Role::isAdmin($user['role'])){
                 $this->Auth->setUser($user);
+                //if successfully login then redirect to the admin page
+                    //should change to dashboard page
                 return $this->redirect(['controller' => 'admin', 'action' => 'add']);
                 } else {
                     $this->Flash->error("you do not have rights to access");
@@ -127,6 +129,6 @@ class UsersController extends AppController
     }
     public function isAuthorized($user) {
         // Admin can access every action
-        return Role::isUser($user['role']);;
+        return Role::isUser($user['role']);
     }
 }
