@@ -50,5 +50,37 @@ class AppController extends Controller
          */
         //$this->loadComponent('Security');
         //$this->loadComponent('Csrf');
+        $this->loadComponent('Auth',[
+            'authenticate'=>[
+                'Form'=>[
+                    'fields'=>[
+                        'username'=>'username',
+                        'password'=>'password'
+                    ],
+                    //link to the table we want to reach
+                    'userModel' => 'admin'
+                ]
+            ],
+            'loginAction'=>[
+                'controller'=>'Admin',
+                'action'=>'login'
+            ]
+        ]);
+    }
+    public function beforeFilter(Event $event)
+    {
+        // We really want the site settings and the current user (if any) to be available in all templates.
+        // This achieves that (see https://stackoverflow.com/a/1384697).
+        if(!array_key_exists('_serialize',$this->viewVars)&&
+            in_array($this->response->type(),['application/jason','application/xml'])
+        ){
+            $this->set('_serialize',true);
+        }
+        //login check
+        if ($this->request->session()->read('Auth.User')){
+            $this->set('loggedIn',true);
+        } else{
+            $this->set('loggedIn',false);
+        }
     }
 }

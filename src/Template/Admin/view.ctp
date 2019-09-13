@@ -26,11 +26,11 @@
         </tr>
         <tr>
             <th scope="row"><?= __('Email') ?></th>
-            <td><?= h($admin->Email) ?></td>
+            <td><?= h($admin->email) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Phone') ?></th>
-            <td><?= h($admin->Phone) ?></td>
+            <td><?= h($admin->phone) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Id') ?></th>
@@ -38,11 +38,11 @@
         </tr>
         <tr>
             <th scope="row"><?= __('Created') ?></th>
-            <td><?= h($admin->Created) ?></td>
+            <td><?= h($admin->created) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Modified') ?></th>
-            <td><?= h($admin->Modified) ?></td>
+            <td><?= h($admin->modified) ?></td>
         </tr>
     </table>
 </div>

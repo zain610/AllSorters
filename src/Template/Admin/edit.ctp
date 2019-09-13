@@ -23,10 +23,8 @@
         <?php
             echo $this->Form->control('username');
             echo $this->Form->control('password');
-            echo $this->Form->control('Email');
-            echo $this->Form->control('Phone');
-            echo $this->Form->control('Created', ['empty' => true]);
-            echo $this->Form->control('Modified', ['empty' => true]);
+            echo $this->Form->control('email');
+            echo $this->Form->control('phone');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
