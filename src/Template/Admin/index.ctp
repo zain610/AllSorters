@@ -4,7 +4,7 @@
  * @var \App\Model\Entity\Admin[]|\Cake\Collection\CollectionInterface $admin
  */
 ?>
-<div class="admin index large-9 medium-8 columns content">
+<div class="" style="font-size=1.1rem">
     <h3><?= __('Admin') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>

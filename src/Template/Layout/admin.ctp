@@ -10,6 +10,7 @@
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('cake.css') ?>
     <?= $this->Html->css('home.css') ?>
+    <?= $this->Html->css('styles.css') ?>
     <?= $this->Html->css('bootstrap.min.css') ?>
     <?= $this->Html->css('animate.min.css') ?>
     <?= $this->Html->css('light-bootstrap-dashboard.css') ?>
@@ -37,7 +38,7 @@
                 </a>
             </div>
 
-            <ul class="nav"">
+            <ul class="nav">
                 <li class="active">
                     <a href="dashboard.html">
                         <i class=""></i>

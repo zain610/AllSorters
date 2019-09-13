@@ -1,0 +1,10 @@
+.row {
+    max-width: 100rem;
+}
+table tr th, table tr td {
+    font-size: 1.2rem;
+}
+
+.sidebar .nav {
+    display:block;
+}

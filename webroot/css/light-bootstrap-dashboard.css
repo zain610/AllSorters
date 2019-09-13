@@ -294,7 +294,6 @@ input:focus {
 }
 .sidebar .nav {
     margin-top: 20px;
-    display:block;
 }
 .sidebar .nav li > a {
     color: #FFFFFF;
