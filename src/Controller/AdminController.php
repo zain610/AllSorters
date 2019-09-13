@@ -21,8 +21,9 @@ class AdminController extends AppController
     public function index()
     {
         $admin = $this->paginate($this->Admin);
-
+        $this->layout ='admin';
         $this->set(compact('admin'));
+
     }
 
     /**
