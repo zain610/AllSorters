@@ -6,9 +6,15 @@ use Cake\ORM\Entity;
 /**
  * Client Entity
  *
- * @property int $Client_id
- * @property string $Client_fname
- * @property string $Client_sname
+ * @property int $id
+ * @property string $fname
+ * @property string $sname
+ * @property \Cake\I18n\FrozenDate $DOB
+ * @property string $Address
+ * @property string $Phone
+ * @property string $Email
+ * @property \Cake\I18n\FrozenTime $Created
+ * @property \Cake\I18n\FrozenTime $Modified
  */
 class Client extends Entity
 {
@@ -23,7 +29,13 @@ class Client extends Entity
      * @var array
      */
     protected $_accessible = [
-        'Client_fname' => true,
-        'Client_sname' => true
+        'fname' => true,
+        'sname' => true,
+        'DOB' => true,
+        'Address' => true,
+        'Phone' => true,
+        'Email' => true,
+        'Created' => true,
+        'Modified' => true
     ];
 }

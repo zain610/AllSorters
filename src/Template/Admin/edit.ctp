@@ -9,8 +9,8 @@
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Form->postLink(
                 __('Delete'),
-                ['action' => 'delete', $admin->Admin_id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $admin->Admin_id)]
+                ['action' => 'delete', $admin->id],
+                ['confirm' => __('Are you sure you want to delete # {0}?', $admin->id)]
             )
         ?></li>
         <li><?= $this->Html->link(__('List Admin'), ['action' => 'index']) ?></li>
@@ -23,9 +23,8 @@
         <?php
             echo $this->Form->control('username');
             echo $this->Form->control('password');
-            echo $this->Form->control('Admin_Email');
-            echo $this->Form->control('Admin_Phone');
-            echo $this->Form->control('role');
+            echo $this->Form->control('email');
+            echo $this->Form->control('phone');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

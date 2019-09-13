@@ -7,12 +7,13 @@ use Cake\ORM\Entity;
 /**
  * Admin Entity
  *
+ * @property int $id
  * @property string $username
  * @property string $password
- * @property string $Admin_Email
- * @property int $Admin_Phone
- * @property int $Admin_id
- * @property int $role
+ * @property string $email
+ * @property string $phone
+ * @property \Cake\I18n\FrozenTime $created
+ * @property \Cake\I18n\FrozenTime $modified
  */
 class Admin extends Entity
 {
@@ -27,11 +28,13 @@ class Admin extends Entity
      * @var array
      */
     protected $_accessible = [
+        'id' =>false,
         'username' => true,
         'password' => true,
-        'Admin_Email' => true,
-        'Admin_Phone' => true,
-        'role' => true
+        'email' => true,
+        'phone' => true,
+        'created' => true,
+        'modified' => true
     ];
 
     /**
@@ -39,15 +42,7 @@ class Admin extends Entity
      *
      * @var array
      */
-    protected $_hidden = [
-        'password'
-    ];
-
-    protected function _setPassword($password)
-    {
-        if (strlen($password)) {
-            $hasher = new DefaultPasswordHasher();
-            return $hasher->hash($password);
-        }
+    protected function _setPassword($password){
+        return( new DefaultPasswordHasher)->hash($password);
     }
 }

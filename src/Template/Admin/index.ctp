@@ -15,28 +15,30 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
+                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('username') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('password') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Admin_Email') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Admin_Phone') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Admin_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('role') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('email') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('phone') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('created') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($admin as $admin): ?>
             <tr>
+                <td><?= $this->Number->format($admin->id) ?></td>
                 <td><?= h($admin->username) ?></td>
                 <td><?= h($admin->password) ?></td>
-                <td><?= h($admin->Admin_Email) ?></td>
-                <td><?= $this->Number->format($admin->Admin_Phone) ?></td>
-                <td><?= $this->Number->format($admin->Admin_id) ?></td>
-                <td><?= $this->Number->format($admin->role) ?></td>
+                <td><?= h($admin->email) ?></td>
+                <td><?= h($admin->phone) ?></td>
+                <td><?= h($admin->created) ?></td>
+                <td><?= h($admin->modified) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $admin->Admin_id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $admin->Admin_id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $admin->Admin_id], ['confirm' => __('Are you sure you want to delete # {0}?', $admin->Admin_id)]) ?>
+                    <?= $this->Html->link(__('View'), ['action' => 'view', $admin->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $admin->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $admin->id], ['confirm' => __('Are you sure you want to delete # {0}?', $admin->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

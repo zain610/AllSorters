@@ -17,9 +17,8 @@
         <?php
             echo $this->Form->control('username');
             echo $this->Form->control('password');
-            echo $this->Form->control('Admin_Email');
-            echo $this->Form->control('Admin_Phone');
-            echo $this->Form->control('role');
+            echo $this->Form->control('email');
+            echo $this->Form->control('phone');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

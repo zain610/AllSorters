@@ -2,7 +2,6 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
-use App\Model\Entity\Role;
 
 /**
  * Admin Controller
@@ -105,33 +104,18 @@ class AdminController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
-
-    public function isAuthorized($user)
-    {
-        // If you are a user, you can access this dashboard.
-        return Role::isUser($user['role']);
-    }
-
     public function login(){
         if($this->request->is('post')){
-            //check the auth
-            $user = $this->Auth->identify();
-            debug($user);
-//            $this->Auth->user("username");
+            $user= $this->Auth->identify();
             if($user){
-                //check the role of user
-                //more details are in App\Model\Entity\Role
-                if(Role::isAdmin($user['role'])){
-                    $this->Auth->setUser($user);
-                    //if successfully login then redirect to the admin page
-                    //should change to dashboard page
-                    return $this->redirect(['controller' => 'admin', 'action' => 'add']);
-                } else {
-                    $this->Flash->error("you do not have rights to access");
-                }
-            } else{
-                $this->Flash->error('pwd incorrect');
+                $this->Auth->setUser($user);
+                return $this->redirect(['controller'=>'admin']);
+                $this->Flash->error("Incorrect username or password");
             }
         }
+    }
+    public function logout(){
+        $this->Flash->success('You are logged out');
+        return $this->redirect($this->Auth->logout());
     }
 }

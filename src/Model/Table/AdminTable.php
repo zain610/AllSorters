@@ -16,6 +16,8 @@ use Cake\Validation\Validator;
  * @method \App\Model\Entity\Admin patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
  * @method \App\Model\Entity\Admin[] patchEntities($entities, array $data, array $options = [])
  * @method \App\Model\Entity\Admin findOrCreate($search, callable $callback = null, $options = [])
+ *
+ * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
 class AdminTable extends Table
 {
@@ -31,8 +33,10 @@ class AdminTable extends Table
         parent::initialize($config);
 
         $this->setTable('admin');
-        $this->setDisplayField('Admin_id');
-        $this->setPrimaryKey('Admin_id');
+        $this->setDisplayField('id');
+        $this->setPrimaryKey('id');
+
+        $this->addBehavior('Timestamp');
     }
 
     /**
@@ -43,6 +47,10 @@ class AdminTable extends Table
      */
     public function validationDefault(Validator $validator)
     {
+        $validator
+            ->integer('id')
+            ->allowEmpty('id', 'create');
+
         $validator
             ->scalar('username')
             ->maxLength('username', 255)
@@ -56,22 +64,14 @@ class AdminTable extends Table
             ->notEmpty('password');
 
         $validator
-            ->scalar('Admin_Email')
-            ->maxLength('Admin_Email', 255)
-            ->allowEmpty('Admin_Email');
+            ->email('email')
+            ->requirePresence('email', 'create')
+            ->notEmpty('email');
 
         $validator
-            ->integer('Admin_Phone')
-            ->allowEmpty('Admin_Phone');
-
-        $validator
-            ->integer('Admin_id')
-            ->allowEmpty('Admin_id', 'create');
-
-        $validator
-            ->integer('role')
-            ->requirePresence('role', 'create')
-            ->notEmpty('role');
+            ->scalar('phone')
+            ->maxLength('phone', 15)
+            ->allowEmpty('phone');
 
         return $validator;
     }
@@ -86,6 +86,7 @@ class AdminTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->isUnique(['username']));
+        $rules->add($rules->isUnique(['email']));
 
         return $rules;
     }

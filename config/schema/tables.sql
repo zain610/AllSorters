@@ -82,7 +82,7 @@ create table blog_post_image
 	constraint Blog_Post_Image_pk_2
 		unique (Post_id, Image_id),
 	constraint Blog_Post_Image_blog_post_Post_id_fk
-		foreign key (Post_id) references blog_post (Post_id),
+		foreign key (Post_id) references blog_post (id),
 	constraint Blog_Post_Image_image_Image_id_fk
 		foreign key (Image_id) references image (Image_id)
 );
@@ -140,7 +140,7 @@ create table post_comment
 	constraint Post_Comment_pk_2
 		unique (Post_id),
 	constraint Post_Comment_blog_post_Post_id_fk
-		foreign key (Post_id) references blog_post (Post_id)
+		foreign key (Post_id) references blog_post (id)
 );
 
 create table request
