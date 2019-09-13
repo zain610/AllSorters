@@ -15,18 +15,30 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('Client_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Client_fname') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Client_sname') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('fname') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('sname') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('DOB') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('Address') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('Phone') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('Email') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('Created') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('Modified') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($client as $client): ?>
             <tr>
-                <td><?= $this->Number->format($client->Client_id) ?></td>
-                <td><?= h($client->Client_fname) ?></td>
-                <td><?= h($client->Client_sname) ?></td>
+                <td><?= $this->Number->format($client->id) ?></td>
+                <td><?= h($client->fname) ?></td>
+                <td><?= h($client->sname) ?></td>
+                <td><?= h($client->DOB) ?></td>
+                <td><?= h($client->Address) ?></td>
+                <td><?= h($client->Phone) ?></td>
+                <td><?= h($client->Email) ?></td>
+                <td><?= h($client->Created) ?></td>
+                <td><?= h($client->Modified) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $client->Client_id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $client->Client_id]) ?>
