@@ -50,6 +50,16 @@ Router::scope('/', function (RouteBuilder $routes) {
      * to use (in this case, src/Template/Pages/home.ctp)...
      */
     $routes->connect('/', ['controller' => 'Articles', 'action' => 'home']);
+    Router::prefix('admin', function($routes) {
+        //All Routes here will be prefixed with /admin
+
+        // So all CMS and Dashboard and routes will be placed here
+        $routes->connect('/:controller/*');
+        $routes->fallbacks(DashedRoute::class);
+
+    });
+
+
 
     /**
      * Connect catchall routes for all controllers.
@@ -69,8 +79,13 @@ Router::scope('/', function (RouteBuilder $routes) {
      */
     $routes->fallbacks(DashedRoute::class);
 });
+$routes->connect('/login', [
+    'controller' => 'App',
+    'action' => 'login',
+]);
 
 /**
+ *
  * Load all plugin routes. See the Plugin documentation on
  * how to customize the loading of plugin routes.
  */

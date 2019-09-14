@@ -105,18 +105,19 @@ class AdminController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
-    public function login(){
-        if($this->request->is('post')){
-            $user= $this->Auth->identify();
-            if($user){
-                $this->Auth->setUser($user);
-                return $this->redirect(['controller'=>'admin']);
-                $this->Flash->error("Incorrect username or password");
-            }
-        }
-    }
+//    public function login(){
+//        if($this->request->is('post')){
+//            $user= $this->Auth->identify();
+//            if($user){
+//                $this->Auth->setUser($user);
+//                return $this->redirect(['controller'=>'admin']);
+//                $this->Flash->error("Incorrect username or password");
+//            }
+//        }
+//    }
     public function logout(){
         $this->Flash->success('You are logged out');
-        return $this->redirect($this->Auth->logout());
+        $this->Auth->logout();
+        return $this->redirect(['controller' => 'Admin', 'action' => 'login']);
     }
 }

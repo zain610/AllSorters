@@ -24,7 +24,7 @@
 <body>
 <!--?php: $this->fetch('title', 'Foundation System Build')-->
 <div class="wrapper">
-    <div class="sidebar" data-color="blue" data-image="assets/img/sidebar-5.jpg">
+    <div class="sidebar" data-color="blue">
 
         <!--
 
@@ -32,60 +32,7 @@
             Tip 2: you can also add an image using data-image tag
 
         -->
-
-        <div class="sidebar-wrapper">
-            <div class="logo">
-                <a href="#" class="simple-text">
-                    All Sorters
-                </a>
-            </div>
-
-            <ul class="nav">
-                <li class="active">
-                    <a href="dashboard.html">
-                        <i class=""></i>
-                        <p>Services</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="user.html">
-                        <p>Blogs</p>
-
-                    </a>
-                </li>
-                <li>
-                    <a href="table.html">
-                        <i class=""></i>
-                        <p>Images</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="typography.html">
-                        <i class=""></i>
-                        <p>Reviews</p>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="main-panel">
-        <nav class="navbar navbar-default navbar-fixed">
-            <div class="container-fluid">
-                <ul class="nav navbar-nav navbar-right ml-auto">
-                    <li>
-                        <a href="">
-                            Account
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/admin/logout">
-                            Log out
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        <?= $this->element('Admin/navbar'); ?>
 
         <div class="content">
             <div class="container-fluid">
