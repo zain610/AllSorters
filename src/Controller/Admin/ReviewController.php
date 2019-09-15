@@ -18,8 +18,9 @@ class ReviewController extends AppController
      */
     public function index()
     {
-        $this->layout ='admin';
+
         $review = $this->paginate($this->Review);
+        $this->layout ='admin';
         $this->set(compact('review'));
     }
 

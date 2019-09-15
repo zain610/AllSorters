@@ -4,15 +4,9 @@
  * @var \Cake\Datasource\EntityInterface[]|\Cake\Collection\CollectionInterface $review
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Review'), ['action' => 'add']) ?></li>
-    </ul>
-</nav>
-<div class="review index large-9 medium-8 columns content">
-    <h3><?= __('Review') ?></h3>
-    <table cellpadding="0" cellspacing="0">
+<div class="content table-responsive table-full-width">
+    <h4><?= __('Review') ?></h4>
+    <table class="table table-hover table-striped" cellpadding="0" cellspacing="0">
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('Review_id') ?></th>

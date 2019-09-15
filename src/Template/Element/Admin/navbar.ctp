@@ -2,6 +2,7 @@
 $currentController = $this->request->getParam('controller');
 $currentAction = $this->request->getParam('action');
 $isDashboardActive = $currentController === "Admin" && $currenAction === 'index';
+$isBlogsActive = $currentController === "Blogs";
 $isServicesActive = $currentController === "Services";
 $isImagesActive = $currentController === "Images";
 $isReviewsActive = $currentController === "Reviews";
@@ -9,20 +10,19 @@ $isReviewsActive = $currentController === "Reviews";
 ?>
 
 <div class="sidebar-wrapper">
-    <div class="logo">
-        <a href="#" class="simple-text">
+    <div class="logo" >
+        <a href="/admin" class="simple-text">
             All Sorters
         </a>
     </div>
-
     <ul class="nav">
-        <li class="active">
+        <li class="<?= $isDashboardActive ? 'active' : '' ?>">
             <a href="dashboard.html">
                 <i class=""></i>
                 <p>Services</p>
             </a>
         </li>
-        <li>
+        <li class="<?= $isBlogsActive ? 'active' : '' ?>">
             <?= $this->Html->link(
                 '<p>Blogs</p>',
                 'articles/home',
@@ -35,12 +35,13 @@ $isReviewsActive = $currentController === "Reviews";
                 <p>Images</p>
             </a>
         </li>
-        <li>
+
+        <li class="<?= $isReviewsActive ? 'active' : '' ?>">
             <?= $this->Html->link(
                 '<p>Reviews</p>',
                 '/admin/review',
                 ['escape' => false]
-                ) ?>
+            ) ?>
         </li>
     </ul>
 </div>
@@ -51,11 +52,6 @@ $isReviewsActive = $currentController === "Reviews";
         <div class="container-fluid">
             <ul class="nav navbar-nav navbar-right ml-auto">
                 <li>
-                    <a href="">
-                        Account
-                    </a>
-                </li>
-                <li>
                     <?= $this->Html->link(
                         '<p>Logout</p>',
                         ['prefix' => false, 'controller' => 'admin', 'action' =>'logout'],
@@ -65,3 +61,7 @@ $isReviewsActive = $currentController === "Reviews";
             </ul>
         </div>
     </nav>
+
+
+
+
