@@ -1,11 +1,11 @@
 <?php
 $currentController = $this->request->getParam('controller');
 $currentAction = $this->request->getParam('action');
-$isDashboardActive = $currentController === "Admin" && $currenAction === 'index';
+$isDashboardActive = $currentController === "Admin" && $currentAction === 'index';
 $isBlogsActive = $currentController === "Blogs";
 $isServicesActive = $currentController === "Services";
 $isImagesActive = $currentController === "Images";
-$isReviewsActive = $currentController === "Reviews";
+$isReviewActive = $currentController === "Review";
 
 ?>
 
@@ -17,10 +17,11 @@ $isReviewsActive = $currentController === "Reviews";
     </div>
     <ul class="nav">
         <li class="<?= $isDashboardActive ? 'active' : '' ?>">
-            <a href="dashboard.html">
-                <i class=""></i>
-                <p>Services</p>
-            </a>
+            <?= $this->Html->link(
+                '<p>Dashboard</p>',
+                'admin',
+                ['escape' => false]
+            ) ?>
         </li>
         <li class="<?= $isBlogsActive ? 'active' : '' ?>">
             <?= $this->Html->link(
@@ -36,12 +37,19 @@ $isReviewsActive = $currentController === "Reviews";
             </a>
         </li>
 
-        <li class="<?= $isReviewsActive ? 'active' : '' ?>">
+        <li id="reviewDropdownMenu" class="<?= $isReviewActive ? 'active' : '' ?> dropdown">
             <?= $this->Html->link(
                 '<p>Reviews</p>',
-                '/admin/review',
-                ['escape' => false]
+                '#',
+                ['escape' => false, 'id' => 'reviewDropdown',  'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true', 'role' => 'button', 'aria-haspopup'=>"true"]
             ) ?>
+            <ul class="dropdown-menu" aria-labelledby="reviewDropdown">
+                <li><a href="#">Notification 1</a></li>
+                <li><a href="#">Notification 2</a></li>
+                <li><a href="#">Notification 3</a></li>
+                <li><a href="#">Notification 4</a></li>
+                <li><a href="#">Another notification</a></li>
+            </ul>
         </li>
     </ul>
 </div>

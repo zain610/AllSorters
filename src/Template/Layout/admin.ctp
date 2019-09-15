@@ -20,6 +20,22 @@
     <?= $this->Html->css('pe-icon-7-stroke.css') ?>
     <?= $this->Html->css('styles.css') ?>
 
+    <script type="text/javascript">
+        window.onload = () => {
+            let dropdownMenu = document.getElementById("reviewDropdownMenu")
+            dropdownMenu.addEventListener("click", () => {
+                console.log("Clicked on Menu")
+                let menuClassList = dropdownMenu.classList
+                if(menuClassList.contains("open")) {
+                    menuClassList.remove("open")
+                } else {
+                    menuClassList.add("open")
+                }
+            })
+        }
+    </script>
+
+
 </head>
 <body>
 <!--?php: $this->fetch('title', 'Foundation System Build')-->
