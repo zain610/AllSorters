@@ -50,18 +50,16 @@ Router::scope('/', function (RouteBuilder $routes) {
      * to use (in this case, src/Template/Pages/home.ctp)...
      */
     $routes->connect('/', ['controller' => 'Articles', 'action' => 'home']);
+    //Catching the login and logout routes for which the functionalities are in AdminController and not to be mistaken for page with Admin prefix
     $routes->connect('/admin/login', ['controller' => 'Admin', 'action' => 'login']);
     $routes->connect('/admin/logout', ['controller' => 'Admin', 'action' => 'logout']);
     Router::prefix('admin', function($routes) {
         //All Routes here will be prefixed with /admin
-
         // So all CMS and Dashboard and routes will be placed here
         $routes->connect('/:controller/*');
         $routes->fallbacks(DashedRoute::class);
 
     });
-
-
 
     /**
      * Connect catchall routes for all controllers.
