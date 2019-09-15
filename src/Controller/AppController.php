@@ -62,7 +62,7 @@ class AppController extends Controller
                 ]
             ],
             'loginAction'=>[
-                'controller'=>'App',
+                'controller'=>'Admin',
                 'action'=>'login'
             ]
         ]);
@@ -82,20 +82,5 @@ class AppController extends Controller
         } else{
             $this->set('loggedIn',false);
         }
-    }
-    public function login(){
-        if($this->request->is('post')){
-            $user= $this->Auth->identify();
-            if($user){
-                $this->Auth->setUser($user);
-                return $this->redirect(['controller'=>'admin']);
-                $this->Flash->error("Incorrect username or password");
-            }
-        }
-    }
-    public function logout(){
-        $this->Flash->success('You are logged out');
-        $this->Auth->logout();
-        return $this->redirect(['controller' => 'Admin', 'action' => 'login']);
     }
 }

@@ -56,9 +56,11 @@ $isReviewsActive = $currentController === "Reviews";
                     </a>
                 </li>
                 <li>
-                    <a href="">
-                        Log out
-                    </a>
+                    <?= $this->Html->link(
+                        '<p>Logout</p>',
+                        ['prefix' => false, 'controller' => 'admin', 'action' =>'logout'],
+                        ['escape' => false]
+                    ) ?>
                 </li>
             </ul>
         </div>

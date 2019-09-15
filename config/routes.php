@@ -50,6 +50,8 @@ Router::scope('/', function (RouteBuilder $routes) {
      * to use (in this case, src/Template/Pages/home.ctp)...
      */
     $routes->connect('/', ['controller' => 'Articles', 'action' => 'home']);
+    $routes->connect('/admin/login', ['controller' => 'Admin', 'action' => 'login']);
+    $routes->connect('/admin/logout', ['controller' => 'Admin', 'action' => 'logout']);
     Router::prefix('admin', function($routes) {
         //All Routes here will be prefixed with /admin
 
@@ -79,10 +81,6 @@ Router::scope('/', function (RouteBuilder $routes) {
      */
     $routes->fallbacks(DashedRoute::class);
 });
-$routes->connect('/login', [
-    'controller' => 'App',
-    'action' => 'login',
-]);
 
 /**
  *
