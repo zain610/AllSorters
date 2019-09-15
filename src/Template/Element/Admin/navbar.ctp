@@ -16,19 +16,24 @@ $isReviewActive = $currentController === "Review";
         </a>
     </div>
     <ul class="nav">
-        <li class="<?= $isDashboardActive ? 'active' : '' ?>">
+        <li class="<?= $isDashboardActive ? 'active' : '' ?> dropdown">
             <?= $this->Html->link(
                 '<p>Dashboard</p>',
                 'admin',
                 ['escape' => false]
             ) ?>
         </li>
-        <li class="<?= $isBlogsActive ? 'active' : '' ?>">
+        <li class="<?= $isBlogsActive ? 'active' : '' ?> dropdown">
             <?= $this->Html->link(
                 '<p>Blogs</p>',
-                'articles/home',
-                ['escape' => false]
+                '#',
+                ['escape' => false, 'onclick' => 'handleMenuToggle(this)', 'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true',]
             ) ?>
+            <ul class="dropdown-menu" aria-labelledby="reviewDropdown">
+                <li><a href="#">View Blogs</a></li>
+                <li><a href="#">Add Blog</a></li>
+
+            </ul>
         </li>
         <li>
             <a href="table.html">
@@ -37,18 +42,15 @@ $isReviewActive = $currentController === "Review";
             </a>
         </li>
 
-        <li id="reviewDropdownMenu" class="<?= $isReviewActive ? 'active' : '' ?> dropdown">
+        <li id="dropDownMenu" class="<?= $isReviewActive ? 'active' : '' ?> dropdown">
             <?= $this->Html->link(
                 '<p>Reviews</p>',
                 '#',
-                ['escape' => false, 'id' => 'reviewDropdown',  'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true', 'role' => 'button', 'aria-haspopup'=>"true"]
+                ['onclick' => 'handleMenuToggle(this)', 'escape' => false,  'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true']
             ) ?>
             <ul class="dropdown-menu" aria-labelledby="reviewDropdown">
-                <li><a href="#">Notification 1</a></li>
-                <li><a href="#">Notification 2</a></li>
-                <li><a href="#">Notification 3</a></li>
-                <li><a href="#">Notification 4</a></li>
-                <li><a href="#">Another notification</a></li>
+                <li><a href="#">View Reviews</a></li>
+                <li><a href="#">Add Review</a></li>
             </ul>
         </li>
     </ul>

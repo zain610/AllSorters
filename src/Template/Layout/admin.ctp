@@ -21,17 +21,16 @@
     <?= $this->Html->css('styles.css') ?>
 
     <script type="text/javascript">
-        window.onload = () => {
-            let dropdownMenu = document.getElementById("reviewDropdownMenu")
-            dropdownMenu.addEventListener("click", () => {
-                console.log("Clicked on Menu")
-                let menuClassList = dropdownMenu.classList
-                if(menuClassList.contains("open")) {
-                    menuClassList.remove("open")
-                } else {
-                    menuClassList.add("open")
-                }
-            })
+
+        const handleMenuToggle = (object) => {
+            let parentElementClass = object.parentNode.classList
+            if(parentElementClass.contains("open")) {
+                //remove "open" to the classList to close the dropdown
+                parentElementClass.remove("open")
+            } else {
+                //add "open" to the classList to open the dropdown
+                parentElementClass.add("open")
+            }
         }
     </script>
 
