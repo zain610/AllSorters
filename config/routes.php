@@ -54,6 +54,9 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/admin/login', ['controller' => 'Admin', 'action' => 'login']);
     $routes->connect('/admin/logout', ['controller' => 'Admin', 'action' => 'logout']);
     $routes->connect('/admin/edit/*', ['prefix' => false, 'controller' => 'Admin', 'action' => 'edit']);
+    $routes->connect('/admin/view/*', ['prefix' => false, 'controller' => 'Admin', 'action' => 'view']);
+    $routes->connect('/admin/add/*', ['prefix' => false, 'controller' => 'Admin', 'action' => 'add']);
+    $routes->connect('/admin/delete/*', ['prefix' => false, 'controller' => 'Admin', 'action' => 'delete']);
     Router::prefix('admin', function($routes) {
         //All Routes here will be prefixed with /admin
         // So all CMS and Dashboard and routes will be placed here
