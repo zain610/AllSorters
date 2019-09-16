@@ -36,5 +36,9 @@ class AppView extends View
      */
     public function initialize()
     {
+        $this->loadHelper('Paginator', ['templates' => 'paginator-templates']);
+
+        $this->Form->setTemplates(\Cake\Core\Configure::read('FormTemplates.Admin'));
+
     }
 }
