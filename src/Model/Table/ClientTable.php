@@ -9,6 +9,8 @@ use Cake\Validation\Validator;
 /**
  * Client Model
  *
+ * @property |\Cake\ORM\Association\HasMany $Job
+ *
  * @method \App\Model\Entity\Client get($primaryKey, $options = [])
  * @method \App\Model\Entity\Client newEntity($data = null, array $options = [])
  * @method \App\Model\Entity\Client[] newEntities(array $data, array $options = [])
@@ -33,6 +35,10 @@ class ClientTable extends Table
         $this->setTable('client');
         $this->setDisplayField('Client_id');
         $this->setPrimaryKey('Client_id');
+
+        $this->hasMany('Job', [
+            'foreignKey' => 'client_id'
+        ]);
     }
 
     /**
@@ -44,20 +50,49 @@ class ClientTable extends Table
     public function validationDefault(Validator $validator)
     {
         $validator
-            ->integer('Client_id')
-            ->allowEmpty('Client_id', 'create');
+            ->integer('id')
+            ->allowEmpty('id', 'create');
 
         $validator
-            ->scalar('Client_fname')
-            ->maxLength('Client_fname', 255)
-            ->requirePresence('Client_fname', 'create')
-            ->notEmpty('Client_fname');
+            ->scalar('fname')
+            ->maxLength('fname', 255)
+            ->requirePresence('fname', 'create')
+            ->notEmpty('fname');
 
         $validator
-            ->scalar('Client_sname')
-            ->maxLength('Client_sname', 255)
-            ->requirePresence('Client_sname', 'create')
-            ->notEmpty('Client_sname');
+            ->scalar('sname')
+            ->maxLength('sname', 255)
+            ->requirePresence('sname', 'create')
+            ->notEmpty('sname');
+
+        $validator
+            ->date('DOB')
+            ->allowEmpty('DOB');
+
+        $validator
+            ->scalar('Address')
+            ->maxLength('Address', 255)
+            ->allowEmpty('Address');
+
+        $validator
+            ->scalar('Phone')
+            ->maxLength('Phone', 15)
+            ->allowEmpty('Phone');
+
+        $validator
+            ->scalar('Email')
+            ->maxLength('Email', 255)
+            ->allowEmpty('Email');
+
+        $validator
+            ->dateTime('Created')
+            ->requirePresence('Created', 'create')
+            ->notEmpty('Created');
+
+        $validator
+            ->dateTime('Modified')
+            ->requirePresence('Modified', 'create')
+            ->notEmpty('Modified');
 
         return $validator;
     }

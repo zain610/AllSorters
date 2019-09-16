@@ -17,16 +17,40 @@
     <h3><?= h($client->Client_id) ?></h3>
     <table class="vertical-table">
         <tr>
-            <th scope="row"><?= __('Client Fname') ?></th>
-            <td><?= h($client->Client_fname) ?></td>
+            <th scope="row"><?= __('Fname') ?></th>
+            <td><?= h($client->fname) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Client Sname') ?></th>
-            <td><?= h($client->Client_sname) ?></td>
+            <th scope="row"><?= __('Sname') ?></th>
+            <td><?= h($client->sname) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Client Id') ?></th>
-            <td><?= $this->Number->format($client->Client_id) ?></td>
+            <th scope="row"><?= __('Address') ?></th>
+            <td><?= h($client->Address) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Phone') ?></th>
+            <td><?= h($client->Phone) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Email') ?></th>
+            <td><?= h($client->Email) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Id') ?></th>
+            <td><?= $this->Number->format($client->id) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('DOB') ?></th>
+            <td><?= h($client->DOB) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Created') ?></th>
+            <td><?= h($client->Created) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Modified') ?></th>
+            <td><?= h($client->Modified) ?></td>
         </tr>
     </table>
 </div>

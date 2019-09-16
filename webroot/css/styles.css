@@ -1,0 +1,37 @@
+.row {
+    max-width: 100rem!important;
+}
+table tr th, table tr td {
+    font-size: 1.2rem!important;
+}
+
+.sidebar .nav {
+    display:block;
+}
+.dropdown-menu {
+    left: 10%;
+}
+/*div.sidebar > div > ul > li:nth-child(2) > ul > li:nth-child(1) > a*/
+ul.dropdown-menu > li > a {
+    color: #333333!important;
+}
+
+body > div > div.main-panel > div > div > div > div > div > ul > li {
+    line-height: 4rem;
+    padding: .5rem;
+}
+body > div > div.main-panel > nav > div > ul {
+    display: inline;
+}
+body > div > div.main-panel > div > div > div > div > div > p {
+    padding: 5% 0;
+}
+
+/*.nav>li>a>img {*/
+/*    max-width: 50%;*/
+/*    margin-left:10%;*/
+/*}*/
+
+/*.sidebar .nav li > a {*/
+/*    display: inline-flex;*/
+/*}*/

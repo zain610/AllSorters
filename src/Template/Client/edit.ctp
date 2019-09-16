@@ -21,8 +21,15 @@
     <fieldset>
         <legend><?= __('Edit Client') ?></legend>
         <?php
-            echo $this->Form->control('Client_fname');
-            echo $this->Form->control('Client_sname');
+            echo $this->Form->control('id');
+            echo $this->Form->control('fname');
+            echo $this->Form->control('sname');
+            echo $this->Form->control('DOB', ['empty' => true]);
+            echo $this->Form->control('Address');
+            echo $this->Form->control('Phone');
+            echo $this->Form->control('Email');
+            echo $this->Form->control('Created');
+            echo $this->Form->control('Modified');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
