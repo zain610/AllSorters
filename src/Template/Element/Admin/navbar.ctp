@@ -64,7 +64,6 @@ $isReviewActive = $currentController === "Review";
     </ul>
 </div>
 </div>
-
 <div class="main-panel">
     <nav class="navbar navbar-default navbar-fixed">
         <div class="container-fluid">

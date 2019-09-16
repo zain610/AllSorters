@@ -52,11 +52,8 @@
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <!--                    <div class="col-md-12">-->
-                    <!--                        <div class="card" style="padding: 1.5rem">-->
                     <?= $this->fetch('content') ?>
-                    <!--                        </div>-->
-                    <!--                    </div>-->
+
                 </div>
             </div>
         </div>
