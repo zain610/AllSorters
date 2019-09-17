@@ -4,15 +4,25 @@
  * @var \App\Model\Entity\Service[]|\Cake\Collection\CollectionInterface $service
  */
 ?>
-<div class="content table-responsive table-full-width">
-    <h3><?= __('Services') ?></h3>
+<nav class="large-3 medium-4 columns" id="actions-sidebar">
+    <ul class="side-nav">
+        <li class="heading"><?= __('Actions') ?></li>
+        <li><?= $this->Html->link(__('New Service'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Job'), ['controller' => 'Job', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Job'), ['controller' => 'Job', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Image'), ['controller' => 'Image', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Image'), ['controller' => 'Image', 'action' => 'add']) ?></li>
+    </ul>
+</nav>
+<div class="service index large-9 medium-8 columns content">
+    <h3><?= __('Service') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Title') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Description') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Content') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('Serv_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('Serv_Title') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('Serv_Description') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('Serv_Detail') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>

@@ -77,7 +77,7 @@ $isReviewActive = $currentController === "Review";
                         ['escape' => false]
                     ) ?></li>
                 <li><?= $this->Html->link(
-                        '<p>Add reviews</p>',
+                        '<p>Add Services</p>',
                         ['prefix' => 'admin','controller' => 'Service', 'action' => 'add'],
                         ['escape' => false]
                     ) ?></li>
