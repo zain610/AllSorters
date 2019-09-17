@@ -1,196 +1,369 @@
-<?php
-$this->assign('title', 'Foundation System Build');
-?>
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="EldersCare Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="applijewelleryion/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <!-- Custom Theme files -->
+    <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <!--webfonts-->
+    <link href='http://fonts.useso.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Source+Sans+Pro:400,200,300,600,700,900' rel='stylesheet' type='text/css'>
+    <!--//webfonts-->
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $(".scroll").click(function(event){
+                event.preventDefault();
+                $('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            /*
+            var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear'
+            };
+            */
+            $().UItoTop({ easingType: 'easeOutQuart' });
+        });
+    </script>
+    <!--light-box-files -->
+    <script src="js/modernizr.custom.97074.js"></script>
+    <script src="js/jquery.chocolat.js"></script>
+    <link rel="stylesheet" href="css/chocolat.css" type="text/css" media="screen" charset="utf-8">
 
-<div class="container">
-    <div class="jumbotron">
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>What is this?</h2>
-                <p>A basic website that you are expected to modify as your first individual task in the Industry Experience project.</p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Why do we do this?</h2>
-                <p>There are a couple of reasons why this is the first task we complete in this project.</p>
-                <ul>
-                    <li>Provide a basic understanding of the <?= $this->Html->link('technology', '#introduction-to-mvc')?> we will be using</li>
-                    <li>Showcase your ability to problem solve</li>
-                    <li>Ensure your laptop is setup correctly</li>
-                    <li>Practice deploying a real website</li>
-                </ul>
-                <?= $this->Html->link('Read more', '#why-do-we-do-this') ?>
-            </div>
-            <div class="col-lg-4">
-                <h2>What should you do?</h2>
-                <p>
-                    Follow the guidelines on Moodle to make a copy of this website, set it up on your local laptop, make the requested changes,
-                    then deploy those changes to the IE web server.
-                </p>
-                <p>
-                    View the <?= $this->Html->link('Properties For Sale', ['controller' => 'Properties', 'action' => 'index']) ?> listing, so that
-                    you can start adding a page to display the details of each property.
-                </p>
-            </div>
-        </div>
-    </div>
+    <script type="text/javascript" charset="utf-8">
+        $(function() {
+            $('.g-left a').Chocolat();
+        });
+    </script>
+    <!--light-box-files -->
 
+</head>
+<body>
+<!-- header -->
+
+<!-- header-bottom -->
+<div class="header-bottom">
     <div class="container">
-        <a name="why-do-we-do-this"></a>
-        <h1>Why do we do this?</h1>
-
-        <div class="row">
-            <div class="col-lg-3">
-                <p>
-                    <strong>Provide a basic understanding of the technology we will be using.</strong> In industry, whenever you join a new team,
-                    there is a high probability you will be asked to use a technology you've never used before. Your ability to familiarise yourself
-                    with that technology so that you can start using it is an important skill. This unit (and your future roles in industry) will
-                    involve a large amount of self learning, so we need to get you started early.
-                </p>
-            </div>
-            <div class="col-lg-3">
-                <p>
-                    <strong>Showcase your initiative and ability to think critically.</strong> For most of your university life, you may have
-                    had quite clear guidelines as to exactly what is required. In industry it is a little different: Some clients have no idea
-                    what they want, and it will be your job to figure it out and come up with a suitable solution. In this assessment we want
-                    to provide you an opportunity to show us how you can think independently and critically, and come up with a meaningful solution
-                    based on your better judgement.
-                </p>
-            </div>
-            <div class="col-lg-3">
-                <p>
-                    <strong>Ensure your laptop is setup correctly.</strong> This is an individual task done before we form teams.
-                    Therefore, once the teams are formed, everyone should have their laptop setup ready to contribute to the team.
-                </p>
-            </div>
-            <div class="col-lg-3">
-                <p>
-                    <strong>Practice deploying a real website.</strong> At the end of this foundation system build, you will have
-                    deployed a real live website to our IE web server.
-                </p>
-            </div>
+        <div class="logo">
+            <h1><a href="index.html">Elders Care</a>
         </div>
-    </div>
-
-    <div class="container">
-        <a name="introduction-to-mvc"></a>
-        <h1>A <em>(very)</em> quick introduction to MVC frameworks</h1>
-        <div class="row">
-            <p>
-                MVC (Model/View/Controller) is one of many different architectures you might use to build a modern application.
-                Many web frameworks make use of this architecture.
-                Below is a <em>very</em> brief introduction to the purpose of each layer of an MVC application.
-            </p>
-        </div>
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Model</h2>
-                <p class="mvc-file-locations">
-                    CakePHP Models are in <code>src/Model/*.php</code>
-                </p>
-                <p>
-                    The Model in MVC refers to application logic which is responsible for talking to the database.
-                    In CakePHP, you might talk to a model like this:
-                </p>
-                <pre>$this->loadModel('Articles');
-$articles = $this->Articles->find()
-            ->where(['user_id' => 3])
-            ->order('created_date');</pre>
-                <p>
-                    If you glance at this, you will notice that it looks a little bit like SQL, but it is indeed PHP code.
-                    The actual SQL which will get generated and then executed by CakePHP will look something like:
-                </p>
-                <pre>SELECT *
-FROM articles
-WHERE user_id = 3
-ORDER BY created_date</pre>
-                <p>(It will actually be more complex, but that is an implementation detail that is unimportant to our understanding).</p>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
             </div>
-            <div class="col-lg-4">
-                <h2>View</h2>
-                <p class="mvc-file-locations">
-                    CakePHP, Views are in <code>src/Template/*.ctp</code>
-                </p>
-                <p>
-                    Views are responsible for outputing something (usually) visual to the user, such as HTML.
-                </p>
-                <pre>&lt;h1&gt;Recent articles&lt;h1&gt;
-&lt;div class="article-list"&gt;
-    &lt;div class="article"&gt;
-        &lt;h2&gt;What is MVC?&lt;/h2&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</pre>
-                <p>
-                    However, views are not normally <code>.html</code> files, because they typically include some sort of dynamic
-                    content - such as records from a database. An example in CakePHP would be the following:
-                </p>
-                <pre>&lt;h1&gt;Recent articles&lt;h1&gt;
-&lt;div class="article-list"&gt;
-  &lt;php foreach($articles as $article): ?&gt;
-    &lt;div class="article"&gt;
-        &lt;h2&gt;&lt;?= $article->title ?&gt;&lt;/h2&gt;
-    &lt;/div&gt;
-  &lt;php endforeach ?&gt;
-&lt;/div&gt;</pre>
-                <p>
-                    Notice how there is a mix of normal HTML code, and PHP code? The end result is that after executing
-                    the PHP code, your application will return only HTML back to the users browser, such as:
-                </p>
-                <pre>&lt;h1&gt;Recent articles&lt;h1&gt;
-&lt;div class="article-list"&gt;
-    &lt;div class="article"&gt;
-        &lt;h2&gt;First article&lt;/h2&gt;
-    &lt;/div&gt;
-    &lt;div class="article"&gt;
-        &lt;h2&gt;Second article&lt;/h2&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</pre>
-                <p>
-                    By doing this, we can have an arbitrary number of articles displayed in our HTML, by passing a longer
-                    list of articles in the <code>$articles</code> (see "<a href="#mvc-controller">Controller</a>" for more info on how this is done).
-                </p>
-            </div>
-            <div class="col-lg-4">
-                <a name="mvc-controller" />
-                <h2>Controller</h2>
-                <p class="mvc-file-locations">
-                    CakePHP Controllers are in <code>src/Controller/*.php</code>
-                </p>
-                <p>Can be thought of as the "glue" which connects models with views, depending on what the user requested. It is responsible for:</p>
-                <ul>
-                    <li>Processes incoming requests from a user (usually HTTP requests from a web browser)</li>
-                    <li>Decides which business logic to run in response (typically by asking the model to do something - insert some new data, analyse existing data, delete old data, etc)</li>
-                    <li>Decide which view to present to the user, and pass the relevant data to the view (typically data from the Model, but not always)</li>
+            <!--/.navbar-header-->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="shortcodes.html">Short Codes</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
+            </div>
+            <!--/.navbar-collapse-->
+        </nav>
+        <div class="search-box">
+            <div id="sb-search" class="sb-search">
+                <form>
+                    <input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
+                    <input class="sb-search-submit" type="submit" value="">
+                    <span class="sb-icon-search"> </span>
+                </form>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
 
-                <p><strong>Processing incoming requests:</strong></p>
-                <pre>// By default, the 'Users' controller is available at the URL: '/users/'.
-class UsersController {
+        <!-- search-scripts -->
+        <script src="js/classie.js"></script>
+        <script src="js/uisearch.js"></script>
+        <script>
+            new UISearch( document.getElementById( 'sb-search' ) );
+        </script>
+        <!-- //search-scripts -->
 
-  // The 'update' function is available at the URL: '/users/update/12',
-  // where the number at the end is available in the $id variable below
-  public function update($id) {
+    </div>
+</div>
+<!-- /header-bottom -->
 
-    // Reads the value of the &lt;input name="username" /&gt; input from the HTML form that was just submitted:
-    $username = $this->getRequest()->getData('username');
+<!-- header -->
+<!-- banner -->
+<div class="banner" id="home">
+    <div class="container">
+        <section class="slider">
+            <div class="flexslider">
+                <ul class="slides">
+                    <li>
+                        <div class="banner-info">
+                            <h2>GET HELP CARING FOR YOUR LOVED ONE</h2>
+                            <p>Nasagni dolorequaone voluptase keroas emsequi nesas ciuneque pobasera .</p>
+                            <a class="hvr-shutter-in-horizontal" href="#">Learn More</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="banner-info">
+                            <h2>GET HELP CARING FOR YOUR LOVED ONE</h2>
+                            <p>Nasagni dolorequaone voluptase keroas emsequi nesas ciuneque pobasera .</p>
+                            <a class="hvr-shutter-in-horizontal" href="#">Learn More</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="banner-info">
+                            <h2>GET HELP CARING FOR YOUR LOVED ONE</h2>
+                            <p>Nasagni dolorequaone voluptase keroas emsequi nesas ciuneque pobasera .</p>
+                            <a class="hvr-shutter-in-horizontal" href="#">Learn More</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
-    // Reads the URL's query string (e.g. "/users/update/12?category_id=1")
-    $categoryId = $this->getRequest()->getQuery('category_id');
+        <!-- FlexSlider -->
+        <script defer="" src="js/jquery.flexslider.js"></script>
+        <script type="text/javascript">
+            $(function(){
 
-    ...
-  }</pre>
+            });
+            $(window).load(function(){
+                $('.flexslider').flexslider({
+                    animation: "slide",
+                    start: function(slider){
+                        $('body').removeClass('loading');
+                    }
+                });
+            });
+        </script>
+        <!-- FlexSlider -->
 
-                <p><strong>Decide which business logic to run:</strong></p>
-                <pre>// Updates the users profile:
-$user = $this->Users->get($id);
-$user->username = $username;
-$this->Users->save($user);
+    </div>
+</div>
+<!-- banner -->
+<!-- offer -->
+<div class="offer">
+    <div class="container">
+        <div class="col-md-8 offer-left">
+            <h3>We Offer Free Fall Prevention Home Safety.</h3>
+            <p>Many desktop publishing packages and web page editors now use publishing packages and web page publishing packages and web page editors now use Lorem Ipsum as their default model text, and a editors now use Lorem Ipsum as their default model text, and a Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many</p>
+            <p>web page publishing packages and web page editors now use Lorem Ipsum as their default model text, and a editors now use Lorem Ipsum as their default model text, and a Lorem Ipsum as their default model text, and a search.</p>
+            <li><a href="#"><span></span>web page editors now use Lorem Ipsum as their</a></li>
+            <li><a href="#"><span></span>Packages and web page editors now use publishing</a></li>
+            <li><a href="#"><span></span>Lorem Ipsum as their default model text, and a search for 'lorem ipsum'</a></li>
+        </div>
+        <div class="col-md-4 offer-ri">
+            <div class="offer-right">
+                <h4>Find Home Care Near You</h4>
+                <form>
+                    <input type="text" value="Enter Your email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Your email';}">
+                    <input type="submit" value="Subscribe">
+                </form>
+            </div>
+            <img src="images/9.jpg" class="img-responsive" alt="">
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<!-- offer -->
+<!-- about -->
+<div class="about">
+    <div class="container">
+        <div class="col-md-8 about-right">
+            <h4>The Appropriate Level Of Care ?</h4>
+            <div class="abt-top">
+                <div class="abt-lft">
+                    <img src="images/4.jpg" class="img-responsive" alt="">
+                </div>
+                <div class="abt-rgt">
+                    <h5>First true generator</h5>
+                    <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text for</p>
+                    <a class="hvr-shutter-in-horizontal" href="#">More</a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="col-md-4 about-left">
+            <h4>Elders Care</h4>
+            <ul>
+                <li><a href="#"><span></span> Lorem Ipsum has been </a></li>
+                <li><a href="#"><span></span> unknown printer took a galley </a></li>
+                <li><a href="#"><span></span>containing Lorem Ipsum passages,</a></li>
+                <li><a href="#"><span></span>publishing software like Aldus</a></li>
+                <li><a href="#"><span></span>PageMaker including versions</a></li>
+            </ul>
 
-// Fetch matching users from the database...
-$users = $this->Users->find()->where(['category_id' => $categoryId]);</pre>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<!-- about -->
+<!-- gallery -->
+<div class="gallery" id="gallery">
+    <div class="container">
+        <div class="gallery-top heading">
+            <h3>Our Gallery</h3>
+        </div>
+        <div class="gallery-bottom">
+            <div class="grid">
+                <div class="col-md-4 g-left">
+                    <a href="images/7.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+                        <figure class="effect-apollo">
+                            <img src="images/7.jpg" alt="">
+                            <figcaption>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+                <div class="col-md-4 g-left">
+                    <a href="images/6.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+                        <figure class="effect-apollo">
+                            <img src="images/6.jpg" alt="">
+                            <figcaption>
+                            </figcaption>
 
-                <p><strong>Pass data to the view for display:</strong></p>
-                <pre>$this->set('user', $user);</pre>
+                        </figure>
+                    </a>
+                </div>
+                <div class="col-md-4 g-left">
+                    <a href="images/5.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+                        <figure class="effect-apollo">
+                            <img src="images/5.jpg" alt="">
+                            <figcaption>
+
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="grid">
+                <div class="col-md-4 g-left">
+                    <a href="images/4.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+                        <figure class="effect-apollo">
+                            <img src="images/4.jpg" alt="">
+                            <figcaption>
+
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+                <div class="col-md-4 g-left">
+                    <a href="images/3.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+                        <figure class="effect-apollo">
+                            <img src="images/3.jpg" alt="">
+                            <figcaption>
+
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+                <div class="col-md-4 g-left">
+                    <a href="images/2.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+                        <figure class="effect-apollo">
+                            <img src="images/2.jpg" alt="">
+                            <figcaption>
+
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+                <div class="clearfix"></div>
             </div>
         </div>
     </div>
 </div>
+<!-- gallery -->
+<!-- content-mid -->
+<div class="content-mid">
+    <div class="container">
+        <div class="content-mid-top">
+            <h3> Events</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
+
+        </div>
+        <div class="news">
+            <div class="col-md-4 new-more">
+                <div class="six">
+                    <h4>26<span>AUG</span></h4>
+
+                </div>
+                <p>Kasertas lertyasea deeraeser miasera lertasa ritise doloert ferdas caplicabo nerafaes asety u lasec vaserat. nikertyade asetkertyptaiades.</p>
+                <a class="hvr-shutter-in-horizontal" href="#">More</a>
+            </div>
+            <div class="col-md-4 new-more">
+                <div class="six">
+                    <h4>26<span>AUG</span></h4>
+
+                </div>
+                <p>Kasertas lertyasea deeraeser miasera lertasa ritise doloert ferdas caplicabo nerafaes asety u lasec vaserat. nikertyade asetkertyptaiades.</p>
+                <a class="hvr-shutter-in-horizontal" href="#">More</a>
+            </div>
+            <div class="col-md-4 new-more">
+                <div class="six">
+                    <h4>26<span>AUG</span></h4>
+
+                </div>
+                <p>Kasertas lertyasea deeraeser miasera lertasa ritise doloert ferdas caplicabo nerafaes asety u lasec vaserat. nikertyade asetkertyptaiades.</p>
+                <a class="hvr-shutter-in-horizontal" href="#">More</a>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+<!-- content-mid -->
+<!-- footer -->
+<div class="footer" id="contact">
+    <div class="container">
+        <div class="col-md-4 contact-left">
+            <h3>Address</h3>
+            <address>
+                795 Folsom Ave, Suite 600<br>
+                San Francisco, CA 94107<br>
+                <abbr title="Phone">P :</abbr> (123) 456-7890
+            </address>
+        </div>
+        <div class="col-md-4 ftr-gd">
+            <h3>Follow Us</h3>
+            <ul class="social">
+                <li><a href="#"><i></i></a> </li>
+                <li><a href="#"><i class="facebook"></i></a></li>
+                <li><a href="#"><i class="goog"></i> </a></li>
+                <li><a href="#"><i class="lin"></i> </a></li>
+            </ul>
+        </div>
+        <div class="col-md-4 contact-left">
+            <h3>Phone/Fax</h3>
+            <p>Phone : +1234567890 </p>
+            <p>Fax : +1234567890 </p>
+            <p>Email : <a href="mailto:info@example.com">info@mycompany.com</a> </p>
+        </div>
+        <div class="clearfix"></div>
+        <div class="copyright">
+            <p>Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://h2design.taobao.com/">氢设计</a></p>
+        </div>
+    </div>
+</div>
+
+<!-- footer -->
+<a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 0;"></span> <span id="toTopHover" style="opacity: 0;"> </span></a>
+</body>
+</html>
