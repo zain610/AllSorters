@@ -19,7 +19,7 @@ $isReviewActive = $currentController === "Review";
         <li class="<?= $isDashboardActive ? 'active' : '' ?> dropdown">
             <?= $this->Html->link(
                 '<p>Dashboard</p>',
-                'admin',
+                '/admin',
                 ['escape' => false]
             ) ?>
         </li>
