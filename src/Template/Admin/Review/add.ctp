@@ -19,6 +19,7 @@
             </fieldset>
 
             <?= $this->Form->button(__('Submit')) ?>
+            <?= $this->Form->button('Preview', ['type' => 'button', 'onclick' => 'handlePreviewClick(this)'] ) ?>
             <?= $this->Form->end() ?>
         </div>
     </div>

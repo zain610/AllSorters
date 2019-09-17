@@ -71,6 +71,7 @@ class ReviewController extends AppController
      */
     public function edit($id = null)
     {
+        $this->layout = 'admin';
         $review = $this->Review->get($id, [
             'contain' => []
         ]);

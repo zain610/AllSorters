@@ -4,19 +4,8 @@
  * @var \App\Model\Entity\Review $review
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $review->Review_id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $review->Review_id)]
-            )
-        ?></li>
-        <li><?= $this->Html->link(__('List Review'), ['action' => 'index']) ?></li>
-    </ul>
-</nav>
-<div class="review form large-9 medium-8 columns content">
+<div class="content table-responsive table-full-width">
+
     <?= $this->Form->create($review) ?>
     <fieldset>
         <legend><?= __('Edit Review') ?></legend>

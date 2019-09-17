@@ -30,7 +30,7 @@ $isReviewActive = $currentController === "Review";
                 ['escape' => false, 'onclick' => 'handleMenuToggle(this)', 'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true',]
             ) ?>
             <ul class="dropdown-menu" aria-labelledby="reviewDropdown">
-                <li><a href="#">View Blogs</a></li>
+                <li><a href="">View Blogs</a></li>
                 <li><a href="#">Add Blog</a></li>
 
             </ul>
@@ -51,7 +51,7 @@ $isReviewActive = $currentController === "Review";
             <ul class="dropdown-menu" aria-labelledby="reviewDropdown">
                 <li><?= $this->Html->link(
                         '<p>View reviews</p>',
-                        ['prefix' => 'admin','controller' => 'Review'],
+                        ['prefix' => 'admin','controller' => 'Review', 'action' => 'index'],
                         ['escape' => false]
                     ) ?></li>
                 <li><?= $this->Html->link(

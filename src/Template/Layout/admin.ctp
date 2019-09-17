@@ -32,6 +32,10 @@
                 parentElementClass.add("open")
             }
         }
+        const handlePreviewClick = (event) => {
+            console.log("Clicked Preview Button", event.form)
+        }
+
     </script>
 
 
