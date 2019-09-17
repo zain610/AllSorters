@@ -35,11 +35,17 @@ $isReviewActive = $currentController === "Review";
 
             </ul>
         </li>
-        <li>
-            <a href="table.html">
-                <i class=""></i>
-                <p>Images</p>
-            </a>
+        <li class="<?= $isImagesActive ? 'active' : '' ?> dropdown">
+            <?= $this->Html->link(
+                '<p>Images</p>',
+                '#',
+                ['escape' => false, 'onclick' => 'handleMenuToggle(this)', 'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true',]
+            ) ?>
+            <ul class="dropdown-menu" aria-labelledby="reviewDropdown">
+                <li><a href="/image/view">View Image</a></li>
+                <li><a href="/image/upload">Add Image</a></li>
+
+            </ul>
         </li>
 
         <li id="dropDownMenu" class="<?= $isReviewActive ? 'active' : '' ?> dropdown">

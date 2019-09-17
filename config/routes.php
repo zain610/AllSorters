@@ -53,6 +53,9 @@ Router::scope('/', function (RouteBuilder $routes) {
     //Catching the login and logout routes for which the functionalities are in AdminController and not to be mistaken for page with Admin prefix
     $routes->connect('/admin/login', ['controller' => 'Admin', 'action' => 'login']);
     $routes->connect('/admin/logout', ['controller' => 'Admin', 'action' => 'logout']);
+    $routes->connect('/image',['controller'=> 'Image','action'=> 'index']);
+    $routes->connect('/image/upload',['controller'=> 'Image','action'=> 'upload']);
+
     Router::prefix('admin', function($routes) {
         //All Routes here will be prefixed with /admin
         // So all CMS and Dashboard and routes will be placed here
@@ -85,4 +88,5 @@ Router::scope('/', function (RouteBuilder $routes) {
  * Load all plugin routes. See the Plugin documentation on
  * how to customize the loading of plugin routes.
  */
+
 Plugin::routes();
