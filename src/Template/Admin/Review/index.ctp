@@ -24,7 +24,8 @@
                 <td><?= h($review->Client_Name) ?></td>
                 <td><?= h($review->Month_Year) ?></td>
                 <td><?= $this->Number->format($review->Suburb) ?></td>
-                <td><?= h($review->Review_Details) ?></td>
+                <td><?= $this->Text->truncate(h($review->Review_Details), 22, ['ellipsis' => '...',
+                        'exact' => false]) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $review->Review_id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $review->Review_id]) ?>
