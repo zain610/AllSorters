@@ -18,13 +18,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <!-- Custom Theme files -->
 
-    <!--    <link href="css/style.css" rel='stylesheet' type='text/css' />-->
-    <!--    <script src="js/jquery-1.11.1.min.js"></script>-->
+<!--    <link href="css/style.css" rel='stylesheet' type='text/css' />-->
+<!--    <script src="js/jquery-1.11.1.min.js"></script>-->
     <!--webfonts-->
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <!--//webfonts-->
-    <!--    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />-->
+<!--    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />-->
 
     <script type="text/javascript">
         jQuery(document).ready(function($) {
@@ -51,9 +51,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <?= $this->Html->script('modernizr.custom.97074.js') ?>
     <?= $this->Html->script('jquery.chocolat.js') ?>
     <?= $this->Html->css('chocolat.css') ?>
-    <!--    <script src="js/modernizr.custom.97074.js"></script>-->
-    <!--    <script src="js/jquery.chocolat.js"></script>-->
-    <!--    <link rel="stylesheet" href="css/chocolat.css" type="text/css" media="screen" charset="utf-8">-->
+<!--    <script src="js/modernizr.custom.97074.js"></script>-->
+<!--    <script src="js/jquery.chocolat.js"></script>-->
+<!--    <link rel="stylesheet" href="css/chocolat.css" type="text/css" media="screen" charset="utf-8">-->
 
     <script type="text/javascript" charset="utf-8">
         $(function() {
@@ -108,8 +108,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!-- search-scripts -->
         <?= $this->Html->script('classie.js') ?>
         <?= $this->Html->script('uisearch.js') ?>
-        <!--        <script src="js/classie.js"></script>-->
-        <!--        <script src="js/uisearch.js"></script>-->
+<!--        <script src="js/classie.js"></script>-->
+<!--        <script src="js/uisearch.js"></script>-->
         <script>
             new UISearch( document.getElementById( 'sb-search' ) );
         </script>
@@ -153,7 +153,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
         <!-- FlexSlider -->
         <?= $this->Html->script('jquery.flexslider.js') ?>
-        <!--        <script defer="" src="js/jquery.flexslider.js"></script>-->
+<!--        <script defer="" src="js/jquery.flexslider.js"></script>-->
         <script type="text/javascript">
             $(function(){
 
@@ -367,7 +367,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <h3>Phone/Fax</h3>
             <p>Phone : 1300797332</p>
 
-            <!--            <p>Email : <a href="mailto:info@example.com">info@mycompany.com</a> </p>-->
+<!--            <p>Email : <a href="mailto:info@example.com">info@mycompany.com</a> </p>-->
         </div>
         <div class="clearfix"></div>
         <div class="copyright">

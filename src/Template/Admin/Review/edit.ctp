@@ -5,7 +5,6 @@
  */
 ?>
 <div class="content table-responsive table-full-width">
-
     <?= $this->Form->create($review) ?>
     <fieldset>
         <legend><?= __('Edit Review') ?></legend>
