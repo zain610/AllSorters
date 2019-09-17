@@ -44,6 +44,13 @@ use Cake\Mailer\TransportFactory;
 use Cake\Utility\Inflector;
 use Cake\Utility\Security;
 
+
+
+
+
+
+
+
 /**
  * Uncomment block of code below if you want to use `.env` file during development.
  * You should copy `config/.env.default to `config/.env` and set/modify the
@@ -72,6 +79,7 @@ use Cake\Utility\Security;
 try {
     Configure::config('default', new PhpConfig());
     Configure::load('app', 'default', false);
+
 } catch (\Exception $e) {
     exit($e->getMessage() . "\n");
 }

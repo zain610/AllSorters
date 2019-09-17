@@ -3,7 +3,11 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Review $review
  */
+$this->Html->script('/TinyMCE/js/tiny_mce/tiny_mce.js', array(
+    'inline' => false
+));
 ?>
+
 <div class="col-md-8">
     <div class="content table-responsive table-full-width">
         <div class="card">
@@ -11,11 +15,12 @@
             <fieldset>
                 <legend><?= __('Add Review') ?></legend>
                 <?php
-                echo $this->Form->control('Client_Name');
+                echo $this->Form->control('Client_Name', ['id' =>'clientNameInput']);
                 echo $this->Form->control('Month_Year', ['minYear' => 2019,'empty' => true, 'hour' => false, 'minute'=> false, 'second'=> false, 'meridian' => false]);
                 echo $this->Form->control('Suburb');
-                echo $this->Form->control('Review_Details');
+                echo $this->Form->control("Review_Details", ['type' => 'textarea', 'id' => 'reviewInput' ] )
                 ?>
+
             </fieldset>
 
             <?= $this->Form->button(__('Submit')) ?>
@@ -30,8 +35,11 @@
             <img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400" alt="..."/>
         </div>
         <div class="content">
-            <p class="description text-center"> "Lamborghini Mercy <br>
-            </p>
+            <p><b>Client Name</b></p>
+            <div><span id="previewClientName" value=""></span></div>
+            <br>
+            <p><b>Review Details</b></p>
+            <div id="previewReviewDetails"></div>
         </div>
         <hr>
         <div class="text-center">

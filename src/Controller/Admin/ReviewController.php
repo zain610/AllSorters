@@ -33,6 +33,8 @@ class ReviewController extends AppController
      */
     public function view($id = null)
     {
+        $this->layout ='admin';
+
         $review = $this->Review->get($id, [
             'contain' => []
         ]);
