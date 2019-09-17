@@ -64,6 +64,10 @@ class AppController extends Controller
             'loginAction'=>[
                 'controller'=>'Admin',
                 'action'=>'login'
+            ],
+            'loginRedirect'=>[
+                'controller'=>'admin',
+                'action'=>'view'
             ]
         ]);
     }
