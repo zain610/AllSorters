@@ -26,12 +26,26 @@ body > div > div.main-panel > nav > div > ul {
 body > div > div.main-panel > div > div > div > div > div > p {
     padding: 5% 0;
 }
-
-/*.nav>li>a>img {*/
-/*    max-width: 50%;*/
-/*    margin-left:10%;*/
-/*}*/
-
-/*.sidebar .nav li > a {*/
-/*    display: inline-flex;*/
-/*}*/
+label {
+    font-size: 1.2rem!important;
+}
+select {
+margin: 0 0.5rem;
+}
+input {
+    font-size: 1.5rem!important;
+    height: 100%!important;
+}
+/*
+This selector converts to class="content table-responsive table-full-width"
+which should be placed on the main div of every view
+ */
+body > div > div.main-panel > div > div > div > div {
+    max-width: 80%;
+}
+.card {
+    padding: 1.5rem;
+}
+.card.card-user {
+    height: 100%;
+}

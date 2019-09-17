@@ -30,7 +30,7 @@ $isReviewActive = $currentController === "Review";
                 ['escape' => false, 'onclick' => 'handleMenuToggle(this)', 'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true',]
             ) ?>
             <ul class="dropdown-menu" aria-labelledby="reviewDropdown">
-                <li><a href="#">View Blogs</a></li>
+                <li><a href="">View Blogs</a></li>
                 <li><a href="#">Add Blog</a></li>
 
             </ul>
@@ -49,14 +49,21 @@ $isReviewActive = $currentController === "Review";
                 ['onclick' => 'handleMenuToggle(this)', 'escape' => false,  'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true']
             ) ?>
             <ul class="dropdown-menu" aria-labelledby="reviewDropdown">
-                <li><a href="#">View Reviews</a></li>
-                <li><a href="#">Add Review</a></li>
+                <li><?= $this->Html->link(
+                        '<p>View reviews</p>',
+                        ['prefix' => 'admin','controller' => 'Review', 'action' => 'index'],
+                        ['escape' => false]
+                    ) ?></li>
+                <li><?= $this->Html->link(
+                        '<p>Add reviews</p>',
+                        ['prefix' => 'admin','controller' => 'Review', 'action' => 'add'],
+                        ['escape' => false]
+                    ) ?></li>
             </ul>
         </li>
     </ul>
 </div>
 </div>
-
 <div class="main-panel">
     <nav class="navbar navbar-default navbar-fixed">
         <div class="container-fluid">

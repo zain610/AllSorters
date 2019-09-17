@@ -59,6 +59,7 @@ class AdminController extends AppController
             }
             $this->Flash->error(__('The admin could not be saved. Please, try again.'));
         }
+
         $this->set(compact('admin'));
     }
 
@@ -83,6 +84,7 @@ class AdminController extends AppController
             }
             $this->Flash->error(__('The admin could not be saved. Please, try again.'));
         }
+
         $this->set(compact('admin'));
     }
 

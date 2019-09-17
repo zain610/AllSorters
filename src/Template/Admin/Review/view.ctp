@@ -1,7 +1,7 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \Cake\Datasource\EntityInterface $review
+ * @var \App\Model\Entity\Review $review
  */
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
