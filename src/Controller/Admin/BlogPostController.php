@@ -83,7 +83,7 @@ class BlogPostController extends AppController
 
         $this->set('blogPost', $blogPost);
 
-        $this->render('edit');
+        $this->render('add');
 
     }
 
@@ -117,7 +117,7 @@ class BlogPostController extends AppController
     {
         $this->layout ='admin';
         $blogPost = $this->BlogPost->get($id, [
-            'contain' => ['Image']
+            'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $blogPost = $this->BlogPost->patchEntity($blogPost, $this->request->getData());
@@ -128,8 +128,8 @@ class BlogPostController extends AppController
             }
             $this->Flash->error(__('The blog post could not be saved. Please, try again.'));
         }
-        $image = $this->BlogPost->Image->find('list', ['limit' => 200]);
-        $this->set(compact('blogPost', 'image'));
+//        $image = $this->BlogPost->Image->find('list', ['limit' => 200]);
+        $this->set(compact('blogPost'));
     }
 
     /**
@@ -141,7 +141,6 @@ class BlogPostController extends AppController
      */
     public function delete($id = null)
     {
-        $this->layout ='admin';
         $this->request->allowMethod(['post', 'delete']);
         $blogPost = $this->BlogPost->get($id);
         if ($this->BlogPost->delete($blogPost)) {

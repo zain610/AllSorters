@@ -4,14 +4,6 @@
  * @var \App\Model\Entity\BlogPost[]|\Cake\Collection\CollectionInterface $blogPost
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Blog Post'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Image'), ['controller' => 'Image', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Image'), ['controller' => 'Image', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
 <div class="blogPost index large-9 medium-8 columns content">
     <h3><?= __('Blog Post') ?></h3>
     <table cellpadding="0" cellspacing="0">

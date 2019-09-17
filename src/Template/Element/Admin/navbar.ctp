@@ -37,7 +37,7 @@ $isReviewActive = $currentController === "Review";
                     )?></li>
                 <li><?=$this->Html->link(
                         '<p>View Blog Posts</p>',
-                        ['prefix'=>'admin','controller'=>'BlogPost','action'=>'view'],
+                        ['prefix'=>'admin','controller'=>'BlogPost','action'=>'index'],
                         ['escape'=>false]
                     )?></li>
 

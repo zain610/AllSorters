@@ -41,7 +41,7 @@ class BlogPostTable extends Table
         $this->addBehavior('Timestamp');
 
         $this->belongsToMany('Image', [
-            'foreignKey' => 'blog_post_id',
+            'foreignKey' => 'post_id',
             'targetForeignKey' => 'image_id',
             'joinTable' => 'blog_post_image'
         ]);
