@@ -52,12 +52,12 @@ $isReviewActive = $currentController === "Review";
             <ul class="dropdown-menu" aria-labelledby="reviewDropdown">
                 <li><?= $this->Html->link(
                         '<p>View Image</p>',
-                        ['prefix' => 'admin','controller' => 'image', 'action' => 'view'],
+                        ['controller' => 'image', 'action' => 'view'],
                         ['escape' => false]
                     ) ?></li>
                 <li><?= $this->Html->link(
                         '<p>Add Image</p>',
-                        ['prefix' => 'admin','controller' => 'image', 'action' => 'upload'],
+                        ['controller' => 'image', 'action' => 'upload'],
                         ['escape' => false]
                     ) ?></li>
 
