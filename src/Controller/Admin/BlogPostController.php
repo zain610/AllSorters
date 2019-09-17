@@ -21,6 +21,8 @@ class BlogPostController extends AppController
      */
     public function index()
     {
+        $this->layout ='admin';
+
         $this->loadComponent('Paginator');
         $blogPost = $this->Paginator->paginate(
             $this->BlogPost->find('all')
@@ -50,6 +52,7 @@ class BlogPostController extends AppController
      */
     public function view($id = null)
     {
+        $this->layout ='admin';
         $blogPost = $this->BlogPost->get($id, [
             'contain' => ['Image']
         ]);
@@ -64,6 +67,7 @@ class BlogPostController extends AppController
      */
     public function add()
     {
+        $this->layout ='admin';
         $blogPost = $this->BlogPost->newEntity();
         if ($this->request->is('post')) {
             $blogPost = $this->BlogPost->patchEntity($blogPost, $this->request->getData());
@@ -111,6 +115,7 @@ class BlogPostController extends AppController
      */
     public function edit($id = null)
     {
+        $this->layout ='admin';
         $blogPost = $this->BlogPost->get($id, [
             'contain' => ['Image']
         ]);
@@ -136,6 +141,7 @@ class BlogPostController extends AppController
      */
     public function delete($id = null)
     {
+        $this->layout ='admin';
         $this->request->allowMethod(['post', 'delete']);
         $blogPost = $this->BlogPost->get($id);
         if ($this->BlogPost->delete($blogPost)) {

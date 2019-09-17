@@ -30,8 +30,16 @@ $isReviewActive = $currentController === "Review";
                 ['escape' => false, 'onclick' => 'handleMenuToggle(this)', 'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true',]
             ) ?>
             <ul class="dropdown-menu" aria-labelledby="reviewDropdown">
-                <li><a href="">View Blogs</a></li>
-                <li><a href="#">Add Blog</a></li>
+                <li><?=$this->Html->link(
+                        '<p>Add a Blog Post</p>',
+                        ['prefix'=>'admin','controller'=>'BlogPost','action'=>'add'],
+                        ['escape'=>false]
+                    )?></li>
+                <li><?=$this->Html->link(
+                        '<p>View Blog Posts</p>',
+                        ['prefix'=>'admin','controller'=>'BlogPost','action'=>'view'],
+                        ['escape'=>false]
+                    )?></li>
 
             </ul>
         </li>

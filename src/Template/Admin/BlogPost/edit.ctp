@@ -27,7 +27,7 @@
             echo $this->Form->control('Date');
             echo $this->Form->control('Description');
             echo $this->Form->control('Body');
-            echo $this->Form->control('image._ids', ['options' => $image]);
+            //echo $this->Form->control('image._ids', ['options' => $image]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
