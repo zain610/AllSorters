@@ -67,10 +67,12 @@ class BlogPostController extends AppController
      */
     public function add()
     {
+
         $this->layout ='admin';
         $blogPost = $this->BlogPost->newEntity();
         if ($this->request->is('post')) {
             $blogPost = $this->BlogPost->patchEntity($blogPost, $this->request->getData());
+            $blogPost->Date = time();
             if ($this->BlogPost->save($blogPost)) {
                 $this->Flash->success(__('The blog post has been saved.'));
 
