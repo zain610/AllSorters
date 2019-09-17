@@ -4,19 +4,6 @@
  * @var \App\Model\Entity\Service $service
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Service'), ['action' => 'edit', $service->Serv_id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Service'), ['action' => 'delete', $service->Serv_id], ['confirm' => __('Are you sure you want to delete # {0}?', $service->Serv_id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Service'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Service'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Job'), ['controller' => 'Job', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Job'), ['controller' => 'Job', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Image'), ['controller' => 'Image', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Image'), ['controller' => 'Image', 'action' => 'add']) ?> </li>
-    </ul>
-</nav>
 <div class="service view large-9 medium-8 columns content">
     <h3><?= h($service->Serv_id) ?></h3>
     <table class="vertical-table">

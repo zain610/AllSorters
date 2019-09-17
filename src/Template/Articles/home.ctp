@@ -8,17 +8,24 @@
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
     <script type="applijewelleryion/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <?= $this->Html->css('bootstrap.css') ?>
+    <?= $this->Html->css('style.css') ?>
+    <?= $this->Html->css('flexslider.css') ?>
+    <?= $this->Html->script('jquery-1.11.1.min.js') ?>
+    <?= $this->Html->script('bootstrap.js') ?>
+    <?= $this->Html->script('move-top.js') ?>
+    <?= $this->Html->script('easing.js') ?>
+
     <!-- Custom Theme files -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <script src="js/jquery-1.11.1.min.js"></script>
+
+    <!--    <link href="css/style.css" rel='stylesheet' type='text/css' />-->
+    <!--    <script src="js/jquery-1.11.1.min.js"></script>-->
     <!--webfonts-->
-    <link href='http://fonts.useso.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.useso.com/css?family=Source+Sans+Pro:400,200,300,600,700,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <!--//webfonts-->
-    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/move-top.js"></script>
-    <script type="text/javascript" src="js/easing.js"></script>
+    <!--    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />-->
+
     <script type="text/javascript">
         jQuery(document).ready(function($) {
             $(".scroll").click(function(event){
@@ -41,9 +48,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         });
     </script>
     <!--light-box-files -->
-    <script src="js/modernizr.custom.97074.js"></script>
-    <script src="js/jquery.chocolat.js"></script>
-    <link rel="stylesheet" href="css/chocolat.css" type="text/css" media="screen" charset="utf-8">
+    <?= $this->Html->script('modernizr.custom.97074.js') ?>
+    <?= $this->Html->script('jquery.chocolat.js') ?>
+    <?= $this->Html->css('chocolat.css') ?>
+    <!--    <script src="js/modernizr.custom.97074.js"></script>-->
+    <!--    <script src="js/jquery.chocolat.js"></script>-->
+    <!--    <link rel="stylesheet" href="css/chocolat.css" type="text/css" media="screen" charset="utf-8">-->
 
     <script type="text/javascript" charset="utf-8">
         $(function() {
@@ -74,12 +84,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <!--/.navbar-header-->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="shortcodes.html">Short Codes</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><?= $this->Html->link('Home', ['controller' => 'Articles', 'action' => 'home'], ['class' => 'navbar-brand']) ?></li>
+                    <li><?= $this->Html->link('Services', ['controller' => 'Services', 'action' => 'index'], ['class' => 'navbar-brand']) ?></li>
+                    <li><?= $this->Html->link('Blog', ['controller' => 'Blog', 'action' => 'index'], ['class' => 'navbar-brand']) ?></li>
+                    <li><?= $this->Html->link('About', ['controller' => 'About', 'action' => 'index'], ['class' => 'navbar-brand']) ?></li>
+                    <li><?= $this->Html->link('Gallery', ['controller' => 'gallery', 'action' => 'index'], ['class' => 'navbar-brand']) ?></li>
+                    <li><?= $this->Html->link('Contact', ['controller' => 'Contact', 'action' => 'index'], ['class' => 'navbar-brand']) ?></li>
                 </ul>
             </div>
             <!--/.navbar-collapse-->
@@ -96,8 +106,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="clearfix"> </div>
 
         <!-- search-scripts -->
-        <script src="js/classie.js"></script>
-        <script src="js/uisearch.js"></script>
+        <?= $this->Html->script('classie.js') ?>
+        <?= $this->Html->script('uisearch.js') ?>
+        <!--        <script src="js/classie.js"></script>-->
+        <!--        <script src="js/uisearch.js"></script>-->
         <script>
             new UISearch( document.getElementById( 'sb-search' ) );
         </script>
@@ -140,7 +152,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </section>
 
         <!-- FlexSlider -->
-        <script defer="" src="js/jquery.flexslider.js"></script>
+        <?= $this->Html->script('jquery.flexslider.js') ?>
+        <!--        <script defer="" src="js/jquery.flexslider.js"></script>-->
         <script type="text/javascript">
             $(function(){
 
@@ -352,13 +365,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
         <div class="col-md-4 contact-left">
             <h3>Phone/Fax</h3>
-            <p>Phone : +1234567890 </p>
-            <p>Fax : +1234567890 </p>
-            <p>Email : <a href="mailto:info@example.com">info@mycompany.com</a> </p>
+            <p>Phone : 1300797332</p>
+
+            <!--            <p>Email : <a href="mailto:info@example.com">info@mycompany.com</a> </p>-->
         </div>
         <div class="clearfix"></div>
         <div class="copyright">
-            <p>Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://h2design.taobao.com/">氢设计</a></p>
+            <p>Copyright &copy; 2015.Allsorters All rights reserved.<a target="_blank" href="http://h2design.taobao.com/">氢设计</a></p>
         </div>
     </div>
 </div>
