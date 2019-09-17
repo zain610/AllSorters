@@ -32,6 +32,10 @@
                 parentElementClass.add("open")
             }
         }
+        const handlePreviewClick = (event) => {
+            console.log("Clicked Preview Button", event.form)
+        }
+
     </script>
 
 
@@ -52,11 +56,8 @@
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <!--                    <div class="col-md-12">-->
-                    <!--                        <div class="card" style="padding: 1.5rem">-->
                     <?= $this->fetch('content') ?>
-                    <!--                        </div>-->
-                    <!--                    </div>-->
+
                 </div>
             </div>
         </div>
@@ -88,9 +89,6 @@
                         </li>
                     </ul>
                 </nav>
-                <p class="copyright pull-right">
-                    &copy; 2016 <a href="#">Creative Tim</a>, More Templates <a href="http://www.moobnn.com/" target="_blank" title="模板在线">模板在线</a> <a href="http://guantaow.taobao.com" target="_blank">厚朴网络 淘宝店</a> - Collect from <a href="http://www.moobnn.com/" title="模板在线" target="_blank">模板在线</a> <a href="http://guantaow.taobao.com" target="_blank">厚朴网络 淘宝店</a>
-                </p>
             </div>
         </footer>
 

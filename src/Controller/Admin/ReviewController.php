@@ -47,6 +47,7 @@ class ReviewController extends AppController
      */
     public function add()
     {
+        $this->layout = 'admin';
         $review = $this->Review->newEntity();
         if ($this->request->is('post')) {
             $review = $this->Review->patchEntity($review, $this->request->getData());
@@ -58,6 +59,7 @@ class ReviewController extends AppController
             $this->Flash->error(__('The review could not be saved. Please, try again.'));
         }
         $this->set(compact('review'));
+
     }
 
     /**
@@ -69,6 +71,7 @@ class ReviewController extends AppController
      */
     public function edit($id = null)
     {
+        $this->layout = 'admin';
         $review = $this->Review->get($id, [
             'contain' => []
         ]);

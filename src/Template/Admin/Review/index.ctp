@@ -1,10 +1,10 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \Cake\Datasource\EntityInterface[]|\Cake\Collection\CollectionInterface $review
+ * @var \App\Model\Entity\Review[]|\Cake\Collection\CollectionInterface $review
  */
 ?>
-<div class="content table-responsive table-full-width">
+<div class="table table-hover table-striped">
     <h4><?= __('Review') ?></h4>
     <table class="table table-hover table-striped" cellpadding="0" cellspacing="0">
         <thead>
