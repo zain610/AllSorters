@@ -3,7 +3,7 @@ $currentController = $this->request->getParam('controller');
 $currentAction = $this->request->getParam('action');
 $isDashboardActive = $currentController === "Admin" && $currentAction === 'index';
 $isBlogsActive = $currentController === "Blogs";
-$isServicesActive = $currentController === "Services";
+$isServiceActive = $currentController === "Service";
 $isImagesActive = $currentController === "Images";
 $isReviewActive = $currentController === "Review";
 
@@ -45,6 +45,26 @@ $isReviewActive = $currentController === "Review";
                 <li><a href="/image/view">View Image</a></li>
                 <li><a href="/image/upload">Add Image</a></li>
 
+            </ul>
+        </li>
+
+        <li id="dropDownMenu" class="<?= $isServiceActive ? 'active' : '' ?> dropdown">
+            <?= $this->Html->link(
+                '<p>Services</p>',
+                '#',
+                ['onclick' => 'handleMenuToggle(this)', 'escape' => false,  'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true']
+            ) ?>
+            <ul class="dropdown-menu" aria-labelledby="ServiceDropdown">
+                <li><?= $this->Html->link(
+                        '<p>View Services</p>',
+                        ['prefix' => 'admin','controller' => 'Service', 'action' => 'index'],
+                        ['escape' => false]
+                    ) ?></li>
+                <li><?= $this->Html->link(
+                        '<p>Add reviews</p>',
+                        ['prefix' => 'admin','controller' => 'Service', 'action' => 'add'],
+                        ['escape' => false]
+                    ) ?></li>
             </ul>
         </li>
 
