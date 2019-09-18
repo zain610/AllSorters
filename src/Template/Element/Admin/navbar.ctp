@@ -49,15 +49,15 @@ $isReviewActive = $currentController === "Review";
                 '#',
                 ['escape' => false, 'onclick' => 'handleMenuToggle(this)', 'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true',]
             ) ?>
-            <ul class="dropdown-menu" aria-labelledby="reviewDropdown">
+            <ul class="dropdown-menu" aria-labelledby="imageDropdown">
                 <li><?= $this->Html->link(
                         '<p>View Image</p>',
-                        ['controller' => 'image', 'action' => 'view'],
+                        ['prefix'=>'admin','controller' => 'Image', 'action' => 'view'],
                         ['escape' => false]
                     ) ?></li>
                 <li><?= $this->Html->link(
                         '<p>Add Image</p>',
-                        ['controller' => 'image', 'action' => 'upload'],
+                        ['prefix'=>'admin','controller' => 'Image', 'action' => 'upload'],
                         ['escape' => false]
                     ) ?></li>
 
