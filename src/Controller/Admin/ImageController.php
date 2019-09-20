@@ -71,7 +71,7 @@ class ImageController extends AppController
             }
             if(!empty($this->request->getData()['image']['name'])){
                 if(in_array($myext, $arr_ext)){
-                    $mypath = '/upload/'.Security::hash($myname).".".$myext;
+                    $mypath = '/admin/image/upload/'.Security::hash($myname).".".$myext;
                     $md5_value = md5_file($mytmp);
 //            $image = $this->Image->patchEntity($image, $this->request->getData());
                     $image->Image_Content = $md5_value;

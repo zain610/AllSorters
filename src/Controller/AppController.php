@@ -67,7 +67,7 @@ class AppController extends Controller
             ],
             'loginRedirect'=>[
                 'controller'=>'Admin',
-                'action'=>'view'
+                'action'=>'index'
             ]
         ]);
     }
