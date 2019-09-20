@@ -37,12 +37,8 @@ class Admin extends Entity
         'modified' => true
     ];
 
-    /**
-     * Fields that are excluded from JSON versions of the entity.
-     *
-     * @var array
-     */
+
     protected function _setPassword($password){
-        return( new DefaultPasswordHasher)->hash($password);
+        return(new DefaultPasswordHasher)->hash($password);
     }
 }

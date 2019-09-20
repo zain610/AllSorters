@@ -13,6 +13,7 @@
             <div class="card-body">
                 <h4 class="card-title"><?php echo $img->name; ?></h4>
             </div>
+
         </div>
         <?php endforeach; ?>
     </div>
