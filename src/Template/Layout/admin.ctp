@@ -33,14 +33,14 @@
                 parentElementClass.add("open")
             }
         }
-        const handlePreviewClick = (event) => {
-            console.log("Clicked Preview Button", event.form)
+        const handlePreviewClick = () => {
+            //get the data from html forms
             let clientNameVal = document.getElementById('clientNameInput').value
-            let reviewDetailVal = document.getElementById('reviewInput').value
-            console.log(clientNameVal, reviewDetailVal)
+            let reviewDetailVal = tinymce.get("reviewInput").getContent()
+
             //fill in the preview card placeholders
             document.getElementById('previewClientName').textContent = clientNameVal
-            document.getElementById('previewReviewDetails').textContent = reviewDetailVal
+            document.getElementById('previewReviewDetails').innerHTML = reviewDetailVal
         }
 
 
@@ -104,14 +104,14 @@
 </div>
 </body>
 <!--   Core JS Files   -->
-
-<?= $this->Html->js('jquery-1.10.2.js') ?>
-<?= $this->Html->js('bootstrap.min.js') ?>
-<?= $this->Html->js('bootstrap-checkbox-radio-switch.js') ?>
-<?= $this->Html->js('chartlist.min.js') ?>
-<?= $this->Html->js('bootstrap-notify.js') ?>
-<?= $this->Html->js('light-bootstrap-dashboard.js') ?>
-<?= $this->Html->js('tinymce/tinymce.min.js') ?>
+<?= $this->Html->script([
+    'jquery-3.4.1.min.js',
+    'bootstrap.min.js',
+    'bootstrap-checkbox-radio-switch.js',
+    'bootstrap-notify.js',
+    'light-bootstrap-dashboard.js',
+    'tinymce/tinymce.min.js'
+    ]) ?>
 <script>
     (function() {
         tinymce.init({
@@ -150,7 +150,8 @@
             },
         });
 
-        $('select').chosen({width: '50%'});
+
+        $('select').chosen({width: '100%'});
     })();
 </script>
 

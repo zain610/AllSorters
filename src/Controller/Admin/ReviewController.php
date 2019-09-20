@@ -53,6 +53,7 @@ class ReviewController extends AppController
         $review = $this->Review->newEntity();
         if ($this->request->is('post')) {
             $review = $this->Review->patchEntity($review, $this->request->getData());
+            $review->Month_Year = time();
             if ($this->Review->save($review)) {
                 $this->Flash->success(__('The review has been saved.'));
 

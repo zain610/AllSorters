@@ -119,7 +119,7 @@ class AdminController extends AppController
             if($user){
                 $this->Auth->setUser($user);
                 //if the user is logged in, display the admin homepage
-                return $this->redirect(['controller' => 'Admin', 'action' => 'view']);
+                return $this->redirect(['controller' => 'Admin', 'action' => 'index']);
                 $this->Flash->error("Incorrect username or password");
             }
         }
