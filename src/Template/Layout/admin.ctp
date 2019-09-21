@@ -20,33 +20,6 @@
     <?= $this->Html->css('pe-icon-7-stroke.css') ?>
     <?= $this->Html->css('styles.css') ?>
 
-
-    <script type="text/javascript">
-
-        const handleMenuToggle = (object) => {
-            let parentElementClass = object.parentNode.classList
-            if(parentElementClass.contains("open")) {
-                //remove "open" to the classList to close the dropdown
-                parentElementClass.remove("open")
-            } else {
-                //add "open" to the classList to open the dropdown
-                parentElementClass.add("open")
-            }
-        }
-        const handlePreviewClick = () => {
-            //get the data from html forms
-            let clientNameVal = document.getElementById('clientNameInput').value
-            let reviewDetailVal = tinymce.get("reviewInput").getContent()
-
-            //fill in the preview card placeholders
-            document.getElementById('previewClientName').textContent = clientNameVal
-            document.getElementById('previewReviewDetails').innerHTML = reviewDetailVal
-        }
-
-
-    </script>
-
-
 </head>
 <body>
 <!--?php: $this->fetch('title', 'Foundation System Build')-->
@@ -150,8 +123,15 @@
             },
         });
 
+        handlePreviewClick = () => {
+            //get the data from html forms
+            let clientNameVal = document.getElementById('clientNameInput').value
+            let reviewDetailVal = tinymce.get("reviewInput").getContent()
 
-        $('select').chosen({width: '100%'});
+            //fill in the preview card placeholders
+            document.getElementById('previewClientName').textContent = clientNameVal
+            document.getElementById('previewReviewDetails').innerHTML = reviewDetailVal
+        }
     })();
 </script>
 
