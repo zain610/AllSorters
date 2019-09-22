@@ -6,7 +6,8 @@ $isBlogsActive = $currentController === "Blogs";
 $isServiceActive = $currentController === "Service";
 $isImagesActive = $currentController === "Images";
 $isReviewActive = $currentController === "Review";
-
+$isJobActive = $currentController === "Job";
+$isContractorActive = $currentController === "Contractor";
 ?>
 
 <div class="sidebar-wrapper">
@@ -78,6 +79,48 @@ $isReviewActive = $currentController === "Review";
                     ) ?></li>
                 <li><?= $this->Html->link(
                         '<p>Add Services</p>',
+                        ['prefix' => 'admin','controller' => 'Service', 'action' => 'add'],
+                        ['escape' => false]
+                    ) ?></li>
+            </ul>
+        </li>
+
+
+        <li id="dropDownMenu" class="<?= $isJobActive ? 'active' : '' ?> dropdown">
+            <?= $this->Html->link(
+                '<p>Jobs</p>',
+                '#',
+                ['onclick' => 'handleMenuToggle(this)', 'escape' => false,  'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true']
+            ) ?>
+            <ul class="dropdown-menu" aria-labelledby="ServiceDropdown">
+                <li><?= $this->Html->link(
+                        '<p>View Jobs</p>',
+                        ['prefix' => 'admin','controller' => 'Job', 'action' => 'index'],
+                        ['escape' => false]
+                    ) ?></li>
+                <li><?= $this->Html->link(
+                        '<p>Add Jobs</p>',
+                        ['prefix' => 'admin','controller' => 'Job', 'action' => 'add'],
+                        ['escape' => false]
+                    ) ?></li>
+            </ul>
+        </li>
+
+
+        <li id="dropDownMenu" class="<?= $isContractorActive ? 'active' : '' ?> dropdown">
+            <?= $this->Html->link(
+                '<p>Contractors</p>',
+                '#',
+                ['onclick' => 'handleMenuToggle(this)', 'escape' => false,  'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true']
+            ) ?>
+            <ul class="dropdown-menu" aria-labelledby="ServiceDropdown">
+                <li><?= $this->Html->link(
+                        '<p>View Contractors</p>',
+                        ['prefix' => 'admin','controller' => 'Contractor', 'action' => 'index'],
+                        ['escape' => false]
+                    ) ?></li>
+                <li><?= $this->Html->link(
+                        '<p>Add Contractors</p>',
                         ['prefix' => 'admin','controller' => 'Service', 'action' => 'add'],
                         ['escape' => false]
                     ) ?></li>
