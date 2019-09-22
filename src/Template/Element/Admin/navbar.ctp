@@ -32,15 +32,16 @@ $isContractorActive = $currentController === "Contractor";
             ) ?>
             <ul class="dropdown-menu" aria-labelledby="reviewDropdown">
                 <li><?=$this->Html->link(
-                        '<p>Add a Blog Post</p>',
-                        ['prefix'=>'admin','controller'=>'BlogPost','action'=>'add'],
-                        ['escape'=>false]
-                    )?></li>
-                <li><?=$this->Html->link(
                         '<p>View Blog Posts</p>',
                         ['prefix'=>'admin','controller'=>'BlogPost','action'=>'index'],
                         ['escape'=>false]
                     )?></li>
+                <li><?=$this->Html->link(
+                        '<p>Add a Blog Post</p>',
+                        ['prefix'=>'admin','controller'=>'BlogPost','action'=>'add'],
+                        ['escape'=>false]
+                    )?></li>
+
 
             </ul>
         </li>
@@ -121,7 +122,7 @@ $isContractorActive = $currentController === "Contractor";
                     ) ?></li>
                 <li><?= $this->Html->link(
                         '<p>Add Contractors</p>',
-                        ['prefix' => 'admin','controller' => 'Service', 'action' => 'add'],
+                        ['prefix' => 'admin','controller' => 'Contractor', 'action' => 'add'],
                         ['escape' => false]
                     ) ?></li>
             </ul>
