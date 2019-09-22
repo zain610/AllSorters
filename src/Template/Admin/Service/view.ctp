@@ -5,7 +5,7 @@
  */
 ?>
 
-<div class="service view large-9 medium-8 columns content">
+<div class="content table-responsive table-full-width">
     <h3><?= h($service->Service_id) ?></h3>
     <table class="vertical-table">
         <tr>
@@ -17,14 +17,15 @@
             <td><?= h($service->Service_Description) ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('Service Detail') ?></th>
+            <td><?= h($service->Service_Detail) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Service Id') ?></th>
             <td><?= $this->Number->format($service->Service_id) ?></td>
         </tr>
     </table>
-    <div class="row">
-        <h4><?= __('Service Detail') ?></h4>
-        <?= $this->Text->autoParagraph(h($service->Service_Detail)); ?>
-    </div>
+
     <div class="related">
         <h4><?= __('Related Image') ?></h4>
         <?php if (!empty($service->image)): ?>

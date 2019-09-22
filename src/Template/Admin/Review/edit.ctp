@@ -3,8 +3,12 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Review $review
  */
+$this->Html->script('/TinyMCE/js/tiny_mce/tiny_mce.js', array(
+    'inline' => false));
 ?>
-<div class="content table-responsive table-full-width">
+<div class="col-md-8">
+    <div class="content table-responsive table-full-width">
+        <div class="card">
     <?= $this->Form->create($review) ?>
     <fieldset>
         <legend><?= __('Edit Review') ?></legend>
@@ -17,4 +21,4 @@
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
-</div>
+        </div></div></div>
