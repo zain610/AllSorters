@@ -40,6 +40,11 @@ $isReviewActive = $currentController === "Review";
                         ['prefix'=>'admin','controller'=>'BlogPost','action'=>'index'],
                         ['escape'=>false]
                     )?></li>
+                <li><?=$this->Html->link(
+                        '<p>View Blog Post Archive</p>',
+                        ['prefix'=>'admin','controller'=>'BlogPost','action'=>'archiveIndex'],
+                        ['escape'=>false]
+                    )?></li>
 
             </ul>
         </li>
