@@ -5,16 +5,20 @@
  */
 ?>
 <?= $this->layout('Admin') ?>
+
 <div class="content table-responsive table-full-width">
     <div class="col-md-3">
-        <?php foreach ($image as $img): ?>
-        <div class="card">
-<!--            <img src="--><?php //echo $img->path; ?><!--"-->
-            <?php echo $this->Html->image($img->path, ['alt' => 'CakePHP']); ?>
-            <div class="card-body">
-                <h4 class="card-title"><?php echo $img->name; ?></h4>
+            <div class="card">
+                <?php echo $this->Html->image($image->path, ['alt' => 'CakePHP']); ?>
+                <div class="card-body">
+                    <h4 class="card-title"><?php echo $image->name; ?></h4>
+                </div>
             </div>
-        </div>
-        <?php endforeach; ?>
     </div>
 </div>
+
+
+
+
+
+

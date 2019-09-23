@@ -7,10 +7,9 @@
 
 <div class="table table-hover table-striped">
     <h4><?= __('Services') ?></h4>
-    <table class="table table-hover table-striped" cellpadding="0" cellspacing="0">
+    <table class="articles-table table">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('Service_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Service_Title') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Service_Description') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -18,16 +17,19 @@
         </thead>
         <tbody>
             <?php foreach ($service as $service): ?>
-            <tr>
-                <td><?= $this->Number->format($service->Service_id) ?></td>
-                <td><?= h($service->Service_Title) ?></td>
-                <td><?= h($service->Service_Description)?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $service->Service_id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $service->Service_id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $service->Service_id], ['confirm' => __('Are you sure you want to delete # {0}?', $service->Service_id)]) ?>
-                </td>
-            </tr>
+                <tr class="article-row">
+                    <td style="width: 40%">
+                        <?= $this->Html->link($service->Service_Title, ['action' => 'edit', $service->Service_id]) ?>
+                    </td>
+                    <td>
+                        <?= $this->Html->link($service->Service_Description, ['action' => 'edit', $service->Service_id]) ?>
+                    </td>
+                    <td class="action-col">
+                        <?= $this->element('Admin/Buttons/view', ['url' => ['action' => 'view', $service->Service_id]]) ?>
+                        <?= $this->element('Admin/Buttons/edit', ['url' => ['action' => 'edit', $service->Service_id]]) ?>
+                        <?= $this->element('Admin/Buttons/delete', ['url' => ['action' => 'delete', $service->Service_id]]) ?>
+                    </td>
+                </tr>
             <?php endforeach; ?>
         </tbody>
     </table>

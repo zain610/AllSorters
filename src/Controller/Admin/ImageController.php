@@ -24,13 +24,18 @@ class ImageController extends AppController
      *
      * @return \Cake\Http\Response|void
      */
-    public function index()
+    public function view($id = null)
     {
-        $image = $this->paginate($this->Image);
-
-        $this->set(compact('image'));
+//        $image = $this->paginate($this->Image);
+//
+//        $this->set(compact('image'));
 //      $image = $this->Image->find('all');
 //        $this->set('image', $image);
+        $image = $this->Image->get($id, [
+            'contain' => []
+        ]);
+
+        $this->set('image', $image);
     }
 
     /**
@@ -40,19 +45,21 @@ class ImageController extends AppController
      * @return \Cake\Http\Response|void
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-//    public function view($id = null)
-//    {
-//        $image = $this->Image->get($id, [
-//            'contain' => ['BlogPost', 'GalleryPage', 'Service']
-//        ]);
-//
+    public function index()
+    {
+        $this->layout ='admin';
+
+        $this->loadComponent('Paginator');
+        $image = $this->Paginator->paginate(
+            $this->Image->find('all')
+        );
+        $this->set(compact('image'));
+    }
+
+//    public function view(){
+//        $image = $this->Image->find('all');
 //        $this->set('image', $image);
 //    }
-
-    public function view(){
-        $image = $this->Image->find('all');
-        $this->set('image', $image);
-    }
 
     /**
      * Add method
