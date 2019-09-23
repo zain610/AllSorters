@@ -22,7 +22,7 @@ $this->Html->script('/TinyMCE/js/tiny_mce/tiny_mce.js', array(
 
             </fieldset>
 
-            <?= $this->Form->button(__('Submit')) ?>
+            <?= $this->Form->button(__('Submit'), ['formnovalidate' => true]) ?>
             <?= $this->Form->button('Preview', ['type' => 'button', 'onclick' => 'handlePreviewClick(this)'] ) ?>
             <?= $this->Form->end() ?>
         </div>
@@ -44,7 +44,7 @@ $this->Html->script('/TinyMCE/js/tiny_mce/tiny_mce.js', array(
     </div>
 </div>
 <script type="text/javascript">
-    handlePreviewClick = () => {
+    const handlePreviewClick = () => {
         //get the data from html forms
         let clientNameVal = document.getElementById('clientNameInput').value
         let reviewDetailVal = tinymce.get("reviewInput").getContent()

@@ -21,7 +21,7 @@
             <tr>
                 <td><?= $this->Number->format($service->Service_id) ?></td>
                 <td><?= h($service->Service_Title) ?></td>
-                <td><?= h($service->Service_Description) ?></td>
+                <td><?= h($service->Service_Description)?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $service->Service_id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $service->Service_id]) ?>

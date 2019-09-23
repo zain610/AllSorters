@@ -16,6 +16,6 @@
             //echo $this->Form->control('image._ids', ['options' => $image]);
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Submit'), ['formnovalidate' => true]) ?>
     <?= $this->Form->end() ?>
 </div>

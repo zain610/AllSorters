@@ -68,7 +68,7 @@ class BlogPostController extends AppController
     public function add()
     {
 
-        $this->layout ='admin';
+        $this->layout ='admin'; 
         $blogPost = $this->BlogPost->newEntity();
         if ($this->request->is('post')) {
             $blogPost = $this->BlogPost->patchEntity($blogPost, $this->request->getData());
