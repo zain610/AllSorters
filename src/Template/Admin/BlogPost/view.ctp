@@ -51,6 +51,7 @@
             </tr>
             <?php foreach ($blogPost->image as $image): ?>
             <tr>
+
                 <td><?= h($image->Image_id) ?></td>
                 <td><?= h($image->Image_Content) ?></td>
                 <td><?= h($image->name) ?></td>

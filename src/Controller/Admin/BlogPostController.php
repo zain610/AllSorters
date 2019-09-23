@@ -80,12 +80,15 @@ class BlogPostController extends AppController
             }
             $this->Flash->error(__('The blog post could not be saved. Please, try again.'));
         }
-        //$image = $this->BlogPost->Image->find('list', ['limit' => 200]);
-        //$this->set(compact('blogPost', 'image'));
+        $image = $this->BlogPost->Image->find('list', [
+            'keyField' => 'Image_id',
+            'valueField' => 'path'
+        ]);
+        $this->set(compact('blogPost', 'image'));
 
-        $this->set('blogPost', $blogPost);
-
-        $this->render('add');
+//        $this->set('blogPost', $blogPost);
+//
+//        $this->render('add');
 
     }
 
@@ -130,8 +133,11 @@ class BlogPostController extends AppController
             }
             $this->Flash->error(__('The blog post could not be saved. Please, try again.'));
         }
-//        $image = $this->BlogPost->Image->find('list', ['limit' => 200]);
-        $this->set(compact('blogPost'));
+        $image = $this->BlogPost->Image->find('list', [
+            'keyField' => 'Image_id',
+            'valueField' => 'path'
+        ]);
+        $this->set(compact('blogPost','image'));
     }
 
     /**

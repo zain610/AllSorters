@@ -36,13 +36,13 @@ class BlogPostTable extends Table
 
         $this->setTable('blog_post');
         $this->setDisplayField('title');
-        $this->setPrimaryKey('id');
+        $this->setPrimaryKey('blog_post_id');
 
         $this->addBehavior('Timestamp');
 
         $this->belongsToMany('Image', [
-            'foreignKey' => 'post_id',
-            'targetForeignKey' => 'image_id',
+            'foreignKey' => 'blog_post_id',
+            'targetForeignKey' => 'Image_id',
             'joinTable' => 'blog_post_image'
         ]);
     }
@@ -56,8 +56,8 @@ class BlogPostTable extends Table
     public function validationDefault(Validator $validator)
     {
         $validator
-            ->integer('id')
-            ->allowEmpty('id', 'create');
+            ->integer('blog_post_id')
+            ->allowEmpty('blog_post_id', 'create');
 
         $validator
             ->scalar('title')
@@ -81,6 +81,14 @@ class BlogPostTable extends Table
             ->maxLength('Body', 255)
             ->requirePresence('Body', 'create')
             ->notEmpty('Body');
+
+        $validator
+            ->boolean('Published')
+            ->allowEmpty('Published');
+
+        $validator
+            ->boolean('Archived')
+            ->allowEmpty('Archived');
 
         return $validator;
     }
