@@ -99,7 +99,7 @@ class BlogPostController extends AppController
             throw new NotFoundException();
         }
 
-        $blogPost->published = true;
+        $blogPost->Published = true;
 
         if ($this->BlogPost->save($blogPost)) {
             $this->Flash->success(__('Your blog post has been published.'));

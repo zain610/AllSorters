@@ -8,6 +8,7 @@ $isImagesActive = $currentController === "Image";
 $isReviewActive = $currentController === "Review";
 $isJobActive = $currentController === "Job";
 $isContractorActive = $currentController === "Contractor";
+$isEventsActive = $currentController === "Events";
 ?>
 
 <div class="sidebar-wrapper">
@@ -150,6 +151,25 @@ $isContractorActive = $currentController === "Contractor";
                         ['prefix' => 'admin','controller' => 'Review', 'action' => 'add'],
                         ['escape' => false]
                     ) ?></li>
+            </ul>
+        </li>
+        <li id="dropDownMenu" class="<?= $isEventsActive ? 'active' : '' ?> dropdown">
+            <?= $this->Html->link(
+                '<p>Speaking engagements</p>',
+                '#',
+                ['escape' => false, 'onclick' => 'handleMenuToggle(this)', 'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true',]
+            ) ?>
+            <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
+                <li><?=$this->Html->link(
+                        '<p>View Speaking engagements</p>',
+                        ['prefix'=>'admin','controller'=>'Events','action'=>'index'],
+                        ['escape'=>false]
+                    )?></li>
+                <li><?=$this->Html->link(
+                        '<p>Add a Speaking engagement</p>',
+                        ['prefix'=>'admin','controller'=>'Events','action'=>'add'],
+                        ['escape'=>false]
+                    )?></li>
             </ul>
         </li>
     </ul>
