@@ -6,7 +6,7 @@
 ?>
 
 </nav>
-<div class="events index large-9 medium-8 columns content">
+<div class="table table-hover table-striped">
     <?= $this->Html->link('Add an event', ['action' => 'add'], ['class' => 'pull-right btn btn-oval btn-primary']) ?>
 
     <h3><?= __('Speaking Engagements') ?></h3>

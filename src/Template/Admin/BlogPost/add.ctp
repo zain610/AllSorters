@@ -4,7 +4,7 @@
  * @var \App\Model\Entity\BlogPost $blogPost
  */
 ?>
-<div class="blogPost form large-9 medium-8 columns content">
+<div class="card">
     <?= $this->Form->create($blogPost) ?>
     <fieldset>
         <legend><?= __('Add Blog Post') ?></legend>

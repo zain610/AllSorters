@@ -5,7 +5,7 @@
  */
 ?>
 
-<div class="events form large-9 medium-8 columns content">
+<div class="card">
     <?= $this->Form->create($event) ?>
     <fieldset>
         <legend><?= __('Edit Event') ?></legend>

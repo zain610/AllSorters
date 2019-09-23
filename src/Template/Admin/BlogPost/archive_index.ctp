@@ -4,7 +4,7 @@
  * @var \App\Model\Entity\BlogPost[]|\Cake\Collection\CollectionInterface $blogPost
  */
 ?>
-<div class="blogPost index large-9 medium-8 columns content">
+<div class="table table-hover table-striped">
 
     <h3><?= __('Blog Post') ?></h3>
     <table cellpadding="0" cellspacing="0">
