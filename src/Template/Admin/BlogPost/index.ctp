@@ -5,8 +5,9 @@
  */
 ?>
 <div class="table table-hover table-striped">
-    <h3><?= __('Blog Post') ?></h3>
     <?= $this->Html->link('Add Blog Post', ['action' => 'add'], ['class' => 'pull-right btn btn-oval btn-primary']) ?>
+
+    <h3><?= __('Blog Post') ?></h3>
     <table class="articles-table table">
         <thead>
             <tr>
