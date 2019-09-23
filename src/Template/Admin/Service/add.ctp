@@ -23,7 +23,7 @@ $this->Html->script('/TinyMCE/js/tiny_mce/tiny_mce.js', array(
                 echo $this->Form->control('job._ids', ['options' => $job]);
                 ?>
             </fieldset>
-            <?= $this->Form->button(__('Submit'),['type' => 'button']) ?>
+            <?= $this->Form->button(__('Submit'),['type' => 'button','formnovalidate'=>true]) ?>
            <?= $this->Form->button('Preview', ['type' => 'button', 'onclick' => 'handlePreviewClick(this)'] ) ?>
            <?= $this->Form->end() ?>
         </div>
