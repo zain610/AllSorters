@@ -37,6 +37,11 @@ input, textarea {
     height: 100%!important;
     margin-bottom: 1rem;
 }
+.input, .textarea {
+    font-size: 1.5rem!important;
+    height: 100%!important;
+    margin-bottom: 1rem;
+}
 /*
 This selector converts to class="content table-responsive table-full-width"
 which should be placed on the main div of every view
@@ -50,3 +55,4 @@ body > div > div.main-panel > div > div > div > div {
 .card.card-user {
     height: 100%;
 }
+

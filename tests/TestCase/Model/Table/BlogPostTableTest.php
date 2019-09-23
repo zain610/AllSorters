@@ -26,7 +26,15 @@ class BlogPostTableTest extends TestCase
     public $fixtures = [
         'app.BlogPost',
         'app.Image',
-        'app.BlogPostImage'
+        'app.BlogPostImage',
+        'app.GalleryPage',
+        'app.GalleryPageImage',
+        'app.Service',
+        'app.ServiceImage',
+        'app.Job',
+        'app.Contractor',
+        'app.JobContractor',
+        'app.ServiceJob'
     ];
 
     /**

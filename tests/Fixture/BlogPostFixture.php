@@ -24,15 +24,17 @@ class BlogPostFixture extends TestFixture
      */
     // @codingStandardsIgnoreStart
     public $fields = [
-        'id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
+        'blog_post_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
         'title' => ['type' => 'string', 'length' => 255, 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'Date' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
         'Description' => ['type' => 'string', 'length' => 255, 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'Body' => ['type' => 'string', 'length' => 255, 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'created' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
         'modified' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
+        'Published' => ['type' => 'boolean', 'length' => null, 'null' => true, 'default' => '0', 'comment' => '', 'precision' => null],
+        'Archived' => ['type' => 'boolean', 'length' => null, 'null' => true, 'default' => '0', 'comment' => '', 'precision' => null],
         '_constraints' => [
-            'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
+            'primary' => ['type' => 'primary', 'columns' => ['blog_post_id'], 'length' => []],
         ],
         '_options' => [
             'engine' => 'InnoDB',
@@ -48,13 +50,15 @@ class BlogPostFixture extends TestFixture
      */
     public $records = [
         [
-            'id' => 1,
+            'blog_post_id' => 1,
             'title' => 'Lorem ipsum dolor sit amet',
-            'Date' => '2019-09-16 13:04:41',
+            'Date' => '2019-09-23 06:10:45',
             'Description' => 'Lorem ipsum dolor sit amet',
             'Body' => 'Lorem ipsum dolor sit amet',
-            'created' => '2019-09-16 13:04:41',
-            'modified' => '2019-09-16 13:04:41'
+            'created' => '2019-09-23 06:10:45',
+            'modified' => '2019-09-23 06:10:45',
+            'Published' => 1,
+            'Archived' => 1
         ],
     ];
 }

@@ -34,10 +34,11 @@ class ServiceController extends AppController
      */
     public function view($id = null)
     {
+        $this->layout ='admin';
         $service = $this->Service->get($id, [
             'contain' => ['Image', 'Job']
         ]);
-        $this->layout ='admin';
+
         $this->set('service', $service);
     }
 
@@ -48,8 +49,9 @@ class ServiceController extends AppController
      */
     public function add()
     {
+        $this->layout = 'admin';
         $service = $this->Service->newEntity();
-        $this->layout ='admin';
+
         if ($this->request->is('post')) {
             $service = $this->Service->patchEntity($service, $this->request->getData());
             if ($this->Service->save($service)) {
@@ -73,10 +75,11 @@ class ServiceController extends AppController
      */
     public function edit($id = null)
     {
+        $this->layout ='admin';
         $service = $this->Service->get($id, [
             'contain' => ['Image', 'Job']
         ]);
-        $this->layout ='admin';
+
         if ($this->request->is(['patch', 'post', 'put'])) {
             $service = $this->Service->patchEntity($service, $this->request->getData());
             if ($this->Service->save($service)) {

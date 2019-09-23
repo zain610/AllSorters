@@ -1,145 +1,8 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-    <title>Home</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="EldersCare Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-    <script type="applijewelleryion/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <?= $this->Html->css('bootstrap.css') ?>
-    <?= $this->Html->css('style.css') ?>
-    <?= $this->Html->css('flexslider.css') ?>
-    <?= $this->Html->script('jquery-1.11.1.min.js') ?>
-    <?= $this->Html->script('bootstrap.js') ?>
-    <?= $this->Html->script('move-top.js') ?>
-    <?= $this->Html->script('easing.js') ?>
-
-    <!-- Custom Theme files -->
-
-<!--    <link href="css/style.css" rel='stylesheet' type='text/css' />-->
-<!--    <script src="js/jquery-1.11.1.min.js"></script>-->
-    <!--webfonts-->
-    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <!--//webfonts-->
-<!--    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />-->
-
-    <script type="text/javascript">
-        jQuery(document).ready(function($) {
-            $(".scroll").click(function(event){
-                event.preventDefault();
-                $('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
-            });
-        });
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            /*
-            var defaults = {
-            containerID: 'toTop', // fading element id
-            containerHoverID: 'toTopHover', // fading element hover id
-            scrollSpeed: 1200,
-            easingType: 'linear'
-            };
-            */
-            $().UItoTop({ easingType: 'easeOutQuart' });
-        });
-    </script>
-    <!--light-box-files -->
-    <?= $this->Html->script('modernizr.custom.97074.js') ?>
-    <?= $this->Html->script('jquery.chocolat.js') ?>
-    <?= $this->Html->css('chocolat.css') ?>
-<!--    <script src="js/modernizr.custom.97074.js"></script>-->
-<!--    <script src="js/jquery.chocolat.js"></script>-->
-<!--    <link rel="stylesheet" href="css/chocolat.css" type="text/css" media="screen" charset="utf-8">-->
-
-    <script type="text/javascript" charset="utf-8">
-        $(function() {
-            $('.g-left a').Chocolat();
-        });
-    </script>
-    <!--light-box-files -->
-
-</head>
-<body>
-<!-- header -->
-
-<!-- header-bottom -->
-<div class="header-bottom">
-    <div class="container">
-        <div class="logo">
-            <h1><a href="index.html">Elders Care</a>
-        </div>
-        <nav class="navbar navbar-default" role="navigation">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <!--/.navbar-header-->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><?= $this->Html->link('Home', ['controller' => 'Articles', 'action' => 'home'], ['class' => 'navbar-brand']) ?></li>
-                    <li><?= $this->Html->link('Services', ['controller' => 'Services', 'action' => 'index'], ['class' => 'navbar-brand']) ?></li>
-                    <li><?= $this->Html->link('Blog', ['controller' => 'Blogpost', 'action' => 'view'], ['class' => 'navbar-brand']) ?></li>
-                    <li><?= $this->Html->link('About', ['controller' => 'About', 'action' => 'index'], ['class' => 'navbar-brand']) ?></li>
-                    <li><?= $this->Html->link('Gallery', ['controller' => 'gallery', 'action' => 'index'], ['class' => 'navbar-brand']) ?></li>
-                    <li><?= $this->Html->link('Contact', ['controller' => 'Contact', 'action' => 'index'], ['class' => 'navbar-brand']) ?></li>
-                </ul>
-            </div>
-            <!--/.navbar-collapse-->
-        </nav>
-        <div class="search-box">
-            <div id="sb-search" class="sb-search">
-                <form>
-                    <input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
-                    <input class="sb-search-submit" type="submit" value="">
-                    <span class="sb-icon-search"> </span>
-                </form>
-            </div>
-        </div>
-        <div class="clearfix"> </div>
-
-        <!-- search-scripts -->
-        <?= $this->Html->script('classie.js') ?>
-        <?= $this->Html->script('uisearch.js') ?>
-<!--        <script src="js/classie.js"></script>-->
-<!--        <script src="js/uisearch.js"></script>-->
-        <script>
-            new UISearch( document.getElementById( 'sb-search' ) );
-        </script>
-        <!-- //search-scripts -->
-
-    </div>
-</div>
-<!-- /header-bottom -->
-
-<!-- header -->
-<!-- banner -->
 <div class="banner" id="home">
     <div class="container">
         <section class="slider">
-            <div class="flexslider">
+            <div>
                 <ul class="slides">
-                    <li>
-                        <div class="banner-info">
-                            <h2>GET HELP CARING FOR YOUR LOVED ONE</h2>
-                            <p>Nasagni dolorequaone voluptase keroas emsequi nesas ciuneque pobasera .</p>
-                            <a class="hvr-shutter-in-horizontal" href="#">Learn More</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="banner-info">
-                            <h2>GET HELP CARING FOR YOUR LOVED ONE</h2>
-                            <p>Nasagni dolorequaone voluptase keroas emsequi nesas ciuneque pobasera .</p>
-                            <a class="hvr-shutter-in-horizontal" href="#">Learn More</a>
-                        </div>
-                    </li>
                     <li>
                         <div class="banner-info">
                             <h2>GET HELP CARING FOR YOUR LOVED ONE</h2>
@@ -151,232 +14,74 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
         </section>
 
-        <!-- FlexSlider -->
-        <?= $this->Html->script('jquery.flexslider.js') ?>
-<!--        <script defer="" src="js/jquery.flexslider.js"></script>-->
-        <script type="text/javascript">
-            $(function(){
-
-            });
-            $(window).load(function(){
-                $('.flexslider').flexslider({
-                    animation: "slide",
-                    start: function(slider){
-                        $('body').removeClass('loading');
-                    }
-                });
-            });
-        </script>
-        <!-- FlexSlider -->
-
     </div>
 </div>
-<!-- banner -->
-<!-- offer -->
-<div class="offer">
+<hr>
+<div class="services">
     <div class="container">
-        <div class="col-md-8 offer-left">
-            <h3>We Offer Free Fall Prevention Home Safety.</h3>
-            <p>Many desktop publishing packages and web page editors now use publishing packages and web page publishing packages and web page editors now use Lorem Ipsum as their default model text, and a editors now use Lorem Ipsum as their default model text, and a Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many</p>
-            <p>web page publishing packages and web page editors now use Lorem Ipsum as their default model text, and a editors now use Lorem Ipsum as their default model text, and a Lorem Ipsum as their default model text, and a search.</p>
-            <li><a href="#"><span></span>web page editors now use Lorem Ipsum as their</a></li>
-            <li><a href="#"><span></span>Packages and web page editors now use publishing</a></li>
-            <li><a href="#"><span></span>Lorem Ipsum as their default model text, and a search for 'lorem ipsum'</a></li>
+        <div class="camp">
+            <h3>Services Overview</h3>
+            <?php foreach($services as $service) { ?>
+                <div class="col-lg-2 minist-right">
+                    <img src="https://images.unsplash.com/photo-1503541517233-120571491cf3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80" class="img-responsive" alt="">
+                    <h4><?= $service['Service_Title'] ?></h4>
+                    <span><?= $this->Text->truncate(h($service['Service_Description']), 20, ['ellipsis' => '...',
+                            'exact' => false]) ?></span>
+                    <?= $this->Html->link('More', ['controller' => 'Services', 'action'=> 'displayServices', 'id'=>$service['Service_id']], ['class' => 'hvr-shutter-in-horizontal']) ?>
+
+                </div>
+            <?php }?>
+            <div class="clearfix"> </div>
         </div>
-        <div class="col-md-4 offer-ri">
-            <div class="offer-right">
-                <h4>Find Home Care Near You</h4>
+    </div>
+</div>
+<hr>
+<div class="services container">
+    <h3>Blogs</h3>
+    <div class="list-group pre-scrollable">
+        <?php foreach ($blogs as $blog) { ?>
+            <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h4><?= $blog['title'] ?></h4>
+                    <button class="btn btn-primary"> Read More </button>
+                    <p><?= $blog['Body'] ?></p>
+                    <small>Date Published: <?= $blog['created'] ?></small>
+
+                </div>
+
+
+            </a>
+        <?php } ?>
+    </div>
+</div>
+<hr>
+<div class="about">
+    <div class="container">
+        <div class="col-md-8 about-right">
+            <h4>Contact us for the Appropriate level of Care</h4>
+            <div class="offer offer-right">
+                <img src="images/4.jpg" class="img-responsive" alt="">
                 <form>
                     <input type="text" value="Enter Your email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Your email';}">
                     <input type="submit" value="Subscribe">
                 </form>
             </div>
-            <img src="images/9.jpg" class="img-responsive" alt="">
         </div>
+
+
+        <!--        <div class="col-md-4 about-left">-->
+        <!--            <h4>Elders Care</h4>-->
+        <!--            <ul>-->
+        <!--                <li><a href="#"><span></span> Lorem Ipsum has been </a></li>-->
+        <!--                <li><a href="#"><span></span> unknown printer took a galley </a></li>-->
+        <!--                <li><a href="#"><span></span>containing Lorem Ipsum passages,</a></li>-->
+        <!--                <li><a href="#"><span></span>publishing software like Aldus</a></li>-->
+        <!--                <li><a href="#"><span></span>PageMaker including versions</a></li>-->
+        <!--            </ul>-->
+        <!---->
+        <!--        </div>-->
         <div class="clearfix"></div>
     </div>
 </div>
-<!-- offer -->
-<!-- about -->
-<div class="about">
-    <div class="container">
-        <div class="col-md-8 about-right">
-            <h4>The Appropriate Level Of Care ?</h4>
-            <div class="abt-top">
-                <div class="abt-lft">
-                    <img src="images/4.jpg" class="img-responsive" alt="">
-                </div>
-                <div class="abt-rgt">
-                    <h5>First true generator</h5>
-                    <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text for</p>
-                    <a class="hvr-shutter-in-horizontal" href="#">More</a>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-        <div class="col-md-4 about-left">
-            <h4>Elders Care</h4>
-            <ul>
-                <li><a href="#"><span></span> Lorem Ipsum has been </a></li>
-                <li><a href="#"><span></span> unknown printer took a galley </a></li>
-                <li><a href="#"><span></span>containing Lorem Ipsum passages,</a></li>
-                <li><a href="#"><span></span>publishing software like Aldus</a></li>
-                <li><a href="#"><span></span>PageMaker including versions</a></li>
-            </ul>
 
-        </div>
-        <div class="clearfix"></div>
-    </div>
-</div>
-<!-- about -->
-<!-- gallery -->
-<div class="gallery" id="gallery">
-    <div class="container">
-        <div class="gallery-top heading">
-            <h3>Our Gallery</h3>
-        </div>
-        <div class="gallery-bottom">
-            <div class="grid">
-                <div class="col-md-4 g-left">
-                    <a href="images/7.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
-                        <figure class="effect-apollo">
-                            <img src="images/7.jpg" alt="">
-                            <figcaption>
-                            </figcaption>
-                        </figure>
-                    </a>
-                </div>
-                <div class="col-md-4 g-left">
-                    <a href="images/6.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
-                        <figure class="effect-apollo">
-                            <img src="images/6.jpg" alt="">
-                            <figcaption>
-                            </figcaption>
 
-                        </figure>
-                    </a>
-                </div>
-                <div class="col-md-4 g-left">
-                    <a href="images/5.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
-                        <figure class="effect-apollo">
-                            <img src="images/5.jpg" alt="">
-                            <figcaption>
-
-                            </figcaption>
-                        </figure>
-                    </a>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="grid">
-                <div class="col-md-4 g-left">
-                    <a href="images/4.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
-                        <figure class="effect-apollo">
-                            <img src="images/4.jpg" alt="">
-                            <figcaption>
-
-                            </figcaption>
-                        </figure>
-                    </a>
-                </div>
-                <div class="col-md-4 g-left">
-                    <a href="images/3.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
-                        <figure class="effect-apollo">
-                            <img src="images/3.jpg" alt="">
-                            <figcaption>
-
-                            </figcaption>
-                        </figure>
-                    </a>
-                </div>
-                <div class="col-md-4 g-left">
-                    <a href="images/2.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
-                        <figure class="effect-apollo">
-                            <img src="images/2.jpg" alt="">
-                            <figcaption>
-
-                            </figcaption>
-                        </figure>
-                    </a>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- gallery -->
-<!-- content-mid -->
-<div class="content-mid">
-    <div class="container">
-        <div class="content-mid-top">
-            <h3> Events</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
-
-        </div>
-        <div class="news">
-            <div class="col-md-4 new-more">
-                <div class="six">
-                    <h4>26<span>AUG</span></h4>
-
-                </div>
-                <p>Kasertas lertyasea deeraeser miasera lertasa ritise doloert ferdas caplicabo nerafaes asety u lasec vaserat. nikertyade asetkertyptaiades.</p>
-                <a class="hvr-shutter-in-horizontal" href="#">More</a>
-            </div>
-            <div class="col-md-4 new-more">
-                <div class="six">
-                    <h4>26<span>AUG</span></h4>
-
-                </div>
-                <p>Kasertas lertyasea deeraeser miasera lertasa ritise doloert ferdas caplicabo nerafaes asety u lasec vaserat. nikertyade asetkertyptaiades.</p>
-                <a class="hvr-shutter-in-horizontal" href="#">More</a>
-            </div>
-            <div class="col-md-4 new-more">
-                <div class="six">
-                    <h4>26<span>AUG</span></h4>
-
-                </div>
-                <p>Kasertas lertyasea deeraeser miasera lertasa ritise doloert ferdas caplicabo nerafaes asety u lasec vaserat. nikertyade asetkertyptaiades.</p>
-                <a class="hvr-shutter-in-horizontal" href="#">More</a>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-    </div>
-</div>
-<!-- content-mid -->
-<!-- footer -->
-<div class="footer" id="contact">
-    <div class="container">
-        <div class="col-md-4 contact-left">
-            <h3>Address</h3>
-            <address>
-                795 Folsom Ave, Suite 600<br>
-                San Francisco, CA 94107<br>
-                <abbr title="Phone">P :</abbr> (123) 456-7890
-            </address>
-        </div>
-        <div class="col-md-4 ftr-gd">
-            <h3>Follow Us</h3>
-            <ul class="social">
-                <li><a href="#"><i></i></a> </li>
-                <li><a href="#"><i class="facebook"></i></a></li>
-                <li><a href="#"><i class="goog"></i> </a></li>
-                <li><a href="#"><i class="lin"></i> </a></li>
-            </ul>
-        </div>
-        <div class="col-md-4 contact-left">
-            <h3>Phone/Fax</h3>
-            <p>Phone : 1300797332</p>
-
-<!--            <p>Email : <a href="mailto:info@example.com">info@mycompany.com</a> </p>-->
-        </div>
-        <div class="clearfix"></div>
-        <div class="copyright">
-            <p>Copyright &copy; 2015.Allsorters All rights reserved.<a target="_blank" href="http://h2design.taobao.com/">氢设计</a></p>
-        </div>
-    </div>
-</div>
-
-<!-- footer -->
-<a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 0;"></span> <span id="toTopHover" style="opacity: 0;"> </span></a>
-</body>
-</html>

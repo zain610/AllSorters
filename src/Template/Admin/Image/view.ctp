@@ -9,7 +9,8 @@
     <div class="col-md-3">
         <?php foreach ($image as $img): ?>
         <div class="card">
-            <img src="<?php echo $img->path; ?>"
+<!--            <img src="--><?php //echo $img->path; ?><!--"-->
+            <?php echo $this->Html->image($img->path, ['alt' => 'CakePHP']); ?>
             <div class="card-body">
                 <h4 class="card-title"><?php echo $img->name; ?></h4>
             </div>
