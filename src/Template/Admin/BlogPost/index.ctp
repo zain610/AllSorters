@@ -25,7 +25,7 @@
                     <td class="action-col">
                         <?= $this->element('Admin/Buttons/view', ['url' => ['action' => 'view', $blogPost->blog_post_id]]) ?>
                         <?= $this->element('Admin/Buttons/edit', ['url' => ['action' => 'edit', $blogPost->blog_post_id]]) ?>
-                        <?= $this->element('Admin/Buttons/delete', ['url' => ['action' => 'delete', $blogPost->blog_post_id]]) ?>
+                        <?= $this->element('Admin/Buttons/Archive', ['url' => ['action' => 'archive', $blogPost->blog_post_id], ['confirm' => __('Are you sure you want to archive # {0}?', $blogPost->id)]]) ?>
                     </td>
                 </tr>
             <?php endforeach; ?>
