@@ -4,59 +4,28 @@
  * @var \App\Model\Entity\Service $service
  */
 ?>
-<div class="service view large-9 medium-8 columns content">
-    <h3><?= h($service->Serv_id) ?></h3>
+
+<div class="content table-responsive table-full-width">
+    <h3><?= h($service->Service_id) ?></h3>
     <table class="vertical-table">
         <tr>
-            <th scope="row"><?= __('Serv Title') ?></th>
-            <td><?= h($service->Serv_Title) ?></td>
+            <th scope="row"><?= __('Service Title') ?></th>
+            <td><?= h($service->Service_Title) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Serv Description') ?></th>
-            <td><?= h($service->Serv_Description) ?></td>
+            <th scope="row"><?= __('Service Description') ?></th>
+            <td><?= h($service->Service_Description) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Serv Detail') ?></th>
-            <td><?= h($service->Serv_Detail) ?></td>
+            <th scope="row"><?= __('Service Detail') ?></th>
+            <td><?= h($service->Service_Detail) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Serv Id') ?></th>
-            <td><?= $this->Number->format($service->Serv_id) ?></td>
+            <th scope="row"><?= __('Service Id') ?></th>
+            <td><?= $this->Number->format($service->Service_id) ?></td>
         </tr>
     </table>
-    <div class="related">
-        <h4><?= __('Related Job') ?></h4>
-        <?php if (!empty($service->job)): ?>
-        <table cellpadding="0" cellspacing="0">
-            <tr>
-                <th scope="col"><?= __('Job Id') ?></th>
-                <th scope="col"><?= __('Quote Id') ?></th>
-                <th scope="col"><?= __('Price') ?></th>
-                <th scope="col"><?= __('Commence Date') ?></th>
-                <th scope="col"><?= __('Duration') ?></th>
-                <th scope="col"><?= __('Job Status') ?></th>
-                <th scope="col"><?= __('Client Id') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-            <?php foreach ($service->job as $job): ?>
-            <tr>
-                <td><?= h($job->Job_id) ?></td>
-                <td><?= h($job->Quote_id) ?></td>
-                <td><?= h($job->Price) ?></td>
-                <td><?= h($job->Commence_Date) ?></td>
-                <td><?= h($job->Duration) ?></td>
-                <td><?= h($job->Job_Status) ?></td>
-                <td><?= h($job->client_id) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'Job', 'action' => 'view', $job->Job_id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Job', 'action' => 'edit', $job->Job_id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Job', 'action' => 'delete', $job->Job_id], ['confirm' => __('Are you sure you want to delete # {0}?', $job->Job_id)]) ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </table>
-        <?php endif; ?>
-    </div>
+
     <div class="related">
         <h4><?= __('Related Image') ?></h4>
         <?php if (!empty($service->image)): ?>
@@ -80,6 +49,35 @@
                     <?= $this->Html->link(__('View'), ['controller' => 'Image', 'action' => 'view', $image->Image_id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Image', 'action' => 'edit', $image->Image_id]) ?>
                     <?= $this->Form->postLink(__('Delete'), ['controller' => 'Image', 'action' => 'delete', $image->Image_id], ['confirm' => __('Are you sure you want to delete # {0}?', $image->Image_id)]) ?>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+        <?php endif; ?>
+    </div>
+    <div class="related">
+        <h4><?= __('Related Job') ?></h4>
+        <?php if (!empty($service->job)): ?>
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <th scope="col"><?= __('Job Id') ?></th>
+                <th scope="col"><?= __('Price') ?></th>
+                <th scope="col"><?= __('Commence Date') ?></th>
+                <th scope="col"><?= __('Duration') ?></th>
+                <th scope="col"><?= __('Job Status') ?></th>
+                <th scope="col" class="actions"><?= __('Actions') ?></th>
+            </tr>
+            <?php foreach ($service->job as $job): ?>
+            <tr>
+                <td><?= h($job->Job_id) ?></td>
+                <td><?= h($job->Price) ?></td>
+                <td><?= h($job->Commence_Date) ?></td>
+                <td><?= h($job->Duration) ?></td>
+                <td><?= h($job->Job_Status) ?></td>
+                <td class="actions">
+                    <?= $this->Html->link(__('View'), ['controller' => 'Job', 'action' => 'view', $job->Job_id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['controller' => 'Job', 'action' => 'edit', $job->Job_id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Job', 'action' => 'delete', $job->Job_id], ['confirm' => __('Are you sure you want to delete # {0}?', $job->Job_id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

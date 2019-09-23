@@ -5,7 +5,7 @@
  */
 ?>
 <div class="table table-hover table-striped">
-    <h4><?= __('Review') ?></h4>
+    <h4><?= __('Reviews') ?></h4>
     <table class="table table-hover table-striped" cellpadding="0" cellspacing="0">
         <thead>
             <tr>

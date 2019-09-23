@@ -4,17 +4,16 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Service Entity
+ * ServiceImage Entity
  *
+ * @property int $Service_image_id
+ * @property int $Image_id
  * @property int $Service_id
- * @property string $Service_Title
- * @property string $Service_Description
- * @property string $Service_Detail
  *
- * @property \App\Model\Entity\Image[] $image
- * @property \App\Model\Entity\Job[] $job
+ * @property \App\Model\Entity\Image $image
+ * @property \App\Model\Entity\Service $service
  */
-class Service extends Entity
+class ServiceImage extends Entity
 {
 
     /**
@@ -27,10 +26,9 @@ class Service extends Entity
      * @var array
      */
     protected $_accessible = [
-        'Service_Title' => true,
-        'Service_Description' => true,
-        'Service_Detail' => true,
+        'Image_id' => true,
+        'Service_id' => true,
         'image' => true,
-        'job' => true
+        'service' => true
     ];
 }
