@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use App\Model\Entity\Role;
 
 /**
  * Admin Controller
@@ -129,4 +130,5 @@ class AdminController extends AppController
         $this->Auth->logout();
         return $this->redirect(['controller' => 'Admin', 'action' => 'login']);
     }
+
 }

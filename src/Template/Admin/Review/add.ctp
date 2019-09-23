@@ -41,11 +41,16 @@ $this->Html->script('/TinyMCE/js/tiny_mce/tiny_mce.js', array(
             <div id="previewReviewDetails"></div>
         </div>
         <hr>
-        <div class="text-center">
-            <button href="#" class="btn btn-simple"><i class="fa fa-facebook-square"></i></button>
-            <button href="#" class="btn btn-simple"><i class="fa fa-twitter"></i></button>
-            <button href="#" class="btn btn-simple"><i class="fa fa-google-plus-square"></i></button>
-
-        </div>
     </div>
 </div>
+<script type="text/javascript">
+    handlePreviewClick = () => {
+        //get the data from html forms
+        let clientNameVal = document.getElementById('clientNameInput').value
+        let reviewDetailVal = tinymce.get("reviewInput").getContent()
+
+        //fill in the preview card placeholders
+        document.getElementById('previewClientName').textContent = clientNameVal
+        document.getElementById('previewReviewDetails').innerHTML = reviewDetailVal
+    }
+</script>

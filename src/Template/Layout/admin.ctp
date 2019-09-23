@@ -122,16 +122,6 @@
                 });
             },
         });
-
-        handlePreviewClick = () => {
-            //get the data from html forms
-            let clientNameVal = document.getElementById('clientNameInput').value
-            let reviewDetailVal = tinymce.get("reviewInput").getContent()
-
-            //fill in the preview card placeholders
-            document.getElementById('previewClientName').textContent = clientNameVal
-            document.getElementById('previewReviewDetails').innerHTML = reviewDetailVal
-        }
     })();
 </script>
 
