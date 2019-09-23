@@ -10,7 +10,8 @@
     <fieldset>
         <legend><?= __('Edit Event') ?></legend>
         <?php
-            echo $this->Form->control('date', ['empty' => true]);
+        echo "<br>";
+        echo $this->Form->control('date', ['empty' => true]);
             echo $this->Form->control('description');
             echo $this->Form->control('venue');
         ?>
