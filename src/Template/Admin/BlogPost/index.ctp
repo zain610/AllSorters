@@ -5,16 +5,16 @@
  */
 ?>
 <div class="blogPost index large-9 medium-8 columns content">
+    <div class="title">
+        <?= $this->Html->link('Add a Blog post', ['action' => 'add'], ['class' => 'pull-right btn btn-oval btn-primary']) ?>
+    </div>
+
     <h3><?= __('Blog Post') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('title') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Date') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Description') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Body') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
@@ -22,17 +22,14 @@
         <tbody>
             <?php foreach ($blogPost as $blogPost): ?>
             <tr>
-                <td><?= $this->Number->format($blogPost->id) ?></td>
                 <td><?= h($blogPost->title) ?></td>
                 <td><?= h($blogPost->Date) ?></td>
-                <td><?= h($blogPost->Description) ?></td>
-                <td><?= h($blogPost->Body) ?></td>
-                <td><?= h($blogPost->created) ?></td>
                 <td><?= h($blogPost->modified) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $blogPost->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $blogPost->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $blogPost->id], ['confirm' => __('Are you sure you want to delete # {0}?', $blogPost->id)]) ?>
+                    <?= $this->Form->postLink(__('Archive'), ['action' => 'archive', $blogPost->id], ['confirm' => __('Are you sure you want to archive the blog post # {0}?', $blogPost->id)]) ?>
+                </td>
                 </td>
             </tr>
             <?php endforeach; ?>

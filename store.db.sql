@@ -112,7 +112,7 @@ create table job
     constraint Job_pk_Quote_id
         unique (Quote_id),
     constraint client_id
-        foreign key (client_id) references client (Client_id)
+        foreign key (client_id) references   client (Client_id)
 );
 
 create table job_contractor

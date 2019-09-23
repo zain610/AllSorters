@@ -41,6 +41,11 @@ $isContractorActive = $currentController === "Contractor";
                         ['prefix'=>'admin','controller'=>'BlogPost','action'=>'add'],
                         ['escape'=>false]
                     )?></li>
+                <li><?=$this->Html->link(
+                        '<p>View Blog Post archive</p>',
+                        ['prefix'=>'admin','controller'=>'BlogPost','action'=>'archiveIndex'],
+                        ['escape'=>false]
+                    )?></li>
 
 
             </ul>

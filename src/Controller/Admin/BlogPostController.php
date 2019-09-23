@@ -2,6 +2,7 @@
 namespace App\Controller\Admin;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * BlogPost Controller
@@ -22,12 +23,16 @@ class BlogPostController extends AppController
     public function index()
     {
         $this->layout ='admin';
-
         $this->loadComponent('Paginator');
-        $blogPost = $this->Paginator->paginate(
-            $this->BlogPost->find('all')
-        );
-        $this->set(compact('blogPost'));
+        $blogposts = $this->Paginator->paginate($this->BlogPost->find('all')->where(['BlogPost.Archived' => false])->contain([]));
+        $this->set(compact('blogposts'));
+
+
+//        $this->loadComponent('Paginator');
+//        $blogPost = $this->Paginator->paginate(
+//            $this->BlogPost->find('all')
+//        );
+//        $this->set(compact('blogPost'));
     }
 
     public function initialize()
@@ -75,6 +80,8 @@ class BlogPostController extends AppController
             $blogPost->Date = time();
             if ($this->BlogPost->save($blogPost)) {
                 $this->Flash->success(__('The blog post has been saved.'));
+                $blogPost->Archived = false;
+                $blogPost->Published = true;
 
                 return $this->redirect(['action' => 'index']);
             }
@@ -87,24 +94,6 @@ class BlogPostController extends AppController
 
         $this->render('add');
 
-    }
-
-    public function publish($id = null)
-    {
-        $blogPost = $this->BlogPost->get($id);
-        if ($blogPost == null) {
-            throw new NotFoundException();
-        }
-
-        $blogPost->published = true;
-
-        if ($this->BlogPost->save($blogPost)) {
-            $this->Flash->success(__('Your blog post has been published.'));
-        } else {
-            $this->Flash->error(__('Unable to publish your blog post.'));
-        }
-
-        return $this->redirect(['action' => 'index']);
     }
 
 
@@ -151,6 +140,70 @@ class BlogPostController extends AppController
             $this->Flash->error(__('The blog post could not be deleted. Please, try again.'));
         }
 
+        return $this->redirect(['action' => 'archiveIndex']);
+    }
+
+    public function archive($id = null)
+    {
+        $this->layout ='admin';
+        $blogPost = $this->BlogPost->get($id);
+        if ($blogPost == null) {
+            throw new NotFoundException();
+        }
+
+        // If an BlogPost is archived, it is "unpublished" as well
+        $blogPost->Archived = true;
+        $blogPost->Published = false;
+
+        if ($this->BlogPost->save($blogPost)) {
+            $this->Flash->success(__('Your Blog Post has been archived.'));
+        } else {
+            $this->Flash->error(__('Unable to archive your Blog Post.'));
+        }
+
         return $this->redirect(['action' => 'index']);
     }
+    public function restore($id = null)
+    {
+        $blogPost = $this->BlogPost->get($id);
+        if ($blogPost == null) {
+            throw new NotFoundException();
+        }
+
+        $blogPost->Archived = false;
+
+        if ($this->BlogPost->save($blogPost)) {
+            $this->Flash->success(__('Your article has been restored.'));
+        } else {
+            $this->Flash->error(__('Unable to restore your article.'));
+        }
+
+        return $this->redirect(['action' => 'archiveIndex']);
+    }
+
+    public function publish($id = null)
+    {
+        $blogPost = $this->BlogPost->get($id);
+        if ($blogPost == null) {
+            throw new NotFoundException();
+        }
+
+        $blogPost->BlogPost = true;
+
+        if ($this->BlogPost->save($blogPost)) {
+            $this->Flash->success(__('Your Blog post has been published.'));
+        } else {
+            $this->Flash->error(__('Unable to publish your blog post.'));
+        }
+
+        return $this->redirect(['action' => 'index']);
+    }
+    public function archiveIndex()
+    {
+        $this->layout ='admin';
+        $archivedBlogPosts = TableRegistry::get('BlogPost')->find('all')->where(['BlogPost.Archived' => true])->contain([]);
+        $this->set('archivedBlogPosts', $this->paginate($archivedBlogPosts));
+    }
+
+
 }
