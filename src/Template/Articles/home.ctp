@@ -40,13 +40,17 @@
     <h3>Blogs</h3>
     <div class="list-group pre-scrollable">
         <?php foreach ($blogs as $blog) { ?>
-        <a href="#" class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-                <h4><?= $blog['title'] ?></h4>
-                <small>Date Published: <?= $blog['created'] ?></small>
-            </div>
-            <p><?= $blog['Body'] ?></p>
-        </a>
+            <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h4><?= $blog['title'] ?></h4>
+                    <button class="btn btn-primary"> Read More </button>
+                    <p><?= $blog['Body'] ?></p>
+                    <small>Date Published: <?= $blog['created'] ?></small>
+
+                </div>
+
+
+            </a>
         <?php } ?>
     </div>
 </div>

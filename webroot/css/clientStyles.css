@@ -27,3 +27,9 @@ body > div.about > div > div.col-md-8.about-right > h4 {
 .services .container .h4 {
     color: #333333;
 }
+.hvr-shutter-in-horizontal {
+    display: table;
+}
+div.services.container > div > a > div > button{
+    float: right;
+}
