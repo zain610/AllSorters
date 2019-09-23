@@ -41,6 +41,16 @@
             //fill in the preview card placeholders
             document.getElementById('previewClientName').textContent = clientNameVal
             document.getElementById('previewReviewDetails').innerHTML = reviewDetailVal
+
+            let ServiceTitle = document.getElementById('serviceTitlInput').value
+            let ServiceDetail = tinymce.get("ServiceDetailInput").getContent()
+
+            //fill in the preview card placeholders
+            document.getElementById('previewServiceTitle').textContent = ServiceTitle
+            document.getElementById('previewServiceDetail').innerHTML = ServiceDetail
+
+
+
         }
 
 
@@ -61,6 +71,9 @@
         -->
         <?= $this->element('Admin/navbar'); ?>
 
+
+
+
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -69,36 +82,6 @@
                 </div>
             </div>
         </div>
-
-
-        <footer class="footer">
-            <div class="container-fluid">
-                <nav class="pull-left">
-                    <ul>
-                        <li>
-                            <a href="#">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Company
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Portfolio
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Blog
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </footer>
 
     </div>
 </div>
@@ -118,6 +101,7 @@
             class: 'textarea',
             selector: 'textarea',
             content_css: '../../../css/home.css',
+
 
             // Started with the full list of all plugins from https://www.tinymce.com/docs/demo/full-featured/, and then
             // removed ones which were unneeded for a relatively simplistic blog platform.

@@ -1,5 +1,5 @@
 <?php
-namespace App\Controller\Admin;
+namespace App\Controller\admin;
 
 use App\Controller\AppController;
 
@@ -21,7 +21,7 @@ class ServiceController extends AppController
     public function index()
     {
         $service = $this->paginate($this->Service);
-        $this->layout = "admin";
+        $this->layout ='admin';
         $this->set(compact('service'));
     }
 
@@ -34,10 +34,11 @@ class ServiceController extends AppController
      */
     public function view($id = null)
     {
+        $this->layout ='admin';
         $service = $this->Service->get($id, [
-            'contain' => ['Job', 'Image']
+            'contain' => ['Image', 'Job']
         ]);
-        $this->layout = "admin";
+
         $this->set('service', $service);
     }
 
@@ -48,8 +49,9 @@ class ServiceController extends AppController
      */
     public function add()
     {
+        $this->layout = 'admin';
         $service = $this->Service->newEntity();
-        $this->layout = "admin";
+
         if ($this->request->is('post')) {
             $service = $this->Service->patchEntity($service, $this->request->getData());
             if ($this->Service->save($service)) {
@@ -59,9 +61,9 @@ class ServiceController extends AppController
             }
             $this->Flash->error(__('The service could not be saved. Please, try again.'));
         }
-        $job = $this->Service->Job->find('list', ['limit' => 200]);
         $image = $this->Service->Image->find('list', ['limit' => 200]);
-        $this->set(compact('service', 'job', 'image'));
+        $job = $this->Service->Job->find('list', ['limit' => 200]);
+        $this->set(compact('service', 'image', 'job'));
     }
 
     /**
@@ -73,10 +75,11 @@ class ServiceController extends AppController
      */
     public function edit($id = null)
     {
+        $this->layout ='admin';
         $service = $this->Service->get($id, [
-            'contain' => ['Job', 'Image']
+            'contain' => ['Image', 'Job']
         ]);
-        $this->layout = "admin";
+
         if ($this->request->is(['patch', 'post', 'put'])) {
             $service = $this->Service->patchEntity($service, $this->request->getData());
             if ($this->Service->save($service)) {
@@ -86,9 +89,9 @@ class ServiceController extends AppController
             }
             $this->Flash->error(__('The service could not be saved. Please, try again.'));
         }
-        $job = $this->Service->Job->find('list', ['limit' => 200]);
         $image = $this->Service->Image->find('list', ['limit' => 200]);
-        $this->set(compact('service', 'job', 'image'));
+        $job = $this->Service->Job->find('list', ['limit' => 200]);
+        $this->set(compact('service', 'image', 'job'));
     }
 
     /**
@@ -101,6 +104,7 @@ class ServiceController extends AppController
     public function delete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);
+        $this->layout ='admin';
         $service = $this->Service->get($id);
         if ($this->Service->delete($service)) {
             $this->Flash->success(__('The service has been deleted.'));
