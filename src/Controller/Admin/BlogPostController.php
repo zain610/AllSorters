@@ -23,12 +23,14 @@ class BlogPostController extends AppController
     public function index()
     {
         $this->layout ='admin';
+        //$publishedBlogPosts = TableRegistry::get('BlogPost')->find('all')->where(['BlogPost.Published' => 1])->contain([]);
 
         $this->loadComponent('Paginator');
-        $blogPost = $this->Paginator->paginate(
-            $this->BlogPost->find('all')
+        $publishedBlogPosts = $this->Paginator->paginate(
+            $this->BlogPost->find('all')->where(['BlogPost.Published' => 1])->contain([])
         );
-        $this->set(compact('blogPost'));
+        $this->set(compact('publishedBlogPosts'));
+
     }
 
     public function initialize()
@@ -76,6 +78,8 @@ class BlogPostController extends AppController
             $blogPost->Date = time();
             if ($this->BlogPost->save($blogPost)) {
                 $this->Flash->success(__('The blog post has been saved.'));
+                $blogPost->Published = 1;
+                $blogPost->Archived = 0;
 
                 return $this->redirect(['action' => 'index']);
             }
@@ -196,6 +200,6 @@ class BlogPostController extends AppController
     {
         $this->layout ='admin';
         $archivedBlogPosts = TableRegistry::get('BlogPost')->find('all')->where(['BlogPost.Archived' => 1])->contain([]);
-        $this->set('$archivedBlogPosts', $this->paginate($archivedBlogPosts));
+        $this->set('archivedBlogPosts', $this->paginate($archivedBlogPosts));
     }
 }

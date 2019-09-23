@@ -17,7 +17,7 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($blogPost as $blogPost): ?>
+            <?php foreach ($archivedBlogPosts as $blogPost): ?>
                 <?php if ($blogPost->Archived) { ?>
                     <tr>
                         <td><?= h($blogPost->title) ?></td>
@@ -26,7 +26,9 @@
                         <td class="actions">
                             <?= $this->element('Admin/Buttons/View', ['url' => ['action' => 'view', $blogPost->blog_post_id]]) ?>
                             <?= $this->element('Admin/Buttons/Edit', ['url' => ['action' => 'edit', $blogPost->blog_post_id]]) ?>
-                            <?= $this->element('Admin/Buttons/delete', ['url' => ['action' => 'delete', $blogPost->blog_post_id]]) ?>
+                            <?= $this->element('Admin/Buttons/delete', ['url' => ['action' => 'delete', $blogPost->blog_post_id], ['confirm' => __('Are you sure you want to delete # {0}?', $blogPost->id)]]) ?>
+                            <?= $this->element('Admin/Buttons/restore', ['url' => ['action' => 'restore', $blogPost->blog_post_id], ['confirm' => __('Are you sure you want to restore # {0}?', $blogPost->id)]]) ?>
+
                         </td>
                     </tr>
                 <?php } ?>

@@ -14,7 +14,7 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($blogPost as $blogPost): ?>
+            <?php foreach ($publishedBlogPosts as $blogPost): ?>
                 <tr class="article-row">
                     <td style="width: 40%">
                         <?= $this->Html->link($blogPost->title, ['action' => 'edit', $blogPost->blog_post_id]) ?>
