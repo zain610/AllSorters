@@ -17,6 +17,8 @@ namespace App\Controller;
 use Cake\Controller\Controller;
 use Cake\Event\Event;
 
+
+
 /**
  * Application Controller
  *
@@ -40,8 +42,9 @@ class AppController extends Controller
     public function initialize()
     {
         parent::initialize();
-
-        $this->loadComponent('RequestHandler');
+        $this->loadComponent('RequestHandler', [
+            'enableBeforeRedirect' => false,
+        ]);
         $this->loadComponent('Flash');
 
         /*
@@ -66,8 +69,8 @@ class AppController extends Controller
                 'action'=>'login'
             ],
             'loginRedirect'=>[
-                'controller'=>'Admin',
-                'action'=>'index'
+                'controller'=>'Articles',
+                'action'=>'home'
             ]
         ]);
     }
@@ -80,11 +83,18 @@ class AppController extends Controller
         ){
             $this->set('_serialize',true);
         }
+        $this->set('currentUser', $this->Auth->user());
+
         //login check
         if ($this->request->getSession()->read('Auth.User')){
             $this->set('loggedIn',true);
         } else{
             $this->set('loggedIn',false);
         }
+
+        return parent::beforeFilter($event);
+
+
     }
+
 }
