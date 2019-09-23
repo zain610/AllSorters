@@ -4,7 +4,7 @@ $currentAction = $this->request->getParam('action');
 $isDashboardActive = $currentController === "Admin" && $currentAction === 'index';
 $isBlogsActive = $currentController === "Blogs";
 $isServiceActive = $currentController === "Service";
-$isImagesActive = $currentController === "Images";
+$isImagesActive = $currentController === "Image";
 $isReviewActive = $currentController === "Review";
 $isJobActive = $currentController === "Job";
 $isContractorActive = $currentController === "Contractor";
@@ -59,7 +59,7 @@ $isContractorActive = $currentController === "Contractor";
             <ul class="dropdown-menu" aria-labelledby="imageDropdown">
                 <li><?= $this->Html->link(
                         '<p>View Image</p>',
-                        ['prefix'=>'admin','controller' => 'Image', 'action' => 'view'],
+                        ['prefix'=>'admin','controller' => 'Image', 'action' => 'index'],
                         ['escape' => false]
                     ) ?></li>
                 <li><?= $this->Html->link(

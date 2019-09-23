@@ -4,34 +4,30 @@
  * @var \App\Model\Entity\BlogPost[]|\Cake\Collection\CollectionInterface $blogPost
  */
 ?>
-<div class="blogPost index large-9 medium-8 columns content">
-    <div class="title">
-        <?= $this->Html->link('Add a Blog post', ['action' => 'add'], ['class' => 'pull-right btn btn-oval btn-primary']) ?>
-    </div>
-
+<div class="table table-hover table-striped">
     <h3><?= __('Blog Post') ?></h3>
-    <table cellpadding="0" cellspacing="0">
+    <table class="articles-table table">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('title') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Date') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th><?= $this->Paginator->sort('title') ?></th>
+                <th><?= $this->Paginator->sort('created') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($blogPost as $blogPost): ?>
-            <tr>
-                <td><?= h($blogPost->title) ?></td>
-                <td><?= h($blogPost->Date) ?></td>
-                <td><?= h($blogPost->modified) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $blogPost->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $blogPost->id]) ?>
-                    <?= $this->Form->postLink(__('Archive'), ['action' => 'archive', $blogPost->id], ['confirm' => __('Are you sure you want to archive the blog post # {0}?', $blogPost->id)]) ?>
-                </td>
-                </td>
-            </tr>
+                <tr class="article-row">
+                    <td style="width: 40%">
+                        <?= $this->Html->link($blogPost->title, ['action' => 'edit', $blogPost->blog_post_id]) ?>
+                    </td>
+                    <td>
+                        <?= $blogPost->created->timeAgoInWords() ?>
+                    </td>
+                    <td class="action-col">
+                        <?= $this->element('Admin/Buttons/view', ['url' => ['action' => 'view', $blogPost->blog_post_id]]) ?>
+                        <?= $this->element('Admin/Buttons/edit', ['url' => ['action' => 'edit', $blogPost->blog_post_id]]) ?>
+                        <?= $this->element('Admin/Buttons/delete', ['url' => ['action' => 'delete', $blogPost->blog_post_id]]) ?>
+                    </td>
+                </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
