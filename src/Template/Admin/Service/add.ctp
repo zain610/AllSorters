@@ -16,16 +16,38 @@ $this->Html->script('/TinyMCE/js/tiny_mce/tiny_mce.js', array(
             <fieldset>
                 <legend><?= __('Add Service') ?></legend>
                 <?php
-                echo $this->Form->control('Service_Title');
+                echo $this->Form->control('Service_Title', ['id' =>'serviceTitlInput']);
                 echo $this->Form->control('Service_Description');
-                echo $this->Form->control('Service_Detail');
+                echo $this->Form->control('Service_Detail',['type' => 'textarea', 'id' => 'ServiceDetailInput' ]);
                 echo $this->Form->control('image._ids', ['options' => $image]);
                 echo $this->Form->control('job._ids', ['options' => $job]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit'),['type' => 'button']) ?>
-            <?= $this->Form->end() ?>
+           <?= $this->Form->button('Preview', ['type' => 'button', 'onclick' => 'handlePreviewClick(this)'] ) ?>
+           <?= $this->Form->end() ?>
         </div>
    </div>
 </div>
 
+<div class="col-md-4">
+    <div class="card card-user">
+        <div class="image">
+            <img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400" alt="..."/>
+        </div>
+        <div class="content">
+            <p><b>Service Title</b></p>
+            <div><span id="previewServiceTitle" value=""></span></div>
+            <br>
+            <p><b>Service Details</b></p>
+            <div id="previewServiceDetail"></div>
+        </div>
+        <hr>
+        <div class="text-center">
+            <button href="#" class="btn btn-simple"><i class="fa fa-facebook-square"></i></button>
+            <button href="#" class="btn btn-simple"><i class="fa fa-twitter"></i></button>
+            <button href="#" class="btn btn-simple"><i class="fa fa-google-plus-square"></i></button>
+
+        </div>
+    </div>
+</div>

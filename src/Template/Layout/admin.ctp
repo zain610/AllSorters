@@ -41,6 +41,16 @@
             //fill in the preview card placeholders
             document.getElementById('previewClientName').textContent = clientNameVal
             document.getElementById('previewReviewDetails').innerHTML = reviewDetailVal
+
+            let ServiceTitle = document.getElementById('serviceTitlInput').value
+            let ServiceDetail = tinymce.get("ServiceDetailInput").getContent()
+
+            //fill in the preview card placeholders
+            document.getElementById('previewServiceTitle').textContent = ServiceTitle
+            document.getElementById('previewServiceDetail').innerHTML = ServiceDetail
+
+
+
         }
 
 
