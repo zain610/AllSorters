@@ -17,7 +17,8 @@
         </thead>
         <tbody>
             <?php foreach ($publishedBlogPosts as $blogPost): ?>
-                <tr class="article-row">
+            <?php if ($blogPost->Published) { ?>
+            <tr class="article-row">
                     <td style="width: 40%">
                         <?= $this->Html->link($blogPost->title, ['action' => 'edit', $blogPost->blog_post_id]) ?>
                     </td>
@@ -30,6 +31,7 @@
                         <?= $this->element('Admin/Buttons/Archive', ['url' => ['action' => 'archive', $blogPost->blog_post_id], ['confirm' => __('Are you sure you want to archive # {0}?', $blogPost->id)]]) ?>
                     </td>
                 </tr>
+                <?php } ?>
             <?php endforeach; ?>
         </tbody>
     </table>
