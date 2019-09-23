@@ -20,6 +20,8 @@ use Cake\Error\Middleware\ErrorHandlerMiddleware;
 use Cake\Http\BaseApplication;
 use Cake\Routing\Middleware\AssetMiddleware;
 use Cake\Routing\Middleware\RoutingMiddleware;
+use Cake\ElasticSearch\Plugin as ElasticSearchPlugin;
+
 
 /**
  * Application setup class.
@@ -70,6 +72,7 @@ class Application extends BaseApplication
                 'cacheTime' => Configure::read('Asset.cacheTime')
             ]))
 
+
             // Add routing middleware.
             // Routes collection cache enabled by default, to disable route caching
             // pass null as cacheConfig, example: `new RoutingMiddleware($this)`
@@ -93,5 +96,7 @@ class Application extends BaseApplication
         $this->addPlugin('Migrations');
 
         // Load more plugins here
+//        $this->addPlugin('Cake/ElasticSearch', ['bootstrap' => true]);
+
     }
 }
