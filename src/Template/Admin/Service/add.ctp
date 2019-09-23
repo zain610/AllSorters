@@ -12,11 +12,11 @@
         <?php
             echo $this->Form->control('Serv_Title');
             echo $this->Form->control('Serv_Description');
-            echo $this->Form->control('Serv_Detail');
+            echo $this->Form->control('Serv_Detail', ['type' => 'textarea']);
             echo $this->Form->control('job._ids', ['options' => $job]);
             echo $this->Form->control('image._ids', ['options' => $image]);
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Submit'), ['formnovalidate' => true]) ?>
     <?= $this->Form->end() ?>
 </div>
