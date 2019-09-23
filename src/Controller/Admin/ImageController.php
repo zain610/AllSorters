@@ -78,12 +78,14 @@ class ImageController extends AppController
             }
             if(!empty($this->request->getData()['image']['name'])){
                 if(in_array($myext, $arr_ext)){
-                    $mypath = '/admin/image/upload/'.Security::hash($myname).".".$myext;
+//                    $mypath = '/admin/image/upload/'.Security::hash($myname).".".$myext;
+                    $mypath = '/img/'.Security::hash($myname).".".$myext;
+                    $hashname = Security::hash($myname).".".$myext;
                     $md5_value = md5_file($mytmp);
 //            $image = $this->Image->patchEntity($image, $this->request->getData());
                     $image->Image_Content = $md5_value;
                     $image->name = $myname;
-                    $image->path = $mypath;
+                    $image->path = $hashname;
                     $image->created_at = date('Y-m-d H:i:s');
                     if(move_uploaded_file($mytmp, WWW_ROOT.$mypath)){
                         $this->Image->save($image);

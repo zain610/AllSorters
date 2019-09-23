@@ -53,6 +53,7 @@ class BlogPostController extends AppController
     public function view($id = null)
     {
         $this->layout ='admin';
+//        $blogPost = $this->BlogPost->find($id)->firstOrFail();
         $blogPost = $this->BlogPost->get($id, [
             'contain' => ['Image']
         ]);
