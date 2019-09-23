@@ -23,8 +23,6 @@ class BlogPostController extends AppController
     public function index()
     {
         $this->layout ='admin';
-        //$publishedBlogPosts = TableRegistry::get('BlogPost')->find('all')->where(['BlogPost.Published' => 1])->contain([]);
-
         $this->loadComponent('Paginator');
         $publishedBlogPosts = $this->Paginator->paginate(
             $this->BlogPost->find('all')->where(['BlogPost.Published' => 1])->contain([])
@@ -36,7 +34,7 @@ class BlogPostController extends AppController
     public function initialize()
     {
         parent::initialize();
-        //$this->viewBuilder()->setLayout('admin');
+
         $this->loadModel('BlogPost');
         $this->Auth->allow(['index']);
     }
