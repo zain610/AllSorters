@@ -22,5 +22,8 @@ body > div.about > div > div.col-md-8.about-right > h4 {
     padding-left: 3rem;
 }
 .list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
-    background-color: #333333;
+    background-color: #00b0ff;
+}
+.services .container .h4 {
+    color: #333333;
 }

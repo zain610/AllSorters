@@ -25,10 +25,10 @@ class ArticlesController extends AppController
     public function home()
     {
         $connection = ConnectionManager::get('default');
-        $services = $connection->execute('SELECT * FROM service')->fetchAll('assoc');
+        $services = $connection->execute('SELECT * FROM service LIMIT 5')->fetchAll('assoc');
         $this->set('services', $services);
 
-        $blogs = $connection->execute('Select * from blog_post') ->fetchAll('assoc');
+        $blogs = $connection->execute('Select * from blog_post LIMIT 5') ->fetchAll('assoc');
         $this->set('blogs', $blogs);
 
 

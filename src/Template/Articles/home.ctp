@@ -22,31 +22,32 @@
         <div class="camp">
             <h3>Services Overview</h3>
             <?php foreach($services as $service) { ?>
-                <div class="col-md-3 minist-right">
-                <img src="https://images.unsplash.com/photo-1503541517233-120571491cf3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80" class="img-responsive" alt="">
-                <h4><?= $service['Service_Title'] ?></h4>
-                <span><?= $service['Service_Detail']?></span>
+                <div class="col-lg-2 minist-right">
+                    <img src="https://images.unsplash.com/photo-1503541517233-120571491cf3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80" class="img-responsive" alt="">
+                    <h4><?= $service['Service_Title'] ?></h4>
+                    <span><?= $this->Text->truncate(h($service['Service_Description']), 20, ['ellipsis' => '...',
+                            'exact' => false]) ?></span>
                     <?= $this->Html->link('More', ['controller' => 'Services', 'action'=> 'displayServices', 'id'=>$service['Service_id']], ['class' => 'hvr-shutter-in-horizontal']) ?>
 
-            </div>
+                </div>
             <?php }?>
             <div class="clearfix"> </div>
         </div>
     </div>
 </div>
 <hr>
-<div class="offer">
-    <div class="container">
-        <div class="card col-md-4" style="width: 18rem;">
-            <img src="https://images.unsplash.com/photo-1551985954-a317e5a04547?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80" class="card-img-top img-responsive" alt="...">
-            <div class="card-body">
-                <h4 style="margin-top: 1rem" class="card-title">We Offer Free Fall Prevention Home Safety</h4>
-                <p class="card-text">web page publishing packages and web page editors now use Lorem Ipsum as their default model text, and a editors now use Lorem Ipsum as their default model text</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+<div class="services container">
+    <h3>Blogs</h3>
+    <div class="list-group pre-scrollable">
+        <?php foreach ($blogs as $blog) { ?>
+        <a href="#" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+                <h4><?= $blog['title'] ?></h4>
+                <small>Date Published: <?= $blog['created'] ?></small>
             </div>
-        </div>
-
-        <div class="clearfix"></div>
+            <p><?= $blog['Body'] ?></p>
+        </a>
+        <?php } ?>
     </div>
 </div>
 <hr>
@@ -62,28 +63,19 @@
                 </form>
             </div>
         </div>
-        <div class="list-group col-md-4">
-            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">List group item heading</h5>
-                    <small>3 days ago</small>
-                </div>
-                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                <small>Donec id elit non mi porta.</small>
-            </a>
-        </div>
+
 
         <!--        <div class="col-md-4 about-left">-->
-<!--            <h4>Elders Care</h4>-->
-<!--            <ul>-->
-<!--                <li><a href="#"><span></span> Lorem Ipsum has been </a></li>-->
-<!--                <li><a href="#"><span></span> unknown printer took a galley </a></li>-->
-<!--                <li><a href="#"><span></span>containing Lorem Ipsum passages,</a></li>-->
-<!--                <li><a href="#"><span></span>publishing software like Aldus</a></li>-->
-<!--                <li><a href="#"><span></span>PageMaker including versions</a></li>-->
-<!--            </ul>-->
-<!---->
-<!--        </div>-->
+        <!--            <h4>Elders Care</h4>-->
+        <!--            <ul>-->
+        <!--                <li><a href="#"><span></span> Lorem Ipsum has been </a></li>-->
+        <!--                <li><a href="#"><span></span> unknown printer took a galley </a></li>-->
+        <!--                <li><a href="#"><span></span>containing Lorem Ipsum passages,</a></li>-->
+        <!--                <li><a href="#"><span></span>publishing software like Aldus</a></li>-->
+        <!--                <li><a href="#"><span></span>PageMaker including versions</a></li>-->
+        <!--            </ul>-->
+        <!---->
+        <!--        </div>-->
         <div class="clearfix"></div>
     </div>
 </div>
