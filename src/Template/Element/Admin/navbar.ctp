@@ -21,7 +21,7 @@ $isEventsActive = $currentController === "Events";
         <li class="<?= $isDashboardActive ? 'active' : '' ?> dropdown">
             <?= $this->Html->link(
                 '<p>Dashboard</p>',
-                '/admin',
+                ['controller' => 'Admin', 'action' => 'index'],
                 ['escape' => false]
             ) ?>
         </li>
