@@ -4,39 +4,16 @@
  * @var \App\Model\Entity\BlogPost $blogPost
  */
 ?>
+<div class="content table-responsive table-full-width">
+    <div class="row">
+        <div class="leftcolumn">
+            <h3>Title: <?= h($blogPost->title) ?></h3>
+            <h4>Description: <?= h($blogPost->Description) ?></h4>
 
-<div class="blogPost view large-9 medium-8 columns content">
-    <h3><?= h($blogPost->title) ?></h3>
-    <table class="vertical-table">
-        <tr>
-            <th scope="row"><?= __('Title') ?></th>
-            <td><?= h($blogPost->title) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Description') ?></th>
-            <td><?= h($blogPost->Description) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Body') ?></th>
-            <td><?= h($blogPost->Body) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($blogPost->id) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Date') ?></th>
-            <td><?= h($blogPost->Date) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Created') ?></th>
-            <td><?= h($blogPost->created) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Modified') ?></th>
-            <td><?= h($blogPost->modified) ?></td>
-        </tr>
-    </table>
+            <p>Date: <?= h($blogPost->Date) ?></p>
+            <p>Modified: <?= h($blogPost->modified) ?></p>
+            <p><br>Details: <?= h($blogPost->Body) ?></br></p>
+
     <div class="related">
         <h4><?= __('Related Image') ?></h4>
         <?php if (!empty($blogPost->image)): ?>

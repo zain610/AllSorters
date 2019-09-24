@@ -23,6 +23,7 @@ $this->Html->script('/TinyMCE/js/tiny_mce/tiny_mce.js', array(
                 echo $this->Form->control('job._ids', ['options' => $job]);
                 ?>
             </fieldset>
+
            <?= $this->Form->button(__('Submit'), ['formnovalidate' => true]) ?>
 
            <?= $this->Form->end() ?>
