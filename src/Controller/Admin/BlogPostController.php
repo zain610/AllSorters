@@ -74,10 +74,10 @@ class BlogPostController extends AppController
         if ($this->request->is('post')) {
             $blogPost = $this->BlogPost->patchEntity($blogPost, $this->request->getData());
             $blogPost->Date = time();
+            $blogPost->Published = 1;
+            $blogPost->Archived = 0;
             if ($this->BlogPost->save($blogPost)) {
                 $this->Flash->success(__('The blog post has been saved.'));
-                $blogPost->Published = 1;
-                $blogPost->Archived = 0;
 
                 return $this->redirect(['action' => 'index']);
             }
