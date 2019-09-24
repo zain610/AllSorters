@@ -30,7 +30,7 @@ label {
     font-size: 1.2rem!important;
 }
 select {
-margin: 0 0.5rem;
+    margin: 0 0.5rem;
 }
 input, textarea {
     font-size: 1.5rem!important;
@@ -55,4 +55,18 @@ body > div > div.main-panel > div > div > div > div {
 .card.card-user {
     height: 100%;
 }
+#searchBarNavBar {
+    display: inline-flex;
+}
+#searchBarNavBar > form > input
+{
+    width: 55rem;
+    margin: 0 1rem;
+}
+#search-show, #searchBarNavBar > form > input  {
+    margin: 0 1rem;
+}
+
+
+
 

@@ -11,14 +11,10 @@ $this->assign('heading', "Search Results");
 $this->assign('heading-class', "page-heading compact-page-heading");
 $this->assign('subheading', "Showing blogs that match \"{$query}\"");
 ?>
-<div class="large-search-wrapper">
-    <div class="row input-group mb-3" style="">
-        <div class="input-group-prepend">
-            <button id="button-addon2" type="submit" class="btn btn-link text-warning"><i class="fa fa-search"></i></button>
-        </div>
-        <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
-    </div>
+<div id="searchBarNavBar">
+    <?= $this->element("Admin/Buttons/search"); ?>
 </div>
+
 
 
 
