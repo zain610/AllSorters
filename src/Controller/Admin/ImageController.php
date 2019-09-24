@@ -47,7 +47,8 @@ class ImageController extends AppController
      */
     public function index()
     {
-        $this->layout ='admin';
+        $this->viewBuilder()->setLayout('admin');
+
 
         $this->loadComponent('Paginator');
         $image = $this->Paginator->paginate(
