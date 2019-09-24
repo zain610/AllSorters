@@ -59,13 +59,13 @@ $isEventsActive = $currentController === "Events";
             ) ?>
             <ul class="dropdown-menu" aria-labelledby="imageDropdown">
                 <li><?= $this->Html->link(
-                        '<p>View Image</p>',
+                        '<p>View Images</p>',
                         '/admin/image/',
                         ['prefix'=>'admin','controller' => 'image', 'action' => 'index'],
                         ['escape' => false]
                     ) ?></li>
                 <li><?= $this->Html->link(
-                        '<p>Add Image</p>',
+                        '<p>Add Images</p>',
                         '/admin/image/upload/',
 						//['prefix'=>'admin','controller' => 'Image', 'action' => 'upload'],
                         ['prefix'=>'admin','controller' => 'image', 'action' => 'upload'],
