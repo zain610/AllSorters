@@ -12,15 +12,10 @@
 
 <div class="row">
     <div class="leftcolumn">
+        <h3>Title: <?= h($service->Service_Title) ?></h3>
 
-            <h3><?= h($service->Service_Title) ?></h3>
-            <h5><?= h($service->Service_Description) ?></h5>
-            <p><?= h($service->Service_Detail) ?></p>
-
-
-
-
-
+            <h5>Description: <?= h($service->Service_Description) ?></h5>
+            <p>Details: <?= h($service->Service_Detail) ?></p>
             <h4><?= __('Related Image') ?></h4>
             <?php if (!empty($service->image)): ?>
                 <table cellpadding="0" cellspacing="0">
@@ -78,6 +73,7 @@
                     <?php endforeach; ?>
                 </table>
             <?php endif; ?>
+
 
 </div>
 </div>
