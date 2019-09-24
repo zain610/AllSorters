@@ -38,13 +38,13 @@ class ServiceTable extends Table
         $this->setPrimaryKey('Service_id');
 
         $this->belongsToMany('Image', [
-            'foreignKey' => 'service_id',
-            'targetForeignKey' => 'image_id',
+            'foreignKey' => 'Service_id',
+            'targetForeignKey' => 'Image_id',
             'joinTable' => 'service_image'
         ]);
         $this->belongsToMany('Job', [
-            'foreignKey' => 'service_id',
-            'targetForeignKey' => 'job_id',
+            'foreignKey' => 'Service_id',
+            'targetForeignKey' => 'Job_id',
             'joinTable' => 'service_job'
         ]);
     }

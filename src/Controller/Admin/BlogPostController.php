@@ -34,7 +34,6 @@ class BlogPostController extends AppController
     public function initialize()
     {
         parent::initialize();
-
         $this->loadModel('BlogPost');
         $this->Auth->allow(['index']);
     }
@@ -159,6 +158,15 @@ class BlogPostController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+// delete image function in view page
+// cannot work need to fix
+//    public function deleteImage($id = null){
+//        $this->request->allowMethod(['post', 'delete']);
+//        $blogPost = $this->BlogPost->get($id);
+//        $image = $this->BlogPost->Image->get($id);
+//        $this->BlogPost->Image->unlink($blogPost, $image);
+//    }
+
     public function archive($id = null)
     {
         $blogPost = $this->BlogPost->get($id);

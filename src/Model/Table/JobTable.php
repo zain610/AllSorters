@@ -44,7 +44,7 @@ class JobTable extends Table
         ]);
         $this->belongsToMany('Service', [
             'foreignKey' => 'job_id',
-            'targetForeignKey' => 'service_id',
+            'targetForeignKey' => 'Service_id',
             'joinTable' => 'service_job'
         ]);
     }
