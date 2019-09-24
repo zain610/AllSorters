@@ -21,7 +21,7 @@ $isEventsActive = $currentController === "Events";
         <li class="<?= $isDashboardActive ? 'active' : '' ?> dropdown">
             <?= $this->Html->link(
                 '<p>Dashboard</p>',
-                '/admin',
+                ['prefix' => false, 'controller' => 'Admin', 'action' => 'index'],
                 ['escape' => false]
             ) ?>
         </li>
@@ -60,13 +60,21 @@ $isEventsActive = $currentController === "Events";
             <ul class="dropdown-menu" aria-labelledby="imageDropdown">
                 <li><?= $this->Html->link(
                         '<p>View Image</p>',
+<<<<<<< HEAD
                         '/admin/image/',
+=======
+                        ['prefix'=>'admin','controller' => 'image', 'action' => 'index'],
+>>>>>>> af617d36e63fbeb47de01ba14612ec4bd22a7f78
                         ['escape' => false]
                     ) ?></li>
                 <li><?= $this->Html->link(
                         '<p>Add Image</p>',
+<<<<<<< HEAD
                         '/admin/image/upload/',
 						//['prefix'=>'admin','controller' => 'Image', 'action' => 'upload'],
+=======
+                        ['prefix'=>'admin','controller' => 'image', 'action' => 'upload'],
+>>>>>>> af617d36e63fbeb47de01ba14612ec4bd22a7f78
                         ['escape' => false]
                     ) ?></li>
 
