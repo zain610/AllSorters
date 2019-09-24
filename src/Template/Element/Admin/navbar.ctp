@@ -157,7 +157,7 @@ $isEventsActive = $currentController === "Events";
             <?= $this->Html->link(
                 '<p>Speaking engagements</p>',
                 '#',
-                ['escape' => false, 'onclick' => 'handleMenuToggle(this)', 'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true',]
+                ['escape' => false, 'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true',]
             ) ?>
             <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
                 <li><?=$this->Html->link(

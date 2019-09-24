@@ -78,6 +78,13 @@ table td.action-col a {
     margin: .5rem;
 }
 
+div.sidebar-wrapper {
+    margin: 0 0 30px 0;
+    height: 120%;
 
+}
+.sidebar .sidebar-wrapper {
+    overflow-y: auto;
+}
 
 
