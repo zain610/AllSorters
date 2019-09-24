@@ -15,6 +15,9 @@ table tr th, table tr td {
 ul.dropdown-menu > li > a {
     color: #333333!important;
 }
+ul.dropdown-menu {
+    left: 1%;
+}
 
 body > div > div.main-panel > div > div > div > div > div > ul > li {
     line-height: 4rem;
@@ -79,8 +82,8 @@ table td.action-col a {
 }
 
 div.sidebar-wrapper {
-    margin: 0 0 30px 0;
-    height: 120%;
+    /*margin: 0 0 30px 0;*/
+    height: 100%;
 
 }
 .sidebar .sidebar-wrapper {
