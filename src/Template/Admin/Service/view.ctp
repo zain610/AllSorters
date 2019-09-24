@@ -16,6 +16,7 @@
 
             <h5>Description: <?= h($service->Service_Description) ?></h5>
             <p>Details: <?= h($service->Service_Detail) ?></p>
+
             <h4><?= __('Related Image') ?></h4>
             <?php if (!empty($service->image)): ?>
                 <table cellpadding="0" cellspacing="0">
