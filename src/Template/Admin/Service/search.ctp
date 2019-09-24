@@ -23,22 +23,21 @@ $currentController = $this->request->getParam('controller');
 </div>
 
 <?php
-foreach($blogs as $blog) { ?>
+foreach($services as $service) { ?>
     <div class="container">
-        <a href="<?= $this->Url->build(['controller' => 'BlogPost', 'action' => 'view', $blog->blog_post_id]) ?>">
+        <a href="<?= $this->Url->build(['controller' => 'Service', 'action' => 'view', $service->Service_id]) ?>">
             <h2 class="post-title">
-                <?= h($blog->title) ?>
+                <?= h($service->Service_Title) ?>
             </h2>
-            <?php if ($blog->Description): ?>
+            <?php if ($service->Service_Description): ?>
                 <h3 class="post-subtitle">
-                    <?= h($blog->Description) ?>
+                    <?= h($service->Service_Description) ?>
                 </h3>
             <?php endif ?>
         </a>
         <p>
-            <?= $this->Text->truncate(strip_tags($blog->body), 250, ['exact' => false]) ?>
+            <?= $this->Text->truncate(strip_tags($service->Service_Detail), 250, ['exact' => false]) ?>
         </p>
-        <p class="post-meta">Posted <?= h($blog->created->timeAgoInWords()) ?></p>
     </div>
     <hr>
     <?php

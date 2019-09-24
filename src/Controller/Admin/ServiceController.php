@@ -114,4 +114,42 @@ class ServiceController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+    public function simpleSearch()
+    {
+        // The URL for this simple search is "/articles/simple-search?query=...". We are interested in the "?query=..."
+        // part which is the search text entered by the user.
+        $queryTerms = $this->getRequest()->getQuery('query');
+
+        // The only thing we need to do to these search terms is to turn them into a wildcard to work correctly with
+        // the LIKE clause. Otherwise, it will only search for articles where the title or body is EXACTLY what the
+        // user searched, rather than matching articles where the title or body CONTAINS the search terms.
+        $queryTermsWithWildCard = '%' . $queryTerms . '%';
+
+        // Note that we are happy for either the title or the body to match.
+        // If we were to have used: where(['title LIKE' => ..., 'body LIKE' => ...]) without using another array and
+        // the OR keyword, then the default query would ask for articles where BOTH the title AND the body match the
+        // search terms, which is typically not what the user expects when performing a search.
+        $services = $this->Service->find()->where([
+            'OR' => [
+                'Service_Title LIKE' => $queryTermsWithWildCard,
+                'Service_Description LIKE' => $queryTermsWithWildCard,
+                'Service_Detail LIKE' => $queryTermsWithWildCard
+            ]
+        ]);
+
+        // In a large CMS, this search is likely to return a large number of articles, so the results should be
+        // paginated.
+        $this->loadComponent('Paginator');
+        $paginatedServices = $this->Paginator->paginate($services);
+        $this->set('services', $paginatedServices);
+
+
+        // Pass the query the user asked for to the view, so we can say something like "Results for 'Blah'..." to
+        // confirm that we did indeed search what they asked us to. It also means that we can populate the search
+        // text input with the string, so the user can perform the search again.
+        $this->set('query', $queryTerms);
+
+        $this->viewBuilder()->setLayout('admin');
+        $this->viewBuilder()->setTemplate('search');
+    }
 }

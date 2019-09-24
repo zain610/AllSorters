@@ -4,6 +4,10 @@
  * @var \App\Model\Entity\Service[]|\Cake\Collection\CollectionInterface $service
  */
 ?>
+<div id="searchBarNavBar">
+    <?= $this->element('Admin/Buttons/search'); ?>
+    <?= $this->Html->link('Add Service', ['action' => 'add'], ['class' => 'pull-right btn btn-oval btn-primary']) ?>
+</div>
 
 <div class="table table-hover table-striped">
     <h4><?= __('Services') ?></h4>

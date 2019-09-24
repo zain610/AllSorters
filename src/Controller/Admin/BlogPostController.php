@@ -233,16 +233,6 @@ class BlogPostController extends AppController
         $paginatedBlogs = $this->Paginator->paginate($blogs);
         $this->set('blogs', $paginatedBlogs);
 
-//        // Even though this simple search doesn't support searching by tags, the 'search' view which is used to
-//        // show these results to the user WILL support searching by tags. As such, it will also expect there to
-//        // be a $selectedTagId variable available, so lets pass in a dummy value of zero.
-//        $this->set('selectedTagId', 0);
-//
-//        // As above, although we don't support searching by tags in this simple search, the page which displays results
-//        // to the user will. As such, we will pass a list of tags to the view so that we can show a drop down list of
-//        // available tags for the user to select.
-//        $tagList = $this->BlogPost->Tags->find('list');
-//        $this->set('tagList', $tagList);
 
         // Pass the query the user asked for to the view, so we can say something like "Results for 'Blah'..." to
         // confirm that we did indeed search what they asked us to. It also means that we can populate the search

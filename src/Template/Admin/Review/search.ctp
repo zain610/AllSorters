@@ -10,40 +10,33 @@
 $this->assign('heading', "Search Results");
 $this->assign('heading-class', "page-heading compact-page-heading");
 $this->assign('subheading', "Showing blogs that match \"{$query}\"");
-$currentController = $this->request->getParam('controller');
-
 ?>
 <div id="searchBarNavBar">
     <?= $this->element("Admin/Buttons/search"); ?>
 </div>
 
-
-
-
 </div>
 
 <?php
-foreach($blogs as $blog) { ?>
+foreach($reviews as $review) { ?>
     <div class="container">
-        <a href="<?= $this->Url->build(['controller' => 'BlogPost', 'action' => 'view', $blog->blog_post_id]) ?>">
+        <a href="<?= $this->Url->build(['controller' => 'Review', 'action' => 'view', $review->Review_id]) ?>">
             <h2 class="post-title">
-                <?= h($blog->title) ?>
+                Client Name: <?= h($review->Client_Name) ?>
             </h2>
-            <?php if ($blog->Description): ?>
-                <h3 class="post-subtitle">
-                    <?= h($blog->Description) ?>
-                </h3>
+            <?php if ($review->Suburb): ?>
+                <h4 class="post-subtitle">
+                    <?= $this->Text->truncate(strip_tags($review->Review_Details), 250, ['exact' => false]) ?>
+                </h4>
             <?php endif ?>
         </a>
         <p>
-            <?= $this->Text->truncate(strip_tags($blog->body), 250, ['exact' => false]) ?>
+        <p>Posted on <?= h($review->Month_Year) ?></p>
         </p>
-        <p class="post-meta">Posted <?= h($blog->created->timeAgoInWords()) ?></p>
     </div>
     <hr>
     <?php
 
-//    echo $this->element('article-snippet', ['blog' => $blog]);
 } ?>
 
 <!-- Pager -->
