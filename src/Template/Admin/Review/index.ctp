@@ -31,7 +31,7 @@
                 <td class="action-col" style="display: contents">
                     <?= $this->element('Admin/Buttons/view', ['url' => ['action' => 'view', $review->Review_id]]) ?>
                     <?= $this->element('Admin/Buttons/edit', ['url' => ['action' => 'edit', $review->Review_id]]) ?>
-                    <?= $this->element('Admin/Buttons/Archive', ['url' => ['action' => 'archive', $review->Review_id], ['confirm' => __('Are you sure you want to archive # {0}?', $review->Review_id)]]) ?>
+                    <?= $this->element('Admin/Buttons/delete', ['url' => ['action' => 'delete', $review->Review_id], ['confirm' => __('Are you sure you want to archive # {0}?', $review->Review_id)]]) ?>
                 </td>
             </tr>
         <?php endforeach; ?>
