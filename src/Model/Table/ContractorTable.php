@@ -37,8 +37,8 @@ class ContractorTable extends Table
         $this->setPrimaryKey('Contractor_id');
 
         $this->belongsToMany('Job', [
-            'foreignKey' => 'contractor_id',
-            'targetForeignKey' => 'job_id',
+            'foreignKey' => 'Contractor_id',
+            'targetForeignKey' => 'Job_id',
             'joinTable' => 'job_contractor'
         ]);
     }

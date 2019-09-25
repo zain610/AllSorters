@@ -38,12 +38,12 @@ class JobTable extends Table
         $this->setPrimaryKey('Job_id');
 
         $this->belongsToMany('Contractor', [
-            'foreignKey' => 'job_id',
-            'targetForeignKey' => 'contractor_id',
+            'foreignKey' => 'Job_id',
+            'targetForeignKey' => 'Contractor_id',
             'joinTable' => 'job_contractor'
         ]);
         $this->belongsToMany('Service', [
-            'foreignKey' => 'job_id',
+            'foreignKey' => 'Job_id',
             'targetForeignKey' => 'Service_id',
             'joinTable' => 'service_job'
         ]);

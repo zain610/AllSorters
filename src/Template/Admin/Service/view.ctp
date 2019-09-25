@@ -19,15 +19,7 @@
 
             <h4><?= __('Related Image') ?></h4>
             <?php if (!empty($service->image)): ?>
-                <table cellpadding="0" cellspacing="0">
-                    <tr>
-                        <th scope="col"><?= __('Image Id') ?></th>
-                        <th scope="col"><?= __('Image Content') ?></th>
-                        <th scope="col"><?= __('Name') ?></th>
-                        <th scope="col"><?= __('Path') ?></th>
-                        <th scope="col"><?= __('Created At') ?></th>
-                        <th scope="col" class="actions"><?= __('Actions') ?></th>
-                    </tr>
+
                     <table cellpadding="0" cellspacing="0">
                         <tbody>
                         <?php foreach ($service->image as $image): ?>
@@ -41,7 +33,7 @@
                             </tr>
                         <?php endforeach; ?>
                         </tbody>
-                    </table>
+
                 </table>
             <?php endif; ?>
 
