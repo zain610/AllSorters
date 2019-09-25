@@ -21,7 +21,7 @@ $this->Html->script('/TinyMCE/js/tiny_mce/tiny_mce.js', array(
                 ?>
 
             </fieldset>
-
+            <?= $this->Html->link(__('Back'), $this->request->referer(), ['class' => 'btn btn-oval btn-primary','style'=>'float:left']) ?>
             <?= $this->Form->button(__('Submit'), ['formnovalidate' => true]) ?>
             <?= $this->Form->button('Preview', ['type' => 'button', 'onclick' => 'handlePreviewClick(this)'] ) ?>
             <?= $this->Form->end() ?>

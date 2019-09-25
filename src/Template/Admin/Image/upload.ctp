@@ -16,7 +16,7 @@
                 <?php
                 echo $this->Form->button('Upload');
                 echo $this->Form->end(); ?>
-
+                <?= $this->Html->link(__('Back'), $this->request->referer(), ['class' => 'btn btn-oval btn-primary','style'=>'float:left']) ?>
             </div>
         </div>
     </div>
