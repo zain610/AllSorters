@@ -1,3 +1,9 @@
+/**
+Built for AllSorters Admin Side By Team106
+Please write all the admin side CSS here so it is easier to track and modify
+HTML components on top of the loaded 3rd Party style libraries.
+ */
+
 .row {
     max-width: 100rem!important;
 }
@@ -61,6 +67,7 @@ body > div > div.main-panel > div > div > div > div {
 }
 #searchBarNavBar {
     display: inline-flex;
+    margin: 0 0 3rem 2rem;
 }
 #searchBarNavBar > form > input
 {
@@ -69,6 +76,7 @@ body > div > div.main-panel > div > div > div > div {
 }
 #search-show, #searchBarNavBar > form > input  {
     margin: 0 1rem;
+    float: left;
 }
 table.articles-table {
     height: 100%;
