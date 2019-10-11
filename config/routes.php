@@ -57,6 +57,8 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/admin/view/*', ['prefix' => false, 'controller' => 'Admin', 'action' => 'view']);
     $routes->connect('/admin/add/*', ['prefix' => false, 'controller' => 'Admin', 'action' => 'add']);
     $routes->connect('/admin/delete/*', ['prefix' => false, 'controller' => 'Admin', 'action' => 'delete']);
+    $routes->connect('/webroot/*', ['prefix' => false, 'controller' => 'Admin', 'action' => 'index']);
+    $routes->connect('/webroot/admin/image/*', ['prefix' => false, 'controller' => 'Admin', 'action' => 'index']);
     Router::prefix('admin', function($routes) {
         //All Routes here will be prefixed with /admin
         // So all CMS and Dashboard and routes will be placed here
@@ -96,4 +98,4 @@ Router::scope('/', function (RouteBuilder $routes) {
  * Load all plugin routes. See the Plugin documentation on
  * how to customize the loading of plugin routes.
  */
-Plugin::routes();
+

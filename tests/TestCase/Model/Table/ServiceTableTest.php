@@ -25,14 +25,14 @@ class ServiceTableTest extends TestCase
      */
     public $fixtures = [
         'app.Service',
-        'app.Job',
-        'app.JobService',
         'app.Image',
         'app.BlogPost',
         'app.BlogPostImage',
         'app.GalleryPage',
         'app.GalleryPageImage',
-        'app.ServiceImage'
+        'app.ServiceImage',
+        'app.Job',
+        'app.ServiceJob'
     ];
 
     /**

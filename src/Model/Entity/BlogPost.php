@@ -6,13 +6,15 @@ use Cake\ORM\Entity;
 /**
  * BlogPost Entity
  *
- * @property int $id
+ * @property int $blog_post_id
  * @property string $title
  * @property \Cake\I18n\FrozenTime $Date
  * @property string $Description
  * @property string $Body
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
+ * @property bool $Published
+ * @property bool $Archived
  *
  * @property \App\Model\Entity\Image[] $image
  */
@@ -35,6 +37,8 @@ class BlogPost extends Entity
         'Body' => true,
         'created' => true,
         'modified' => true,
+        'Published' => true,
+        'Archived' => true,
         'image' => true
     ];
 }

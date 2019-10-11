@@ -26,6 +26,13 @@
     </ul>
 </section>
 
-    <?= $this->fetch('content') ?>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10 col-md-10 mx-auto">
+            <?= $this->fetch('content') ?>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>

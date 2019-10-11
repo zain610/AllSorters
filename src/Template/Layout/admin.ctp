@@ -19,34 +19,6 @@
     <?= $this->Html->css('light-bootstrap-dashboard.css') ?>
     <?= $this->Html->css('pe-icon-7-stroke.css') ?>
     <?= $this->Html->css('styles.css') ?>
-
-
-    <script type="text/javascript">
-
-        const handleMenuToggle = (object) => {
-            let parentElementClass = object.parentNode.classList
-            if(parentElementClass.contains("open")) {
-                //remove "open" to the classList to close the dropdown
-                parentElementClass.remove("open")
-            } else {
-                //add "open" to the classList to open the dropdown
-                parentElementClass.add("open")
-            }
-        }
-        const handlePreviewClick = (event) => {
-            console.log("Clicked Preview Button", event.form)
-            let clientNameVal = document.getElementById('clientNameInput').value
-            let reviewDetailVal = document.getElementById('reviewInput').value
-            console.log(clientNameVal, reviewDetailVal)
-            //fill in the preview card placeholders
-            document.getElementById('previewClientName').textContent = clientNameVal
-            document.getElementById('previewReviewDetails').textContent = reviewDetailVal
-        }
-
-
-    </script>
-
-
 </head>
 <body>
 <!--?php: $this->fetch('title', 'Foundation System Build')-->
@@ -61,6 +33,9 @@
         -->
         <?= $this->element('Admin/navbar'); ?>
 
+
+
+
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -70,54 +45,25 @@
             </div>
         </div>
 
-
-        <footer class="footer">
-            <div class="container-fluid">
-                <nav class="pull-left">
-                    <ul>
-                        <li>
-                            <a href="#">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Company
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Portfolio
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Blog
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </footer>
-
     </div>
 </div>
 </body>
 <!--   Core JS Files   -->
-
-<?= $this->Html->js('jquery-1.10.2.js') ?>
-<?= $this->Html->js('bootstrap.min.js') ?>
-<?= $this->Html->js('bootstrap-checkbox-radio-switch.js') ?>
-<?= $this->Html->js('chartlist.min.js') ?>
-<?= $this->Html->js('bootstrap-notify.js') ?>
-<?= $this->Html->js('light-bootstrap-dashboard.js') ?>
-<?= $this->Html->js('tinymce/tinymce.min.js') ?>
+<?= $this->Html->script([
+    'jquery-3.4.1.min.js',
+    'bootstrap.min.js',
+    'bootstrap-checkbox-radio-switch.js',
+    'bootstrap-notify.js',
+    'light-bootstrap-dashboard.js',
+    'tinymce/tinymce.min.js'
+    ]) ?>
 <script>
     (function() {
         tinymce.init({
             class: 'textarea',
             selector: 'textarea',
             content_css: '../../../css/home.css',
+
 
             // Started with the full list of all plugins from https://www.tinymce.com/docs/demo/full-featured/, and then
             // removed ones which were unneeded for a relatively simplistic blog platform.
@@ -149,8 +95,6 @@
                 });
             },
         });
-
-        $('select').chosen({width: '50%'});
     })();
 </script>
 

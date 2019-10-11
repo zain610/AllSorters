@@ -6,13 +6,13 @@ use Cake\ORM\Entity;
 /**
  * Service Entity
  *
- * @property int $Serv_id
- * @property string $Serv_Title
- * @property string $Serv_Description
- * @property string $Serv_Detail
+ * @property int $Service_id
+ * @property string $Service_Title
+ * @property string $Service_Description
+ * @property string $Service_Detail
  *
- * @property \App\Model\Entity\Job[] $job
  * @property \App\Model\Entity\Image[] $image
+ * @property \App\Model\Entity\Job[] $job
  */
 class Service extends Entity
 {
@@ -27,10 +27,10 @@ class Service extends Entity
      * @var array
      */
     protected $_accessible = [
-        'Serv_Title' => true,
-        'Serv_Description' => true,
-        'Serv_Detail' => true,
-        'job' => true,
-        'image' => true
+        'Service_Title' => true,
+        'Service_Description' => true,
+        'Service_Detail' => true,
+        'image' => true,
+        'job' => true
     ];
 }

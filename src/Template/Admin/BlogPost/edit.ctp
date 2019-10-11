@@ -5,7 +5,7 @@
  */
 ?>
 
-<div class="blogPost form large-9 medium-8 columns content">
+<div class="card">
     <?= $this->Form->create($blogPost) ?>
     <fieldset>
         <legend><?= __('Edit Blog Post') ?></legend>
@@ -17,6 +17,13 @@
             //echo $this->Form->control('image._ids', ['options' => $image]);
         ?>
     </fieldset>
+    <fieldset>
+        <?php
+        echo $this->Form->select('image._ids',
+            $image,
+            ['empty'=>'(choose one)', 'multiple' => true,]
+        );
+        ?>
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
 </div>

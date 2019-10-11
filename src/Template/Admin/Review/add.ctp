@@ -16,14 +16,13 @@ $this->Html->script('/TinyMCE/js/tiny_mce/tiny_mce.js', array(
                 <legend><?= __('Add Review') ?></legend>
                 <?php
                 echo $this->Form->control('Client_Name', ['id' =>'clientNameInput']);
-                echo $this->Form->control('Month_Year', ['minYear' => 2019,'empty' => true, 'hour' => false, 'minute'=> false, 'second'=> false, 'meridian' => false]);
                 echo $this->Form->control('Suburb');
                 echo $this->Form->control("Review_Details", ['type' => 'textarea', 'id' => 'reviewInput' ] )
                 ?>
 
             </fieldset>
-
-            <?= $this->Form->button(__('Submit')) ?>
+            <?= $this->Html->link(__('Back'), $this->request->referer(), ['class' => 'btn btn-oval btn-primary','style'=>'float:left']) ?>
+            <?= $this->Form->button(__('Submit'), ['formnovalidate' => true]) ?>
             <?= $this->Form->button('Preview', ['type' => 'button', 'onclick' => 'handlePreviewClick(this)'] ) ?>
             <?= $this->Form->end() ?>
         </div>
@@ -42,11 +41,16 @@ $this->Html->script('/TinyMCE/js/tiny_mce/tiny_mce.js', array(
             <div id="previewReviewDetails"></div>
         </div>
         <hr>
-        <div class="text-center">
-            <button href="#" class="btn btn-simple"><i class="fa fa-facebook-square"></i></button>
-            <button href="#" class="btn btn-simple"><i class="fa fa-twitter"></i></button>
-            <button href="#" class="btn btn-simple"><i class="fa fa-google-plus-square"></i></button>
-
-        </div>
     </div>
 </div>
+<script type="text/javascript">
+    const handlePreviewClick = () => {
+        //get the data from html forms
+        let clientNameVal = document.getElementById('clientNameInput').value
+        let reviewDetailVal = tinymce.get("reviewInput").getContent()
+
+        //fill in the preview card placeholders
+        document.getElementById('previewClientName').textContent = clientNameVal
+        document.getElementById('previewReviewDetails').innerHTML = reviewDetailVal
+    }
+</script>

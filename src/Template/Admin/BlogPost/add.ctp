@@ -4,7 +4,7 @@
  * @var \App\Model\Entity\BlogPost $blogPost
  */
 ?>
-<div class="blogPost form large-9 medium-8 columns content">
+<div class="card">
     <?= $this->Form->create($blogPost) ?>
     <fieldset>
         <legend><?= __('Add Blog Post') ?></legend>
@@ -13,9 +13,19 @@
             //echo $this->Form->control('Date');
             echo $this->Form->control('Description');
             echo $this->Form->control('Body', ['type' => 'textarea']);
-            //echo $this->Form->control('image._ids', ['options' => $image]);
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <fieldset>
+        <?php
+        echo $this->Form->select('image._ids',
+            $image,
+            ['empty'=>'(choose one)', 'multiple' => true,]
+        );
+        ?>
+    </fieldset>
+    <?= $this->Html->link(__('Back'), $this->request->referer(), ['class' => 'btn btn-oval btn-primary','style'=>'float:left']) ?>
+    <?= $this->Form->button(__('Submit'), ['formnovalidate' => true]) ?>
     <?= $this->Form->end() ?>
+
 </div>
+

@@ -9,8 +9,8 @@ use Cake\Validation\Validator;
 /**
  * Service Model
  *
- * @property \App\Model\Table\JobTable|\Cake\ORM\Association\BelongsToMany $Job
  * @property \App\Model\Table\ImageTable|\Cake\ORM\Association\BelongsToMany $Image
+ * @property \App\Model\Table\JobTable|\Cake\ORM\Association\BelongsToMany $Job
  *
  * @method \App\Model\Entity\Service get($primaryKey, $options = [])
  * @method \App\Model\Entity\Service newEntity($data = null, array $options = [])
@@ -34,18 +34,18 @@ class ServiceTable extends Table
         parent::initialize($config);
 
         $this->setTable('service');
-        $this->setDisplayField('Serv_id');
-        $this->setPrimaryKey('Serv_id');
+        $this->setDisplayField('Service_id');
+        $this->setPrimaryKey('Service_id');
 
-        $this->belongsToMany('Job', [
-            'foreignKey' => 'service_id',
-            'targetForeignKey' => 'job_id',
-            'joinTable' => 'job_service'
-        ]);
         $this->belongsToMany('Image', [
-            'foreignKey' => 'service_id',
-            'targetForeignKey' => 'image_id',
+            'foreignKey' => 'Service_id',
+            'targetForeignKey' => 'Image_id',
             'joinTable' => 'service_image'
+        ]);
+        $this->belongsToMany('Job', [
+            'foreignKey' => 'Service_id',
+            'targetForeignKey' => 'Job_id',
+            'joinTable' => 'service_job'
         ]);
     }
 
@@ -58,25 +58,24 @@ class ServiceTable extends Table
     public function validationDefault(Validator $validator)
     {
         $validator
-            ->integer('Serv_id')
-            ->allowEmpty('Serv_id', 'create');
+            ->integer('Service_id')
+            ->allowEmpty('Service_id', 'create');
 
         $validator
-            ->scalar('Serv_Title')
-            ->maxLength('Serv_Title', 255)
-            ->requirePresence('Serv_Title', 'create')
-            ->notEmpty('Serv_Title');
+            ->scalar('Service_Title')
+            ->maxLength('Service_Title', 255)
+            ->requirePresence('Service_Title', 'create')
+            ->notEmpty('Service_Title');
 
         $validator
-            ->scalar('Serv_Description')
-            ->maxLength('Serv_Description', 255)
-            ->allowEmpty('Serv_Description');
+            ->scalar('Service_Description')
+            ->maxLength('Service_Description', 255)
+            ->allowEmpty('Service_Description');
 
         $validator
-            ->scalar('Serv_Detail')
-            ->maxLength('Serv_Detail', 255)
-            ->requirePresence('Serv_Detail', 'create')
-            ->notEmpty('Serv_Detail');
+            ->scalar('Service_Detail')
+            ->requirePresence('Service_Detail', 'create')
+            ->notEmpty('Service_Detail');
 
         return $validator;
     }

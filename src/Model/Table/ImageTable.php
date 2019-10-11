@@ -39,7 +39,7 @@ class ImageTable extends Table
         $this->setPrimaryKey('Image_id');
 
         $this->belongsToMany('BlogPost', [
-            'foreignKey' => 'image_id',
+            'foreignKey' => 'Image_id',
             'targetForeignKey' => 'blog_post_id',
             'joinTable' => 'blog_post_image'
         ]);

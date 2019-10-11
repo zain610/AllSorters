@@ -2,21 +2,28 @@ create schema ug19s2_team106_dev collate utf8_general_ci;
 
 create table admin
 (
-	Admin_username varchar(255) not null
+	id int auto_increment
 		primary key,
-	Password varchar(255) not null,
-	Admin_Email varchar(255) null,
-	Admin_Phone int null
+	username varchar(255) default '' not null,
+	password varchar(255) default '' not null,
+	email varchar(255) not null,
+	phone varchar(15) null,
+	created datetime null,
+	modified datetime null
 );
 
 create table blog_post
 (
-	Post_id int auto_increment
+	blog_post_id int auto_increment
 		primary key,
-	Title varchar(255) not null,
-	Date datetime null,
-	Description varchar(255) null,
-	Post_Content varchar(255) null
+	title varchar(255) not null,
+	Date datetime not null,
+	Description varchar(255) not null,
+	Body varchar(255) not null,
+	created datetime not null,
+	modified datetime not null,
+	Published tinyint(1) default 0 null,
+	Archived tinyint(1) default 0 null
 );
 
 create table book_selling
@@ -30,14 +37,16 @@ create table book_selling
 
 create table client
 (
-	Client_id int auto_increment
+	id int auto_increment
 		primary key,
-	Client_fname varchar(255) not null,
-	Client_sname varchar(255) not null,
-	Client_DOB date null,
-	Client_Addr varchar(255) null,
-	Client_Phone int null,
-	Client_Email varchar(255) null
+	fname varchar(255) not null,
+	sname varchar(255) not null,
+	DOB date null,
+	Address varchar(255) null,
+	Phone varchar(15) null,
+	Email varchar(255) null,
+	Created datetime not null,
+	Modified datetime not null
 );
 
 create table contractor
@@ -45,7 +54,6 @@ create table contractor
 	Contractor_id int auto_increment
 		primary key,
 	Contractor_name varchar(255) null,
-	Contractor_job varchar(255) null,
 	Rate int not null
 );
 
@@ -70,7 +78,10 @@ create table image
 (
 	Image_id int auto_increment
 		primary key,
-	Image_Content varchar(255) null
+	Image_Content varchar(255) null,
+	name varchar(255) null,
+	path varchar(255) null,
+	created_at date null
 );
 
 create table blog_post_image
@@ -78,11 +89,11 @@ create table blog_post_image
 	Blog_Post_image_id int auto_increment
 		primary key,
 	Image_id int null,
-	Post_id int null,
+	blog_post_id int null,
 	constraint Blog_Post_Image_pk_2
-		unique (Post_id, Image_id),
+		unique (blog_post_id, Image_id),
 	constraint Blog_Post_Image_blog_post_Post_id_fk
-		foreign key (Post_id) references blog_post (id),
+		foreign key (blog_post_id) references blog_post (blog_post_id),
 	constraint Blog_Post_Image_image_Image_id_fk
 		foreign key (Image_id) references image (Image_id)
 );
@@ -104,28 +115,23 @@ create table job
 (
 	Job_id int auto_increment
 		primary key,
-	Quote_id int not null,
 	Price int null,
 	Commence_Date date null,
 	Duration time null,
-	Job_Status varchar(255) null,
-	client_id int not null,
-	constraint Job_pk_Quote_id
-		unique (Quote_id),
-	constraint client_id
-		foreign key (client_id) references client (Client_id)
+	Job_Status varchar(255) null
 );
 
 create table job_contractor
 (
-	Job_id int auto_increment
+	Job_Contractor_id int auto_increment
 		primary key,
-	Contractor_id int not null,
-	constraint Job_Contractor_pk_2
-		unique (Contractor_id),
+	Job_id int null,
+	Contractor_id int null,
+	constraint job_contractor_pk_2
+		unique (Job_id, Contractor_id),
 	constraint Job_Contractor_Contractor_id_fk
 		foreign key (Contractor_id) references contractor (Contractor_id),
-	constraint Job_Contractor_job_id_fk
+	constraint Job_Contractor_Job_id_fk
 		foreign key (Job_id) references job (Job_id)
 );
 
@@ -140,7 +146,7 @@ create table post_comment
 	constraint Post_Comment_pk_2
 		unique (Post_id),
 	constraint Post_Comment_blog_post_Post_id_fk
-		foreign key (Post_id) references blog_post (id)
+		foreign key (Post_id) references blog_post (blog_post_id)
 );
 
 create table request
@@ -161,44 +167,45 @@ create table review
 		primary key,
 	Client_Name varchar(255) not null,
 	Month_Year datetime null,
-	Suburb int null,
+	Suburb varchar(255) null,
 	Review_Details varchar(255) null
 );
 
 create table service
 (
-	Serv_id int auto_increment
+	Service_id int auto_increment
 		primary key,
-	Serv_Title varchar(255) not null,
-	Serv_Description varchar(255) null,
-	Serv_Detail varchar(255) not null
-);
-
-create table job_service
-(
-	Job_id int auto_increment
-		primary key,
-	Serv_id int not null,
-	constraint Job_Service_pk_2
-		unique (Serv_id),
-	constraint Job_Service_job_Job_id_fk
-		foreign key (Job_id) references job (Job_id),
-	constraint Job_Service_service_Serv_id_fk
-		foreign key (Serv_id) references service (Serv_id)
+	Service_Title varchar(255) not null,
+	Service_Description varchar(255) null,
+	Service_Detail text not null
 );
 
 create table service_image
 (
-	Serv_image_id int auto_increment
+	Service_image_id int auto_increment
 		primary key,
 	Image_id int null,
-	Serv_id int null,
+	Service_id int null,
 	constraint Service_Image_pk_2
-		unique (Serv_image_id, Serv_id),
+		unique (Service_image_id, Service_id),
 	constraint Service_Image_image_Image_id_fk
 		foreign key (Image_id) references image (Image_id),
 	constraint Service_Image_service_Serv_id_fk
-		foreign key (Serv_id) references service (Serv_id)
+		foreign key (Service_id) references service (Service_id)
+);
+
+create table service_job
+(
+	Service_Job_id int auto_increment
+		primary key,
+	Service_id int null,
+	Job_id int null,
+	constraint Service_Job_pk_2
+		unique (Service_id, Job_id),
+	constraint Service_Job_Job_fk
+		foreign key (Job_id) references job (Job_id),
+	constraint Service_Job_Service_fk
+		foreign key (Service_id) references service (Service_id)
 );
 
 create table transaction

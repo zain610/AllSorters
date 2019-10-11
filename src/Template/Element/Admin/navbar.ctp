@@ -4,9 +4,11 @@ $currentAction = $this->request->getParam('action');
 $isDashboardActive = $currentController === "Admin" && $currentAction === 'index';
 $isBlogsActive = $currentController === "Blogs";
 $isServiceActive = $currentController === "Service";
-$isImagesActive = $currentController === "Images";
+$isImagesActive = $currentController === "Image";
 $isReviewActive = $currentController === "Review";
-
+$isJobActive = $currentController === "Job";
+$isContractorActive = $currentController === "Contractor";
+$isEventsActive = $currentController === "Events";
 ?>
 
 <div class="sidebar-wrapper">
@@ -19,7 +21,7 @@ $isReviewActive = $currentController === "Review";
         <li class="<?= $isDashboardActive ? 'active' : '' ?> dropdown">
             <?= $this->Html->link(
                 '<p>Dashboard</p>',
-                'admin',
+                ['prefix' => false, 'controller' => 'Admin', 'action' => 'index'],
                 ['escape' => false]
             ) ?>
         </li>
@@ -31,13 +33,18 @@ $isReviewActive = $currentController === "Review";
             ) ?>
             <ul class="dropdown-menu" aria-labelledby="reviewDropdown">
                 <li><?=$this->Html->link(
+                        '<p>View Blog Posts</p>',
+                        ['prefix'=>'admin','controller'=>'BlogPost','action'=>'index'],
+                        ['escape'=>false]
+                    )?></li>
+                <li><?=$this->Html->link(
                         '<p>Add a Blog Post</p>',
                         ['prefix'=>'admin','controller'=>'BlogPost','action'=>'add'],
                         ['escape'=>false]
                     )?></li>
                 <li><?=$this->Html->link(
-                        '<p>View Blog Posts</p>',
-                        ['prefix'=>'admin','controller'=>'BlogPost','action'=>'index'],
+                        '<p>View Blog Post archive</p>',
+                        ['prefix'=>'admin','controller'=>'BlogPost','action'=>'archiveIndex'],
                         ['escape'=>false]
                     )?></li>
                 <li><?=$this->Html->link(
@@ -45,6 +52,7 @@ $isReviewActive = $currentController === "Review";
                         ['prefix'=>'admin','controller'=>'BlogPost','action'=>'archiveIndex'],
                         ['escape'=>false]
                     )?></li>
+
 
             </ul>
         </li>
@@ -54,18 +62,20 @@ $isReviewActive = $currentController === "Review";
                 '#',
                 ['escape' => false, 'onclick' => 'handleMenuToggle(this)', 'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true',]
             ) ?>
-            <ul class="dropdown-menu" aria-labelledby="reviewDropdown">
+            <ul class="dropdown-menu" aria-labelledby="imageDropdown">
                 <li><?= $this->Html->link(
-                        '<p>View Image</p>',
-                        ['prefix' => 'admin','controller' => 'image', 'action' => 'view'],
+                        '<p>View Images</p>',
+                       // '/admin/image/',
+                        ['prefix'=>'admin','controller' => 'image', 'action' => 'index'],
                         ['escape' => false]
                     ) ?></li>
                 <li><?= $this->Html->link(
-                        '<p>Add Image</p>',
-                        ['prefix' => 'admin','controller' => 'image', 'action' => 'upload'],
+                        '<p>Add Images</p>',
+                       // '/admin/image/upload/',
+						//['prefix'=>'admin','controller' => 'Image', 'action' => 'upload'],
+                        ['prefix'=>'admin','controller' => 'image', 'action' => 'upload'],
                         ['escape' => false]
                     ) ?></li>
-
             </ul>
         </li>
 
@@ -82,8 +92,50 @@ $isReviewActive = $currentController === "Review";
                         ['escape' => false]
                     ) ?></li>
                 <li><?= $this->Html->link(
-                        '<p>Add reviews</p>',
+                        '<p>Add Services</p>',
                         ['prefix' => 'admin','controller' => 'Service', 'action' => 'add'],
+                        ['escape' => false]
+                    ) ?></li>
+            </ul>
+        </li>
+
+
+        <li id="dropDownMenu" class="<?= $isJobActive ? 'active' : '' ?> dropdown">
+            <?= $this->Html->link(
+                '<p>Jobs</p>',
+                '#',
+                ['onclick' => 'handleMenuToggle(this)', 'escape' => false,  'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true']
+            ) ?>
+            <ul class="dropdown-menu" aria-labelledby="ServiceDropdown">
+                <li><?= $this->Html->link(
+                        '<p>View Jobs</p>',
+                        ['prefix' => 'admin','controller' => 'Job', 'action' => 'index'],
+                        ['escape' => false]
+                    ) ?></li>
+                <li><?= $this->Html->link(
+                        '<p>Add Jobs</p>',
+                        ['prefix' => 'admin','controller' => 'Job', 'action' => 'add'],
+                        ['escape' => false]
+                    ) ?></li>
+            </ul>
+        </li>
+
+
+        <li id="dropDownMenu" class="<?= $isContractorActive ? 'active' : '' ?> dropdown">
+            <?= $this->Html->link(
+                '<p>Contractors</p>',
+                '#',
+                ['onclick' => 'handleMenuToggle(this)', 'escape' => false,  'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true']
+            ) ?>
+            <ul class="dropdown-menu" aria-labelledby="ServiceDropdown">
+                <li><?= $this->Html->link(
+                        '<p>View Contractors</p>',
+                        ['prefix' => 'admin','controller' => 'Contractor', 'action' => 'index'],
+                        ['escape' => false]
+                    ) ?></li>
+                <li><?= $this->Html->link(
+                        '<p>Add Contractors</p>',
+                        ['prefix' => 'admin','controller' => 'Contractor', 'action' => 'add'],
                         ['escape' => false]
                     ) ?></li>
             </ul>
@@ -106,6 +158,25 @@ $isReviewActive = $currentController === "Review";
                         ['prefix' => 'admin','controller' => 'Review', 'action' => 'add'],
                         ['escape' => false]
                     ) ?></li>
+            </ul>
+        </li>
+        <li id="dropDownMenu" class="<?= $isEventsActive ? 'active' : '' ?> dropdown">
+            <?= $this->Html->link(
+                '<p>Speaking engagements</p>',
+                '#',
+                ['escape' => false, 'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true',]
+            ) ?>
+            <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
+                <li><?=$this->Html->link(
+                        '<p>View Speaking engagements</p>',
+                        ['prefix'=>'admin','controller'=>'Events','action'=>'index'],
+                        ['escape'=>false]
+                    )?></li>
+                <li><?=$this->Html->link(
+                        '<p>Add a Speaking engagement</p>',
+                        ['prefix'=>'admin','controller'=>'Events','action'=>'add'],
+                        ['escape'=>false]
+                    )?></li>
             </ul>
         </li>
     </ul>

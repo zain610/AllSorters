@@ -17,6 +17,8 @@ namespace App\Controller;
 use Cake\Controller\Controller;
 use Cake\Event\Event;
 
+
+
 /**
  * Application Controller
  *
@@ -40,8 +42,9 @@ class AppController extends Controller
     public function initialize()
     {
         parent::initialize();
-
-        $this->loadComponent('RequestHandler');
+        $this->loadComponent('RequestHandler', [
+            'enableBeforeRedirect' => false,
+        ]);
         $this->loadComponent('Flash');
 
         /*
@@ -64,6 +67,10 @@ class AppController extends Controller
             'loginAction'=>[
                 'controller'=>'Admin',
                 'action'=>'login'
+            ],
+            'loginRedirect'=>[
+                'controller'=>'Articles',
+                'action'=>'home'
             ]
         ]);
     }
@@ -72,15 +79,22 @@ class AppController extends Controller
         // We really want the site settings and the current user (if any) to be available in all templates.
         // This achieves that (see https://stackoverflow.com/a/1384697).
         if(!array_key_exists('_serialize',$this->viewVars)&&
-            in_array($this->response->type(),['application/jason','application/xml'])
+            in_array($this->response->getType(),['application/jason','application/xml'])
         ){
             $this->set('_serialize',true);
         }
+        $this->set('currentUser', $this->Auth->user());
+
         //login check
-        if ($this->request->session()->read('Auth.User')){
+        if ($this->request->getSession()->read('Auth.User')){
             $this->set('loggedIn',true);
         } else{
             $this->set('loggedIn',false);
         }
+
+        return parent::beforeFilter($event);
+
+
     }
+
 }
