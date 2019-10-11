@@ -58,7 +58,8 @@ class ReviewTable extends Table
             ->allowEmpty('Month_Year');
 
         $validator
-            ->integer('Suburb')
+            ->maxLength('Suburb', 255)
+            ->scalar('Suburb')
             ->allowEmpty('Suburb');
 
         $validator
