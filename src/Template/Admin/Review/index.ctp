@@ -26,7 +26,7 @@
                 <td><?= h($review->Client_Name) ?></td>
                 <td><?= h($review->Month_Year) ?></td>
                 <td><?= h($review->Suburb) ?></td>
-                <td><?= $this->Text->truncate(h($review->Review_Details), 40, ['ellipsis' => '...',
+                <td><?= $this->Text->truncate(h(strip_tags($review->Review_Details)), 40, ['ellipsis' => '...',
                         'exact' => false]) ?></td>
                 <td class="actions">
                     <?= $this->element('Admin/Buttons/view', ['url' => ['action' => 'view', $review->Review_id]]) ?>
