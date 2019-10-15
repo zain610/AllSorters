@@ -12,7 +12,7 @@
 
             <p>Date: <?= h($blogPost->Date) ?></p>
             <p>Modified: <?= h($blogPost->modified) ?></p>
-            <p><br>Details: <?= h($blogPost->Body) ?></br></p>
+            <p><br>Details: <?= h(strip_tags($blogPost->Body)) ?></br></p>
 
     <div class="related">
         <h4><?= __('Related Image') ?></h4>
