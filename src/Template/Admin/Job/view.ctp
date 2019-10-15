@@ -6,7 +6,7 @@
 ?>
 <?= $this->Html->link(__('Back'), $this->request->referer(), ['class' => 'btn btn-oval btn-primary','style'=>'float:left']) ?>
 
-<div class="content table-responsive table-full-width">
+<div class="table table-hover table-striped">
     <div class="row">
         <div class="leftcolumn">
             <h3>Job ID: <?= h($job->Job_id) ?></h3>
@@ -20,7 +20,7 @@
     <div class="related">
         <h4><?= __('Related Contractor') ?></h4>
         <?php if (!empty($job->contractor)): ?>
-        <table cellpadding="0" cellspacing="0" class="articles-table table">
+        <table cellpadding="0" cellspacing="0" class="table table-hover table-striped">
             <tr>
                 <th scope="col"><?= __('Contractor Id') ?></th>
                 <th scope="col"><?= __('Contractor Name') ?></th>
@@ -45,7 +45,7 @@
     <div class="related">
         <h4><?= __('Related Service(s)') ?></h4>
         <?php if (!empty($job->service)): ?>
-        <table cellpadding="0" cellspacing="0" class="articles-table table">
+        <table cellpadding="0" cellspacing="0" class="table table-hover table-striped">
             <tr>
                 <th scope="col"><?= __('Service Id') ?></th>
                 <th scope="col"><?= __('Service Title') ?></th>

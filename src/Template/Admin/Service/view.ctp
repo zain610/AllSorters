@@ -8,10 +8,10 @@
 
 <div class="content table-responsive table-full-width">
 
-
-
 <div class="row">
     <div class="leftcolumn">
+        <?= $this->element('Admin/Buttons/edit', ['url' => ['action' => 'edit', $service->Service_id]]) ?>
+
         <h3>Title: <?= h($service->Service_Title) ?></h3>
 
             <h5>Description: <?= h($service->Service_Description) ?></h5>
@@ -28,7 +28,6 @@
                                     <?php echo $this->Html->image($image->path, ['alt' => 'CakePHP']); ?>
                                 </td>
                                 <td class="card-body">
-                                    <?= $this->element('Admin/Buttons/edit', ['url' => ['action' => 'edit', $service->Service_id]]) ?>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -38,10 +37,10 @@
             <?php endif; ?>
 
 
-            <h4><?= __('Related Job') ?></h4>
+            <h4><?= __('Related Job(s)') ?></h4>
 
             <?php if (!empty($service->job)): ?>
-                <table cellpadding="0" cellspacing="0">
+                <table cellpadding="0" cellspacing="0" class="table table-hover table-striped">
                     <tr>
                         <th scope="col"><?= __('Job Id') ?></th>
                         <th scope="col"><?= __('Price') ?></th>
@@ -58,9 +57,9 @@
                             <td><?= h($job->Duration) ?></td>
                             <td><?= h($job->Job_Status) ?></td>
                             <td class="actions">
-                                <?= $this->Html->link(__('View'), ['controller' => 'Job', 'action' => 'view', $job->Job_id]) ?>
-                                <?= $this->Html->link(__('Edit'), ['controller' => 'Job', 'action' => 'edit', $job->Job_id]) ?>
-                                <?= $this->Form->postLink(__('Delete'), ['controller' => 'Job', 'action' => 'delete', $job->Job_id], ['confirm' => __('Are you sure you want to delete # {0}?', $job->Job_id)]) ?>
+                                <?= $this->element('Admin/Buttons/view', ['url' =>  ['controller' => 'Job', 'action' => 'view', $job->Job_id]]) ?>
+                                <?= $this->element('Admin/Buttons/edit', ['url' =>  ['controller' => 'Job', 'action' => 'edit', $job->Job_id]]) ?>
+                                <?= $this->element('Admin/Buttons/delete', ['url' =>  ['controller' => 'Job', 'action' => 'delete', $job->Job_id], ['confirm' => __('Are you sure you want to delete # {0}?', $job->Job_id)]]) ?>
                             </td>
                         </tr>
                     <?php endforeach; ?>

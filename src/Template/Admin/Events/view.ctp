@@ -16,7 +16,7 @@
 <?= $this->Html->link(__('Back'), $this->request->referer(), ['class' => 'btn btn-oval btn-primary','style'=>'float:left']) ?>
 
 
-<div class="content table-responsive table-full-width">
+<div class="table table-hover table-striped">
     <div class="row">
         <div class="leftcolumn">
             <h3>Speaking Engagement description: <?= h($event->description) ?></h3>

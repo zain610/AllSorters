@@ -7,7 +7,7 @@
 <?= $this->Html->link(__('Back'), $this->request->referer(), ['class' => 'btn btn-oval btn-primary','style'=>'float:left']) ?>
 
 
-<div class="content table-responsive table-full-width">
+<div class="table table-hover table-striped">
     <div class="row">
         <div class="leftcolumn">
             <h3>Contractor name: <?= h($contractor->Contractor_name) ?></h3>
@@ -18,7 +18,7 @@
     <div class="related">
         <h4><?= __('Related Job(s)') ?></h4>
         <?php if (!empty($contractor->job)): ?>
-        <table cellpadding="0" cellspacing="0" class="articles-table table">
+        <table cellpadding="0" cellspacing="0" class="table table-hover table-striped">
             <tr>
                 <th scope="col"><?= __('Job Id') ?></th>
                 <th scope="col"><?= __('Price') ?></th>
