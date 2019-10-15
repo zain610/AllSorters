@@ -2,6 +2,7 @@
 namespace App\Controller\Admin;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * Events Controller
@@ -132,7 +133,7 @@ class EventsController extends AppController
             throw new NotFoundException();
         }
 
-        // If an article is archived, it is "unpublished" as well
+        // If an event is archived, it is "unpublished" as well
         $event->Archived = 1;
         $event->Published = 0;
 

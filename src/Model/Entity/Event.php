@@ -10,6 +10,8 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\FrozenTime $date
  * @property string $description
  * @property string $venue
+ * @property bool $Published
+ * @property bool $Archived
  */
 class Event extends Entity
 {

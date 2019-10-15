@@ -29,9 +29,10 @@
                 <td class="actions">
                     <?= $this->element('Admin/Buttons/view', ['url' => ['action' => 'view', $event->id]]) ?>
                     <?= $this->element('Admin/Buttons/edit', ['url' => ['action' => 'edit', $event->id]]) ?>
-                    <?= $this->element('Admin/Buttons/Archive', ['url' => ['action' => 'archive', $event->id], ['confirm' => __('Are you sure you want to archive # {0}?', $events->id)]]) ?>
+                    <?= $this->element('Admin/Buttons/Archive', ['url' => ['action' => 'archive', $event->id], ['confirm' => __('Are you sure you want to archive # {0}?', $event->id)]]) ?>
                 </td>
             </tr>
+                <?php } ?>
             <?php endforeach; ?>
         </tbody>
     </table>

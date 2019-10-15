@@ -1,12 +1,13 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \App\Model\Entity\BlogPost[]|\Cake\Collection\CollectionInterface $blogPost
+ * @var \App\Model\Entity\Events[]|\Cake\Collection\CollectionInterface $event
  */
+
 ?>
 <div class="table table-hover table-striped">
 
-    <h3><?= __('Speaking Engagements') ?></h3>
+    <h3><?= __('Speaking Engagements Archive') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
