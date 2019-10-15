@@ -10,7 +10,7 @@
             <h3>Client Name: <?= h($review->Client_Name) ?></h3>
             <p><?= h($review->Month_Year) ?></p>
 
-            <p>Suburb: <?= $this->Text->format($review->Suburb) ?></p>
+            <p>Suburb: <?= h($review->Suburb) ?></p>
             <p>Review Details:
                 <?= h(strip_tags($review->Review_Details))?>
             </p>
