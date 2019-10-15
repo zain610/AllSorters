@@ -23,9 +23,9 @@
                 <td><?= h($contractor->Contractor_name) ?></td>
                 <td><?= $this->Number->format($contractor->Rate) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $contractor->Contractor_id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $contractor->Contractor_id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $contractor->Contractor_id], ['confirm' => __('Are you sure you want to delete # {0}?', $contractor->Contractor_id)]) ?>
+                    <?= $this->element('Admin/Buttons/view', ['url' => ['action' => 'view', $contractor->Contractor_id]]) ?>
+                    <?= $this->element('Admin/Buttons/edit', ['url' => ['action' => 'edit', $contractor->Contractor_id]]) ?>
+                    <?= $this->element('Admin/Buttons/delete', ['url' => ['action' => 'delete', $contractor->Contractor_id], ['confirm' => __('Are you sure you want to delete # {0}?', $contractor->Contractor_id)]]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
