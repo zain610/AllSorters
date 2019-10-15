@@ -21,9 +21,11 @@ class EventsController extends AppController
     public function index()
     {
         $this->layout ='admin';
-        $events = $this->paginate($this->Events);
-
-        $this->set(compact('events'));
+        $this->loadComponent('Paginator');
+        $publishedEvents = $this->Paginator->paginate(
+            $this->Events->find('all')->where(['Events.Published' => 1])->contain([])
+        );
+        $this->set(compact('publishedEvents'));
     }
     public function initialize()
     {
@@ -66,6 +68,8 @@ class EventsController extends AppController
         $event = $this->Events->newEntity();
         if ($this->request->is('post')) {
             $event = $this->Events->patchEntity($event, $this->request->getData());
+            $event->Published = 1;
+            $event->Archived = 0;
             if ($this->Events->save($event)) {
                 $this->Flash->success(__('The event has been saved.'));
 
@@ -119,5 +123,50 @@ class EventsController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+    public function archive($id = null)
+    {
+        $event = $this->Events->get($id);
+        if ($event == null) {
+            throw new NotFoundException();
+        }
+
+        // If an article is archived, it is "unpublished" as well
+        $event->Archived = 1;
+        $event->Published = 0;
+
+        if ($this->Events->save($event)) {
+            $this->Flash->success(__('Your event has been archived.'));
+        } else {
+            $this->Flash->error(__('Unable to archive your event.'));
+        }
+
+        return $this->redirect(['action' => 'index']);
+    }
+
+    public function restore($id = null)
+    {
+        $event = $this->Events->get($id);
+        if ($event == null) {
+            throw new NotFoundException();
+        }
+
+        $event->Archived = 0;
+        $event->Published = 1;
+
+        if ($this->Events->save($event)) {
+            $this->Flash->success(__('Your event has been restored.'));
+        } else {
+            $this->Flash->error(__('Unable to restore your event.'));
+        }
+
+        return $this->redirect(['action' => 'archiveIndex']);
+    }
+    public function archiveIndex()
+    {
+        $this->layout ='admin';
+        $archivedEvents = TableRegistry::get('Events')->find('all')->where(['Events.Archived' => 1])->contain([]);
+        $this->set('$archivedEvents', $this->paginate($archivedEvents));
     }
 }

@@ -177,6 +177,11 @@ $isEventsActive = $currentController === "Events";
                         ['prefix'=>'admin','controller'=>'Events','action'=>'add'],
                         ['escape'=>false]
                     )?></li>
+                <li><?=$this->Html->link(
+                        '<p>View Speaking engagements Archive</p>',
+                        ['prefix'=>'admin','controller'=>'Events','action'=>'archiveIndex'],
+                        ['escape'=>false]
+                    )?></li>
             </ul>
         </li>
     </ul>
