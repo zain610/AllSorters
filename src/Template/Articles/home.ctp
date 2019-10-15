@@ -27,11 +27,11 @@
             </div>
 
             <div class="item">
-                <img src="img/dog.jpg" alt="Chicago" style="width:100%;">
+                <img src="img/2e3a450c42c5b5dabd1447dfb1069f54b589e8bf.jpg" alt="Chicago" style="width:100%;">
             </div>
 
             <div class="item">
-                <img src="img/pete.png" alt="pete" style="width:100%;">
+                <img src="img/bg.jpg" alt="pete" style="width:100%;">
             </div>
         </div>
 
@@ -111,7 +111,7 @@
         <div class="col-md-8 about-right">
             <h4>Contact us for the Appropriate level of Care</h4>
             <div class="offer offer-right">
-                <img src="../img/bg.jpg" class="img-responsive" alt="">
+                <img src="#" class="img-responsive" alt="">
                 <form>
                     <input type="text" value="Enter Your email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Your email';}">
                     <input type="submit" value="Subscribe">
