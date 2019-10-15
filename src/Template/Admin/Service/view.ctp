@@ -15,7 +15,7 @@
         <h3>Title: <?= h($service->Service_Title) ?></h3>
 
             <h5>Description: <?= h($service->Service_Description) ?></h5>
-            <p>Details: <?= h($service->Service_Detail) ?></p>
+            <p>Details: <?= h( strip_tags($service->Service_Detail)) ?></p>
 
             <h4><?= __('Related Image') ?></h4>
             <?php if (!empty($service->image)): ?>
@@ -41,15 +41,15 @@
             <h4><?= __('Related Job') ?></h4>
 
             <?php if (!empty($service->job)): ?>
-                <table cellpadding="0" cellspacing="0">
-                    <tr>
+                <table class="table table-hover table-striped" cellpadding="0" cellspacing="0">
+                    <thead>
                         <th scope="col"><?= __('Job Id') ?></th>
                         <th scope="col"><?= __('Price') ?></th>
                         <th scope="col"><?= __('Commence Date') ?></th>
                         <th scope="col"><?= __('Duration') ?></th>
                         <th scope="col"><?= __('Job Status') ?></th>
                         <th scope="col" class="actions"><?= __('Actions') ?></th>
-                    </tr>
+                    </thead>
                     <?php foreach ($service->job as $job): ?>
                         <tr>
                             <td><?= h($job->Job_id) ?></td>
@@ -57,10 +57,10 @@
                             <td><?= h($job->Commence_Date) ?></td>
                             <td><?= h($job->Duration) ?></td>
                             <td><?= h($job->Job_Status) ?></td>
-                            <td class="actions">
-                                <?= $this->Html->link(__('View'), ['controller' => 'Job', 'action' => 'view', $job->Job_id]) ?>
-                                <?= $this->Html->link(__('Edit'), ['controller' => 'Job', 'action' => 'edit', $job->Job_id]) ?>
-                                <?= $this->Form->postLink(__('Delete'), ['controller' => 'Job', 'action' => 'delete', $job->Job_id], ['confirm' => __('Are you sure you want to delete # {0}?', $job->Job_id)]) ?>
+                            <td class="action-col">
+                                <?= $this->element('Admin/Buttons/view', ['url' => ['controller' => 'Job', 'action' => 'view', $job->Job_id]]) ?>
+                                <?= $this->element('Admin/Buttons/edit', ['url' => ['controller' => 'Job', 'action' => 'edit', $job->Job_id]]) ?>
+                                <?= $this->element('Admin/Buttons/delete', ['url' => ['controller' => 'Job', 'action' => 'delete', $job->Job_id], ['confirm' => __('Are you sure you want to delete # {0}?', $job->Job_id)]]) ?>
                             </td>
                         </tr>
                     <?php endforeach; ?>
