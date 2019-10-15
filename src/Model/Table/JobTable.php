@@ -63,20 +63,20 @@ class JobTable extends Table
 
         $validator
             ->integer('Price')
-            ->allowEmpty('Price');
+            ->allowEmpty('Price',false);
 
         $validator
             ->date('Commence_Date')
-            ->allowEmpty('Commence_Date');
+            ->allowEmpty('Commence_Date',false);
 
         $validator
             ->time('Duration')
-            ->allowEmpty('Duration');
+            ->allowEmpty('Duration',false);
 
         $validator
             ->scalar('Job_Status')
             ->maxLength('Job_Status', 255)
-            ->allowEmpty('Job_Status');
+            ->allowEmpty('Job_Status',false);
 
         return $validator;
     }
