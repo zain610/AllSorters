@@ -4,27 +4,21 @@
  * @var \App\Model\Entity\Contractor $contractor
  */
 ?>
+<?= $this->Html->link(__('Back'), $this->request->referer(), ['class' => 'btn btn-oval btn-primary','style'=>'float:left']) ?>
 
-<div class="contractor view large-9 medium-8 columns content">
-    <h3><?= h($contractor->Contractor_id) ?></h3>
-    <table class="vertical-table">
-        <tr>
-            <th scope="row"><?= __('Contractor Name') ?></th>
-            <td><?= h($contractor->Contractor_name) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Contractor Id') ?></th>
-            <td><?= $this->Number->format($contractor->Contractor_id) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Rate') ?></th>
-            <td><?= $this->Number->format($contractor->Rate) ?></td>
-        </tr>
-    </table>
+
+<div class="content table-responsive table-full-width">
+    <div class="row">
+        <div class="leftcolumn">
+            <h3>Contractor name: <?= h($contractor->Contractor_name) ?></h3>
+            <p>Contractor id: <?= $this->Number->format($contractor->Contractor_id) ?></p>
+            <p>Contractor rate: <?= $this->Number->format($contractor->Rate) ?> </p>
+        </div></div></div>
+
     <div class="related">
-        <h4><?= __('Related Job') ?></h4>
+        <h4><?= __('Related Job(s)') ?></h4>
         <?php if (!empty($contractor->job)): ?>
-        <table cellpadding="0" cellspacing="0">
+        <table cellpadding="0" cellspacing="0" class="articles-table table">
             <tr>
                 <th scope="col"><?= __('Job Id') ?></th>
                 <th scope="col"><?= __('Price') ?></th>
@@ -41,9 +35,9 @@
                 <td><?= h($job->Duration) ?></td>
                 <td><?= h($job->Job_Status) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'Job', 'action' => 'view', $job->Job_id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Job', 'action' => 'edit', $job->Job_id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Job', 'action' => 'delete', $job->Job_id], ['confirm' => __('Are you sure you want to delete # {0}?', $job->Job_id)]) ?>
+                    <?= $this->element('Admin/Buttons/view', ['url' =>  ['controller' => 'Job', 'action' => 'view', $job->Job_id]]) ?>
+                    <?= $this->element('Admin/Buttons/edit', ['url' => ['controller' => 'Job', 'action' => 'edit', $job->Job_id]]) ?>
+                    <?= $this->element('Admin/Buttons/Delete', ['url' => ['controller' => 'Job', 'action' => 'delete', $job->Job_id], ['confirm' => __('Are you sure you want to delete # {0}?', $job->Job_id)]]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

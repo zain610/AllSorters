@@ -5,7 +5,10 @@
  */
 ?>
 
+
 <div class="table table-hover table-striped">
+    <?= $this->Html->link('Add a new job', ['action' => 'add'], ['class' => 'pull-right btn btn-oval btn-primary']) ?>
+
     <h4><?= __('Jobs') ?></h4>
     <table class="table table-hover table-striped" cellpadding="0" cellspacing="0">
         <thead>
