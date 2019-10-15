@@ -63,24 +63,24 @@ class BlogPostTable extends Table
             ->scalar('title')
             ->maxLength('title', 255)
             ->requirePresence('title', 'create')
-            ->notEmpty('title');
+            ->notEmpty('title',false, false);
 
         $validator
             ->dateTime('Date')
             ->requirePresence('Date', 'create')
-            ->notEmpty('Date');
+            ->notEmpty('Date', false, false);
 
         $validator
             ->scalar('Description')
             ->maxLength('Description', 255)
             ->requirePresence('Description', 'create')
-            ->notEmpty('Description');
+            ->notEmpty('Description',false, false);
 
         $validator
             ->scalar('Body')
             ->maxLength('Body', 255)
             ->requirePresence('Body', 'create')
-            ->notEmpty('Body');
+            ->notEmpty('Body',false, false);
 
         $validator
             ->boolean('Published')

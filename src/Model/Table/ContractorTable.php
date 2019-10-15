@@ -58,12 +58,12 @@ class ContractorTable extends Table
         $validator
             ->scalar('Contractor_name')
             ->maxLength('Contractor_name', 255)
-            ->allowEmpty('Contractor_name');
+            ->allowEmpty('Contractor_name',false);
 
         $validator
             ->integer('Rate')
             ->requirePresence('Rate', 'create')
-            ->notEmpty('Rate');
+            ->notEmpty('Rate',false);
 
         return $validator;
     }
