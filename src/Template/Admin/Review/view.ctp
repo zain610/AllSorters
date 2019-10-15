@@ -12,6 +12,6 @@
 
             <p>Suburb: <?= $this->Text->format($review->Suburb) ?></p>
             <p>Review Details:
-                <?= h($review->Review_Details) ?>
+                <?= h(strip_tags($review->Review_Details))?>
             </p>
         </div></div></div>
