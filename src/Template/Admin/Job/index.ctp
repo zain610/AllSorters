@@ -27,9 +27,9 @@
                 <td><?= h($job->Duration) ?></td>
                 <td><?= h($job->Job_Status) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $job->Job_id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $job->Job_id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $job->Job_id], ['confirm' => __('Are you sure you want to delete # {0}?', $job->Job_id)]) ?>
+                    <?= $this->element('Admin/Buttons/view', ['url' => ['action' => 'view', $job->Job_id]]) ?>
+                    <?= $this->element('Admin/Buttons/edit', ['url' => ['action' => 'edit', $job->Job_id]]) ?>
+                    <?= $this->element('Admin/Buttons/delete', ['url' => ['action' => 'delete', $job->Job_id], ['confirm' => __('Are you sure you want to delete # {0}?', $job->Job_id)]]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

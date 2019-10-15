@@ -9,7 +9,7 @@ use Cake\ORM\Entity;
  * @property int $Review_id
  * @property string $Client_Name
  * @property \Cake\I18n\FrozenTime $Month_Year
- * @property int $Suburb
+ * @property string $Suburb
  * @property string $Review_Details
  */
 class Review extends Entity

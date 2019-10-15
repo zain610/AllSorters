@@ -20,7 +20,6 @@ $currentController = $this->request->getParam('controller');
 
 
 
-</div>
 
 <?php
 foreach($blogs as $blog) { ?>

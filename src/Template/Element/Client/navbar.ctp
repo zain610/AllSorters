@@ -17,7 +17,7 @@
                 <ul class="nav navbar-nav">
                     <li><?= $this->Html->link('Home', ['controller' => 'Articles', 'action' => 'home'], ['class' => 'navbar-brand']) ?></li>
                     <li><?= $this->Html->link('Services', ['controller' => 'Services', 'action' => 'index'], ['class' => 'navbar-brand']) ?></li>
-                    <li><?= $this->Html->link('Blog', ['controller' => 'Blogpost', 'action' => 'view'], ['class' => 'navbar-brand']) ?></li>
+                    <li><?= $this->Html->link('Blog', ['controller' => 'Blogpost', 'action' => 'index'], ['class' => 'navbar-brand']) ?></li>
                     <li><?= $this->Html->link('About', ['controller' => 'About', 'action' => 'index'], ['class' => 'navbar-brand']) ?></li>
                     <li><?= $this->Html->link('Gallery', ['controller' => 'gallery', 'action' => 'index'], ['class' => 'navbar-brand']) ?></li>
                     <li><?= $this->Html->link('Contact', ['controller' => 'Contact', 'action' => 'index'], ['class' => 'navbar-brand']) ?></li>
