@@ -13,7 +13,7 @@
             echo $this->Form->control('title');
             echo $this->Form->control('Date');
             echo $this->Form->control('Description');
-            echo $this->Form->control('Body');
+            echo $this->Form->control('Body', ['type' => 'textarea']);
             //echo $this->Form->control('image._ids', ['options' => $image]);
         ?>
     </fieldset>
