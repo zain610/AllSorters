@@ -4,7 +4,7 @@
  * @var \App\Model\Entity\Review $review
  */
 ?>
-<div class="content table-responsive table-full-width">
+<div class="table table-hover table-striped">
     <div class="row">
         <div class="leftcolumn">
             <h3>Client Name: <?= h($review->Client_Name) ?></h3>
