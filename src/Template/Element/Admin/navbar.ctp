@@ -43,11 +43,6 @@ $isEventsActive = $currentController === "Events";
                         ['escape'=>false]
                     )?></li>
                 <li><?=$this->Html->link(
-                        '<p>View Blog Post archive</p>',
-                        ['prefix'=>'admin','controller'=>'BlogPost','action'=>'archiveIndex'],
-                        ['escape'=>false]
-                    )?></li>
-                <li><?=$this->Html->link(
                         '<p>View Blog Post Archive</p>',
                         ['prefix'=>'admin','controller'=>'BlogPost','action'=>'archiveIndex'],
                         ['escape'=>false]
