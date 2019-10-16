@@ -69,7 +69,7 @@ class ClientController extends AppController
                 $email->setTemplate('newClient');
                 $email->setEmailFormat('html');
 
-                $email->setTo('zyu69@student.monash.edu');
+                $email->setTo('allsortMary@gmail.com');
                 $email->setSubject('You Got a new client message');
                 $email->setViewVars(['client' => $client]);
                 $email->send();
