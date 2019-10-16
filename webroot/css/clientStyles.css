@@ -22,9 +22,7 @@ body > div.about > div > div.col-md-8.about-right > h4 {
     position: center;
     padding-left: 3rem;
 }
-.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
-    background-color: #00b0ff;
-}
+
 .services .container .h4 {
     color: #333333;
 }
@@ -39,4 +37,7 @@ div.services.container > div > a > div > button{
     background-color: #337ab7;
     color: white;
 
+}
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+    background-color: #00b0ff;
 }

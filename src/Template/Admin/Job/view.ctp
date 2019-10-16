@@ -58,7 +58,7 @@
                 <td><?= h($service->Service_id) ?></td>
                 <td><?= h($service->Service_Title) ?></td>
                 <td><?= h($service->Service_Description) ?></td>
-                <td><?= h($service->Service_Detail) ?></td>
+                <td><?= h(strip_tags($service->Service_Detail)) ?></td>
                 <td class="actions">
                     <?= $this->element('Admin/Buttons/view', ['url' =>  ['controller' => 'Service', 'action' => 'view', $service->Service_id]]) ?>
                     <?= $this->element('Admin/Buttons/edit', ['url' => ['controller' => 'Service', 'action' => 'edit', $service->Service_id]]) ?>
