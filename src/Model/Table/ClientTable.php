@@ -9,7 +9,7 @@ use Cake\Validation\Validator;
 /**
  * Client Model
  *
- * @property |\Cake\ORM\Association\HasMany $Job
+ *
  *
  * @method \App\Model\Entity\Client get($primaryKey, $options = [])
  * @method \App\Model\Entity\Client newEntity($data = null, array $options = [])
@@ -33,12 +33,12 @@ class ClientTable extends Table
         parent::initialize($config);
 
         $this->setTable('client');
-        $this->setDisplayField('Client_id');
-        $this->setPrimaryKey('Client_id');
+        $this->setDisplayField('id');
+        $this->setPrimaryKey('id');
 
-        $this->hasMany('Job', [
-            'foreignKey' => 'client_id'
-        ]);
+//        $this->hasMany('Job', [
+//            'foreignKey' => 'client_id'
+//        ]);
     }
 
     /**
@@ -93,6 +93,10 @@ class ClientTable extends Table
             ->dateTime('Modified')
             ->requirePresence('Modified', 'create')
             ->notEmpty('Modified');
+        $validator
+            ->scalar('messages')
+            ->requirePresence('messages', 'create')
+            ->notEmpty('messages');
 
         return $validator;
     }
