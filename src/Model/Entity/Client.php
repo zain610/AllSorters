@@ -15,6 +15,7 @@ use Cake\ORM\Entity;
  * @property string $Email
  * @property \Cake\I18n\FrozenTime $Created
  * @property \Cake\I18n\FrozenTime $Modified
+ * @property string $messages
  */
 class Client extends Entity
 {
@@ -36,6 +37,7 @@ class Client extends Entity
         'Phone' => true,
         'Email' => true,
         'Created' => true,
-        'Modified' => true
+        'Modified' => true,
+        'messages'=>true
     ];
 }
