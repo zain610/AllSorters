@@ -51,20 +51,21 @@ class ReviewTable extends Table
             ->scalar('Client_Name')
             ->maxLength('Client_Name', 255)
             ->requirePresence('Client_Name', 'create')
-            ->notEmpty('Client_Name');
+            ->notEmpty('Client_Name',false,false);
 
         $validator
             ->dateTime('Month_Year')
-            ->allowEmpty('Month_Year');
+            ->allowEmpty('Month_Year',false);
 
         $validator
-            ->integer('Suburb')
-            ->allowEmpty('Suburb');
+            ->maxLength('Suburb', 255)
+            ->scalar('Suburb')
+            ->allowEmpty('Suburb',false);
 
         $validator
             ->scalar('Review_Details')
             ->maxLength('Review_Details', 255)
-            ->allowEmpty('Review_Details');
+            ->allowEmpty('Review_Details',false);
 
         return $validator;
     }
