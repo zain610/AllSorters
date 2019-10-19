@@ -70,9 +70,9 @@ class RequestTable extends Table
             ->allowEmptyString('Cust_Sname');
 
         $validator
-            ->scalar('Subscription')
-            ->maxLength('Subscription', 255)
-            ->allowEmptyString('Subscription');
+            ->scalar('Query_info')
+            ->maxLength('Query_info', 255)
+            ->allowEmptyString('Query_info');
 
         return $validator;
     }
