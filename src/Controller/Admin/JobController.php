@@ -35,7 +35,7 @@ class JobController extends AppController
     public function view($id = null)
     {
         $job = $this->Job->get($id, [
-            'contain' => ['Contractor', 'Service']
+            'contain' => ['Contractor', 'Services']
         ]);
         $this->layout ='admin';
         $this->set('job', $job);
@@ -74,7 +74,7 @@ class JobController extends AppController
     public function edit($id = null)
     {
         $job = $this->Job->get($id, [
-            'contain' => ['Contractor', 'Service']
+            'contain' => ['Contractor', 'Services']
         ]);
         $this->layout ='admin';
         if ($this->request->is(['patch', 'post', 'put'])) {

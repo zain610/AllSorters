@@ -43,14 +43,14 @@
         <?php endif; ?>
     </div>
     <div class="related">
-        <h4><?= __('Related Service(s)') ?></h4>
+        <h4><?= __('Related Services(s)') ?></h4>
         <?php if (!empty($job->service)): ?>
         <table cellpadding="0" cellspacing="0" class="table table-hover table-striped">
             <tr>
-                <th scope="col"><?= __('Service Id') ?></th>
-                <th scope="col"><?= __('Service Title') ?></th>
-                <th scope="col"><?= __('Service Description') ?></th>
-                <th scope="col"><?= __('Service Detail') ?></th>
+                <th scope="col"><?= __('Services Id') ?></th>
+                <th scope="col"><?= __('Services Title') ?></th>
+                <th scope="col"><?= __('Services Description') ?></th>
+                <th scope="col"><?= __('Services Detail') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($job->service as $service): ?>
@@ -60,9 +60,9 @@
                 <td><?= h($service->Service_Description) ?></td>
                 <td><?= h(strip_tags($service->Service_Detail)) ?></td>
                 <td class="actions">
-                    <?= $this->element('Admin/Buttons/view', ['url' =>  ['controller' => 'Service', 'action' => 'view', $service->Service_id]]) ?>
-                    <?= $this->element('Admin/Buttons/edit', ['url' => ['controller' => 'Service', 'action' => 'edit', $service->Service_id]]) ?>
-                    <?= $this->element('Admin/Buttons/Delete', ['url' =>  ['controller' => 'Service', 'action' => 'delete', $service->Service_id], ['confirm' => __('Are you sure you want to delete # {0}?', $service->Service_id)]]) ?>
+                    <?= $this->element('Admin/Buttons/view', ['url' =>  ['controller' => 'Services', 'action' => 'view', $service->Service_id]]) ?>
+                    <?= $this->element('Admin/Buttons/edit', ['url' => ['controller' => 'Services', 'action' => 'edit', $service->Service_id]]) ?>
+                    <?= $this->element('Admin/Buttons/Delete', ['url' =>  ['controller' => 'Services', 'action' => 'delete', $service->Service_id], ['confirm' => __('Are you sure you want to delete # {0}?', $service->Service_id)]]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

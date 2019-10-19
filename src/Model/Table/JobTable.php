@@ -10,7 +10,7 @@ use Cake\Validation\Validator;
  * Job Model
  *
  * @property \App\Model\Table\ContractorTable|\Cake\ORM\Association\BelongsToMany $Contractor
- * @property \App\Model\Table\ServiceTable|\Cake\ORM\Association\BelongsToMany $Service
+ * @property \App\Model\Table\ServiceTable|\Cake\ORM\Association\BelongsToMany $Services
  *
  * @method \App\Model\Entity\Job get($primaryKey, $options = [])
  * @method \App\Model\Entity\Job newEntity($data = null, array $options = [])
@@ -42,7 +42,7 @@ class JobTable extends Table
             'targetForeignKey' => 'Contractor_id',
             'joinTable' => 'job_contractor'
         ]);
-        $this->belongsToMany('Service', [
+        $this->belongsToMany('Services', [
             'foreignKey' => 'Job_id',
             'targetForeignKey' => 'Service_id',
             'joinTable' => 'service_job'

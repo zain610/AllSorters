@@ -30,7 +30,7 @@ class ServiceImageTableTest extends TestCase
         'app.BlogPostImage',
         'app.GalleryPage',
         'app.GalleryPageImage',
-        'app.Service',
+        'app.Services',
         'app.Job',
         'app.Contractor',
         'app.JobContractor',

@@ -4,7 +4,7 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Service Entity
+ * Services Entity
  *
  * @property int $Service_id
  * @property string $Service_Title

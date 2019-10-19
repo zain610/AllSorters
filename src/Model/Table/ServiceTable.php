@@ -7,7 +7,7 @@ use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * Service Model
+ * Services Model
  *
  * @property \App\Model\Table\ImageTable|\Cake\ORM\Association\BelongsToMany $Image
  * @property \App\Model\Table\JobTable|\Cake\ORM\Association\BelongsToMany $Job
