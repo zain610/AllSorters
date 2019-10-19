@@ -6,7 +6,7 @@
 ?>
 <div id="searchBarNavBar">
     <?= $this->element('Admin/Buttons/search'); ?>
-    <?= $this->Html->link('Add Service', ['action' => 'add'], ['class' => 'pull-right btn btn-oval btn-primary']) ?>
+    <?= $this->Html->link('Add Services', ['action' => 'add'], ['class' => 'pull-right btn btn-oval btn-primary']) ?>
 </div>
 
 <div class="table table-hover table-striped">

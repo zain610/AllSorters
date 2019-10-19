@@ -89,7 +89,7 @@
         </div>
         <div class="clearfix"></div>
         <div class="copyright">
-            <p>Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://h2design.taobao.com/">氢设计</a></p>
+            <p>Copyright &copy; 2015.Company name All rights reserved.</p>
         </div>
     </div>
 </div>

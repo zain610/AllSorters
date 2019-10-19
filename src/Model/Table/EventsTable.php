@@ -49,7 +49,7 @@ class EventsTable extends Table
 
         $validator
             ->dateTime('date')
-            ->allowEmpty('date', false);
+            ->allowEmpty('date',false);
 
         $validator
             ->scalar('description')

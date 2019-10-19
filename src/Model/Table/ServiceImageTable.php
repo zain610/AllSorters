@@ -10,7 +10,7 @@ use Cake\Validation\Validator;
  * ServiceImage Model
  *
  * @property \App\Model\Table\ImageTable|\Cake\ORM\Association\BelongsTo $Image
- * @property \App\Model\Table\ServiceTable|\Cake\ORM\Association\BelongsTo $Service
+ * @property \App\Model\Table\ServiceTable|\Cake\ORM\Association\BelongsTo $Services
  *
  * @method \App\Model\Entity\ServiceImage get($primaryKey, $options = [])
  * @method \App\Model\Entity\ServiceImage newEntity($data = null, array $options = [])
@@ -40,7 +40,7 @@ class ServiceImageTable extends Table
         $this->belongsTo('Image', [
             'foreignKey' => 'Image_id'
         ]);
-        $this->belongsTo('Service', [
+        $this->belongsTo('Services', [
             'foreignKey' => 'Service_id'
         ]);
     }
@@ -70,7 +70,7 @@ class ServiceImageTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['Image_id'], 'Image'));
-        $rules->add($rules->existsIn(['Service_id'], 'Service'));
+        $rules->add($rules->existsIn(['Service_id'], 'Services'));
 
         return $rules;
     }

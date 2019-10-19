@@ -4,9 +4,9 @@ namespace App\Controller\admin;
 use App\Controller\AppController;
 
 /**
- * Service Controller
+ * Services Controller
  *
- * @property \App\Model\Table\ServiceTable $Service
+ * @property \App\Model\Table\ServiceTable $Services
  *
  * @method \App\Model\Entity\Service[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
@@ -28,7 +28,7 @@ class ServiceController extends AppController
     /**
      * View method
      *
-     * @param string|null $id Service id.
+     * @param string|null $id Services id.
      * @return \Cake\Http\Response|void
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
@@ -69,7 +69,7 @@ class ServiceController extends AppController
     /**
      * Edit method
      *
-     * @param string|null $id Service id.
+     * @param string|null $id Services id.
      * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
@@ -97,7 +97,7 @@ class ServiceController extends AppController
     /**
      * Delete method
      *
-     * @param string|null $id Service id.
+     * @param string|null $id Services id.
      * @return \Cake\Http\Response|null Redirects to index.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
@@ -174,9 +174,9 @@ class ServiceController extends AppController
         $queryTermConditions = [];
         foreach($queryTermsArray as $term){
             $queryTermConditions[] = ['OR' => [
-                'Service.Service_Title LIKE' => "%{$term}%",
-                'Service.Service_Description LIKE' => "%{$term}%",
-                'Service.Service_Detail LIKE' => "%{$term}%",
+                'Services.Service_Title LIKE' => "%{$term}%",
+                'Services.Service_Description LIKE' => "%{$term}%",
+                'Services.Service_Detail LIKE' => "%{$term}%",
             ]];
         }
 

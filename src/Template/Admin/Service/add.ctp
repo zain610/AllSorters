@@ -14,7 +14,7 @@ $this->Html->script('/TinyMCE/js/tiny_mce/tiny_mce.js', array(
        <div class="card">
             <?= $this->Form->create($service) ?>
             <fieldset>
-                <legend><?= __('Add Service') ?></legend>
+                <legend><?= __('Add Services') ?></legend>
                 <?php
                 echo $this->Form->control('Service_Title', ['id' =>'serviceTitleInput']);
                 echo $this->Form->control('Service_Description');

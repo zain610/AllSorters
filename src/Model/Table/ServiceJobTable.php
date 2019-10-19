@@ -9,7 +9,7 @@ use Cake\Validation\Validator;
 /**
  * ServiceJob Model
  *
- * @property \App\Model\Table\ServiceTable|\Cake\ORM\Association\BelongsTo $Service
+ * @property \App\Model\Table\ServiceTable|\Cake\ORM\Association\BelongsTo $Services
  * @property \App\Model\Table\JobTable|\Cake\ORM\Association\BelongsTo $Job
  *
  * @method \App\Model\Entity\ServiceJob get($primaryKey, $options = [])
@@ -37,7 +37,7 @@ class ServiceJobTable extends Table
         $this->setDisplayField('Service_Job_id');
         $this->setPrimaryKey('Service_Job_id');
 
-        $this->belongsTo('Service', [
+        $this->belongsTo('Services', [
             'foreignKey' => 'Service_id'
         ]);
         $this->belongsTo('Job', [
@@ -69,7 +69,7 @@ class ServiceJobTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['Service_id'], 'Service'));
+        $rules->add($rules->existsIn(['Service_id'], 'Services'));
         $rules->add($rules->existsIn(['Job_id'], 'Job'));
 
         return $rules;

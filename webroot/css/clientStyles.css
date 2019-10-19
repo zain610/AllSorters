@@ -2,7 +2,7 @@
     margin: 10rem 0;
 }
 .banner {
-    margin: 5rem 0 0;
+    margin: 2.5rem 0 0;
     height: 100%;
     background-image: url('../img/bg.jpg');
 
@@ -22,9 +22,7 @@ body > div.about > div > div.col-md-8.about-right > h4 {
     position: center;
     padding-left: 3rem;
 }
-.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
-    background-color: #00b0ff;
-}
+
 .services .container .h4 {
     color: #333333;
 }
@@ -33,4 +31,13 @@ body > div.about > div > div.col-md-8.about-right > h4 {
 }
 div.services.container > div > a > div > button{
     float: right;
+}
+/*!*Change the color when user hovers over navbar item*!*/
+.navbar-default .navbar-nav > li > a:hover {
+    background-color: #337ab7;
+    color: white;
+
+}
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+    background-color: #00b0ff;
 }

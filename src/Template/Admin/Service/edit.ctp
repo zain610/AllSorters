@@ -12,7 +12,7 @@ $this->Html->script('/TinyMCE/js/tiny_mce/tiny_mce.js', array(
         <div class="card">
     <?= $this->Form->create($service) ?>
     <fieldset>
-        <legend><?= __('Edit Service') ?></legend>
+        <legend><?= __('Edit Services') ?></legend>
         <?php
             echo $this->Form->control('Service_Title');
             echo $this->Form->control('Service_Description');

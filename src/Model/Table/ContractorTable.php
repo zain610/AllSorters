@@ -63,7 +63,7 @@ class ContractorTable extends Table
         $validator
             ->integer('Rate')
             ->requirePresence('Rate', 'create')
-            ->notEmpty('Rate',false);
+            ->notEmpty('Rate',false,false);
 
         return $validator;
     }

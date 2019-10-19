@@ -16,7 +16,6 @@
         <div class="row justify-content-md-center h-100">
             <div class="card-wrapper">
                 <div class="brand">
-                    <!--                    <img src="img/logo.jpg" alt="logo">-->
                     <?= $this->Html->image('kodinger.jpg', ['plugin' => false])?>
                 </div>
                 <div class="card fat">

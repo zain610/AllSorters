@@ -108,7 +108,7 @@ class ImageController extends AppController
         }
 //        $blogPost = $this->Image->BlogPost->find('list', ['limit' => 200]);
 //        $galleryPage = $this->Image->GalleryPage->find('list', ['limit' => 200]);
-//        $service = $this->Image->Service->find('list', ['limit' => 200]);
+//        $service = $this->Image->Services->find('list', ['limit' => 200]);
 //        $this->set(compact('image', 'blogPost', 'galleryPage', 'service'));
     }
 
@@ -122,7 +122,7 @@ class ImageController extends AppController
     public function edit($id = null)
     {
         $image = $this->Image->get($id, [
-            'contain' => ['BlogPost', 'GalleryPage', 'Service']
+            'contain' => ['BlogPost', 'GalleryPage', 'Services']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $image = $this->Image->patchEntity($image, $this->request->getData());

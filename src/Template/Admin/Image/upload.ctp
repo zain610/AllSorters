@@ -10,7 +10,6 @@
     <div class="col-md-6 offset-md-3">
         <div class="card">
             <div class="card-body">
-                <?php echo $this->Flash->render() ?>
                 <?php echo $this->Form->create(null, ['type'=>'file']); ?>
                 <?php echo $this->Form->control('image',['type' => 'file']); ?>
                 <?php
