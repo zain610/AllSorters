@@ -1,7 +1,7 @@
 <div class="header-bottom">
     <div class="container">
         <div class="logo">
-            <h1><a href="index.html">All Sorters</a>
+            <h1><a href="/">All Sorters</a>
         </div>
         <nav class="navbar navbar-default" role="navigation">
             <div class="navbar-header">

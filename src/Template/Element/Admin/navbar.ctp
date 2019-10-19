@@ -9,6 +9,9 @@ $isReviewActive = $currentController === "Review";
 $isJobActive = $currentController === "Job";
 $isContractorActive = $currentController === "Contractor";
 $isEventsActive = $currentController === "Events";
+$isQueriesActive = $currentController === "Queries";
+
+
 ?>
 
 <div class="sidebar-wrapper">
@@ -158,6 +161,25 @@ $isEventsActive = $currentController === "Events";
         <li id="dropDownMenu" class="<?= $isEventsActive ? 'active' : '' ?> dropdown">
             <?= $this->Html->link(
                 '<p>Speaking engagements</p>',
+                '#',
+                ['escape' => false, 'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true',]
+            ) ?>
+            <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
+                <li><?=$this->Html->link(
+                        '<p>View Speaking engagements</p>',
+                        ['prefix'=>'admin','controller'=>'Events','action'=>'index'],
+                        ['escape'=>false]
+                    )?></li>
+                <li><?=$this->Html->link(
+                        '<p>Add a Speaking engagement</p>',
+                        ['prefix'=>'admin','controller'=>'Events','action'=>'add'],
+                        ['escape'=>false]
+                    )?></li>
+            </ul>
+        </li>
+        <li id="dropDownMenu" class="<?= $isQueriesActive ? 'active' : '' ?> dropdown">
+            <?= $this->Html->link(
+                '<p>Queries</p>',
                 '#',
                 ['escape' => false, 'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true',]
             ) ?>
