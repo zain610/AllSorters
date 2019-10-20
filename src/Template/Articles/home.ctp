@@ -67,7 +67,7 @@
     </div>
 </div>
 <hr>
-<div class="services">
+<div class="services" style="display: flex">
     <div class="container">
         <div class="camp">
             <h3>Services Overview</h3>
@@ -83,6 +83,9 @@
             <?php }?>
             <div class="clearfix"> </div>
         </div>
+    </div>
+    <div class="container" id="newsletter-signup">
+        <?= $this->element('Client/subscribe'); ?>
     </div>
 </div>
 <hr>
