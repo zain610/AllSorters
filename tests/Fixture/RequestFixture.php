@@ -30,6 +30,8 @@ class RequestFixture extends TestFixture
         'Cust_Sname' => ['type' => 'string', 'length' => 255, 'null' => true, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'Query_info' => ['type' => 'string', 'length' => 255, 'null' => true, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'created' => ['type' => 'date', 'length' => null, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null],
+        'seen' => ['type' => 'boolean', 'length' => null, 'null' => true, 'default' => '0', 'comment' => '', 'precision' => null],
+        'Response' => ['type' => 'string', 'length' => 255, 'null' => true, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['Request_No'], 'length' => []],
         ],
@@ -52,7 +54,9 @@ class RequestFixture extends TestFixture
             'Cust_Fname' => 'Lorem ipsum dolor sit amet',
             'Cust_Sname' => 'Lorem ipsum dolor sit amet',
             'Query_info' => 'Lorem ipsum dolor sit amet',
-            'created' => '2019-10-20'
+            'created' => '2019-10-20',
+            'seen' => 1,
+            'Response' => 'Lorem ipsum dolor sit amet'
         ],
     ];
 }

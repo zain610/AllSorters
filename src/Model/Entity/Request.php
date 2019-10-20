@@ -12,6 +12,8 @@ use Cake\ORM\Entity;
  * @property string $Cust_Sname
  * @property string $Query_info
  * @property \Cake\I18n\FrozenDate $created
+ * @property bool $seen
+ * @property string $Response
  */
 class Request extends Entity
 {
@@ -30,6 +32,8 @@ class Request extends Entity
         'Cust_Fname' => true,
         'Cust_Sname' => true,
         'Query_info' => true,
-        'created' => true
+        'created' => true,
+        'seen' => true,
+        'Response' => true
     ];
 }

@@ -115,7 +115,17 @@ div.sidebar-wrapper {
 .sidebar .sidebar-wrapper {
     overflow-y: auto;
 }
-
+.message-container {
+    margin-top: 5%;
+    border: 5px solid #eaa;
+    padding: 10px;
+    height: fit-content;
+}
+.message-container > h2 {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 1px solid black;
+}
 
 
 
