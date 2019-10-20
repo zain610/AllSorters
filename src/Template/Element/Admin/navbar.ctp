@@ -185,13 +185,8 @@ $isQueriesActive = $currentController === "Queries";
             ) ?>
             <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
                 <li><?=$this->Html->link(
-                        '<p>View Speaking engagements</p>',
-                        ['prefix'=>'admin','controller'=>'Events','action'=>'index'],
-                        ['escape'=>false]
-                    )?></li>
-                <li><?=$this->Html->link(
-                        '<p>Add a Speaking engagement</p>',
-                        ['prefix'=>'admin','controller'=>'Events','action'=>'add'],
+                        '<p>View all Queries</p>',
+                        ['prefix'=>'admin','controller'=>'request','action'=>'index'],
                         ['escape'=>false]
                     )?></li>
             </ul>
