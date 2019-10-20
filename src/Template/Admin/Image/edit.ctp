@@ -18,8 +18,8 @@
         <li><?= $this->Html->link(__('New Blog Post'), ['controller' => 'BlogPost', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Gallery Page'), ['controller' => 'GalleryPage', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Gallery Page'), ['controller' => 'GalleryPage', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Service'), ['controller' => 'Service', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Service'), ['controller' => 'Service', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Services'), ['controller' => 'Services', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Services'), ['controller' => 'Services', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="image form large-9 medium-8 columns content">

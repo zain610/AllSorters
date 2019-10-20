@@ -27,7 +27,7 @@ class ContractorTableTest extends TestCase
         'app.Contractor',
         'app.Job',
         'app.JobContractor',
-        'app.Service',
+        'app.Services',
         'app.Image',
         'app.BlogPost',
         'app.BlogPostImage',

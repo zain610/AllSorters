@@ -24,7 +24,7 @@ class ServiceTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.Service',
+        'app.Services',
         'app.Image',
         'app.BlogPost',
         'app.BlogPostImage',
@@ -43,8 +43,8 @@ class ServiceTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('Service') ? [] : ['className' => ServiceTable::class];
-        $this->Service = TableRegistry::get('Service', $config);
+        $config = TableRegistry::exists('Services') ? [] : ['className' => ServiceTable::class];
+        $this->Service = TableRegistry::get('Services', $config);
     }
 
     /**

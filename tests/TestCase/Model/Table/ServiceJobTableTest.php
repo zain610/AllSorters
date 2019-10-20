@@ -25,7 +25,7 @@ class ServiceJobTableTest extends TestCase
      */
     public $fixtures = [
         'app.ServiceJob',
-        'app.Service',
+        'app.Services',
         'app.Image',
         'app.BlogPost',
         'app.BlogPostImage',

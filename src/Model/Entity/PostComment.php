@@ -4,19 +4,18 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Services Entity
+ * PostComment Entity
  *
- * @property int $Service_id
- * @property string $Service_Title
- * @property string $Service_Description
- * @property string $Service_Detail
+ * @property int $Post_Comment_id
+ * @property string|null $User_Name
+ * @property string|null $User_Email
+ * @property string|null $Comment_Details
+ * @property int|null $Post_id
  *
- * @property \App\Model\Entity\Image[] $image
- * @property \App\Model\Entity\Job[] $job
+ * @property \App\Model\Entity\BlogPost $blog_post
  */
-class Service extends Entity
+class PostComment extends Entity
 {
-
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
      *
@@ -27,10 +26,10 @@ class Service extends Entity
      * @var array
      */
     protected $_accessible = [
-        'Service_Title' => true,
-        'Service_Description' => true,
-        'Service_Detail' => true,
-        'image' => true,
-        'job' => true
+        'User_Name' => true,
+        'User_Email' => true,
+        'Comment_Details' => true,
+        'Post_id' => true,
+        'blog_post' => true
     ];
 }

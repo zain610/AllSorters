@@ -22,7 +22,7 @@ class ServiceImageControllerTest extends IntegrationTestCase
         'app.BlogPostImage',
         'app.GalleryPage',
         'app.GalleryPageImage',
-        'app.Service',
+        'app.Services',
         'app.Job',
         'app.Contractor',
         'app.JobContractor',

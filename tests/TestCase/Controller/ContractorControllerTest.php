@@ -19,7 +19,7 @@ class ContractorControllerTest extends IntegrationTestCase
         'app.Contractor',
         'app.Job',
         'app.JobContractor',
-        'app.Service',
+        'app.Services',
         'app.Image',
         'app.BlogPost',
         'app.BlogPostImage',

@@ -29,7 +29,7 @@ class BlogPostTableTest extends TestCase
         'app.BlogPostImage',
         'app.GalleryPage',
         'app.GalleryPageImage',
-        'app.Service',
+        'app.Services',
         'app.ServiceImage',
         'app.Job',
         'app.Contractor',

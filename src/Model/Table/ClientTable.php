@@ -36,9 +36,6 @@ class ClientTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
-//        $this->hasMany('Job', [
-//            'foreignKey' => 'client_id'
-//        ]);
     }
 
     /**

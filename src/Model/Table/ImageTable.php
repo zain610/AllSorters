@@ -11,7 +11,7 @@ use Cake\Validation\Validator;
  *
  * @property \App\Model\Table\BlogPostTable|\Cake\ORM\Association\BelongsToMany $BlogPost
  * @property \App\Model\Table\GalleryPageTable|\Cake\ORM\Association\BelongsToMany $GalleryPage
- * @property \App\Model\Table\ServiceTable|\Cake\ORM\Association\BelongsToMany $Service
+ * @property \App\Model\Table\ServiceTable|\Cake\ORM\Association\BelongsToMany $Services
  *
  * @method \App\Model\Entity\Image get($primaryKey, $options = [])
  * @method \App\Model\Entity\Image newEntity($data = null, array $options = [])
@@ -48,7 +48,7 @@ class ImageTable extends Table
             'targetForeignKey' => 'gallery_page_id',
             'joinTable' => 'gallery_page_image'
         ]);
-        $this->belongsToMany('Service', [
+        $this->belongsToMany('Services', [
             'foreignKey' => 'image_id',
             'targetForeignKey' => 'service_id',
             'joinTable' => 'service_image'

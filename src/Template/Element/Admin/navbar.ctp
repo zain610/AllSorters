@@ -3,7 +3,7 @@ $currentController = $this->request->getParam('controller');
 $currentAction = $this->request->getParam('action');
 $isDashboardActive = $currentController === "Admin" && $currentAction === 'index';
 $isBlogsActive = $currentController === "Blogs";
-$isServiceActive = $currentController === "Service";
+$isServiceActive = $currentController === "Services";
 $isImagesActive = $currentController === "Image";
 $isReviewActive = $currentController === "Review";
 $isJobActive = $currentController === "Job";
@@ -86,12 +86,12 @@ $isQueriesActive = $currentController === "Queries";
             <ul class="dropdown-menu" aria-labelledby="ServiceDropdown">
                 <li><?= $this->Html->link(
                         '<p>View Services</p>',
-                        ['prefix' => 'admin','controller' => 'Service', 'action' => 'index'],
+                        ['prefix' => 'admin','controller' => 'Services', 'action' => 'index'],
                         ['escape' => false]
                     ) ?></li>
                 <li><?= $this->Html->link(
                         '<p>Add Services</p>',
-                        ['prefix' => 'admin','controller' => 'Service', 'action' => 'add'],
+                        ['prefix' => 'admin','controller' => 'Services', 'action' => 'add'],
                         ['escape' => false]
                     ) ?></li>
             </ul>
