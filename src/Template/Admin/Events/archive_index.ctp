@@ -1,4 +1,9 @@
 <?php
+/**
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\Event[]|\Cake\Collection\CollectionInterface $event
+ * @var \App\Contoller\Admin\EventsController $archivedEvents
+ */
 ?>
 <div class="table table-hover table-striped">
 

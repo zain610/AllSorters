@@ -168,6 +168,6 @@ class EventsController extends AppController
     {
         $this->layout ='admin';
         $archivedEvents = TableRegistry::get('Events')->find('all')->where(['Events.Archived' => 1])->contain([]);
-        $this->set('$archivedEvents', $this->paginate($archivedEvents));
+        $this->set('archivedEvents', $this->paginate($archivedEvents));
     }
 }

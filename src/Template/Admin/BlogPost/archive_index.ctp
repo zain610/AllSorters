@@ -1,7 +1,8 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \App\Model\Entity\Event[]|\Cake\Collection\CollectionInterface $event
+ * @var \App\Model\Entity\BlogPost[]|\Cake\Collection\CollectionInterface $blogPost
+ * @var \App\Contoller\Admin\BlogPostController $archivedBlogPosts
  */
 ?>
 
