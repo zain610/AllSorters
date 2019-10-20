@@ -1,7 +1,7 @@
 <div class="header-bottom">
     <div class="container">
         <div class="logo">
-            <h1><a href="index.html">All Sorters</a>
+            <h1><a href="/">All Sorters</a>
         </div>
         <nav class="navbar navbar-default" role="navigation">
             <div class="navbar-header">
@@ -20,7 +20,8 @@
                     <li><?= $this->Html->link('Blog', ['controller' => 'Blogpost', 'action' => 'index'], ['class' => 'navbar-brand']) ?></li>
                     <li><?= $this->Html->link('About', ['controller' => 'About', 'action' => 'index'], ['class' => 'navbar-brand']) ?></li>
                     <li><?= $this->Html->link('Gallery', ['controller' => 'gallery', 'action' => 'index'], ['class' => 'navbar-brand']) ?></li>
-                    <li><?= $this->Html->link('Contact', ['controller' => 'Client', 'action' => 'add'], ['class' => 'navbar-brand']) ?></li>
+                    <li><?= $this->Html->link('Contact', ['controller' => 'Request', 'action' => 'add'], ['class' => 'navbar-brand']) ?></li>
+                    <li><?= $this->Html->link('Speaking Engagements', ['controller' => 'Events', 'action' => 'index'], ['class' => 'navbar-brand']) ?></li>
                 </ul>
             </div>
             <!--/.navbar-collapse-->

@@ -8,15 +8,14 @@ use Cake\ORM\Entity;
  *
  * @property int $Request_No
  * @property string $Request_Email
- * @property string|null $Cust_Fname
- * @property string|null $Cust_Sname
- * @property string|null $Subscription
- * @property int $Client_id
- *
- * @property \App\Model\Entity\Client $client
+ * @property string $Cust_Fname
+ * @property string $Cust_Sname
+ * @property string $Query_info
+ * @property \Cake\I18n\FrozenDate $created
  */
 class Request extends Entity
 {
+
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
      *
@@ -30,8 +29,7 @@ class Request extends Entity
         'Request_Email' => true,
         'Cust_Fname' => true,
         'Cust_Sname' => true,
-        'Subscription' => true,
-        'Client_id' => true,
-        'client' => true
+        'Query_info' => true,
+        'created' => true
     ];
 }

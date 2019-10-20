@@ -81,6 +81,24 @@ body > div > div.main-panel > div > div > div > div {
 table.articles-table {
     height: 100%;
 }
+#table-row-content {
+    -webkit-transition:box-shadow 0.3s linear;
+    -moz-transition:box-shadow 0.3s linear;
+    -o-transition:box-shadow 0.3s linear;
+    -ms-transition:box-shadow 0.3s linear;
+    transition:box-shadow 0.3s linear;
+}
+#table-row-content:hover {
+    -webkit-box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#table-empty-row {
+    border-left: none;
+    border-right: none;
+    background: transparent!important;
+    padding: 5px;
+}
 
 table td.action-col {
     display: inline-flex;
@@ -97,5 +115,7 @@ div.sidebar-wrapper {
 .sidebar .sidebar-wrapper {
     overflow-y: auto;
 }
+
+
 
 

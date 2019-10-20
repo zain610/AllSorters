@@ -10,7 +10,7 @@
         <?= $this->Html->link('Add Review Post', ['action' => 'add'], ['class' => 'pull-right btn btn-oval btn-primary']) ?>
     </div>
     <h3><?= __('Reviews') ?></h3>
-    <table class="articles-table table">
+    <table>
         <thead>
         <tr>
             <th scope="col"><?= $this->Paginator->sort('Client_Name') ?></th>

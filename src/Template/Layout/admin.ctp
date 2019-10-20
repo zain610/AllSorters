@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:500i|Roboto:300,400,700|Roboto+Mono" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
     <?= $this->Html->css('bootstrap.min.css') ?>
     <?= $this->Html->css('animate.min.css') ?>
     <?= $this->Html->css('light-bootstrap-dashboard.css') ?>
@@ -49,6 +50,7 @@
 </div>
 </body>
 <!--   Core JS Files   -->
+<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 <?= $this->Html->script([
     'jquery-3.4.1.min.js',
     'bootstrap.min.js',
