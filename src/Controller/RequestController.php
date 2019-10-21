@@ -45,9 +45,7 @@ class RequestController extends AppController
      */
     public function view($id = null)
     {
-        $request = $this->Request->get($id, [
-            'contain' => ['Client']
-        ]);
+        $request = $this->Request->get($id);
 
         $this->set('request', $request);
     }

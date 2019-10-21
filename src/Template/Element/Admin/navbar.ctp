@@ -10,6 +10,7 @@ $isJobActive = $currentController === "Job";
 $isContractorActive = $currentController === "Contractor";
 $isEventsActive = $currentController === "Events";
 $isQueriesActive = $currentController === "Queries";
+$isNewslettersActive = $currentController === "Newsletter";
 
 
 ?>
@@ -190,6 +191,22 @@ $isQueriesActive = $currentController === "Queries";
                         ['escape'=>false]
                     )?></li>
             </ul>
+
+        </li>
+        <li id="dropDownMenu" class="<?= $isNewslettersActive ? 'active' : '' ?> dropdown">
+            <?= $this->Html->link(
+                '<p>Newsletters</p>',
+                '#',
+                ['escape' => false, 'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true',]
+            ) ?>
+            <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
+                <li><?=$this->Html->link(
+                        '<p>Send a Newsletter</p>',
+                        ['prefix'=>'admin','controller'=>'subscriptions','action'=>'index'],
+                        ['escape'=>false]
+                    )?></li>
+            </ul>
+
         </li>
     </ul>
 </div>
