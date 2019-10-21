@@ -23,8 +23,8 @@
         <h3>Our Services</h3>
         <div class="well">
             <h4><?php echo $service->Service_Title?></h4>
-            <div class="well"><?php echo $service->Service_Description?></div>
-            <div class="well"><?php echo $service->Service_Detail?></div>
+            <h4><?php echo $service->Service_Description?></h4>
+            <p><?php echo $service->Service_Detail?></p>
         </div>
         <div class="clearfix"> </div>
 

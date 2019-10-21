@@ -1,66 +1,113 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Services</title>
+    <title>Blog</title>
+<<<<<<< HEAD
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <![endif]-->
+    <title>Nice responsive template for blogger</title>
+    <!-- BOOTSTRAP CORE STYLE -->
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <!-- FONT AWESOME ICON STYLE -->
+    <link href="css/font-awesome.css" rel="stylesheet" />
+    <!-- CUSTOM STYLE CSS -->
+    <link href="css/styles.css" rel="stylesheet" />
+=======
+>>>>>>> caf195551b3dc525553b7c28085e1555d8954be4
 </head>
 <body>
-<!-- header -->
-<!-- banner -->
-<div class="banner-1">
-    <div class="container">
+<div class="container">
 
+<<<<<<< HEAD
+    <div class="row">
+
+        <div class="col-md-8 ">
+            <div class="blog-post">
+                <h2>Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.</h2>
+                <h4>Posted by <a href="#">admin</a> on 24th January 2015 </h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
+                    Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
+                </p>
+                <a href="#" class="btn btn-default btn-lg ">Read More <i class="fa fa-angle-right"></i></a>
+            </div>
+            <div class="blog-post">
+                <h2>Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.</h2>
+                <h4>Posted by <a href="#">admin</a> on 24th January 2015 </h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
+                    Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
+                </p>
+                <a href="#" class="btn btn-default btn-lg ">Read More <i class="fa fa-angle-right"></i></a>
+            </div>
+            <div class="blog-post">
+                <h2>Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.</h2>
+                <h4>Posted by <a href="#">admin</a> on 24th January 2015 </h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
+                    Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
+                </p>
+                <a href="#" class="btn btn-default btn-lg ">Read More <i class="fa fa-angle-right"></i></a>
+            </div>
+
+            <br />
+            <nav>
+                <ul class="pagination">
+                    <li>
+                        <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li>
+                        <a href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+</div>
+<script src="js/jquery-1.11.1.js"></script>
+<!-- BOOTSTRAP SCRIPTS -->
+<script src="js/bootstrap.js"></script>
+
+
+=======
     </div>
 </div>
 <!-- banner -->
 <div class="services">
     <div class="container">
         <div class="camp">
-            <h3>Services Overview</h3>
+            <h3>Recent Blog</h3>
+            <?php foreach ($blogPost as $blogPost)?>
             <div class="col-md-4 minist-right">
-                <img src="images/4.jpg" class="img-responsive" alt="">
-                <h4>Molestie velit</h4>
-                <p>Pellentesque augue quam, ornare quis ipsum molestie velit id mauris ultrices accumsan in sed erat. In mollis tortor orci; nec ornare eros elementum molestie, justo sapien tincidunt purus, at adipiscing.</p>
-                <a class="hvr-shutter-in-horizontal" href="#">More</a>
+<!--                <img src="images/4.jpg" class="img-responsive" alt="">-->
+                <h4><?php echo $blogPost->title?></h4>
+                <p><?php echo $blogPost->Description?></p>
+                <a><?= $this->element('Client/Buttons/view', ['url' => ['action' => 'view', $blogPost->blog_post_id]]) ?></a>
             </div>
-            <div class="col-md-4 minist-right">
-                <img src="images/5.jpg" class="img-responsive" alt="">
-                <h4>Mauris ultrice</h4>
-                <p>Pellentesque augue quam, ornare quis ipsum molestie velit id mauris ultrices accumsan in sed erat. In mollis tortor orci; nec ornare eros elementum molestie, justo sapien tincidunt purus, at adipiscing.</p>
-                <a class="hvr-shutter-in-horizontal" href="#">More</a>
-            </div>
-            <div class="col-md-4 minist-right">
-                <img src="images/6.jpg" class="img-responsive" alt="">
-                <h4>Quis ipsum</h4>
-                <p>Pellentesque augue quam, ornare quis ipsum molestie velit id mauris ultrices accumsan in sed erat. In mollis tortor orci; nec ornare eros elementum molestie, justo sapien tincidunt purus, at adipiscing.</p>
-                <a class="hvr-shutter-in-horizontal" href="#">More</a>
-            </div>
-            <div class="clearfix"> </div>
         </div>
-        <h3>Our Services</h3>
-        <div class="col-md-3 minist-left">
-            <h4>Accumsan in sed</h4>
-            <p>Pellentesque augue quam, ornare quis ipsum molestie velit id mauris ultrices accumsan in sed erat. In mollis tortor orci; nec ornare eros elementum molestie, justo sapien tincidunt purus, at adipiscing.</p>
-            <a class="hvr-shutter-in-horizontal" href="#">More</a>
-        </div>
-        <div class="col-md-3 minist-left">
-            <h4>Velit id mauris</h4>
-            <p>Pellentesque augue quam, ornare quis ipsum molestie velit id mauris ultrices accumsan in sed erat. In mollis tortor orci; nec ornare eros elementum molestie, justo sapien tincidunt purus, at adipiscing.</p>
-            <a class="hvr-shutter-in-horizontal" href="#">More</a>
-        </div>
-        <div class="col-md-3 minist-left">
-            <h4>Ultrices accumsan</h4>
-            <p>Pellentesque augue quam, ornare quis ipsum molestie velit id mauris ultrices accumsan in sed erat. In mollis tortor orci; nec ornare eros elementum molestie, justo sapien tincidunt purus, at adipiscing.</p>
-            <a class="hvr-shutter-in-horizontal" href="#">More</a>
-        </div>
-        <div class="col-md-3 minist-left">
-            <h4>Ornare quis</h4>
-            <p>Pellentesque augue quam, ornare quis ipsum molestie velit id mauris ultrices accumsan in sed erat. In mollis tortor orci; nec ornare eros elementum molestie, justo sapien tincidunt purus, at adipiscing.</p>
-            <a class="hvr-shutter-in-horizontal" href="#">More</a>
-        </div>
-        <div class="clearfix"> </div>
-
     </div>
 </div>
+
+</div>
+>>>>>>> caf195551b3dc525553b7c28085e1555d8954be4
 <!-- footer -->
 <div class="footer" id="contact">
     <div class="container">

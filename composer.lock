@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cc2b18a8b2fcff07a5b7ec6b49d879fd",
+    "content-hash": "808ba2348277ff7a547f87bf08afb91a",
     "packages": [
         {
             "name": "aura/intl",
@@ -499,57 +499,6 @@
                 "php mobile detect"
             ],
             "time": "2019-09-18T18:44:20+00:00"
-        },
-        {
-            "name": "narendravaghela/cakephp-mailgun",
-            "version": "4.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/narendravaghela/cakephp-mailgun.git",
-                "reference": "113f271259788b746f200a7c23801c331eea9a03"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/narendravaghela/cakephp-mailgun/zipball/113f271259788b746f200a7c23801c331eea9a03",
-                "reference": "113f271259788b746f200a7c23801c331eea9a03",
-                "shasum": ""
-            },
-            "require": {
-                "cakephp/cakephp": "^3.7.0",
-                "ext-json": "*"
-            },
-            "require-dev": {
-                "cakephp/cakephp-codesniffer": "^3.0",
-                "phpunit/phpunit": "^5.7.14|^6.0"
-            },
-            "type": "cakephp-plugin",
-            "autoload": {
-                "psr-4": {
-                    "Mailgun\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Narendra Vaghela",
-                    "homepage": "http://www.narendravaghela.com",
-                    "role": "Author"
-                },
-                {
-                    "name": "Community",
-                    "homepage": "https://github.com/narendravaghela/cakephp-mailgun/graphs/contributors"
-                }
-            ],
-            "description": "Mailgun plugin for CakePHP 3 - Send emails using Mailgun API",
-            "keywords": [
-                "cakephp",
-                "email",
-                "mailgun"
-            ],
-            "time": "2019-01-07T04:53:28+00:00"
         },
         {
             "name": "psr/http-message",
