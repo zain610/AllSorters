@@ -4,6 +4,32 @@ Please write all the admin side CSS here so it is easier to track and modify
 HTML components on top of the loaded 3rd Party style libraries.
  */
 
+/* =============================================================
+ BLOG POST STYLE
+============================================================ */
+.blog-post {
+    padding-bottom:30px;
+    border-bottom:2px solid #f4f4f4;
+    padding-top:30px;
+}
+.blog-post a, .blog-post a:hover {
+    text-decoration:none;
+}
+.blog-post h1 {
+    font-size:30px;
+    line-height:50px;
+}
+.blog-post h4 {
+    font-size:20px;
+    line-height:25px;
+}
+.blog-post p {
+    font-size:20px;
+    line-height:30px;
+    padding-bottom:20px;
+    padding-top:10px;
+}
+
 .row {
     max-width: 100rem!important;
 }
