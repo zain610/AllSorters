@@ -12,7 +12,6 @@
         "cakephp/plugin-installer": "^1.0",
         "josegonzalez/dotenv": "2.*",
         "mobiledetect/mobiledetectlib": "2.*",
-        "narendravaghela/cakephp-mailgun": "^4.0",
         "xety/cake3-upload": "1.*"
     },
     "require-dev": {
