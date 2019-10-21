@@ -1,10 +1,9 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \App\Model\Entity\Client $client
+ * @var \App\Model\Entity\Request $request
  */
-?>
-<br>
+?><br>
 <br>
 <div class="container">
     <div class="row">
@@ -14,35 +13,35 @@
             <p>Fields marked * are required</p>
             <br>
             <br>
-            <?= $this->Form->create($client) ?>
+            <?= $this->Form->create($request) ?>
             <div class="row form-group">
                 <div class="col-md-6">
                     <?php echo $this->Form->control('Cust_Fname',[
-                    'label' => false,
-                    'placeholder' => '* Firstname',
-                    'class' => 'form-control',
-                    'required'=>true,
-                    'pattern' => '[a-zA-Z]+',
-                    'title' => 'Names can only contain letters'
+                        'label' => false,
+                        'placeholder' => '* Firstname',
+                        'class' => 'form-control',
+                        'required'=>true,
+                        'pattern' => '[a-zA-Z]+',
+                        'title' => 'Names can only contain letters'
                     ]); ?>
                 </div>
                 <div class="col-md-6">
                     <?php echo $this->Form->control('Cust_Sname',[
-                    'required'=>true,
-                    'label' => false,
-                    'placeholder' => '* Surname',
-                    'class' => 'form-control',
-                    'pattern' => '[a-zA-Z]+',
-                    'title' => 'Names can only contain letters'
+                        'required'=>true,
+                        'label' => false,
+                        'placeholder' => '* Surname',
+                        'class' => 'form-control',
+                        'pattern' => '[a-zA-Z]+',
+                        'title' => 'Names can only contain letters'
                     ]); ?>
                 </div>
                 <br>
                 <div class="col-md-6" style="margin-top: 20px">
                     <?php echo $this->Form->email('Request_Email',[
-                    'label' => false,
-                    'placeholder' => 'Email',
-                    'required'=>false,
-                    'class' => 'form-control'
+                        'label' => false,
+                        'placeholder' => 'Email',
+                        'required'=>false,
+                        'class' => 'form-control'
                     ]); ?>
                 </div>
 

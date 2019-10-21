@@ -41,6 +41,13 @@ class EventsController extends AppController
 
         $this->set(compact('events'));
     }
+    public function initialize()
+    {
+        parent::initialize();
+
+        $this->loadModel('Events');
+        $this->Auth->allow(['index']);
+    }
 
     /**
      * View method
