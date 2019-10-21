@@ -2,6 +2,27 @@
 namespace App\Controller\Admin;
 
 use App\Controller\AppController;
+use Cake\I18n\Number;
+use Cake\Mailer\Email;
+use Cake\Mailer\TransportFactory;
+
+//        'gmail' => [
+//
+//            'host' => 'ssl://stmp.gmail.com',
+//            'port' => 465,
+//            'username' => 'allsortMary@gmail.com',
+//            'password' => 'allsortMary77',
+//            'className' => 'Smtp',
+//            'tls' => true
+//        ]
+
+TransportFactory::setConfig('gmail', [
+    'host' => 'ssl://smtp.gmail.com',
+    'port' => 465,
+    'username' => 'allsortMary@gmail.com',
+    'password' => 'allsortMary77',
+    'className' => 'Smtp'
+]);
 
 /**
  * Subscriptions Controller
@@ -19,8 +40,10 @@ class SubscriptionsController extends AppController
      */
     public function index()
     {
+        $this->layout = 'admin';
         $subscriptions = $this->paginate($this->Subscriptions);
-
+        $subscribers = $this->request->getSession()->read('subscribers');
+        $this->set('subscribers', $subscribers);
         $this->set(compact('subscriptions'));
     }
 
@@ -103,5 +126,41 @@ class SubscriptionsController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+    public function emailNewsletter()
+    {
+        $this->layout = "admin";
+        $this->request->allowMethod('post');
+        //get the data from front end with the users to send the email to.
+        $subscribers = $this->request->getData();
+        $sender_list = [];
+        //get the keys of the data = ids
+        $data_keys = array_keys($subscribers);
+        //iterate over the keys list and foreach key, find the value is 1, then add it to the senders list
+        foreach($data_keys as $key) {
+            if($subscribers[$key]) {
+                array_push($sender_list, $this->Subscriptions->find()->select(['email_address'])->where(['id' => $key])->toList());
+            }
+        }
+        $this->sendEmails($sender_list);
+        $this->request->getSession()->write('subscribers', $sender_list );
+        return $this->redirect(['action' => 'index']);
+    }
+    private function sendEmails($sender_list = []) {
+        foreach ($sender_list as $sender) {
+            $sender_email = $sender[0]['email_address'];
+            $email = new Email('default');
+            $email->setFrom(['allsortMary@gmail.com' => 'All Sorters'])
+                ->setTo($sender_email)
+                ->setTemplate('default')
+                ->setViewVars(['title' => "Test message from all sorters", 'content'=> '3000'])
+                ->setSubject("Test message #10000000");
+//            Email::deliver($sender_email, 'Hello World', 'Test message', ['from' => 'allsortMary@gmail.com']);
+            if($email->send()) {
+                $this->request->getSession()->write('mail', true);
+            } else {
+                $this->request->getSession()->write('mail', false);
+            }
+        }
     }
 }

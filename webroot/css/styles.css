@@ -36,7 +36,7 @@ body > div > div.main-panel > div > div > div > div > div > p {
     padding: 5% 0;
 }
 label {
-    font-size: 1.2rem!important;
+    font-size: 1.5rem!important;
 }
 select {
     margin: 0 0.5rem;
@@ -127,6 +127,13 @@ div.sidebar-wrapper {
     border-bottom: 1px solid black;
 }
 
+#div-subscriber-checkbox {
+    margin: 10px;
+    border: 1px solid #333333;
+    padding: 5px;
 
-
+}
+input[type="checkbox"] {
+    margin: 0;
+}
 
