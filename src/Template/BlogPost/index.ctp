@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Services</title>
+    <title>Blog</title>
 </head>
 <body>
 <!-- header -->
@@ -15,51 +15,18 @@
 <div class="services">
     <div class="container">
         <div class="camp">
-            <h3>Services Overview</h3>
+            <h3>Recent Blog</h3>
+            <?php foreach ($blogPost as $blogPost)?>
             <div class="col-md-4 minist-right">
-                <img src="images/4.jpg" class="img-responsive" alt="">
-                <h4>Molestie velit</h4>
-                <p>Pellentesque augue quam, ornare quis ipsum molestie velit id mauris ultrices accumsan in sed erat. In mollis tortor orci; nec ornare eros elementum molestie, justo sapien tincidunt purus, at adipiscing.</p>
-                <a class="hvr-shutter-in-horizontal" href="#">More</a>
+<!--                <img src="images/4.jpg" class="img-responsive" alt="">-->
+                <h4><?php echo $blogPost->title?></h4>
+                <p><?php echo $blogPost->Description?></p>
+                <a><?= $this->element('Client/Buttons/view', ['url' => ['action' => 'view', $blogPost->blog_post_id]]) ?></a>
             </div>
-            <div class="col-md-4 minist-right">
-                <img src="images/5.jpg" class="img-responsive" alt="">
-                <h4>Mauris ultrice</h4>
-                <p>Pellentesque augue quam, ornare quis ipsum molestie velit id mauris ultrices accumsan in sed erat. In mollis tortor orci; nec ornare eros elementum molestie, justo sapien tincidunt purus, at adipiscing.</p>
-                <a class="hvr-shutter-in-horizontal" href="#">More</a>
-            </div>
-            <div class="col-md-4 minist-right">
-                <img src="images/6.jpg" class="img-responsive" alt="">
-                <h4>Quis ipsum</h4>
-                <p>Pellentesque augue quam, ornare quis ipsum molestie velit id mauris ultrices accumsan in sed erat. In mollis tortor orci; nec ornare eros elementum molestie, justo sapien tincidunt purus, at adipiscing.</p>
-                <a class="hvr-shutter-in-horizontal" href="#">More</a>
-            </div>
-            <div class="clearfix"> </div>
         </div>
-        <h3>Our Services</h3>
-        <div class="col-md-3 minist-left">
-            <h4>Accumsan in sed</h4>
-            <p>Pellentesque augue quam, ornare quis ipsum molestie velit id mauris ultrices accumsan in sed erat. In mollis tortor orci; nec ornare eros elementum molestie, justo sapien tincidunt purus, at adipiscing.</p>
-            <a class="hvr-shutter-in-horizontal" href="#">More</a>
-        </div>
-        <div class="col-md-3 minist-left">
-            <h4>Velit id mauris</h4>
-            <p>Pellentesque augue quam, ornare quis ipsum molestie velit id mauris ultrices accumsan in sed erat. In mollis tortor orci; nec ornare eros elementum molestie, justo sapien tincidunt purus, at adipiscing.</p>
-            <a class="hvr-shutter-in-horizontal" href="#">More</a>
-        </div>
-        <div class="col-md-3 minist-left">
-            <h4>Ultrices accumsan</h4>
-            <p>Pellentesque augue quam, ornare quis ipsum molestie velit id mauris ultrices accumsan in sed erat. In mollis tortor orci; nec ornare eros elementum molestie, justo sapien tincidunt purus, at adipiscing.</p>
-            <a class="hvr-shutter-in-horizontal" href="#">More</a>
-        </div>
-        <div class="col-md-3 minist-left">
-            <h4>Ornare quis</h4>
-            <p>Pellentesque augue quam, ornare quis ipsum molestie velit id mauris ultrices accumsan in sed erat. In mollis tortor orci; nec ornare eros elementum molestie, justo sapien tincidunt purus, at adipiscing.</p>
-            <a class="hvr-shutter-in-horizontal" href="#">More</a>
-        </div>
-        <div class="clearfix"> </div>
-
     </div>
+</div>
+
 </div>
 <!-- footer -->
 <div class="footer" id="contact">
