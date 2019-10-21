@@ -24,7 +24,9 @@
             <div class="form-check form-check-inline">
                 <input onclick="toggle(this)" class="" type="checkbox" id="selectAll" value="selectAll">
                 <label class="form-check-label" for="selectAll">Select all</label>
+                <?= $this->Form->button('Submit', ['class'=>'btn btn-primary']); ?>
             </div>
+
         </div>
         <div class="container">
 
@@ -40,10 +42,10 @@
 
 
                 <?php endforeach; ?>
-                <?= $this->Form->button('Add'); ?>
-                <?=  $this->Form->end(); ?>
+
 
             </div>
+            <?=  $this->Form->end(); ?>
 
         </div>
     </div>

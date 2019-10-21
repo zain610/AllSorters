@@ -16,13 +16,6 @@ use Cake\Mailer\TransportFactory;
 //            'tls' => true
 //        ]
 
-TransportFactory::setConfig('gmail', [
-    'host' => 'ssl://smtp.gmail.com',
-    'port' => 465,
-    'username' => 'allsortMary@gmail.com',
-    'password' => 'allsortMary77',
-    'className' => 'Smtp'
-]);
 
 /**
  * Subscriptions Controller
@@ -147,9 +140,11 @@ class SubscriptionsController extends AppController
         return $this->redirect(['action' => 'index']);
     }
     private function sendEmails($sender_list = []) {
+        //iterate over each sender and send an email.
         foreach ($sender_list as $sender) {
             $sender_email = $sender[0]['email_address'];
-            $email = new Email('default');
+
+            $email = new Email('SMTP');
             $email->setFrom(['allsortMary@gmail.com' => 'All Sorters'])
                 ->setTo($sender_email)
                 ->setTemplate('default')
