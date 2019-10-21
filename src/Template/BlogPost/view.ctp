@@ -6,7 +6,7 @@
 ?>
 <html>
 <head>
-    <title>Services</title>
+    <title>Blog</title>
 </head>
 <body>
 <!-- header -->
