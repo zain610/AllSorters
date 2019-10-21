@@ -11,6 +11,7 @@
     <?= $this->Html->css('chocolat.css') ?>
     <?= $this->Html->css('clientStyles.css') ?>
 
+
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -60,5 +61,6 @@
         $('.g-left a').Chocolat();
     });
 </script>
+
 
 </html>

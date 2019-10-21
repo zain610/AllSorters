@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Blog</title>
+<<<<<<< HEAD
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
@@ -16,10 +17,13 @@
     <link href="css/font-awesome.css" rel="stylesheet" />
     <!-- CUSTOM STYLE CSS -->
     <link href="css/styles.css" rel="stylesheet" />
+=======
+>>>>>>> caf195551b3dc525553b7c28085e1555d8954be4
 </head>
 <body>
 <div class="container">
 
+<<<<<<< HEAD
     <div class="row">
 
         <div class="col-md-8 ">
@@ -83,6 +87,27 @@
 <script src="js/bootstrap.js"></script>
 
 
+=======
+    </div>
+</div>
+<!-- banner -->
+<div class="services">
+    <div class="container">
+        <div class="camp">
+            <h3>Recent Blog</h3>
+            <?php foreach ($blogPost as $blogPost)?>
+            <div class="col-md-4 minist-right">
+<!--                <img src="images/4.jpg" class="img-responsive" alt="">-->
+                <h4><?php echo $blogPost->title?></h4>
+                <p><?php echo $blogPost->Description?></p>
+                <a><?= $this->element('Client/Buttons/view', ['url' => ['action' => 'view', $blogPost->blog_post_id]]) ?></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+>>>>>>> caf195551b3dc525553b7c28085e1555d8954be4
 <!-- footer -->
 <div class="footer" id="contact">
     <div class="container">
