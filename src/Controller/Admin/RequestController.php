@@ -34,10 +34,16 @@ class RequestController extends AppController
      */
     public function view($id = null)
     {
-        $request = $this->Request->get($id, [
-            'contain' => ['Client']
-        ]);
+        $this->layout = 'admin';
+        $request = $this->Request->get($id);
+        if($this->request->is('post')) {
+            $response = $this->Request->patchEntity($request, $this->request->getData());
+            if ($this->Request->save($request)) {
+                $this->Flash->success(__('The request has been saved.'));
 
+                return $this->redirect(['action' => 'index']);
+            }
+        }
         $this->set('request', $request);
     }
 

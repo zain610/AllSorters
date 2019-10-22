@@ -1,79 +1,71 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \App\Model\Entity\BlogPost $blogPost
+ * @var \App\Model\Entity\Service $service
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Blog Post'), ['action' => 'edit', $blogPost->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Blog Post'), ['action' => 'delete', $blogPost->id], ['confirm' => __('Are you sure you want to delete # {0}?', $blogPost->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Blog Post'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Blog Post'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Image'), ['controller' => 'Image', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Image'), ['controller' => 'Image', 'action' => 'add']) ?> </li>
-    </ul>
-</nav>
-<div class="blogPost view large-9 medium-8 columns content">
-    <h3><?= h($blogPost->title) ?></h3>
-    <table class="vertical-table">
-        <tr>
-            <th scope="row"><?= __('Title') ?></th>
-            <td><?= h($blogPost->title) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Description') ?></th>
-            <td><?= h($blogPost->Description) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Body') ?></th>
-            <td><?= h($blogPost->Body) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($blogPost->id) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Date') ?></th>
-            <td><?= h($blogPost->Date) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Created') ?></th>
-            <td><?= h($blogPost->created) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Modified') ?></th>
-            <td><?= h($blogPost->modified) ?></td>
-        </tr>
-    </table>
-    <div class="related">
-        <h4><?= __('Related Image') ?></h4>
-        <?php if (!empty($blogPost->image)): ?>
-        <table cellpadding="0" cellspacing="0">
-            <tr>
-                <th scope="col"><?= __('Image Id') ?></th>
-                <th scope="col"><?= __('Image Content') ?></th>
-                <th scope="col"><?= __('Name') ?></th>
-                <th scope="col"><?= __('Path') ?></th>
-                <th scope="col"><?= __('Created At') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-            <?php foreach ($blogPost->image as $image): ?>
-            <tr>
-                <td><?= h($image->Image_id) ?></td>
-                <td><?= h($image->Image_Content) ?></td>
-                <td><?= h($image->name) ?></td>
-                <td><?= h($image->path) ?></td>
-                <td><?= h($image->created_at) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'Image', 'action' => 'view', $image->Image_id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Image', 'action' => 'edit', $image->Image_id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Image', 'action' => 'delete', $image->Image_id], ['confirm' => __('Are you sure you want to delete # {0}?', $image->Image_id)]) ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </table>
-        <?php endif; ?>
+<html>
+<head>
+    <title>Blog</title>
+</head>
+<body>
+<!-- header -->
+<!-- banner -->
+<div class="banner-1">
+    <div class="container">
+
     </div>
 </div>
+<!-- banner -->
+<div class="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-8 mb-5">
+            <h3>Blog</h3>
+            <div class="well">
+                <h4><?php echo $blogPost->title?></h4>
+                <p><?php echo $blogPost->Description?></p>
+                <a><?php echo $blogPost->Body?></a>
+            </div>
+            <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="footer" id="contact">
+        <div class="container">
+            <div class="col-md-4 contact-left">
+                <h3>Address</h3>
+                <address>
+                    795 Folsom Ave, Suite 600<br>
+                    San Francisco, CA 94107<br>
+                    <abbr title="Phone">P :</abbr> (123) 456-7890
+                </address>
+            </div>
+            <div class="col-md-4 ftr-gd">
+                <h3>Follow Us</h3>
+                <ul class="social">
+                    <li><a href="#"><i></i></a> </li>
+                    <li><a href="#"><i class="facebook"></i></a></li>
+                    <li><a href="#"><i class="goog"></i> </a></li>
+                    <li><a href="#"><i class="lin"></i> </a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 contact-left">
+                <h3>Phone/Fax</h3>
+                <p>Phone : +1234567890 </p>
+                <p>Fax : +1234567890 </p>
+                <p>Email : <a href="mailto:info@example.com">info@mycompany.com</a> </p>
+            </div>
+            <div class="clearfix"></div>
+            <div class="copyright">
+                <p>Copyright &copy; 2015.Company name All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 0;"></span> <span id="toTopHover" style="opacity: 0;"> </span></a>
+</body>
+</html>
+

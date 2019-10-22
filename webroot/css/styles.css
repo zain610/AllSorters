@@ -4,6 +4,32 @@ Please write all the admin side CSS here so it is easier to track and modify
 HTML components on top of the loaded 3rd Party style libraries.
  */
 
+/* =============================================================
+ BLOG POST STYLE
+============================================================ */
+.blog-post {
+    padding-bottom:30px;
+    border-bottom:2px solid #f4f4f4;
+    padding-top:30px;
+}
+.blog-post a, .blog-post a:hover {
+    text-decoration:none;
+}
+.blog-post h1 {
+    font-size:30px;
+    line-height:50px;
+}
+.blog-post h4 {
+    font-size:20px;
+    line-height:25px;
+}
+.blog-post p {
+    font-size:20px;
+    line-height:30px;
+    padding-bottom:20px;
+    padding-top:10px;
+}
+
 .row {
     max-width: 100rem!important;
 }
@@ -36,7 +62,7 @@ body > div > div.main-panel > div > div > div > div > div > p {
     padding: 5% 0;
 }
 label {
-    font-size: 1.2rem!important;
+    font-size: 1.5rem!important;
 }
 select {
     margin: 0 0.5rem;
@@ -115,7 +141,25 @@ div.sidebar-wrapper {
 .sidebar .sidebar-wrapper {
     overflow-y: auto;
 }
+.message-container {
+    margin-top: 5%;
+    border: 5px solid #eaa;
+    padding: 10px;
+    height: fit-content;
+}
+.message-container > h2 {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 1px solid black;
+}
 
+#div-subscriber-checkbox {
+    margin: 10px;
+    border: 1px solid #333333;
+    padding: 5px;
 
-
+}
+input[type="checkbox"] {
+    margin: 0;
+}
 

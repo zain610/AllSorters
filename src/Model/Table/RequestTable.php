@@ -72,6 +72,15 @@ class RequestTable extends Table
             ->maxLength('Query_info', 255)
             ->allowEmpty('Query_info');
 
+        $validator
+            ->boolean('seen')
+            ->allowEmpty('seen');
+
+        $validator
+            ->scalar('Response')
+            ->maxLength('Response', 255)
+            ->allowEmpty('Response');
+
         return $validator;
     }
 }

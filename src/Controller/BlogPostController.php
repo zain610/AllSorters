@@ -16,7 +16,7 @@ class BlogPostController extends AppController
     {
         parent::initialize();
         $this->loadModel('BlogPost');
-        $this->Auth->allow(['index']);
+        $this->Auth->allow(['index','view']);
     }
 
     public function isAuthorized()
@@ -41,6 +41,14 @@ class BlogPostController extends AppController
         //$blogPost = $this->paginate($this->BlogPost);
 
         //$this->set(compact('blogPost'));
+    }
+    public function view($id = null){
+        $this->layout ='client';
+        $blogPost = $this->BlogPost->get($id, [
+            'contain' => ['image']
+        ]);
+
+        $this->set('blogPost', $blogPost);
     }
 
 }
