@@ -3,7 +3,11 @@ namespace App\Controller\Admin;
 
 use App\Controller\AppController;
 use Cake\ORM\TableRegistry;
+use Cake\Routing\Route\Route;
+use Cake\Routing\Router;
+use Cake\View\Helper\UrlHelper;
 use Facebook\Facebook;
+
 
 /**
  * BlogPost Controller
@@ -93,15 +97,12 @@ class BlogPostController extends AppController
 
 
     }
-    public function publishToFacebook() {
-//        $blogPost = $this->BlogPost->get($id);
-//        if ($blogPost == null) {
-//            throw new NotFoundException();
-//        }
-//
-
-
-
+    public function publishToFacebook($id = null) {
+        $blogPost = $this->BlogPost->get($id);
+        if ($blogPost == null) {
+            throw new NotFoundException();
+        }
+        $url = Router::url(['prefix' => false, 'controller' => 'Blogpost', 'action' => 'view', 'id' => $id], true);
 
         $fb = new Facebook([
             'app_id' => '726068664574442',
@@ -114,7 +115,8 @@ class BlogPostController extends AppController
             $response = $fb->post(
                 'me/feed',
                 array (
-                    'message' => 'Zain'
+                    'message' => 'Ping Pong, sing song. :)',
+                    'link' => 'www.google.com'
                 ),
                 'EAAKUWwjVoeoBAGekUnnRYzZCgSc3jJZCyOZC5zLqk9ty7vGIPGKZBNLpeYDXty3Y8h4xBQoSVPPIjPt3U68E4FGpZAi1t9SOeRCMvoo8Bxw1uQFP3FJe8trrcvzXOnbFIadZCN6Ihg6zzB2avZBpuDqYnSEl3BI326LZCZCC7nrWxigZDZD'
             );
@@ -126,7 +128,7 @@ class BlogPostController extends AppController
             exit;
         }
         $graphNode = $response->getGraphNode();
-        $this->request->getSession()->write('message', $graphNode);
+        $this->request->getSession()->write('message', $url);
         $this->redirect(['action' => 'index']);
     }
 
