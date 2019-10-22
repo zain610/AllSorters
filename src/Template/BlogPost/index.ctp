@@ -5,7 +5,7 @@
     <!-- BOOTSTRAP CORE STYLE -->
     <link href="css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME ICON STYLE -->
-    <link href="css/font-awesome.css" rel="stylesheet" />
+    <link href="css/font-awesome.css" rel   ="stylesheet" />
     <!-- CUSTOM STYLE CSS -->
     <link href="css/styles.css" rel="stylesheet" />
 
