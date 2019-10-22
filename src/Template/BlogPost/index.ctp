@@ -3,7 +3,7 @@
     <title>Blog</title>
 
     <!-- BOOTSTRAP CORE STYLE -->
-    <link href="css/bootstrap.css" rel="stylesheet" />
+
     <!-- FONT AWESOME ICON STYLE -->
     <link href="css/font-awesome.css" rel="stylesheet" />
     <!-- CUSTOM STYLE CSS -->
@@ -13,9 +13,10 @@
 <body>
 <div class="services">
 <div class="container">
-    <h3>Blog</h3>
     <div class="row">
-            <div class="col-md-12">
+    <h3>Blog</h3>
+
+            <div class="col-md-12 col-lg-8 mb-5">
                 <?php foreach ($blogPost as $blogPost): ?>
                 <div class="blog-post">
                     <h2><?php echo $blogPost->title?></h2>
