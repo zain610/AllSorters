@@ -10,6 +10,7 @@
         "cakephp/elastic-search": "@stable",
         "cakephp/migrations": "1.7.1",
         "cakephp/plugin-installer": "^1.0",
+        "fullcalendar/fullcalendar": "^3.10",
         "josegonzalez/dotenv": "2.*",
         "mobiledetect/mobiledetectlib": "2.*",
         "xety/cake3-upload": "1.*"

@@ -135,4 +135,5 @@ class AdminController extends AppController
         $this->layout ='admin';
         $this->set(compact('admin'));
     }
+
 }

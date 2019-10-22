@@ -95,12 +95,12 @@ $isBookingActive = $currentController === "Admin" && $currentAction === 'booking
             <ul class="dropdown-menu" aria-labelledby="ServiceDropdown">
                 <li><?= $this->Html->link(
                         '<p>View Services</p>',
-                        ['prefix' => 'admin','controller' => 'Services', 'action' => 'index'],
+                        ['prefix' => 'admin','controller' => 'Service', 'action' => 'index'],
                         ['escape' => false]
                     ) ?></li>
                 <li><?= $this->Html->link(
                         '<p>Add Services</p>',
-                        ['prefix' => 'admin','controller' => 'Services', 'action' => 'add'],
+                        ['prefix' => 'admin','controller' => 'Service', 'action' => 'add'],
                         ['escape' => false]
                     ) ?></li>
             </ul>

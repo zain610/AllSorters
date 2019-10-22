@@ -1,63 +1,30 @@
-<!DOCTYPE HTML>
 <html>
 <head>
     <title>Blog</title>
-<<<<<<< HEAD
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <!--[if IE]>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <![endif]-->
-    <title>Nice responsive template for blogger</title>
+
     <!-- BOOTSTRAP CORE STYLE -->
     <link href="css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME ICON STYLE -->
     <link href="css/font-awesome.css" rel="stylesheet" />
     <!-- CUSTOM STYLE CSS -->
     <link href="css/styles.css" rel="stylesheet" />
-=======
->>>>>>> caf195551b3dc525553b7c28085e1555d8954be4
+
 </head>
 <body>
+<div class="services">
 <div class="container">
-
-<<<<<<< HEAD
+    <h3>Blog</h3>
     <div class="row">
+            <div class="col-md-12">
+                <?php foreach ($blogPost as $blogPost): ?>
+                <div class="blog-post">
+                    <h2><?php echo $blogPost->title?></h2>
+                    <h4>Posted by <a href="#">admin</a> on 24th January 2015 </h4>
+                    <p><?php echo $blogPost->Description?></p>
 
-        <div class="col-md-8 ">
-            <div class="blog-post">
-                <h2>Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.</h2>
-                <h4>Posted by <a href="#">admin</a> on 24th January 2015 </h4>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
-                    Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
-                </p>
-                <a href="#" class="btn btn-default btn-lg ">Read More <i class="fa fa-angle-right"></i></a>
-            </div>
-            <div class="blog-post">
-                <h2>Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.</h2>
-                <h4>Posted by <a href="#">admin</a> on 24th January 2015 </h4>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
-                    Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
-                </p>
-                <a href="#" class="btn btn-default btn-lg ">Read More <i class="fa fa-angle-right"></i></a>
-            </div>
-            <div class="blog-post">
-                <h2>Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.</h2>
-                <h4>Posted by <a href="#">admin</a> on 24th January 2015 </h4>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
-                    Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
-                </p>
-                <a href="#" class="btn btn-default btn-lg ">Read More <i class="fa fa-angle-right"></i></a>
-            </div>
-
+                    <a href='<?php echo $this->Url->build(array('action'=> 'View', $blogPost->blog_post_id))?>' class="btn btn-default btn-lg ">Read More <i class="fa fa-angle-right"></i></a>
+                </div>
+                <?php endforeach; ?>
             <br />
             <nav>
                 <ul class="pagination">
@@ -86,28 +53,11 @@
 <!-- BOOTSTRAP SCRIPTS -->
 <script src="js/bootstrap.js"></script>
 
-
-=======
-    </div>
-</div>
-<!-- banner -->
-<div class="services">
-    <div class="container">
-        <div class="camp">
-            <h3>Recent Blog</h3>
-            <?php foreach ($blogPost as $blogPost)?>
-            <div class="col-md-4 minist-right">
-<!--                <img src="images/4.jpg" class="img-responsive" alt="">-->
-                <h4><?php echo $blogPost->title?></h4>
-                <p><?php echo $blogPost->Description?></p>
-                <a><?= $this->element('Client/Buttons/view', ['url' => ['action' => 'view', $blogPost->blog_post_id]]) ?></a>
-            </div>
-        </div>
     </div>
 </div>
 
 </div>
->>>>>>> caf195551b3dc525553b7c28085e1555d8954be4
+
 <!-- footer -->
 <div class="footer" id="contact">
     <div class="container">

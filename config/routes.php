@@ -52,6 +52,7 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/', ['controller' => 'Articles', 'action' => 'home']);
     //Catching the login and logout routes for which the functionalities are in AdminController and not to be mistaken for page with Admin prefix
     $routes->connect('/admin/login', ['controller' => 'Admin', 'action' => 'login']);
+    $routes->connect('/admin/booking', ['controller' => 'Admin', 'action' => 'booking']);
     $routes->connect('/admin/logout', ['controller' => 'Admin', 'action' => 'logout']);
     $routes->connect('/admin/booking', ['controller' => 'Admin', 'action' => 'booking']);
     $routes->connect('/admin/edit/*', ['prefix' => false, 'controller' => 'Admin', 'action' => 'edit']);
