@@ -3,9 +3,7 @@ html {
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
-body {
-  margin: 0;
-}
+
 article,
 aside,
 details,
@@ -1077,7 +1075,7 @@ html {
 }
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 100%;
   line-height: 1.42857143;
   color: #333;
   background-color: #fff;
@@ -1446,6 +1444,7 @@ dt {
 dd {
   margin-left: 0;
 }
+
 @media (min-width: 768px) {
   .dl-horizontal dt {
     float: left;
@@ -6792,3 +6791,4 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+

@@ -11,6 +11,7 @@ $isContractorActive = $currentController === "Contractor";
 $isEventsActive = $currentController === "Events";
 $isQueriesActive = $currentController === "Queries";
 $isNewslettersActive = $currentController === "Newsletter";
+$isBookingActive = $currentController === "Admin" && $currentAction === 'booking';;
 
 
 ?>
@@ -26,6 +27,13 @@ $isNewslettersActive = $currentController === "Newsletter";
             <?= $this->Html->link(
                 '<p>Dashboard</p>',
                 ['prefix' => false, 'controller' => 'Admin', 'action' => 'index'],
+                ['escape' => false]
+            ) ?>
+        </li>
+        <li class="<?= $isBookingActive ? 'active' : '' ?> dropdown">
+            <?= $this->Html->link(
+                '<p>Booking</p>',
+                ['prefix' => false, 'controller' => 'Admin', 'action' => 'booking'],
                 ['escape' => false]
             ) ?>
         </li>
@@ -87,12 +95,12 @@ $isNewslettersActive = $currentController === "Newsletter";
             <ul class="dropdown-menu" aria-labelledby="ServiceDropdown">
                 <li><?= $this->Html->link(
                         '<p>View Services</p>',
-                        ['prefix' => 'admin','controller' => 'Services', 'action' => 'index'],
+                        ['prefix' => 'admin','controller' => 'Service', 'action' => 'index'],
                         ['escape' => false]
                     ) ?></li>
                 <li><?= $this->Html->link(
                         '<p>Add Services</p>',
-                        ['prefix' => 'admin','controller' => 'Services', 'action' => 'add'],
+                        ['prefix' => 'admin','controller' => 'Service', 'action' => 'add'],
                         ['escape' => false]
                     ) ?></li>
             </ul>

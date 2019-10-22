@@ -4,6 +4,32 @@ Please write all the admin side CSS here so it is easier to track and modify
 HTML components on top of the loaded 3rd Party style libraries.
  */
 
+/* =============================================================
+ BLOG POST STYLE
+============================================================ */
+.blog-post {
+    padding-bottom:30px;
+    border-bottom:2px solid #f4f4f4;
+    padding-top:30px;
+}
+.blog-post a, .blog-post a:hover {
+    text-decoration:none;
+}
+.blog-post h1 {
+    font-size:30px;
+    line-height:50px;
+}
+.blog-post h4 {
+    font-size:20px;
+    line-height:25px;
+}
+.blog-post p {
+    font-size:20px;
+    line-height:30px;
+    padding-bottom:20px;
+    padding-top:10px;
+}
+
 .row {
     max-width: 100rem!important;
 }
@@ -137,3 +163,57 @@ input[type="checkbox"] {
     margin: 0;
 }
 
+input[type="button"],input[type="submit"],li.parallelogram{
+    transition:0.5s all;
+    -webkit-transition:0.5s all;
+    -moz-transition:0.5s all;
+    -o-transition:0.5s all;
+    -ms-transition:0.5s all;
+}
+h1,h2,h3,h4,h5,h6{
+    margin:0;
+}
+p{
+    margin:0;
+}
+ul{
+    margin:0;
+    padding:0;
+}
+
+/*-- header --*/
+.header-bottom {
+    background-color: #fff;
+    padding: 0;
+}
+.navbar-nav {
+    float: none;
+    margin: 0 auto;
+    width: 100% ! important;
+}
+.navbar-default {
+    background-color:#fff! important;
+    border-color:#fff ! important;
+}
+.navbar {
+    border-radius: 0px ! important;
+}
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 0px;
+    border: none ! important;
+}
+.navbar-default .navbar-nav > li > a {
+    color:#6D6767;
+    font-size: 1.1em;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color:#d21826;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: #d21826;
+    background-color: #fff;
+}

@@ -1,3 +1,6 @@
+<head>
+</head>
+<body>
 <div class="header-bottom">
     <div class="container">
         <div class="logo">
@@ -7,9 +10,7 @@
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+
                 </button>
             </div>
             <!--/.navbar-header-->
@@ -20,7 +21,7 @@
                     <li><?= $this->Html->link('Blog', ['controller' => 'Blogpost', 'action' => 'index'], ['class' => 'navbar-brand']) ?></li>
                     <li><?= $this->Html->link('About', ['controller' => 'About', 'action' => 'index'], ['class' => 'navbar-brand']) ?></li>
                     <li><?= $this->Html->link('Gallery', ['controller' => 'gallery', 'action' => 'index'], ['class' => 'navbar-brand']) ?></li>
-                    <li><?= $this->Html->link('Contact', ['controller' => 'Request', 'action' => 'add'], ['class' => 'navbar-brand']) ?></li>
+                    <li><?= $this->Html->link('Contact', ['controller' => 'Client', 'action' => 'add'], ['class' => 'navbar-brand']) ?></li>
                     <li><?= $this->Html->link('Speaking Engagements', ['controller' => 'Events', 'action' => 'index'], ['class' => 'navbar-brand']) ?></li>
                 </ul>
             </div>
@@ -28,3 +29,4 @@
         </nav>
     </div>
 </div>
+</body>
