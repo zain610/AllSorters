@@ -116,7 +116,7 @@ class BlogPostController extends AppController
                 'me/feed',
                 array (
                     'message' => 'Uploaded a new blog, Please check it out. :)',
-                    'link' => 'www.google.com'
+                    'link' => $url
                 ),
                 'EAAKUWwjVoeoBAGekUnnRYzZCgSc3jJZCyOZC5zLqk9ty7vGIPGKZBNLpeYDXty3Y8h4xBQoSVPPIjPt3U68E4FGpZAi1t9SOeRCMvoo8Bxw1uQFP3FJe8trrcvzXOnbFIadZCN6Ihg6zzB2avZBpuDqYnSEl3BI326LZCZCC7nrWxigZDZD'
             );

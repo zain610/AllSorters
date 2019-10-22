@@ -29,10 +29,11 @@ $currentController = $this->request->getParam('controller');
                     <td>
                         <?= $blogPost->created->timeAgoInWords() ?>
                     </td>
-                    <td class="action-col">
+                    <td class="action-col" style="">
                         <?= $this->element('Admin/Buttons/view', ['url' => ['action' => 'view', $blogPost->blog_post_id]]) ?>
                         <?= $this->element('Admin/Buttons/edit', ['url' => ['action' => 'edit', $blogPost->blog_post_id]]) ?>
                         <?= $this->element('Admin/Buttons/Archive', ['url' => ['action' => 'archive', $blogPost->blog_post_id], ['confirm' => __('Are you sure you want to archive # {0}?', $blogPost->id)]]) ?>
+                        <?= $this->element('Admin/Buttons/publish', ['url' => ['action' => 'publishToFacebook', $blogPost->blog_post_id]]); ?>
                     </td>
                 </tr>
                 <?php } ?>
