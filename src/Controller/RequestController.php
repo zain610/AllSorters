@@ -67,7 +67,6 @@ class RequestController extends AppController
                 $email->setTemplate('newClient');
                 $email->setEmailFormat('html');
                 $email->setTo('allsortMary@gmail.com');
-                $email->setFrom('allsortMary@gmail.com');
                 $email->setSubject('You Got a new client message');
                 $email->setViewVars(['request' => $request]);
                 $email->send();

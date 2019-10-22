@@ -115,7 +115,7 @@ class BlogPostController extends AppController
             $response = $fb->post(
                 'me/feed',
                 array (
-                    'message' => 'Ping Pong, sing song. :)',
+                    'message' => 'Uploaded a new blog, Please check it out. :)',
                     'link' => 'www.google.com'
                 ),
                 'EAAKUWwjVoeoBAGekUnnRYzZCgSc3jJZCyOZC5zLqk9ty7vGIPGKZBNLpeYDXty3Y8h4xBQoSVPPIjPt3U68E4FGpZAi1t9SOeRCMvoo8Bxw1uQFP3FJe8trrcvzXOnbFIadZCN6Ihg6zzB2avZBpuDqYnSEl3BI326LZCZCC7nrWxigZDZD'
