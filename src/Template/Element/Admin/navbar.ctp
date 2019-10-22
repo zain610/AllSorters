@@ -184,6 +184,11 @@ $isBookingActive = $currentController === "Admin" && $currentAction === 'booking
                         ['prefix'=>'admin','controller'=>'Events','action'=>'add'],
                         ['escape'=>false]
                     )?></li>
+                <li><?=$this->Html->link(
+                        '<p>View Speaking Engagements archive</p>',
+                        ['prefix'=>'admin','controller'=>'Events','action'=>'archiveIndex'],
+                        ['escape'=>false]
+                    )?></li>
             </ul>
         </li>
         <li id="dropDownMenu" class="<?= $isQueriesActive ? 'active' : '' ?> dropdown">
