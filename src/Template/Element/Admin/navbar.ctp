@@ -11,6 +11,7 @@ $isContractorActive = $currentController === "Contractor";
 $isEventsActive = $currentController === "Events";
 $isQueriesActive = $currentController === "Queries";
 $isNewslettersActive = $currentController === "Newsletter";
+$isBookingActive = $currentController === "Admin" && $currentAction === 'booking';;
 
 
 ?>
@@ -26,6 +27,13 @@ $isNewslettersActive = $currentController === "Newsletter";
             <?= $this->Html->link(
                 '<p>Dashboard</p>',
                 ['prefix' => false, 'controller' => 'Admin', 'action' => 'index'],
+                ['escape' => false]
+            ) ?>
+        </li>
+        <li class="<?= $isBookingActive ? 'active' : '' ?> dropdown">
+            <?= $this->Html->link(
+                '<p>Booking</p>',
+                ['prefix' => false, 'controller' => 'Admin', 'action' => 'booking'],
                 ['escape' => false]
             ) ?>
         </li>
