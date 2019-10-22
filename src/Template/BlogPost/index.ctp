@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>Blog</title>
-<<<<<<< HEAD
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
@@ -17,13 +16,10 @@
     <link href="css/font-awesome.css" rel="stylesheet" />
     <!-- CUSTOM STYLE CSS -->
     <link href="css/styles.css" rel="stylesheet" />
-=======
->>>>>>> caf195551b3dc525553b7c28085e1555d8954be4
 </head>
 <body>
 <div class="container">
 
-<<<<<<< HEAD
     <div class="row">
 
         <div class="col-md-8 ">
@@ -87,7 +83,7 @@
 <script src="js/bootstrap.js"></script>
 
 
-=======
+
     </div>
 </div>
 <!-- banner -->

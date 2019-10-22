@@ -170,4 +170,22 @@ class EventsController extends AppController
         $archivedEvents = TableRegistry::get('Events')->find('all')->where(['Events.Archived' => 1])->contain([]);
         $this->set('archivedEvents', $this->paginate($archivedEvents));
     }
+
+    public function content($id = null)
+    {
+        $this->layout ='admin';
+        $webpage = $this->Webpages->get($id, [
+            'contain' => []
+        ]);
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $webpage = $this->Webpages->patchEntity($webpage, $this->request->getData());
+            if ($this->Webpages->save($webpage)) {
+                $this->Flash->success(__('The webpage content has been saved.'));
+
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('The webpage content could not be saved. Please, try again.'));
+        }
+        $this->set(compact('webpage'));
+    }
 }

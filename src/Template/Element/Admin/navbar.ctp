@@ -181,6 +181,11 @@ $isNewslettersActive = $currentController === "Newsletter";
                         ['prefix'=>'admin','controller'=>'Events','action'=>'archiveIndex'],
                         ['escape'=>false]
                     )?></li>
+                <li><?=$this->Html->link(
+                        '<p>Edit Speaking engagements webpage</p>',
+                        ['prefix'=>'admin','controller'=>'Events','action'=>'content'],
+                        ['escape'=>false]
+                    )?></li>
             </ul>
         </li>
         <li id="dropDownMenu" class="<?= $isQueriesActive ? 'active' : '' ?> dropdown">
