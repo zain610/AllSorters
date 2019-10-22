@@ -1,13 +1,7 @@
 <html>
 <head>
     <title>Blog</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <!--[if IE]>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <![endif]-->
+
     <!-- BOOTSTRAP CORE STYLE -->
     <link href="css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME ICON STYLE -->
@@ -17,18 +11,18 @@
 
 </head>
 <body>
+<div class="services">
 <div class="container">
-
+    <h3>Blog</h3>
     <div class="row">
-            <div class="col-md-8 ">
+            <div class="col-md-12">
                 <?php foreach ($blogPost as $blogPost): ?>
                 <div class="blog-post">
                     <h2><?php echo $blogPost->title?></h2>
                     <h4>Posted by <a href="#">admin</a> on 24th January 2015 </h4>
                     <p><?php echo $blogPost->Description?></p>
 
-                    <a href="#" class="btn btn-default btn-lg ">Read More <i class="fa fa-angle-right"></i></a>
-
+                    <a href='<?php echo $this->Url->build(array('action'=> 'View', $blogPost->blog_post_id))?>' class="btn btn-default btn-lg ">Read More <i class="fa fa-angle-right"></i></a>
                 </div>
                 <?php endforeach; ?>
             <br />
@@ -59,21 +53,6 @@
 <!-- BOOTSTRAP SCRIPTS -->
 <script src="js/bootstrap.js"></script>
 
-    </div>
-</div>
-<!-- banner -->
-<div class="services">
-    <div class="container">
-        <div class="camp">
-            <h3>Recent Blog</h3>
-            <?php foreach ($blogPost as $blogPost)?>
-            <div class="col-md-4 minist-right">
-<!--                <img src="images/4.jpg" class="img-responsive" alt="">-->
-                <h4><?php echo $blogPost->title?></h4>
-                <p><?php echo $blogPost->Description?></p>
-                <a><?= $this->element('Client/Buttons/view', ['url' => ['action' => 'view', $blogPost->blog_post_id]]) ?></a>
-            </div>
-        </div>
     </div>
 </div>
 
