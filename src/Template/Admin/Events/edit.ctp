@@ -11,9 +11,9 @@
         <legend><?= __('Edit Event') ?></legend>
         <?php
         echo "<br>";
-        echo $this->Form->control('date', ['empty' => true]);
-            echo $this->Form->control('description');
-            echo $this->Form->control('venue');
+        echo $this->Form->control('date', ['type'=> 'datetime', 'empty' => true]);
+            echo $this->Form->control('description', ['type'=> 'textarea']);
+            echo $this->Form->control('venue',['type'=> 'textarea']);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

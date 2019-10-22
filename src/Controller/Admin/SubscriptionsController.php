@@ -144,7 +144,7 @@ class SubscriptionsController extends AppController
         foreach ($sender_list as $sender) {
             $sender_email = $sender[0]['email_address'];
 
-            $email = new Email('SMTP');
+            $email = new Email('default');
             $email->setFrom(['allsortMary@gmail.com' => 'All Sorters'])
                 ->setTo($sender_email)
                 ->setTemplate('default')

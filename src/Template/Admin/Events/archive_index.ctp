@@ -1,15 +1,13 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \App\Model\Entity\Event[]|\Cake\Collection\CollectionInterface $events
+ * @var \App\Model\Entity\Event[]|\Cake\Collection\CollectionInterface $event
+ * @var \App\Contoller\Admin\EventsController $archivedEvents
  */
 ?>
-
-</nav>
 <div class="table table-hover table-striped">
-    <?= $this->Html->link('Add an event', ['action' => 'add'], ['class' => 'pull-right btn btn-oval btn-primary']) ?>
 
-    <h3><?= __('Speaking Engagements') ?></h3>
+    <h3><?= __('Speaking Engagements Archive') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
         <tr>
@@ -20,16 +18,18 @@
         </tr>
         </thead>
         <tbody>
-        <?php foreach ($publishedEvents as $event): ?>
-            <?php if ($event->Published) { ?>
+        <?php foreach ($archivedEvents as $event): ?>
+            <?php if ($event->Archived) { ?>
                 <tr>
                     <td><?= h($event->date) ?></td>
                     <td><?= h($event->description) ?></td>
                     <td><?= h($event->venue) ?></td>
                     <td class="actions">
-                        <?= $this->element('Admin/Buttons/view', ['url' => ['action' => 'view', $event->id]]) ?>
-                        <?= $this->element('Admin/Buttons/edit', ['url' => ['action' => 'edit', $event->id]]) ?>
-                        <?= $this->element('Admin/Buttons/Archive', ['url' => ['action' => 'archive', $event->id], ['confirm' => __('Are you sure you want to archive # {0}?', $event->id)]]) ?>
+                        <?= $this->element('Admin/Buttons/View', ['url' => ['action' => 'view', $event->id]]) ?>
+                        <?= $this->element('Admin/Buttons/Edit', ['url' => ['action' => 'edit', $event->id]]) ?>
+                        <?= $this->element('Admin/Buttons/delete', ['url' => ['action' => 'delete', $event->id], ['confirm' => __('Are you sure you want to delete # {0}?', $event->id)]]) ?>
+                        <?= $this->element('Admin/Buttons/restore', ['url' => ['action' => 'restore', $event->id], ['confirm' => __('Are you sure you want to restore # {0}?', $event->id)]]) ?>
+
                     </td>
                 </tr>
             <?php } ?>
@@ -48,4 +48,3 @@
         <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
     </div>
 </div>
-
