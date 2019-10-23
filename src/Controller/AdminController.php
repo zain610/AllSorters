@@ -130,5 +130,10 @@ class AdminController extends AppController
         $this->Auth->logout();
         return $this->redirect(['controller' => 'Admin', 'action' => 'login']);
     }
+    public function booking(){
+        $admin = $this->paginate($this->Admin);
+        $this->layout ='admin';
+        $this->set(compact('admin'));
+    }
 
 }

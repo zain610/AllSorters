@@ -94,46 +94,46 @@
 
 <div class="services">
     <div class="container">
-            <h3>Speaking Engagements</h3>
+        <h3>Speaking Engagements</h3>
     </div>
 </div>
 <div class="title">
     <h3>Upcoming Speaking Engagements</h3>
 </div>
 <?php foreach ($events as $event): ?>
-<?php if ($event->Archived) { ?>
-<div class="row">
-    <div class="column">
-        <div class="card">
-            <div class="left">
-                <div class = "hide">
-                <?=
-                $theDatetime = h($event['date']);
-                $dt = new DateTime($theDatetime);
-                $time = $dt->format('h:i A');
-                $dateNum  = $dt->format('d');
-                $year  = $dt->format('Y');;
-                $monthNum  = $dt->format('n');
-                $dateObj   = DateTime::createFromFormat('!m', $monthNum);
-                $monthName = $dateObj->format('F');
-                ?>
-                </div>
-                <div class="date">
-                    <span class="day-of-month"><?= $dateNum ?></span>
-                    <?= $monthName ?>
-                    <p><?= $year ?></p>
-                </div>
-                <br>
-            </div>
-                <div class="right">
-                    <h3><?= $time ?></h3>
-                    <p> <?= h($event['description']) ?></p>
-                    <p>  <?= h($event['venue']) ?></p>
-                </div>
-        </div >
-    </div >
+    <?php if ($event->Archived) { ?>
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <div class="left">
+                        <div class = "hide">
+                            <?=
+                            $theDatetime = h($event['date']);
+                            $dt = new DateTime($theDatetime);
+                            $time = $dt->format('h:i A');
+                            $dateNum  = $dt->format('d');
+                            $year  = $dt->format('Y');;
+                            $monthNum  = $dt->format('n');
+                            $dateObj   = DateTime::createFromFormat('!m', $monthNum);
+                            $monthName = $dateObj->format('F');
+                            ?>
+                        </div>
+                        <div class="date">
+                            <span class="day-of-month"><?= $dateNum ?></span>
+                            <?= $monthName ?>
+                            <p><?= $year ?></p>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="right">
+                        <h3><?= $time ?></h3>
+                        <p> <?= h($event['description']) ?></p>
+                        <p>  <?= h($event['venue']) ?></p>
+                    </div>
+                </div >
+            </div >
             <div class="line"></div>
-</div >
+        </div >
     <?php } ?>
 <?php endforeach ?>
 
@@ -165,3 +165,4 @@
 <?php endforeach ?>
 
 </html>
+

@@ -168,3 +168,5 @@ class EventsController extends AppController
         $this->set('archivedEvents', $this->paginate($archivedEvents));
     }
 }
+
+

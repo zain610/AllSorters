@@ -3,6 +3,11 @@ namespace App\Controller\Admin;
 
 use App\Controller\AppController;
 use Cake\ORM\TableRegistry;
+use Cake\Routing\Route\Route;
+use Cake\Routing\Router;
+use Cake\View\Helper\UrlHelper;
+use Facebook\Facebook;
+
 
 /**
  * BlogPost Controller
@@ -27,7 +32,9 @@ class BlogPostController extends AppController
         $publishedBlogPosts = $this->Paginator->paginate(
             $this->BlogPost->find('all')->where(['BlogPost.Published' => 1])->contain([])
         );
+
         $this->set(compact('publishedBlogPosts'));
+        $this->set('message', $this->request->getSession()->read('message'));
 
     }
 
@@ -89,6 +96,40 @@ class BlogPostController extends AppController
         $this->set(compact('blogPost', 'image'));
 
 
+    }
+    public function publishToFacebook($id = null) {
+        $blogPost = $this->BlogPost->get($id);
+        if ($blogPost == null) {
+            throw new NotFoundException();
+        }
+        $url = Router::url(['prefix' => false, 'controller' => 'Blogpost', 'action' => 'view', 'id' => $id], true);
+
+        $fb = new Facebook([
+            'app_id' => '726068664574442',
+            'app_secret' => '092a9cdf771ccb1ff51fdaf73ef22420',
+            'default_graph_version' => 'v4.0',
+        ]);
+
+        try {
+            // Returns a `FacebookFacebookResponse` object
+            $response = $fb->post(
+                'me/feed',
+                array (
+                    'message' => 'Uploaded a new blog, Please check it out. :)',
+                    'link' => $url
+                ),
+                'EAAKUWwjVoeoBAGekUnnRYzZCgSc3jJZCyOZC5zLqk9ty7vGIPGKZBNLpeYDXty3Y8h4xBQoSVPPIjPt3U68E4FGpZAi1t9SOeRCMvoo8Bxw1uQFP3FJe8trrcvzXOnbFIadZCN6Ihg6zzB2avZBpuDqYnSEl3BI326LZCZCC7nrWxigZDZD'
+            );
+        } catch(FacebookExceptionsFacebookResponseException $e) {
+            echo 'Graph returned an error: ' . $e->getMessage();
+            exit;
+        } catch(FacebookExceptionsFacebookSDKException $e) {
+            echo 'Facebook SDK returned an error: ' . $e->getMessage();
+            exit;
+        }
+        $graphNode = $response->getGraphNode();
+        $this->request->getSession()->write('message', $url);
+        $this->redirect(['action' => 'index']);
     }
 
     public function publish($id = null)
@@ -296,4 +337,5 @@ class BlogPostController extends AppController
         $this->viewBuilder()->setTemplate('search');
 
     }
+
 }

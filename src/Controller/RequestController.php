@@ -66,7 +66,6 @@ class RequestController extends AppController
                 $email = new Email('default');
                 $email->setTemplate('newClient');
                 $email->setEmailFormat('html');
-
                 $email->setTo('allsortMary@gmail.com');
                 $email->setSubject('You Got a new client message');
                 $email->setViewVars(['request' => $request]);
@@ -79,8 +78,8 @@ class RequestController extends AppController
             }
             $this->Flash->error(__('Something wrong. Please, try again.'));
         }
-        $this->Js->set('myArray', $request);
-        echo $this->Js->writeBuffer(array('onDomReady' => false));
+//        $this->Js->set('myArray', $request);
+//        echo $this->Js->writeBuffer(array('onDomReady' => false));
         $this->set(compact('request'));
     }
 

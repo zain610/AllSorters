@@ -6,17 +6,10 @@
 ?>
 <html>
 <head>
-    <title>Services</title>
+    <title>Blog</title>
 </head>
 <body>
-<!-- header -->
-<!-- banner -->
-<div class="banner-1">
-    <div class="container">
 
-    </div>
-</div>
-<!-- banner -->
 <div class="services">
     <div class="container">
         <div class="row">

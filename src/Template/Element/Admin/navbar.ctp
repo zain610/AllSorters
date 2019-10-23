@@ -11,6 +11,7 @@ $isContractorActive = $currentController === "Contractor";
 $isEventsActive = $currentController === "Events";
 $isQueriesActive = $currentController === "Queries";
 $isNewslettersActive = $currentController === "Newsletter";
+$isBookingActive = $currentController === "Admin" && $currentAction === 'booking';;
 
 
 ?>
@@ -26,6 +27,13 @@ $isNewslettersActive = $currentController === "Newsletter";
             <?= $this->Html->link(
                 '<p>Dashboard</p>',
                 ['prefix' => false, 'controller' => 'Admin', 'action' => 'index'],
+                ['escape' => false]
+            ) ?>
+        </li>
+        <li class="<?= $isBookingActive ? 'active' : '' ?> dropdown">
+            <?= $this->Html->link(
+                '<p>Booking</p>',
+                ['prefix' => false, 'controller' => 'Admin', 'action' => 'booking'],
                 ['escape' => false]
             ) ?>
         </li>
@@ -47,7 +55,7 @@ $isNewslettersActive = $currentController === "Newsletter";
                         ['escape'=>false]
                     )?></li>
                 <li><?=$this->Html->link(
-                        '<p>View Blog Post Archive</p>',
+                        '<p>View Blog Post archive</p>',
                         ['prefix'=>'admin','controller'=>'BlogPost','action'=>'archiveIndex'],
                         ['escape'=>false]
                     )?></li>
@@ -64,14 +72,14 @@ $isNewslettersActive = $currentController === "Newsletter";
             <ul class="dropdown-menu" aria-labelledby="imageDropdown">
                 <li><?= $this->Html->link(
                         '<p>View Images</p>',
-                        // '/admin/image/',
+                       // '/admin/image/',
                         ['prefix'=>'admin','controller' => 'image', 'action' => 'index'],
                         ['escape' => false]
                     ) ?></li>
                 <li><?= $this->Html->link(
                         '<p>Add Images</p>',
-                        // '/admin/image/upload/',
-                        //['prefix'=>'admin','controller' => 'Image', 'action' => 'upload'],
+                       // '/admin/image/upload/',
+						//['prefix'=>'admin','controller' => 'Image', 'action' => 'upload'],
                         ['prefix'=>'admin','controller' => 'image', 'action' => 'upload'],
                         ['escape' => false]
                     ) ?></li>
@@ -87,12 +95,12 @@ $isNewslettersActive = $currentController === "Newsletter";
             <ul class="dropdown-menu" aria-labelledby="ServiceDropdown">
                 <li><?= $this->Html->link(
                         '<p>View Services</p>',
-                        ['prefix' => 'admin','controller' => 'Services', 'action' => 'index'],
+                        ['prefix' => 'admin','controller' => 'Service', 'action' => 'index'],
                         ['escape' => false]
                     ) ?></li>
                 <li><?= $this->Html->link(
                         '<p>Add Services</p>',
-                        ['prefix' => 'admin','controller' => 'Services', 'action' => 'add'],
+                        ['prefix' => 'admin','controller' => 'Service', 'action' => 'add'],
                         ['escape' => false]
                     ) ?></li>
             </ul>
@@ -177,13 +185,8 @@ $isNewslettersActive = $currentController === "Newsletter";
                         ['escape'=>false]
                     )?></li>
                 <li><?=$this->Html->link(
-                        '<p>View Speaking engagements Archive</p>',
+                        '<p>View Speaking Engagements archive</p>',
                         ['prefix'=>'admin','controller'=>'Events','action'=>'archiveIndex'],
-                        ['escape'=>false]
-                    )?></li>
-                <li><?=$this->Html->link(
-                        '<p>Edit Speaking engagements webpage</p>',
-                        ['prefix'=>'admin','controller'=>'Events','action'=>'content'],
                         ['escape'=>false]
                     )?></li>
             </ul>
@@ -235,3 +238,7 @@ $isNewslettersActive = $currentController === "Newsletter";
             </ul>
         </div>
     </nav>
+
+
+
+
