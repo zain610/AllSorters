@@ -101,14 +101,14 @@
     <h3>Upcoming Speaking Engagements</h3>
 </div>
 <?php foreach ($events as $event): ?>
-    <?php if ($event->Archived) { ?>
+    <?php if ($event->Published) { ?>
         <div class="row">
             <div class="column">
                 <div class="card">
                     <div class="left">
                         <div class = "hide">
                             <?=
-                            $theDatetime = h($event['date']);
+                            $theDatetime = h($event['Date']);
                             $dt = new DateTime($theDatetime);
                             $time = $dt->format('h:i A');
                             $dateNum  = $dt->format('d');
@@ -127,8 +127,8 @@
                     </div>
                     <div class="right">
                         <h3><?= $time ?></h3>
-                        <p> <?= h($event['description']) ?></p>
-                        <p>  <?= h($event['venue']) ?></p>
+                        <p> <?= h($event['Description']) ?></p>
+                        <p>  <?= h($event['Venue']) ?></p>
                     </div>
                 </div >
             </div >
@@ -144,7 +144,7 @@
     <?php if ($event->Archived) { ?>
         <div class = "hide">
             <?=
-            $theDatetime = h($event['date']);
+            $theDatetime = h($event['Date']);
             $dt = new DateTime($theDatetime);
             $time = $dt->format('h:i A');
             $dateNum  = $dt->format('j');
@@ -152,8 +152,8 @@
             $monthNum  = $dt->format('n');
             $dateObj   = DateTime::createFromFormat('!m', $monthNum);
             $monthName = $dateObj->format('F');
-            $description = h($event['description']);
-            $venue =h($event['venue']);
+            $description = h($event['Description']);
+            $venue =h($event['Venue']);
             ?>
         </div>
         <div class="list">

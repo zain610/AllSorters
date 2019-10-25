@@ -19,7 +19,7 @@
 
             </p>
             <p>Time:
-                <?= h($event->Time) ?>
+                <?= $event->Time->i18nFormat([\IntlDateFormatter::NONE, \IntlDateFormatter::SHORT]) ?>
 
             </p>
         </div></div></div>
