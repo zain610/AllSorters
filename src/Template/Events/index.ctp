@@ -110,7 +110,8 @@
                             <?=
                             $theDatetime = h($event['Date']);
                             $dt = new DateTime($theDatetime);
-                            $time = $dt->format('h:i A');
+                            $theTime = $event->Time;
+                            $time = $theTime->format('h:i A');
                             $dateNum  = $dt->format('d');
                             $year  = $dt->format('Y');;
                             $monthNum  = $dt->format('n');
@@ -146,7 +147,8 @@
             <?=
             $theDatetime = h($event['Date']);
             $dt = new DateTime($theDatetime);
-            $time = $dt->format('h:i A');
+            $theTime = $event->Time;
+            $time = $theTime->format('h:i A');
             $dateNum  = $dt->format('j');
             $year  = $dt->format('Y');;
             $monthNum  = $dt->format('n');
