@@ -37,7 +37,7 @@ class ServiceJobTable extends Table
         $this->setDisplayField('Service_Job_id');
         $this->setPrimaryKey('Service_Job_id');
 
-        $this->belongsTo('Services', [
+        $this->belongsTo('Service', [
             'foreignKey' => 'Service_id'
         ]);
         $this->belongsTo('Job', [
@@ -69,7 +69,7 @@ class ServiceJobTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['Service_id'], 'Services'));
+        $rules->add($rules->existsIn(['Service_id'], 'Service'));
         $rules->add($rules->existsIn(['Job_id'], 'Job'));
 
         return $rules;
