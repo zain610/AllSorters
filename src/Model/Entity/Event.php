@@ -27,6 +27,8 @@ class Event extends Entity
         'Date' => true,
         'Time'=> true,
         'Description' => true,
-        'Venue' => true
+        'Venue' => true,
+        'Published' => true,
+        'Archived' => true
     ];
 }
