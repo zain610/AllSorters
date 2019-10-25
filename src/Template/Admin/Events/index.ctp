@@ -13,9 +13,10 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
         <tr>
-            <th scope="col"><?= $this->Paginator->sort('date') ?></th>
-            <th scope="col"><?= $this->Paginator->sort('description') ?></th>
-            <th scope="col"><?= $this->Paginator->sort('venue') ?></th>
+            <th scope="col"><?= $this->Paginator->sort('Date') ?></th>
+            <th scope="col"><?= $this->Paginator->sort('Time') ?></th>
+            <th scope="col"><?= $this->Paginator->sort('Description') ?></th>
+            <th scope="col"><?= $this->Paginator->sort('Venue') ?></th>
             <th scope="col" class="actions"><?= __('Actions') ?></th>
         </tr>
         </thead>
@@ -23,9 +24,10 @@
         <?php foreach ($publishedEvents as $event): ?>
             <?php if ($event->Published) { ?>
                 <tr>
-                    <td><?= h($event->date) ?></td>
-                    <td><?= h($event->description) ?></td>
-                    <td><?= h($event->venue) ?></td>
+                    <td><?= h($event->Date) ?></td>
+                    <td><?= h($event->Time) ?></td>
+                    <td><?= h($event->Description) ?></td>
+                    <td><?= h($event->Venue) ?></td>
                     <td class="actions">
                         <?= $this->element('Admin/Buttons/view', ['url' => ['action' => 'view', $event->id]]) ?>
                         <?= $this->element('Admin/Buttons/edit', ['url' => ['action' => 'edit', $event->id]]) ?>

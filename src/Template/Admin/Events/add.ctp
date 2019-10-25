@@ -9,12 +9,13 @@
 <div class="card">
     <?= $this->Form->create($event) ?>
     <fieldset>
-        <legend><?= __('Add Event') ?></legend>
+        <legend><?= __('Add a Speaking Engagement') ?></legend>
         <?php
         echo "<br>";
-        echo $this->Form->control('date', ['type'=> 'datetime', 'empty' => true]);
-        echo $this->Form->control('description', ['type'=> 'textarea']);
-        echo $this->Form->control('venue',['type'=> 'textarea']);
+        echo $this->Form->control('Date', ['empty' => true],['type'=> 'date']);
+        echo $this->Form->control('Time', ['empty' => true], ['type' => 'time']);
+        echo $this->Form->control('Description', ['type'=> 'textarea']);
+        echo $this->Form->control('Venue',['type'=> 'textarea']);
         ?>
     </fieldset>
     <?= $this->Html->link(__('Back'), $this->request->referer(), ['class' => 'btn btn-oval btn-primary','style'=>'float:left']) ?>

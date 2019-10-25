@@ -24,8 +24,9 @@ class Event extends Entity
      * @var array
      */
     protected $_accessible = [
-        'date' => true,
-        'description' => true,
-        'venue' => true
+        'Date' => true,
+        'Time'=> true,
+        'Description' => true,
+        'Venue' => true
     ];
 }
