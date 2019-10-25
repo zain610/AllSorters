@@ -42,7 +42,7 @@ class JobTable extends Table
             'targetForeignKey' => 'Contractor_id',
             'joinTable' => 'job_contractor'
         ]);
-        $this->belongsToMany('Services', [
+        $this->belongsToMany('Service', [
             'foreignKey' => 'Job_id',
             'targetForeignKey' => 'Service_id',
             'joinTable' => 'service_job'

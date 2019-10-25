@@ -40,7 +40,7 @@ class ServiceImageTable extends Table
         $this->belongsTo('Image', [
             'foreignKey' => 'Image_id'
         ]);
-        $this->belongsTo('Services', [
+        $this->belongsTo('Service', [
             'foreignKey' => 'Service_id'
         ]);
     }
@@ -70,7 +70,7 @@ class ServiceImageTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['Image_id'], 'Image'));
-        $rules->add($rules->existsIn(['Service_id'], 'Services'));
+        $rules->add($rules->existsIn(['Service_id'], 'Service'));
 
         return $rules;
     }
