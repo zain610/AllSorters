@@ -128,8 +128,8 @@
                     </div>
                     <div class="right">
                         <h3><?= $time ?></h3>
-                        <p> <?= h($event['Description']) ?></p>
-                        <p>  <?= h($event['Venue']) ?></p>
+                        <p> <?= h(strip_tags($event['Description'])) ?></p>
+                        <p>  <?= h(strip_tags($event['Venue'])) ?></p>
                     </div>
                 </div >
             </div >
@@ -154,8 +154,8 @@
             $monthNum  = $dt->format('n');
             $dateObj   = DateTime::createFromFormat('!m', $monthNum);
             $monthName = $dateObj->format('F');
-            $description = h($event['Description']);
-            $venue =h($event['Venue']);
+            $description = h(strip_tags($event['Description']));
+            $venue =h(strip_tags($event['Venue']));
             ?>
         </div>
         <div class="list">

@@ -7,7 +7,7 @@
 
 </nav>
 <div class="table table-hover table-striped">
-    <?= $this->Html->link('Add an event', ['action' => 'add'], ['class' => 'pull-right btn btn-oval btn-primary']) ?>
+    <?= $this->Html->link('Add a Speaking Engagement', ['action' => 'add'], ['class' => 'pull-right btn btn-oval btn-primary']) ?>
 
     <h3><?= __('Speaking Engagements') ?></h3>
     <table cellpadding="0" cellspacing="0">
