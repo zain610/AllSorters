@@ -2,15 +2,17 @@
 </head>
 <body>
 <div class="header-bottom">
-    <div class="container">
+    <div class="container" style="width: 1400px">
         <div class="logo">
-            <h1><a href="/">All Sorters</a>
+<h1><?= $this->Html->link('All Sorters', ['controller' => 'Articles', 'action' => 'home']) ?>
         </div>
         <nav class="navbar navbar-default" role="navigation">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
-
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
                 </button>
             </div>
             <!--/.navbar-header-->
@@ -29,4 +31,5 @@
         </nav>
     </div>
 </div>
+
 </body>
