@@ -22,6 +22,7 @@ class RequestController extends AppController
         $this->layout ='admin';
         $request = $this->paginate($this->Request);
 
+        $this->set('response Sent', $this->getRequest()->getSession()->read('sent'));
         $this->set(compact('request'));
     }
 
@@ -37,12 +38,14 @@ class RequestController extends AppController
         $this->layout = 'admin';
         $request = $this->Request->get($id);
         if($this->request->is('post')) {
+
             $response = $this->Request->patchEntity($request, $this->request->getData());
             if ($this->Request->save($request)) {
                 $this->Flash->success(__('The request has been saved.'));
-
+                $this->getRequest()->getSession()->write('sent', true);
                 return $this->redirect(['action' => 'index']);
             }
+            $this->set('response', $response);
         }
         $this->set('request', $request);
     }

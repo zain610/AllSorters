@@ -25,7 +25,7 @@
             <?php if ($event->Published) { ?>
                 <tr>
                     <td><?= h($event->Date) ?></td>
-                    <td><?= h($event->Time) ?></td>
+                    <td><?= h($event->Time->i18nFormat([\IntlDateFormatter::NONE, \IntlDateFormatter::SHORT])) ?></td>
                     <td><?= h($event->Description) ?></td>
                     <td><?= h($event->Venue) ?></td>
                     <td class="actions">
