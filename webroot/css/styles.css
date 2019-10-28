@@ -115,7 +115,7 @@ div.sidebar-wrapper {
 
 }
 .sidebar .sidebar-wrapper {
-    overflow-y: auto;
+    overflow-y: scroll;
 }
 .message-container {
     margin-top: 5%;
