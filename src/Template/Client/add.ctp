@@ -49,7 +49,7 @@
                 <div class="col-md-6" style="margin-top: 20px">
                     <?php echo $this->Form->control('Address',[
                         'label' => false,
-                        'placeholder' => 'Address',
+                        'placeholder' => 'Suburb',
                         'required'=>false,
                         'class' => 'form-control'
                     ]); ?>
