@@ -12,14 +12,14 @@
     <br>
     <div class="row">
         <div class="leftcolumn">
-            <h3>Speaking Engagement description: <?= h($event->Description) ?></h3>
-            <p>Venue: <?= h($event->Venue) ?></p>
+            <h3>Speaking Engagement description: <?= strip_tags($event->Description) ?></h3>
+            <p>Venue: <?= strip_tags($event->Venue) ?></p>
             <p>Date:
                 <?= h($event->Date) ?>
 
             </p>
             <p>Time:
-                <?= h($event->Time) ?>
+                <?= $event->Time->i18nFormat([\IntlDateFormatter::NONE, \IntlDateFormatter::SHORT]) ?>
 
             </p>
         </div></div></div>

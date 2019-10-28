@@ -3,8 +3,6 @@
 <head>
     <title>Services</title>
     <link href="css/font-awesome.css" rel="stylesheet" />
-    <!-- CUSTOM STYLE CSS -->
-    <link href="css/clientStyles.css" rel="stylesheet" />
 </head>
 <body>
 <!-- header -->
@@ -13,6 +11,9 @@
     <div class="container">
         <div class="camp">
             <h3>Services Overview</h3>
+            <div id="searchBarNavBar">
+                <?= $this->element('Client/Buttons/search'); ?>
+            </div>
             <?php foreach ($service as $service):?>
             <div class="col-md-4 minist-right">
                 <img src="img/bg.jpg" class="img-responsive" alt="">

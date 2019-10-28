@@ -7,7 +7,7 @@
 
 </nav>
 <div class="table table-hover table-striped">
-    <?= $this->Html->link('Add an event', ['action' => 'add'], ['class' => 'pull-right btn btn-oval btn-primary']) ?>
+    <?= $this->Html->link('Add a Speaking Engagement', ['action' => 'add'], ['class' => 'pull-right btn btn-oval btn-primary']) ?>
 
     <h3><?= __('Speaking Engagements') ?></h3>
     <table cellpadding="0" cellspacing="0">
@@ -25,9 +25,9 @@
             <?php if ($event->Published) { ?>
                 <tr>
                     <td><?= h($event->Date) ?></td>
-                    <td><?= h($event->Time->i18nFormat([\IntlDateFormatter::NONE, \IntlDateFormatter::SHORT])) ?></td>
-                    <td><?= h($event->Description) ?></td>
-                    <td><?= h($event->Venue) ?></td>
+                    <td><?= $event->Time->i18nFormat([\IntlDateFormatter::NONE, \IntlDateFormatter::SHORT]) ?></td>
+                    <td><?= strip_tags($event->Description) ?></td>
+                    <td><?= strip_tags($event->Venue) ?></td>
                     <td class="actions">
                         <?= $this->element('Admin/Buttons/view', ['url' => ['action' => 'view', $event->id]]) ?>
                         <?= $this->element('Admin/Buttons/edit', ['url' => ['action' => 'edit', $event->id]]) ?>

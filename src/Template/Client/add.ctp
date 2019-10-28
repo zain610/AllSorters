@@ -4,13 +4,13 @@
  * @var \App\Model\Entity\Client $client
  */
 ?>
-<br>
-<br>
-<div class="container">
-    <div class="row">
+<body>
+<div class="services">
+    <div class="container">
+        <div class="row">
+            <h3>Contact Us</h3>
         <div class="col-md-6 animate-box">
             <?= $this->Flash->render(); ?>
-            <h3>Contact us</h3>
             <p>Fields marked * are required</p>
             <br>
             <br>
@@ -85,5 +85,8 @@
                 <?= $this->Form->end() ?>
             </div>
         </div>
-    </div>
+
 </div>
+</div>
+</div>
+</body>

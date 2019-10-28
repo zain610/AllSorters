@@ -10,6 +10,39 @@
 .logo h1 {
     margin-top: 0;
 }
+
+/* =============================================================
+ BLOG POST STYLE
+============================================================ */
+.blog-post {
+    padding-bottom:30px;
+    border-bottom:2px solid #f4f4f4;
+    padding-top:30px;
+}
+.blog-post a, .blog-post a:hover {
+    text-decoration:none;
+}
+.blog-post h1 {
+    font-size:30px;
+    line-height:50px;
+}
+.blog-post h4 {
+    font-size:20px;
+    line-height:25px;
+}
+.blog-post p {
+    font-size:20px;
+    line-height:30px;
+    padding-bottom:20px;
+    padding-top:10px;
+}
+
+html, body{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 100%;
+    background:#fff;
+}
+
 .logo h1 a {
 
     background-color: #1DC7EA;
@@ -37,10 +70,12 @@ div.services.container > div > a > div > button{
     float: right;
 }
 /*!*Change the color when user hovers over navbar item*!*/
-.navbar-default .navbar-nav > li > a:hover {
-    background-color: #337ab7;
-    color: white;
-
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color:#2C93FF;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color:#2C93FF;
+    background-color: #fff;
 }
 .list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
     background-color: #00b0ff;
@@ -51,6 +86,19 @@ div.services.container > div > a > div > button{
 }
 #submit-subscription {
 margin: 1rem;
+}
+@media (max-width: 1024px) {
+    .banner-1 {
+        min-height: 300px;
+    }
+
+}
+
+.banner-1{
+    background: url(../img/bg.jpg) center fixed ;
+    background-size: cover;
+    width: 100%;
+    min-height: 350px;
 }
 #navbar-contents {
     display: inline-flex;

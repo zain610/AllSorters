@@ -1,73 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Bootstrap Example</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <link href="css/font-awesome.css" rel="stylesheet" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <link href="css/clientStyles.css" rel="stylesheet" />
+    <title>Home</title>
 </head>
 <body>
 
-<div class="container">
-    <h2>Carousel Example</h2>
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
 
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <img src="img/bg.jpg" alt="bg" style="width:100%;">
+
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="img/bg.jpg" alt="bg">
+
+                </div>
+
+                <div class="item">
+                    <img src="img/2e3a450c42c5b5dabd1447dfb1069f54b589e8bf.jpg" alt="Chicago">
+
+                </div>
+
+                <div class="item">
+                    <img src="img/bg.jpg" alt="pete">
+
+                </div>
             </div>
 
-            <div class="item">
-                <img src="img/2e3a450c42c5b5dabd1447dfb1069f54b589e8bf.jpg" alt="Chicago" style="width:100%;">
-            </div>
 
-            <div class="item">
-                <img src="img/bg.jpg" alt="pete" style="width:100%;">
-            </div>
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
 
-        <!-- Left and right controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-</div>
 
-
-<div class="banner" id="home">
-    <div class="container">
-        <section class="slider">
-            <div>
-                <ul class="slides">
-                    <li>
-                        <div class="banner-info">
-                            <h2>GET HELP CARING FOR YOUR LOVED ONE</h2>
-                            <p>Nasagni dolorequaone voluptase keroas emsequi nesas ciuneque pobasera .</p>
-                            <a class="hvr-shutter-in-horizontal" href="#">Learn More</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-    </div>
-</div>
 <hr>
 <div class="services" style="display: flex">
     <div class="container">

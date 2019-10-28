@@ -6,8 +6,7 @@
 
     <!-- FONT AWESOME ICON STYLE -->
     <link href="css/font-awesome.css" rel   ="stylesheet" />
-    <!-- CUSTOM STYLE CSS -->
-    <link href="css/styles.css" rel="stylesheet" />
+
 
 </head>
 <body>
@@ -15,12 +14,15 @@
 <div class="container">
     <div class="row">
     <h3>Blog</h3>
-
+        <div id="searchBarNavBar">
+            <?= $this->element('Client/Buttons/search'); ?>
+        </div>
             <div class="col-md-12 col-lg-8 mb-5">
+
                 <?php foreach ($blogPost as $blogPost): ?>
                 <div class="blog-post">
                     <h2><?php echo $blogPost->title?></h2>
-                    <h4>Posted by <a href="#">admin</a> on 24th January 2015 </h4>
+                    <h4>Posted by Mary on <?php echo $blogPost->Date?> </h4>
                     <p><?php echo $blogPost->Description?></p>
 
                     <a href='<?php echo $this->Url->build(array('action'=> 'View', $blogPost->blog_post_id))?>' class="btn btn-default btn-lg ">Read More <i class="fa fa-angle-right"></i></a>
@@ -28,31 +30,20 @@
                 <?php endforeach; ?>
             <br />
             <nav>
-                <ul class="pagination">
-                    <li>
-                        <a href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li>
-                        <a href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
+                <div class="paginator">
+                    <ul class="pagination">
+                        <?= $this->Paginator->first('<< ' . __('first')) ?>
+                        <?= $this->Paginator->prev('< ' . __('previous')) ?>
+                        <?= $this->Paginator->numbers() ?>
+                        <?= $this->Paginator->next(__('next') . ' >') ?>
+                        <?= $this->Paginator->last(__('last') . ' >>') ?>
+                    </ul>
+                </div>
             </nav>
         </div>
     </div>
 </div>
 </div>
-<script src="js/jquery-1.11.1.js"></script>
-<!-- BOOTSTRAP SCRIPTS -->
-<script src="js/bootstrap.js"></script>
 
     </div>
 </div>
