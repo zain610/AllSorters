@@ -85,8 +85,18 @@ div.services.container > div > a > div > button{
     border: 1px solid #eee
 }
 #submit-subscription {
-margin: 1rem;
+    margin: 1rem;
 }
+.carousel-inner {
+    margin: auto;
+    width: 70%;
+}
+.carousel-inner .item img {
+    width: 100%;
+    height: auto;
+}
+
+
 @media (max-width: 1024px) {
     .banner-1 {
         min-height: 300px;
