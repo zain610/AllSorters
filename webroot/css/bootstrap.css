@@ -3,6 +3,9 @@ html {
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
+body {
+    margin: 0;
+}
 
 article,
 aside,
@@ -1075,7 +1078,7 @@ html {
 }
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 100%;
+  font-size: 14px;
   line-height: 1.42857143;
   color: #333;
   background-color: #fff;
