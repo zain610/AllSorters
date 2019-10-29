@@ -7,13 +7,12 @@
 <div class="content table-responsive table-full-width">
     <div class="row">
         <div class="leftcolumn">
-            <h3>Title: <?= h($blogPost->title) ?></h3>
-            <h4>Description: <?= h($blogPost->Description) ?></h4>
+            <h4><?php echo $blogPost->title?></h4>
+            <p><?php echo $blogPost->Description?></p>
+            <a><?php echo $blogPost->Body?></a>
+        </div>
 
-            <p>Date: <?= h($blogPost->Date) ?></p>
-            <p>Modified: <?= h($blogPost->modified) ?></p>
-            <p><br>Details: <?= h(strip_tags($blogPost->Body)) ?></br></p>
-
+    </div>
     <div class="related">
         <h4><?= __('Related Image') ?></h4>
         <?php if (!empty($blogPost->image)): ?>
