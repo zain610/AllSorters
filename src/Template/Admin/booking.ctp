@@ -25,7 +25,7 @@
                     center: 'title',
                     right: 'dayGridMonth,timeGridWeek,timeGridDay'
                 },
-                defaultDate: '2019-08-12',
+                defaultDate: moment().format("YYYY-MM-DD"),
                 navLinks: true, // can click day/week names to navigate views
                 selectable: true,
                 selectMirror: true,
