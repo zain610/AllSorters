@@ -13,9 +13,11 @@
     }
 </script>
 <div class="container-fluid">
+    <?= $this->Form->create(null, ['url' => ['controller'=>'Subscriptions', 'action' => 'emailNewsletter'], 'type' => 'post']); ?>
+
     <div class="" style="">
         <h4>Newsletter</h4>
-        <textarea></textarea>
+        <?= $this->Form->textarea('message') ?>
     </div>
     <hr style="border-top: 2px solid darkslategray">
     <div class="" style="">
@@ -31,7 +33,6 @@
         <div class="container">
 
             <div class="row">
-                <?= $this->Form->create(null, ['url' => ['controller'=>'Subscriptions', 'action' => 'emailNewsletter'], 'type' => 'post']); ?>
 
 
                 <?php foreach ($subscriptions as $subscription): ?>
@@ -42,8 +43,6 @@
 
 
                 <?php endforeach; ?>
-                <?= $this->Form->button('Submit', ['class'=>'btn btn-primary']); ?>
-                <?=  $this->Form->end(); ?>
 
 
             </div>
@@ -51,4 +50,8 @@
 
         </div>
     </div>
+    <?= $this->Form->button('Submit', ['class'=>'btn btn-primary']); ?>
+
+    <?=  $this->Form->end(); ?>
+
 </div>

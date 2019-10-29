@@ -11,8 +11,8 @@
         <legend><?= __('Edit a Speaking Engagement') ?></legend>
         <?php
         echo "<br>";
-            echo $this->Form->control('Date', ['type'=> 'date']);
-            echo $this->Form->control('Time', ['type' => 'time']);
+            echo $this->Form->control('date', ['type'=> 'date']);
+            echo $this->Form->control('time', ['type' => 'time']);
             echo $this->Form->control('Description', ['type'=> 'textarea']);
             echo $this->Form->control('Venue',['type'=> 'textarea']);
         ?>

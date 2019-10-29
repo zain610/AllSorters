@@ -3,9 +3,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <style>
     body {
@@ -86,7 +83,7 @@
     /*}*/
 
     .container {
-        padding: 2px 16px;
+
         color: #ffffff width=500;
     }
 </style>
@@ -165,6 +162,45 @@
         </div>
     <?php } ?>
 <?php endforeach ?>
+<div>
+    <br>
+    <br>
+</div>
+
+<!-- footer -->
+<div class="footer" id="contact">
+    <div class="container">
+        <div class="col-md-4 contact-left">
+            <h3>Address</h3>
+            <address>
+                795 Folsom Ave, Suite 600<br>
+                San Francisco, CA 94107<br>
+                <abbr title="Phone">P :</abbr> (123) 456-7890
+            </address>
+        </div>
+        <div class="col-md-4 ftr-gd">
+            <h3>Follow Us</h3>
+            <ul class="social">
+                <li><a href="#"><i></i></a> </li>
+                <li><a href="#"><i class="facebook"></i></a></li>
+                <li><a href="#"><i class="goog"></i> </a></li>
+                <li><a href="#"><i class="lin"></i> </a></li>
+            </ul>
+        </div>
+        <div class="col-md-4 contact-left">
+            <h3>Phone/Fax</h3>
+            <p>Phone : +1234567890 </p>
+            <p>Fax : +1234567890 </p>
+            <p>Email : <a href="mailto:info@example.com">info@mycompany.com</a> </p>
+        </div>
+        <div class="clearfix"></div>
+        <div class="copyright">
+            <p>Copyright &copy; 2015.Company name All rights reserved.</p>
+        </div>
+    </div>
+</div>
+
+<!-- footer -->
 
 </html>
 

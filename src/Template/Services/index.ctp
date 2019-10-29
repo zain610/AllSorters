@@ -3,8 +3,6 @@
 <head>
     <title>Services</title>
     <link href="css/font-awesome.css" rel="stylesheet" />
-    <!-- CUSTOM STYLE CSS -->
-    <link href="css/styles.css" rel="stylesheet" />
 </head>
 <body>
 <!-- header -->

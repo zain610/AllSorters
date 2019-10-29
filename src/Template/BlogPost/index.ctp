@@ -6,8 +6,7 @@
 
     <!-- FONT AWESOME ICON STYLE -->
     <link href="css/font-awesome.css" rel   ="stylesheet" />
-    <!-- CUSTOM STYLE CSS -->
-    <link href="css/styles.css" rel="stylesheet" />
+
 
 </head>
 <body>
@@ -45,9 +44,6 @@
     </div>
 </div>
 </div>
-<script src="js/jquery-1.11.1.js"></script>
-<!-- BOOTSTRAP SCRIPTS -->
-<script src="js/bootstrap.js"></script>
 
     </div>
 </div>
