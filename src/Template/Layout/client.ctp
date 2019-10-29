@@ -24,7 +24,7 @@
         <!-- FlexSlider -->
 <?= $this->fetch('content') ?>
 
-
+<?= $this->element('Client/footer'); ?>
 
 
 </body>

@@ -85,35 +85,6 @@
     </div>
 </div>
 
-<hr>
-<div class="about">
-    <div class="container">
-        <div class="col-md-8 about-right">
-            <h4>Contact us for the Appropriate level of Care</h4>
-            <div class="offer offer-right">
-                <img src="#" class="img-responsive" alt="">
-                <form>
-                    <input type="text" value="Enter Your email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Your email';}">
-                    <input type="submit" value="Subscribe">
-                </form>
-            </div>
-        </div>
-
-
-        <!--        <div class="col-md-4 about-left">-->
-        <!--            <h4>Elders Care</h4>-->
-        <!--            <ul>-->
-        <!--                <li><a href="#"><span></span> Lorem Ipsum has been </a></li>-->
-        <!--                <li><a href="#"><span></span> unknown printer took a galley </a></li>-->
-        <!--                <li><a href="#"><span></span>containing Lorem Ipsum passages,</a></li>-->
-        <!--                <li><a href="#"><span></span>publishing software like Aldus</a></li>-->
-        <!--                <li><a href="#"><span></span>PageMaker including versions</a></li>-->
-        <!--            </ul>-->
-        <!---->
-        <!--        </div>-->
-        <div class="clearfix"></div>
-    </div>
-</div>
 
 
 </body>

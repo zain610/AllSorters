@@ -89,7 +89,7 @@ div.services.container > div > a > div > button{
 }
 .carousel-inner {
     margin: auto;
-    width: 70%;
+width: 70%;
 }
 .carousel-inner .item img {
     width: 100%;
@@ -115,4 +115,50 @@ div.services.container > div > a > div > button{
 }
 nav.navbar.navbar-default {
     width: auto;
+}
+address {
+    margin-bottom: 20px;
+    font-style: normal;
+    color: #D2CCCC;
+    font-size: 1em;
+    line-height: 1.8em;
+    font-weight: 300;
+}
+.copyright {
+    padding: 2em 0;
+    text-align: center;
+}
+ul.social li i {
+    display: inline-block;
+    background: url(../img/img-sprite.png) no-repeat -160px -8px;
+    width: 42px;
+    height: 42px;
+    margin: 0 5px 0 0;
+}
+ul.social li i:hover{
+    background: url(../img/img-sprite.png) no-repeat -160px -55px;
+}
+ul.social li i.facebook {
+    background-position: -7px -7px;
+}
+ul.social li i.facebook:hover{
+    background-position: -7px -55px;
+}
+ul.social li i.goog {
+    background-position: -56px -7px;
+}
+ul.social li i.goog:hover{
+    background-position: -56px -55px;
+}
+ul.social li i.lin {
+    background-position: -109px -7px;
+}
+ul.social li i.lin:hover{
+    background-position: -109px -55px;
+}
+ul.social {
+    padding: 1em 0 0;
+}
+ul.social li {
+    display: inline-block;
 }
