@@ -72,11 +72,11 @@ class RequestController extends AppController
                 $email->send();
 
 
-                $this->Flash->success(__('Your message has been sent.'));
+                $this->Flash->success(__('Your message has been sent.'),['key'=>'success'] );
 
                 return $this->redirect(['action' => 'add']);
             }
-            $this->Flash->error(__('Something wrong. Please, try again.'));
+            $this->Flash->error(__('Something wrong. Please, try again.'),['key'=>'error'] );
         }
 //        $this->Js->set('myArray', $request);
 //        echo $this->Js->writeBuffer(array('onDomReady' => false));

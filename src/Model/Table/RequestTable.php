@@ -81,6 +81,11 @@ class RequestTable extends Table
             ->maxLength('Response', 255)
             ->allowEmpty('Response');
 
+        $validator
+            ->integer('Phone')
+            ->allowEmpty('Phone');
+
+
         return $validator;
     }
 }
