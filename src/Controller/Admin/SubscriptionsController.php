@@ -133,7 +133,7 @@ class SubscriptionsController extends AppController
                 ->setTo($sender_email)
                 ->setTemplate('default')
                 ->setViewVars(['title' => "Newsletter update from AllSorters", 'content'=> strip_tags($message)])
-                ->setSubject("Test message #10000000");
+                ->setSubject("Newsletter update from AllSorters");
 //            Email::deliver($sender_email, 'Hello World', 'Test message', ['from' => 'allsortMary@gmail.com']);
             if($email->send()) {
                 $this->request->getSession()->write('mail', true);
