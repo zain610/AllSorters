@@ -21,7 +21,8 @@
             echo $this->Form->control('Cust_Fname');
             echo $this->Form->control('Cust_Sname');
             echo $this->Form->control('Query_info');
-            echo $this->Form->control('Client_id', ['options' => $client]);
+            echo $this->Form->control('Phone');
+            echo $this->Form->control('Client_id', ['options' => $request]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

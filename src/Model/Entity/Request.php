@@ -34,6 +34,7 @@ class Request extends Entity
         'Query_info' => true,
         'created' => true,
         'seen' => true,
-        'Response' => true
+        'Response' => true,
+        'Phone' => true
     ];
 }
