@@ -17,7 +17,7 @@
             <div class="col-md-7">
                 <h2>Client Message</h2>
                 <hr>
-                <p><?= h($request->Query_info) ?></p>
+                <p><b><?= h($request->Query_info) ?></b></p>
             </div>
             <div class="col-md-5"><div style="display: flex" class="p-3 border bg-light"><div class="request view large-9 medium-8 columns content">
                         From: <h3><?= h($request->Request_Email) ?></h3></div></div></div>

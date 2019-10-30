@@ -8,14 +8,16 @@
     document.addEventListener('DOMContentLoaded', () => {
         //parse the request object to be compatible with javascript
         var requestArray = <?php echo json_encode($request); ?>;
-        requestArray.forEach(request => {
-            let {seen} = request
-            console.log(seen)
-            //table-dark
-            if (seen) {
-                document.getElementById('table-row-content').classList.add('table-dark')
+        requestArray.forEach((request, index) => {
+            let {Response}= request
+            console.log(Response, index)
+            //get list of table rows with the class name article-row
+            let tableRows = document.getElementsByClassName('article-row');
+            //if response is given
+            if (Response!== null) {
+                tableRows[index].classList.add('table-dark')
             } else {
-                document.getElementById('table-row-content').classList.add('table-light')
+                tableRows[index].classList.add('table-light')
             }
 
         })

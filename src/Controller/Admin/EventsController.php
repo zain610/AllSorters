@@ -30,6 +30,7 @@ class EventsController extends AppController
             $this->Events->find('all')->where(['Events.Published' => 1])->contain([])
         );
         $this->set(compact('publishedEvents'));
+        $this->set('data', $this->request->getSession()->read('data'));
     }
     public function initialize()
     {
@@ -99,6 +100,12 @@ class EventsController extends AppController
         ]);
 
         if ($this->request->is(['patch', 'post', 'put'])) {
+            $data = $this->request->getData();
+            $date = $this->request->getData('date');
+            $time = $this->request->getData('time');
+            $this->request->getSession()->write('data', $data);
+            $event->Date = $date;
+            $event->Time = $time;
             $event = $this->Events->patchEntity($event, $this->request->getData());
             if ($this->Events->save($event)) {
                 $this->Flash->success(__('The event has been saved.'));
