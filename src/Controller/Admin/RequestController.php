@@ -123,7 +123,7 @@ class RequestController extends AppController
             ->emailFormat('html')
             ->setTemplate('default')
             ->setViewVars(['title' => "", 'content'=> $message])
-            ->setSubject($subject);
+            ->setSubject("Query: ". $subject. " Response");
 //            Email::deliver($sender_email, 'Hello World', 'Test message', ['from' => 'allsortMary@gmail.com']);
         if($email->send()) {
             $this->Flash->success(__('The Mail has been sent.'));
