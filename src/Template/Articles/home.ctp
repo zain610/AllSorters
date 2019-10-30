@@ -5,7 +5,7 @@
 
 </head>
 <body>
-
+<div>
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -16,12 +16,12 @@
 
             <div class="carousel-inner">
                 <div class="item active">
-                    <img src="img/bg.jpg" alt="bg">
+                    <img src="img/bg2.jpg" alt="bg">
 
                 </div>
 
                 <div class="item">
-                    <img src="img/2e3a450c42c5b5dabd1447dfb1069f54b589e8bf.jpg" alt="Chicago">
+                    <img src="img/dockland 5.3.2018.jpg" alt="Chicago">
 
                 </div>
 
@@ -33,17 +33,14 @@
 
 
             <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
                 <span class="sr-only">Previous</span>
             </a>
             <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
                 <span class="sr-only">Next</span>
             </a>
         </div>
+</div>
 
-
-<hr>
 <div class="services" style="display: flex">
     <div class="container">
         <div class="camp">

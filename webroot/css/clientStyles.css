@@ -89,9 +89,10 @@ div.services.container > div > a > div > button{
 }
 .carousel-inner {
     margin: auto;
-width: 70%;
+width: 100%;
 }
 .carousel-inner .item img {
+    margin-top: -100px;
     width: 100%;
     height: auto;
 }
