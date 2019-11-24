@@ -39,11 +39,13 @@
                     <div id="div-subscriber-checkbox" class="form-check form-check-inline col-sm-3">
                         <?= $this->Form->checkbox($subscription->id, ['id'=>$this->Number->format($subscription->id), 'class'=> 'form-check-input']); ?>
                         <label class="form-check-label" for="<?=$this->Number->format($subscription->id)?>"><?= h($subscription->email_address) ?></label>
+                        <button type="button" class="close" aria-label="Close" style="color: red;opacity: 1">
+                            <span aria-hidden="true">×</span>
+                        </button>
                     </div>
 
 
                 <?php endforeach; ?>
-
 
             </div>
 
