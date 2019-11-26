@@ -48,6 +48,7 @@
                 <div class="col-md-6" style="margin-top: 20px">
                     <?php echo $this->Form->control('Phone',[
                         'label' => false,
+                        'type' => 'tel',
                         'placeholder' => 'Phone',
                         'required'=>false,
                         'class' => 'form-control',
@@ -56,12 +57,11 @@
                     ]); ?>
                 </div>
                 <div class="row form-group" style="margin-top: 20px">
-                    <div class="col-md-12" style="margin-top: 20px">
+                    <div class="col-md-12" style="margin-left: 15px; margin-top: 20px">
                         <?= $this->Form->textarea('Query_info',['label' => false, 'required'=>true,'placeholder' => '* Please enter some messages here', 'class' => 'form-control']); ?>
                     </div>
                 </div>
-
-                <?= $this->Form->button('Submit',['class' => 'btn btn-primary']) ?>
+                <?= $this->Form->button('Submit',['class' => 'btn btn-primary','style' => 'margin-left: 15px']) ?>
                 <?= $this->Form->end() ?>
             </div>
         </div>
