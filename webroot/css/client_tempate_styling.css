@@ -37,7 +37,7 @@ label {
 /*-- header --*/
 .header-bottom {
     background-color: #fff;
-    padding: 0;
+
 }
 .navbar-nav {
     float: none;
@@ -93,13 +93,13 @@ label {
 }
 .logo h1 a {
     color: #fff;
-    font-size: 1em;
+    font-size: 1rem;
     display: block;
     font-weight:700;
     text-decoration: none;
     text-transform: uppercase;
     text-align: center;
-    width: 65%;
+    width: 70%;
     text-align: left;
     margin: 0 auto;
     background-color: #337ab7;
