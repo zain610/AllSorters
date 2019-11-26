@@ -48,18 +48,21 @@ class EventsTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
-            ->dateTime('date')
-            ->allowEmpty('date',false);
+            ->date('Date')
+            ->allowEmpty('Date',false);
+        $validator
+            ->time('Time')
+            ->allowEmpty('Time',false);
 
         $validator
-            ->scalar('description')
-            ->maxLength('description', 255)
-            ->allowEmpty('description',false);
+            ->scalar('Description')
+            ->maxLength('Description', 255)
+            ->allowEmpty('Description',false);
 
         $validator
-            ->scalar('venue')
-            ->maxLength('venue', 255)
-            ->allowEmpty('venue',false);
+            ->scalar('Venue')
+            ->maxLength('Venue', 255)
+            ->allowEmpty('Venue',false);
 
         return $validator;
     }

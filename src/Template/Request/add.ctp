@@ -8,7 +8,8 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 animate-box">
-            <?= $this->Flash->render(); ?>
+            <?= $this->Flash->render('error'); ?>
+            <?= $this->Flash->render('success'); ?>
             <h3>Contact us</h3>
             <p>Fields marked * are required</p>
             <br>
@@ -44,7 +45,16 @@
                         'class' => 'form-control'
                     ]); ?>
                 </div>
-
+                <div class="col-md-6" style="margin-top: 20px">
+                    <?php echo $this->Form->control('Phone',[
+                        'label' => false,
+                        'placeholder' => 'Phone',
+                        'required'=>false,
+                        'class' => 'form-control',
+                        'pattern' => '^04(\s?[0-9]{2}\s?)([0-9]{3}\s?[0-9]{3}|[0-9]{2}\s?[0-9]{2}\s?[0-9]{2})$',
+                        'title' => 'Mobile numbers must start with "04" and be 10 digits in length'
+                    ]); ?>
+                </div>
                 <div class="row form-group" style="margin-top: 20px">
                     <div class="col-md-12" style="margin-top: 20px">
                         <?= $this->Form->textarea('Query_info',['label' => false, 'required'=>true,'placeholder' => '* Please enter some messages here', 'class' => 'form-control']); ?>
@@ -57,3 +67,6 @@
         </div>
     </div>
 </div>
+
+
+

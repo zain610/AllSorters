@@ -3,9 +3,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <style>
     body {
@@ -86,7 +83,7 @@
     /*}*/
 
     .container {
-        padding: 2px 16px;
+
         color: #ffffff width=500;
     }
 </style>
@@ -101,16 +98,17 @@
     <h3>Upcoming Speaking Engagements</h3>
 </div>
 <?php foreach ($events as $event): ?>
-    <?php if ($event->Archived) { ?>
+    <?php if ($event->Published) { ?>
         <div class="row">
             <div class="column">
                 <div class="card">
                     <div class="left">
                         <div class = "hide">
                             <?=
-                            $theDatetime = h($event['date']);
+                            $theDatetime = h($event['Date']);
                             $dt = new DateTime($theDatetime);
-                            $time = $dt->format('h:i A');
+                            $theTime = $event->Time;
+                            $time = $theTime->format('h:i A');
                             $dateNum  = $dt->format('d');
                             $year  = $dt->format('Y');;
                             $monthNum  = $dt->format('n');
@@ -127,8 +125,8 @@
                     </div>
                     <div class="right">
                         <h3><?= $time ?></h3>
-                        <p> <?= h($event['description']) ?></p>
-                        <p>  <?= h($event['venue']) ?></p>
+                        <p> <?= h(strip_tags($event['Description'])) ?></p>
+                        <p>  <?= h(strip_tags($event['Venue'])) ?></p>
                     </div>
                 </div >
             </div >
@@ -144,16 +142,17 @@
     <?php if ($event->Archived) { ?>
         <div class = "hide">
             <?=
-            $theDatetime = h($event['date']);
+            $theDatetime = h($event['Date']);
             $dt = new DateTime($theDatetime);
-            $time = $dt->format('h:i A');
+            $theTime = $event->Time;
+            $time = $theTime->format('h:i A');
             $dateNum  = $dt->format('j');
             $year  = $dt->format('Y');;
             $monthNum  = $dt->format('n');
             $dateObj   = DateTime::createFromFormat('!m', $monthNum);
             $monthName = $dateObj->format('F');
-            $description = h($event['description']);
-            $venue =h($event['venue']);
+            $description = h(strip_tags($event['Description']));
+            $venue =h(strip_tags($event['Venue']));
             ?>
         </div>
         <div class="list">
@@ -163,6 +162,10 @@
         </div>
     <?php } ?>
 <?php endforeach ?>
+<div>
+    <br>
+    <br>
+</div>
 
 </html>
 

@@ -7,15 +7,16 @@
 
 </nav>
 <div class="table table-hover table-striped">
-    <?= $this->Html->link('Add an event', ['action' => 'add'], ['class' => 'pull-right btn btn-oval btn-primary']) ?>
+    <?= $this->Html->link('Add a Speaking Engagement', ['action' => 'add'], ['class' => 'pull-right btn btn-oval btn-primary']) ?>
 
     <h3><?= __('Speaking Engagements') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
         <tr>
-            <th scope="col"><?= $this->Paginator->sort('date') ?></th>
-            <th scope="col"><?= $this->Paginator->sort('description') ?></th>
-            <th scope="col"><?= $this->Paginator->sort('venue') ?></th>
+            <th scope="col"><?= $this->Paginator->sort('Date') ?></th>
+            <th scope="col"><?= $this->Paginator->sort('Time') ?></th>
+            <th scope="col"><?= $this->Paginator->sort('Description') ?></th>
+            <th scope="col"><?= $this->Paginator->sort('Venue') ?></th>
             <th scope="col" class="actions"><?= __('Actions') ?></th>
         </tr>
         </thead>
@@ -23,9 +24,10 @@
         <?php foreach ($publishedEvents as $event): ?>
             <?php if ($event->Published) { ?>
                 <tr>
-                    <td><?= h($event->date) ?></td>
-                    <td><?= h($event->description) ?></td>
-                    <td><?= h($event->venue) ?></td>
+                    <td><?= h($event->Date) ?></td>
+                    <td><?= $event->Time->i18nFormat([\IntlDateFormatter::NONE, \IntlDateFormatter::SHORT]) ?></td>
+                    <td><?= strip_tags($event->Description) ?></td>
+                    <td><?= strip_tags($event->Venue) ?></td>
                     <td class="actions">
                         <?= $this->element('Admin/Buttons/view', ['url' => ['action' => 'view', $event->id]]) ?>
                         <?= $this->element('Admin/Buttons/edit', ['url' => ['action' => 'edit', $event->id]]) ?>

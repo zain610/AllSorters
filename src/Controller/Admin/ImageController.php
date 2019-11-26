@@ -122,7 +122,7 @@ class ImageController extends AppController
     public function edit($id = null)
     {
         $image = $this->Image->get($id, [
-            'contain' => ['BlogPost', 'GalleryPage', 'Services']
+            'contain' => ['BlogPost', 'GalleryPage', 'Service']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $image = $this->Image->patchEntity($image, $this->request->getData());

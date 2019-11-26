@@ -2,6 +2,9 @@
 namespace App\Controller\Admin;
 
 use App\Controller\AppController;
+use Cake\I18n\Date;
+use Cake\I18n\FrozenTime;
+use Cake\I18n\Time;
 use Cake\ORM\TableRegistry;
 
 /**
@@ -27,6 +30,7 @@ class EventsController extends AppController
             $this->Events->find('all')->where(['Events.Published' => 1])->contain([])
         );
         $this->set(compact('publishedEvents'));
+        $this->set('data', $this->request->getSession()->read('data'));
     }
     public function initialize()
     {
@@ -88,13 +92,20 @@ class EventsController extends AppController
      * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
-    public function edit($id = null)
+    public function edit( $id = null)
     {
         $this->layout ='admin';
         $event = $this->Events->get($id, [
             'contain' => []
         ]);
+
         if ($this->request->is(['patch', 'post', 'put'])) {
+            $data = $this->request->getData();
+            $date = $this->request->getData('date');
+            $time = $this->request->getData('time');
+            $this->request->getSession()->write('data', $data);
+            $event->Date = $date;
+            $event->Time = $time;
             $event = $this->Events->patchEntity($event, $this->request->getData());
             if ($this->Events->save($event)) {
                 $this->Flash->success(__('The event has been saved.'));
@@ -103,7 +114,20 @@ class EventsController extends AppController
             }
             $this->Flash->error(__('The event could not be saved. Please, try again.'));
         }
+        //convert the Date and Time objects from TimeFrozen to just plain accessible objects
+        $dateObject = get_object_vars($event->Date);
+        $timeObject = get_object_vars($event->Time);
+
+        //extract date and time from these objects. For some mystical reason, they are both called date
+        //also convert the string to time and then parse a format
+        $date = date('Y-m-d' ,strtotime($dateObject['date']));
+        $time = date('H:i:s' ,strtotime($timeObject['date']));
+
+        $event->date = $date;
+        $event->time = $time;
         $this->set(compact('event'));
+
+
     }
 
     /**

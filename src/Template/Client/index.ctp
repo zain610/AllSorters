@@ -10,7 +10,7 @@
         <li><?= $this->Html->link(__('New Client'), ['action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="client index large-9 medium-8 columns content">
+<div>
     <h3><?= __('Client') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>

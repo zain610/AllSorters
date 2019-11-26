@@ -55,6 +55,7 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/admin/booking', ['controller' => 'Admin', 'action' => 'booking']);
     $routes->connect('/admin/logout', ['controller' => 'Admin', 'action' => 'logout']);
     $routes->connect('/admin/booking', ['controller' => 'Admin', 'action' => 'booking']);
+    $routes->connect('/admin/bookingdelete/*', ['controller' => 'Admin', 'action' => 'bookingdelete']);
     $routes->connect('/admin/edit/*', ['prefix' => false, 'controller' => 'Admin', 'action' => 'edit']);
     $routes->connect('/admin/view/*', ['prefix' => false, 'controller' => 'Admin', 'action' => 'view']);
     $routes->connect('/admin/add/*', ['prefix' => false, 'controller' => 'Admin', 'action' => 'add']);

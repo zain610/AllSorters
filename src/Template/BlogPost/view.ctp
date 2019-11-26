@@ -15,11 +15,27 @@
         <div class="row">
             <div class="col-md-12 col-lg-8 mb-5">
             <h3>Blog</h3>
+
             <div class="well">
                 <h4><?php echo $blogPost->title?></h4>
                 <p><?php echo $blogPost->Description?></p>
                 <a><?php echo $blogPost->Body?></a>
             </div>
+                <div class="related">
+                    <?php if (!empty($blogPost->image)): ?>
+                        <table cellpadding="0" cellspacing="0">
+                            <tbody>
+                            <?php foreach ($blogPost->image as $image): ?>
+                                <tr>
+                                    <td class="card" width="50%">
+                                        <?php echo $this->Html->image($image->path, ['alt' => 'CakePHP']); ?>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    <?php endif; ?>
+                </div>
             <div class="clearfix"> </div>
             </div>
         </div>

@@ -2,6 +2,7 @@
 namespace App\Controller\Admin;
 
 use App\Controller\AppController;
+use Cake\Mailer\Email;
 
 /**
  * Request Controller
@@ -22,6 +23,7 @@ class RequestController extends AppController
         $this->layout ='admin';
         $request = $this->paginate($this->Request);
 
+        $this->set('response Sent', $this->getRequest()->getSession()->read('sent'));
         $this->set(compact('request'));
     }
 
@@ -36,13 +38,15 @@ class RequestController extends AppController
     {
         $this->layout = 'admin';
         $request = $this->Request->get($id);
-        if($this->request->is('post')) {
+        if($this->request->is(['post', 'put'])) {
+
             $response = $this->Request->patchEntity($request, $this->request->getData());
             if ($this->Request->save($request)) {
                 $this->Flash->success(__('The request has been saved.'));
-
+                $this->sendEmail($response->Request_Email, $response->Response, $response->Query_info);
                 return $this->redirect(['action' => 'index']);
             }
+            $this->set('response', $response);
         }
         $this->set('request', $request);
     }
@@ -111,5 +115,22 @@ class RequestController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+    public function sendEmail($sendEmail = "", $message="", $subject="") {
+        $email = new Email('default');
+        $email->setFrom(['allsortMary@gmail.com' => 'All Sorters'])
+            ->setTo($sendEmail)
+            ->emailFormat('html')
+            ->setTemplate('default')
+            ->setViewVars(['title' => "", 'content'=> $message])
+            ->setSubject("Query: ". $subject. " Response");
+//            Email::deliver($sender_email, 'Hello World', 'Test message', ['from' => 'allsortMary@gmail.com']);
+        if($email->send()) {
+            $this->Flash->success(__('The Mail has been sent.'));
+        } else {
+            $this->Flash->error(__('There was an error sending the Email'));
+        }
+
+
     }
 }
