@@ -11,7 +11,7 @@
     <div class="container">
         <div class="camp">
             <h3>Services Overview</h3>
-            <div id="searchBarNavBar">
+            <div id="searchBarNavBar" class="col-md-12">
                 <?= $this->element('Client/Buttons/search'); ?>
             </div>
             <?php foreach ($service as $service):?>

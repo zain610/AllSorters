@@ -47,12 +47,12 @@
             <h3>Services Overview</h3>
             <?php foreach($services as $service) { ?>
                 <div class="col-lg-2 minist-right">
-                    <?php  echo $this->Html->image($service['path'], ['class' => 'img-responsive','id'=>'serviceimg', 'alt' => 'Service image']);
+                    <?php  echo $this->Html->image($service['path'], ['class' => 'img-responsive','id'=>'serviceimg', 'style'=>'Height:100px', 'alt' => 'Service image']);
                     ?>
                     <h4><?= $service['Service_Title'] ?></h4>
                     <span><?= $this->Text->truncate(h($service['Service_Description']), 20, ['ellipsis' => '...',
                             'exact' => false]) ?></span>
-                    <?= $this->Html->link('More', ['controller' => 'Services', 'action'=> 'displayServices', 'id'=>$service['Service_id']], ['class' => 'hvr-shutter-in-horizontal']) ?>
+                    <?= $this->Html->link('More', ['controller' => 'Services', 'action'=> 'view'.'/'."$service[Service_id]"], ['class' => 'hvr-shutter-in-horizontal']) ?>
 
                 </div>
             <?php }?>

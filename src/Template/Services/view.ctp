@@ -12,9 +12,15 @@
 <!-- header -->
 <div class="services">
     <div class="container">
-        <div class="camp">
+        <div class="camp1">
         <h3>Our Services</h3>
-            <div class="related">
+
+        <div class="well">
+            <h4><?php echo $service->Service_Title?></h4>
+            <h4><?php echo $service->Service_Description?></h4>
+            <p><?php echo $service->Service_Detail?></p>
+        </div>
+            <div class="related  col-sm-6">
                 <?php if (!empty($service->image)): ?>
                     <table cellpadding="0" cellspacing="0">
                         <tbody>
@@ -29,11 +35,6 @@
                     </table>
                 <?php endif; ?>
             </div>
-        <div class="well">
-            <h4><?php echo $service->Service_Title?></h4>
-            <h4><?php echo $service->Service_Description?></h4>
-            <p><?php echo $service->Service_Detail?></p>
-        </div>
         <div class="clearfix"> </div>
 
     </div>
