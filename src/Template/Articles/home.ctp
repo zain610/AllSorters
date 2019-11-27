@@ -47,7 +47,8 @@
             <h3>Services Overview</h3>
             <?php foreach($services as $service) { ?>
                 <div class="col-lg-2 minist-right">
-                    <img src="https://images.unsplash.com/photo-1503541517233-120571491cf3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80" class="img-responsive" alt="">
+                    <?php  echo $this->Html->image($service['path'], ['class' => 'img-responsive','id'=>'serviceimg', 'alt' => 'Service image']);
+                    ?>
                     <h4><?= $service['Service_Title'] ?></h4>
                     <span><?= $this->Text->truncate(h($service['Service_Description']), 20, ['ellipsis' => '...',
                             'exact' => false]) ?></span>

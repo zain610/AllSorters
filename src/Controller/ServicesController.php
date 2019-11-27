@@ -7,6 +7,7 @@ use App\Controller\AppController;
  * Services Controller
  *
  * @property \App\Model\Table\ServiceTable $Services
+ * @property \App\Model\Table\ServiceImageTable $Service_image
  *
  * @method \App\Model\Entity\Service[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
@@ -24,12 +25,19 @@ class ServicesController extends AppController
         $this->loadModel('Service');
     }
 
-    public function index()
+    public function index($id = null)
     {
+//        $this->loadModel('Service_image');
+//        $service = $this->paginate($this->Service);
+////        $img = $this->Service->image->find('all','contain' => ['image']);
+//        $ser_img_id = $this->Service_image->find('all');
+//        $this->viewBuilder()->setLayout('client');
+//        $this->set(compact('service','ser_img_id'));
+        $this->layout ='client';
+        $service = $this->Service->find('all')->contain(['image']);
 
-        $service = $this->paginate($this->Service);
-        $this->viewBuilder()->setLayout('client');
         $this->set(compact('service'));
+
     }
 
     /**
