@@ -21,13 +21,10 @@ class GalleryPageFixture extends TestFixture
      */
     // @codingStandardsIgnoreStart
     public $fields = [
-        'BA_Image_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
-        'Date' => ['type' => 'datetime', 'length' => null, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null],
-        'Image_Attribute' => ['type' => 'string', 'length' => 255, 'null' => true, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
-        'Suburb' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
-        'Image_Comment' => ['type' => 'string', 'length' => 255, 'null' => true, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
+        'BA_Gallery_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'Date' => ['type' => 'date', 'length' => null, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null],
         '_constraints' => [
-            'primary' => ['type' => 'primary', 'columns' => ['BA_Image_id'], 'length' => []],
+            'primary' => ['type' => 'primary', 'columns' => ['BA_Gallery_id'], 'length' => []],
         ],
         '_options' => [
             'engine' => 'InnoDB',
@@ -44,11 +41,8 @@ class GalleryPageFixture extends TestFixture
     {
         $this->records = [
             [
-                'BA_Image_id' => 1,
-                'Date' => '2019-10-29 13:20:35',
-                'Image_Attribute' => 'Lorem ipsum dolor sit amet',
-                'Suburb' => 1,
-                'Image_Comment' => 'Lorem ipsum dolor sit amet'
+                'BA_Gallery_id' => 1,
+                'Date' => '2019-11-28'
             ],
         ];
         parent::init();

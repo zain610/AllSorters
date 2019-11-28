@@ -6,11 +6,8 @@ use Cake\ORM\Entity;
 /**
  * GalleryPage Entity
  *
- * @property int $BA_Image_id
- * @property \Cake\I18n\FrozenTime|null $Date
- * @property string|null $Image_Attribute
- * @property int|null $Suburb
- * @property string|null $Image_Comment
+ * @property int $BA_Gallery_id
+ * @property \Cake\I18n\FrozenDate|null $Date
  *
  * @property \App\Model\Entity\Image[] $image
  */
@@ -27,9 +24,6 @@ class GalleryPage extends Entity
      */
     protected $_accessible = [
         'Date' => true,
-        'Image_Attribute' => true,
-        'Suburb' => true,
-        'Image_Comment' => true,
         'image' => true
     ];
 }
