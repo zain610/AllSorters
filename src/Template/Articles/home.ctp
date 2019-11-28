@@ -16,18 +16,20 @@
 
             <div class="carousel-inner">
                 <div class="item active">
+
                     <img src="img/bg2.jpg" alt="bg">
-
+                    <div class="text">Caption Text1</div>
                 </div>
 
                 <div class="item">
-                    <img src="img/dockland 5.3.2018.jpg" alt="Chicago">
-
+                    <img src="img/dockland 5.3.2018.jpg" alt="dockland">
+                    <div class="text">Caption Text2</div>
                 </div>
 
                 <div class="item">
-                    <img src="img/bg.jpg" alt="pete">
 
+                    <img src="img/bg.jpg" alt="bg">
+                    <div class="text">Caption Text3</div>
                 </div>
             </div>
 
@@ -71,9 +73,9 @@
             <a href="#" class="list-group-item list-group-item-action">
                 <div class="d-flex w-100 justify-content-between">
                     <h4><?= $blog['title'] ?></h4>
-                    <button class="btn btn-primary"> Read More </button>
                     <p><?= $blog['Body'] ?></p>
                     <small>Date Published: <?= $blog['created'] ?></small>
+                    <?= $this->Html->link('Read More', ['controller' => 'BlogPost', 'action'=> 'view'.'/'."$blog[blog_post_id]"],['class'=>'btn btn-primary']);?>
 
                 </div>
 
