@@ -5,6 +5,8 @@ use App\Controller\AppController;
 use Cake\I18n\Number;
 use Cake\Mailer\Email;
 use Cake\Mailer\TransportFactory;
+use Cake\Http\Client;
+
 
 //        'gmail' => [
 //
@@ -39,6 +41,7 @@ class SubscriptionsController extends AppController
         $this->set('subscribers', $subscribers);
         $this->set('mail', $this->request->getSession()->read('mail'));
         $this->set('email', $this->request->getSession()->read('sendermail'));
+        $this->set('id', $this->request->getSession()->read('id'));
         $this->set(compact('subscriptions'));
     }
 
@@ -88,7 +91,7 @@ class SubscriptionsController extends AppController
      */
     public function delete($id = null)
     {
-        $this->request->allowMethod(['post', 'delete']);
+        $this->request->allowMethod(['get','post', 'delete']);
         $subscription = $this->Subscriptions->get($id);
         if ($this->Subscriptions->delete($subscription)) {
             $this->Flash->success(__('The subscription has been deleted.'));
@@ -142,5 +145,22 @@ class SubscriptionsController extends AppController
             }
 
         }
+    }
+    public function deleteSubscriber() {
+        $layout = 'ajax'; // you need to have a no html page, only the data.
+        $this->autoRender = false; // no need to render the page, just plain data.
+        $this->request->allowMethod(["delete", "post"]);
+        $id = $this->request->getData();
+        $subscription_to_delete = $this->Subscriptions->get($id, [
+            'contain' => []
+        ]);
+        if ($this->Subscriptions->delete($subscription_to_delete)) {
+            $this->Flash->success(__('The subscription has been deleted.'));
+        } else {
+            $this->Flash->error(__('The subscription could not be deleted. Please, try again.'));
+        }
+        return $this->redirect(['action' => 'index']);
+
+
     }
 }

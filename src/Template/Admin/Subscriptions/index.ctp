@@ -2,6 +2,7 @@
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Subscription[]|\Cake\Collection\CollectionInterface $subscriptions
+ * use Cake\Routing\Route\DashedRoute;
  */
 ?>
 <script type="text/javascript">
@@ -11,6 +12,23 @@
             checkboxes[i].checked = source.checked;
         }
     }
+    function deleteSubscriber(something) {
+        console.log(something)
+
+
+        $.ajax('/admin/subscriptions/deleteSubscriber', {
+            type: 'POST',
+            data: {
+                id: something
+            },
+            success: () => {
+                location.reload()
+            }
+        })
+
+    }
+
+
 </script>
 <div class="container-fluid">
     <?= $this->Form->create(null, ['url' => ['controller'=>'Subscriptions', 'action' => 'emailNewsletter'], 'type' => 'post']); ?>
@@ -38,8 +56,9 @@
                 <?php foreach ($subscriptions as $subscription): ?>
                     <div id="div-subscriber-checkbox" class="form-check form-check-inline col-sm-3">
                         <?= $this->Form->checkbox($subscription->id, ['id'=>$this->Number->format($subscription->id), 'class'=> 'form-check-input']); ?>
-                        <label class="form-check-label" for="<?=$this->Number->format($subscription->id)?>"><?= h($subscription->email_address) ?></label>
-                        <button type="button" class="close" aria-label="Close" style="color: red;opacity: 1">
+                        <label id="subscriber" class="form-check-label" for="<?=$this->Number->format($subscription->id)?>"><?= h($subscription->email_address) ?></label>
+
+                        <button id="deleteSubscriberBtn" onclick="deleteSubscriber(<?=$subscription->id?>)" type="button" class="close" aria-label="Close" style="color: red;opacity: 1">
                             <span aria-hidden="true">×</span>
                         </button>
                     </div>
