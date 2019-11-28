@@ -17,10 +17,19 @@ class GalleryPageController extends AppController
      *
      * @return \Cake\Http\Response|null
      */
+    public function initialize()
+    {
+        parent::initialize();
+        $this->loadModel('GalleryPage');
+        $this->Auth->allow(['index','view']);
+    }
+
+
+
     public function index()
     {
 
-
+        $this->viewBuilder()->setLayout('client');
     }
 
     /**

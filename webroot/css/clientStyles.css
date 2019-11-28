@@ -122,7 +122,8 @@ html, body{
     background-color: #1DC7EA;
 }
 .gallery img {
-    height: 20rem;
+    height: 200px;
+    widows: 340.422px;
 }
 hr {
     margin: 1rem 5rem;
@@ -237,3 +238,5 @@ ul.social {
 ul.social li {
     display: inline-block;
 }
+
+/*Before After Gallery*/
