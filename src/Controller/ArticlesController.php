@@ -25,7 +25,7 @@ class ArticlesController extends AppController
     public function home()
     {
         $connection = ConnectionManager::get('default');
-        $services = $connection->execute('SELECT * FROM service LIMIT 5')->fetchAll('assoc');
+        $services = $connection->execute('SELECT DISTINCT * FROM service join service_image on service.Service_id = service_image.Service_id join image on service_image.Image_id = image.Image_id GROUP BY service.Service_id LIMIT 5')->fetchAll('assoc');
         $this->set('services', $services);
 
         $blogs = $connection->execute('Select * from blog_post LIMIT 5') ->fetchAll('assoc');

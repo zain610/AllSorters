@@ -16,18 +16,20 @@
 
             <div class="carousel-inner">
                 <div class="item active">
+
                     <img src="img/bg2.jpg" alt="bg">
-
+                    <div class="text">Caption Text1</div>
                 </div>
 
                 <div class="item">
-                    <img src="img/dockland 5.3.2018.jpg" alt="Chicago">
-
+                    <img src="img/dockland 5.3.2018.jpg" alt="dockland">
+                    <div class="text">Caption Text2</div>
                 </div>
 
                 <div class="item">
-                    <img src="img/bg.jpg" alt="pete">
 
+                    <img src="img/bg.jpg" alt="bg">
+                    <div class="text">Caption Text3</div>
                 </div>
             </div>
 
@@ -47,11 +49,12 @@
             <h3>Services Overview</h3>
             <?php foreach($services as $service) { ?>
                 <div class="col-lg-2 minist-right">
-                    <img src="https://images.unsplash.com/photo-1503541517233-120571491cf3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80" class="img-responsive" alt="">
+                    <?php  echo $this->Html->image($service['path'], ['class' => 'img-responsive','id'=>'serviceimg', 'style'=>'Height:100px', 'alt' => 'Service image']);
+                    ?>
                     <h4><?= $service['Service_Title'] ?></h4>
                     <span><?= $this->Text->truncate(h($service['Service_Description']), 20, ['ellipsis' => '...',
                             'exact' => false]) ?></span>
-                    <?= $this->Html->link('More', ['controller' => 'Services', 'action'=> 'displayServices', 'id'=>$service['Service_id']], ['class' => 'hvr-shutter-in-horizontal']) ?>
+                    <?= $this->Html->link('More', ['controller' => 'Services', 'action'=> 'view'.'/'."$service[Service_id]"], ['class' => 'hvr-shutter-in-horizontal']) ?>
 
                 </div>
             <?php }?>
@@ -70,9 +73,9 @@
             <a href="#" class="list-group-item list-group-item-action">
                 <div class="d-flex w-100 justify-content-between">
                     <h4><?= $blog['title'] ?></h4>
-                    <button class="btn btn-primary"> Read More </button>
                     <p><?= $blog['Body'] ?></p>
                     <small>Date Published: <?= $blog['created'] ?></small>
+                    <?= $this->Html->link('Read More', ['controller' => 'BlogPost', 'action'=> 'view'.'/'."$blog[blog_post_id]"],['class'=>'btn btn-primary']);?>
 
                 </div>
 

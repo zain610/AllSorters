@@ -7,18 +7,19 @@ use Cake\ORM\Entity;
  * Image Entity
  *
  * @property int $Image_id
- * @property string $Image_Content
- * @property string $name
- * @property string $path
- * @property \Cake\I18n\FrozenDate $created_at
+ * @property string|null $Image_Content
+ * @property string|null $name
+ * @property string|null $path
+ * @property \Cake\I18n\FrozenDate|null $created_at
+ * @property int|null $gallery_id
+ * @property bool|null $Shown
  *
  * @property \App\Model\Entity\BlogPost[] $blog_post
- * @property \App\Model\Entity\GalleryPage[] $gallery_page
- * @property \App\Model\Entity\Service[] $service
+ * @property \App\Model\Entity\GalleryPage $gallery_page
+ * @property \App\Model\Entity\Service[] $services
  */
 class Image extends Entity
 {
-
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
      *
@@ -33,8 +34,10 @@ class Image extends Entity
         'name' => true,
         'path' => true,
         'created_at' => true,
+        'gallery_id' => true,
+        'Shown' => true,
         'blog_post' => true,
         'gallery_page' => true,
-        'service' => true
+        'services' => true
     ];
 }

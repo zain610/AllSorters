@@ -9,8 +9,6 @@ use Cake\Validation\Validator;
 /**
  * GalleryPage Model
  *
- * @property \App\Model\Table\ImageTable|\Cake\ORM\Association\BelongsToMany $Image
- *
  * @method \App\Model\Entity\GalleryPage get($primaryKey, $options = [])
  * @method \App\Model\Entity\GalleryPage newEntity($data = null, array $options = [])
  * @method \App\Model\Entity\GalleryPage[] newEntities(array $data, array $options = [])
@@ -35,12 +33,6 @@ class GalleryPageTable extends Table
         $this->setTable('gallery_page');
         $this->setDisplayField('BA_Image_id');
         $this->setPrimaryKey('BA_Image_id');
-
-        $this->belongsToMany('Image', [
-            'foreignKey' => 'gallery_page_id',
-            'targetForeignKey' => 'image_id',
-            'joinTable' => 'gallery_page_image'
-        ]);
     }
 
     /**
@@ -52,26 +44,12 @@ class GalleryPageTable extends Table
     public function validationDefault(Validator $validator)
     {
         $validator
-            ->integer('BA_Image_id')
-            ->allowEmptyString('BA_Image_id', 'create');
+            ->integer('BA_Gallery_id')
+            ->allowEmptyString('BA_Gallery_id', 'create');
 
         $validator
-            ->dateTime('Date')
-            ->allowEmptyDateTime('Date');
-
-        $validator
-            ->scalar('Image_Attribute')
-            ->maxLength('Image_Attribute', 255)
-            ->allowEmptyString('Image_Attribute');
-
-        $validator
-            ->integer('Suburb')
-            ->allowEmptyString('Suburb');
-
-        $validator
-            ->scalar('Image_Comment')
-            ->maxLength('Image_Comment', 255)
-            ->allowEmptyString('Image_Comment');
+            ->date('Date')
+            ->allowEmptyDate('Date');
 
         return $validator;
     }
