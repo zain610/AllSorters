@@ -20,6 +20,7 @@
                     <?php echo $this->Form->control('Cust_Fname',[
                         'label' => false,
                         'placeholder' => '* Firstname',
+                        'type' => 'custname',
                         'class' => 'form-control',
                         'required'=>true,
                         'pattern' => '[a-zA-Z]+',
@@ -31,6 +32,7 @@
                         'required'=>true,
                         'label' => false,
                         'placeholder' => '* Surname',
+                        'type' => 'custname',
                         'class' => 'form-control',
                         'pattern' => '[a-zA-Z]+',
                         'title' => 'Names can only contain letters'
