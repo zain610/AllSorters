@@ -16,27 +16,29 @@
             <br>
             <?= $this->Form->create($request) ?>
             <div class="row form-group">
-                <div class="col-md-6">
+                <div class="col-md-6" style="margin-top: 20px">
                     <?php echo $this->Form->control('Cust_Fname',[
                         'label' => false,
                         'placeholder' => '* Firstname',
                         'class' => 'form-control',
                         'required'=>true,
+                        'type' => 'custfname',
                         'pattern' => '[a-zA-Z]+',
                         'title' => 'Names can only contain letters'
                     ]); ?>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6" style="margin-top: 20px">
                     <?php echo $this->Form->control('Cust_Sname',[
                         'required'=>true,
                         'label' => false,
+                        'type' => 'custsname',
                         'placeholder' => '* Surname',
                         'class' => 'form-control',
                         'pattern' => '[a-zA-Z]+',
                         'title' => 'Names can only contain letters'
                     ]); ?>
                 </div>
-                <br>
+
                 <div class="col-md-6" style="margin-top: 20px">
                     <?php echo $this->Form->email('Request_Email',[
                         'label' => false,
