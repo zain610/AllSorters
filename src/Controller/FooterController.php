@@ -23,7 +23,6 @@ class FooterController extends AppController
 
         $this->set(compact('footer'));
     }
-
     /**
      * View method
      *

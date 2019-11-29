@@ -1,14 +1,30 @@
+<?php
+/**
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\Footer $footer
+ */
+?>
+
 <body>
 <!-- footer -->
+
+
 <div class="footer" id="contact">
     <div class="container">
         <div class="col-md-4 contact-left">
+
             <h3>Address</h3>
+
+
+                <?php foreach ($footer as $footer): ?>
             <address>
-                Allsorters, PO Box 1043, <br>
-                Greythorn, Vic, 3104<br>
-                <abbr title="Phone">Phone:</abbr> 1300 797 332
+                    <?= h($footer->Address) ?>
+                <br>
             </address>
+                <?php endforeach; ?>
+
+
+
         </div>
         <div class="col-md-4 ftr-gd">
             <h3>Follow Us</h3>
