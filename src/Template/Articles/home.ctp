@@ -62,7 +62,10 @@
         </div>
     </div>
     <div class="container" id="newsletter-signup">
+        <h3>Sign Up to our Newsletter!</h3>
         <?= $this->element('Client/subscribe'); ?>
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
     </div>
 </div>
 <hr>
