@@ -33,6 +33,7 @@ class FooterController extends AppController
      */
     public function view($id = null)
     {
+        $this->layout ='admin';
         $footer = $this->Footer->get($id, [
             'contain' => []
         ]);
@@ -69,6 +70,7 @@ class FooterController extends AppController
      */
     public function edit($id = null)
     {
+        $this->layout ='admin';
         $footer = $this->Footer->get($id, [
             'contain' => []
         ]);
