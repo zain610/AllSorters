@@ -54,6 +54,7 @@ class ErrorController extends AppController
         parent::beforeRender($event);
 
         $this->viewBuilder()->setTemplatePath('Error');
+        $this->viewBuilder()->setLayout('client');
     }
 
     /**
@@ -64,5 +65,9 @@ class ErrorController extends AppController
      */
     public function afterFilter(Event $event)
     {
+    }
+    public function missingController($error)
+    {
+        return $this->controller->redirect("/");
     }
 }
