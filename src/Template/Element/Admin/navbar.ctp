@@ -80,7 +80,14 @@ $isBookingActive = $currentController === "Admin" && $currentAction === 'booking
                 <li><?= $this->Html->link(
                         '<p>Add Images</p>',
                         '/admin/image/upload/',
-						//['prefix'=>'admin','controller' => 'Image', 'action' => 'upload'],
+                        //['prefix'=>'admin','controller' => 'Image', 'action' => 'upload'],
+//                        ['prefix'=>'admin','controller' => 'image', 'action' => 'upload'],
+                        ['escape' => false]
+                    ) ?></li>
+                <li><?= $this->Html->link(
+                        '<p>Edit Slide Show</p>',
+                        ['prefix'=>'admin','controller' => 'Slideshow','action'=>'index'],
+                        //['prefix'=>'admin','controller' => 'Image', 'action' => 'upload'],
 //                        ['prefix'=>'admin','controller' => 'image', 'action' => 'upload'],
                         ['escape' => false]
                     ) ?></li>
