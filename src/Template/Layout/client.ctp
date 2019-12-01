@@ -20,11 +20,10 @@
 </head>
 <body>
 <?= $this->element('Client/navbar'); ?>
-
         <!-- FlexSlider -->
 <?= $this->fetch('content') ?>
-
 <?= $this->element('Client/footer'); ?>
+
 
 
 </body>
