@@ -128,33 +128,41 @@
     }
     /*!*Change the color when user hovers over navbar item*!*/
     .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-        color:#2C93FF!important;
+        color:#333333!important;
     }
     .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-        color:#2C93FF;
+        color:#333333;
         background-color: #fff;
     }
     a.navbar-brand {
         color: #fff!important;
     }
-
+    #top-header {
+        padding-bottom: 2rem;
+    }
     .header-bottom, nav.navbar.navbar-default {
         background-color: #1a3948!important;
     }
     #navbar-contents {
         display: inline-flex;
     }
+    #nav-links {
+        margin: 0 12rem;
+    }
     nav.navbar.navbar-default {
-        width: 66%;
-        float: none;
-        display: inline-flex;
-        margin-left: 1.3rem;
+        width: 100%;
+        background-color: #5891cc!important;
+        margin: 0;
+    }
+    .container > nav.navbar.navbar-default{
+        margin: 0!important;
+
     }
 
     #navbar {
         overflow: visible;
-        padding-top: 1.3rem;
-        padding-left: 14rem;
+        width: 100%;
+        padding: 0;
 
     }
 
@@ -186,6 +194,26 @@
     .sticky + .content {
         padding-top: 60px;
     }
+    .contact-info {
+        color: #ff6a7d;
+        float:right;
+        padding: 0 2rem;
+        display: inline-flex;
+        margin: 2rem 0;
+
+
+    }
+
+    .contact-info-inner {
+        border: 2px solid #1DC7EA;
+        padding: 0 2rem;
+
+    }
+    #navigation {
+        background-color: #1a3948!important;
+
+    }
+
 
 
     .logo h1 a {
