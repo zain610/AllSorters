@@ -7,7 +7,7 @@ use App\Controller\AppController;
  * Slideshow Controller
  *
  * @property \App\Model\Table\SlideshowTable $Slideshow
- *
+ *@property \App\Model\Table\ImageTable $Image
  * @method \App\Model\Entity\Slideshow[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
 class SlideshowController extends AppController
@@ -23,8 +23,8 @@ class SlideshowController extends AppController
             'contain' => ['Image']
         ];
         $slideshow = $this->paginate($this->Slideshow);
-
-        $this->set(compact('slideshow'));
+        $image = $this->paginate($this->Image);
+        $this->set(compact('slideshow','image'));
     }
 
     /**
