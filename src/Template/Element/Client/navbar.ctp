@@ -1,14 +1,13 @@
-<head>
-</head>
-<body>
-<div class="header-bottom">
+
+<div class="header-bottom" >
     <div class="container">
-        <div class="logo">
-        <?php echo $this->Html->image('Allsorters_logo.png', ['alt' => 'Allsorters','align'=>'right']);?>
-        </div>
-        <nav class="navbar navbar-default" role="navigation">
+
+        <nav  class="navbar navbar-default" role="navigation">
+            <div class="logo">
+                <?php echo $this->Html->image('Allsorters_logo.png', ['alt' => 'Allsorters','align'=>'right']);?>
+            </div>
             <!--/.navbar-header-->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" align="top" style="font-size: Auto; margin-top: -15px">
+            <div id="navbar" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" align="top">
                 <ul class="nav navbar-nav" id="navbar-contents">
                     <li><?= $this->Html->link('Home', ['controller' => 'Articles', 'action' => 'home'], ['class' => 'navbar-brand']) ?></li>
                     <li><?= $this->Html->link('Services', ['controller' => 'Services', 'action' => 'index'], ['class' => 'navbar-brand']) ?></li>
@@ -23,5 +22,3 @@
         </nav>
     </div>
 </div>
-
-</body>
