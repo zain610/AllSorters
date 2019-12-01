@@ -24,6 +24,7 @@
     }
 
 </script>
+
 <body>
 <div>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -38,18 +39,18 @@
             <div class="item active">
 
                 <img src="img/bg2.jpg" alt="bg">
-                <div class="text">Caption Text1</div>
+                <h1 class="text"><span>Personalised in-home care, perfectly matched to you</span></h1>
             </div>
 
             <div class="item">
                 <img src="img/dockland 5.3.2018.jpg" alt="dockland">
-                <div class="text">Caption Text2</div>
+                <h1 class="text"><span>Caption Text 2</span></h1>
             </div>
 
             <div class="item">
 
                 <img src="img/bg.jpg" alt="bg">
-                <div class="text">Caption Text3</div>
+                <h1 class="text"><span>Caption Text 3</span></h1>
             </div>
         </div>
 
@@ -62,9 +63,9 @@
         </a>
     </div>
 </div>
-
-<div class="services" style="display: flex">
-    <div class="container">
+<div>
+    <div class="services" style="display: flex">
+        <div class="container" style="width: 65%">
             <h3>Services Overview</h3>
             <div class="row">
                 <?php foreach($services as $service) { ?>
@@ -82,39 +83,41 @@
                     </div>
                 <?php }?>
             </div>
+        </div>
+        <div class="container" style="width: 35%; border-left:1px solid #000; background-color: #3fa5ce; border: 1px solid #333333">
+            <h3>Recent Blogs</h3>
+            <div class="blogs-carousel">
+                <?php foreach ($blogs as $blog) { ?>
+                    <div class="card ">
+                        <div class="card-body">
+                            <h5 style="" class="card-title"><?= $blog['title'] ?></h5>
+                            <div id="blog-card-content">
+                                <p class="card-text"><?= $blog['Body'] ?></p>
+                                <p class="card-text"><small class="text-muted">Last updated on <?= $blog['created'] ?></small></p>
+                            </div>
+                            <?= $this->Html->link('Read More', ['controller' => 'BlogPost', 'action'=> 'view'.'/'."$blog[blog_post_id]"],['class'=>'btn btn-primary']);?>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
+            <hr style="border: 2px solid #343a40; margin: 1rem">
+            <div class="container" id="newsletter-signup">
+                <h3>Sign Up to our Newsletter!</h3>
+                <?= $this->element('Client/subscribe'); ?>
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
+            </div>
+        </div>
     </div>
 
-    <div class="clearfix"> </div>
 </div>
-</div>
-<div class="container" id="newsletter-signup">
-    <h3>Sign Up to our Newsletter!</h3>
-    <?= $this->element('Client/subscribe'); ?>
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 
-</div>
 </div>
 <hr>
-<div class="services container">
-    <h3>Blogs</h3>
-    <div class="list-group pre-scrollable">
-        <?php foreach ($blogs as $blog) { ?>
-            <a href="#" class="list-group-item list-group-item-action">
-                <div class="d-flex w-100 justify-content-between">
-                    <h4><?= $blog['title'] ?></h4>
-                    <p><?= $blog['Body'] ?></p>
-                    <small>Date Published: <?= $blog['created'] ?></small>
-                    <?= $this->Html->link('Read More', ['controller' => 'BlogPost', 'action'=> 'view'.'/'."$blog[blog_post_id]"],['class'=>'btn btn-primary']);?>
 
-                </div>
-
-
-            </a>
-        <?php } ?>
-    </div>
-</div>
 
 
 
 </body>
+
 </html>

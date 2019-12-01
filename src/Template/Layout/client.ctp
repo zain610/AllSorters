@@ -8,7 +8,12 @@
     <?= $this->Html->css('client_tempate_styling.css') ?>
     <?= $this->Html->css('bootstrap.css') ?>
     <?= $this->Html->css('flexslider.css') ?>
+    <?= $this->Html->css('slick.css') ?>
+    <?= $this->Html->css('slick-theme.css') ?>
     <?= $this->Html->css('chocolat.css') ?>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
     <?= $this->Html->css('clientStyles.css') ?>
 
     <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Montserrat|Oswald|Roboto&display=swap" rel="stylesheet">
@@ -31,6 +36,8 @@
 <?= $this->Html->script('bootstrap.js') ?>
 <?= $this->Html->script('move-top.js') ?>
 <?= $this->Html->script('easing.js') ?>
+<?= $this->Html->script('slick.js') ?>
+
 <script type="text/javascript">
     $(document).ready(function($) {
         $(".scroll").click(function(event){
@@ -58,6 +65,18 @@
 <script type="text/javascript" charset="utf-8">
     $(function() {
         $('.g-left a').Chocolat();
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.blogs-carousel').slick({
+            dots: true,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 1,
+            adaptiveHeight: true
+
+        });
     });
 </script>
 
