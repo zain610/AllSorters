@@ -143,6 +143,9 @@ Services - Card styling
 .card {
     border: 1.5px solid #333333;
 }
+.slick-dots li button:before {
+    font-size: 20px;
+}
 
 
 html, body{
