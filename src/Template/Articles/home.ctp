@@ -84,7 +84,7 @@
                 <?php }?>
             </div>
         </div>
-        <div class="container" style="width: 35%; border-left:1px solid #000; background-color: #3fa5ce; border: 1px solid #333333; height: fit-content">
+        <div class="container" style="width: 35%; border-left:1px solid #000; background-color: #3fa5ce; border: 1px solid #333333">
             <h3>Recent Blogs</h3>
             <div class="blogs-carousel">
                 <?php foreach ($blogs as $blog) { ?>
