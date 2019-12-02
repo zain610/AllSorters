@@ -2,8 +2,10 @@
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\BlogPost[]|\Cake\Collection\CollectionInterface $blogPost
+ * @var \App\Contoller\Admin\BlogPostController $archivedBlogPosts
  */
 ?>
+
 <div class="table table-hover table-striped">
 
     <h3><?= __('Blog Post') ?></h3>

@@ -85,6 +85,7 @@ class EventsController extends AppController
         $this->set(compact('event'));
     }
 
+
     /**
      * Edit method
      *

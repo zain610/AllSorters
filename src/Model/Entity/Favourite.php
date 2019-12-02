@@ -4,16 +4,13 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Event Entity
+ * Favourite Entity
  *
- * @property int $id
- * @property \Cake\I18n\FrozenTime $date
- * @property string $description
- * @property string $venue
- * @property bool $Published
- * @property bool $Archived
+ * @property int $favourites_id
+ * @property string $Title
+ * @property string $Content
  */
-class Event extends Entity
+class Favourite extends Entity
 {
 
     /**
@@ -26,11 +23,7 @@ class Event extends Entity
      * @var array
      */
     protected $_accessible = [
-        'Date' => true,
-        'Time'=> true,
-        'Description' => true,
-        'Venue' => true,
-        'Published' => true,
-        'Archived' => true
+        'Title' => true,
+        'Content' => true
     ];
 }
