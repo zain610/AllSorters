@@ -71,14 +71,11 @@
 <br>
 
 <?php foreach ($favourites as $favourites): ?>
-    <?php $heading = h(strip_tags($favourites['Title'])) ?>
-    <?php $content = h(strip_tags($favourites['Content'])) ?>
 
-    <button type="button" class="collapsible"><?php echo $heading ?></button>
+    <button type="button" class="collapsible"><?php echo $favourites->Title ?></button>
     <div class="content">
-        <p> <br>
-            <?php echo $content ?>
-            <br><br>
+        <p>
+            <?php echo $favourites->Content ?>
         </p>
     </div>
     <br>
