@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
     <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #more {display: none;}
+    </style>
 
 </head>
 <script type="text/javascript">
@@ -31,6 +35,7 @@
         $item[$key]=$slideshow;
     }?>
 
+<div>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -126,7 +131,6 @@
 
 </div>
 <hr>
-
 
 
 
