@@ -243,6 +243,11 @@ $isBookingActive = $currentController === "Admin" && $currentAction === 'booking
                         ['prefix'=>'admin','controller'=>'Slideshow','action'=>'index'],
                         ['escape'=>false]
                     )?></li>
+                <li><?=$this->Html->link(
+                        '<p>Add New Images</p>',
+                        ['prefix'=>'admin','controller'=>'Slideshow','action'=>'add'],
+                        ['escape'=>false]
+                    )?></li>
             </ul>
 
         </li>

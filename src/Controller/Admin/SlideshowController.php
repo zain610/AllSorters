@@ -25,18 +25,12 @@ class SlideshowController extends AppController
      */
     public function index()
     {
-//        $this->loadModel('Image');
-//
-//        $this->paginate = [
-//            'contain' => ['Image']
-//        ];
-//        $slideshow = $this->paginate($this->Slideshow);
-//        $image = $this->Paginator->paginate(
-//            $this->Image->find('all')
-//        );
-//        $this->set(compact('slideshow','image'));
-        $Slideshow = $this->Slideshow->find('all')->contain(['image']);
 
+        $this->loadComponent('Paginator');
+
+        $Slideshow = $this->Paginator->paginate(
+            $this->Slideshow->find('all')->contain(['image'])
+        );
         $this->layout ='admin';
 
         $this->set(compact('Slideshow'));
@@ -67,9 +61,14 @@ class SlideshowController extends AppController
      */
     public function add()
     {
+        $this->layout ='admin';
+
+
         $slideshow = $this->Slideshow->newEntity();
         if ($this->request->is('post')) {
+            debug($this->request->getData());
             $slideshow = $this->Slideshow->patchEntity($slideshow, $this->request->getData());
+
             if ($this->Slideshow->save($slideshow)) {
                 $this->Flash->success(__('The slideshow has been saved.'));
 
@@ -77,7 +76,7 @@ class SlideshowController extends AppController
             }
             $this->Flash->error(__('The slideshow could not be saved. Please, try again.'));
         }
-        $image = $this->Slideshow->Image->find('list', ['limit' => 200]);
+        $image = $this->Slideshow->Image->find('all');
         $this->set(compact('slideshow', 'image'));
     }
 

@@ -23,13 +23,13 @@
                     <td><?php echo $slideshow->Image['name'] ?></td>
                     <td><?php echo $slideshow->Captions?></td>
                     <td class="actions">
-                        <? $this->element('Admin/Buttons/view', ['url' => ['action' => 'view', $slideshow->Image['Image_id']]]) ?>
+                        <?= $this->element('Admin/Buttons/view', ['url' => ['action' => 'view', $slideshow->Image['Image_id']]]) ?>
                         <?php if (!($slideshow->Image['Shown'])): ?>
                             <?= $this->element('Admin/Buttons/display', ['url' => ['action' => 'ShowOnGallery', $slideshow->Image['Image_id']]]) ?>
                         <?php else: ?>
                             <?= $this->element('Admin/Buttons/hide', ['url' => ['action' => 'NotShowOnGallery', $slideshow->Image['Image_id']]]) ?>
                         <?php endif;?>
-                        <?= $this->element('Admin/Buttons/delete', ['url' => ['action' => 'delete', $slideshow->Image['Image_id']]]) ?>
+                        <?= $this->element('Admin/Buttons/delete', ['url' => ['action' => 'delete', $slideshow->Slideshow_id]]) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>
@@ -37,15 +37,15 @@
             </tbody>
         </table>
         <?= $this->Html->link(__('Back'), $this->request->referer(), ['class' => 'btn btn-oval btn-primary','style'=>'float:left']) ?>
-<!--        <div class="paginator">-->
-<!--            <ul class="pagination">-->
-<!--                --><?//= $this->Paginator->first('<< ' . __('first')) ?>
-<!--                --><?//= $this->Paginator->prev('< ' . __('previous')) ?>
-<!--                --><?//= $this->Paginator->numbers() ?>
-<!--                --><?//= $this->Paginator->next(__('next') . ' >') ?>
-<!--                --><?//= $this->Paginator->last(__('last') . ' >>') ?>
-<!--            </ul>-->
-<!--            <p>--><?//= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?><!--</p>-->
-<!--        </div>-->
+        <div class="paginator">
+            <ul class="pagination">
+                <?= $this->Paginator->first('<< ' . __('first')) ?>
+                <?= $this->Paginator->prev('< ' . __('previous')) ?>
+                <?= $this->Paginator->numbers() ?>
+                <?= $this->Paginator->next(__('next') . ' >') ?>
+                <?= $this->Paginator->last(__('last') . ' >>') ?>
+            </ul>
+            <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
+        </div>
     </div>
 </div>
