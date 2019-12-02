@@ -71,13 +71,11 @@
 <br>
 
 <?php foreach ($tips as $tips): ?>
-    <?php $heading = h(strip_tags($tips['Title'])) ?>
-    <?php $content = h(strip_tags($tips['Content'])) ?>
 
-    <button type="button" class="collapsible"><?php echo $heading ?></button>
+    <button type="button" class="collapsible"><?php echo $tips->Title ?></button>
     <div class="content">
         <p> <br>
-            <?php echo $content ?>
+            <?php echo $tips->Content ?>
             <br><br>
         </p>
     </div>

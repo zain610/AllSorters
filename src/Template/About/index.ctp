@@ -72,13 +72,11 @@
 <br>
 
 <?php foreach ($about as $about): ?>
-    <?php $heading = h(strip_tags($about['Title'])) ?>
-    <?php $content = h(strip_tags($about['Content'])) ?>
 
-    <button type="button" class="collapsible"><?php echo $heading ?></button>
+    <button type="button" class="collapsible"><?php echo $about->Title ?></button>
     <div class="content">
         <p> <br>
-            <?php echo $content ?>
+            <?php echo $about->Content ?>
             <br><br>
         </p>
     </div>
