@@ -25,7 +25,19 @@
 <!---->
 <!---->
 <!--                </div>-->
-
+                <?php if(!empty($image)):?>
+                <?php foreach ($image as $img):?>
+                <div class="col-md-4 g-left">
+<!--                    <a href="--><!--" rel="title" class="b-link-stripe b-animate-go  thickbox">-->
+                        <figure class="effect-apollo">
+                            <?php echo $this->Html->image($img->path, ['alt' => 'CakePHP']); ?>
+                            <figcaption>
+                            </figcaption>
+                        </figure>
+<!--                    </a>-->
+                </div>
+                <?php endforeach;?>
+                <?php else:?>
                 <div class="col-md-4 g-left">
                     <a href="img/6.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
                         <figure class="effect-apollo">
@@ -36,59 +48,7 @@
                         </figure>
                     </a>
                 </div>
-                <div class="col-md-4 g-left">
-                    <a href="img/6.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
-                        <figure class="effect-apollo">
-                            <img src="img/6.jpg" alt="">
-                            <figcaption>
-                            </figcaption>
-
-                        </figure>
-                    </a>
-                </div>
-                <div class="col-md-4 g-left">
-                    <a href="img/5.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
-                        <figure class="effect-apollo">
-                            <img src="img/5.jpg" alt="">
-                            <figcaption>
-
-                            </figcaption>
-                        </figure>
-                    </a>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="grid">
-                <div class="col-md-4 g-left">
-                    <a href="img/4.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
-                        <figure class="effect-apollo">
-                            <img src="img/4.jpg" alt="">
-                            <figcaption>
-
-                            </figcaption>
-                        </figure>
-                    </a>
-                </div>
-                <div class="col-md-4 g-left">
-                    <a href="img/3.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
-                        <figure class="effect-apollo">
-                            <img src="img/3.jpg" alt="">
-                            <figcaption>
-
-                            </figcaption>
-                        </figure>
-                    </a>
-                </div>
-                <div class="col-md-4 g-left">
-                    <a href="img/2.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
-                        <figure class="effect-apollo">
-                            <img src="img/2.jpg" alt="">
-                            <figcaption>
-
-                            </figcaption>
-                        </figure>
-                    </a>
-                </div>
+                <?php endif;?>
                 <div class="clearfix"></div>
             </div>
         </div>

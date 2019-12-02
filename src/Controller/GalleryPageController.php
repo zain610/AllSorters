@@ -30,6 +30,10 @@ class GalleryPageController extends AppController
     {
 
         $this->viewBuilder()->setLayout('client');
+        $this->loadModel('Image');
+        $image = $this->Image->find('all')->where(['Shown' => true]);
+
+        $this->set(compact('image'));
     }
 
     /**
