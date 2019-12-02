@@ -29,7 +29,7 @@ class SlideshowController extends AppController
         $this->loadComponent('Paginator');
 
         $Slideshow = $this->Paginator->paginate(
-            $this->Slideshow->find('all')->contain(['image'])
+            $this->Slideshow->find('all')->order('image.name')->contain(['image'])
         );
         $this->layout ='admin';
         $this->set('data', $this->request->getSession()->read('data'));

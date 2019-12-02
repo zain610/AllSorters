@@ -99,11 +99,11 @@
 </div>
 <?php foreach ($events as $event): ?>
     <?php if ($event->Published) { ?>
-        <div class="row">
+        <div class="row" style="padding-left: 120px; margin-top: 30px">
             <div class="column">
-                <div class="card">
+                <div class="">
                     <div class="left">
-                        <div class = "hide">
+                        <div class = "hide"">
                             <?=
                             $theDatetime = h($event['Date']);
                             $dt = new DateTime($theDatetime);
@@ -123,15 +123,16 @@
                         </div>
                         <br>
                     </div>
-                    <div class="right">
+                    <div class="right" style="padding-top: 12px">
                         <h3><?= $time ?></h3>
                         <p> <?= h(strip_tags($event['Description'])) ?></p>
                         <p>  <?= h(strip_tags($event['Venue'])) ?></p>
                     </div>
                 </div >
             </div >
-            <div class="line"></div>
+
         </div >
+        <div class="line" style="padding-top: -10px"></div>
     <?php } ?>
 <?php endforeach ?>
 
