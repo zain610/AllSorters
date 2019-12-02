@@ -11,9 +11,11 @@ $isContractorActive = $currentController === "Contractor";
 $isEventsActive = $currentController === "Events";
 $isQueriesActive = $currentController === "Queries";
 $isNewslettersActive = $currentController === "Newsletter";
-$isSlideShowActive = $currentController === "SlideShow";
-$isFooterActive = $currentController === "Footer";
-$isBookingActive = $currentController === "Admin" && $currentAction === 'booking';;
+$isBookingActive = $currentController === "Admin" && $currentAction === 'booking';
+$isAboutActive = $currentController === "About";
+$isTipsActive = $currentController === "Tips";
+$isFavouritesActive = $currentController === "Favourites";
+
 
 
 ?>
@@ -81,12 +83,8 @@ $isBookingActive = $currentController === "Admin" && $currentAction === 'booking
                 <li><?= $this->Html->link(
                         '<p>Add Images</p>',
                         '/admin/image/upload/',
-                        //['prefix'=>'admin','controller' => 'Image', 'action' => 'upload'],
-                        ['escape' => false]
-                    ) ?></li>
-                <li><?= $this->Html->link(
-                        '<p>Edit Slide Show</p>',
-                        ['prefix'=>'admin','controller' => 'Slideshow','action'=>'index'],
+						//['prefix'=>'admin','controller' => 'Image', 'action' => 'upload'],
+//                        ['prefix'=>'admin','controller' => 'image', 'action' => 'upload'],
                         ['escape' => false]
                     ) ?></li>
             </ul>
@@ -227,39 +225,59 @@ $isBookingActive = $currentController === "Admin" && $currentAction === 'booking
             </ul>
 
         </li>
-
-        <li id="dropDownMenu" class="<?= $isSlideShowActive ? 'active' : '' ?> dropdown">
+        <li id="dropDownMenu" class="<?= $isAboutActive ? 'active' : '' ?> dropdown">
             <?= $this->Html->link(
-                '<p>SlideShow</p>',
+                '<p>About Us</p>',
                 '#',
                 ['escape' => false, 'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true',]
             ) ?>
-            <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
+            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
                 <li><?=$this->Html->link(
-                        '<p>Manage Images</p>',
-                        ['prefix'=>'admin','controller'=>'Slideshow','action'=>'index'],
+                        '<p>View About Us</p>',
+                        ['prefix'=>'admin','controller'=>'about','action'=>'index'],
                         ['escape'=>false]
                     )?></li>
                 <li><?=$this->Html->link(
-                        '<p>Add New Images</p>',
-                        ['prefix'=>'admin','controller'=>'Slideshow','action'=>'add'],
+                        '<p>Add to About Us</p>',
+                        ['prefix'=>'admin','controller'=>'about','action'=>'add'],
                         ['escape'=>false]
                     )?></li>
             </ul>
 
         </li>
-
-
-        <li id="dropDownMenu" class="<?= $isFooterActive ? 'active' : '' ?> dropdown">
+        <li id="dropDownMenu" class="<?= $isTipsActive ? 'active' : '' ?> dropdown">
             <?= $this->Html->link(
-                '<p>Footer</p>',
+                '<p>Tips</p>',
                 '#',
                 ['escape' => false, 'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true',]
             ) ?>
-            <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
+            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
                 <li><?=$this->Html->link(
-                        '<p>Footer</p>',
-                        ['prefix'=>'admin','controller'=>'Footer','action'=>'index'],
+                        '<p>View Tips</p>',
+                        ['prefix'=>'admin','controller'=>'tips','action'=>'index'],
+                        ['escape'=>false]
+                    )?></li>
+                <li><?=$this->Html->link(
+                        '<p>Add to Tips</p>',
+                        ['prefix'=>'admin','controller'=>'tips','action'=>'add'],
+                        ['escape'=>false]
+                    )?></li>
+            </ul>
+        <li id="dropDownMenu" class="<?= $isFavouritesActive ? 'active' : '' ?> dropdown">
+            <?= $this->Html->link(
+                '<p>Favourites</p>',
+                '#',
+                ['escape' => false, 'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true',]
+            ) ?>
+            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                <li><?=$this->Html->link(
+                        '<p>View Favourites</p>',
+                        ['prefix'=>'admin','controller'=>'favourites','action'=>'index'],
+                        ['escape'=>false]
+                    )?></li>
+                <li><?=$this->Html->link(
+                        '<p>Add to Favourites</p>',
+                        ['prefix'=>'admin','controller'=>'favourites','action'=>'add'],
                         ['escape'=>false]
                     )?></li>
             </ul>
