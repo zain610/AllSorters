@@ -174,7 +174,7 @@ a.navbar-brand {
     display: block;
 }
 #nav-links {
-    margin: 0 10rem;
+    margin: 0 3rem;
 }
 nav.navbar.navbar-default {
     width: 100%;
@@ -291,6 +291,7 @@ div.services.container > div > a > div > button{
     width: 100%;
     border: 2px solid #333333;
     border-radius: 15px;
+    margin-bottom: 2rem;
 }
 #newsletter-signup > small {
     color: #333333!important;
