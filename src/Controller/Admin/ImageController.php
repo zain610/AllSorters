@@ -158,4 +158,39 @@ class ImageController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    public function ShowOnGallery($id = null)
+    {
+        $image = $this->Image->get($id);
+        if ($image == null) {
+            throw new NotFoundException();
+        }
+
+        $image->Shown = true;
+
+        if ($this->Image->save($image)) {
+            $this->Flash->success(__('The image has been published on the gallery.'));
+        } else {
+            $this->Flash->error(__('Unable to publish your image.'));
+        }
+        return $this->redirect(['action' => 'index']);
+
+    }
+    public function NotShowOnGallery($id = null)
+    {
+        $image = $this->Image->get($id);
+        if ($image == null) {
+            throw new NotFoundException();
+        }
+
+        $image->Shown = false;
+
+        if ($this->Image->save($image)) {
+            $this->Flash->success(__('The image has been published on the gallery.'));
+        } else {
+            $this->Flash->error(__('Unable to publish your image.'));
+        }
+        return $this->redirect(['action' => 'index']);
+
+    }
 }

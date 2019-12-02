@@ -16,27 +16,32 @@
             <br>
             <?= $this->Form->create($request) ?>
             <div class="row form-group">
-                <div class="col-md-6">
+                <div class="col-md-6" style="margin-top: 20px">
                     <?php echo $this->Form->control('Cust_Fname',[
                         'label' => false,
                         'placeholder' => '* Firstname',
+                        'type' => 'custname',
                         'class' => 'form-control',
-                        'required'=>true,
+                        'required'=>false,
+                        'type' => 'custfname',
                         'pattern' => '[a-zA-Z]+',
-                        'title' => 'Names can only contain letters'
+                        'title' => 'Names can only contain letters',
+                        'formnovalidate' => true
                     ]); ?>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6" style="margin-top: 20px">
                     <?php echo $this->Form->control('Cust_Sname',[
-                        'required'=>true,
+                        'required'=>false,
                         'label' => false,
+                        'type' => 'custsname',
                         'placeholder' => '* Surname',
+                        'type' => 'custname',
                         'class' => 'form-control',
                         'pattern' => '[a-zA-Z]+',
-                        'title' => 'Names can only contain letters'
+                        'title' => 'Names can only contain letters',
                     ]); ?>
                 </div>
-                <br>
+
                 <div class="col-md-6" style="margin-top: 20px">
                     <?php echo $this->Form->email('Request_Email',[
                         'label' => false,
@@ -48,6 +53,7 @@
                 <div class="col-md-6" style="margin-top: 20px">
                     <?php echo $this->Form->control('Phone',[
                         'label' => false,
+                        'type' => 'tel',
                         'placeholder' => 'Phone',
                         'required'=>false,
                         'class' => 'form-control',
@@ -56,12 +62,11 @@
                     ]); ?>
                 </div>
                 <div class="row form-group" style="margin-top: 20px">
-                    <div class="col-md-12" style="margin-top: 20px">
-                        <?= $this->Form->textarea('Query_info',['label' => false, 'required'=>true,'placeholder' => '* Please enter some messages here', 'class' => 'form-control']); ?>
+                    <div class="col-md-12" style="margin-left: 15px; margin-top: 20px">
+                        <?= $this->Form->textarea('Query_info',['label' => false, 'required'=>false,'placeholder' => '* Please enter some messages here', 'class' => 'form-control']); ?>
                     </div>
                 </div>
-
-                <?= $this->Form->button('Submit',['class' => 'btn btn-primary']) ?>
+                <?= $this->Form->button('Submit',['class' => 'btn btn-primary','style' => 'margin-left: 15px']) ?>
                 <?= $this->Form->end() ?>
             </div>
         </div>

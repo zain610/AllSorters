@@ -1,14 +1,25 @@
+<?php
+use Cake\ORM\TableRegistry;
+
+$footer = TableRegistry::getTableLocator()->get('Footer');
+$query = $footer->find();
+?>
+
 <body>
 <!-- footer -->
 <div class="footer" id="contact">
     <div class="container">
         <div class="col-md-4 contact-left">
             <h3>Address</h3>
+                <?php foreach ($query as $footer): ?>
             <address>
-                Allsorters, PO Box 1043, <br>
-                Greythorn, Vic, 3104<br>
-                <abbr title="Phone">Phone:</abbr> 1300 797 332
+                    <?php echo $footer->Address; ?>
+                <br>
             </address>
+
+
+
+
         </div>
         <div class="col-md-4 ftr-gd">
             <h3>Follow Us</h3>
@@ -20,9 +31,9 @@
             </ul>
         </div>
         <div class="col-md-4 contact-left">
-            <h3>Phone</h3>
-            <p>Phone: 1300 797 332 </p>
-            <p>Email : <a href="mailto:Mary@allsorters.com">Mary@allsorters.com</a> </p>
+            <h3>Contact</h3>
+            <p>Phone: <?php echo $footer->Phone; ?></p>
+            <p>Email : <a href="mailto:<?php echo $footer->Address; ?>"><?php echo $footer->Email; ?></a> </p>
         </div>
         <div class="clearfix"></div>
         <div class="copyright">
@@ -30,5 +41,6 @@
         </div>
     </div>
 </div>
+<?php endforeach; ?>
 <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 0;"></span> <span id="toTopHover" style="opacity: 0;"> </span></a>
 </body>

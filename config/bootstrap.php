@@ -49,8 +49,6 @@ use Cake\Utility\Security;
 
 
 
-
-
 /**
  * Uncomment block of code below if you want to use `.env` file during development.
  * You should copy `config/.env.default to `config/.env` and set/modify the
@@ -118,7 +116,7 @@ mb_internal_encoding(Configure::read('App.encoding'));
  * formatted and sets the default language to use for translations.
  */
 ini_set('intl.default_locale', Configure::read('App.defaultLocale'));
-
+//Cake\I18n\FrozenDate::setToStringFormat('dd/MM/YYYY');
 /*
  * Register application error and exception handlers.
  */
@@ -209,4 +207,6 @@ Type::build('timestamp')
 //Inflector::rules('irregular', ['red' => 'redlings']);
 //Inflector::rules('uninflected', ['dontinflectme']);
 //Inflector::rules('transliteration', ['/å/' => 'aa']);
+
+
 

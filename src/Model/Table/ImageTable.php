@@ -9,21 +9,21 @@ use Cake\Validation\Validator;
 /**
  * Image Model
  *
+ * @property \App\Model\Table\GalleryPageTable|\Cake\ORM\Association\BelongsTo $GalleryPage
  * @property \App\Model\Table\BlogPostTable|\Cake\ORM\Association\BelongsToMany $BlogPost
- * @property \App\Model\Table\GalleryPageTable|\Cake\ORM\Association\BelongsToMany $GalleryPage
- * @property \App\Model\Table\ServiceTable|\Cake\ORM\Association\BelongsToMany $Services
+ * @property |\Cake\ORM\Association\BelongsToMany $Service
  *
  * @method \App\Model\Entity\Image get($primaryKey, $options = [])
  * @method \App\Model\Entity\Image newEntity($data = null, array $options = [])
  * @method \App\Model\Entity\Image[] newEntities(array $data, array $options = [])
  * @method \App\Model\Entity\Image|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\Image saveOrFail(\Cake\Datasource\EntityInterface $entity, $options = [])
  * @method \App\Model\Entity\Image patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
  * @method \App\Model\Entity\Image[] patchEntities($entities, array $data, array $options = [])
  * @method \App\Model\Entity\Image findOrCreate($search, callable $callback = null, $options = [])
  */
 class ImageTable extends Table
 {
-
     /**
      * Initialize method
      *
@@ -43,11 +43,11 @@ class ImageTable extends Table
             'targetForeignKey' => 'blog_post_id',
             'joinTable' => 'blog_post_image'
         ]);
-        $this->belongsToMany('GalleryPage', [
-            'foreignKey' => 'image_id',
-            'targetForeignKey' => 'gallery_page_id',
-            'joinTable' => 'gallery_page_image'
+
+        $this->belongsTo('GalleryPage', [
+            'foreignKey' => 'gallery_page',
         ]);
+
         $this->belongsToMany('Services', [
             'foreignKey' => 'image_id',
             'targetForeignKey' => 'service_id',
@@ -65,27 +65,45 @@ class ImageTable extends Table
     {
         $validator
             ->integer('Image_id')
-            ->allowEmpty('Image_id', 'create');
+            ->allowEmptyString('Image_id', 'create');
 
         $validator
             ->scalar('Image_Content')
             ->maxLength('Image_Content', 255)
-            ->allowEmpty('Image_Content');
+            ->allowEmptyString('Image_Content');
 
         $validator
             ->scalar('name')
             ->maxLength('name', 255)
-            ->allowEmpty('name');
+            ->allowEmptyString('name');
 
         $validator
             ->scalar('path')
             ->maxLength('path', 255)
-            ->allowEmpty('path');
+            ->allowEmptyString('path');
 
         $validator
             ->date('created_at')
-            ->allowEmpty('created_at');
+            ->allowEmptyDate('created_at');
+
+        $validator
+            ->boolean('Shown')
+            ->allowEmptyString('Shown');
 
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->existsIn(['gallery_id'], 'GalleryPage'));
+
+        return $rules;
     }
 }

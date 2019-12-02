@@ -12,6 +12,12 @@ use App\Controller\AppController;
  */
 class SubscriptionsController extends AppController
 {
+    public function initialize()
+    {
+        parent::initialize();
+        $this->loadModel('Subsriptions');
+        $this->Auth->allow(['index','view']);
+    }
 
     /**
      * Index method

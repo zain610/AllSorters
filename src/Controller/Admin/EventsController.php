@@ -121,7 +121,7 @@ class EventsController extends AppController
 
         //extract date and time from these objects. For some mystical reason, they are both called date
         //also convert the string to time and then parse a format
-        $date = date('Y-m-d' ,strtotime($dateObject['date']));
+        $date = date('d-m-Y' ,strtotime($dateObject['date']));
         $time = date('H:i:s' ,strtotime($timeObject['date']));
 
         $event->date = $date;

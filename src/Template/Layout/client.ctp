@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="AllSorters, Senior Citizens, Aged Care, " />
-    <?= $this->Html->css('bootstrap.css') ?>
     <?= $this->Html->css('client_tempate_styling.css') ?>
+    <?= $this->Html->css('bootstrap.css') ?>
     <?= $this->Html->css('flexslider.css') ?>
+    <?= $this->Html->css('slick.css') ?>
+    <?= $this->Html->css('slick-theme.css') ?>
     <?= $this->Html->css('chocolat.css') ?>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
     <?= $this->Html->css('clientStyles.css') ?>
 
-
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Montserrat|Oswald|Roboto&display=swap" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -20,11 +25,10 @@
 </head>
 <body>
 <?= $this->element('Client/navbar'); ?>
-
         <!-- FlexSlider -->
 <?= $this->fetch('content') ?>
-
 <?= $this->element('Client/footer'); ?>
+
 
 
 </body>
@@ -32,6 +36,8 @@
 <?= $this->Html->script('bootstrap.js') ?>
 <?= $this->Html->script('move-top.js') ?>
 <?= $this->Html->script('easing.js') ?>
+<?= $this->Html->script('slick.js') ?>
+
 <script type="text/javascript">
     $(document).ready(function($) {
         $(".scroll").click(function(event){
@@ -59,6 +65,18 @@
 <script type="text/javascript" charset="utf-8">
     $(function() {
         $('.g-left a').Chocolat();
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.blogs-carousel').slick({
+            dots: true,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 1,
+            adaptiveHeight: true
+
+        });
     });
 </script>
 

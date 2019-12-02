@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eb5454302982079a1042befe47af4345",
+    "content-hash": "7b5db3b470ccfc342285a97c30a74af8",
     "packages": [
         {
             "name": "aura/intl",
@@ -339,6 +339,84 @@
             "time": "2019-07-25T15:43:38+00:00"
         },
         {
+            "name": "calcinai/php-imagick",
+            "version": "v0.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/calcinai/php-imagick.git",
+                "reference": "001530b19560b9862ffe78c3ae29ad5dc2549e6d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/calcinai/php-imagick/zipball/001530b19560b9862ffe78c3ae29ad5dc2549e6d",
+                "reference": "001530b19560b9862ffe78c3ae29ad5dc2549e6d",
+                "shasum": ""
+            },
+            "suggest": {
+                "ext-imagick": "Native extension"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Imagick": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Calcinai",
+                    "email": "michael@calcin.ai"
+                }
+            ],
+            "description": "PHP wrapper for command line ImageMagick utils compatible with PECL::Imagick",
+            "time": "2016-12-22T15:09:47+00:00"
+        },
+        {
+            "name": "components/jquery",
+            "version": "3.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/components/jquery.git",
+                "reference": "459648cda77875519c5da3ae1dd0ed5d170aa649"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/components/jquery/zipball/459648cda77875519c5da3ae1dd0ed5d170aa649",
+                "reference": "459648cda77875519c5da3ae1dd0ed5d170aa649",
+                "shasum": ""
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "scripts": [
+                        "jquery.js"
+                    ],
+                    "files": [
+                        "jquery.min.js",
+                        "jquery.min.map",
+                        "jquery.slim.js",
+                        "jquery.slim.min.js",
+                        "jquery.slim.min.map"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "JS Foundation and other contributors"
+                }
+            ],
+            "description": "jQuery JavaScript Library",
+            "homepage": "http://jquery.com",
+            "time": "2018-03-04T13:23:48+00:00"
+        },
+        {
             "name": "facebook/graph-sdk",
             "version": "5.7.0",
             "source": {
@@ -395,48 +473,6 @@
                 "sdk"
             ],
             "time": "2018-12-11T22:56:31+00:00"
-        },
-        {
-            "name": "components/jquery",
-            "version": "3.3.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/components/jquery.git",
-                "reference": "459648cda77875519c5da3ae1dd0ed5d170aa649"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/components/jquery/zipball/459648cda77875519c5da3ae1dd0ed5d170aa649",
-                "reference": "459648cda77875519c5da3ae1dd0ed5d170aa649",
-                "shasum": ""
-            },
-            "type": "component",
-            "extra": {
-                "component": {
-                    "scripts": [
-                        "jquery.js"
-                    ],
-                    "files": [
-                        "jquery.min.js",
-                        "jquery.min.map",
-                        "jquery.slim.js",
-                        "jquery.slim.min.js",
-                        "jquery.slim.min.map"
-                    ]
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "JS Foundation and other contributors"
-                }
-            ],
-            "description": "jQuery JavaScript Library",
-            "homepage": "http://jquery.com",
-            "time": "2018-03-04T13:23:48+00:00"
         },
         {
             "name": "fullcalendar/fullcalendar",

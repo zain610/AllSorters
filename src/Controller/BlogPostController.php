@@ -19,7 +19,7 @@ class BlogPostController extends AppController
         $this->Auth->allow(['index','view','advanceSearch']);
     }
 
-    public function isAuthorized()
+    public function isAuthorized($user)
     {
         return true;
     }

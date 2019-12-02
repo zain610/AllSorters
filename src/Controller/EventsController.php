@@ -37,7 +37,8 @@ class EventsController extends AppController
      */
     public function index()
     {
-        $events = $this->paginate($this->Events);
+
+        $events = $this->Events->find('all')->contain([])->order(['Events.Date'=>'Desc']);
 
         $this->set(compact('events'));
     }
