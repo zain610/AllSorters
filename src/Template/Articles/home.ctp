@@ -26,32 +26,41 @@
 </script>
 
 <body>
+<?php foreach($slideshow as $key=>$slideshow){
+    $item[$key]=$slideshow;
+}?>
+
 <div>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
         </ol>
 
 
         <div class="carousel-inner">
             <div class="item active">
-
-                <img src="img/bg2.jpg" alt="bg">
-                <h1 class="text"><span>Personalised in-home care, perfectly matched to you</span></h1>
+                <?php  echo $this->Html->image($item[0]['path'], ['alt' => $item[0]['Captions']]); ?>
+<!--                <img src="$item[0]['path]" alt="bg">-->
+                <h1 class="text"><span><?php echo $item[0]['Captions'];?></span></h1>
             </div>
 
             <div class="item">
-                <img src="img/dockland 5.3.2018.jpg" alt="dockland">
-                <h1 class="text"><span>Caption Text 2</span></h1>
+                <?php  echo $this->Html->image($item[1]['path'], ['alt' => $item[1]['Captions']]); ?>
+                <h1 class="text"><span><?php echo $item[1]['Captions'];?></span></h1>
             </div>
 
             <div class="item">
-
-                <img src="img/bg.jpg" alt="bg">
-                <h1 class="text"><span>Caption Text 3</span></h1>
+                <?php  echo $this->Html->image($item[2]['path'], ['alt' => $item[2]['Captions']]); ?>
+                <h1 class="text"><span><?php echo $item[2]['Captions'];?></span></h1>
             </div>
+            <div class="item">
+                <?php  echo $this->Html->image($item[3]['path'], ['alt' => $item[3]['Captions']]); ?>
+                <h1 class="text"><span><?php echo $item[3]['Captions'];?></span></h1>
+            </div>
+
         </div>
 
 
