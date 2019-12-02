@@ -32,6 +32,7 @@ class SlideshowController extends AppController
             $this->Slideshow->find('all')->contain(['image'])
         );
         $this->layout ='admin';
+        $this->set('data', $this->request->getSession()->read('data'));
 
         $this->set(compact('Slideshow'));
 
@@ -66,8 +67,9 @@ class SlideshowController extends AppController
 
         $slideshow = $this->Slideshow->newEntity();
         if ($this->request->is('post')) {
-            debug($this->request->getData());
+
             $slideshow = $this->Slideshow->patchEntity($slideshow, $this->request->getData());
+            $data = $this->request->getData('checkbox');
 
             if ($this->Slideshow->save($slideshow)) {
                 $this->Flash->success(__('The slideshow has been saved.'));
