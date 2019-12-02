@@ -113,7 +113,7 @@
                             $year  = $dt->format('Y');;
                             $monthNum  = $dt->format('n');
                             $dateObj   = DateTime::createFromFormat('!m', $monthNum);
-                            $monthName = $dateObj->format('M');
+                            $monthName = $dateObj->format('F');
                             ?>
                         </div>
                         <div class="date">
@@ -150,7 +150,7 @@
             $year  = $dt->format('Y');;
             $monthNum  = $dt->format('n');
             $dateObj   = DateTime::createFromFormat('!m', $monthNum);
-            $monthName = $dateObj->format('M');
+            $monthName = $dateObj->format('F');
             $description = h(strip_tags($event['Description']));
             $venue =h(strip_tags($event['Venue']));
             ?>

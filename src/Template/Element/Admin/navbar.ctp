@@ -7,6 +7,9 @@ $isServiceActive = $currentController === "Services";
 $isImagesActive = $currentController === "Image";
 $isReviewActive = $currentController === "Review";
 $isJobActive = $currentController === "Job";
+$isAboutActive = $currentController === "About";
+$isTipsActive = $currentController === "Tips";
+$isFavouritesActive = $currentController === "Favourites";
 $isContractorActive = $currentController === "Contractor";
 $isEventsActive = $currentController === "Events";
 $isQueriesActive = $currentController === "Queries";
@@ -34,6 +37,7 @@ $isFavouritesActive = $currentController === "Favourites";
                 ['escape' => false]
             ) ?>
         </li>
+
         <li class="<?= $isBookingActive ? 'active' : '' ?> dropdown">
             <?= $this->Html->link(
                 '<p>Booking</p>',
@@ -210,6 +214,7 @@ $isFavouritesActive = $currentController === "Favourites";
             </ul>
 
         </li>
+
         <li id="dropDownMenu" class="<?= $isNewslettersActive ? 'active' : '' ?> dropdown">
             <?= $this->Html->link(
                 '<p>Newsletters</p>',
