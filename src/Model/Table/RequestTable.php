@@ -60,12 +60,12 @@ class RequestTable extends Table
         $validator
             ->scalar('Cust_Fname')
             ->maxLength('Cust_Fname', 255)
-            ->allowEmpty('Cust_Fname');
+            ->notEmpty('Cust_Fname','Firstname cannot be empty.');
 
         $validator
             ->scalar('Cust_Sname')
             ->maxLength('Cust_Sname', 255)
-            ->allowEmpty('Cust_Sname');
+            ->notEmpty('Cust_Sname','Surname cannot be empty');
 
         $validator
             ->scalar('Query_info')
@@ -83,7 +83,7 @@ class RequestTable extends Table
 
         $validator
             ->integer('Phone')
-            ->allowEmpty('Phone');
+            ->allowEmpty('Phone','Phone Number must follow the pattern');
 
 
         return $validator;

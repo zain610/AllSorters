@@ -1,16 +1,35 @@
-<div class="container" style="margin-top: 10%">
-    <h1 style="margin-left: 50%">
-        Oops!</h1>
-    <br>
-    <br>
-    <h2 style="margin-left: 10%">
-        Sorry, an error has occured, Requested page not found!
-    </h2>
-    <br>
-    <br>
-    <br>
-    <div style="margin-left: 50%">
-        <?= $this->Html->link(__('Back'), $this->request->referer(), ['class' => 'btn btn-oval btn-primary','style'=>'center;margin-bottom:5%']) ?>
-    </div>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,700" rel="stylesheet">
+
+    <!-- Custom stlylesheet -->
+    <?php echo $this->Html->css('error_page'); ?>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<div id="notfound">
+    <div class="notfound">
+        <div class="notfound-404">
+            <h1>Oops!</h1>
+            <h2>The Page can't be found</h2>
+        </div>
+        <?= $this->Html->link(__('Go to home page'), $this->request->referer()) ?>
+
+    </div>
 </div>
+
+
