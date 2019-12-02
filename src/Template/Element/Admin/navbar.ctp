@@ -11,6 +11,8 @@ $isContractorActive = $currentController === "Contractor";
 $isEventsActive = $currentController === "Events";
 $isQueriesActive = $currentController === "Queries";
 $isNewslettersActive = $currentController === "Newsletter";
+$isSlideShowActive = $currentController === "SlideShow";
+$isFooterActive = $currentController === "Footer";
 $isBookingActive = $currentController === "Admin" && $currentAction === 'booking';
 $isAboutActive = $currentController === "About";
 $isTipsActive = $currentController === "Tips";
@@ -83,8 +85,12 @@ $isFavouritesActive = $currentController === "Favourites";
                 <li><?= $this->Html->link(
                         '<p>Add Images</p>',
                         '/admin/image/upload/',
-						//['prefix'=>'admin','controller' => 'Image', 'action' => 'upload'],
-//                        ['prefix'=>'admin','controller' => 'image', 'action' => 'upload'],
+                        //['prefix'=>'admin','controller' => 'Image', 'action' => 'upload'],
+                        ['escape' => false]
+                    ) ?></li>
+                <li><?= $this->Html->link(
+                        '<p>Edit Slide Show</p>',
+                        ['prefix'=>'admin','controller' => 'Slideshow','action'=>'index'],
                         ['escape' => false]
                     ) ?></li>
             </ul>
@@ -225,6 +231,28 @@ $isFavouritesActive = $currentController === "Favourites";
             </ul>
 
         </li>
+
+        <li id="dropDownMenu" class="<?= $isSlideShowActive ? 'active' : '' ?> dropdown">
+            <?= $this->Html->link(
+                '<p>SlideShow</p>',
+                '#',
+                ['escape' => false, 'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true',]
+            ) ?>
+            <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
+                <li><?=$this->Html->link(
+                        '<p>Manage Images</p>',
+                        ['prefix'=>'admin','controller'=>'Slideshow','action'=>'index'],
+                        ['escape'=>false]
+                    )?></li>
+                <li><?=$this->Html->link(
+                        '<p>Add New Images</p>',
+                        ['prefix'=>'admin','controller'=>'Slideshow','action'=>'add'],
+                        ['escape'=>false]
+                    )?></li>
+            </ul>
+
+        </li>
+
         <li id="dropDownMenu" class="<?= $isAboutActive ? 'active' : '' ?> dropdown">
             <?= $this->Html->link(
                 '<p>About Us</p>',
@@ -278,6 +306,24 @@ $isFavouritesActive = $currentController === "Favourites";
                 <li><?=$this->Html->link(
                         '<p>Add to Favourites</p>',
                         ['prefix'=>'admin','controller'=>'favourites','action'=>'add'],
+                        ['escape'=>false]
+                    )?></li>
+            </ul>
+
+        </li>
+
+
+
+        <li id="dropDownMenu" class="<?= $isFooterActive ? 'active' : '' ?> dropdown">
+            <?= $this->Html->link(
+                '<p>Footer</p>',
+                '#',
+                ['escape' => false, 'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true',]
+            ) ?>
+            <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
+                <li><?=$this->Html->link(
+                        '<p>Footer</p>',
+                        ['prefix'=>'admin','controller'=>'Footer','action'=>'index'],
                         ['escape'=>false]
                     )?></li>
             </ul>
