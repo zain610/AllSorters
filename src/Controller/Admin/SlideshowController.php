@@ -25,16 +25,23 @@ class SlideshowController extends AppController
      */
     public function index()
     {
-        $this->loadModel('Image');
+//        $this->loadModel('Image');
+//
+//        $this->paginate = [
+//            'contain' => ['Image']
+//        ];
+//        $slideshow = $this->paginate($this->Slideshow);
+//        $image = $this->Paginator->paginate(
+//            $this->Image->find('all')
+//        );
+//        $this->set(compact('slideshow','image'));
+        $Slideshow = $this->Slideshow->find('all')->contain(['image']);
 
-        $this->paginate = [
-            'contain' => ['Image']
-        ];
-        $slideshow = $this->paginate($this->Slideshow);
-        $image = $this->Paginator->paginate(
-            $this->Image->find('all')
-        );
-        $this->set(compact('slideshow','image'));
+        $this->layout ='admin';
+
+        $this->set(compact('Slideshow'));
+
+
     }
 
     /**

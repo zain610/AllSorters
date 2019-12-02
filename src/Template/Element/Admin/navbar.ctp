@@ -11,6 +11,7 @@ $isContractorActive = $currentController === "Contractor";
 $isEventsActive = $currentController === "Events";
 $isQueriesActive = $currentController === "Queries";
 $isNewslettersActive = $currentController === "Newsletter";
+$isSlideShowActive = $currentController === "SlideShow";
 $isFooterActive = $currentController === "Footer";
 $isBookingActive = $currentController === "Admin" && $currentAction === 'booking';;
 
@@ -229,6 +230,24 @@ $isBookingActive = $currentController === "Admin" && $currentAction === 'booking
             </ul>
 
         </li>
+
+        <li id="dropDownMenu" class="<?= $isSlideShowActive ? 'active' : '' ?> dropdown">
+            <?= $this->Html->link(
+                '<p>SlideShow</p>',
+                '#',
+                ['escape' => false, 'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true',]
+            ) ?>
+            <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
+                <li><?=$this->Html->link(
+                        '<p>Manage Images</p>',
+                        ['prefix'=>'admin','controller'=>'Slideshow','action'=>'index'],
+                        ['escape'=>false]
+                    )?></li>
+            </ul>
+
+        </li>
+
+
         <li id="dropDownMenu" class="<?= $isFooterActive ? 'active' : '' ?> dropdown">
             <?= $this->Html->link(
                 '<p>Footer</p>',
