@@ -33,6 +33,8 @@ class SlideshowController extends AppController
         );
         $this->layout ='admin';
 
+        $this->set('data', $this->request->getSession()->read('data'));
+
         $this->set(compact('Slideshow'));
 
 
@@ -138,5 +140,23 @@ class SlideshowController extends AppController
             $this->Flash->error(__('The slideshow could not be saved. Please, try again.'));
         }
 
+    }
+    public function getSelectedImages() {
+        $this->request->allowMethod('post');
+        // get data from form
+        $formData = $this->request->getData();
+        $image_list = [];
+        //get the keys of the data = ids
+        $data_keys = array_keys($formData); // [message, 1,2,3,4,5,6]
+        //iterate over the keys list and foreach key, find the value is 1, then add it to the senders list
+        foreach($data_keys as $key) {
+            if($key !== "Captions") {
+                if($formData[$key]) {
+                    array_push($image_list, $key);
+                }
+            }
+        }
+        $this->request->getSession()->write('data', $image_list );
+        return $this->redirect(['action' => 'index']);
     }
 }
