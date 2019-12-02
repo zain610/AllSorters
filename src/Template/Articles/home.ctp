@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
     <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #more {display: none;}
+    </style>
 
 </head>
 <script type="text/javascript">
@@ -97,13 +101,14 @@
 <hr>
 <div class="services container">
     <h3>Blogs</h3>
-    <div class="list-group pre-scrollable">
+    <div style="padding-top: 10px; padding-bottom: 10px">
         <?php foreach ($blogs as $blog) { ?>
-            <a href="#" class="list-group-item list-group-item-action">
+
                 <div class="d-flex w-100 justify-content-between">
+                    <?= $this->Html->link(' ', ['controller' => 'BlogPost', 'action'=> 'view'.'/'."$blog[blog_post_id]"],['class'=>'list-group-item list-group-item-action']);?>
                     <h4><?= $blog['title'] ?></h4>
-                    <p><?= $blog['Body'] ?></p>
                     <small>Date Published: <?= $blog['created'] ?></small>
+                    <p><?= $blog['Body'] ?></p>
                     <?= $this->Html->link('Read More', ['controller' => 'BlogPost', 'action'=> 'view'.'/'."$blog[blog_post_id]"],['class'=>'btn btn-primary']);?>
 
                 </div>
