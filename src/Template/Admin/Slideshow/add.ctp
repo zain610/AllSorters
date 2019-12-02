@@ -4,23 +4,29 @@
  * @var \App\Model\Entity\Slideshow $slideshow
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('List Slideshow'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Image'), ['controller' => 'Image', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Image'), ['controller' => 'Image', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
+<?php echo $this->Html->css('image_checkbox'); ?>
+
+
+
 <div class="slideshow form large-9 medium-8 columns content">
     <?= $this->Form->create($slideshow) ?>
     <fieldset>
         <legend><?= __('Add Slideshow') ?></legend>
         <?php
             echo $this->Form->control('Captions');
-            echo $this->Form->control('Image_id', ['options' => $image]);
+//            echo $this->Form->control('Image_id', ['options' => $image]);
         ?>
     </fieldset>
+
+    <ul>
+        <?php foreach ($image as $img):?>
+        <li><?= $this->Form->checkbox($img->Image_id, ['id'=>$this->Number->format($img->Image_id)]); ?>
+            <label id="image_id" for="<?php echo $img->Image_id ?>"><?php echo $this->Html->image($img->path, ['class' => 'img-responsive', 'alt' => 'SlideShow images']); ?>
+            </label>
+        </li>
+        <?php endforeach; ?>
+    </ul>
+
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
 </div>
