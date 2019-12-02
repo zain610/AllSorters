@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
     <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #more {display: none;}
+    </style>
 
 </head>
 <script type="text/javascript">
@@ -56,6 +60,7 @@
                 <?php  echo $this->Html->image($item[2]['path'], ['alt' => $item[2]['Captions']]); ?>
                 <h1 class="text"><span><?php echo $item[2]['Captions'];?></span></h1>
             </div>
+
             <div class="item">
                 <?php  echo $this->Html->image($item[3]['path'], ['alt' => $item[3]['Captions']]); ?>
                 <h1 class="text"><span><?php echo $item[3]['Captions'];?></span></h1>
@@ -123,7 +128,6 @@
 
 </div>
 <hr>
-
 
 
 

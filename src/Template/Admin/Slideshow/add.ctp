@@ -9,7 +9,7 @@
 
 
 <div class="slideshow form large-9 medium-8 columns content">
-    <?= $this->Form->create($slideshow) ?>
+    <?= $this->Form->create($slideshow, ['url' => ['controller'=>'Slideshow', 'action' => 'getSelectedImages'], 'type' => 'post']); ?>
     <fieldset>
         <legend><?= __('Add Slideshow') ?></legend>
         <?php
