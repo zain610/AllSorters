@@ -2,6 +2,7 @@
 namespace App\Controller\Admin;
 
 use App\Controller\AppController;
+use App\Model\Entity\Image;
 
 /**
  * Slideshow Controller
@@ -91,8 +92,9 @@ class SlideshowController extends AppController
      */
     public function edit($id = null)
     {
+        $this->layout ='admin';
         $slideshow = $this->Slideshow->get($id, [
-            'contain' => []
+            'contain' => ['Image']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $slideshow = $this->Slideshow->patchEntity($slideshow, $this->request->getData());
