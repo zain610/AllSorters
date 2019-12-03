@@ -80,7 +80,7 @@
             <h3>Services Overview</h3>
             <div class="row">
                 <?php foreach($services as $service) { ?>
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                         <div class="card services-card" style="width: 18rem;">
                             <?php  echo $this->Html->image($service['path'], ['class' => 'card-img-top','id'=>'serviceimg', 'style'=>'Height:100px', 'alt' => 'Service image']);
                             ?>
@@ -95,7 +95,7 @@
                 <?php }?>
             </div>
         </div>
-        <div class="container" style="width: 35%; border-left:1px solid #000; background-color: #3fa5ce; border: 1px solid #333333; height: fit-content; margin-right: 0.75rem; border-radius: 15px">
+        <div class="container" style="width: 35%; border-left:1px solid #000; background-color: #3fa5ce; border: 1px solid #333333; height: fit-content; margin-right: 0.75rem; border-radius: 15px;">
             <h3>Recent Blogs</h3>
             <div class="blogs-carousel">
                 <?php foreach ($blogs as $blog) { ?>
@@ -112,7 +112,7 @@
                 <?php } ?>
             </div>
             <hr style="border: 2px solid #343a40; margin: 1rem">
-            <div class="container" id="newsletter-signup">
+            <div class="container" id="newsletter-signup" style="margin-bottom: 1rem">
                 <h3>Sign Up to our Newsletter!</h3>
                 <?= $this->element('Client/subscribe'); ?>
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
