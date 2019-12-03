@@ -6,7 +6,7 @@
 ?>
 
 <div class="form-group">
-    <?= $this->Form->create(null, ['url' => ['prefix' => 'admin', 'controller' => 'Subscriptions', 'action' => 'add'], 'method' => 'POST']);
+    <?= $this->Form->create(null, ['url' => ['prefix' => false,'controller' => 'Subscriptions', 'action' => 'add'], 'method' => 'POST']);
     ?>
     <fieldset>
         <?php
@@ -20,6 +20,6 @@
             "id" =>"submit-subscription",
             "class" => "btn btn-primary",
             "escape",
-            'url' => ['prefix' => 'admin', 'controller' => 'Subscriptions', 'action' => 'add'], 'method' => 'POST']) ?>
+            'url' => ['prefix'=> false,'controller' => 'Subscriptions', 'action' => 'add'], 'method' => 'POST']) ?>
     <?= $this->Form->end() ?>
 </div>
