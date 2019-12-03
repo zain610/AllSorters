@@ -1,39 +1,43 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \Cake\Datasource\EntityInterface[]|\Cake\Collection\CollectionInterface $review
+ * @var \App\Model\Entity\Review[]|\Cake\Collection\CollectionInterface $review
  */
 ?>
-<div class="content table-responsive table-full-width">
-    <h4><?= __('Review') ?></h4>
-    <table class="table table-hover table-striped" cellpadding="0" cellspacing="0">
+<div class="table table-hover table-striped">
+    <div id="searchBarNavBar">
+        <?= $this->element('Admin/Buttons/search'); ?>
+        <?= $this->Html->link('Add Review Post', ['action' => 'add'], ['class' => 'pull-right btn btn-oval btn-primary']) ?>
+    </div>
+    <h3><?= __('Reviews') ?></h3>
+    <table>
         <thead>
-            <tr>
-                <th scope="col"><?= $this->Paginator->sort('Review_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Client_Name') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Month_Year') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Suburb') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Review_Details') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
+        <tr>
+            <th scope="col"><?= $this->Paginator->sort('Client_Name') ?></th>
+            <th scope="col"><?= $this->Paginator->sort('Month_Year') ?></th>
+            <th scope="col"><?= $this->Paginator->sort('Suburb') ?></th>
+            <th scope="col"><?= $this->Paginator->sort('Review_Details') ?></th>
+            <th scope="col" class="actions"><?= __('Actions') ?></th>
+        </tr>
         </thead>
         <tbody>
-            <?php foreach ($review as $review): ?>
+        <?php foreach ($review as $review): ?>
             <tr>
-                <td><?= $this->Number->format($review->Review_id) ?></td>
                 <td><?= h($review->Client_Name) ?></td>
                 <td><?= h($review->Month_Year) ?></td>
-                <td><?= $this->Number->format($review->Suburb) ?></td>
-                <td><?= h($review->Review_Details) ?></td>
+                <td><?= h($review->Suburb) ?></td>
+                <td><?= $this->Text->truncate(h(strip_tags($review->Review_Details)), 40, ['ellipsis' => '...',
+                        'exact' => false]) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $review->Review_id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $review->Review_id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $review->Review_id], ['confirm' => __('Are you sure you want to delete # {0}?', $review->Review_id)]) ?>
+                    <?= $this->element('Admin/Buttons/view', ['url' => ['action' => 'view', $review->Review_id]]) ?>
+                    <?= $this->element('Admin/Buttons/edit', ['url' => ['action' => 'edit', $review->Review_id]]) ?>
+                    <?= $this->element('Admin/Buttons/delete', ['url' => ['action' => 'delete', $review->Review_id], ['confirm' => __('Are you sure you want to archive # {0}?', $review->Review_id)]]) ?>
                 </td>
             </tr>
-            <?php endforeach; ?>
+        <?php endforeach; ?>
         </tbody>
     </table>
+    <?= $this->Html->link(__('Back'), $this->request->referer(), ['class' => 'btn btn-oval btn-primary','style'=>'float:left']) ?>
     <div class="paginator">
         <ul class="pagination">
             <?= $this->Paginator->first('<< ' . __('first')) ?>

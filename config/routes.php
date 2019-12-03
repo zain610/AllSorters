@@ -52,11 +52,27 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/', ['controller' => 'Articles', 'action' => 'home']);
     //Catching the login and logout routes for which the functionalities are in AdminController and not to be mistaken for page with Admin prefix
     $routes->connect('/admin/login', ['controller' => 'Admin', 'action' => 'login']);
+    $routes->connect('/admin/booking', ['controller' => 'Admin', 'action' => 'booking']);
     $routes->connect('/admin/logout', ['controller' => 'Admin', 'action' => 'logout']);
+    $routes->connect('/admin/booking', ['controller' => 'Admin', 'action' => 'booking']);
+    $routes->connect('/admin/bookingdelete/*', ['controller' => 'Admin', 'action' => 'bookingdelete']);
+    $routes->connect('/admin/edit/*', ['prefix' => false, 'controller' => 'Admin', 'action' => 'edit']);
+    $routes->connect('/admin/view/*', ['prefix' => false, 'controller' => 'Admin', 'action' => 'view']);
+    $routes->connect('/admin/add/*', ['prefix' => false, 'controller' => 'Admin', 'action' => 'add']);
+    $routes->connect('/admin/delete/*', ['prefix' => false, 'controller' => 'Admin', 'action' => 'delete']);
+    $routes->connect('/webroot/*', ['prefix' => false, 'controller' => 'Admin', 'action' => 'index']);
+    $routes->connect('/webroot/admin/image/*', ['prefix' => false, 'controller' => 'Admin', 'action' => 'index']);
     Router::prefix('admin', function($routes) {
         //All Routes here will be prefixed with /admin
         // So all CMS and Dashboard and routes will be placed here
-        $routes->connect('/:controller/*');
+
+        //Without the following routing, the user who goes to /admin/review/add is being redirected to /admin/admin/login
+        //So we catch such routes and remove the prefix and send them to AdminController inside the default dir.
+        $routes->connect('/admin/login', ['prefix' => false,'controller' => 'Admin', 'action' => 'login']);
+        $routes->connect('/admin/logout', ['prefix' => false, 'controller' => 'Admin', 'action' => 'logout']);
+
+
+        $routes->connect('/:controller/:action/*');
         $routes->fallbacks(DashedRoute::class);
 
     });
@@ -85,4 +101,4 @@ Router::scope('/', function (RouteBuilder $routes) {
  * Load all plugin routes. See the Plugin documentation on
  * how to customize the loading of plugin routes.
  */
-Plugin::routes();
+

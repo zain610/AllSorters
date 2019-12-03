@@ -14,27 +14,13 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:500i|Roboto:300,400,700|Roboto+Mono" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+
     <?= $this->Html->css('bootstrap.min.css') ?>
     <?= $this->Html->css('animate.min.css') ?>
     <?= $this->Html->css('light-bootstrap-dashboard.css') ?>
     <?= $this->Html->css('pe-icon-7-stroke.css') ?>
     <?= $this->Html->css('styles.css') ?>
-
-    <script type="text/javascript">
-
-        const handleMenuToggle = (object) => {
-            let parentElementClass = object.parentNode.classList
-            if(parentElementClass.contains("open")) {
-                //remove "open" to the classList to close the dropdown
-                parentElementClass.remove("open")
-            } else {
-                //add "open" to the classList to open the dropdown
-                parentElementClass.add("open")
-            }
-        }
-    </script>
-
-
 </head>
 <body>
 <!--?php: $this->fetch('title', 'Foundation System Build')-->
@@ -49,61 +35,73 @@
         -->
         <?= $this->element('Admin/navbar'); ?>
 
+
+
+
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <!--                    <div class="col-md-12">-->
-                    <!--                        <div class="card" style="padding: 1.5rem">-->
                     <?= $this->fetch('content') ?>
-                    <!--                        </div>-->
-                    <!--                    </div>-->
+
                 </div>
             </div>
         </div>
 
-
-        <footer class="footer">
-            <div class="container-fluid">
-                <nav class="pull-left">
-                    <ul>
-                        <li>
-                            <a href="#">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Company
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Portfolio
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Blog
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <p class="copyright pull-right">
-                    &copy; 2016 <a href="#">Creative Tim</a>, More Templates <a href="http://www.moobnn.com/" target="_blank" title="模板在线">模板在线</a> <a href="http://guantaow.taobao.com" target="_blank">厚朴网络 淘宝店</a> - Collect from <a href="http://www.moobnn.com/" title="模板在线" target="_blank">模板在线</a> <a href="http://guantaow.taobao.com" target="_blank">厚朴网络 淘宝店</a>
-                </p>
-            </div>
-        </footer>
-
     </div>
 </div>
 </body>
+
 <!--   Core JS Files   -->
 
-<?= $this->Html->js('jquery-1.10.2.js') ?>
-<?= $this->Html->js('bootstrap.min.js') ?>
-<?= $this->Html->js('bootstrap-checkbox-radio-switch.js') ?>
-<?= $this->Html->js('chartlist.min.js') ?>
-<?= $this->Html->js('bootstrap-notify.js') ?>
-<?= $this->Html->js('light-bootstrap-dashboard.js') ?>
+<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+<?= $this->Html->script([
+    'jquery-3.4.1.min.js',
+    'bootstrap.min.js',
+    'bootstrap-checkbox-radio-switch.js',
+    'bootstrap-notify.js',
+    'light-bootstrap-dashboard.js',
+    'tinymce/tinymce.min.js'
+    ]) ?>
+<script>
+    (function() {
+        tinymce.init({
+            class: 'textarea',
+            selector: 'textarea',
+            content_css: '../../../css/home.css',
+
+
+            // Started with the full list of all plugins from https://www.tinymce.com/docs/demo/full-featured/, and then
+            // removed ones which were unneeded for a relatively simplistic blog platform.
+            plugins: 'fullpage searchreplace autolink directionality visualblocks visualchars fullscreen image link media table anchor toc lists wordcount imagetools contextmenu colorpicker textpattern help',
+            menubar: 'edit insert format table tools help',
+            toolbar1: 'formatselect | bold italic strikethrough codetag | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat | fullpage',
+            menu: {
+                edit: {title: 'Edit', items: 'undo redo | cut copy paste | selectall'},
+                insert: {title: 'Insert', items: 'link media'},
+                format: {
+                    title: 'Format',
+                    items: 'bold italic underline strikethrough superscript subscript | formats | removeformat'
+                },
+                table: {title: 'Table', items: 'inserttable tableprops deletetable | cell row column'}
+            },
+
+            // This is quite messy, but the back story is that TinyMCE DOES provide the ability to format selected
+            // text using <code></code> tags, but it does NOT allow you to put a button in the toolbar for this.
+            // As such, I've hacked into the existing ability to toggle the 'code' style, based on the following
+            // stack voerflow answer: https://stackoverflow.com/a/23241638. The "codetag" button is then used in the
+            // "toolbar1" above.
+            setup: function(editor) {
+                editor.addButton('codetag', {
+                    text: '',
+                    icon: 'code',
+                    onclick: function() {
+                        editor.formatter.toggle('code');
+                    }
+                });
+            },
+        });
+    })();
+</script>
+
 
 </html>
