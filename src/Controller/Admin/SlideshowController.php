@@ -66,7 +66,7 @@ class SlideshowController extends AppController
     public function add()
     {
         $this->layout ='admin';
-
+        $image_list = $this->request->getSession()->read('image_list');
 
         $slideshow = $this->Slideshow->newEntity();
         if ($this->request->is('post')) {
@@ -161,7 +161,7 @@ class SlideshowController extends AppController
                 }
             }
         }
-        $this->request->getSession()->write('data', $image_list );
+        $this->request->getSession()->write('image_list', $image_list );
         return $this->redirect(['action' => 'index']);
     }
 }
