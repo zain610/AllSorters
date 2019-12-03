@@ -5,6 +5,7 @@
  */
 ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
@@ -20,6 +21,8 @@
     </ul>
 </nav>
 =======
+=======
+>>>>>>> zain-dev
 
 >>>>>>> 29e2e524a61ab7a8c445660d648a1ddfc0f5fb48
 <div class="slideshow form large-9 medium-8 columns content">
