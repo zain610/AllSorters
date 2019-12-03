@@ -3,19 +3,22 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Request $request
  */
-?><br>
-<br>
-<div class="container">
+?>
+<div class="services">
+    <div class="container">
+        <h3>Contact us</h3>
+    </div>
+</div>
+<div class="container" style="margin-top: -100px">
     <div class="row">
-        <div class="col-md-6 animate-box">
+        <div class="col-md-6 animate-box" >
             <?= $this->Flash->render('error'); ?>
             <?= $this->Flash->render('success'); ?>
-            <h3>Contact us</h3>
             <p>Fields marked * are required</p>
             <br>
             <br>
             <?= $this->Form->create($request) ?>
-            <div class="row form-group">
+            <div class="row form-group" style="margin-top: -40px">
                 <div class="col-md-6" style="margin-top: 20px">
                     <?php echo $this->Form->control('Cust_Fname',[
                         'label' => false,

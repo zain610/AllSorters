@@ -10,7 +10,7 @@
 <div class="services">
     <div class="container">
         <div class="camp">
-            <h3>Services Overview</h3>
+            <h3>Services</h3>
             <div id="searchBarNavBar" class="col-md-12">
                 <?= $this->element('Client/Buttons/search'); ?>
             </div>

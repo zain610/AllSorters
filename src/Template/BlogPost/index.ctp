@@ -15,7 +15,7 @@
     <div id="searchBarNavBar">
         <h3>Blog</h3>
 
-            <?= $this->element('Client/Buttons/search',array(['class'=>'btn btn-primary'])); ?>
+            <?= $this->element('Client/Buttons/search'); ?>
             <div class="col-md-12 col-lg-8 mb-5">
                 <?php foreach ($blogPost as $blogPost): ?>
                 <div class="blog-post">
