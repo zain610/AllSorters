@@ -64,11 +64,12 @@
 </head>
 <body>
 
-<div class="heading">
-    <h1>Tips</h1>
+
+<div class="services">
+    <div class="container">
+        <h3>Tips</h3>
+    </div>
 </div>
-<br>
-<br>
 
 <?php foreach ($tips as $tips): ?>
 
