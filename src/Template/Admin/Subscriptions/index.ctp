@@ -75,5 +75,10 @@
     <?= $this->Form->button('Submit', ['class'=>'btn btn-primary']); ?>
 
     <?=  $this->Form->end(); ?>
+    <div>
+        <h5>Add a subscriber</h5>
+        <?= $this->element('Client/subscribe'); ?>
+
+    </div>
 
 </div>
