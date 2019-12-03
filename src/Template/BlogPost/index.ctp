@@ -12,20 +12,18 @@
 <body>
 <div class="services">
 <div class="container">
-    <div class="row">
-    <h3>Blog</h3>
-        <div id="searchBarNavBar">
-            <?= $this->element('Client/Buttons/search'); ?>
-        </div>
-            <div class="col-md-12 col-lg-8 mb-5">
+    <div id="searchBarNavBar">
+        <h3>Blog</h3>
 
+            <?= $this->element('Client/Buttons/search'); ?>
+            <div class="col-md-12 col-lg-8 mb-5">
                 <?php foreach ($blogPost as $blogPost): ?>
                 <div class="blog-post">
                     <h2><?php echo $blogPost->title?></h2>
                     <h4>Posted by Mary on <?php echo $blogPost->Date?> </h4>
                     <p><?php echo $blogPost->Description?></p>
 
-                    <a href='<?php echo $this->Url->build(array('action'=> 'View', $blogPost->blog_post_id))?>' class="btn btn-default btn-lg ">Read More <i class="fa fa-angle-right"></i></a>
+                    <a href='<?php echo $this->Url->build(array('action'=> 'View', $blogPost->blog_post_id))?>' class="btn btn-primary btn-lg">Read More <i class="fa fa-angle-right"></i></a>
                 </div>
                 <?php endforeach; ?>
             <br />

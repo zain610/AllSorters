@@ -64,11 +64,11 @@
 </head>
 <body>
 
-<div class="heading">
-    <h1>Favourites (& links)</h1>
+<div class="services">
+    <div class="container">
+        <h3>Favourites (& links)</h3>
+    </div>
 </div>
-<br>
-<br>
 
 <?php foreach ($favourites as $favourites): ?>
 

@@ -2,10 +2,6 @@
 <html lang="en">
 <head>
     <title>Home</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        #more {display: none;}
-    </style>
 
 </head>
 <script type="text/javascript">
@@ -30,11 +26,11 @@
 </script>
 
 <body>
-<?php foreach($slideshow as $key=>$slideshow){
-    $item[$key]=$slideshow;
-}?>
-
 <div>
+    <?php foreach($slideshow as $key=>$slideshow){
+        $item[$key]=$slideshow;
+    }?>
+
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -47,23 +43,24 @@
         <div class="carousel-inner">
             <div class="item active">
                 <?php  echo $this->Html->image($item[0]['path'], ['alt' => $item[0]['Captions']]); ?>
-<!--                <img src="$item[0]['path]" alt="bg">-->
-                <h1 class="text"><span><?php echo $item[0]['Captions'];?></span></h1>
+                <!--                <img src="$item[0]['path]" alt="bg">-->
+                <h1 class="text"><?php echo $item[0]['Captions'];?></h1>
             </div>
+
 
             <div class="item">
                 <?php  echo $this->Html->image($item[1]['path'], ['alt' => $item[1]['Captions']]); ?>
-                <h1 class="text"><span><?php echo $item[1]['Captions'];?></span></h1>
+                <h1 class="text"><?php echo $item[1]['Captions'];?></h1>
             </div>
 
             <div class="item">
                 <?php  echo $this->Html->image($item[2]['path'], ['alt' => $item[2]['Captions']]); ?>
-                <h1 class="text"><span><?php echo $item[2]['Captions'];?></span></h1>
+                <h1 class="text"><?php echo $item[2]['Captions'];?></h1>
             </div>
 
             <div class="item">
                 <?php  echo $this->Html->image($item[3]['path'], ['alt' => $item[3]['Captions']]); ?>
-                <h1 class="text"><span><?php echo $item[3]['Captions'];?></span></h1>
+                <h1 class="text"><?php echo $item[3]['Captions'];?></h1>
             </div>
 
         </div>
@@ -83,7 +80,7 @@
             <h3>Services Overview</h3>
             <div class="row">
                 <?php foreach($services as $service) { ?>
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                         <div class="card services-card" style="width: 18rem;">
                             <?php  echo $this->Html->image($service['path'], ['class' => 'card-img-top','id'=>'serviceimg', 'style'=>'Height:100px', 'alt' => 'Service image']);
                             ?>
@@ -128,6 +125,7 @@
 
 </div>
 <hr>
+
 
 
 

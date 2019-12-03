@@ -29,7 +29,7 @@ class SlideshowController extends AppController
         $this->loadComponent('Paginator');
 
         $Slideshow = $this->Paginator->paginate(
-            $this->Slideshow->find('all')->contain(['image'])
+            $this->Slideshow->find('all')->order('image.name')->contain(['image'])
         );
         $this->layout ='admin';
         $this->set('data', $this->request->getSession()->read('data'));
@@ -80,8 +80,9 @@ class SlideshowController extends AppController
             }
             $this->Flash->error(__('The slideshow could not be saved. Please, try again.'));
         }
-        $image = $this->Slideshow->Image->find('all');
-        $this->set(compact('slideshow', 'image'));
+        $image = $this->Slideshow->Image->find('list');
+        $img_ob = $this->Slideshow->Image->find('all');
+        $this->set(compact('slideshow', 'image','img_ob'));
     }
 
     /**
