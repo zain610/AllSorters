@@ -79,6 +79,7 @@
         </p>
     </div>
     <br>
+    <br>
 <?php endforeach ?>
 <br>
 <br>
