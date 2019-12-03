@@ -32,7 +32,7 @@
                     <h4><?php echo $service->Service_Title?></h4>
                     <p><?php echo $service->Service_Description?></p>
 
-                    <a href='<?php echo $this->Url->build(array('action'=> 'View', $service->Service_id))?>' class="btn btn-default btn-lg ">Read More <i class="fa fa-angle-right"></i></a>
+                    <a href='<?php echo $this->Url->build(array('action'=> 'View', $service->Service_id))?>' class="btn btn-primary btn-lg">Read More <i class="fa fa-angle-right"></i></a>
 
                     <br />  <br />  <br />
                 </div>

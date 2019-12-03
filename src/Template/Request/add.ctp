@@ -61,14 +61,16 @@
                         'title' => 'Mobile numbers must start with "04" and be 10 digits in length'
                     ]); ?>
                 </div>
-                <div class="row form-group" style="margin-top: 20px">
-                    <div class="col-md-12" style="margin-left: 15px; margin-top: 20px">
+
+                    <div class="col-md-12" style="margin-top: 20px">
                         <?= $this->Form->textarea('Query_info',['label' => false, 'required'=>false,'placeholder' => '* Please enter some messages here', 'class' => 'form-control']); ?>
                     </div>
-                </div>
+                <div style="margin-top: 10px">
                 <?= $this->Form->button('Submit',['class' => 'btn btn-primary','style' => 'margin-left: 15px']) ?>
                 <?= $this->Form->end() ?>
+                </div>
             </div>
+
         </div>
     </div>
 </div>
