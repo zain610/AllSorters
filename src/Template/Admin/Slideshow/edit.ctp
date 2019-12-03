@@ -4,7 +4,6 @@
  * @var \App\Model\Entity\Slideshow $slideshow
  */
 ?>
-<?php echo $this->Html->css('image_checkbox'); ?>
 
 <div class="slideshow form large-9 medium-8 columns content">
     <?= $this->Form->create($slideshow) ?>

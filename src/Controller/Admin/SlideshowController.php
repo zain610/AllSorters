@@ -81,8 +81,9 @@ class SlideshowController extends AppController
             }
             $this->Flash->error(__('The slideshow could not be saved. Please, try again.'));
         }
-        $image = $this->Slideshow->Image->find('all');
-        $this->set(compact('slideshow', 'image'));
+        $image = $this->Slideshow->Image->find('list');
+        $img_ob = $this->Slideshow->Image->find('all');
+        $this->set(compact('slideshow', 'image','img_ob'));
     }
 
     /**
