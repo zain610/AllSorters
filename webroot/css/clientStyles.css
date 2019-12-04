@@ -176,9 +176,8 @@ a.navbar-brand {
 }
 #navbar-contents {
     display: block;
-}
-#nav-links {
-    margin: 0 10rem;
+    position: absolute;
+    width: fit-content;
 }
 nav.navbar.navbar-default {
     width: 100%;
