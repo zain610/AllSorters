@@ -6,10 +6,16 @@
             </div>
             <div class="contact-info">
 
-                <div class="contact-info-inner">
-                    <h4>Contact Me! </h4>
-                    <h5>+123456789</h5>
+                <div class="contact-info-inner" style="padding: 1rem;  background-color: #212529; font-size: 20px">
+                    <div style="display: flex;">
+                        <h5>Reach out to Mary for more info!</h5>
+
+                        <a style="margin-left: 1rem" href="tel:<?= $admin[0]['phone']?>"><i class="fas fa-phone-alt"></i></a>
+                        <a style="margin-left: 1rem" href="mailto:abc@gmail.com"><i class="far fa-envelope"></i></a>
+
+                    </div>
                 </div>
+
             </div>
 
         </div>
