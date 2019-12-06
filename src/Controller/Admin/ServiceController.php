@@ -60,17 +60,15 @@ class ServiceController extends AppController
         $service = $this->Service->newEntity();
 
         if ($this->request->is('post')) {
-            debug($this->request->getData()['image']);
             $data = $this->request->getData('checkbox');
+            $formData = $this->request->getData();
 
             for($i=0;$i<count($data);$i++){
                 if($data[$i]!=0){
-                    $index = $data[$i];
-                    $this->request->getData()['image']['_ids'][$i] = $index;
+                   $formData['image']['_ids'][$i] = $data[$i];
                 }
             }
-            debug($this->request->getData());
-            $service = $this->Service->patchEntity($service, $this->request->getData());
+            $service = $this->Service->patchEntity($service, $formData);
 
 
             if ($this->Service->save($service)) {
@@ -102,21 +100,16 @@ class ServiceController extends AppController
         ]);
 
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $service = $this->Service->patchEntity($service, $this->request->getData(),[
-                'associated' => [
-                    'Image'
-                ]
-            ]);
             $data = $this->request->getData('checkbox');
+            $formData = $this->request->getData();
 
             for($i=0;$i<count($data);$i++){
                 if($data[$i]!=0){
-                    $index = $data[$i];
-                    foreach ($service->image as $img){
-                        $img->Image_id = $index;
-                    }
+                    $formData['image']['_ids'][$i] = $data[$i];
                 }
             }
+            $service = $this->Service->patchEntity($service, $formData);
+
 
             if ($this->Service->save($service)) {
                 $this->Flash->success(__('The service has been saved.'));

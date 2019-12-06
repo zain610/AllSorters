@@ -9,14 +9,7 @@ $this->Html->script('/TinyMCE/js/tiny_mce/tiny_mce.js', array(
 ));
 ?>
 <?php echo $this->Html->css('image_checkbox'); ?>
-<script>
-    function onlyOne(checkbox) {
-        var checkboxes = document.getElementsByName('checkbox[]')
-        checkboxes.forEach((item) => {
-            if (item !== checkbox) item.checked = false
-        })
-    }
-</script>
+
 
 
 <div class="col-md-8">
@@ -29,7 +22,7 @@ $this->Html->script('/TinyMCE/js/tiny_mce/tiny_mce.js', array(
                 echo $this->Form->control('Service_Title', ['id' =>'serviceTitleInput']);
                 echo $this->Form->control('Service_Description');
                 echo $this->Form->control('Service_Detail',['type' => 'textarea', 'id' => 'ServiceDetailInput' ]);
-                echo $this->Form->control('image._ids', ['options' => $image]);
+//                echo $this->Form->control('image._ids', ['options' => $image]);
 
                 ?>
                 <ul>
