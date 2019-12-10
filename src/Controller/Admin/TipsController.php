@@ -33,7 +33,6 @@ class TipsController extends AppController
         parent::initialize();
 
         $this->loadModel('Favourites');
-        $this->Auth->allow(['index']);
     }
 
     /**

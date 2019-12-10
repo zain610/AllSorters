@@ -34,7 +34,6 @@ class FavouritesController extends AppController
 
         $this->loadModel('Favourites');
         $this->loadModel('Favourites');
-        $this->Auth->allow(['index']);
     }
     /**
      * View method
