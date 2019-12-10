@@ -27,11 +27,11 @@
                             <fieldset>
                                 <?= $this->Form->control('username'); ?>
                                 <?php if(isset($usernameError)){ ?>
-                                <p style="color: red;font-weight: bold"><?php echo $usernameError?></p>
+                                    <p style="color: red;font-weight: bold"><?php echo $usernameError?></p>
                                 <?php } ?>
                                 <?= $this->Form->control('password', array('type' => 'password')); ?>
                                 <?php if(isset($passwordError)){ ?>
-                                <p style="color: red;font-weight: bold"><?php echo $passwordError?></p>
+                                    <p style="color: red;font-weight: bold"><?php echo $passwordError?></p>
                                 <?php } ?>
 
 
