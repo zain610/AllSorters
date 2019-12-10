@@ -18,7 +18,7 @@
 
                 <!--/.navbar-header-->
                 <div class="collapse navbar-collapse" id="nav-links" align="top">
-                    <ul class="nav navbar-nav" id="navbar-contents" style="position: absolute">
+                    <ul class="nav navbar-nav" id="navbar-contents">
                         <li><?= $this->Html->link('Home', ['controller' => 'Articles', 'action' => 'home'], ['class' => 'navbar-brand','style'=>'margin-top: -27px']) ?></li>
                         <li><?= $this->Html->link('Services', ['controller' => 'Services', 'action' => 'index'], ['class' => 'navbar-brand','style'=>'margin-top: -27px']) ?></li>
                         <li><?= $this->Html->link('Blog', ['controller' => 'Blogpost', 'action' => 'index'], ['class' => 'navbar-brand','style'=>'margin-top: -27px']) ?></li>

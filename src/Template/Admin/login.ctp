@@ -26,7 +26,15 @@
 
                             <fieldset>
                                 <?= $this->Form->control('username'); ?>
-                                <?= $this->Form->control('password', array('type' => 'password')); ?><a href="#" class="forgot-link">Forgot Password?</a>
+                                <?php if(isset($usernameError)){ ?>
+                                <p style="color: red;font-weight: bold"><?php echo $usernameError?></p>
+                                <?php } ?>
+                                <?= $this->Form->control('password', array('type' => 'password')); ?>
+                                <?php if(isset($passwordError)){ ?>
+                                <p style="color: red;font-weight: bold"><?php echo $passwordError?></p>
+                                <?php } ?>
+                                <a href="#" class="forgot-link">Forgot Password?</a>
+
                             </fieldset>
                             <div align="middle" >
                                 <?= $this->Form->button('Login'); ?></div>

@@ -2,32 +2,8 @@
 <html lang="en">
 <head>
     <title>Home</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        #more {display: none;}
-    </style>
 
 </head>
-<script type="text/javascript">
-    // When the user scrolls the page, execute myFunction
-    window.onscroll = function() {myFunction()};
-
-    // Get the navbar
-    var navbar = document.getElementById("navbar");
-
-    // Get the offset position of the navbar
-    var sticky = navbar.offsetHeight;
-
-    // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-    function myFunction() {
-        if (window.pageYOffset >= sticky) {
-            navbar.classList.add("sticky")
-        } else {
-            navbar.classList.remove("sticky");
-        }
-    }
-
-</script>
 
 <body>
 <div>
@@ -35,7 +11,6 @@
         $item[$key]=$slideshow;
     }?>
 
-<div>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -81,7 +56,7 @@
 </div>
 <div>
     <div class="services" style="display: flex">
-        <div class="container" style="width: 65%">
+        <div class="container" style="width: 65%; margin-right: 1rem">
             <h3>Services Overview</h3>
             <div class="row">
                 <?php foreach($services as $service) { ?>
@@ -100,9 +75,7 @@
                 <?php }?>
             </div>
         </div>
-
         <div class="container" style="width: 35%; border-left:1px solid #000; background-color: #3fa5ce; border: 1px solid #333333; height: fit-content; margin-right: 0.75rem; border-radius: 15px;">
-
             <h3>Recent Blogs</h3>
             <div class="blogs-carousel">
                 <?php foreach ($blogs as $blog) { ?>
@@ -132,6 +105,7 @@
 
 </div>
 <hr>
+
 
 
 

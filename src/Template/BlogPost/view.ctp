@@ -4,14 +4,29 @@
  * @var \App\Model\Entity\Service $service
  */
 ?>
+
 <html>
+
 <head>
     <title>Blog</title>
 </head>
 <body>
-
+<style>
+    .text {
+        left: 0;
+        color: #f2f2f2;
+        position: relative;
+        top:0;
+        padding: 8px 12px;
+        width: 100%;
+        text-align: center;
+        z-index: 15
+    ! important;
+    }
+</style>
 <div class="services">
     <div class="container">
+        <?= $this->Flash->render(); ?>
         <div class="row">
             <div class="col-md-12 col-lg-8 mb-5">
             <h3>Blog</h3>
@@ -36,42 +51,47 @@
                         </table>
                     <?php endif; ?>
                 </div>
+
+
+
             <div class="clearfix"> </div>
             </div>
         </div>
+        <div class="card" style="text-align: center">
+            <div class="card-title">Comments</div>
+            <div class="card-body">
+                <?php foreach($comment as $comment){ ?>
+                <p style="font-weight: bold;color: black"><?php echo $comment['User_Name'] ?></p>
+                <p><?php echo $comment['Comment_Details'] ?></p>
+                <hr>
+
+                <?php } ?>
+            </div>
+            <div class="card-body">
+                <?= $this->Form->create($newComment); ?>
+                <span>Name:</span><?php echo $this->Form->control('User_Name',['label'=>false,'required'=>false,'class'=>'form-control']) ?>
+                <?php if(isset($nameError)){ ?>
+                <p style="color: red;margin: 0em 0;"><?php echo $nameError; ?></p>
+                <?php } ?>
+                <br>
+                <apan>Email:</apan><?php echo $this->Form->control('User_Email',['type'=>'email','label'=>false,'required'=>false,'class'=>'form-control']) ?>
+                <?php if(isset($emailError)){ ?>
+                <p style="color: red;margin: 0em 0;""><?php echo $emailError; ?></p>
+                <?php } ?>
+                <br>
+                <span>Comments:</span><?php echo $this->Form->textarea('Comment_Details',['label'=>false,'required'=>false,'class'=>'form-control']) ?>
+                <?php if(isset($commentError)){ ?>
+                <p style="color: red;margin: 0em 0;""><?php echo $commentError; ?></p>
+                <?php } ?>
+                <?= $this->Form->button('Submit',['class' => 'btn btn-primary','style' => 'margin-left: 15px']) ?>
+                <?= $this->Form->end() ?>
+            </div>
+
+        </div>
+        <br>
     </div>
     <!-- footer -->
-    <div class="footer" id="contact">
-        <div class="container">
-            <div class="col-md-4 contact-left">
-                <h3>Address</h3>
-                <address>
-                    795 Folsom Ave, Suite 600<br>
-                    San Francisco, CA 94107<br>
-                    <abbr title="Phone">P :</abbr> (123) 456-7890
-                </address>
-            </div>
-            <div class="col-md-4 ftr-gd">
-                <h3>Follow Us</h3>
-                <ul class="social">
-                    <li><a href="#"><i></i></a> </li>
-                    <li><a href="#"><i class="facebook"></i></a></li>
-                    <li><a href="#"><i class="goog"></i> </a></li>
-                    <li><a href="#"><i class="lin"></i> </a></li>
-                </ul>
-            </div>
-            <div class="col-md-4 contact-left">
-                <h3>Phone/Fax</h3>
-                <p>Phone : +1234567890 </p>
-                <p>Fax : +1234567890 </p>
-                <p>Email : <a href="mailto:info@example.com">info@mycompany.com</a> </p>
-            </div>
-            <div class="clearfix"></div>
-            <div class="copyright">
-                <p>Copyright &copy; 2015.Company name All rights reserved.</p>
-            </div>
-        </div>
-    </div>
+
 
     <!-- footer -->
     <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 0;"></span> <span id="toTopHover" style="opacity: 0;"> </span></a>

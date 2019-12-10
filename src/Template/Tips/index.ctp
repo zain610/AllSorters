@@ -75,9 +75,9 @@
 
     <button type="button" class="collapsible"><?php echo $tips->Title ?></button>
     <div class="content">
-        <p>
+        <p> <br>
             <?php echo $tips->Content ?>
-
+            <br><br>
         </p>
     </div>
     <br>

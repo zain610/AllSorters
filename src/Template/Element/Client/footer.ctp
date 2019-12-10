@@ -33,7 +33,7 @@ $query = $footer->find();
         <div class="col-md-4 contact-left">
             <h3>Contact</h3>
             <p>Phone: <?php echo $footer->Phone; ?></p>
-            <p>Email : <a href="mailto:<?php echo $footer->Address; ?>"><?php echo $footer->Email; ?></a> </p>
+            <p>Email : <a href="mailto:<?php echo $footer->Email; ?>"><?php echo $footer->Email; ?></a> </p>
         </div>
         <div class="clearfix"></div>
         <div class="copyright">

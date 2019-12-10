@@ -143,6 +143,10 @@ Services - Card styling
 .card {
     border: 1.5px solid #333333;
 }
+.slick-dots li button:before {
+    font-size: 20px;
+}
+
 
 
 html, body{
@@ -172,9 +176,8 @@ a.navbar-brand {
 }
 #navbar-contents {
     display: block;
-}
-#nav-links {
-    margin: 0 3rem;
+    position: absolute;
+    width: fit-content;
 }
 nav.navbar.navbar-default {
     width: 100%;
@@ -291,7 +294,6 @@ div.services.container > div > a > div > button{
     width: 100%;
     border: 2px solid #333333;
     border-radius: 15px;
-    margin-bottom: 2rem;
 }
 #newsletter-signup > small {
     color: #333333!important;

@@ -53,19 +53,18 @@ class RequestTable extends Table
 
         $validator
             ->scalar('Request_Email')
-            ->maxLength('Request_Email', 255)
-            ->requirePresence('Request_Email', 'create')
-            ->notEmpty('Request_Email');
+            ->maxLength('Request_Email', 255);
+
 
         $validator
             ->scalar('Cust_Fname')
             ->maxLength('Cust_Fname', 255)
-            ->notEmpty('Cust_Fname','Firstname cannot be empty.');
-
+        ->allowEmpty('Cust_Fname');
         $validator
             ->scalar('Cust_Sname')
             ->maxLength('Cust_Sname', 255)
-            ->notEmpty('Cust_Sname','Surname cannot be empty');
+            ->allowEmpty('Cust_Sname');
+
 
         $validator
             ->scalar('Query_info')

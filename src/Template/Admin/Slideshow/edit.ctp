@@ -4,27 +4,7 @@
  * @var \App\Model\Entity\Slideshow $slideshow
  */
 ?>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $slideshow->Slideshow_id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $slideshow->Slideshow_id)]
-            )
-        ?></li>
-        <li><?= $this->Html->link(__('List Slideshow'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Image'), ['controller' => 'Image', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Image'), ['controller' => 'Image', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
-=======
-=======
->>>>>>> zain-dev
 
->>>>>>> 29e2e524a61ab7a8c445660d648a1ddfc0f5fb48
 <div class="slideshow form large-9 medium-8 columns content">
     <?= $this->Form->create($slideshow) ?>
     <fieldset>

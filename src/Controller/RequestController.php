@@ -58,8 +58,29 @@ class RequestController extends AppController
     public function add()
     {
         $request = $this->Request->newEntity();
+
+
         if ($this->request->is('post')) {
+            if($this->request->getData('Cust_Fname')==''||$this->request->getData('Cust_Sname')==''||$this->request->getData('Request_Email')==''||$this->request->getData('Phone')=='') {
+
+                if ($this->request->getData('Cust_Fname') == '') {
+
+                    $this->set('fnameerror', 'Firstname cannot be empty.');
+
+                }
+                if ($this->request->getData('Cust_Sname') == '') {
+                    $this->set('snameerror', 'Surname cannot be empty.');
+                }
+                if ($this->request->getData('Request_Email') == '') {
+                    $this->set('emailError', 'Email cannot be empty.');
+                }
+                if ($this->request->getData('Phone') == '') {
+                    $this->set('PhoneError', 'Phone cannot be empty.');
+                }
+            }
             $request = $this->Request->patchEntity($request, $this->request->getData());
+
+
             $request->created = time();
             if ($this->Request->save($request)) {
 
@@ -72,12 +93,13 @@ class RequestController extends AppController
                 $email->send();
 
 
-                $this->Flash->success(__('Your message has been sent.'),['key'=>'success'] );
+                $this->Flash->success(__('Your message has been sent.'), ['key' => 'success']);
 
                 return $this->redirect(['action' => 'add']);
             }
-            $this->Flash->error(__('Something wrong. Please, try again.'),['key'=>'error'] );
-        }
+            $this->Flash->error(__('Something wrong. Please, try again.'), ['key' => 'error']);
+
+    }
 //        $this->Js->set('myArray', $request);
 //        echo $this->Js->writeBuffer(array('onDomReady' => false));
         $this->set(compact('request'));

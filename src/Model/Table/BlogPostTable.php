@@ -78,6 +78,7 @@ class BlogPostTable extends Table
 
         $validator
             ->scalar('Body')
+            ->maxLength('Body', 255)
             ->requirePresence('Body', 'create')
             ->notEmpty('Body',false,false);
 
