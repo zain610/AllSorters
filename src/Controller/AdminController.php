@@ -3,11 +3,6 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use App\Model\Entity\Role;
-use Cake\Auth\DefaultPasswordHasher;
-use Cake\Mailer\Email;
-use Cake\Mailer\TransportFactory;
-use Cake\Utility\Security;
-use Cake\ORM\TableRegistry;
 
 /**
  * Admin Controller
@@ -84,7 +79,6 @@ class AdminController extends AppController
      */
     public function edit($id = null)
     {
-        $this->layout ='admin';
         $admin = $this->Admin->get($id, [
             'contain' => []
         ]);
@@ -100,24 +94,7 @@ class AdminController extends AppController
 
         $this->set(compact('admin'));
     }
-    public function changepassword($id = null)
-    {
-        $this->layout ='admin';
-        $admin = $this->Admin->get($id, [
-            'contain' => []
-        ]);
-        if ($this->request->is(['patch', 'post', 'put'])) {
-            $admin = $this->Admin->patchEntity($admin, $this->request->getData());
-            if ($this->Admin->save($admin)) {
-                $this->Flash->success(__('The admin has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The admin could not be saved. Please, try again.'));
-        }
-
-        $this->set(compact('admin'));
-    }
     /**
      * Delete method
      *
@@ -137,6 +114,7 @@ class AdminController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+<<<<<<< HEAD
 
     public function forgotpassword(){
         if($this->request->is('post')){
@@ -184,6 +162,8 @@ class AdminController extends AppController
     }
 
 
+=======
+>>>>>>> 795d0cd7c4625047b861cdbfda4cf21b1de9f9a4
     public function login(){
         if($this->request->is('post')){
             if($this->request->getData('username')==''){
