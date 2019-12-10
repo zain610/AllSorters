@@ -312,26 +312,21 @@ $isFavouritesActive = $currentController === "Favourites";
 
         </li>
 
-        <li id="dropDownMenu" class="dropdown">
+
+
+        <li id="dropDownMenu" class="<?= $isFooterActive ? 'active' : '' ?> dropdown">
             <?= $this->Html->link(
-                '<p>Settings</p>',
+                '<p>Footer</p>',
                 '#',
                 ['escape' => false, 'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true',]
             ) ?>
             <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
-                <li><?= $this->Html->link('Change Password', ['controller' => 'admin', 'action' => 'index']) ?></li>
-
-            </ul>
-
-        </li>
-
-        <li id="dropDownMenu" class="<?= $isFooterActive ? 'active' : '' ?> dropdown">
-            <li><?=$this->Html->link(
+                <li><?=$this->Html->link(
                         '<p>Footer</p>',
                         ['prefix'=>'admin','controller'=>'Footer','action'=>'index'],
-                        ['escape'=>false])?>
-            </li>
-
+                        ['escape'=>false]
+                    )?></li>
+            </ul>
 
         </li>
 
