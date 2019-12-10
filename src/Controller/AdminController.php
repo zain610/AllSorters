@@ -114,7 +114,6 @@ class AdminController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
-<<<<<<< HEAD
 
     public function forgotpassword(){
         if($this->request->is('post')){
@@ -160,10 +159,6 @@ class AdminController extends AppController
             $admin->password = $mypass;
             $adminTable->save($admin);
     }
-
-
-=======
->>>>>>> 795d0cd7c4625047b861cdbfda4cf21b1de9f9a4
     public function login(){
         if($this->request->is('post')){
             if($this->request->getData('username')==''){
