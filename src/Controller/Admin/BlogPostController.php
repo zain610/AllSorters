@@ -112,39 +112,49 @@ class BlogPostController extends AppController
 
     }
     public function publishToFacebook($id = null) {
-        $access_token = 'EAAKUWwjVoeoBAKlZBOb8vIBLVZCZB0r0rQOBLxZAOJSIAwUHrlkZBICbBrmFhGVOdX7Bkr3Wfaxx7rhtcBLMeG4E1ZAikCKqA7zNZAjVr1oJCZBvhitjlLxZA04ilf1sDp9BLv4Lg2G5ig0PYbkEZCZBynnyG1d5ZBtP6rItZB0yyVzTOa2fjkF2XTvKLzCGuU2BSSNw8lnhQRkfmSAZDZD';
+
+//        Get referenced blog post using the id sent via client side
         $blogPost = $this->BlogPost->get($id);
+//        check if the blog exists in database
         if ($blogPost == null) {
             throw new NotFoundException();
         }
+//        generate the client side blog link to be posted on fb
         $url = Router::url(['prefix' => false, 'controller' => 'Blogpost', 'action' => 'view'], true). "/".$id;
-        debug($url);
-
+//        initiate facebook object passing key params
         $fb = new \Facebook\Facebook([
             'app_id' => '726068664574442',
             'app_secret' => '092a9cdf771ccb1ff51fdaf73ef22420',
-            'default_graph_version' => 'v5.0',
-            'default_access_token' => 'EAAKUWwjVoeoBALMMZCwZCPoTeZA7lfgSdlr6QWovWZCopemC50RAQYgEP5nhZBf6nf0KXtq0NoW0HiYZBRj3AB6w4FIv5EBTs4JCGSGZBviEB7JwEtratanGGB0fcCDmo8ZAaHTFEnQJYmPf0aHZBBSXfs3HUJJSiIzzh9fpcfJEZABKTCG46ZAh3wZBQIoDw3OtPj65t5cIzRG90AZDZD'
+            'default_graph_version' => 'v2.4',
         ]);
+        $client = $fb->getOAuth2Client();
+
+        try {
+            // Returns a long-lived access token
+            $accessToken = $client->getLongLivedAccessToken('EAAKUWwjVoeoBAMUSsLWOFFbg5vquXZCrv69Ulqxw5MB5umXYtWQ5JJXaWjG1eujJWZA5XAb8RrFjQu6dnP3m3x8y7c4Y3zGL5LHR0G8XOJXrZBwBLzYpZCxxDxmYkr9RHLHwt4xYA7PAzVnUOafZAJHzm7WQMFIvfGnhWY6e7ZBMpCfmDQ7h46R5eCB8R806seA803MkIHOwZDZD');
+        } catch(Facebook\Exceptions\FacebookSDKException $e) {
+            // There was an error communicating with Graph
+            echo $e->getMessage();
+            exit;
+        }
+
+        if (isset($accessToken)) {
+            // Logged in.
+            $_SESSION['facebook_access_token'] = (string) $accessToken;
+            $fb->setDefaultAccessToken((string) $accessToken);
+        }
 
         try {
             // Returns a `FacebookFacebookResponse` object
-            $response = $fb->post(
-                '/726068664574442/feed',
-                array (
-                    'message' => 'Uploaded a new blog, Please check it out. :)',
-                    'link' => $url
-                )
-            );
-        } catch(FacebookExceptionsFacebookResponseException $e) {
-            echo 'Graph returned an error: ' . $e->getMessage();
-            exit;
-        } catch(FacebookExceptionsFacebookSDKException $e) {
-            echo 'Facebook SDK returned an error: ' . $e->getMessage();
+            $data = array('message' => 'New blog posted. Check it out here! :)', 'link' => $url);
+            $response =$fb->post('/me/feed', $data);
+        } catch(Facebook\Exceptions\FacebookSDKException $e) {
+            // There was an error communicating with Graph
+            echo $e->getMessage();
             exit;
         }
-        $graphNode = $response->getGraphNode();
-        $this->request->getSession()->write('message', $url);
+        debug($response->getGraphNode());
+
         $this->redirect(['action' => 'index']);
     }
 
