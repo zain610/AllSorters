@@ -6,7 +6,10 @@ use Cake\ORM\TableRegistry;
 use Cake\Routing\Route\Route;
 use Cake\Routing\Router;
 use Cake\View\Helper\UrlHelper;
+use Facebook\Authentication\AccessToken;
 use Facebook\Facebook;
+use Facebook\FacebookApp;
+use PhpParser\Node\Expr\AssignOp\Concat;
 
 
 /**
@@ -42,7 +45,6 @@ class BlogPostController extends AppController
     {
         parent::initialize();
         $this->loadModel('BlogPost');
-        $this->Auth->allow(['index']);
     }
 
     public function isAuthorized()
@@ -107,27 +109,29 @@ class BlogPostController extends AppController
 
     }
     public function publishToFacebook($id = null) {
+        $access_token = 'EAAKUWwjVoeoBAKlZBOb8vIBLVZCZB0r0rQOBLxZAOJSIAwUHrlkZBICbBrmFhGVOdX7Bkr3Wfaxx7rhtcBLMeG4E1ZAikCKqA7zNZAjVr1oJCZBvhitjlLxZA04ilf1sDp9BLv4Lg2G5ig0PYbkEZCZBynnyG1d5ZBtP6rItZB0yyVzTOa2fjkF2XTvKLzCGuU2BSSNw8lnhQRkfmSAZDZD';
         $blogPost = $this->BlogPost->get($id);
         if ($blogPost == null) {
             throw new NotFoundException();
         }
-        $url = Router::url(['prefix' => false, 'controller' => 'Blogpost', 'action' => 'view', 'id' => $id], true);
+        $url = Router::url(['prefix' => false, 'controller' => 'Blogpost', 'action' => 'view'], true). "/".$id;
+        debug($url);
 
-        $fb = new Facebook([
+        $fb = new \Facebook\Facebook([
             'app_id' => '726068664574442',
             'app_secret' => '092a9cdf771ccb1ff51fdaf73ef22420',
-            'default_graph_version' => 'v4.0',
+            'default_graph_version' => 'v5.0',
+            'default_access_token' => 'EAAKUWwjVoeoBALMMZCwZCPoTeZA7lfgSdlr6QWovWZCopemC50RAQYgEP5nhZBf6nf0KXtq0NoW0HiYZBRj3AB6w4FIv5EBTs4JCGSGZBviEB7JwEtratanGGB0fcCDmo8ZAaHTFEnQJYmPf0aHZBBSXfs3HUJJSiIzzh9fpcfJEZABKTCG46ZAh3wZBQIoDw3OtPj65t5cIzRG90AZDZD'
         ]);
 
         try {
             // Returns a `FacebookFacebookResponse` object
             $response = $fb->post(
-                'me/feed',
+                '/726068664574442/feed',
                 array (
                     'message' => 'Uploaded a new blog, Please check it out. :)',
                     'link' => $url
-                ),
-                'EAAKUWwjVoeoBAGekUnnRYzZCgSc3jJZCyOZC5zLqk9ty7vGIPGKZBNLpeYDXty3Y8h4xBQoSVPPIjPt3U68E4FGpZAi1t9SOeRCMvoo8Bxw1uQFP3FJe8trrcvzXOnbFIadZCN6Ihg6zzB2avZBpuDqYnSEl3BI326LZCZCC7nrWxigZDZD'
+                )
             );
         } catch(FacebookExceptionsFacebookResponseException $e) {
             echo 'Graph returned an error: ' . $e->getMessage();
