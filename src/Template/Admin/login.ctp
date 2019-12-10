@@ -33,11 +33,13 @@
                                 <?php if(isset($passwordError)){ ?>
                                 <p style="color: red;font-weight: bold"><?php echo $passwordError?></p>
                                 <?php } ?>
-                                <a href="#" class="forgot-link">Forgot Password?</a>
+
 
                             </fieldset>
                             <div align="middle" >
-                                <?= $this->Form->button('Login'); ?></div>
+                                <?= $this->Form->button('Login',['class'=>'btn btn-success']); ?>
+                                <?php echo $this->Html->link('Forgot Password',['action'=>'forgotpassword'],['class'=>'btn btn-info']) ?>
+                            </div>
                             <?= $this->Form->end(); ?>
                         </div>
                     </div>
