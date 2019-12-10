@@ -50,23 +50,23 @@ class PostCommentTable extends Table
     public function validationDefault(Validator $validator)
     {
         $validator
-            ->integer('Post_Comment_id')
-            ->allowEmptyString('Post_Comment_id', 'create');
+            ->integer('Post_Comment_id');
+
 
         $validator
             ->scalar('User_Name')
-            ->maxLength('User_Name', 255)
-            ->allowEmptyString('User_Name');
+            ->maxLength('User_Name', 255);
+
 
         $validator
             ->scalar('User_Email')
-            ->maxLength('User_Email', 255)
-            ->allowEmptyString('User_Email');
+            ->maxLength('User_Email', 255);
+
 
         $validator
             ->scalar('Comment_Details')
-            ->maxLength('Comment_Details', 255)
-            ->allowEmptyString('Comment_Details');
+            ->maxLength('Comment_Details', 255);
+
 
         return $validator;
     }

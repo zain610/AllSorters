@@ -63,6 +63,9 @@ class BlogPostController extends AppController
         $blogPost = $this->BlogPost->get($id, [
             'contain' => ['Image']
         ]);
+        $this->loadModel('PostComment');
+        $comment = $this->PostComment->find('all',['conditions'=>['Post_id'=>$id]])->toList();
+        $this->set('comment',$comment);
 
         $this->set('blogPost', $blogPost);
     }
@@ -337,5 +340,18 @@ class BlogPostController extends AppController
         $this->viewBuilder()->setTemplate('search');
 
     }
+    public function publishcomment($id){
+        $this->loadModel('PostComment');
+        $comment = $this->PostComment->get($id);
+        if($comment->showed==0){
+            $comment->showed=1;
+        }
+        else{
+            $comment->showed=0;
+        }
+        $this->PostComment->save($comment);
+        $this->redirect(['action'=>'view',$comment->Post_id]);
+
+}
 
 }

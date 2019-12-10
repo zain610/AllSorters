@@ -186,6 +186,13 @@ class AdminController extends AppController
 
     public function login(){
         if($this->request->is('post')){
+            if($this->request->getData('username')==''){
+                $this->set('usernameError','User name cannot be empty.');
+            }
+            if($this->request->getData('password')==''){
+                $this->set('passwordError','Password cannot be empty.');
+            }
+
             $user= $this->Auth->identify();
             if($user){
                 $this->Auth->setUser($user);
