@@ -1,0 +1,44 @@
+<?php
+/**
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\Tip[]|\Cake\Collection\CollectionInterface $tips
+ */
+?>
+</nav>
+<div class="table table-hover table-striped">
+    <?= $this->Html->link('Add to Tips', ['action' => 'add'], ['class' => 'pull-right btn btn-oval btn-primary']) ?>
+
+    <h3><?= __('Tips') ?></h3>
+    <table cellpadding="0" cellspacing="0">
+        <thead>
+        <tr>
+            <th scope="col"><?= $this->Paginator->sort('Title') ?></th>
+            <th scope="col" class="actions"><?= __('Actions') ?></th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($tips as $tips): ?>
+            <tr>
+                <td><?= strip_tags($tips->Title) ?></td>
+                <td class="actions">
+                    <?= $this->element('Admin/Buttons/view', ['url' => ['action' => 'view', $tips->tips_id]]) ?>
+                    <?= $this->element('Admin/Buttons/edit', ['url' => ['action' => 'edit', $tips->tips_id]]) ?>
+                    <?= $this->element('Admin/Buttons/Delete', ['url' => ['action' => 'delete', $tips->tips_id], ['confirm' => __('Are you sure you want to delete # {0}?', $tips->tips_id)]]) ?>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+    <?= $this->Html->link(__('Back'), $this->request->referer(), ['class' => 'btn btn-oval btn-primary','style'=>'float:left']) ?>
+    <div class="paginator">
+        <ul class="pagination">
+            <?= $this->Paginator->first('<< ' . __('first')) ?>
+            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->numbers() ?>
+            <?= $this->Paginator->next(__('next') . ' >') ?>
+            <?= $this->Paginator->last(__('last') . ' >>') ?>
+        </ul>
+        <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
+    </div>
+</div>
+
