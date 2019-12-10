@@ -77,6 +77,8 @@ class AppController extends Controller
     }
     public function beforeFilter(Event $event)
     {
+        $this->Auth->allow(['verification','logout', 'forgotpassword', 'resetpassword']);
+
         // We really want the site settings and the current user (if any) to be available in all templates.
         // This achieves that (see https://stackoverflow.com/a/1384697).
         if(!array_key_exists('_serialize',$this->viewVars)&&

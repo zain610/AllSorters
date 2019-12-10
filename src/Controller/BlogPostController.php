@@ -46,12 +46,50 @@ class BlogPostController extends AppController
     }
     public function view($id = null){
         $this->loadComponent('Paginator');
-        $this->layout ='client';
+        $this->viewBuilder()->setLayout('client');
         $blogPost = $this->BlogPost->get($id, [
             'contain' => ['image']
         ]);
 
+
         $this->set('blogPost', $blogPost);
+
+        $this->loadModel('PostComment');
+        $comment = $this->PostComment->find('all',['conditions'=>['and'=>['Post_id'=>$id],['showed'=>1]]])->toList();
+        $this->set('comment',$comment);
+        $newComment = $this->PostComment->newEntity();
+        $this->set(compact('newComment'));
+        if ($this->request->is('post')) {
+            if($this->request->getData()['User_Name']==''||$this->request->getData()['User_Email']==''||$this->request->getData()['Comment_Details']=='') {
+                if ($this->request->getData()['User_Name'] == '') {
+                    $this->set('nameError', 'Please enter your name.');
+                }
+                if ($this->request->getData()['User_Email'] == '') {
+                    $this->set('emailError', 'Please enter your email.');
+                }
+                if ($this->request->getData()['Comment_Details'] == '') {
+                    $this->set('commentError', 'Comments field cannot be empty.');
+                }
+                $this->Flash->error(__('Sorry, your comment cannot be submitted,please try it again.'));
+            }
+            else {
+                $newComment->User_Name = $this->request->getData()['User_Name'];
+                $newComment->User_Email = $this->request->getData()['User_Email'];
+                $newComment->Comment_Details = $this->request->getData()['Comment_Details'];
+                $newComment->showed = 0;
+                $newComment->Post_id = $id;
+                if ($this->PostComment->save($newComment)) {
+                    $this->Flash->success(__('Your comment has been submitted'));
+
+                    return $this->redirect(['action' => 'view', $id]);
+                }
+
+            }
+        }
+
+
+
+
     }
     public function advanceSearch() {
 

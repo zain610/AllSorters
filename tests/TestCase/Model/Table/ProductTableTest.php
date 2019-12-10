@@ -1,22 +1,21 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\FavouritesTable;
+use App\Model\Table\ProductTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\FavouritesTable Test Case
+ * App\Model\Table\ProductTable Test Case
  */
-class FavouritesTableTest extends TestCase
+class ProductTableTest extends TestCase
 {
-
     /**
      * Test subject
      *
-     * @var \App\Model\Table\FavouritesTable
+     * @var \App\Model\Table\ProductTable
      */
-    public $Favourites;
+    public $Product;
 
     /**
      * Fixtures
@@ -24,7 +23,8 @@ class FavouritesTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.Favourites'
+        'app.Product',
+        'app.Image'
     ];
 
     /**
@@ -35,8 +35,8 @@ class FavouritesTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('Favourites') ? [] : ['className' => FavouritesTable::class];
-        $this->Favourites = TableRegistry::get('Favourites', $config);
+        $config = TableRegistry::getTableLocator()->exists('Product') ? [] : ['className' => ProductTable::class];
+        $this->Product = TableRegistry::getTableLocator()->get('Product', $config);
     }
 
     /**
@@ -46,7 +46,7 @@ class FavouritesTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->Favourites);
+        unset($this->Product);
 
         parent::tearDown();
     }
@@ -67,6 +67,16 @@ class FavouritesTableTest extends TestCase
      * @return void
      */
     public function testValidationDefault()
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
+
+    /**
+     * Test buildRules method
+     *
+     * @return void
+     */
+    public function testBuildRules()
     {
         $this->markTestIncomplete('Not implemented yet.');
     }
