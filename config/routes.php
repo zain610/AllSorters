@@ -54,8 +54,8 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/admin/login', ['controller' => 'Admin', 'action' => 'login']);
     $routes->connect('/admin/booking', ['controller' => 'Admin', 'action' => 'booking']);
     $routes->connect('/admin/logout', ['controller' => 'Admin', 'action' => 'logout']);
-    $routes->connect('/admin/forgotpassword', ['controller' => 'Admin', 'action' => 'forgotpassword']);
-    $routes->connect('/admin/resetpassword', ['controller' => 'Admin', 'action' => 'resetpassword']);
+    $routes->connect('/admin/forgotpassword/*', ['controller' => 'Admin', 'action' => 'forgotpassword']);
+    $routes->connect('/admin/resetpassword/*', ['controller' => 'Admin', 'action' => 'resetpassword']);
 
 
     $routes->connect('/admin/booking', ['controller' => 'Admin', 'action' => 'booking']);

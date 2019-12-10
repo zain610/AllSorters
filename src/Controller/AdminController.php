@@ -154,7 +154,7 @@ class AdminController extends AppController
                 $email->setFrom(['allsortMary@gmail.com' => 'All Sorters'])
                     ->setTo($myemail)
                     ->setTemplate('default')
-                    ->setViewVars(['title' => "Reset Password", 'content'=> 'Hello '.$myemail.' Please click link below to reset your password: http://localhost:8765/admin/resetpassword/'.$mytoken])
+                    ->setViewVars(['title' => "Reset Password", 'content'=> 'Hello '.$myemail.' Please click link below to reset your password: http://localhost:8765/admin/resetpassword'.$mytoken])
                     ->setSubject("Please confirm your reset password");
                 $email->send();
             }
@@ -162,7 +162,7 @@ class AdminController extends AppController
     }
 
     public function resetpassword($token){
-        debug('/'.$token);
+        debug($token);
 //        if($this->request->is('post')){
 ////            $hasher = new DefaultPasswordHasher();
 //            $mypass = $this->request->getData('password');
