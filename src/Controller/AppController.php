@@ -97,6 +97,7 @@ class AppController extends Controller
         $admin_details = $connection->execute('Select * from admin') ->fetchAll('assoc');
         $this->set('admin', $admin_details);
 
+        $this->Auth->allow(['verification','logout', 'forgotpassword', 'resetpassword']);
 
         return parent::beforeFilter($event);
 

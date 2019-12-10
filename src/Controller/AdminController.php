@@ -3,6 +3,11 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use App\Model\Entity\Role;
+use Cake\Auth\DefaultPasswordHasher;
+use Cake\Mailer\Email;
+use Cake\Mailer\TransportFactory;
+use Cake\Utility\Security;
+use Cake\ORM\TableRegistry;
 
 /**
  * Admin Controller
@@ -79,6 +84,7 @@ class AdminController extends AppController
      */
     public function edit($id = null)
     {
+        $this->layout ='admin';
         $admin = $this->Admin->get($id, [
             'contain' => []
         ]);
@@ -94,7 +100,24 @@ class AdminController extends AppController
 
         $this->set(compact('admin'));
     }
+    public function changepassword($id = null)
+    {
+        $this->layout ='admin';
+        $admin = $this->Admin->get($id, [
+            'contain' => []
+        ]);
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $admin = $this->Admin->patchEntity($admin, $this->request->getData());
+            if ($this->Admin->save($admin)) {
+                $this->Flash->success(__('The admin has been saved.'));
 
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('The admin could not be saved. Please, try again.'));
+        }
+
+        $this->set(compact('admin'));
+    }
     /**
      * Delete method
      *
@@ -118,7 +141,7 @@ class AdminController extends AppController
     public function forgotpassword(){
         if($this->request->is('post')){
             $myemail = $this->request->getData('email');
-            $mytoken = '/'.Security::hash(Security::randomBytes(25));
+            $mytoken = Security::hash(Security::randomBytes(25));
 
             $adminTable = TableRegistry::get('admin');
             $admin = $adminTable->find('all')->where(['email'=>$myemail])->first();
@@ -131,7 +154,7 @@ class AdminController extends AppController
                 $email->setFrom(['allsortMary@gmail.com' => 'All Sorters'])
                     ->setTo($myemail)
                     ->setTemplate('default')
-                    ->setViewVars(['title' => "Reset Password", 'content'=> 'Hello '.$myemail.' Please click link below to reset your password: http://localhost:8765/admin/resetpassword'.$mytoken])
+                    ->setViewVars(['title' => "Reset Password", 'content'=> 'Hello '.$myemail.' Please click link below to reset your password: http://localhost:8765/admin/resetpassword/'.$mytoken])
                     ->setSubject("Please confirm your reset password");
                 $email->send();
             }
@@ -139,7 +162,7 @@ class AdminController extends AppController
     }
 
     public function resetpassword($token){
-        debug($token);
+//        debug($token);
 //        if($this->request->is('post')){
 ////            $hasher = new DefaultPasswordHasher();
 //            $mypass = $this->request->getData('password');
@@ -150,24 +173,19 @@ class AdminController extends AppController
 //                return $this->redirect(['action'=>'login']);
 //            }
 //        }
-            $adminTable = TableRegistry::get('admin');
-            $admin = $adminTable->find('all')->where(['token'=>'/'.$token])->first();
-            debug($admin);
-            $this->request->is('post');
-            $mypass = $this->request->getData('password');
-            debug($mypass);
-            $admin->password = $mypass;
-            $adminTable->save($admin);
+        $adminTable = TableRegistry::get('admin');
+        $admin = $adminTable->find('all')->where(['token'=>$token])->first();
+        debug($admin);
+        $this->request->is('post');
+        $mypass = $this->request->getData('password');
+        debug($mypass);
+        $admin->password = $mypass;
+        $adminTable->save($admin);
     }
+
+
     public function login(){
         if($this->request->is('post')){
-            if($this->request->getData('username')==''){
-                $this->set('usernameError','User name cannot be empty.');
-            }
-            if($this->request->getData('password')==''){
-                $this->set('passwordError','Password cannot be empty.');
-            }
-
             $user= $this->Auth->identify();
             if($user){
                 $this->Auth->setUser($user);
