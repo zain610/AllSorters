@@ -15,6 +15,7 @@
 namespace App\Controller;
 
 use Cake\Controller\Controller;
+use Cake\Datasource\ConnectionManager;
 use Cake\Event\Event;
 
 
@@ -93,6 +94,11 @@ class AppController extends Controller
         } else{
             $this->set('loggedIn',false);
         }
+        //get admin details
+        $connection = ConnectionManager::get('default');
+        $admin_details = $connection->execute('Select * from admin') ->fetchAll('assoc');
+        $this->set('admin', $admin_details);
+
 
         return parent::beforeFilter($event);
 

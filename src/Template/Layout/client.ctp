@@ -11,6 +11,7 @@
     <?= $this->Html->css('slick.css') ?>
     <?= $this->Html->css('slick-theme.css') ?>
     <?= $this->Html->css('chocolat.css') ?>
+    <script src="https://kit.fontawesome.com/7f5e59b82c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 
@@ -37,6 +38,7 @@
 <?= $this->Html->script('move-top.js') ?>
 <?= $this->Html->script('easing.js') ?>
 <?= $this->Html->script('slick.js') ?>
+
 
 <script type="text/javascript">
     $(document).ready(function($) {

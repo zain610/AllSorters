@@ -37,7 +37,6 @@ class EventsController extends AppController
         parent::initialize();
 
         $this->loadModel('Events');
-        $this->Auth->allow(['index']);
     }
 
     public function isAuthorized()
