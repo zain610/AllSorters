@@ -65,7 +65,7 @@ class ServiceController extends AppController
 
             for($i=0;$i<count($data);$i++){
                 if($data[$i]!=0){
-                   $formData['image']['_ids'][$i] = $data[$i];
+                    $formData['image']['_ids'][$i] = $data[$i];
                 }
             }
             $service = $this->Service->patchEntity($service, $formData);

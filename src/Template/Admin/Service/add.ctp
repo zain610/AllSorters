@@ -10,8 +10,6 @@ $this->Html->script('/TinyMCE/js/tiny_mce/tiny_mce.js', array(
 ?>
 <?php echo $this->Html->css('image_checkbox'); ?>
 
-
-
 <div class="col-md-8">
    <div class="content table-responsive table-full-width">
        <div class="card">
@@ -22,8 +20,6 @@ $this->Html->script('/TinyMCE/js/tiny_mce/tiny_mce.js', array(
                 echo $this->Form->control('Service_Title', ['id' =>'serviceTitleInput']);
                 echo $this->Form->control('Service_Description');
                 echo $this->Form->control('Service_Detail',['type' => 'textarea', 'id' => 'ServiceDetailInput' ]);
-//                echo $this->Form->control('image._ids', ['options' => $image]);
-
                 ?>
                 <ul>
                     <?php foreach ($img_ob as $img):?>

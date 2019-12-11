@@ -91,10 +91,10 @@ class BlogPostController extends AppController
                     $formData['image']['_ids'][$i] = $data[$i];
                 }
             }
-            $blogPost = $this->BlogPost->patchEntity($blogPost, $formData);
             $blogPost->Date = time();
             $blogPost->Published = 1;
             $blogPost->Archived = 0;
+            $blogPost = $this->BlogPost->patchEntity($blogPost, $formData);
             if ($this->BlogPost->save($blogPost)) {
                 $this->Flash->success(__('The blog post has been saved.'));
 
@@ -209,7 +209,9 @@ class BlogPostController extends AppController
         }
         $image = $this->BlogPost->Image->find('list', [
             'limit' => 200
+
             ]);
+
         $img_ob = $this->BlogPost->Image->find('all');
 
         $this->set(compact('blogPost','image','img_ob'));

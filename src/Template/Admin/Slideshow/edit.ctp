@@ -19,8 +19,7 @@
     <fieldset>
         <legend><?= __('Edit Slideshow') ?></legend>
         <?php
-            echo $this->Form->control('Captions');
-        ?>
+            echo $this->Form->control('Captions');?>
         <ul>
             <?php foreach ($img_ob as $img):?>
                 <li><?= $this->Form->checkbox('checkbox[]', ['id'=>$img->Image_id,'value'=>$img->Image_id,'onclick'=>'onlyOne(this)']); ?>

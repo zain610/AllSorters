@@ -1,7 +1,7 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \App\Model\Entity\Slideshow $slideshow
+ * @var \App\Model\Entity\Product $product
  */
 ?>
 <?php echo $this->Html->css('image_checkbox'); ?>
@@ -13,17 +13,16 @@
         })
     }
 </script>
-
-
-<div class="slideshow form large-9 medium-8 columns content">
-    <?= $this->Form->create($slideshow); ?>
+<div class="product form large-9 medium-8 columns content">
+    <?= $this->Form->create($product) ?>
     <fieldset>
-        <legend><?= __('Add Slideshow') ?></legend>
+        <legend><?= __('Edit Product') ?></legend>
         <?php
-            echo $this->Form->control('Captions');
+            echo $this->Form->control('name');
+            echo $this->Form->control('description');
+            echo $this->Form->control('price');
+            echo $this->Form->control('stock');
         ?>
-    </fieldset>
-    <fieldset>
         <ul>
             <?php foreach ($img_ob as $img):?>
                 <li><?= $this->Form->checkbox('checkbox[]', ['id'=>$img->Image_id,'value'=>$img->Image_id,'onclick'=>'onlyOne(this)']); ?>
@@ -32,10 +31,7 @@
                 </li>
             <?php endforeach; ?>
         </ul>
-
     </fieldset>
-
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
-
 </div>
