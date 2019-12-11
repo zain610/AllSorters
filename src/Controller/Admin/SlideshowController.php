@@ -72,7 +72,15 @@ class SlideshowController extends AppController
         if ($this->request->is('post')) {
 
             $slideshow = $this->Slideshow->patchEntity($slideshow, $this->request->getData());
+
             $data = $this->request->getData('checkbox');
+
+            for($i=0;$i<count($data);$i++){
+                if($data[$i]!=0){
+                    $index = $data[$i];
+                }
+            }
+            $slideshow->Image_id = $index;
 
             if ($this->Slideshow->save($slideshow)) {
                 $this->Flash->success(__('The slideshow has been saved.'));
@@ -101,6 +109,14 @@ class SlideshowController extends AppController
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $slideshow = $this->Slideshow->patchEntity($slideshow, $this->request->getData());
+            $data = $this->request->getData('checkbox');
+//            debug($data);
+            for($i=0;$i<count($data);$i++){
+                if($data[$i]!=0){
+                    $index = $data[$i];
+                }
+            }
+            $slideshow->Image_id = $index;
             if ($this->Slideshow->save($slideshow)) {
                 $this->Flash->success(__('The slideshow has been saved.'));
 
@@ -109,7 +125,9 @@ class SlideshowController extends AppController
             $this->Flash->error(__('The slideshow could not be saved. Please, try again.'));
         }
         $image = $this->Slideshow->Image->find('list', ['limit' => 200]);
-        $this->set(compact('slideshow', 'image'));
+        $img_ob = $this->Slideshow->Image->find('all');
+
+        $this->set(compact('slideshow', 'image','img_ob'));
     }
 
     /**

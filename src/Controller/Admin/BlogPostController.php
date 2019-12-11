@@ -78,10 +78,18 @@ class BlogPostController extends AppController
         $this->layout ='admin';
         $blogPost = $this->BlogPost->newEntity();
         if ($this->request->is('post')) {
-            $blogPost = $this->BlogPost->patchEntity($blogPost, $this->request->getData());
+            $data = $this->request->getData('checkbox');
+            $formData = $this->request->getData();
+
+            for($i=0;$i<count($data);$i++){
+                if($data[$i]!=0){
+                    $formData['image']['_ids'][$i] = $data[$i];
+                }
+            }
             $blogPost->Date = time();
             $blogPost->Published = 1;
             $blogPost->Archived = 0;
+            $blogPost = $this->BlogPost->patchEntity($blogPost, $formData);
             if ($this->BlogPost->save($blogPost)) {
                 $this->Flash->success(__('The blog post has been saved.'));
 
@@ -90,10 +98,11 @@ class BlogPostController extends AppController
             $this->Flash->error(__('The blog post could not be saved. Please, try again.'));
         }
         $image = $this->BlogPost->Image->find('list', [
-			'keyField' => 'Image_id',
-			'valueField' => 'name'
-		]);
-        $this->set(compact('blogPost', 'image'));
+            'limit' => 200
+        ]);
+        $img_ob = $this->BlogPost->Image->find('all');
+
+        $this->set(compact('blogPost','image','img_ob'));
 
 
     }
@@ -165,7 +174,15 @@ class BlogPostController extends AppController
             'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $blogPost = $this->BlogPost->patchEntity($blogPost, $this->request->getData());
+            $data = $this->request->getData('checkbox');
+            $formData = $this->request->getData();
+
+            for($i=0;$i<count($data);$i++){
+                if($data[$i]!=0){
+                    $formData['image']['_ids'][$i] = $data[$i];
+                }
+            }
+            $blogPost = $this->BlogPost->patchEntity($blogPost, $formData);
             if ($this->BlogPost->save($blogPost)) {
                 $this->Flash->success(__('The blog post has been saved.'));
 
@@ -174,10 +191,11 @@ class BlogPostController extends AppController
             $this->Flash->error(__('The blog post could not be saved. Please, try again.'));
         }
         $image = $this->BlogPost->Image->find('list', [
-            'keyField' => 'Image_id',
-            'valueField' => 'name'
-            ]);
-        $this->set(compact('blogPost','image'));
+            'limit' => 200
+        ]);
+        $img_ob = $this->BlogPost->Image->find('all');
+
+        $this->set(compact('blogPost','image','img_ob'));
     }
 
     /**K
