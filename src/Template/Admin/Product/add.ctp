@@ -1,7 +1,7 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \App\Model\Entity\Slideshow $slideshow
+ * @var \App\Model\Entity\BlogPost $blogPost
  */
 ?>
 <?php echo $this->Html->css('image_checkbox'); ?>
@@ -14,14 +14,15 @@
     }
 </script>
 
-
-<div class="slideshow form large-9 medium-8 columns content">
-    <?= $this->Form->create($slideshow); ?>
+<div class="card">
+    <?= $this->Form->create($product) ?>
     <fieldset>
-        <legend><?= __('Add Slideshow') ?></legend>
+        <legend><?= __('Add Product') ?></legend>
         <?php
-        echo $this->Form->control('Captions');
-        //            echo $this->Form->control('Image_id', ['options' => $image]);
+            echo $this->Form->control('name');
+            echo $this->Form->control('description');
+            echo $this->Form->control('price');
+            echo $this->Form->control('stock');
         ?>
     </fieldset>
     <fieldset>
@@ -33,10 +34,10 @@
                 </li>
             <?php endforeach; ?>
         </ul>
-
     </fieldset>
-
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Html->link(__('Back'), $this->request->referer(), ['class' => 'btn btn-oval btn-primary','style'=>'float:left']) ?>
+    <?= $this->Form->button(__('Submit'), ['formnovalidate' => true]) ?>
     <?= $this->Form->end() ?>
 
 </div>
+

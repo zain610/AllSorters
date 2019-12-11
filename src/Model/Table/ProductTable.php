@@ -71,9 +71,11 @@ class ProductTable extends Table
             ->integer('stock')
             ->allowEmptyString('stock', false);
 
+
+
         $validator
-            ->date('Create')
-            ->allowEmptyDate('Create');
+            ->boolean('Archived')
+            ->allowEmpty('Archived');
 
         return $validator;
     }

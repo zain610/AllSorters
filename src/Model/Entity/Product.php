@@ -32,8 +32,8 @@ class Product extends Entity
         'description' => true,
         'price' => true,
         'stock' => true,
-        'Create' => true,
         'Image_id' => true,
-        'image' => true
+        'image' => true,
+        'achieved' => true
     ];
 }
