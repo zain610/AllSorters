@@ -28,6 +28,7 @@
                         <li><?= $this->Html->link('Speaking Engagements', ['controller' => 'Events', 'action' => 'index'], ['class' => 'navbar-brand']) ?></li>
                         <li><?= $this->Html->link('Tips', ['controller' => 'Tips', 'action' => 'index'], ['class' => 'navbar-brand']) ?></li>
                         <li><?= $this->Html->link('Favourites', ['controller' => 'Favourites', 'action' => 'index'], ['class' => 'navbar-brand']) ?></li>
+                        <li><?= $this->Html->link('Reviews', ['controller' => 'Review', 'action' => 'index'], ['class' => 'navbar-brand']) ?></li>
 
                     </ul>
                 </div>

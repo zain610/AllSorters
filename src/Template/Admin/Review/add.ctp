@@ -17,6 +17,7 @@ $this->Html->script('/TinyMCE/js/tiny_mce/tiny_mce.js', array(
                 <?php
                 echo $this->Form->control('Client_Name', ['id' =>'clientNameInput']);
                 echo $this->Form->control('Suburb');
+                echo $this->Form->control('Month_Year',['type'=> 'date']);
                 echo $this->Form->control("Review_Details", ['type' => 'textarea', 'id' => 'reviewInput' ] )
                 ?>
 
