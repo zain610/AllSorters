@@ -75,8 +75,10 @@
             dots: true,
             infinite: true,
             speed: 300,
-            slidesToShow: 1,
-            adaptiveHeight: true
+            slidesToShow: 1 ,
+            adaptiveHeight: true,
+            nextArrow: '<i class="fa fa-arrow-right"></i>',
+            prevArrow: '<i class="fa fa-arrow-left"></i>',
 
         });
     });
