@@ -14,9 +14,9 @@ $this->Html->script('/TinyMCE/js/tiny_mce/tiny_mce.js', array(
         <legend><?= __('Edit Review') ?></legend>
         <?php
             echo $this->Form->control('Client_Name');
-            echo $this->Form->control('Month_Year', ['empty' => true]);
+            echo $this->Form->control('Month_Year', ['type'=> 'date']);
             echo $this->Form->control('Suburb');
-            echo $this->Form->control('Review_Details');
+            echo $this->Form->control('Review_Details',['type' => 'textarea']);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

@@ -54,7 +54,7 @@ class ReviewTable extends Table
             ->notEmpty('Client_Name',false,false);
 
         $validator
-            ->dateTime('Month_Year')
+            ->date('Month_Year')
             ->allowEmpty('Month_Year',false);
 
         $validator
@@ -64,7 +64,6 @@ class ReviewTable extends Table
 
         $validator
             ->scalar('Review_Details')
-            ->maxLength('Review_Details', 255)
             ->allowEmpty('Review_Details',false);
 
         return $validator;
