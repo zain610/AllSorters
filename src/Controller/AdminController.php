@@ -104,10 +104,12 @@ class AdminController extends AppController
     {
         $this->layout ='admin';
         $admin = $this->Admin->find()->firstOrFail();
-        debug($admin);
-        if ($this->request->is(['patch', 'post', 'put'])) {
-            $admin = $this->Admin->patchEntity($admin, $this->request->getData());
 
+        if ($this->request->is(['patch', 'post', 'put'])) {
+
+            $admin = $this->Admin->patchEntity($admin, $this->request->getData());
+//            debug($this->request->getData('password'));
+//            debug($this->request->getData('confirm_password'));
             if ($this->Admin->save($admin)) {
                 $this->Flash->success(__('The admin has been saved.'));
 
