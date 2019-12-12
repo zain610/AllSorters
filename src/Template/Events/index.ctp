@@ -1,3 +1,10 @@
+<?php
+/**
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\Request[]|\Cake\Collection\CollectionInterface $webpage
+ * @var \App\Model\Entity\Request[]|\Cake\Collection\CollectionInterface $event
+ */
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,6 +101,19 @@
         <h3>Speaking Engagements</h3>
     </div>
 </div>
+
+<?php foreach ($webpage as $webpage): ?>
+    <?php $val= h($webpage['Webpage'])?>
+    <?php if ($val === 'Events') { ?>
+        <?php $heading = h($webpage['Heading']) ?>
+        <div class="services">
+            <div class="container">
+                <h3> <?php echo $heading ?> </h3>
+            </div>
+        </div>
+
+    <?php } ?>
+<?php endforeach ?>
 <div class="title">
     <h3>Upcoming Speaking Engagements</h3>
 </div>

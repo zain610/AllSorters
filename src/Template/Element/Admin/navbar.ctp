@@ -17,6 +17,7 @@ $isBookingActive = $currentController === "Admin" && $currentAction === 'booking
 $isAboutActive = $currentController === "About";
 $isTipsActive = $currentController === "Tips";
 $isFavouritesActive = $currentController === "Favourites";
+$isWebpagesActive = $currentController === "Webpages";
 
 
 
@@ -40,6 +41,13 @@ $isFavouritesActive = $currentController === "Favourites";
             <?= $this->Html->link(
                 '<p>Booking</p>',
                 ['prefix' => false, 'controller' => 'Admin', 'action' => 'booking'],
+                ['escape' => false]
+            ) ?>
+        </li>
+        <li class="<?= $isWebpagesActive ? 'active' : '' ?> dropdown">
+            <?= $this->Html->link(
+                '<p>Edit headings & webpage content</p>',
+                ['prefix' => false, 'controller' => 'Admin', 'action' => 'Webpages'],
                 ['escape' => false]
             ) ?>
         </li>
@@ -324,6 +332,7 @@ $isFavouritesActive = $currentController === "Favourites";
             </ul>
 
         </li>
+
 
     </ul>
 </div>

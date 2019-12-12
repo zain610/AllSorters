@@ -8,7 +8,8 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string $Content
- * @property string $Webpage_name
+ * @property string $Heading
+ * @property string $Webpage
  */
 class Webpage extends Entity
 {
@@ -24,6 +25,7 @@ class Webpage extends Entity
      */
     protected $_accessible = [
         'Content' => true,
-        'Webpage_name' => true
+        'Heading' => true,
+        'Webpage' => true
     ];
 }
