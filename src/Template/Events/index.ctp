@@ -96,21 +96,17 @@
 </style>
 
 
-<div class="services">
-    <div class="container">
-        <h3>Speaking Engagements</h3>
-    </div>
-</div>
-
-<?php foreach ($webpage as $webpage): ?>
-    <?php $val= h($webpage['Webpage'])?>
-    <?php if ($val === 'Events') { ?>
-        <?php $heading = h($webpage['Heading']) ?>
+<?php foreach ($webpages as $webpage): ?>
+    <?php $name = $webpage -> Webpage;?>
+    <?php if ($name === 'Speaking Engagements') { ?>
+        <?php $heading = $webpage -> Heading; ?>
+        <?php $content = $webpage -> Content; ?>
         <div class="services">
             <div class="container">
                 <h3> <?php echo $heading ?> </h3>
             </div>
         </div>
+        <p><?php echo $content ?></p>
 
     <?php } ?>
 <?php endforeach ?>

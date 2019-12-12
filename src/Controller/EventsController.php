@@ -40,7 +40,9 @@ class EventsController extends AppController
 
         $events = $this->Events->find('all')->contain([])->order(['Events.Date'=>'Desc']);
 
-        $this->set(compact('events'));
+        $this->loadModel("Webpages");
+        $webpages = $this->Webpages->find('all');
+        $this->set(compact('events','webpages'));
     }
 
 
@@ -103,6 +105,7 @@ class EventsController extends AppController
         }
         $this->set(compact('event'));
     }
+
 
     /**
      * Delete method
