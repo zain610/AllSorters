@@ -31,11 +31,14 @@ class ReviewController extends AppController
     {
         $review = $this->paginate($this->Review);
 
-        $this->set(compact('review'));
+        //$this->set(compact('review'));
         $this->loadModel('review');
         $this->Auth->allow(['index']);
         $this->Auth->allow(['home']);
         $this->viewBuilder()->setLayout('client');
+        $this->loadModel("Webpages");
+        $webpages = $this->Webpages->find('all');
+        $this->set(compact('review','webpages'));
     }
 
     /**

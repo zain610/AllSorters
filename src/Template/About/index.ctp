@@ -64,12 +64,17 @@
     </style>
 </head>
 <body>
-
-<div class="heading">
-        <h1>About Us</h1>
-</div>
-<br>
-<br>
+<?php foreach ($webpages as $webpage): ?>
+    <?php $name = $webpage -> Webpage;?>
+    <?php if ($name === 'About') { ?>
+        <?php $heading = $webpage -> Heading; ?>
+        <div class="services">
+            <div class="container">
+                <h3> <?php echo $heading ?> </h3>
+            </div>
+        </div>
+    <?php } ?>
+<?php endforeach ?>
 
 <?php foreach ($about as $about): ?>
 

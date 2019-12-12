@@ -13,11 +13,7 @@ use App\Controller\AppController;
 class AboutController extends AppController
 {
 
-    /**
-     * Index method
-     *
-     * @return \Cake\Http\Response|void
-     */
+
 
     public function initialize()
     {
@@ -34,6 +30,11 @@ class AboutController extends AppController
         return $this->Auth->user('role') > 2;
     }
 
+    /**
+     * Index method
+     *
+     * @return \Cake\Http\Response|void
+     */
     public function index()
     {
         $this->loadModel('About');
@@ -42,8 +43,9 @@ class AboutController extends AppController
         $this->viewBuilder()->setLayout('client');
 
         $about = $this->paginate($this->About);
-
-        $this->set(compact('about'));
+        $this->loadModel("Webpages");
+        $webpages = $this->Webpages->find('all');
+        $this->set(compact('about','webpages'));
     }
 
     /**

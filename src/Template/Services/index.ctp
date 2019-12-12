@@ -7,10 +7,16 @@
 <body>
 <!-- header -->
 
-<div class="services">
-    <div class="container">
-        <div class="camp">
-            <h3>Services</h3>
+<?php foreach ($webpages as $webpage): ?>
+    <?php $name = $webpage -> Webpage;?>
+    <?php if ($name === 'Services') { ?>
+        <?php $heading = $webpage -> Heading; ?>
+        <div class="services">
+            <div class="container">
+                <div class="camp">
+                <h3> <?php echo $heading ?> </h3>
+    <?php } ?>
+<?php endforeach ?>
             <div id="searchBarNavBar" class="col-md-12">
                 <?= $this->element('Client/Buttons/search'); ?>
             </div>

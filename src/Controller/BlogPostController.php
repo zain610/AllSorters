@@ -39,10 +39,13 @@ class BlogPostController extends AppController
         );
         $this->viewBuilder()->setLayout('client');
 
-        $this->set(compact('blogPost'));
+        //$this->set(compact('blogPost'));
         //$blogPost = $this->paginate($this->BlogPost);
 
         //$this->set(compact('blogPost'));
+        $this->loadModel("Webpages");
+        $webpages = $this->Webpages->find('all');
+        $this->set(compact('blogPost','webpages'));
     }
     public function view($id = null){
         $this->loadComponent('Paginator');

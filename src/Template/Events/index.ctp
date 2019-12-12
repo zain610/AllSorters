@@ -106,8 +106,9 @@
                 <h3> <?php echo $heading ?> </h3>
             </div>
         </div>
+<div class="container">
         <p><?php echo $content ?></p>
-
+</div>
     <?php } ?>
 <?php endforeach ?>
 <div class="title">
