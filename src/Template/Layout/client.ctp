@@ -11,6 +11,7 @@
     <?= $this->Html->css('slick.css') ?>
     <?= $this->Html->css('slick-theme.css') ?>
     <?= $this->Html->css('chocolat.css') ?>
+    <script src="https://kit.fontawesome.com/7f5e59b82c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 
@@ -37,6 +38,7 @@
 <?= $this->Html->script('move-top.js') ?>
 <?= $this->Html->script('easing.js') ?>
 <?= $this->Html->script('slick.js') ?>
+
 
 <script type="text/javascript">
     $(document).ready(function($) {
@@ -79,6 +81,26 @@
         });
     });
 </script>
+<!-- Script for creating sticky navbars  -->
+<script type="text/javascript">
+    // When the user scrolls the page, execute myFunction
+    window.onscroll = function() {myFunction()};
 
+    // Get the navbar
+    var navbar = document.getElementById("navbar");
+
+    // Get the offset position of the navbar
+    var sticky = navbar.offsetHeight;
+
+    // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+    function myFunction() {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+        } else {
+            navbar.classList.remove("sticky");
+        }
+    }
+
+</script>
 
 </html>

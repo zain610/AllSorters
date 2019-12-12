@@ -40,13 +40,15 @@
     <hr style="border-top: 2px solid darkslategray">
     <div class="" style="">
         <div style="display: flex">
-            <div class="form-check form-check-inline" style="width: 100%; display: inline-flex">
-                <h4 style="width: 60%">Select Users to send email to</h4>
+            <div class="form-check form-check-inline" style="width: 100%; display: inline-flex; margin: 1rem">
+                <h4 style="width: 60%;margin-right: 1rem; margin-top: auto">Select Users to send email to</h4>
+                <div style="float: right;width: 30%; border: 2px solid #bf3228; border-radius: 15px; margin-left: auto; padding: 0 1rem;">
+                    <h4>Add a subscriber</h4>
+                    <?= $this->element('Client/subscribe'); ?>
 
-
-                <input onclick="toggle(this)" class="" type="checkbox" id="selectAll" value="selectAll">
-                <label class="form-check-label" for="selectAll">Select all</label>
+                </div>
             </div>
+
         </div>
         <div class="container">
 
@@ -75,5 +77,6 @@
     <?= $this->Form->button('Submit', ['class'=>'btn btn-primary']); ?>
 
     <?=  $this->Form->end(); ?>
+
 
 </div>

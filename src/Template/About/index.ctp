@@ -65,21 +65,19 @@
 </head>
 <body>
 
-
-<div class="services">
-    <div class="container">
-        <h3>About Us</h3>
-    </div>
+<div class="heading">
+        <h1>About Us</h1>
 </div>
+<br>
+<br>
 
-<div  style="margin-top: -70px">
 <?php foreach ($about as $about): ?>
 
     <button type="button" class="collapsible"><?php echo $about->Title ?></button>
     <div class="content">
-        <p> <br>
+        <p>
             <?php echo $about->Content ?>
-            <br><br>
+
         </p>
     </div>
     <br>
@@ -106,6 +104,6 @@
         });
     }
 </script>
-</div>
+
 </body>
 </html>

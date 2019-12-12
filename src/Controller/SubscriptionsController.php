@@ -16,7 +16,7 @@ class SubscriptionsController extends AppController
     {
         parent::initialize();
         $this->loadModel('Subsriptions');
-        $this->Auth->allow(['index','view']);
+        $this->Auth->allow(['index','view', 'add']);
     }
 
     /**
@@ -60,7 +60,7 @@ class SubscriptionsController extends AppController
             if ($this->Subscriptions->save($subscription)) {
                 $this->Flash->success(__('The subscription has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['prefix' => false, 'controller' => 'Articles', 'action' => 'home']);
             }
             $this->Flash->error(__('The subscription could not be saved. Please, try again.'));
         }

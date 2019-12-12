@@ -31,6 +31,9 @@
                         'title' => 'Names can only contain letters',
                         'formnovalidate' => true
                     ]); ?>
+                    <?php if(isset($fnameerror)){ ?>
+                    <p style="color: red;font-weight: bold"><?php echo $fnameerror ?></p>
+                    <?php } ?>
                 </div>
                 <div class="col-md-6" style="margin-top: 20px">
                     <?php echo $this->Form->control('Cust_Sname',[
@@ -43,6 +46,9 @@
                         'pattern' => '[a-zA-Z]+',
                         'title' => 'Names can only contain letters',
                     ]); ?>
+                    <?php if(isset($snameerror)){ ?>
+                    <p style="color: red;font-weight: bold"><?php echo $snameerror?></p>
+                    <?php } ?>
                 </div>
 
                 <div class="col-md-6" style="margin-top: 20px">
@@ -52,6 +58,9 @@
                         'required'=>false,
                         'class' => 'form-control'
                     ]); ?>
+                    <?php if(isset($emailError)){ ?>
+                    <p style="color: red;font-weight: bold"><?php echo $emailError?></p>
+                    <?php } ?>
                 </div>
                 <div class="col-md-6" style="margin-top: 20px">
                     <?php echo $this->Form->control('Phone',[
@@ -63,6 +72,9 @@
                         'pattern' => '^04(\s?[0-9]{2}\s?)([0-9]{3}\s?[0-9]{3}|[0-9]{2}\s?[0-9]{2}\s?[0-9]{2})$',
                         'title' => 'Mobile numbers must start with "04" and be 10 digits in length'
                     ]); ?>
+                    <?php if(isset($PhoneError)){ ?>
+                    <p style="color: red;font-weight: bold"><?php echo $PhoneError?></p>
+                    <?php } ?>
                 </div>
 
                     <div class="col-md-12" style="margin-top: 20px">
