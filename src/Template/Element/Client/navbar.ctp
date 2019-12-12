@@ -34,6 +34,7 @@
                         <li><?= $this->Html->link('Speaking Engagements', ['controller' => 'Events', 'action' => 'index'], ['class' => 'navbar-brand','style'=>'margin-top: -27px']) ?></li>
                         <li><?= $this->Html->link('Tips', ['controller' => 'Tips', 'action' => 'index'], ['class' => 'navbar-brand','style'=>'margin-top: -27px']) ?></li>
                         <li><?= $this->Html->link('Favourites', ['controller' => 'Favourites', 'action' => 'index'], ['class' => 'navbar-brand','style'=>'margin-top: -27px']) ?></li>
+                        <li><?= $this->Html->link('Testimonials', ['controller' => 'Review', 'action' => 'index'], ['class' => 'navbar-brand','style'=>'margin-top: -27px']) ?></li>
                         <li><?= $this->Html->link('Book Shop', ['controller' => 'Product', 'action' => 'index'], ['class' => 'navbar-brand','style'=>'margin-top: -27px']) ?></li>
 
                     </ul>
