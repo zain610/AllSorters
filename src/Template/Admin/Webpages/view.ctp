@@ -12,8 +12,11 @@
         <div class="leftcolumn">
             <h4>Heading: </h4>
             <p><?php echo $webpage->Heading?></p>
-            <h4>Content: </h4>
-            <p><?php echo $webpage->Content?></p>
+            <?php $val= h($webpage['Webpage']); ?>
+            <?php if ($val === 'Speaking Engagements') {?>
+                <h4>Content: </h4>
+                <p> <?php echo $webpage->Content ?></p>
+            <?php } ?>
         </div>
     </div>
 </div>
