@@ -14,6 +14,16 @@ table tr th, table tr td {
 .sidebar .nav {
     display:block;
 }
+.sidebar .nav li > a {
+    display: flex;
+    align-items: center;
+}
+.dropdown-toggle::after {
+    border-top: .5em solid;
+    border-right: .5em solid transparent;
+    border-bottom: 0;
+    border-left: .5em solid transparent;
+}
 .dropdown-menu {
     left: 10%;
 }
