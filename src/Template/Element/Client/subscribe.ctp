@@ -10,7 +10,7 @@ $prefix = $this->request->getParam('prefix');
 <div class="form-group">
     <?= $this->Form->create(null, ['url' => ['controller' => 'Subscriptions', 'action' => 'add'], 'method' => 'POST', 'id'=>'newsletter-form']);
     ?>
-    <fieldset style="width: 80%">
+    <fieldset style="width: 20rem">
         <?php
         echo "<br>";
         echo $this->Form->control('email_address', ['type' => 'email', 'placeholder'=> 'Enter Email','empty' => true, 'class' => 'form-control']);

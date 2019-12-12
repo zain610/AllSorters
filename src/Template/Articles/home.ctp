@@ -56,7 +56,7 @@
 </div>
 <hr>
 <div class="" style="display: flex">
-    <div class="container services inner-services " style="width: 70%; margin: 0 1rem; text-align: center">
+    <div class="container services inner-services " style="width: 70%; margin: 0 1rem; text-align: center; background: #f2f6ff;">
         <h3>Our Story</h3>
         <div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -68,8 +68,8 @@
         </div>
 
     </div>
-    <div class="container services inner-blogs" style="width: 30%; background-color: #3fa5ce; height: fit-content; margin-right: 0.75rem; border-radius: 15px;">
-        <h3>Recent Blogs</h3>
+    <div class="container services inner-blogs" style="width: 30%; background-color: #f7d2e3; height: fit-content; margin-right: 0.75rem; border-radius: 15px;">
+        <h3>Mary's Recent Blogs</h3>
         <div class="blogs-carousel ">
             <?php foreach ($blogs as $blog) { ?>
                 <div class="card ">
@@ -92,7 +92,9 @@
 <hr>
 <div class="container" id="newsletter-signup" style="margin-bottom: 1rem">
 
-    <div>
+    <div style="display: flex;
+    align-items: flex-end;
+    justify-content: flex-start; padding: 1rem 0">
         <h3>Sign Up to our Newsletter!</h3>
 
         <?= $this->element('Client/subscribe'); ?>
@@ -100,6 +102,8 @@
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 
 </div>
+<hr>
+
 
 
 
