@@ -15,6 +15,7 @@ $isBookingActive = $currentController === "Admin" && $currentAction === 'booking
 $isAboutActive = $currentController === "About";
 $isTipsActive = $currentController === "Tips";
 $isFavouritesActive = $currentController === "Favourites";
+$isProductActive = $currentController === "Product";
 
 
 use App\Model\Entity\Footer; ?>
@@ -264,8 +265,6 @@ use App\Model\Entity\Footer; ?>
 
         </li>
 
-
-
         <li class="<?= $isFooterActive ? 'active' : '' ?> dropdown">
             <?= $this->Html->link(
                 '<p>Footer</p>',
@@ -274,6 +273,13 @@ use App\Model\Entity\Footer; ?>
             ) ?>
         </li>
 
+        <li class="<?= $isProductActive ? 'active' : '' ?> dropdown">
+            <?= $this->Html->link(
+                '<p>Product</p>',
+                ['prefix' => 'admin', 'controller' => 'Product', 'action' => 'index'],
+                ['escape' => false]
+            ) ?>
+        </li>
 
     </ul>
 </div>

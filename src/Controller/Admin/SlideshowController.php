@@ -113,10 +113,10 @@ class SlideshowController extends AppController
 //            debug($data);
             for($i=0;$i<count($data);$i++){
                 if($data[$i]!=0){
-                    $index = $data[$i];
+                    $slideshow ->Image_id  = $data[$i];
                 }
             }
-            $slideshow->Image_id = $index;
+
             if ($this->Slideshow->save($slideshow)) {
                 $this->Flash->success(__('The slideshow has been saved.'));
 

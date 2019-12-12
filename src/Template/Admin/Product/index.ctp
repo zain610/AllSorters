@@ -31,7 +31,12 @@
                 <td><?= $this->Number->format($product->price) ?></td>
                 <td class="actions">
                     <?= $this->element('Admin/Buttons/edit', ['url' => ['action' => 'edit', $product->product_id]]) ?>
-                    <?= $this->element('Admin/Buttons/archive', ['url' => ['action' => 'archive', $product->product_id]]) ?>
+                    <?php if ($product->achieved){
+                        echo $this->element('Admin/Buttons/restore', ['url' => ['action' => 'restore', $product->product_id]]);
+                    }else{
+                        echo $this->element('Admin/Buttons/archive', ['url' => ['action' => 'archive', $product->product_id]]);
+                    }
+                    ?>
                     <?= $this->element('Admin/Buttons/delete', ['url' => ['action' => 'delete', $product->product_id]]) ?>
                 </td>
             </tr>

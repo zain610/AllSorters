@@ -13,13 +13,13 @@
         })
     }
 </script>
-<div class="product form large-9 medium-8 columns content">
+<div class="card">
     <?= $this->Form->create($product) ?>
     <fieldset>
         <legend><?= __('Edit Product') ?></legend>
         <?php
             echo $this->Form->control('name');
-            echo $this->Form->control('description');
+            echo $this->Form->control('description', ['type' => 'textarea']);
             echo $this->Form->control('price');
             echo $this->Form->control('stock');
         ?>
