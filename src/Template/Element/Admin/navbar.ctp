@@ -17,6 +17,9 @@ $isTipsActive = $currentController === "Tips";
 $isFavouritesActive = $currentController === "Favourites";
 $isProductActive = $currentController === "Product";
 $isChangePWActive = $currentController === "Admin" && $currentAction === 'changepassword';
+$isWebpagesActive = $currentController === "Webpages";
+
+
 ?>
 
 
@@ -43,6 +46,14 @@ $isChangePWActive = $currentController === "Admin" && $currentAction === 'change
                 ['escape' => false]
             ) ?>
         </li>
+        <li class="<?= $isWebpagesActive ? 'active' : '' ?> dropdown">
+            <?= $this->Html->link(
+                '<p>Edit headings & webpage content</p>',
+                ['prefix' => false, 'controller' => 'Admin', 'action' => 'Webpages'],
+                ['escape' => false]
+            ) ?>
+        </li>
+
 
         <li class="<?= $isBlogsActive ? 'active' : '' ?> dropdown">
             <?= $this->Html->link(
