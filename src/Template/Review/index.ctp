@@ -68,12 +68,12 @@
         font-size: 22px;
     }
 </style>
-
-<div class="heading">
-    <h1>Client Feedback</h1>
+<div class="services">
+    <div class="container">
+        <h3>Client Feedback</h3>
+    </div>
 </div>
-<br>
-<br>
+
 
 <?php foreach ($review as $review): ?>
     <?php
