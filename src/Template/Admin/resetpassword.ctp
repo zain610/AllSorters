@@ -6,7 +6,7 @@
 ?>
 <div class="row">
     <div class = 'col-mid-4 offset-md-4'>
-        <?php echo $this->Flash->render() ?>
+        <?php echo $this->Flash->render('success') ?>
         <div class="card">
             <h3 class="card-header">Reset Password</h3>
             <div class="card-body">
