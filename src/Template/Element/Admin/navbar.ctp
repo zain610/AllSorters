@@ -16,9 +16,9 @@ $isAboutActive = $currentController === "About";
 $isTipsActive = $currentController === "Tips";
 $isFavouritesActive = $currentController === "Favourites";
 $isProductActive = $currentController === "Product";
+$isChangePWActive = $currentController === "Admin" && $currentAction === 'changepassword';
+?>
 
-
-use App\Model\Entity\Footer; ?>
 
 <div class="sidebar-wrapper">
     <div class="logo" >
@@ -26,6 +26,7 @@ use App\Model\Entity\Footer; ?>
             All Sorters
         </a>
     </div>
+
     <ul class="nav">
         <li class="<?= $isDashboardActive ? 'active' : '' ?> dropdown">
             <?= $this->Html->link(
@@ -159,52 +160,32 @@ use App\Model\Entity\Footer; ?>
                     )?></li>
             </ul>
         </li>
-        <li id="dropDownMenu" class="<?= $isQueriesActive ? 'active' : '' ?> dropdown">
+
+
+        <li class="<?= $isQueriesActive ? 'active' : '' ?> dropdown">
             <?= $this->Html->link(
                 '<p>Queries</p>',
-                '#',
-                ['escape' => false, 'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true',]
+                ['prefix' => 'admin', 'controller' => 'request', 'action' => 'index'],
+                ['escape' => false]
             ) ?>
-            <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
-                <li><?=$this->Html->link(
-                        '<p>View all Queries</p>',
-                        ['prefix'=>'admin','controller'=>'request','action'=>'index'],
-                        ['escape'=>false]
-                    )?></li>
-            </ul>
-
         </li>
-        <li id="dropDownMenu" class="<?= $isNewslettersActive ? 'active' : '' ?> dropdown">
+
+        <li class="<?= $isNewslettersActive ? 'active' : '' ?> dropdown">
             <?= $this->Html->link(
-                '<p>Newsletters</p>',
-                '#',
-                ['escape' => false, 'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true',]
+                '<p>Send Newsletters</p>',
+                ['prefix' => 'admin', 'controller' => 'subscriptions', 'action' => 'index'],
+                ['escape' => false]
             ) ?>
-            <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
-                <li><?=$this->Html->link(
-                        '<p>Send a Newsletter</p>',
-                        ['prefix'=>'admin','controller'=>'subscriptions','action'=>'index'],
-                        ['escape'=>false]
-                    )?></li>
-            </ul>
-
         </li>
 
-        <li id="dropDownMenu" class="<?= $isSlideShowActive ? 'active' : '' ?> dropdown">
+        <li class="<?= $isSlideShowActive ? 'active' : '' ?> dropdown">
             <?= $this->Html->link(
                 '<p>SlideShow</p>',
-                '#',
-                ['escape' => false, 'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true',]
+                ['prefix' => 'admin', 'controller' => 'Slideshow', 'action' => 'index'],
+                ['escape' => false]
             ) ?>
-            <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
-                <li><?=$this->Html->link(
-                        '<p>Manage Images</p>',
-                        ['prefix'=>'admin','controller'=>'Slideshow','action'=>'index'],
-                        ['escape'=>false]
-                    )?></li>
-            </ul>
-
         </li>
+
 
         <li id="dropDownMenu" class="<?= $isAboutActive ? 'active' : '' ?> dropdown">
             <?= $this->Html->link(
@@ -273,15 +254,25 @@ use App\Model\Entity\Footer; ?>
             ) ?>
         </li>
 
+
         <li class="<?= $isProductActive ? 'active' : '' ?> dropdown">
             <?= $this->Html->link(
                 '<p>Product</p>',
                 ['prefix' => 'admin', 'controller' => 'Product', 'action' => 'index'],
+                ['escape'=> false]
+                ) ?>
+        </li>
+
+        <li class="<?= $isChangePWActive ? 'active' : '' ?> dropdown">
+            <?= $this->Html->link(
+                '<p>Account Settings</p>',
+                ['prefix' => false, 'controller' => 'admin', 'action' => 'changepassword'],
                 ['escape' => false]
             ) ?>
         </li>
 
     </ul>
+
 </div>
 </div>
 <div class="main-panel">

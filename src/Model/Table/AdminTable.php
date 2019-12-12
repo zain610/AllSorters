@@ -64,6 +64,12 @@ class AdminTable extends Table
             ->notEmpty('password');
 
         $validator
+            ->scalar('confirm_password')
+            ->maxLength('confirm_password', 255)
+            ->requirePresence('confirm_password', 'create')
+            ->notEmpty('confirm_password');
+
+        $validator
             ->email('email')
             ->requirePresence('email', 'create')
             ->notEmpty('email');

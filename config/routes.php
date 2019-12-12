@@ -57,13 +57,14 @@ Router::scope('/', function (RouteBuilder $routes) {
 
     $routes->connect('/admin/forgotpassword/*', ['controller' => 'Admin', 'action' => 'forgotpassword']);
     $routes->connect('/admin/resetpassword/*', ['controller' => 'Admin', 'action' => 'resetpassword']);
+    $routes->connect('/admin/changepassword/*', ['controller' => 'Admin', 'action' => 'changepassword']);
 
     $routes->connect('/admin/booking', ['controller' => 'Admin', 'action' => 'booking']);
     $routes->connect('/admin/bookingdelete/*', ['controller' => 'Admin', 'action' => 'bookingdelete']);
-    $routes->connect('/admin/edit/*', ['prefix' => false, 'controller' => 'Admin', 'action' => 'edit']);
-    $routes->connect('/admin/view/*', ['prefix' => false, 'controller' => 'Admin', 'action' => 'view']);
-    $routes->connect('/admin/add/*', ['prefix' => false, 'controller' => 'Admin', 'action' => 'add']);
-    $routes->connect('/admin/delete/*', ['prefix' => false, 'controller' => 'Admin', 'action' => 'delete']);
+//    $routes->connect('/admin/edit/*', ['prefix' => false, 'controller' => 'Admin', 'action' => 'edit']);
+//    $routes->connect('/admin/view/*', ['prefix' => false, 'controller' => 'Admin', 'action' => 'view']);
+//    $routes->connect('/admin/add/*', ['prefix' => false, 'controller' => 'Admin', 'action' => 'add']);
+//    $routes->connect('/admin/delete/*', ['prefix' => false, 'controller' => 'Admin', 'action' => 'delete']);
     $routes->connect('/webroot/*', ['prefix' => false, 'controller' => 'Admin', 'action' => 'index']);
     $routes->connect('/webroot/admin/image/*', ['prefix' => false, 'controller' => 'Admin', 'action' => 'index']);
     Router::prefix('admin', function($routes) {
