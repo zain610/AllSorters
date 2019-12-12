@@ -90,16 +90,16 @@
 
 </div>
 <hr>
-<div class="container" id="newsletter-signup" style="margin-bottom: 1rem">
+<div class="container-fluid" id="newsletter-signup" style="margin-bottom: 1rem; background-color: #f2f6fe">
 
     <div style="display: flex;
     align-items: flex-end;
-    justify-content: flex-start; padding: 1rem 0">
+    justify-content: center; padding: 1rem 0">
         <h3>Sign Up to our Newsletter!</h3>
 
         <?= $this->element('Client/subscribe'); ?>
     </div>
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <small id="emailHelp" class="form-text text-muted">*We'll never share your email with anyone else.</small>
 
 </div>
 <hr>
