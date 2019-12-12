@@ -1,3 +1,10 @@
+<?php
+/**
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\Request[]|\Cake\Collection\CollectionInterface $webpage
+ * @var \App\Model\Entity\Request[]|\Cake\Collection\CollectionInterface $event
+ */
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -89,11 +96,21 @@
 </style>
 
 
-<div class="services">
-    <div class="container">
-        <h3>Speaking Engagements</h3>
-    </div>
+<?php foreach ($webpages as $webpage): ?>
+    <?php $name = $webpage -> Webpage;?>
+    <?php if ($name === 'Speaking Engagements') { ?>
+        <?php $heading = $webpage -> Heading; ?>
+        <?php $content = $webpage -> Content; ?>
+        <div class="services">
+            <div class="container">
+                <h3> <?php echo $heading ?> </h3>
+            </div>
+        </div>
+<div class="container">
+        <p><?php echo $content ?></p>
 </div>
+    <?php } ?>
+<?php endforeach ?>
 <div class="title">
     <h3>Upcoming Speaking Engagements</h3>
 </div>

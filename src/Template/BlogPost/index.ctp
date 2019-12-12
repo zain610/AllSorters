@@ -13,7 +13,13 @@
 <div class="services">
 <div class="container">
     <div id="searchBarNavBar">
-        <h3>Blog</h3>
+        <?php foreach ($webpages as $webpage): ?>
+            <?php $name = $webpage -> Webpage;?>
+            <?php if ($name === 'Blogs') { ?>
+                <?php $heading = $webpage -> Heading; ?>
+                        <h3> <?php echo $heading ?> </h3>
+            <?php } ?>
+        <?php endforeach ?>
 
             <?= $this->element('Client/Buttons/search'); ?>
             <div class="col-md-12 col-lg-8 mb-5">

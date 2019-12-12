@@ -42,6 +42,10 @@ class FavouritesController extends AppController
         $this->Auth->allow(['home']);
         $this->viewBuilder()->setLayout('client');
 
+        $this->loadModel("Webpages");
+        $webpages = $this->Webpages->find('all');
+        $this->set(compact('favourites','webpages'));
+
     }
 
     /**

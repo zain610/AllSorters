@@ -37,7 +37,10 @@ class ServicesController extends AppController
         $this->layout ='client';
         $service = $this->Service->find('all')->contain(['image']);
 
-        $this->set(compact('service'));
+        //$this->set(compact('service'));
+        $this->loadModel("Webpages");
+        $webpages = $this->Webpages->find('all');
+        $this->set(compact('service','webpages'));
 
     }
 

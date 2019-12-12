@@ -33,7 +33,10 @@ class GalleryPageController extends AppController
         $this->loadModel('Image');
         $image = $this->Image->find('all')->where(['Shown' => true]);
 
-        $this->set(compact('image'));
+        //$this->set(compact('image'));
+        $this->loadModel("Webpages");
+        $webpages = $this->Webpages->find('all');
+        $this->set(compact('image','webpages'));
     }
 
     /**

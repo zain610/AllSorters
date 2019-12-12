@@ -10,11 +10,18 @@
 </head>
 <body>
 <!-- banner -->
-<div class="services">
-    <div class="container">
-        <h3>Gallery</h3>
-    </div>
-</div>
+
+<?php foreach ($webpages as $webpage): ?>
+    <?php $name = $webpage -> Webpage;?>
+    <?php if ($name === 'Gallery') { ?>
+        <?php $heading = $webpage -> Heading; ?>
+        <div class="services">
+            <div class="container">
+                <h3> <?php echo $heading ?> </h3>
+            </div>
+        </div>
+    <?php } ?>
+<?php endforeach ?>
 
 <div class="gallery" id="gallery" style="margin-top: -180px">
     <div class="container">
