@@ -19,9 +19,23 @@ class FooterController extends AppController
      */
     public function index()
     {
+
         $footer = $this->paginate($this->Footer);
         $this->layout ='admin';
         $this->set(compact('footer'));
+//
+//        $this->layout ='admin';
+//        $footer = $this->Footer->find()->firstOrFail();
+//
+//        if ($this->request->is(['patch', 'post', 'put'])) {
+//            $footer = $this->Footer->patchEntity($footer, $this->request->getData());
+//            if ($this->Footer->save($footer)) {
+//                $this->Flash->success(__('The footer has been saved.'));
+//                return $this->redirect(['action' => 'index']);
+//            }
+//            $this->Flash->error(__('The footer could not be saved. Please, try again.'));
+//        }
+//        $this->set(compact('footer'));
     }
 
     /**
@@ -71,15 +85,11 @@ class FooterController extends AppController
     public function edit($id = null)
     {
         $this->layout ='admin';
-        $footer = $this->Footer->get($id, [
-            'contain' => []
-        ]);
+        $footer = $this->Footer->find()->firstOrFail();
         if ($this->request->is(['patch', 'post', 'put'])) {
             $footer = $this->Footer->patchEntity($footer, $this->request->getData());
             if ($this->Footer->save($footer)) {
                 $this->Flash->success(__('The footer has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The footer could not be saved. Please, try again.'));
         }

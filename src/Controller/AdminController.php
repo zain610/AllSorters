@@ -144,20 +144,27 @@ class AdminController extends AppController
             $mytoken = Security::hash(Security::randomBytes(25));
 
             $adminTable = TableRegistry::get('admin');
-            $admin = $adminTable->find('all')->where(['email'=>$myemail])->first();
-            $admin->password = '';
-            $admin->token = $mytoken;
-            if($adminTable->save($admin)){
-                $this->Flash->success('Reset password link has been sent to your email ('.$myemail.'), please check your index');
 
-                $email = new Email('default');
-                $email->setFrom(['allsortMary@gmail.com' => 'AllSorters'])
-                    ->setTo($myemail)
-                    ->setTemplate('default')
-                    ->setViewVars(['title' => "Reset Password", 'content'=> 'Hello '.$myemail.' Please click link below to reset your password: http://localhost:8765/admin/resetpassword/'.$mytoken])
-                    ->setSubject("Please confirm your reset password");
-                $email->send();
-            }
+                $admin = $adminTable->find('all')->where(['email'=>$myemail])->first();
+                if(is_null($admin)){
+                    $this->Flash->error('Could not find the email.');
+                }
+                else{
+                    $admin->password = '';
+                    $admin->token = $mytoken;
+
+                    if($adminTable->save($admin)){
+                        $this->Flash->success('Reset password link has been sent to your email ('.$myemail.'), please check your index');
+                        $email = new Email('default');
+                        $email->setFrom(['allsortMary@gmail.com' => 'AllSorters'])
+                            ->setTo($myemail)
+                            ->setTemplate('default')
+                            ->setViewVars(['title' => "Reset Password", 'content'=> 'Hello '.$myemail.' Please click link below to reset your password: http://localhost:8765/admin/resetpassword/'.$mytoken])
+                            ->setSubject("Please confirm your reset password");
+                        $email->send();
+                    }
+                }
+
         }
     }
 
