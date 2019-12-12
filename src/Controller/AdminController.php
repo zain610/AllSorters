@@ -151,7 +151,7 @@ class AdminController extends AppController
                 $this->Flash->success('Reset password link has been sent to your email ('.$myemail.'), please check your index');
 
                 $email = new Email('default');
-                $email->setFrom(['allsortMary@gmail.com' => 'All Sorters'])
+                $email->setFrom(['allsortMary@gmail.com' => 'AllSorters'])
                     ->setTo($myemail)
                     ->setTemplate('default')
                     ->setViewVars(['title' => "Reset Password", 'content'=> 'Hello '.$myemail.' Please click link below to reset your password: http://localhost:8765/admin/resetpassword/'.$mytoken])
@@ -162,25 +162,16 @@ class AdminController extends AppController
     }
 
     public function resetpassword($token){
-//        debug($token);
-//        if($this->request->is('post')){
-////            $hasher = new DefaultPasswordHasher();
-//            $mypass = $this->request->getData('password');
-//            $adminTable = TableRegistry::get('admin');
-//            $admin = $adminTable->find('all')->where(['token'=>$token])->first();
-//            $admin->password=$mypass;
-//            if($adminTable->save($admin)){
-//                return $this->redirect(['action'=>'login']);
-//            }
-//        }
-        $adminTable = TableRegistry::get('admin');
-        $admin = $adminTable->find('all')->where(['token'=>$token])->first();
-        debug($admin);
-        $this->request->is('post');
-        $mypass = $this->request->getData('password');
-        debug($mypass);
-        $admin->password = $mypass;
-        $adminTable->save($admin);
+        if($this->request->is('post')){
+            $adminTable = TableRegistry::get('admin');
+            $admin = $adminTable->find('all')->where(['token'=>$token])->first();
+            $this->request->is('post');
+            $mypass = $this->request->getData('password');
+            $admin->password = $mypass;
+            if($adminTable->save($admin)){
+                return $this->redirect(['action'=>'login']);
+            }
+        }
     }
 
 
