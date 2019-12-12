@@ -103,11 +103,11 @@ class AdminController extends AppController
     public function changepassword($id = null)
     {
         $this->layout ='admin';
-        $admin = $this->Admin->get($id, [
-            'contain' => []
-        ]);
+        $admin = $this->Admin->find()->firstOrFail();
+        debug($admin);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $admin = $this->Admin->patchEntity($admin, $this->request->getData());
+
             if ($this->Admin->save($admin)) {
                 $this->Flash->success(__('The admin has been saved.'));
 
