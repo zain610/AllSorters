@@ -64,19 +64,20 @@
 </head>
 <body>
 
-<div class="heading">
-    <h1>Tips</h1>
+
+<div class="services">
+    <div class="container">
+        <h3>Tips</h3>
+    </div>
 </div>
-<br>
-<br>
 
 <?php foreach ($tips as $tips): ?>
 
     <button type="button" class="collapsible"><?php echo $tips->Title ?></button>
     <div class="content">
-        <p>
+        <p> <br>
             <?php echo $tips->Content ?>
-
+            <br><br>
         </p>
     </div>
     <br>

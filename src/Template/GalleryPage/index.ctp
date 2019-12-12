@@ -10,11 +10,14 @@
 </head>
 <body>
 <!-- banner -->
-<div class="gallery" id="gallery">
+<div class="services">
     <div class="container">
-        <div class="camp">
-            <h3>Our Gallery</h3>
-        </div>
+        <h3>Gallery</h3>
+    </div>
+</div>
+
+<div class="gallery" id="gallery" style="margin-top: -180px">
+    <div class="container">
         <div class="gallery-bottom">
             <div class="grid">
 <!--                <div class="col-md-4 g-left">-->

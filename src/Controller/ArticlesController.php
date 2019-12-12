@@ -25,8 +25,12 @@ class ArticlesController extends AppController
     public function home()
     {
         $connection = ConnectionManager::get('default');
-        $services = $connection->execute('SELECT DISTINCT * FROM service join service_image on service.Service_id = service_image.Service_id join image on service_image.Image_id = image.Image_id GROUP BY service.Service_id LIMIT 5')->fetchAll('assoc');
+        $services = $connection->execute('SELECT DISTINCT * FROM service join service_image on service.Service_id = service_image.Service_id join image on service_image.Image_id = image.Image_id GROUP BY service.Service_id LIMIT 6')->fetchAll('assoc');
         $this->set('services', $services);
+
+        $slideshow = $connection->execute('SELECT * FROM slideshow join image on image.Image_id = slideshow.Image_id ORDER BY image.name LIMIT 4')->fetchAll('assoc');
+        $this->set('slideshow', $slideshow);
+
 
         $blogs = $connection->execute('Select * from blog_post LIMIT 5') ->fetchAll('assoc');
         $this->set('blogs', $blogs);

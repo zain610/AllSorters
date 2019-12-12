@@ -4,54 +4,45 @@
     <title>Home</title>
 
 </head>
-<script type="text/javascript">
-    // When the user scrolls the page, execute myFunction
-    window.onscroll = function() {myFunction()};
-
-    // Get the navbar
-    var navbar = document.getElementById("navbar");
-
-    // Get the offset position of the navbar
-    var sticky = navbar.offsetHeight;
-
-    // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-    function myFunction() {
-        if (window.pageYOffset >= sticky) {
-            navbar.classList.add("sticky")
-        } else {
-            navbar.classList.remove("sticky");
-        }
-    }
-
-</script>
 
 <body>
 <div>
+    <?php foreach($slideshow as $key=>$slideshow){
+        $item[$key]=$slideshow;
+    }?>
+
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
         </ol>
 
 
         <div class="carousel-inner">
             <div class="item active">
+                <?php  echo $this->Html->image($item[0]['path'], ['alt' => $item[0]['Captions']]); ?>
+                <!--                <img src="$item[0]['path]" alt="bg">-->
+                <h1 class="text"><?php echo $item[0]['Captions'];?></h1>
+            </div>
 
-                <img src="img/bg2.jpg" alt="bg">
-                <h1 class="text"><span>Personalised in-home care, perfectly matched to you</span></h1>
+
+            <div class="item">
+                <?php  echo $this->Html->image($item[1]['path'], ['alt' => $item[1]['Captions']]); ?>
+                <h1 class="text"><?php echo $item[1]['Captions'];?></h1>
             </div>
 
             <div class="item">
-                <img src="img/dockland 5.3.2018.jpg" alt="dockland">
-                <h1 class="text"><span>Caption Text 2</span></h1>
+                <?php  echo $this->Html->image($item[2]['path'], ['alt' => $item[2]['Captions']]); ?>
+                <h1 class="text"><?php echo $item[2]['Captions'];?></h1>
             </div>
 
             <div class="item">
-
-                <img src="img/bg.jpg" alt="bg">
-                <h1 class="text"><span>Caption Text 3</span></h1>
+                <?php  echo $this->Html->image($item[3]['path'], ['alt' => $item[3]['Captions']]); ?>
+                <h1 class="text"><?php echo $item[3]['Captions'];?></h1>
             </div>
+
         </div>
 
 
@@ -63,28 +54,22 @@
         </a>
     </div>
 </div>
+<hr>
 <div>
     <div class="services" style="display: flex">
-        <div class="container" style="width: 65%">
-            <h3>Services Overview</h3>
-            <div class="row">
-                <?php foreach($services as $service) { ?>
-                    <div class="col-sm-6">
-                        <div class="card services-card" style="width: 18rem;">
-                            <?php  echo $this->Html->image($service['path'], ['class' => 'card-img-top','id'=>'serviceimg', 'style'=>'Height:100px', 'alt' => 'Service image']);
-                            ?>
-                            <div class="card-body">
-                                <h5 class="card-title"><?= $service['Service_Title'] ?></h5>
-                                <p class="card-text"><?= $this->Text->truncate(h($service['Service_Description']), 20, ['ellipsis' => '...',
-                                        'exact' => false]) ?></p>
-                                <?= $this->Html->link('More', ['controller' => 'Services', 'action'=> 'view'.'/'."$service[Service_id]"], ['class' => 'btn btn-primary']) ?>
-                            </div>
-                        </div>
-                    </div>
-                <?php }?>
+        <div class="container" style="width: 65%; margin-right: 1rem; text-align: center">
+            <h3>Our Story</h3>
+            <div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <div style="text-align: center">
+                    <h4>Our Services Include</h4>
+                    <h5><b>Moving // Downsizing // Aged Care // And many more ...</b> </h5>
+                </div>
             </div>
+
         </div>
-        <div class="container" style="width: 35%; border-left:1px solid #000; background-color: #3fa5ce; border: 1px solid #333333; height: fit-content">
+        <div class="container" style="width: 35%; border-left:1px solid #000; background-color: #3fa5ce; border: 1px solid #333333; height: fit-content; margin-right: 0.75rem; border-radius: 15px;">
             <h3>Recent Blogs</h3>
             <div class="blogs-carousel">
                 <?php foreach ($blogs as $blog) { ?>
@@ -101,7 +86,7 @@
                 <?php } ?>
             </div>
             <hr style="border: 2px solid #343a40; margin: 1rem">
-            <div class="container" id="newsletter-signup">
+            <div class="container" id="newsletter-signup" style="margin-bottom: 1rem">
                 <h3>Sign Up to our Newsletter!</h3>
                 <?= $this->element('Client/subscribe'); ?>
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>

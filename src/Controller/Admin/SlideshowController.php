@@ -2,6 +2,7 @@
 namespace App\Controller\Admin;
 
 use App\Controller\AppController;
+use App\Model\Entity\Image;
 
 /**
  * Slideshow Controller
@@ -29,9 +30,11 @@ class SlideshowController extends AppController
         $this->loadComponent('Paginator');
 
         $Slideshow = $this->Paginator->paginate(
-            $this->Slideshow->find('all')->contain(['image'])
+            $this->Slideshow->find('all')->order('image.name')->contain(['image'])
         );
         $this->layout ='admin';
+        $this->set('data', $this->request->getSession()->read('data'));
+
         $this->set('data', $this->request->getSession()->read('data'));
 
         $this->set(compact('Slideshow'));
@@ -63,13 +66,21 @@ class SlideshowController extends AppController
     public function add()
     {
         $this->layout ='admin';
-
+        $image_list = $this->request->getSession()->read('image_list');
 
         $slideshow = $this->Slideshow->newEntity();
         if ($this->request->is('post')) {
 
             $slideshow = $this->Slideshow->patchEntity($slideshow, $this->request->getData());
+
             $data = $this->request->getData('checkbox');
+
+            for($i=0;$i<count($data);$i++){
+                if($data[$i]!=0){
+                    $index = $data[$i];
+                }
+            }
+            $slideshow->Image_id = $index;
 
             if ($this->Slideshow->save($slideshow)) {
                 $this->Flash->success(__('The slideshow has been saved.'));
@@ -78,8 +89,9 @@ class SlideshowController extends AppController
             }
             $this->Flash->error(__('The slideshow could not be saved. Please, try again.'));
         }
-        $image = $this->Slideshow->Image->find('all');
-        $this->set(compact('slideshow', 'image'));
+        $image = $this->Slideshow->Image->find('list');
+        $img_ob = $this->Slideshow->Image->find('all');
+        $this->set(compact('slideshow', 'image','img_ob'));
     }
 
     /**
@@ -91,11 +103,20 @@ class SlideshowController extends AppController
      */
     public function edit($id = null)
     {
+        $this->layout ='admin';
         $slideshow = $this->Slideshow->get($id, [
-            'contain' => []
+            'contain' => ['Image']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $slideshow = $this->Slideshow->patchEntity($slideshow, $this->request->getData());
+            $data = $this->request->getData('checkbox');
+//            debug($data);
+            for($i=0;$i<count($data);$i++){
+                if($data[$i]!=0){
+                    $index = $data[$i];
+                }
+            }
+            $slideshow->Image_id = $index;
             if ($this->Slideshow->save($slideshow)) {
                 $this->Flash->success(__('The slideshow has been saved.'));
 
@@ -104,7 +125,9 @@ class SlideshowController extends AppController
             $this->Flash->error(__('The slideshow could not be saved. Please, try again.'));
         }
         $image = $this->Slideshow->Image->find('list', ['limit' => 200]);
-        $this->set(compact('slideshow', 'image'));
+        $img_ob = $this->Slideshow->Image->find('all');
+
+        $this->set(compact('slideshow', 'image','img_ob'));
     }
 
     /**
@@ -140,5 +163,23 @@ class SlideshowController extends AppController
             $this->Flash->error(__('The slideshow could not be saved. Please, try again.'));
         }
 
+    }
+    public function getSelectedImages() {
+        $this->request->allowMethod('post');
+        // get data from form
+        $formData = $this->request->getData();
+        $image_list = [];
+        //get the keys of the data = ids
+        $data_keys = array_keys($formData); // [message, 1,2,3,4,5,6]
+        //iterate over the keys list and foreach key, find the value is 1, then add it to the senders list
+        foreach($data_keys as $key) {
+            if($key !== "Captions") {
+                if($formData[$key]) {
+                    array_push($image_list, $key);
+                }
+            }
+        }
+        $this->request->getSession()->write('image_list', $image_list );
+        return $this->redirect(['action' => 'index']);
     }
 }

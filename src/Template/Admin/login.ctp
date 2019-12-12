@@ -26,10 +26,13 @@
 
                             <fieldset>
                                 <?= $this->Form->control('username'); ?>
-                                <?= $this->Form->control('password', array('type' => 'password')); ?><a href="#" class="forgot-link">Forgot Password?</a>
+                                <?= $this->Form->control('password', array('type' => 'password')); ?>
+<!--                                <a href="#" class="forgot-link">Forgot Password?</a>-->
                             </fieldset>
                             <div align="middle" >
-                                <?= $this->Form->button('Login'); ?></div>
+                                <?= $this->Form->button('Login',['class'=>'btn btn-success']); ?>
+                                <?php echo $this->Html->link('Forgot Password',['action'=>'forgotpassword'],['class'=>'btn btn-info']) ?>
+                            </div>
                             <?= $this->Form->end(); ?>
                         </div>
                     </div>

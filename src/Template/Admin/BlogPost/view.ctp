@@ -32,4 +32,21 @@
         </table>
         <?php endif; ?>
     </div>
+<div class="row">
+    <h3>Comments</h3>
+    <table>
+        <?php foreach($comment as $comment){ ?>
+        <tr>
+            <td><?php echo $comment['User_Name']?></td>
+            <td><?php echo $comment['User_Email']?></td>
+            <td><?php echo $comment['Comment_Details']?></td>
+            <?php if($comment['showed']==0){ ?>
+            <td style="text-align: center"><?= $this->Html->link(__('Publish'), ['action' => 'publishcomment', $comment['Post_Comment_id']]) ?></td>
+            <?php }else{ ?>
+            <td style="text-align: center"><?= $this->Html->link(__('Unpublish'), ['action' => 'publishcomment', $comment['Post_Comment_id']]) ?></td>
+            <?php } ?>
+        </tr>
+        <?php } ?>
+    </table>
+</div>
 </div>

@@ -68,12 +68,12 @@
         font-size: 22px;
     }
 </style>
-
-<div class="heading">
-    <h1>Client Feedback</h1>
+<div class="services">
+    <div class="container">
+        <h3>Client Feedback</h3>
+    </div>
 </div>
-<br>
-<br>
+
 
 <?php foreach ($review as $review): ?>
     <?php
@@ -84,21 +84,21 @@
     $dateObj   = DateTime::createFromFormat('!m', $monthNum);
     $monthName = $dateObj->format('M');
     ?>
-<blockquote class="box">
-    <p class="quotation-mark">
-        “
-    </p>
-    <p class="quote-text">
-    <details> <?php echo $review->Review_Details ?> </details>
-    </p>
-    <hr>
-    <div class="blog-post-actions">
-        <p class="blog-post-bottom pull-left">
-        <p><client> <?php echo $review->Client_Name ?>,  <?php echo $review->Suburb ?>, <?php echo $monthName ?> <?php echo $year ?></client></p>
+    <blockquote class="box">
+        <p class="quotation-mark">
+            “
         </p>
+        <p class="quote-text">
+            <details> <?php echo $review->Review_Details ?> </details>
+        </p>
+        <hr>
+        <div class="blog-post-actions">
+            <p class="blog-post-bottom pull-left">
+            <p><client> <?php echo $review->Client_Name ?>,  <?php echo $review->Suburb ?>, <?php echo $monthName ?> <?php echo $year ?></client></p>
+            </p>
 
-    </div>
-</blockquote>
+        </div>
+    </blockquote>
 
 <?php endforeach ?>
 </html>

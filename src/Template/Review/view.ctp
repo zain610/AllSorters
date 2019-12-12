@@ -25,10 +25,6 @@
             <td><?= h($review->Suburb) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Review Details') ?></th>
-            <td><?= h($review->Review_Details) ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Review Id') ?></th>
             <td><?= $this->Number->format($review->Review_id) ?></td>
         </tr>
@@ -37,4 +33,8 @@
             <td><?= h($review->Month_Year) ?></td>
         </tr>
     </table>
+    <div class="row">
+        <h4><?= __('Review Details') ?></h4>
+        <?= $this->Text->autoParagraph(h($review->Review_Details)); ?>
+    </div>
 </div>
