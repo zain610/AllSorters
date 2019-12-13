@@ -34,20 +34,6 @@
     }
 
 
-    .quote-box{
-
-        overflow: hidden;
-        margin-top: -50px;
-        padding-top: -100px;
-        border-radius: 17px;
-        background-color:   grey;
-        margin-top: 25px;
-        color:black;
-        width: 80%;
-        box-shadow: 2px 2px 2px 2px #E0E0E0;
-
-    }
-
     .quotation-mark{
         margin-top: -10px;
         font-weight: bold;
@@ -68,6 +54,7 @@
         font-family: 'Roboto Slab';
         font-size: 22px;
         text-transform: capitalize;
+        font-style: normal;
     }
 
 </style>
@@ -96,8 +83,10 @@
         <p class="quotation-mark">
             “
         </p>
-        <p class="p2" style="font-family: 'Roboto Slab!important'">
+        <p class = "quote-text">
+        <p>
             <?php echo $review->Review_Details ?>
+        </p>
         </p>
         <hr>
         <div class="blog-post-actions">
