@@ -111,7 +111,7 @@ class BlogPostController extends AppController
 
 
     }
-    public function publishToFacebook($id = null) {
+    public function publishToFacebook($id = null, $message = "New Blog") {
 
 //        Get referenced blog post using the id sent via client side
         $blogPost = $this->BlogPost->get($id);
@@ -119,8 +119,6 @@ class BlogPostController extends AppController
         if ($blogPost == null) {
             throw new NotFoundException();
         }
-//        generate the client side blog link to be posted on fb
-        $url = Router::url(['prefix' => false, 'controller' => 'Blogpost', 'action' => 'view'], true). "/".$id;
 //        initiate facebook object passing key params
         $fb = new \Facebook\Facebook([
             'app_id' => '726068664574442',
@@ -131,7 +129,7 @@ class BlogPostController extends AppController
 
         try {
             // Returns a long-lived access token
-            $accessToken = $client->getLongLivedAccessToken('EAAKUWwjVoeoBAMUSsLWOFFbg5vquXZCrv69Ulqxw5MB5umXYtWQ5JJXaWjG1eujJWZA5XAb8RrFjQu6dnP3m3x8y7c4Y3zGL5LHR0G8XOJXrZBwBLzYpZCxxDxmYkr9RHLHwt4xYA7PAzVnUOafZAJHzm7WQMFIvfGnhWY6e7ZBMpCfmDQ7h46R5eCB8R806seA803MkIHOwZDZD');
+            $accessToken = $client->getLongLivedAccessToken('EAAKUWwjVoeoBAOsmC8wlZAHXfuZB6DKzOOyukDoJhaDoZCAV9iSXXh9YTbvZAKMrnhDf4QFWzmt906yZBzuzmZA0RoIZADfSLARbSBY3DgxbVfkqNjLNuKYa4I39yBbVTSlaDdtiDCTsiLN6xVF1eNkkA21V714knOZBiPs5rrDtZC4Qs2EWZCct4r5gcecq1fjLPCojjkZCZAZBiFgZDZD');
         } catch(Facebook\Exceptions\FacebookSDKException $e) {
             // There was an error communicating with Graph
             echo $e->getMessage();
@@ -146,7 +144,7 @@ class BlogPostController extends AppController
 
         try {
             // Returns a `FacebookFacebookResponse` object
-            $data = array('message' => 'New blog posted. Check it out here! :)', 'link' => $url);
+            $data = array('message' =>  "New Blog uploaded. Please check it out! :)", 'link' => 'http://ie.infotech.monash.edu/team106/development/blogpost/view/'.$id);
             $response =$fb->post('/me/feed', $data);
         } catch(Facebook\Exceptions\FacebookSDKException $e) {
             // There was an error communicating with Graph
@@ -157,6 +155,7 @@ class BlogPostController extends AppController
 
         $this->redirect(['action' => 'index']);
     }
+
 
     public function publish($id = null)
     {
