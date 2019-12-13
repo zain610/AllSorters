@@ -16,18 +16,14 @@ $query = $footer->find();
                     <?php echo $footer->Address; ?>
                 <br>
             </address>
-
-
-
-
         </div>
         <div class="col-md-4 ftr-gd">
             <h3>Follow Us</h3>
             <ul class="social">
-                <li><a href="https://twitter.com/"><i></i></a> </li>
-                <li><a href="https://www.facebook.com/"><i class="facebook"></i></a></li>
-                <li><a href="https://google.com/"><i class="goog"></i> </a></li>
-                <li><a href="https://au.linkedin.com/"><i class="lin"></i> </a></li>
+                <li><a href="<?php echo $footer->Twitter; ?>"><i></i></a> </li>
+                <li><a href="<?php echo $footer->Facebook; ?>"><i class="facebook"></i></a></li>
+                <li><a href="<?php echo $footer->Google; ?>"><i class="goog"></i> </a></li>
+                <li><a href="<?php echo $footer->Tumblr; ?>"><i class="lin"></i> </a></li>
             </ul>
         </div>
         <div class="col-md-4 contact-left">

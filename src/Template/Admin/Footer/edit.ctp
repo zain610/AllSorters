@@ -13,6 +13,10 @@
             echo $this->Form->control('Phone');
             echo $this->Form->control('Email');
             echo $this->Form->control('Address');
+            echo $this->Form->control('Twitter');
+            echo $this->Form->control('Facebook');
+            echo $this->Form->control('Google');
+            echo $this->Form->control('Tumblr');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
