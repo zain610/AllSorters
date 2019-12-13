@@ -161,7 +161,8 @@ class AdminController extends AppController
                         $email->setFrom(['allsortMary@gmail.com' => 'AllSorters'])
                             ->setTo($myemail)
                             ->setTemplate('default')
-                            ->setViewVars(['title' => "Reset Password", 'content'=> 'Hello '.$myemail.' Please click link below to reset your password: http://localhost:8765/admin/resetpassword/'.$mytoken])
+//                            ->setViewVars(['title' => "Reset Password", 'content'=> 'Hello '.$myemail.' Please click link below to reset your password: http://localhost:8765/admin/resetpassword/'.$mytoken])
+                            ->setViewVars(['title' => "Reset Password", 'content'=> 'Hello '.$myemail.' Please click link below to reset your password: http://ie.infotech.monash.edu/team106/development/admin/resetpassword/'.$mytoken])
                             ->setSubject("Please confirm your reset password");
                         $email->send();
                     }
@@ -176,9 +177,14 @@ class AdminController extends AppController
             $admin = $adminTable->find('all')->where(['token'=>$token])->first();
             $this->request->is('post');
             $mypass = $this->request->getData('password');
-            $admin->password = $mypass;
-            if($adminTable->save($admin)){
-                return $this->redirect(['action'=>'login']);
+            if(strlen($mypass)<8){
+                $this->Flash->error('Password must be at least 8 digits.');
+            }
+            else{
+                $admin->password = $mypass;
+                if($adminTable->save($admin)){
+                    return $this->redirect(['action'=>'login']);
+                }
             }
         }
     }
