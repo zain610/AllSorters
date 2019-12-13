@@ -8,6 +8,7 @@ use Cake\Mailer\Email;
 use Cake\Mailer\TransportFactory;
 use Cake\Utility\Security;
 use Cake\ORM\TableRegistry;
+use Cake\Routing\Router;
 
 /**
  * Admin Controller
@@ -158,11 +159,12 @@ class AdminController extends AppController
                     if($adminTable->save($admin)){
                         $this->Flash->success('Reset password link has been sent to your email ('.$myemail.'), please check your index');
                         $email = new Email('default');
+                        $url = Router::Url(['controller'=>'admin','action'=>'resetpassword'],true).'/'.$mytoken;
                         $email->setFrom(['allsortMary@gmail.com' => 'AllSorters'])
                             ->setTo($myemail)
                             ->setTemplate('default')
 //                            ->setViewVars(['title' => "Reset Password", 'content'=> 'Hello '.$myemail.' Please click link below to reset your password: http://localhost:8765/admin/resetpassword/'.$mytoken])
-                            ->setViewVars(['title' => "Reset Password", 'content'=> 'Hello '.$myemail.' Please click link below to reset your password: http://ie.infotech.monash.edu/team106/development/admin/resetpassword/'.$mytoken])
+                            ->setViewVars(['title' => "Reset Password", 'content'=> 'Hello '.$myemail.' Please click link below to reset your password: '.$url])
                             ->setSubject("Please confirm your reset password");
                         $email->send();
                     }
