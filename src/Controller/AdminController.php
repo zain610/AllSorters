@@ -148,27 +148,27 @@ class AdminController extends AppController
 
             $adminTable = TableRegistry::get('admin');
 
-                $admin = $adminTable->find('all')->where(['email'=>$myemail])->first();
-                if(is_null($admin)){
-                    $this->Flash->error('Could not find the email.');
-                }
-                else{
-                    $admin->password = '';
-                    $admin->token = $mytoken;
+            $admin = $adminTable->find('all')->where(['email'=>$myemail])->first();
+            if(is_null($admin)){
+                $this->Flash->error('Could not find the email.');
+            }
+            else{
+                $admin->password = '';
+                $admin->token = $mytoken;
 
-                    if($adminTable->save($admin)){
-                        $this->Flash->success('Reset password link has been sent to your email ('.$myemail.'), please check your index');
-                        $email = new Email('default');
-                        $url = Router::Url(['controller'=>'admin','action'=>'resetpassword'],true).'/'.$mytoken;
-                        $email->setFrom(['allsortMary@gmail.com' => 'AllSorters'])
-                            ->setTo($myemail)
-                            ->setTemplate('default')
+                if($adminTable->save($admin)){
+                    $this->Flash->success('Reset password link has been sent to your email ('.$myemail.'), please check your index');
+                    $email = new Email('default');
+                    $url = Router::Url(['controller'=>'admin','action'=>'resetpassword'],true).'/'.$mytoken;
+                    $email->setFrom(['allsortMary@gmail.com' => 'AllSorters'])
+                        ->setTo($myemail)
+                        ->setTemplate('default')
 //                            ->setViewVars(['title' => "Reset Password", 'content'=> 'Hello '.$myemail.' Please click link below to reset your password: http://localhost:8765/admin/resetpassword/'.$mytoken])
-                            ->setViewVars(['title' => "Reset Password", 'content'=> 'Hello '.$myemail.' Please click link below to reset your password: '.$url])
-                            ->setSubject("Please confirm your reset password");
-                        $email->send();
-                    }
+                        ->setViewVars(['title' => "Reset Password", 'content'=> 'Hello '.$myemail.' Please click link below to reset your password: '.$url])
+                        ->setSubject("Please confirm your reset password");
+                    $email->send();
                 }
+            }
 
         }
     }
