@@ -208,35 +208,5 @@ class AdminController extends AppController
         $this->Auth->logout();
         return $this->redirect(['controller' => 'Admin', 'action' => 'login']);
     }
-    public function booking(){
-        $admin = $this->paginate($this->Admin);
-        $this->loadModel('Booking');
-        $this->layout ='admin';
-        $this->set(compact('admin'));
-        if($this->request->is('post')){
-            $booking = $this->Booking->newEntity();
-            $booking->title=$this->request->getData()['title'];
-            $booking->start=$this->request->getData()['start'];
-            $booking->adminID=$this->Auth->user('id');
-            //var_dump($booking);
-            $this->Booking->save($booking);
-            return $this->redirect(['controller' => 'Admin', 'action' => 'booking']);
-        }
-        $allBooking=$this->Booking->find('all',['conditions'=>['adminID'=>$this->Auth->user('id')]])->toList();
-        $this->set(compact('allBooking'));
-
-    }
-    public function bookingdelete($id=null){
-        $this->loadModel('Booking');
-
-        $booking = $this->Booking->get($id);
-
-        if ($this->Booking->delete($booking)) {
-            $this->Flash->success(__('The booking has been deleted.'));
-        } else {
-            $this->Flash->error(__('The booking could not be deleted. Please, try again.'));
-        }
-        return $this->redirect(['action' => 'booking']);
-    }
 
 }

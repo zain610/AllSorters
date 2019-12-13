@@ -17,7 +17,6 @@
                 <?php
                 echo $this->Form->button('Reset Password',['class'=>'btn btn-primary','type'=>'submit']);
                 echo $this->Form->end();
-
                 ?>
             </div>
         </div>
