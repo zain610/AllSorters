@@ -1,4 +1,4 @@
-<div class="container services inner-blogs" style="width: 30%; background-color: #f7d2e3; height: fit-content; margin-right: 0.75rem; border-radius: 15px;">
+<div class="container services inner-blogs" style="width: 30%; background-color: #f2f6fe; height: fit-content; margin-right: 0.75rem; border-radius: 15px;">
     <h3>Mary's Recent Blogs</h3>
     <div class="blogs-carousel ">
         <?php foreach ($blogs as $blog) { ?>
