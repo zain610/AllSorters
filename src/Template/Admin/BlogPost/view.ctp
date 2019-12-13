@@ -16,37 +16,37 @@
     <div class="related">
         <h4><?= __('Related Image') ?></h4>
         <?php if (!empty($blogPost->image)): ?>
-        <table cellpadding="0" cellspacing="0">
-        <tbody>
-            <?php foreach ($blogPost->image as $image): ?>
-            <tr>
-                <td class="card" width="50%">
-                    <?php echo $this->Html->image($image->path, ['alt' => 'CakePHP']); ?>
-                </td>
-                <td class="card-body">
-                    <?= $this->element('Admin/Buttons/edit', ['url' => ['action' => 'edit', $blogPost->blog_post_id]]) ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </tbody>
-        </table>
+            <table cellpadding="0" cellspacing="0">
+                <tbody>
+                <?php foreach ($blogPost->image as $image): ?>
+                    <tr>
+                        <td class="card" width="50%">
+                            <?php echo $this->Html->image($image->path, ['alt' => 'CakePHP']); ?>
+                        </td>
+                        <td class="card-body">
+                            <?= $this->element('Admin/Buttons/edit', ['url' => ['action' => 'edit', $blogPost->blog_post_id]]) ?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
         <?php endif; ?>
     </div>
-<div class="row">
-    <h3>Comments</h3>
-    <table>
-        <?php foreach($comment as $comment){ ?>
-        <tr>
-            <td><?php echo $comment['User_Name']?></td>
-            <td><?php echo $comment['User_Email']?></td>
-            <td><?php echo $comment['Comment_Details']?></td>
-            <?php if($comment['showed']==0){ ?>
-            <td style="text-align: center"><?= $this->Html->link(__('Publish'), ['action' => 'publishcomment', $comment['Post_Comment_id']]) ?></td>
-            <?php }else{ ?>
-            <td style="text-align: center"><?= $this->Html->link(__('Unpublish'), ['action' => 'publishcomment', $comment['Post_Comment_id']]) ?></td>
+    <div class="row">
+        <h3>Comments</h3>
+        <table>
+            <?php foreach($comment as $comment){ ?>
+                <tr>
+                    <td><?php echo $comment['User_Name']?></td>
+                    <td><?php echo $comment['User_Email']?></td>
+                    <td><?php echo $comment['Comment_Details']?></td>
+                    <?php if($comment['showed']==0){ ?>
+                        <td style="text-align: center"><?= $this->element('Admin/Buttons/publish', ['url' => ['action' => 'publishcomment',$comment['Post_Comment_id']]]); ?></td>
+                    <?php }else{ ?>
+                        <td style="text-align: center"><?= $this->element('Admin/Buttons/hide', ['url' => ['action' => 'publishcomment',$comment['Post_Comment_id']]]); ?></td>
+                    <?php } ?>
+                </tr>
             <?php } ?>
-        </tr>
-        <?php } ?>
-    </table>
-</div>
+        </table>
+    </div>
 </div>

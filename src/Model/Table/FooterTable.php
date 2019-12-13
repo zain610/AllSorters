@@ -64,6 +64,28 @@ class FooterTable extends Table
             ->requirePresence('Address', 'create')
             ->allowEmptyString('Address', false);
 
+        $validator
+            ->scalar('Twitter')
+            ->maxLength('Twitter', 255)
+            ->requirePresence('Twitter', 'create')
+            ->allowEmptyString('Twitter', false);
+
+        $validator
+            ->scalar('Facebook')
+            ->maxLength('Facebook', 255)
+            ->requirePresence('Facebook', 'create')
+            ->allowEmptyString('Facebook', false);
+        $validator
+            ->scalar('Google')
+            ->maxLength('Google', 255)
+            ->requirePresence('Google', 'create')
+            ->allowEmptyString('Google', false);
+        $validator
+            ->scalar('Tumblr')
+            ->maxLength('Tumblr', 255)
+            ->requirePresence('Tumblr', 'create')
+            ->allowEmptyString('Tumblr', false);
+
         return $validator;
     }
 }

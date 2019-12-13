@@ -11,7 +11,6 @@ $isQueriesActive = $currentController === "Queries";
 $isNewslettersActive = $currentController === "Newsletter";
 $isSlideShowActive = $currentController === "SlideShow";
 $isFooterActive = $currentController === "Footer";
-$isBookingActive = $currentController === "Admin" && $currentAction === 'booking';
 $isAboutActive = $currentController === "About";
 $isTipsActive = $currentController === "Tips";
 $isFavouritesActive = $currentController === "Favourites";
@@ -39,20 +38,7 @@ $isWebpagesActive = $currentController === "Webpages";
             ) ?>
         </li>
 
-        <li class="<?= $isBookingActive ? 'active' : '' ?> dropdown">
-            <?= $this->Html->link(
-                '<p>Booking</p>',
-                ['prefix' => false, 'controller' => 'Admin', 'action' => 'booking'],
-                ['escape' => false]
-            ) ?>
-        </li>
-        <li class="<?= $isWebpagesActive ? 'active' : '' ?> dropdown">
-            <?= $this->Html->link(
-                '<p>Edit headings & webpage content</p>',
-                ['prefix' => false, 'controller' => 'Admin', 'action' => 'Webpages'],
-                ['escape' => false]
-            ) ?>
-        </li>
+
 
 
         <li class="<?= $isBlogsActive ? 'active' : '' ?> dropdown">
@@ -101,7 +87,7 @@ $isWebpagesActive = $currentController === "Webpages";
                         ['escape' => false]
                     ) ?></li>
                 <li><?= $this->Html->link(
-                        '<p>Edit Slide Show</p>',
+                        '<p>Manage Slide Show</p>',
                         ['prefix'=>'admin','controller' => 'Slideshow','action'=>'index'],
                         ['escape' => false]
                     ) ?></li>
@@ -165,7 +151,7 @@ $isWebpagesActive = $currentController === "Webpages";
                         ['escape'=>false]
                     )?></li>
                 <li><?=$this->Html->link(
-                        '<p>View Speaking Engagements archive</p>',
+                        '<p>Archived Speaking Engagements </p>',
                         ['prefix'=>'admin','controller'=>'Events','action'=>'archiveIndex'],
                         ['escape'=>false]
                     )?></li>
@@ -189,13 +175,6 @@ $isWebpagesActive = $currentController === "Webpages";
             ) ?>
         </li>
 
-        <li class="<?= $isSlideShowActive ? 'active' : '' ?> dropdown">
-            <?= $this->Html->link(
-                '<p>SlideShow</p>',
-                ['prefix' => 'admin', 'controller' => 'Slideshow', 'action' => 'index'],
-                ['escape' => false]
-            ) ?>
-        </li>
 
 
         <li id="dropDownMenu" class="<?= $isAboutActive ? 'active' : '' ?> dropdown">
@@ -257,14 +236,6 @@ $isWebpagesActive = $currentController === "Webpages";
 
         </li>
 
-        <li class="<?= $isFooterActive ? 'active' : '' ?> dropdown">
-            <?= $this->Html->link(
-                '<p>Footer</p>',
-                ['prefix' => 'admin', 'controller' => 'Footer', 'action' => 'edit'],
-                ['escape' => false]
-            ) ?>
-        </li>
-
 
         <li class="<?= $isProductActive ? 'active' : '' ?> dropdown">
             <?= $this->Html->link(
@@ -274,13 +245,34 @@ $isWebpagesActive = $currentController === "Webpages";
                 ) ?>
         </li>
 
-        <li class="<?= $isChangePWActive ? 'active' : '' ?> dropdown">
+        <li id="dropDownMenu" class="<?= $isWebpagesActive ? 'active' : '' ?> <?= $isChangePWActive ? 'active' : '' ?> <?= $isFooterActive ? 'active' : '' ?>  dropdown">
             <?= $this->Html->link(
-                '<p>Account Settings</p>',
-                ['prefix' => false, 'controller' => 'admin', 'action' => 'changepassword'],
-                ['escape' => false]
+                '<p>Settings</p>',
+                '#',
+                ['escape' => false, 'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true',]
             ) ?>
+            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+
+                <li><?=$this->Html->link(
+                        '<p>Account Settings</p>',
+                        ['prefix' => false, 'controller' => 'admin', 'action' => 'changepassword'],
+                        ['escape'=>false]
+                    )?></li>
+                <li><?=$this->Html->link(
+                        '<p>Footer</p>',
+                        ['prefix' => 'admin', 'controller' => 'Footer', 'action' => 'edit'],
+                        ['escape'=>false]
+                    )?></li>
+
+                <li><?=$this->Html->link(
+                        '<p>Manage Webpage Content</p>',
+                        ['prefix' => false, 'controller' => 'Admin', 'action' => 'Webpages'],
+                        ['escape'=>false]
+                    )?></li>
+            </ul>
+
         </li>
+
 
     </ul>
 

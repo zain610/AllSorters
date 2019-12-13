@@ -25,6 +25,10 @@ class Footer extends Entity
     protected $_accessible = [
         'Phone' => true,
         'Email' => true,
-        'Address' => true
+        'Address' => true,
+        'Twitter' => true,
+        'Facebook' => true,
+        'Google' => true,
+        'Tumblr' => true
     ];
 }

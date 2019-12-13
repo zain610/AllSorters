@@ -1,3 +1,10 @@
+<?php
+use Cake\ORM\TableRegistry;
+
+$footer = TableRegistry::getTableLocator()->get('Footer');
+$query = $footer->find();
+?>
+
 <div id="navigation">
     <div class="header-bottom">
         <div class="container" id="top-header" style="height: 20px">
@@ -9,10 +16,10 @@
                 <div class="contact-info-inner" style="padding: 1rem;  background-color: #212529; font-size: 20px">
                     <div style="display: flex;">
                         <h5>Reach out to Mary for more info!</h5>
-
-                        <a style="margin-left: 1rem" href="tel:<?= $admin[0]['phone']?>"><i class="fas fa-phone-alt"></i></a>
-                        <a style="margin-left: 1rem" href="mailto:abc@gmail.com"><i class="far fa-envelope"></i></a>
-
+                        <?php foreach ($query as $footer): ?>
+                        <a style="margin-left: 1rem" href="tel:<?php echo $footer->Phone; ?>"><i class="fas fa-phone-alt"></i></a>
+                        <a style="margin-left: 1rem" href="<?php echo $footer->Email; ?>"><i class="far fa-envelope"></i></a>
+                        <?php endforeach;?>
                     </div>
                 </div>
 
