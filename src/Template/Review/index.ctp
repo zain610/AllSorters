@@ -84,7 +84,7 @@
             “
         </p>
         <p class = "quote-text">
-        <p class="p2" style="font-family: 'Roboto Slab!important'">
+        <p>
             <?php echo $review->Review_Details ?>
         </p>
         </p>
