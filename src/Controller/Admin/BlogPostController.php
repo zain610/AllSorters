@@ -33,7 +33,7 @@ class BlogPostController extends AppController
         $this->layout ='admin';
         $this->loadComponent('Paginator');
         $publishedBlogPosts = $this->Paginator->paginate(
-            $this->BlogPost->find('all')->where(['BlogPost.Published' => 1])->contain([])
+            $this->BlogPost->find('all')->where(['BlogPost.Published' => 1])->contain([])->orderDesc('Date')
         );
 
         $this->set(compact('publishedBlogPosts'));
