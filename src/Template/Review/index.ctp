@@ -11,6 +11,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <style>
+    p {
+        font-family: roboto slab;
+        font-size: 25px;
+        font-style: italic;
+    }
+
     .box {
         background-color: white;
         -moz-box-shadow: 0 0 3px #ccc;
@@ -57,16 +63,13 @@
         font-style: italic;
 
     }
-    .box details{
-        font-style: italic;
-        font-family: 'Roboto Slab';
-        font-size: 22px;
-    }
 
     .box client{
         font-family: 'Roboto Slab';
         font-size: 22px;
+        text-transform: capitalize;
     }
+
 </style>
 <?php foreach ($webpages as $webpage): ?>
     <?php $name = $webpage -> Webpage;?>
@@ -93,8 +96,8 @@
         <p class="quotation-mark">
             “
         </p>
-        <p class="quote-text">
-            <details> <?php echo $review->Review_Details ?> </details>
+        <p class="p2" style="font-family: 'Roboto Slab!important'">
+            <?php echo $review->Review_Details ?>
         </p>
         <hr>
         <div class="blog-post-actions">
