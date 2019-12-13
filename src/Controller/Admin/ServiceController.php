@@ -43,7 +43,7 @@ class ServiceController extends AppController
     {
         $this->layout ='admin';
         $service = $this->Service->get($id, [
-            'contain' => ['Image', 'Job']
+            'contain' => ['Image']
         ]);
 
         $this->set('service', $service);
@@ -81,8 +81,7 @@ class ServiceController extends AppController
         $image = $this->Service->Image->find('list', ['limit' => 200]);
         $img_ob = $this->Service->Image->find('all');
 
-        $job = $this->Service->Job->find('list', ['limit' => 200]);
-        $this->set(compact('service', 'image', 'job','img_ob'));
+        $this->set(compact('service', 'image','img_ob'));
     }
 
     /**
@@ -96,7 +95,7 @@ class ServiceController extends AppController
     {
         $this->layout ='admin';
         $service = $this->Service->get($id, [
-            'contain' => ['Image', 'Job']
+            'contain' => ['Image']
         ]);
 
         if ($this->request->is(['patch', 'post', 'put'])) {
@@ -119,9 +118,8 @@ class ServiceController extends AppController
             $this->Flash->error(__('The service could not be saved. Please, try again.'));
         }
         $image = $this->Service->Image->find('list', ['limit' => 200]);
-        $job = $this->Service->Job->find('list', ['limit' => 200]);
         $img_ob = $this->Image->find('all');
-        $this->set(compact('service', 'image', 'job','img_ob'));
+        $this->set(compact('service', 'image','img_ob'));
     }
 
     /**

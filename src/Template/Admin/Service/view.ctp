@@ -37,42 +37,9 @@
             <?php endif; ?>
 
 
-            <h4><?= __('Related Job(s)') ?></h4>
-
-            <?php if (!empty($service->job)): ?>
-
-                <table class="table table-hover table-striped" cellpadding="0" cellspacing="0">
-                    <thead>
-                    <th scope="col"><?= __('Job Id') ?></th>
-                    <th scope="col"><?= __('Price') ?></th>
-                    <th scope="col"><?= __('Commence Date') ?></th>
-                    <th scope="col"><?= __('Duration') ?></th>
-                    <th scope="col"><?= __('Job Status') ?></th>
-                    <th scope="col" class="actions"><?= __('Actions') ?></th>
-                    </thead>
-                    <?php foreach ($service->job as $job): ?>
-                        <tr>
-                            <td><?= h($job->Job_id) ?></td>
-                            <td><?= h($job->Price) ?></td>
-                            <td><?= h($job->Commence_Date) ?></td>
-                            <td><?= h($job->Duration) ?></td>
-                            <td><?= h($job->Job_Status) ?></td>
-
-                            <td class="action-col">
-                                <?= $this->element('Admin/Buttons/view', ['url' => ['controller' => 'Job', 'action' => 'view', $job->Job_id]]) ?>
-                                <?= $this->element('Admin/Buttons/edit', ['url' => ['controller' => 'Job', 'action' => 'edit', $job->Job_id]]) ?>
-                                <?= $this->element('Admin/Buttons/delete', ['url' => ['controller' => 'Job', 'action' => 'delete', $job->Job_id], ['confirm' => __('Are you sure you want to delete # {0}?', $job->Job_id)]]) ?>
-
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
-                </table>
-            <?php endif; ?>
-
-
         </div>
     </div>
-
+</div>
 
 
 

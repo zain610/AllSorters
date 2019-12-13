@@ -42,11 +42,7 @@ class ServiceTable extends Table
             'targetForeignKey' => 'Image_id',
             'joinTable' => 'service_image'
         ]);
-        $this->belongsToMany('Job', [
-            'foreignKey' => 'Service_id',
-            'targetForeignKey' => 'Job_id',
-            'joinTable' => 'service_job'
-        ]);
+
     }
 
     /**
