@@ -101,33 +101,6 @@ class AdminController extends AppController
 
         $this->set(compact('admin'));
     }
-    public function changepassword($id = null)
-    {
-        $this->layout ='admin';
-        $admin = $this->Admin->find()->firstOrFail();
-
-        if ($this->request->is(['patch', 'post', 'put'])) {
-
-            $admin = $this->Admin->patchEntity($admin, $this->request->getData());
-//            debug($this->request->getData('password'));
-//            debug($this->request->getData('confirm_password'));
-            if ($this->Admin->save($admin)) {
-                $this->Flash->success(__('The admin has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The admin could not be saved. Please, try again.'));
-        }
-
-        $this->set(compact('admin'));
-    }
-    /**
-     * Delete method
-     *
-     * @param string|null $id Admin id.
-     * @return \Cake\Http\Response|null Redirects to index.
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
     public function delete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);
@@ -140,6 +113,44 @@ class AdminController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    public function changepassword($id = null)
+    {
+        $this->layout ='admin';
+        $admin = $this->Admin->find()->firstOrFail();
+
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $myemail = $this->request->getData('email');
+            debug($myemail);
+            $admin = $this->Admin->patchEntity($admin, $this->request->getData());
+//            debug($this->request->getData('password'));
+//            debug($this->request->getData('confirm_password'));
+            if ($this->Admin->save($admin)) {
+                $this->Flash->success(__('The admin has been saved.'));
+                $email = new Email('default');
+                $email->setFrom(['allsortMary@gmail.com' => 'AllSorters'])
+                    ->setTo($myemail)
+                    ->setTemplate('default')
+//                            ->setViewVars(['title' => "Reset Password", 'content'=> 'Hello '.$myemail.' Please click link below to reset your password: http://localhost:8765/admin/resetpassword/'.$mytoken])
+                    ->setViewVars(['title' => "Update Account Details", 'content'=> 'Hello, you successfully have updated your account details. If you think someone else changed your detail, change password immediately.'])
+                    ->setSubject("Details updated successfully.");
+                $email->send();
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('The admin could not be saved. Please, try again.'));
+        }
+
+        $this->set(compact('admin'));
+    }
+
+    /**
+     * Delete method
+     *
+     * @param string|null $id Admin id.
+     * @return \Cake\Http\Response|null Redirects to index.
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     */
+
 
     public function forgotpassword(){
         if($this->request->is('post')){
