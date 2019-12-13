@@ -86,6 +86,7 @@ class AppController extends Controller
         }
         $this->set('currentUser', $this->Auth->user());
 
+
         //login check
         if ($this->request->getSession()->read('Auth.User')){
             $this->set('loggedIn',true);

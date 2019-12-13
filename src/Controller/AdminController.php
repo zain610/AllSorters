@@ -114,13 +114,14 @@ class AdminController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
-    public function changepassword($id = null)
+    public function changepassword()
     {
         $this->layout ='admin';
-        $admin = $this->Admin->find()->firstOrFail();
+        $user_id = $this->Auth->user()['id'];
+        $admin = $this->Admin->find()->where('Admin.id ='.$user_id)->toArray()[0];
 
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $myemail = $this->request->getData('email');
+            $myemail = $admin['email'];
             debug($myemail);
             $admin = $this->Admin->patchEntity($admin, $this->request->getData());
 //            debug($this->request->getData('password'));
@@ -206,6 +207,7 @@ class AdminController extends AppController
     public function login(){
         if($this->request->is('post')){
             $user= $this->Auth->identify();
+            debug($user);
             if($user){
                 $this->Auth->setUser($user);
                 //if the user is logged in, display the admin homepage
