@@ -4,13 +4,10 @@
  * @var \App\Model\Entity\Service $service
  */
 ?>
-
-<html>
-
 <head>
     <title>Blog</title>
 </head>
-<body>
+
 <style>
     .text {
         left: 0;
@@ -27,33 +24,23 @@
 <div class="services">
     <div class="container">
         <?= $this->Flash->render(); ?>
-        <div class="row">
-            <div class="col-md-12 col-lg-8 mb-5">
-                <h3>Blog</h3>
-
-                <div class="well">
-                    <h4><?php echo $blogPost->title?></h4>
+        <div class="row blog-entries">
+            <div class="col-md-12 col-lg-8 main-content">
+                <h1 class="mb-4"><?php echo $blogPost->title?></h1>
+                <div class="post-meta">
+                    <span class="mr-2" style="font-family: Calibri"><?php echo $blogPost->Date?></span>
+                </div>
+                <div class="post-content-body">
                     <p><?php echo $blogPost->Description?></p>
+                    <div class="row mb-5">
+                        <?php foreach ($blogPost->image as $image):?>
+                        <div class="col-md-6 mb-4 element-animate">
+                            <?php echo $this->Html->image($image->path,['alt'=> 'Image','class'=>'img-fluid','width' => '80%']);?>
+                        </div>
+                        <?php endforeach;?>
+                    </div>
                     <a><?php echo $blogPost->Body?></a>
                 </div>
-                <div class="related">
-                    <?php if (!empty($blogPost->image)): ?>
-                        <table cellpadding="0" cellspacing="0">
-                            <tbody>
-                            <?php foreach ($blogPost->image as $image): ?>
-                                <tr>
-                                    <td class="card" width="50%">
-                                        <?php echo $this->Html->image($image->path, ['alt' => 'CakePHP']); ?>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
-                            </tbody>
-                        </table>
-                    <?php endif; ?>
-                </div>
-
-
-
                 <div class="clearfix"> </div>
             </div>
         </div>
@@ -94,8 +81,5 @@
     </div>
     <br>
 
-    <!-- footer -->
-    <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 0;"></span> <span id="toTopHover" style="opacity: 0;"> </span></a>
-</body>
-</html>
+
 
