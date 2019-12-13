@@ -9,7 +9,7 @@
         <div class="card">
             <?= $this->Form->create($admin) ?>
             <fieldset>
-                <legend><?= __('Edit Admin') ?></legend>
+                <legend><?= __('Edit Account Details') ?></legend>
                 <?php
                 echo $this->Form->control('username');
                 echo $this->Form->control('password');
