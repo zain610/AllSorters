@@ -92,7 +92,7 @@
     var navbar = document.getElementById("navbar");
 
     // Get the offset position of the navbar
-    var sticky = navbar.offsetHeight;
+    var sticky = navbar.offsetHeight-30;
 
     // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
     function myFunction() {
