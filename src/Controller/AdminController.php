@@ -8,6 +8,7 @@ use Cake\Mailer\Email;
 use Cake\Mailer\TransportFactory;
 use Cake\Utility\Security;
 use Cake\ORM\TableRegistry;
+use Cake\Routing\Router;
 
 /**
  * Admin Controller
@@ -147,25 +148,27 @@ class AdminController extends AppController
 
             $adminTable = TableRegistry::get('admin');
 
-                $admin = $adminTable->find('all')->where(['email'=>$myemail])->first();
-                if(is_null($admin)){
-                    $this->Flash->error('Could not find the email.');
-                }
-                else{
-                    $admin->password = '';
-                    $admin->token = $mytoken;
+            $admin = $adminTable->find('all')->where(['email'=>$myemail])->first();
+            if(is_null($admin)){
+                $this->Flash->error('Could not find the email.');
+            }
+            else{
+                $admin->password = '';
+                $admin->token = $mytoken;
 
-                    if($adminTable->save($admin)){
-                        $this->Flash->success('Reset password link has been sent to your email ('.$myemail.'), please check your index');
-                        $email = new Email('default');
-                        $email->setFrom(['allsortMary@gmail.com' => 'AllSorters'])
-                            ->setTo($myemail)
-                            ->setTemplate('default')
-                            ->setViewVars(['title' => "Reset Password", 'content'=> 'Hello '.$myemail.' Please click link below to reset your password: http://localhost:8765/admin/resetpassword/'.$mytoken])
-                            ->setSubject("Please confirm your reset password");
-                        $email->send();
-                    }
+                if($adminTable->save($admin)){
+                    $this->Flash->success('Reset password link has been sent to your email ('.$myemail.'), please check your index');
+                    $email = new Email('default');
+                    $url = Router::Url(['controller'=>'admin','action'=>'resetpassword'],true).'/'.$mytoken;
+                    $email->setFrom(['allsortMary@gmail.com' => 'AllSorters'])
+                        ->setTo($myemail)
+                        ->setTemplate('default')
+//                            ->setViewVars(['title' => "Reset Password", 'content'=> 'Hello '.$myemail.' Please click link below to reset your password: http://localhost:8765/admin/resetpassword/'.$mytoken])
+                        ->setViewVars(['title' => "Reset Password", 'content'=> 'Hello '.$myemail.' Please click link below to reset your password: '.$url])
+                        ->setSubject("Please confirm your reset password");
+                    $email->send();
                 }
+            }
 
         }
     }
@@ -176,9 +179,14 @@ class AdminController extends AppController
             $admin = $adminTable->find('all')->where(['token'=>$token])->first();
             $this->request->is('post');
             $mypass = $this->request->getData('password');
-            $admin->password = $mypass;
-            if($adminTable->save($admin)){
-                return $this->redirect(['action'=>'login']);
+            if(strlen($mypass)<8){
+                $this->Flash->error('Password must be at least 8 digits.');
+            }
+            else{
+                $admin->password = $mypass;
+                if($adminTable->save($admin)){
+                    return $this->redirect(['action'=>'login']);
+                }
             }
         }
     }
