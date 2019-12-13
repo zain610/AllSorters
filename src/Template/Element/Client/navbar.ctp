@@ -36,12 +36,12 @@ $query = $footer->find();
                         <li><?= $this->Html->link('Blog', ['controller' => 'Blogpost', 'action' => 'index'], ['class' => 'navbar-brand','style'=>'margin-top: -27px']) ?></li>
                         <li><?= $this->Html->link('About', ['controller' => 'About', 'action' => 'index'], ['class' => 'navbar-brand','style'=>'margin-top: -27px']) ?></li>
                         <li><?= $this->Html->link('Gallery', ['controller' => 'GalleryPage', 'action' => 'index'], ['class' => 'navbar-brand','style'=>'margin-top: -27px']) ?></li>
-                        <li><?= $this->Html->link('Contact', ['controller' => 'Request', 'action' => 'add'], ['class' => 'navbar-brand','style'=>'margin-top: -27px']) ?></li>
                         <li><?= $this->Html->link('Speaking Engagements', ['controller' => 'Events', 'action' => 'index'], ['class' => 'navbar-brand','style'=>'margin-top: -27px']) ?></li>
                         <li><?= $this->Html->link('Tips', ['controller' => 'Tips', 'action' => 'index'], ['class' => 'navbar-brand','style'=>'margin-top: -27px']) ?></li>
                         <li><?= $this->Html->link('Favourites', ['controller' => 'Favourites', 'action' => 'index'], ['class' => 'navbar-brand','style'=>'margin-top: -27px']) ?></li>
                         <li><?= $this->Html->link('Testimonials', ['controller' => 'Review', 'action' => 'index'], ['class' => 'navbar-brand','style'=>'margin-top: -27px']) ?></li>
                         <li><?= $this->Html->link('Book Shop', ['controller' => 'Product', 'action' => 'index'], ['class' => 'navbar-brand','style'=>'margin-top: -27px']) ?></li>
+                        <li><?= $this->Html->link('Contact', ['controller' => 'Request', 'action' => 'add'], ['class' => 'navbar-brand','style'=>'margin-top: -27px']) ?></li>
 
                     </ul>
                 </div>
