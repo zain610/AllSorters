@@ -8,17 +8,6 @@ use Cake\Mailer\TransportFactory;
 use Cake\Http\Client;
 
 
-//        'gmail' => [
-//
-//            'host' => 'ssl://stmp.gmail.com',
-//            'port' => 465,
-//            'username' => 'allsortMary@gmail.com',
-//            'password' => 'allsortMary77',
-//            'className' => 'Smtp',
-//            'tls' => true
-//        ]
-
-
 /**
  * Subscriptions Controller
  *
@@ -28,6 +17,10 @@ use Cake\Http\Client;
  */
 class SubscriptionsController extends AppController
 {
+    public function initialize()
+    {
+        parent::initialize();
+    }
     /**
      * Index method
      *
@@ -38,8 +31,12 @@ class SubscriptionsController extends AppController
         $this->layout = 'admin';
         $subscriptions = $this->paginate($this->Subscriptions);
         $subscribers = $this->request->getSession()->read('subscribers');
+        $BlogPost = $this->loadModel('BlogPost');
+        $blogPosts = $BlogPost->find('all')->toArray();
+        $this->set('blogs', $blogPosts);
         $this->set('subscribers', $subscribers);
-        $this->set('mail', $this->request->getSession()->read('mail'));
+        debug($this->request->getSession()->read('formdata'));
+        $this->set('formdata', $this->request->getSession()->read('formdata'));
         $this->set('email', $this->request->getSession()->read('sendermail'));
         $this->set('id', $this->request->getSession()->read('id'));
         $this->set(compact('subscriptions'));
@@ -101,6 +98,13 @@ class SubscriptionsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+    public function submitNewsletterForm() {
+        $this->layout = "admin";
+        $form_data = $this->request->getData();
+        debug($form_data);
+        $this->request->getSession()->write('formdata', $form_data );
+        return $this->redirect(['action' => 'index']);
+    }
     public function emailNewsletter()
     {
         $this->layout = "admin";
@@ -122,7 +126,7 @@ class SubscriptionsController extends AppController
             }
         }
         $this->sendEmails($sender_list, $message);
-        $this->request->getSession()->write('subscribers', $sender_list );
+        $this->request->getSession()->write('formdata', $formData );
         return $this->redirect(['action' => 'index']);
     }
     private function sendEmails($sender_list = [], $message = "") {
@@ -151,6 +155,7 @@ class SubscriptionsController extends AppController
         $this->autoRender = false; // no need to render the page, just plain data.
         $this->request->allowMethod(["delete", "post"]);
         $id = $this->request->getData();
+
         $subscription_to_delete = $this->Subscriptions->get($id, [
             'contain' => []
         ]);

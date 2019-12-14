@@ -2,6 +2,7 @@
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Subscription[]|\Cake\Collection\CollectionInterface $subscriptions
+ * @var \App\Model\Entity\BlogPost[]|\Cake\Collection\CollectionInterface $blogs
  * use Cake\Routing\Route\DashedRoute;
  */
 ?>
@@ -31,7 +32,7 @@
 
 </script>
 <div class="container-fluid">
-    <?= $this->Form->create(null, ['url' => ['controller'=>'Subscriptions', 'action' => 'emailNewsletter'], 'type' => 'post']); ?>
+    <?= $this->Form->create(null, ['url' => ['controller'=>'Subscriptions', 'action' => 'submitNewsletterForm'], 'type' => 'post']); ?>
 
     <div class="" style="">
         <h4>Newsletter</h4>
@@ -55,9 +56,9 @@
             <div class="row">
 
 
-                <?php foreach ($subscriptions as $subscription): ?>
+                <?php foreach ($subscriptions as $key => $subscription): ?>
                     <div id="div-subscriber-checkbox" class="form-check form-check-inline col-sm-3">
-                        <?= $this->Form->checkbox($subscription->id, ['id'=>$this->Number->format($subscription->id), 'class'=> 'form-check-input']); ?>
+                        <?= $this->Form->checkbox('subscriber_id'.$subscription->id, ['id'=>$this->Number->format($subscription->id), 'class'=> 'form-check-input']); ?>
                         <label id="subscriber" class="form-check-label" for="<?=$this->Number->format($subscription->id)?>"><?= h($subscription->email_address) ?></label>
 
                         <button  id="deleteSubscriberBtn" onclick="deleteSubscriber(<?=$subscription->id?>)" type="button" class="close" aria-label="Close" style="color: red;opacity: 1;">
@@ -72,7 +73,53 @@
 
 
         </div>
+        <hr style="border-top: 2px solid darkslategray">
+        <div class="" style="">
+            <div class="" style="">
+                <h4>Select Blogs </h4>
+            </div>
+            <div class="table table-hover table-striped">
+                <table class="articles-table table ">
+                    <thead>
+                    <tr>
+                        <th scope="col" style="width: 10%;" ">Select</th>
+                        <th scope="col"><?= $this->Paginator->sort('title') ?></th>
+                        <th scope="col"><?= $this->Paginator->sort('Description') ?></th>
+                        <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
+                        <th scope="col" class="actions"><?= __('Actions') ?></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach ($blogs as $blog) { ?>
+                        <tr class="article-row">
+                            <td class="">
+                                <div id="div-subscriber-checkbox" class="form-check form-check-inline col-sm-3">
+                                    <?= $this->Form->checkbox('blog_id'.$blog->blog_post_id, ['id'=>$this->Number->format($blog->blog_post_id), 'class'=> 'form-check-input']); ?>
+                                    <label id="blog" class="form-check-label" for="<?=$this->Number->format($blog->blog_post_id)?>"><?= h($blog->blog_post_id) ?></label>
+                                </div>
+                            </td>
+
+                            <td style="">
+                                <?= $this->Html->link($blog->title, ['action' => 'edit', $blog->blog_post_id]) ?>
+                            </td>
+                            <td>
+                                <?= $this->Html->link($blog->Description, ['action' => 'edit', $blog->blog_post_id]) ?>
+                            </td>
+                            <td>
+                                <?= $this->Html->link($blog->modified, ['action' => 'edit', $blog->blog_post_id]) ?>
+                            </td>
+                            <td class="action-col">
+                                <?= $this->element('Admin/Buttons/view', ['url' => ['action' => 'view', $blog->blog_post_id]]) ?>
+                                <?= $this->element('Admin/Buttons/edit', ['url' => ['action' => 'edit', $blog->blog_post_id]]) ?>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
+
 
     <?= $this->Form->button('Submit', ['class'=>'btn btn-primary']); ?>
 
