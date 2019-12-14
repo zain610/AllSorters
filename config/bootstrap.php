@@ -46,8 +46,7 @@ use Cake\Utility\Security;
 
 
 
-
-
+//Load plugin manually for email templating
 
 /**
  * Uncomment block of code below if you want to use `.env` file during development.

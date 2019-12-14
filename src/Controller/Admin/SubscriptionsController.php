@@ -35,9 +35,8 @@ class SubscriptionsController extends AppController
         $blogPosts = $BlogPost->find('all')->toArray();
         $this->set('blogs', $blogPosts);
         $this->set('subscribers', $subscribers);
-        debug($this->request->getSession()->read('formdata'));
         $this->set('formdata', $this->request->getSession()->read('formdata'));
-        $this->set('email', $this->request->getSession()->read('sendermail'));
+        $this->set('email', $this->request->getSession()->read('mail'));
         $this->set('id', $this->request->getSession()->read('id'));
         $this->set(compact('subscriptions'));
     }
@@ -135,31 +134,39 @@ class SubscriptionsController extends AppController
 
             }
         }
-//        $this->sendEmails($sender_list, $message);
-        $this->request->getSession()->write('formdata', $parsedData );
+        $this->sendEmails($parsedData);
+        $this->request->getSession()->write('formdata', $parsedData['message'] );
         return $this->redirect(['action' => 'index']);
     }
-    private function sendEmails($sender_list = [], $message = "") {
+    private function sendEmails($data) {
         //iterate over each sender and send an email.
-        foreach ($sender_list as $sender) {
-            $sender_email = $sender[0]['email_address'];
-            $this->request->getSession()->write('sendermail', $sender_email);
 
-            $email = new Email('default');
-            $email->setFrom(['allsortMary@gmail.com' => 'All Sorters'])
-                ->setTo($sender_email)
-                ->setTemplate('default')
-                ->setViewVars(['title' => "Newsletter update from AllSorters", 'content'=> strip_tags($message)])
-                ->setSubject("Newsletter update from AllSorters");
+        if(!empty($data['sender'])) {
+            foreach ($data['sender'] as $sender) {
+                $sender_email = $sender['email_address'];
+                $this->request->getSession()->write('sendermail', $sender_email);
+
+                $email = new Email('default');
+                $email->setFrom(['allsortMary@gmail.com' => 'All Sorters'])
+                    ->setTo($sender_email)
+                    ->setEmailFormat('html')
+                    ->setTemplate('default')
+                    ->setViewVars(array('message' => strip_tags($data['message']), 'title' => "Newsletter update from AllSorters"))
+                    ->setSubject("Newsletter update from AllSorters");
 //            Email::deliver($sender_email, 'Hello World', 'Test message', ['from' => 'allsortMary@gmail.com']);
+            }
+
             if($email->send()) {
-                $this->request->getSession()->write('mail', true);
+                $this->request->getSession()->write('mail', $email->getViewVars());
             } else {
                 $this->request->getSession()->write('mail', false);
             }
 
         }
+
     }
+
+
     public function deleteSubscriber() {
         $layout = 'ajax'; // you need to have a no html page, only the data.
         $this->autoRender = false; // no need to render the page, just plain data.

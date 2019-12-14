@@ -13,4 +13,6 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
+echo "<h1>Weclome to AllSorters Newsletter</h1>";
+echo "<br>";
 echo $this->fetch('content');

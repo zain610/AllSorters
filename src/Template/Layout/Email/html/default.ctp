@@ -13,12 +13,19 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!DOCTYPE>
 <html>
 <head>
     <title><?= $this->fetch('title') ?></title>
 </head>
 <body>
-    <?= $this->fetch('content') ?>
+<div style="height: 60rem; background-color: #fff9c4; display:flex; position: center">
+    <h1 style="color: #2d363f; ">AllSorters</h1>
+    <p>Test <?= $this->fetch('message') ?></p>
+
+</div>
+Thank you for choosing us,
+
+Company name
 </body>
 </html>

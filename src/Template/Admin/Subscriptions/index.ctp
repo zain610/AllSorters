@@ -14,7 +14,7 @@
         }
     }
     function deleteSubscriber(something) {
-        console.log(something)
+        console.log(something);
 
 
         $.ajax('/admin/subscriptions/deleteSubscriber', {
@@ -82,7 +82,7 @@
                 <table class="articles-table table ">
                     <thead>
                     <tr>
-                        <th scope="col" style="width: 10%;" ">Select</th>
+                        <th scope="col" style="width: 10%;">Select</th>
                         <th scope="col"><?= $this->Paginator->sort('title') ?></th>
                         <th scope="col"><?= $this->Paginator->sort('Description') ?></th>
                         <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
@@ -90,7 +90,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <?php foreach ($blogs as $blog) { ?>
+                    <?php foreach ($blogs as $blog): ?>
                         <tr class="article-row">
                             <td class="">
                                 <div id="div-blog-checkbox" class="form-check form-check-inline col-sm-3">
@@ -100,20 +100,20 @@
                             </td>
 
                             <td style="">
-                                <?= $this->Html->link($blog->title, ['action' => 'edit', $blog->blog_post_id]) ?>
+                                <?= h($blog->title) ?>
                             </td>
                             <td>
-                                <?= $this->Html->link($blog->Description, ['action' => 'edit', $blog->blog_post_id]) ?>
+                                <?= h($blog->Description) ?>
                             </td>
                             <td>
-                                <?= $this->Html->link($blog->modified, ['action' => 'edit', $blog->blog_post_id]) ?>
+                                <?=h($blog->modified) ?>
                             </td>
                             <td class="action-col">
                                 <?= $this->element('Admin/Buttons/view', ['url' => ['action' => 'view', $blog->blog_post_id]]) ?>
                                 <?= $this->element('Admin/Buttons/edit', ['url' => ['action' => 'edit', $blog->blog_post_id]]) ?>
                             </td>
                         </tr>
-                    <?php } ?>
+                    <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>

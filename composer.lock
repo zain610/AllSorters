@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7b5db3b470ccfc342285a97c30a74af8",
+    "content-hash": "1cdd6b9b7e9258108231bb4dfbe1f937",
     "packages": [
         {
             "name": "aura/intl",
@@ -534,6 +534,57 @@
                 "jquery-plugin"
             ],
             "time": "2019-08-10T16:04:40+00:00"
+        },
+        {
+            "name": "gourmet/email",
+            "version": "v3.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gourmet/email.git",
+                "reference": "e8389ea206fe285ea956cac01d8d4b75a41bfb9f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gourmet/email/zipball/e8389ea206fe285ea956cac01d8d4b75a41bfb9f",
+                "reference": "e8389ea206fe285ea956cac01d8d4b75a41bfb9f",
+                "shasum": ""
+            },
+            "require": {
+                "cakephp/cakephp": "^3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.0"
+            },
+            "type": "cakephp-plugin",
+            "autoload": {
+                "psr-4": {
+                    "Gourmet\\Email\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Others",
+                    "homepage": "https://github.com/gourmet/email/graphs/contributors"
+                },
+                {
+                    "name": "Jad Bitar",
+                    "homepage": "http://jadb.io",
+                    "role": "Author"
+                }
+            ],
+            "description": "Gourmet Email Plugin for rapid CakePHP application development.",
+            "homepage": "https://github.com/gourmet/email",
+            "keywords": [
+                "cakephp",
+                "email",
+                "gourmet",
+                "plugin"
+            ],
+            "time": "2016-06-18T21:02:35+00:00"
         },
         {
             "name": "josegonzalez/dotenv",
