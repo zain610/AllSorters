@@ -30,7 +30,7 @@ class EventsController extends AppController
             $this->Events->find('all')->where(['Events.Published' => 1])->contain([])
         );
         $this->set(compact('publishedEvents'));
-        $this->set('data', $this->request->getSession()->read('data'));
+        $this->set('data', $this->request->getSession()->read('formdata'));
     }
     public function initialize()
     {
@@ -71,12 +71,21 @@ class EventsController extends AppController
         $this->layout ='admin';
         $event = $this->Events->newEntity();
         if ($this->request->is('post')) {
-            $event = $this->Events->patchEntity($event, $this->request->getData());
-            $event->Published = 1;
-            $event->Archived = 0;
+            $formdata = $this->request->getData();
+            $event = $this->Events->patchEntity($event, $formdata );
+
+            $today = Date::today();
+            $date = Date::parseDate($formdata['Date']);
+            if($today > $date) {
+                $event->Published = 0;
+                $event->Archived = 1;
+            } else {
+                $event->Published = 1;
+                $event->Archived = 0;
+            }
+
             if ($this->Events->save($event)) {
                 $this->Flash->success(__('The event has been saved.'));
-
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The event could not be saved. Please, try again.'));
