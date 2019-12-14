@@ -32,7 +32,7 @@
 
 </script>
 <div class="container-fluid">
-    <?= $this->Form->create(null, ['url' => ['controller'=>'Subscriptions', 'action' => 'submitNewsletterForm'], 'type' => 'post']); ?>
+    <?= $this->Form->create(null, ['url' => ['controller'=>'Subscriptions', 'action' => 'emailNewsletter'], 'type' => 'post']); ?>
 
     <div class="" style="">
         <h4>Newsletter</h4>
@@ -58,7 +58,7 @@
 
                 <?php foreach ($subscriptions as $key => $subscription): ?>
                     <div id="div-subscriber-checkbox" class="form-check form-check-inline col-sm-3">
-                        <?= $this->Form->checkbox('subscriber_id'.$subscription->id, ['id'=>$this->Number->format($subscription->id), 'class'=> 'form-check-input']); ?>
+                        <?= $this->Form->checkbox('sid'.$subscription->id, ['id'=>$this->Number->format($subscription->id), 'class'=> 'form-check-input']); ?>
                         <label id="subscriber" class="form-check-label" for="<?=$this->Number->format($subscription->id)?>"><?= h($subscription->email_address) ?></label>
 
                         <button  id="deleteSubscriberBtn" onclick="deleteSubscriber(<?=$subscription->id?>)" type="button" class="close" aria-label="Close" style="color: red;opacity: 1;">
@@ -93,8 +93,8 @@
                     <?php foreach ($blogs as $blog) { ?>
                         <tr class="article-row">
                             <td class="">
-                                <div id="div-subscriber-checkbox" class="form-check form-check-inline col-sm-3">
-                                    <?= $this->Form->checkbox('blog_id'.$blog->blog_post_id, ['id'=>$this->Number->format($blog->blog_post_id), 'class'=> 'form-check-input']); ?>
+                                <div id="div-blog-checkbox" class="form-check form-check-inline col-sm-3">
+                                    <?= $this->Form->checkbox('bid'.$blog->blog_post_id, ['id'=>$this->Number->format($blog->blog_post_id), 'class'=> 'form-check-input']); ?>
                                     <label id="blog" class="form-check-label" for="<?=$this->Number->format($blog->blog_post_id)?>"><?= h($blog->blog_post_id) ?></label>
                                 </div>
                             </td>

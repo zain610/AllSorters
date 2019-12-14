@@ -98,35 +98,45 @@ class SubscriptionsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
-    public function submitNewsletterForm() {
-        $this->layout = "admin";
-        $form_data = $this->request->getData();
-        debug($form_data);
-        $this->request->getSession()->write('formdata', $form_data );
-        return $this->redirect(['action' => 'index']);
-    }
     public function emailNewsletter()
     {
         $this->layout = "admin";
         $this->request->allowMethod('post');
-        //get the data from front end with the users to send the email to.
+        $BlogPost = $this->loadModel('BlogPost');
+        //get the data from front end with the users to send the email to and blogs info.
         $formData = $this->request->getData();
-        $sender_list = [];
+        $parsedData = [];
+        $parsedData['sender'] = [];
+        $parsedData['blogs'] = [];
         $message = "";
         //get the keys of the data = ids
         $data_keys = array_keys($formData); // [message, 1,2,3,4,5,6]
         //iterate over the keys list and foreach key, find the value is 1, then add it to the senders list
         foreach($data_keys as $key) {
-            if($key !== "message") {
+            //check if the key contains sid
+            if(strpos($key, "sid")!== false) {
+                //get the ids which were selected by the user
                 if($formData[$key]) {
-                    array_push($sender_list, $this->Subscriptions->find()->select(['email_address'])->where(['id' => $key])->toList());
+                    //strip the "sid" from the keys and fetch subscriber info.
+                    $subscriber_id = trim($key, "sid");
+                    array_push($parsedData['sender'], $this->Subscriptions->find()->select(['email_address'])->where(['id' => $subscriber_id])->toList()[0]);
                 }
-            } else {
-                $message = $formData[$key];
+            } elseif (strpos($key, "bid")!== false) {
+                //get the blog ids selected by the user
+                if($formData[$key]) {
+                    //strip the "bid" from the keys and fetch the blogs info.
+                    $blog_id = trim($key, "bid");
+                    array_push($parsedData['blogs'], $BlogPost->find()->where(['blog_post_id' => $blog_id ])->toArray()[0]);
+
+                }
+            } elseif (strpos($key, "message") !== false) {
+                //store the message
+                $parsedData['message']= $formData[$key];
+
             }
         }
-        $this->sendEmails($sender_list, $message);
-        $this->request->getSession()->write('formdata', $formData );
+//        $this->sendEmails($sender_list, $message);
+        $this->request->getSession()->write('formdata', $parsedData );
         return $this->redirect(['action' => 'index']);
     }
     private function sendEmails($sender_list = [], $message = "") {
