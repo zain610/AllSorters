@@ -9,7 +9,6 @@ $currentController = $this->request->getParam('controller');
 <div class="table table-hover table-striped">
     <div id="searchBarNavBar">
         <?= $this->element('Admin/Buttons/search'); ?>
-        <?= $this->Html->link('Add Blog Post', ['action' => 'add'], ['class' => 'pull-right btn btn-oval btn-primary']) ?>
     </div>
     <h3><?= __('Blog Post') ?></h3>
     <table class="articles-table table">
