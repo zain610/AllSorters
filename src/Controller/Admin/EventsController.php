@@ -6,6 +6,7 @@ use Cake\I18n\Date;
 use Cake\I18n\FrozenTime;
 use Cake\I18n\Time;
 use Cake\ORM\TableRegistry;
+use Cake\Event\Event;
 
 /**
  * Events Controller
@@ -26,6 +27,10 @@ class EventsController extends AppController
     {
         $this->layout ='admin';
         $this->loadComponent('Paginator');
+        //experimenting with cakephp events system
+        $event = new Event('Controller.Events.beforeEventsIndex', $this);
+        $this->getEventManager()->dispatch($event);
+
         $publishedEvents = $this->Paginator->paginate(
             $this->Events->find('all')->where(['Events.Published' => 1])->contain([])
         );
@@ -73,17 +78,6 @@ class EventsController extends AppController
         if ($this->request->is('post')) {
             $formdata = $this->request->getData();
             $event = $this->Events->patchEntity($event, $formdata );
-
-            $today = Date::today();
-            $date = Date::parseDate($formdata['Date']);
-            if($today > $date) {
-                $event->Published = 0;
-                $event->Archived = 1;
-            } else {
-                $event->Published = 1;
-                $event->Archived = 0;
-            }
-
             if ($this->Events->save($event)) {
                 $this->Flash->success(__('The event has been saved.'));
                 return $this->redirect(['action' => 'index']);

@@ -207,5 +207,12 @@ Type::build('timestamp')
 //Inflector::rules('uninflected', ['dontinflectme']);
 //Inflector::rules('transliteration', ['/å/' => 'aa']);
 
+//Turn the listener on
+
+use Cake\Event\EventManager;
+use App\Controller\Event\EventsListener;
+$myEventsListener = new EventsListener();
+EventManager::instance()->on($myEventsListener);
+
 
 
