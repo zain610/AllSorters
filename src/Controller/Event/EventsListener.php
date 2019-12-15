@@ -40,8 +40,6 @@ class EventsListener implements EventListenerInterface
         );
     }
     public function handlePastEvents($event) {
-        $event->subject()->set('eventsaddon', '1 2 3');
-        Log::write('debug', $event);
         TableRegistry::get('Events')
             ->query()
             ->update()

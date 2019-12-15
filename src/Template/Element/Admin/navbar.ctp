@@ -63,6 +63,11 @@ $isWebpagesActive = $currentController === "Webpages";
                         ['prefix'=>'admin','controller'=>'BlogPost','action'=>'archiveIndex'],
                         ['escape'=>false]
                     )?></li>
+                <li><?=$this->Html->link(
+                        '<p>View Blog Post Comments</p>',
+                        ['prefix'=>'admin','controller'=>'BlogPost','action'=>'displayComments'],
+                        ['escape'=>false]
+                    )?></li>
 
 
             </ul>

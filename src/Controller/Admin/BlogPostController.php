@@ -209,7 +209,7 @@ class BlogPostController extends AppController
         $image = $this->BlogPost->Image->find('list', [
             'limit' => 200
 
-            ]);
+        ]);
 
         $img_ob = $this->BlogPost->Image->find('all');
 
@@ -385,6 +385,13 @@ class BlogPostController extends AppController
         $this->PostComment->save($comment);
         $this->redirect(['action'=>'view',$comment->Post_id]);
 
-}
+    }
+    public function displayComments() {
+        $this->layout ='admin';
+        $commentModel = $this->loadModel('PostComment');
+        $comments = $commentModel->query()->toArray();
+        $this->set(compact('comments'));
+
+    }
 
 }
