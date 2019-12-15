@@ -389,7 +389,7 @@ class BlogPostController extends AppController
     public function displayComments() {
         $this->layout ='admin';
         $commentModel = $this->loadModel('PostComment');
-        $comments = $commentModel->query()->toArray();
+        $comments = $commentModel->query()->find('all', ['contain' => 'BlogPost'])->toArray();
         $this->set(compact('comments'));
 
     }

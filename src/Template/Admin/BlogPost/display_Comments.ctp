@@ -15,23 +15,25 @@ $currentController = $this->request->getParam('controller');
     <table class="articles-table table">
         <thead>
         <tr>
-            <th ><?= $this->Paginator->sort('User') ?></th>
+            <th ><?= $this->Paginator->sort('Blog Post Title') ?></th>
             <th ><?= $this->Paginator->sort('Comment_Details') ?></th>
-            <th ><?= $this->Paginator->sort('Post_id') ?></th>
+            <th ><?= $this->Paginator->sort('User') ?></th>
         </tr>
         </thead>
         <tbody>
         <?php foreach ($comments as $comment): ?>
                 <tr class="article-row">
                     <td>
-                        <?= $comment->User_Name . " by " . $comment->User_Email ?>
+                        <?= $comment->blog_post->title ?>
                     </td>
+
                     <td>
                         <?= $this->Text->truncate($comment->Comment_Details, 50)?>
                     </td>
                     <td>
-                        <?= $comment->Post_id ?>
+                        <?= $comment->User_Name . " by " . $comment->User_Email ?>
                     </td>
+
                     <td class="action-col" style="">
                         <?= $this->element('Admin/Buttons/view', ['url' => ['action' => 'view',  $comment->Post_id]]) ?>
                         <?php if($comment['showed']){ ?>
