@@ -95,6 +95,7 @@ class BlogPostController extends AppController
             $blogPost->Published = 1;
             $blogPost->Archived = 0;
             $blogPost = $this->BlogPost->patchEntity($blogPost, $formData);
+            debug($blogPost);
             if ($this->BlogPost->save($blogPost)) {
                 $this->Flash->success(__('The blog post has been saved.'));
 
