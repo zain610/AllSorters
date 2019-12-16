@@ -58,7 +58,7 @@ class BlogPostController extends AppController
         $this->set('blogPost', $blogPost);
 
         $this->loadModel('PostComment');
-        $comment = $this->PostComment->find('all',['conditions'=>['and'=>['Post_id'=>$id],['showed'=>1]]])->toList();
+        $comment = $this->PostComment->find('all',['conditions'=>['and'=>['post_comment_id'=>$id],['showed'=>1]]])->toList();
         $this->set('comment',$comment);
         $newComment = $this->PostComment->newEntity();
         $this->set(compact('newComment'));
