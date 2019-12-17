@@ -6,14 +6,10 @@
 $this->Html->script('/TinyMCE/js/tiny_mce/tiny_mce.js', array(
     'inline' => false));
 ?>
-<<<<<<< HEAD
+
 
 <?php echo $this->Html->css('image_checkbox'); ?>
 
-
-=======
-<?php echo $this->Html->css('image_checkbox'); ?>
->>>>>>> test
 <div class="col-md-8">
     <div class="content table-responsive table-full-width">
         <div class="card">

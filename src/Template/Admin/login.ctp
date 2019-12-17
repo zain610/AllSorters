@@ -1,3 +1,7 @@
+<?php
+use Cake\View\Helper\FlashHelper;
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +14,9 @@
     <?= $this->Html->css('my-login.css') ?>
 </head>
 
+
 <body class="my-login-page">
+<?= $this->Flash->render() ?>
 <section class="h-100">
     <div class="container h-100">
         <div class="row justify-content-md-center h-100">
