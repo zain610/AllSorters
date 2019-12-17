@@ -66,7 +66,7 @@ class BlogPostController extends AppController
             'contain' => ['Image']
         ]);
         $this->loadModel('PostComment');
-        $comment = $this->PostComment->find('all',['conditions'=>['Post_id'=>$id]])->toList();
+        $comment = $this->PostComment->find('all',['conditions'=>['Blog_post_id'=>$id]])->toList();
         $this->set('comment',$comment);
 
         $this->set('blogPost', $blogPost);
@@ -84,6 +84,8 @@ class BlogPostController extends AppController
         $blogPost = $this->BlogPost->newEntity();
         if ($this->request->is('post')) {
             $data = $this->request->getData('checkbox');
+            debug($data);
+
             $formData = $this->request->getData();
 
             for($i=0;$i<count($data);$i++){
@@ -209,7 +211,7 @@ class BlogPostController extends AppController
         $image = $this->BlogPost->Image->find('list', [
             'limit' => 200
 
-            ]);
+        ]);
 
         $img_ob = $this->BlogPost->Image->find('all');
 
@@ -385,6 +387,13 @@ class BlogPostController extends AppController
         $this->PostComment->save($comment);
         $this->redirect(['action'=>'view',$comment->Post_id]);
 
-}
+    }
+    public function displayComments() {
+        $this->layout ='admin';
+        $commentModel = $this->loadModel('PostComment');
+        $comments = $commentModel->query()->find('all', ['contain' => 'BlogPost'])->toArray();
+        $this->set(compact('comments'));
+
+    }
 
 }

@@ -18,7 +18,7 @@
         ?>
         <ul>
             <?php foreach ($img_ob as $img):?>
-                <li><?= $this->Form->checkbox('checkbox[]', ['id'=>$img->Image_id,'value'=>$img->Image_id]); ?>
+                <li><?= $this->Form->checkbox("checkboxes[$img->Image_id]", ['id'=>$img->Image_id,'value' => $img->Image_id]); ?>
                     <label for="<?php echo $img->Image_id ?>"><?php echo $this->Html->image($img->path, ['class' => 'img-responsive', 'alt' => 'SlideShow images']); ?>
                     </label>
                 </li>
