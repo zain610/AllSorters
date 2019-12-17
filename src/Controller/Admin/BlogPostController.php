@@ -66,7 +66,7 @@ class BlogPostController extends AppController
             'contain' => ['Image']
         ]);
         $this->loadModel('PostComment');
-        $comment = $this->PostComment->find('all',['conditions'=>['Post_id'=>$id]])->toList();
+        $comment = $this->PostComment->find('all',['conditions'=>['Blog_post_id'=>$id]])->toList();
         $this->set('comment',$comment);
 
         $this->set('blogPost', $blogPost);
@@ -84,6 +84,8 @@ class BlogPostController extends AppController
         $blogPost = $this->BlogPost->newEntity();
         if ($this->request->is('post')) {
             $data = $this->request->getData('checkbox');
+            debug($data);
+
             $formData = $this->request->getData();
 
             for($i=0;$i<count($data);$i++){
@@ -95,7 +97,6 @@ class BlogPostController extends AppController
             $blogPost->Published = 1;
             $blogPost->Archived = 0;
             $blogPost = $this->BlogPost->patchEntity($blogPost, $formData);
-            debug($blogPost);
             if ($this->BlogPost->save($blogPost)) {
                 $this->Flash->success(__('The blog post has been saved.'));
 
