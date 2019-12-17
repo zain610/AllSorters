@@ -52,7 +52,9 @@ class ImageController extends AppController
 
         $this->loadComponent('Paginator');
         $image = $this->Paginator->paginate(
-            $this->Image->find('all')
+            $this->Image->find('all'),[
+                'limit' => 10
+            ]
         );
         $this->set(compact('image'));
     }
