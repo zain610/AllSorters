@@ -80,7 +80,8 @@ class BlogPostController extends AppController
                 $newComment->User_Email = $this->request->getData()['User_Email'];
                 $newComment->Comment_Details = $this->request->getData()['Comment_Details'];
                 $newComment->showed = 0;
-                $newComment->Post_id = $id;
+                $newComment->Blog_post_id = $blogPost->blog_post_id;
+                debug($this->request->getData());
                 if ($this->PostComment->save($newComment)) {
                     $this->Flash->success(__('Your comment has been submitted'));
 

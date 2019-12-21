@@ -2,6 +2,7 @@
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Service $service
+ * @var \App\Model\Entity\PostComment $postComment
  */
 ?>
 <head>
@@ -50,7 +51,7 @@
         <?php foreach($comment as $comment){ ?>
             <span style="font-weight: bold;color: black"><?php echo $comment['User_Name'] ?>:</span>
             <span style="color:black;"><?php echo $comment['Comment_Details'] ?></span>
-            <hr style="margin: 10px 0rem 10px 0rem;">
+<!--            <hr style="margin: 10px 0rem 10px 0rem;">-->
 
         <?php } ?>
 
