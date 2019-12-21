@@ -66,7 +66,7 @@ class BlogPostController extends AppController
             'contain' => ['Image']
         ]);
         $this->loadModel('PostComment');
-        $comment = $this->PostComment->find('all',['conditions'=>['Post_id'=>$id]])->toList();
+        $comment = $this->PostComment->find('all',['conditions'=>['Blog_post_id'=>$id]])->toList();
         $this->set('comment',$comment);
 
         $this->set('blogPost', $blogPost);
@@ -384,7 +384,7 @@ class BlogPostController extends AppController
             $comment->showed=0;
         }
         $this->PostComment->save($comment);
-        $this->redirect(['action'=>'view',$comment->Post_id]);
+        $this->redirect(['action'=>'view',$comment->Blog_post_id]);
 
     }
     public function displayComments() {
