@@ -73,16 +73,15 @@
 
 </div>
 <hr>
-<div class="container-fluid" id="newsletter-signup" style="margin-bottom: 1rem; background-color: #f2f6fe">
+<div class="container-fluid" id="newsletter-signup" style="margin-bottom: 1rem; background-color: #f2f6fe; display: flex; justify-content: center">
 
-    <div style="display: flex;
-    align-items: flex-end;
-    justify-content: center; padding: 1rem 0">
+    <div>
         <h3>Sign Up to our Newsletter!</h3>
 
         <?= $this->element('Client/subscribe'); ?>
+        <small id="emailHelp" class="form-text text-muted">*We'll never share your email with anyone else.</small>
+
     </div>
-    <small id="emailHelp" class="form-text text-muted">*We'll never share your email with anyone else.</small>
 
 </div>
 <hr>

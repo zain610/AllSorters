@@ -16,6 +16,7 @@ class BlogPostController extends AppController
     {
         parent::initialize();
         $this->loadModel('BlogPost');
+        $this->loadModel('post_comment');
         $this->Auth->allow(['index','view','advanceSearch']);
     }
 
@@ -58,8 +59,8 @@ class BlogPostController extends AppController
         $this->set('blogPost', $blogPost);
 
         $this->loadModel('PostComment');
-        $comment = $this->PostComment->find('all',['conditions'=>['and'=>['post_comment_id'=>$id],['showed'=>1]]])->toList();
-        $this->set('comment',$comment);
+        $comment = $this->PostComment->find('all',['conditions'=>['and'=>['Blog_post_id'=>$id],['showed'=>1]]])->toList();
+        $this->set('comments',$comment);
         $newComment = $this->PostComment->newEntity();
         $this->set(compact('newComment'));
         if ($this->request->is('post')) {

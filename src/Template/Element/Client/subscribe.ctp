@@ -8,11 +8,8 @@ $prefix = $this->request->getParam('prefix');
 ?>
 <style type="text/css">
     .form-group {
-        display: flex;
         /* height: fit-content; */
         align-items: center;
-        border-bottom: 2px solid #be140b;
-        margin-bottom: 20px
     }
     #submit-subscription {
         height: fit-content;
