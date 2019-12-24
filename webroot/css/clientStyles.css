@@ -5,6 +5,10 @@
     max-height: 100%;
 
 }
+.search-form {
+    display: flex;
+    align-items: center;
+}
 .camp1 img {
     width: 50%;
 }
