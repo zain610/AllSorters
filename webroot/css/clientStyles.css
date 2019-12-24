@@ -1,3 +1,4 @@
+
 #serviceimg {
     width: 350px;
     height: 233.333px;
@@ -440,6 +441,7 @@ ul.social li {
     transform-origin: top left;
     transform: skewX(-20deg);
 }
+
 
 /*.inner-blogs:after {*/
 /*    content:"";*/

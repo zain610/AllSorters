@@ -135,7 +135,8 @@ class SubscriptionsController extends AppController
             }
         }
         $this->sendEmails($parsedData);
-        $this->request->getSession()->write('formdata', $parsedData['message'] );
+        $this->request->getSession()->write('formdata', $parsedData['blogs'] );
+        //send all the extracted information to the next step - sendEmails
         return $this->redirect(['action' => 'index']);
     }
     private function sendEmails($data) {
