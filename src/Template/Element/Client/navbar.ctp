@@ -13,12 +13,12 @@ $query = $footer->find();
             </div>
             <div class="contact-info">
 
-                <div class="contact-info-inner" style="padding: 1rem;  background-color: #212529; font-size: 20px">
-                    <div style="display: flex;">
+                <div class="contact-info-inner" style="">
+                    <div style="display: grid;">
                         <h5>Reach out to Mary for more info!</h5>
                         <?php foreach ($query as $footer): ?>
-                        <a style="margin-left: 1rem" href="tel:<?php echo $footer->Phone; ?>"><i class="fas fa-phone-alt"></i></a>
-                        <a style="margin-left: 1rem" href="<?php echo $footer->Email; ?>"><i class="far fa-envelope"></i></a>
+                        <a style="margin-left: 1rem; color: #00adee" href="tel:<?php echo $footer->Phone; ?>"><i style="padding-right: 15px" class="fas fa-phone-alt"></i><?= $footer->Phone ?></a>
+                        <a style="margin-left: 1rem; color: #00adee" href="<?php echo $footer->Email; ?>"><i style="padding-right: 15px" class="far fa-envelope"></i><?= $footer->Email?></a>
                         <?php endforeach;?>
                     </div>
                 </div>

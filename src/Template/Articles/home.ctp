@@ -73,9 +73,9 @@
 
 </div>
 <hr>
-<div class="container-fluid" id="newsletter-signup" style="margin-bottom: 1rem; background-color: #f2f6fe; display: flex; justify-content: center">
+<div class="container-fluid" id="newsletter-signup">
 
-    <div>
+    <div class="services" style="padding: 1rem 0">
         <h3>Sign Up to our Newsletter!</h3>
 
         <?= $this->element('Client/subscribe'); ?>
