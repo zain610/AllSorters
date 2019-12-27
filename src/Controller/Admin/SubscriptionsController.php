@@ -134,25 +134,28 @@ class SubscriptionsController extends AppController
 
             }
         }
+        //send all the extracted information to the next step - sendEmails
         $this->sendEmails($parsedData);
         $this->request->getSession()->write('formdata', $parsedData['blogs'] );
-        //send all the extracted information to the next step - sendEmails
         return $this->redirect(['action' => 'index']);
     }
     private function sendEmails($data) {
         //iterate over each sender and send an email.
+        $message = strip_tags($data['message']);
+        $title = "Test number infinite";
 
         if(!empty($data['sender'])) {
             foreach ($data['sender'] as $sender) {
                 $sender_email = $sender['email_address'];
                 $this->request->getSession()->write('sendermail', $sender_email);
 
+
                 $email = new Email('default');
                 $email->setFrom(['allsortMary@gmail.com' => 'All Sorters'])
                     ->setTo($sender_email)
                     ->setEmailFormat('html')
                     ->setTemplate('default')
-                    ->setViewVars(array('message' => strip_tags($data['message']), 'title' => "Newsletter update from AllSorters"))
+                    ->setViewVars(['message' => strip_tags($data['message']), 'title' => "Newsletter update from AllSorters"])
                     ->setSubject("Newsletter update from AllSorters");
 //            Email::deliver($sender_email, 'Hello World', 'Test message', ['from' => 'allsortMary@gmail.com']);
             }

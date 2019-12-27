@@ -1,4 +1,7 @@
 <?php
+
+?>
+<?php
 /**
  * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
@@ -17,22 +20,14 @@
 <html>
 <head>
     <title><?= $this->fetch('title') ?></title>
+    <?= $this->Html->css('bootstrap.css') ?>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
-<!--    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>-->
-<!--    <link href=" https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">-->
-    <style>
-        * {
-            font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-        }
-    </style>
 </head>
 <body>
 <div class="container-fluid" style=" background-color: #fff9c4; display:flex; position: center">
-    <div class="logo">
-        <?php echo $this->Html->image('Allsorters_logo.png', array('fullBase' => true));?>
-    </div>
-    <p><?php echo $message; ?></p>
+    <h1 style="color: #2d363f; ">AllSorters</h1>
+    <p>Test <?= $this->fetch('message') ?></p>
 
 </div>
 Thank you for choosing us,
@@ -44,5 +39,4 @@ Company name
 <?= $this->Html->script('bootstrap.js') ?>
 
 </html>
-
 
