@@ -7,6 +7,8 @@ use Cake\Mailer\Email;
 use Cake\Mailer\TransportFactory;
 use Cake\Http\Client;
 
+//use Tools\Mailer\Email;
+use TijsVerkoyen\CssToInlineStyles\CssToInlineStyles;
 
 /**
  * Subscriptions Controller
@@ -21,6 +23,7 @@ class SubscriptionsController extends AppController
     {
         parent::initialize();
     }
+
     /**
      * Index method
      *
@@ -28,6 +31,10 @@ class SubscriptionsController extends AppController
      */
     public function index()
     {
+//        $cssToInlineStyles = new CssToInlineStyles();
+//        $html = file_get_contents(__DIR__ . '/../../Template/Layout/Email/html/default.ctp');
+//        $css = file_get_contents(__DIR__.'/../../../webroot/css/email_styling.css');
+//        debug($cssToInlineStyles->convert($html, $css));
         $this->layout = 'admin';
         $subscriptions = $this->paginate($this->Subscriptions);
         $subscribers = $this->request->getSession()->read('subscribers');
@@ -153,12 +160,20 @@ class SubscriptionsController extends AppController
                 $email = new Email('default');
                 $email->setFrom(['allsortMary@gmail.com' => 'All Sorters'])
                     ->setTo($sender_email)
-                    ->setEmailFormat('html')
                     ->setTemplate('default')
+                    ->setEmailFormat('html')
                     ->setViewVars(['message' => strip_tags($data['message']), 'title' => "Newsletter update from AllSorters"])
-                    ->setSubject("Newsletter update from AllSorters");
+                    ->setSubject("Newsletter update from AllSorters")
+                    ->setAttachments([
+                        'logo.png' => [
+                            'file' => __DIR__.'/../../../webroot/img/Allsorters_logo.png',
+                            'mimetype' =>'image/png',
+                            'contentId' => 'allsorters-logo-id'
+                        ]
+                    ]);
 //            Email::deliver($sender_email, 'Hello World', 'Test message', ['from' => 'allsortMary@gmail.com']);
             }
+//            $this->Email->helpers(['EmailProcessing' => ['email' => $this->Email]]);
 
             if($email->send()) {
                 $this->request->getSession()->write('mail', $email->getViewVars());
@@ -189,4 +204,7 @@ class SubscriptionsController extends AppController
 
 
     }
+//    private function cssToInlineStyle() {
+//        $html =file_get_contents(__DIR__ . '/')
+//    }
 }
