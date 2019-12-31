@@ -17,7 +17,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Promotional email template</title>
+    <title><?= $title ?></title>
 </head>
 
 <body bgcolor="#8d8e90">
@@ -38,9 +38,6 @@
                                                         <td width="4%">&nbsp;</td>
                                                     </tr>
                                                 </table></td>
-                                        </tr>
-                                        <tr>
-                                            <td height="30"><img src="images/PROMO-GREEN2_01_04.jpg" width="393" height="30" border="0" alt=""/></td>
                                         </tr>
                                     </table></td>
                             </tr>
@@ -80,19 +77,20 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
+                    <td width="100%" align="center" valign="middle"><p style="font-family:Verdana, Geneva, sans-serif; color:#1a3948; font-size:22px; line-height:20px"><strong>Check out these posts!</strong></p></td>
+
+                </tr>
+                <tr>
                     <td><table width="600" border="0" cellspacing="0" cellpadding="0">
                             <tr>
                                 <td width="18">&nbsp;</td>
-                                <?php for($i=0;$i<3;$i++) { ?>
-                                <td width="175" align="center" valign="top"><table width="175" border="0" cellspacing="0" cellpadding="0" style="box-shadow: 3px 3px 4px #333333; background-color:#00adee">
+                                <?php foreach ($blogs as $blog) { ?>
+                                <td width="175" align="center" valign="top"><table width="175" border="0" cellspacing="0" cellpadding="0" style="background-color:#00adee; border-radius: 2.5px;">
                                         <tr>
-                                            <td height="30" align="center" valign="middle" ><font style="font-family:'Myriad Pro', Helvetica, Arial, sans-serif; color:#ffffff; font-size:20px; text-transform:uppercase"><strong>UPCOMING 2</strong></font></td>
+                                            <td height="30" align="center" valign="middle" ><font style="font-family:'Myriad Pro', Helvetica, Arial, sans-serif; color:#ffffff; font-size:20px;"><strong><?= $blog->title ?></strong></font></td>
                                         </tr>
                                         <tr>
-                                            <td ><img src="images/PROMO-GREEN2_00.jpg" alt="" width="175" height="18" /></td>
-                                        </tr>
-                                        <tr>
-                                            <td align="center" valign="middle" ><p style="font-family:'Myriad Pro', Helvetica, Arial, sans-serif; color:#ffffff; font-size:14px"><strong><a href="http://yourlink" target="_blank" style="color:#ffffff; text-decoration:none">view details</a></strong></p></td>
+                                            <td align="center" valign="middle" ><p style="font-family:'Myriad Pro', Helvetica, Arial, sans-serif; color:#ffffff; font-size:14px"><strong><a href="http://ie.infotech.monash.edu/team106/development/blogpost/view/'.$id" target="_blank" style="color:#ffffff; text-decoration:none">view details</a></strong></p></td>
                                         </tr>
                                         <tr>
                                             <td align="center" valign="middle">&nbsp;</td>

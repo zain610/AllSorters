@@ -150,6 +150,7 @@ class SubscriptionsController extends AppController
         //iterate over each sender and send an email.
         $message = strip_tags($data['message']);
         $title = "Test number infinite";
+        $blogs = $data['blogs'];
 
         if(!empty($data['sender'])) {
             foreach ($data['sender'] as $sender) {
@@ -162,7 +163,7 @@ class SubscriptionsController extends AppController
                     ->setTo($sender_email)
                     ->setTemplate('default')
                     ->setEmailFormat('html')
-                    ->setViewVars(['message' => strip_tags($data['message']), 'title' => "Newsletter update from AllSorters"])
+                    ->setViewVars(['message' => strip_tags($data['message']), 'title' => "Newsletter update from AllSorters", 'blogs' => $blogs])
                     ->setSubject("Newsletter update from AllSorters")
                     ->setAttachments([
                         'logo.png' => [
