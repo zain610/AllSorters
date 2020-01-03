@@ -172,9 +172,7 @@ class SubscriptionsController extends AppController
                             'contentId' => 'allsorters-logo-id'
                         ]
                     ]);
-//            Email::deliver($sender_email, 'Hello World', 'Test message', ['from' => 'allsortMary@gmail.com']);
             }
-//            $this->Email->helpers(['EmailProcessing' => ['email' => $this->Email]]);
 
             if($email->send()) {
                 $this->request->getSession()->write('mail', $email->getViewVars());

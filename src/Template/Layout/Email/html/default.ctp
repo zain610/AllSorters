@@ -11,6 +11,9 @@
  * @link          https://cakephp.org CakePHP(tm) Project
  * @since         0.10.0
  * @license       https://opensource.org/licenses/mit-license.php MIT License
+ *
+ * Layout for AllSorters newsletter emailing service - credits to https://jsfiddle.net/vb1my3kt/
+ *
  */
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

@@ -2,6 +2,8 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Event\Event;
+use Cake\Log\Log;
 
 /**
  * BlogPost Controller
@@ -82,7 +84,8 @@ class BlogPostController extends AppController
                 $newComment->Comment_Details = $this->request->getData()['Comment_Details'];
                 $newComment->showed = 0;
                 $newComment->Blog_post_id = $blogPost->blog_post_id;
-                debug($this->request->getData());
+                $sendNotificationEvent = new Event('User.postComment', $newComment);
+                $this->getEventManager()->dispatch($sendNotificationEvent);
                 if ($this->PostComment->save($newComment)) {
                     $this->Flash->success(__('Your comment has been submitted'));
 
