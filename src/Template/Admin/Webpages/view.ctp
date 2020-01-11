@@ -19,4 +19,6 @@
             <?php } ?>
         </div>
     </div>
+    <iframe src="http://localhost:8765/" width="100%" height="1000px"  name="targetframe" allowTransparency="true" frameborder="0" >
+    </iframe>
 </div>

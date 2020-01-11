@@ -7,6 +7,8 @@ use Cake\Mailer\Email;
 use Cake\Mailer\TransportFactory;
 use Cake\Http\Client;
 
+//use Tools\Mailer\Email;
+use TijsVerkoyen\CssToInlineStyles\CssToInlineStyles;
 
 /**
  * Subscriptions Controller
@@ -21,6 +23,7 @@ class SubscriptionsController extends AppController
     {
         parent::initialize();
     }
+
     /**
      * Index method
      *
@@ -28,6 +31,10 @@ class SubscriptionsController extends AppController
      */
     public function index()
     {
+//        $cssToInlineStyles = new CssToInlineStyles();
+//        $html = file_get_contents(__DIR__ . '/../../Template/Layout/Email/html/default.ctp');
+//        $css = file_get_contents(__DIR__.'/../../../webroot/css/email_styling.css');
+//        debug($cssToInlineStyles->convert($html, $css));
         $this->layout = 'admin';
         $subscriptions = $this->paginate($this->Subscriptions);
         $subscribers = $this->request->getSession()->read('subscribers');
@@ -134,26 +141,37 @@ class SubscriptionsController extends AppController
 
             }
         }
+        //send all the extracted information to the next step - sendEmails
         $this->sendEmails($parsedData);
-        $this->request->getSession()->write('formdata', $parsedData['message'] );
+        $this->request->getSession()->write('formdata', $parsedData['blogs'] );
         return $this->redirect(['action' => 'index']);
     }
     private function sendEmails($data) {
         //iterate over each sender and send an email.
+        $message = strip_tags($data['message']);
+        $title = "Test number infinite";
+        $blogs = $data['blogs'];
 
         if(!empty($data['sender'])) {
             foreach ($data['sender'] as $sender) {
                 $sender_email = $sender['email_address'];
                 $this->request->getSession()->write('sendermail', $sender_email);
 
+
                 $email = new Email('default');
                 $email->setFrom(['allsortMary@gmail.com' => 'All Sorters'])
                     ->setTo($sender_email)
-                    ->setEmailFormat('html')
                     ->setTemplate('default')
-                    ->setViewVars(array('message' => strip_tags($data['message']), 'title' => "Newsletter update from AllSorters"))
-                    ->setSubject("Newsletter update from AllSorters");
-//            Email::deliver($sender_email, 'Hello World', 'Test message', ['from' => 'allsortMary@gmail.com']);
+                    ->setEmailFormat('html')
+                    ->setViewVars(['message' => strip_tags($data['message']), 'title' => "Newsletter update from AllSorters", 'blogs' => $blogs])
+                    ->setSubject("Newsletter update from AllSorters")
+                    ->setAttachments([
+                        'logo.png' => [
+                            'file' => __DIR__.'/../../../webroot/img/Allsorters_logo.png',
+                            'mimetype' =>'image/png',
+                            'contentId' => 'allsorters-logo-id'
+                        ]
+                    ]);
             }
 
             if($email->send()) {
@@ -185,4 +203,7 @@ class SubscriptionsController extends AppController
 
 
     }
+//    private function cssToInlineStyle() {
+//        $html =file_get_contents(__DIR__ . '/')
+//    }
 }

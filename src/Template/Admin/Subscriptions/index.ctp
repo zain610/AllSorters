@@ -43,11 +43,11 @@
         <div style="display: flex">
             <div class="form-check form-check-inline" style="width: 100%; display: inline-flex; margin: 1rem">
                 <h4 style="width: 60%;margin-right: 1rem; margin-top: auto">Select Users to send email to</h4>
-                <div style="float: right; border-radius: 15px; margin-left: auto; padding: 0 1rem; display: flex">
-                    <h4>Add a subscriber</h4>
-                    <?= $this->element('Client/subscribe'); ?>
-
-                </div>
+<!--                <div style="float: right; border-radius: 15px; margin-left: auto; padding: 0 1rem; display: flex">-->
+<!--                    <h4>Add a subscriber</h4>-->
+<!--                    --><?//= $this->element('Client/subscribe'); ?>
+<!---->
+<!--                </div>-->
             </div>
 
         </div>
@@ -89,16 +89,16 @@
                         <th scope="col" class="actions"><?= __('Actions') ?></th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="fa-ul">
                     <?php foreach ($blogs as $blog): ?>
                         <tr class="article-row">
                             <td class="">
                                 <div id="div-blog-checkbox" class="form-check form-check-inline col-sm-3">
-                                    <?= $this->Form->checkbox('bid'.$blog->blog_post_id, ['id'=>$this->Number->format($blog->blog_post_id), 'class'=> 'form-check-input']); ?>
                                     <label id="blog" class="form-check-label" for="<?=$this->Number->format($blog->blog_post_id)?>"><?= h($blog->blog_post_id) ?></label>
+
+                                    <?= $this->Form->checkbox('bid'.$blog->blog_post_id, ['id'=>$this->Number->format($blog->blog_post_id), 'class'=> 'form-check-input fa-li', 'hiddenField' => false]) ?>
                                 </div>
                             </td>
-
                             <td style="">
                                 <?= h($blog->title) ?>
                             </td>

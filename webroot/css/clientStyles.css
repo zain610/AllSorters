@@ -1,9 +1,14 @@
+
 #serviceimg {
     width: 350px;
     height: 233.333px;
     max-width: 100%;
     max-height: 100%;
 
+}
+.search-form {
+    display: flex;
+    align-items: center;
 }
 .camp1 img {
     width: 50%;
@@ -244,7 +249,9 @@ nav.navbar.navbar-default {
 
 .contact-info-inner {
     border: 2px solid #1DC7EA;
-    padding: 0 2rem;
+    padding: 1rem;
+    background-color: #212529;
+    font-size: 20px
 
 }
 #navigation {
@@ -301,6 +308,10 @@ div.services.container > div > a > div > button{
 #newsletter-signup {
     width: 100%;
     border-radius: 15px;
+    margin-bottom: 1rem;
+    background-color: #f2f6fe;
+    display: flex;
+    justify-content: center
 }
 #newsletter-signup > small {
     color: #333333!important;
@@ -319,7 +330,6 @@ div.services.container > div > a > div > button{
 #newsletter-form {
     display: flex;
     align-items: flex-end;
-    padding: 0 5rem;
 }
 .email >label {
     color: #202528;
@@ -431,6 +441,7 @@ ul.social li {
     transform-origin: top left;
     transform: skewX(-20deg);
 }
+
 
 /*.inner-blogs:after {*/
 /*    content:"";*/

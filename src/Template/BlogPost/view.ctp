@@ -2,6 +2,7 @@
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Service $service
+ * @var \App\Model\Entity\PostComment $postComment
  */
 ?>
 <head>
@@ -30,33 +31,43 @@
                 <div class="post-meta">
                     <span class="mr-2" style="font-family: Calibri"><?php echo $blogPost->Date?></span>
                 </div>
+                <p><?php echo $blogPost->Description?></p>
+
                 <div class="post-content-body">
-                    <p><?php echo $blogPost->Description?></p>
-                    <div class="row mb-5">
-                        <?php foreach ($blogPost->image as $image):?>
-                        <div class="col-md-6 mb-4 element-animate">
-                            <?php echo $this->Html->image($image->path,['alt'=> 'Image','class'=>'img-fluid','width' => '80%']);?>
+
+                    <div class="row mb-5" style="width: 100%; display: contents">
+                        <div>
+                            <p><?= $blogPost->Body?></p>
                         </div>
+                        <?php foreach ($blogPost->image as $image):?>
+                            <div class="col-md-6 mb-4 element-animate" style="display: contents">
+                                <?php echo $this->Html->image($image->path,['alt'=> 'Image','class'=>'img-fluid','width' => '80%']);?>
+                            </div>
                         <?php endforeach;?>
+
                     </div>
-                    <a><?php echo $blogPost->Body?></a>
                 </div>
                 <div class="clearfix"> </div>
             </div>
         </div>
+        <hr>
 
-        <h3>Comments</h3>
+        <?php if(empty($comments) === false) { ?>
+            <h3>Comments</h3>
+            <?php foreach($comments as $comment){ ?>
 
-        <?php foreach($comment as $comment){ ?>
-            <span style="font-weight: bold;color: black"><?php echo $comment['User_Name'] ?>:</span>
-            <span style="color:black;"><?php echo $comment['Comment_Details'] ?></span>
-            <hr style="margin: 10px 0rem 10px 0rem;">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"> <span style="font-weight: bold;color: black"><?php echo $comment['User_Name'] ?>:</span>
+                        <span style="color:black;"><?php echo $comment['Comment_Details'] ?></span></li>
+                </ul>
 
+                <!--            <hr style="margin: 10px 0rem 10px 0rem;">-->
+            <?php } ?>
         <?php } ?>
 
         <br>
         <br>
-        <h4>Leave a replay</h4>
+        <h4>Leave a Comment</h4>
 
         <?= $this->Form->create($newComment); ?>
         <span>Name (required)</span><?php echo $this->Form->control('User_Name',['label'=>false,'required'=>false,'class'=>'form-control','style'=>'width:50%']) ?>

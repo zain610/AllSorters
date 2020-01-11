@@ -34,9 +34,9 @@ $currentController = $this->request->getParam('controller');
                     </td>
 
                     <td class="action-col" style="">
-                        <?= $this->element('Admin/Buttons/view', ['url' => ['action' => 'view',  $comment->Post_id]]) ?>
+                        <?= $this->element('Admin/Buttons/view', ['url' => ['action' => 'view',  $comment->Blog_post_id]]) ?>
                         <?php if($comment['showed']){ ?>
-                            <?= $this->element('Admin/Buttons/publish', ['url' => ['action' => 'publishcomment',$comment['Post_Comment_id']]]); ?>
+                            <?= $this->element('Admin/Buttons/publish', ['url' => ['action' => 'publishcomment',$comment->Post_Comment_id]]); ?>
                         <?php } else{ ?>
                             <?= $this->element('Admin/Buttons/hide', ['url' => ['action' => 'publishcomment',$comment['Post_Comment_id']]]); ?>
                         <?php } ?>

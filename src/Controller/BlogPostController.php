@@ -2,6 +2,8 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Event\Event;
+use Cake\Log\Log;
 
 /**
  * BlogPost Controller
@@ -16,6 +18,7 @@ class BlogPostController extends AppController
     {
         parent::initialize();
         $this->loadModel('BlogPost');
+        $this->loadModel('post_comment');
         $this->Auth->allow(['index','view','advanceSearch']);
     }
 
@@ -58,8 +61,8 @@ class BlogPostController extends AppController
         $this->set('blogPost', $blogPost);
 
         $this->loadModel('PostComment');
-        $comment = $this->PostComment->find('all',['conditions'=>['and'=>['post_comment_id'=>$id],['showed'=>1]]])->toList();
-        $this->set('comment',$comment);
+        $comment = $this->PostComment->find('all',['conditions'=>['and'=>['Blog_post_id'=>$id],['showed'=>1]]])->toList();
+        $this->set('comments',$comment);
         $newComment = $this->PostComment->newEntity();
         $this->set(compact('newComment'));
         if ($this->request->is('post')) {
@@ -80,7 +83,9 @@ class BlogPostController extends AppController
                 $newComment->User_Email = $this->request->getData()['User_Email'];
                 $newComment->Comment_Details = $this->request->getData()['Comment_Details'];
                 $newComment->showed = 0;
-                $newComment->Post_id = $id;
+                $newComment->Blog_post_id = $blogPost->blog_post_id;
+                $sendNotificationEvent = new Event('User.postComment', $newComment);
+                $this->getEventManager()->dispatch($sendNotificationEvent);
                 if ($this->PostComment->save($newComment)) {
                     $this->Flash->success(__('Your comment has been submitted'));
 
