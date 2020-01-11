@@ -62,22 +62,23 @@ class EventsListener implements EventListenerInterface
         Log::write('debug', $blog['title']);
 
 //        send email
-//        $email = new Email('default');
-//        //send email to Mary - TODO: replace placeholder email with Mary's actual email address
-//        $email->setFrom(['allsortMary@gmail.com' => 'All Sorters'])
-//            ->setTo('znshroff@gmail.com')
-//            ->setTemplate('test_template')
-//            ->setEmailFormat('html')
-//            ->setViewVars(['message' => $comment_user.' has posted a new comment on blog '.$blog['title'], 'title' => "Blog Comment notification from AllSorters"])
-//            ->setSubject("Notification from AllSorters")
-//            ->setAttachments([
-//                'logo.png' => [
-//                    'file' => __DIR__.'/../../../webroot/img/Allsorters_logo.png',
-//                    'mimetype' =>'image/png',
-//                    'contentId' => 'allsorters-logo-id'
-//                ]
-//            ]);
-//        $email->send();
+        $email = new Email('default');
+        //send email to Mary - TODO: replace placeholder email with Mary's actual email address. Please find a fix for using diff templates.
+        //Currently I am unable to use another template for sending emails except the default one.
+        $email->setFrom(['allsortMary@gmail.com' => 'All Sorters'])
+            ->setTo('znshroff@gmail.com')
+            ->setTemplate('test_template')
+            ->setEmailFormat('html')
+            ->setViewVars(['message' => $comment_user.' has posted a new comment on blog '.$blog['title'], 'title' => "Blog Comment notification from AllSorters"])
+            ->setSubject("Notification from AllSorters")
+            ->setAttachments([
+                'logo.png' => [
+                    'file' => __DIR__.'/../../../webroot/img/Allsorters_logo.png',
+                    'mimetype' =>'image/png',
+                    'contentId' => 'allsorters-logo-id'
+                ]
+            ]);
+        $email->send();
         return true;
 
 
