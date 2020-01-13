@@ -25,6 +25,7 @@
                         </td>
                         <td class="card-body">
                             <?= $this->element('Admin/Buttons/edit', ['url' => ['action' => 'edit', $blogPost->blog_post_id]]) ?>
+                            <?= $this->element('Admin/Buttons/delete', ['url' => ['action' => 'deleteImage', $blogPost->Image_id]]) ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>

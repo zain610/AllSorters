@@ -17,8 +17,9 @@ class ReviewController extends AppController
         parent::initialize();
 
         $this->loadModel('Review');
-        $this->Auth->allow(['index']);
-        $this->Auth->allow(['home']);
+        $this->Auth->allow(['index','home']);
+        $this->loadModel("Webpages");
+
         $this->viewBuilder()->setLayout('client');
     }
 
@@ -29,14 +30,13 @@ class ReviewController extends AppController
      */
     public function index()
     {
-        $review = $this->paginate($this->Review);
+        $this->loadComponent('Paginator');
+        $this->paginate = array(
+            'limit' => 5
+        );
 
-        //$this->set(compact('review'));
-        $this->loadModel('review');
-        $this->Auth->allow(['index']);
-        $this->Auth->allow(['home']);
-        $this->viewBuilder()->setLayout('client');
-        $this->loadModel("Webpages");
+        $review = $this->paginate($this->Review->find('all'));
+
         $webpages = $this->Webpages->find('all');
         $this->set(compact('review','webpages'));
     }

@@ -13,14 +13,13 @@ use Cake\ORM\Entity;
  * @property string $Body
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
- * @property bool $Published
- * @property bool $Archived
+ * @property bool|null $Published
+ * @property bool|null $Archived
  *
  * @property \App\Model\Entity\Image[] $image
  */
 class BlogPost extends Entity
 {
-
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
      *
@@ -32,7 +31,6 @@ class BlogPost extends Entity
      */
     protected $_accessible = [
         'title' => true,
-        'Date' => true,
         'Description' => true,
         'Body' => true,
         'created' => true,

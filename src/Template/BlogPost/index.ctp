@@ -33,17 +33,17 @@
                 </div>
                 <?php endforeach; ?>
             <br />
-            <nav>
-                <div class="paginator">
-                    <ul class="pagination">
-                        <?= $this->Paginator->first('<< ' . __('first')) ?>
-                        <?= $this->Paginator->prev('< ' . __('previous')) ?>
-                        <?= $this->Paginator->numbers() ?>
-                        <?= $this->Paginator->next(__('next') . ' >') ?>
-                        <?= $this->Paginator->last(__('last') . ' >>') ?>
-                    </ul>
-                </div>
-            </nav>
+                <nav>
+                    <div class="paginator">
+                        <ul class="pagination justify-content-center pagination-lg">
+                            <?= $this->Paginator->first('<< ' . __('first')) ?>
+                            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+                            <?= $this->Paginator->numbers() ?>
+                            <?= $this->Paginator->next(__('next') . ' >') ?>
+                            <?= $this->Paginator->last(__('last') . ' >>') ?>
+                        </ul>
+                    </div>
+                </nav>
         </div>
     </div>
 </div>

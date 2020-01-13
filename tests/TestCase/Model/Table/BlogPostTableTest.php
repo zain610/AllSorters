@@ -10,7 +10,6 @@ use Cake\TestSuite\TestCase;
  */
 class BlogPostTableTest extends TestCase
 {
-
     /**
      * Test subject
      *
@@ -25,16 +24,7 @@ class BlogPostTableTest extends TestCase
      */
     public $fixtures = [
         'app.BlogPost',
-        'app.Image',
-        'app.BlogPostImage',
-        'app.GalleryPage',
-        'app.GalleryPageImage',
-        'app.Services',
-        'app.ServiceImage',
-        'app.Job',
-        'app.Contractor',
-        'app.JobContractor',
-        'app.ServiceJob'
+        'app.Image'
     ];
 
     /**
@@ -45,8 +35,8 @@ class BlogPostTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('BlogPost') ? [] : ['className' => BlogPostTable::class];
-        $this->BlogPost = TableRegistry::get('BlogPost', $config);
+        $config = TableRegistry::getTableLocator()->exists('BlogPost') ? [] : ['className' => BlogPostTable::class];
+        $this->BlogPost = TableRegistry::getTableLocator()->get('BlogPost', $config);
     }
 
     /**

@@ -36,7 +36,10 @@ class BlogPostController extends AppController
     public function index()
     {
         $this->loadComponent('Paginator');
-        $blogPost = $this->Paginator->paginate(
+        $this->paginate = array(
+            'limit' => 5,
+        );
+        $blogPost = $this->paginate(
             $this->BlogPost->find('all')
             ->order('Date DESC')
         );
