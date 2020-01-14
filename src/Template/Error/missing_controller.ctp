@@ -27,7 +27,7 @@
             <h1>Oops!</h1>
             <h2>The Page can't be found</h2>
         </div>
-        <?= $this->Html->link(__('Go to home page'), $this->request->referer()) ?>
+        <?= $this->Html->link(__('Go back'), $this->request->referer()) ?>
 
     </div>
 </div>

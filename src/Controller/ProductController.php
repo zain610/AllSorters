@@ -20,7 +20,6 @@ class ProductController extends AppController
         $this->Auth->allow(['index']);
 
     }
-
     /**
      * Index method
      *

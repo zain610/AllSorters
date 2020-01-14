@@ -241,15 +241,6 @@ $isWebpagesActive = $currentController === "Webpages";
 
         </li>
 
-
-        <li class="<?= $isProductActive ? 'active' : '' ?> dropdown">
-            <?= $this->Html->link(
-                '<p>Product</p>',
-                ['prefix' => 'admin', 'controller' => 'Product', 'action' => 'index'],
-                ['escape'=> false]
-                ) ?>
-        </li>
-
         <li id="dropDownMenu" class="<?= $isWebpagesActive ? 'active' : '' ?> <?= $isChangePWActive ? 'active' : '' ?> <?= $isFooterActive ? 'active' : '' ?>  dropdown">
             <?= $this->Html->link(
                 '<p>Settings</p>',
