@@ -67,7 +67,7 @@ class EventsListener implements EventListenerInterface
         //Currently I am unable to use another template for sending emails except the default one.
         $email->setFrom(['allsortMary@gmail.com' => 'All Sorters'])
             ->setTo('znshroff@gmail.com')
-            ->setTemplate('test_template')
+            ->setTemplate('test_template','default')
             ->setEmailFormat('html')
             ->setViewVars(['message' => $comment_user.' has posted a new comment on blog '.$blog['title'], 'title' => "Blog Comment notification from AllSorters"])
             ->setSubject("Notification from AllSorters")
