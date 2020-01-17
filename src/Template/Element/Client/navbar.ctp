@@ -18,7 +18,7 @@ $query = $footer->find();
                         <h5>Reach out to Mary for more info!</h5>
                         <?php foreach ($query as $footer): ?>
                         <a style="margin-left: 1rem; color: #00adee" href="tel:<?php echo $footer->Phone; ?>"><i style="padding-right: 15px" class="fas fa-phone-alt fa-lg"></i><?= $footer->Phone ?></a>
-                        <a style="margin-left: 1rem; color: #00adee" href="<?php echo $footer->Email; ?>"><i style="padding-right: 15px" class="far fa-envelope fa-lg"></i><?= $footer->Email?></a>
+                        <a style="margin-left: 1rem; color: #00adee" href="mailto:<?php echo $footer->Email; ?>"><i style="padding-right: 15px" class="far fa-envelope fa-lg"></i><?= $footer->Email?></a>
                         <?php endforeach;?>
                     </div>
                 </div>
