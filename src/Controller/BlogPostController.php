@@ -4,6 +4,8 @@ namespace App\Controller;
 use App\Controller\AppController;
 use Cake\Event\Event;
 use Cake\Log\Log;
+use Cake\Mailer\Email;
+use Cake\Routing\Router;
 
 /**
  * BlogPost Controller
@@ -89,7 +91,18 @@ class BlogPostController extends AppController
                 $newComment->Blog_post_id = $blogPost->blog_post_id;
                 $sendNotificationEvent = new Event('User.postComment', $newComment);
                 $this->getEventManager()->dispatch($sendNotificationEvent);
-                if ($this->PostComment->save($newComment)) {
+
+                $email = new Email('default');
+                $email->setLayout('');
+                $email->setTemplate('newcomment');
+                $email->setEmailFormat('html');
+
+                $email->setTo('allsortMary@gmail.com');
+                $email->setSubject('New comments');
+                $email->setViewVars(['username' => $this->request->getData()['User_Name'],'userEmail'=>$this->request->getData()['User_Email'],'userComment'=>$this->request->getData()['Comment_Details']]);
+
+
+                if ($this->PostComment->save($newComment)&&$email->send()) {
                     $this->Flash->success(__('Your comment has been submitted'));
 
                     return $this->redirect(['action' => 'view', $id]);
