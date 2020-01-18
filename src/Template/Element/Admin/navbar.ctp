@@ -17,6 +17,7 @@ $isFavouritesActive = $currentController === "Favourites";
 $isProductActive = $currentController === "Product";
 $isChangePWActive = $currentController === "Admin" && $currentAction === 'changepassword';
 $isWebpagesActive = $currentController === "Webpages";
+$isJobActive = $currentController === "Job";
 
 
 ?>
@@ -138,6 +139,32 @@ $isWebpagesActive = $currentController === "Webpages";
                     ) ?></li>
             </ul>
         </li>
+
+        <li class="<?= $isJobActive ? 'active' : '' ?> dropdown">
+            <?= $this->Html->link(
+                '<p>Job</p>',
+                '#',
+                ['escape' => false, 'onclick' => 'handleMenuToggle(this)', 'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true',]
+            ) ?>
+            <ul class="dropdown-menu" aria-labelledby="reviewDropdown">
+                <li><?=$this->Html->link(
+                        '<p>View Jobs</p>',
+                        ['prefix'=>'admin','controller'=>'job','action'=>'index'],
+                        ['escape'=>false]
+                    )?></li>
+                <li><?=$this->Html->link(
+                        '<p>Add a Job</p>',
+                        ['prefix'=>'admin','controller'=>'job','action'=>'add'],
+                        ['escape'=>false]
+                    )?></li>
+                <li><?=$this->Html->link(
+                        '<p>View Job archive</p>',
+                        ['prefix'=>'admin','controller'=>'job','action'=>'archiveIndex'],
+                        ['escape'=>false]
+                    )?></li>
+            </ul>
+        </li>
+
         <li id="dropDownMenu" class="<?= $isEventsActive ? 'active' : '' ?> dropdown">
             <?= $this->Html->link(
                 '<p>Speaking engagements</p>',

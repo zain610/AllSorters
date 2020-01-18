@@ -84,7 +84,6 @@ class BlogPostController extends AppController
         $blogPost = $this->BlogPost->newEntity();
         if ($this->request->is('post')) {
             $data = $this->request->getData('checkbox');
-            debug($data);
 
             $formData = $this->request->getData();
 
