@@ -57,7 +57,7 @@
 
             <div class="row">
                 <div class="col-sm-2 col-xs-12">
-                    <div id="gtco-logo"><a href="index.html">allsorts</div>
+                    <div id="gtco-logo"><a href="#">allsorts</div>
                 </div>
                 <div class="col-xs-10 text-right menu-1">
                     <ul>
@@ -92,7 +92,7 @@
 
     <div class="gtco-container">
         <div class="row">
-            <div class="col-md-12 vert_line" style="width: 70%; float:left; padding-top: 5px">
+            <div class="col-lg-6 col-md-12 vert_line" style="padding-top: 10px">
                 <div class="owl-carousel owl-carousel-fullwidth">
                     <div class="item">
                         <a href="#">
@@ -122,7 +122,7 @@
             </div>
 
 
-            <div class="col-md-12 gtco-news" style="width: 30%; float:right;padding-left: 25px ">
+            <div class="col-lg-6 col-md-12 gtco-news">
                 <a href="index.html"><h2 style="padding-top: 5px">Blogs</h2>
                     <ul>
                         <li>
@@ -276,15 +276,15 @@
                 <h2>Testimonials</h2>
                 <blockquote>
                     <p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod erat tincidunt. Donec tincidunt volutpat erat.&ldquo;</p>
-                    <p class="author"><cite>&mdash; John Doe Dueller</cite></p>
+                    <p class="author"><cite>&mdash; John Doe Dueller, Jul 2015</cite></p>
                 </blockquote>
                 <blockquote>
                     <p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod erat tincidunt. Donec tincidunt volutpat erat.&ldquo;</p>
-                    <p class="author"><cite>&mdash; John Doe Dueller</cite></p>
+                    <p class="author"><cite>&mdash; John Doe Duelle, Jul 2015</cite></p>
                 </blockquote>
                 <blockquote>
                     <p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod erat tincidunt. Donec tincidunt volutpat erat.&ldquo;</p>
-                    <p class="author"><cite>&mdash; John Doe Dueller</cite></p>
+                    <p class="author"><cite>&mdash; John Doe Dueller, Jul 2015</cite></p>
                 </blockquote>
             </div>
         </div>
@@ -297,9 +297,9 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="feature-left">
-                    <i class="ti-zip icon"></i>
+                    <i class="ti-comment icon"></i>
                     <div class="copy">
-                        <h3>Architect</h3>
+                        <h3>Allsorter Tips</h3>
                         <p>Lorem ipsum dolor sit ameteista, consectetur adipiscing is not elitistaris.</p>
                         <p><a href="#" class="gtco-more" style="color: #298ad6">Learn more</a></p>
                     </div>
@@ -307,9 +307,9 @@
             </div>
             <div class="col-md-4">
                 <div class="feature-left">
-                    <i class="ti-hummer icon"></i>
+                    <i class="ti-calendar icon"></i>
                     <div class="copy">
-                        <h3>Planning</h3>
+                        <h3>Upcoming Events</h3>
                         <p>Lorem ipsum dolor sit ameteista, consectetur adipiscing is not elitistaris.</p>
                         <p><a href="#" class="gtco-more" style="color: #298ad6">Learn more</a></p>
                     </div>
@@ -317,9 +317,9 @@
             </div>
             <div class="col-md-4">
                 <div class="feature-left">
-                    <i class="ti-plug icon"></i>
+                    <i class="ti-mobile icon"></i>
                     <div class="copy">
-                        <h3>Parks &amp; Events</h3>
+                        <h3>Contact Us</h3>
                         <p>Lorem ipsum dolor sit ameteista, consectetur adipiscing is not elitistaris.</p>
                         <p><a href="#" class="gtco-more" style="color: #298ad6">Learn more</a></p>
                     </div>
@@ -332,9 +332,11 @@
 <footer id="gtco-footer" class="gtco-section" role="contentinfo">
     <div class="gtco-container">
         <div class="row row-pb-md">
-            <div class="col-md-4 gtco-widget gtco-footer-paragraph">
-                <h3>Beryllium</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod.</p>
+            <div class="col-md-4 gtco-widget gtco-footer-paragraph" style="color: #b9b9b9">
+                <h3>Contact</h3>
+                <p><b>Phone: </b>+61 1234567890</p>
+                <p><b>Email: </b>Mary@allsorters.com</p>
+                <p><b>Address: </b>Allsorters, PO Box 1043, Greythorn, Vic, 3104</p>
             </div>
             <div class="col-md-4 footer_a">
                 <div class="row">
@@ -349,22 +351,22 @@
                         </ul>
                     </div>
                     <div class="col-md-6 gtco-footer-link">
-                        <h3>Work</h3>
+                        <h3>Follow Us</h3>
                         <ul class="gtco-list-link">
-                            <li><a href="#">New York Arena</a></li>
-                            <li><a href="#">Eagle Park</a></li>
-                            <li><a href="#">Nationals Park</a></li>
-                            <li><a href="#">Manila Park</a></li>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Google+</a></li>
+                            <li><a href="#">Linkedin</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 gtco-footer-subscribe">
                 <form class="form-inline">
-                    <div class="form-group">
+                    <div class="form-group gtco-footer-link">
+                        <h3>Subscribe Newsletter</h3>
                         <label class="sr-only" for="exampleInputEmail3">Email address</label>
                         <input type="email" class="form-control" id="" placeholder="Email">
-                        <button type="submit" class="btn btn-primary">Send</button>
+                        <button type="submit" class="btn btn-sm btn-special">Send</button>
                     </div>
 
                 </form>

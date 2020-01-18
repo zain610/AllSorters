@@ -1,13 +1,19 @@
 .vert_line {
     border-right: 6px solid grey;
+
 }
 
+@media (min-width: 766px) {
+    .submenu{
+        display: none;
+    }
+}
 .blog_Title {
     color: #298ad6 !important;
 }
 .btn-special {
     background: #298ad6 !important;
-    color:#ffffff;
+    color:#ffffffd9;
     border: 2px solid #298ad6 !important;
 }
 #footer {
