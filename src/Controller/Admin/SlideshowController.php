@@ -73,14 +73,14 @@ class SlideshowController extends AppController
 
             $slideshow = $this->Slideshow->patchEntity($slideshow, $this->request->getData());
 
-            $data = $this->request->getData('checkbox');
+            $data = $this->request->getData('checkboxes');
 
-            for($i=0;$i<count($data);$i++){
-                if($data[$i]!=0){
-                    $index = $data[$i];
+            foreach ($data as $i => $value){
+                if($value != null && $value != 0){
+                    $slideshow->Image_id = $value;
                 }
             }
-            $slideshow->Image_id = $index;
+
 
             if ($this->Slideshow->save($slideshow)) {
                 $this->Flash->success(__('The slideshow has been saved.'));
@@ -111,9 +111,9 @@ class SlideshowController extends AppController
             $slideshow = $this->Slideshow->patchEntity($slideshow, $this->request->getData());
             $data = $this->request->getData('checkbox');
 //            debug($data);
-            for($i=0;$i<count($data);$i++){
-                if($data[$i]!=0){
-                    $slideshow ->Image_id  = $data[$i];
+            foreach ($data as $i => $value){
+                if($value != null && $value != 0){
+                    $slideshow->Image_id = $value;
                 }
             }
 
