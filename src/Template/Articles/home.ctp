@@ -340,7 +340,7 @@
             </div>
             <div class="col-md-4 footer_a">
                 <div class="row">
-                    <div class="col-md-6 gtco-footer-link">
+                    <div class="col-md-6 col-sm-2 gtco-footer-link">
                         <h3>Links</h3>
                         <ul class="gtco-list-link">
                             <li><a href="#">Home</a></li>
@@ -350,7 +350,7 @@
                             <li><a href="#">Contact</a></li>
                         </ul>
                     </div>
-                    <div class="col-md-6 gtco-footer-link">
+                    <div class="col-md-6 col-sm-2 gtco-footer-link">
                         <h3>Follow Us</h3>
                         <ul class="gtco-list-link">
                             <li><a href="#">Facebook</a></li>
@@ -364,9 +364,11 @@
                 <form class="form-inline">
                     <div class="form-group gtco-footer-link">
                         <h3>Subscribe Newsletter</h3>
-                        <label class="sr-only" for="exampleInputEmail3">Email address</label>
-                        <input type="email" class="form-control" id="" placeholder="Email">
-                        <button type="submit" class="btn btn-sm btn-special">Send</button>
+                        <div class="col-md-12">
+                            <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                            <input type="email" class="form-control" id="" placeholder="Email">
+                            <button type="submit" class="btn btn-sm btn-special">Send</button>
+                        </div>
                     </div>
 
                 </form>
