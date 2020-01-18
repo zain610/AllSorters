@@ -1,196 +1,408 @@
-<?php
-$this->assign('title', 'Foundation System Build');
-?>
+<!DOCTYPE HTML>
 
-<div class="container">
-    <div class="jumbotron">
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+    <meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+    <meta name="author" content="FreeHTML5.co" />
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content=""/>
+    <meta property="og:image" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:site_name" content=""/>
+    <meta property="og:description" content=""/>
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400|Montserrat:400,700" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="css/icomoon.css">
+    <!-- Themify Icons-->
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <!-- Owl Carousel  -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/clientstyles.css">
+    <!-- Modernizr JS -->
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+<div class="gtco-loader"></div>
+
+<div id="page">
+
+    <nav class="gtco-nav" role="navigation">
+        <div class="gtco-container">
+
+            <div class="row">
+                <div class="col-sm-2 col-xs-12">
+                    <div id="gtco-logo"><a href="index.html">allsorts</div>
+                </div>
+                <div class="col-xs-10 text-right menu-1">
+                    <ul>
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li class="has-dropdown">
+                            <a href="services.html">Services</a>
+                            <ul class="dropdown">
+                                <li><a href="#">Web Design</a></li>
+                                <li><a href="#">eCommerce</a></li>
+                                <li><a href="#">Branding</a></li>
+                                <li><a href="#">API</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-dropdown">
+                            <a href="#">Dropdown</a>
+                            <ul class="dropdown">
+                                <li><a href="#">HTML5</a></li>
+                                <li><a href="#">CSS3</a></li>
+                                <li><a href="#">Sass</a></li>
+                                <li><a href="#">jQuery</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="gtco-container">
         <div class="row">
-            <div class="col-lg-4">
-                <h2>What is this?</h2>
-                <p>A basic website that you are expected to modify as your first individual task in the Industry Experience project.</p>
+            <div class="col-md-12 vert_line" style="width: 70%; float:left; padding-top: 5px">
+                <div class="owl-carousel owl-carousel-fullwidth">
+                    <div class="item">
+                        <a href="#">
+                            <img src="img/slider_1.jpg" alt="Free Website Template by FreeHTML5.co">
+                            <div class="slider-copy">
+                                <h2>Architecture #1</h2>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img src="img/slider_2.jpg" alt="Free Website Template by FreeHTML5.co">
+                            <div class="slider-copy">
+                                <h2>Architecture #1</h2>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img src="img/slider_3.jpg" alt="Free Website Template by FreeHTML5.co">
+                            <div class="slider-copy">
+                                <h2>Architecture #1</h2>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-4">
-                <h2>Why do we do this?</h2>
-                <p>There are a couple of reasons why this is the first task we complete in this project.</p>
-                <ul>
-                    <li>Provide a basic understanding of the <?= $this->Html->link('technology', '#introduction-to-mvc')?> we will be using</li>
-                    <li>Showcase your ability to problem solve</li>
-                    <li>Ensure your laptop is setup correctly</li>
-                    <li>Practice deploying a real website</li>
-                </ul>
-                <?= $this->Html->link('Read more', '#why-do-we-do-this') ?>
-            </div>
-            <div class="col-lg-4">
-                <h2>What should you do?</h2>
-                <p>
-                    Follow the guidelines on Moodle to make a copy of this website, set it up on your local laptop, make the requested changes,
-                    then deploy those changes to the IE web server.
-                </p>
-                <p>
-                    View the <?= $this->Html->link('Properties For Sale', ['controller' => 'Properties', 'action' => 'index']) ?> listing, so that
-                    you can start adding a page to display the details of each property.
-                </p>
+
+
+            <div class="col-md-12 gtco-news" style="width: 30%; float:right;padding-left: 25px ">
+                <a href="index.html"><h2 style="padding-top: 5px">Blogs</h2>
+                    <ul>
+                        <li>
+                            <a href="#" style="margin-top:-20px">
+                                <span class="post-date">September 10, 2016</span>
+                                <h3 class="blog_Title">Manila Bridge Re-construction</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod...</p>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <span class="post-date">September 10, 2016</span>
+                                <h3 class="blog_Title">Manila Bridge Re-construction</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod...</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <!--					<p><a href="#" class="btn btn-sm btn-special">More News</a></p>-->
             </div>
         </div>
     </div>
 
-    <div class="container">
-        <a name="why-do-we-do-this"></a>
-        <h1>Why do we do this?</h1>
+</div>
 
+
+
+<div class="gtco-section">
+    <div class="gtco-container">
         <div class="row">
-            <div class="col-lg-3">
-                <p>
-                    <strong>Provide a basic understanding of the technology we will be using.</strong> In industry, whenever you join a new team,
-                    there is a high probability you will be asked to use a technology you've never used before. Your ability to familiarise yourself
-                    with that technology so that you can start using it is an important skill. This unit (and your future roles in industry) will
-                    involve a large amount of self learning, so we need to get you started early.
-                </p>
+            <div class="col-md-8 col-md-offset-2 gtco-heading text-center">
+                <h2>About Us</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod erat tincidunt. Donec tincidunt volutpat erat.</p>
             </div>
-            <div class="col-lg-3">
-                <p>
-                    <strong>Showcase your initiative and ability to think critically.</strong> For most of your university life, you may have
-                    had quite clear guidelines as to exactly what is required. In industry it is a little different: Some clients have no idea
-                    what they want, and it will be your job to figure it out and come up with a suitable solution. In this assessment we want
-                    to provide you an opportunity to show us how you can think independently and critically, and come up with a meaningful solution
-                    based on your better judgement.
-                </p>
+        </div>
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="owl-carousel owl-carousel-carousel">
+                    <div class="item">
+                        <div class="gtco-item">
+                            <a href="#"><img src="img/img_1.jpg" alt="" class="img-responsive"></a>
+                            <h2><a href="#">New York Arena</h2></a>
+                            <p class="role">New York</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="gtco-item">
+                            <a href="#"><img src="img/img_2.jpg" alt="" class="img-responsive"></a>
+                            <h2><a href="#">Eagle Park</h2></a>
+                            <p class="role">London</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="gtco-item">
+                            <a href="#"><img src="img/img_3.jpg" alt="" class="img-responsive"></a>
+                            <h2><a href="#">Nationals Park</h2></a>
+                            <p class="role">Paris, France</p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="gtco-item">
+                            <a href="#"><img src="img/img_1.jpg" alt="" class="img-responsive"></a>
+                            <h2><a href="#">New York Arena</h2></a>
+                            <p class="role">New York</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="gtco-item">
+                            <a href="#"><img src="img/img_2.jpg" alt="" class="img-responsive"></a>
+                            <h2><a href="#">Eagle Park</h2></a>
+                            <p class="role">London</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="gtco-item">
+                            <a href="#"><img src="img/img_3.jpg" alt="" class="img-responsive"></a>
+                            <h2><a href="#">Nationals Park</h2></a>
+                            <p class="role">Paris, France</p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="gtco-item">
+                            <a href="#"><img src="img/img_1.jpg" alt="" class="img-responsive"></a>
+                            <h2><a href="#">New York Arena</h2></a>
+                            <p class="role">New York</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="gtco-item">
+                            <a href="#"><img src="img/img_2.jpg" alt="" class="img-responsive"></a>
+                            <h2><a href="#">Eagle Park</h2></a>
+                            <p class="role">London</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="gtco-item">
+                            <a href="#"><img src="img/img_3.jpg" alt="" class="img-responsive"></a>
+                            <h2><a href="#">Nationals Park</h2></a>
+                            <p class="role">Paris, France</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-3">
-                <p>
-                    <strong>Ensure your laptop is setup correctly.</strong> This is an individual task done before we form teams.
-                    Therefore, once the teams are formed, everyone should have their laptop setup ready to contribute to the team.
-                </p>
-            </div>
-            <div class="col-lg-3">
-                <p>
-                    <strong>Practice deploying a real website.</strong> At the end of this foundation system build, you will have
-                    deployed a real live website to our IE web server.
-                </p>
-            </div>
+
         </div>
     </div>
+</div>
+<!-- END Work -->
 
-    <div class="container">
-        <a name="introduction-to-mvc"></a>
-        <h1>A <em>(very)</em> quick introduction to MVC frameworks</h1>
+<div class="gtco-section">
+    <div class="gtco-container">
         <div class="row">
-            <p>
-                MVC (Model/View/Controller) is one of many different architectures you might use to build a modern application.
-                Many web frameworks make use of this architecture.
-                Below is a <em>very</em> brief introduction to the purpose of each layer of an MVC application.
-            </p>
-        </div>
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Model</h2>
-                <p class="mvc-file-locations">
-                    CakePHP Models are in <code>src/Model/*.php</code>
-                </p>
-                <p>
-                    The Model in MVC refers to application logic which is responsible for talking to the database.
-                    In CakePHP, you might talk to a model like this:
-                </p>
-                <pre>$this->loadModel('Articles');
-$articles = $this->Articles->find()
-            ->where(['user_id' => 3])
-            ->order('created_date');</pre>
-                <p>
-                    If you glance at this, you will notice that it looks a little bit like SQL, but it is indeed PHP code.
-                    The actual SQL which will get generated and then executed by CakePHP will look something like:
-                </p>
-                <pre>SELECT *
-FROM articles
-WHERE user_id = 3
-ORDER BY created_date</pre>
-                <p>(It will actually be more complex, but that is an implementation detail that is unimportant to our understanding).</p>
-            </div>
-            <div class="col-lg-4">
-                <h2>View</h2>
-                <p class="mvc-file-locations">
-                    CakePHP, Views are in <code>src/Template/*.ctp</code>
-                </p>
-                <p>
-                    Views are responsible for outputing something (usually) visual to the user, such as HTML.
-                </p>
-                <pre>&lt;h1&gt;Recent articles&lt;h1&gt;
-&lt;div class="article-list"&gt;
-    &lt;div class="article"&gt;
-        &lt;h2&gt;What is MVC?&lt;/h2&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</pre>
-                <p>
-                    However, views are not normally <code>.html</code> files, because they typically include some sort of dynamic
-                    content - such as records from a database. An example in CakePHP would be the following:
-                </p>
-                <pre>&lt;h1&gt;Recent articles&lt;h1&gt;
-&lt;div class="article-list"&gt;
-  &lt;php foreach($articles as $article): ?&gt;
-    &lt;div class="article"&gt;
-        &lt;h2&gt;&lt;?= $article->title ?&gt;&lt;/h2&gt;
-    &lt;/div&gt;
-  &lt;php endforeach ?&gt;
-&lt;/div&gt;</pre>
-                <p>
-                    Notice how there is a mix of normal HTML code, and PHP code? The end result is that after executing
-                    the PHP code, your application will return only HTML back to the users browser, such as:
-                </p>
-                <pre>&lt;h1&gt;Recent articles&lt;h1&gt;
-&lt;div class="article-list"&gt;
-    &lt;div class="article"&gt;
-        &lt;h2&gt;First article&lt;/h2&gt;
-    &lt;/div&gt;
-    &lt;div class="article"&gt;
-        &lt;h2&gt;Second article&lt;/h2&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</pre>
-                <p>
-                    By doing this, we can have an arbitrary number of articles displayed in our HTML, by passing a longer
-                    list of articles in the <code>$articles</code> (see "<a href="#mvc-controller">Controller</a>" for more info on how this is done).
-                </p>
-            </div>
-            <div class="col-lg-4">
-                <a name="mvc-controller" />
-                <h2>Controller</h2>
-                <p class="mvc-file-locations">
-                    CakePHP Controllers are in <code>src/Controller/*.php</code>
-                </p>
-                <p>Can be thought of as the "glue" which connects models with views, depending on what the user requested. It is responsible for:</p>
+            <div class="col-md-6 gtco-news">
+                <h2>Services</h2>
                 <ul>
-                    <li>Processes incoming requests from a user (usually HTTP requests from a web browser)</li>
-                    <li>Decides which business logic to run in response (typically by asking the model to do something - insert some new data, analyse existing data, delete old data, etc)</li>
-                    <li>Decide which view to present to the user, and pass the relevant data to the view (typically data from the Model, but not always)</li>
+                    <li>
+                        <a href="#">
+
+                            <h3 class="blog_Title">Manila Bridge Re-construction</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod...
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod...
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod...
+                            </p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+
+                            <h3 class="blog_Title">Manila Bridge Re-construction</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod...</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+
+                            <h3 class="blog_Title">Manila Bridge Re-construction</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod...</p>
+                        </a>
+                    </li>
                 </ul>
+                <p><a href="#" class="btn btn-sm btn-special">More Services</a></p>
 
-                <p><strong>Processing incoming requests:</strong></p>
-                <pre>// By default, the 'Users' controller is available at the URL: '/users/'.
-class UsersController {
-
-  // The 'update' function is available at the URL: '/users/update/12',
-  // where the number at the end is available in the $id variable below
-  public function update($id) {
-
-    // Reads the value of the &lt;input name="username" /&gt; input from the HTML form that was just submitted:
-    $username = $this->getRequest()->getData('username');
-
-    // Reads the URL's query string (e.g. "/users/update/12?category_id=1")
-    $categoryId = $this->getRequest()->getQuery('category_id');
-
-    ...
-  }</pre>
-
-                <p><strong>Decide which business logic to run:</strong></p>
-                <pre>// Updates the users profile:
-$user = $this->Users->get($id);
-$user->username = $username;
-$this->Users->save($user);
-
-// Fetch matching users from the database...
-$users = $this->Users->find()->where(['category_id' => $categoryId]);</pre>
-
-                <p><strong>Pass data to the view for display:</strong></p>
-                <pre>$this->set('user', $user);</pre>
+            </div>
+            <!-- END News -->
+            <div class="col-md-6 col-md-push-1 gtco-testimonials">
+                <h2>Testimonials</h2>
+                <blockquote>
+                    <p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod erat tincidunt. Donec tincidunt volutpat erat.&ldquo;</p>
+                    <p class="author"><cite>&mdash; John Doe Dueller</cite></p>
+                </blockquote>
+                <blockquote>
+                    <p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod erat tincidunt. Donec tincidunt volutpat erat.&ldquo;</p>
+                    <p class="author"><cite>&mdash; John Doe Dueller</cite></p>
+                </blockquote>
+                <blockquote>
+                    <p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod erat tincidunt. Donec tincidunt volutpat erat.&ldquo;</p>
+                    <p class="author"><cite>&mdash; John Doe Dueller</cite></p>
+                </blockquote>
             </div>
         </div>
     </div>
 </div>
+<!-- END  -->
+
+<div class="gtco-section gto-features">
+    <div class="gtco-container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="feature-left">
+                    <i class="ti-zip icon"></i>
+                    <div class="copy">
+                        <h3>Architect</h3>
+                        <p>Lorem ipsum dolor sit ameteista, consectetur adipiscing is not elitistaris.</p>
+                        <p><a href="#" class="gtco-more" style="color: #298ad6">Learn more</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-left">
+                    <i class="ti-hummer icon"></i>
+                    <div class="copy">
+                        <h3>Planning</h3>
+                        <p>Lorem ipsum dolor sit ameteista, consectetur adipiscing is not elitistaris.</p>
+                        <p><a href="#" class="gtco-more" style="color: #298ad6">Learn more</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-left">
+                    <i class="ti-plug icon"></i>
+                    <div class="copy">
+                        <h3>Parks &amp; Events</h3>
+                        <p>Lorem ipsum dolor sit ameteista, consectetur adipiscing is not elitistaris.</p>
+                        <p><a href="#" class="gtco-more" style="color: #298ad6">Learn more</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer id="gtco-footer" class="gtco-section" role="contentinfo">
+    <div class="gtco-container">
+        <div class="row row-pb-md">
+            <div class="col-md-4 gtco-widget gtco-footer-paragraph">
+                <h3>Beryllium</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod.</p>
+            </div>
+            <div class="col-md-4 footer_a">
+                <div class="row">
+                    <div class="col-md-6 gtco-footer-link">
+                        <h3>Links</h3>
+                        <ul class="gtco-list-link">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Features</a></li>
+                            <li><a href="#">Products</a></li>
+                            <li><a href="#">Testimonial</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 gtco-footer-link">
+                        <h3>Work</h3>
+                        <ul class="gtco-list-link">
+                            <li><a href="#">New York Arena</a></li>
+                            <li><a href="#">Eagle Park</a></li>
+                            <li><a href="#">Nationals Park</a></li>
+                            <li><a href="#">Manila Park</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 gtco-footer-subscribe">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                        <input type="email" class="form-control" id="" placeholder="Email">
+                        <button type="submit" class="btn btn-primary">Send</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="gtco-copyright">
+        <div class="gtco-container">
+            <div class="row">
+                <div class="col-md-6 text-left">
+                    <p><small>Copyright © <b>all sorters</b> home sorting specialists 2020. All Rights Reserved.</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- END footer -->
+
+</div>
+
+<div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+</div>
+
+<!-- jQuery -->
+<script src="js/jquery.min.js"></script>
+<!-- jQuery Easing -->
+<script src="js/jquery.easing.1.3.js"></script>
+<!-- Bootstrap -->
+<script src="js/bootstrap.min.js"></script>
+<!-- Waypoints -->
+<script src="js/jquery.waypoints.min.js"></script>
+<!-- Carousel -->
+<script src="js/owl.carousel.min.js"></script>
+
+<!-- Main -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
+

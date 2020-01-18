@@ -1,0 +1,22 @@
+.vert_line {
+    border-right: 6px solid grey;
+}
+
+.blog_Title {
+    color: #298ad6 !important;
+}
+.btn-special {
+    background: #298ad6 !important;
+    color:#ffffff;
+    border: 2px solid #298ad6 !important;
+}
+#footer {
+}
+
+a{
+    color: #60b0ef;
+}
+
+::selection {
+    background: #499cf1 !important;
+}
