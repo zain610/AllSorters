@@ -45,8 +45,7 @@ class ControllersInfoTable extends Table
     {
         $validator
             ->integer('controller_id')
-            ->allowEmptyString('controller_id', 'create')
-            ->add('controller_id', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
+            ->allowEmptyString('controller_id', 'create');
 
         $validator
             ->scalar('name')
@@ -55,24 +54,9 @@ class ControllersInfoTable extends Table
             ->allowEmptyString('name', false);
 
         $validator
-            ->integer('order')
-            ->requirePresence('order', 'create')
-            ->allowEmptyString('order', false);
+            ->integer('navbar_info')
+            ->allowEmptyString('navbar_info', false);
 
         return $validator;
-    }
-
-    /**
-     * Returns a rules checker object that will be used for validating
-     * application integrity.
-     *
-     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
-     * @return \Cake\ORM\RulesChecker
-     */
-    public function buildRules(RulesChecker $rules)
-    {
-        $rules->add($rules->isUnique(['controller_id']));
-
-        return $rules;
     }
 }
