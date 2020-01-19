@@ -1,21 +1,21 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\ControllersInfoTable;
+use App\Model\Table\VariableTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\ControllersInfoTable Test Case
+ * App\Model\Table\VariableTable Test Case
  */
-class ControllersInfoTableTest extends TestCase
+class VariableTableTest extends TestCase
 {
     /**
      * Test subject
      *
-     * @var \App\Model\Table\ControllersInfoTable
+     * @var \App\Model\Table\VariableTable
      */
-    public $ControllersInfo;
+    public $Variable;
 
     /**
      * Fixtures
@@ -23,6 +23,7 @@ class ControllersInfoTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
+        'app.Variable',
         'app.ControllersInfo'
     ];
 
@@ -34,8 +35,8 @@ class ControllersInfoTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::getTableLocator()->exists('ControllersInfo') ? [] : ['className' => ControllersInfoTable::class];
-        $this->ControllersInfo = TableRegistry::getTableLocator()->get('ControllersInfo', $config);
+        $config = TableRegistry::getTableLocator()->exists('Variable') ? [] : ['className' => VariableTable::class];
+        $this->Variable = TableRegistry::getTableLocator()->get('Variable', $config);
     }
 
     /**
@@ -45,7 +46,7 @@ class ControllersInfoTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->ControllersInfo);
+        unset($this->Variable);
 
         parent::tearDown();
     }

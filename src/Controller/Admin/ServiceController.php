@@ -63,9 +63,9 @@ class ServiceController extends AppController
             $data = $this->request->getData('checkbox');
             $formData = $this->request->getData();
 
-            for($i=0;$i<count($data);$i++){
-                if($data[$i]!=0){
-                    $formData['image']['_ids'][$i] = $data[$i];
+            foreach ($data as $i => $value){
+                if($value != null && $value != 0){
+                    $formData['image']['_ids'][$i] = $value;
                 }
             }
             $service = $this->Service->patchEntity($service, $formData);
@@ -102,9 +102,9 @@ class ServiceController extends AppController
             $data = $this->request->getData('checkbox');
             $formData = $this->request->getData();
 
-            for($i=0;$i<count($data);$i++){
-                if($data[$i]!=0){
-                    $formData['image']['_ids'][$i] = $data[$i];
+            foreach ($data as $i => $value){
+                if($value != null && $value != 0){
+                    $formData['image']['_ids'][$i] = $value;
                 }
             }
             $service = $this->Service->patchEntity($service, $formData);

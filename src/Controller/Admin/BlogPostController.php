@@ -83,13 +83,13 @@ class BlogPostController extends AppController
         $this->layout ='admin';
         $blogPost = $this->BlogPost->newEntity();
         if ($this->request->is('post')) {
-            $data = $this->request->getData('checkbox');
+            $data = $this->request->getData('checkboxes');
 
             $formData = $this->request->getData();
 
-            for($i=0;$i<count($data);$i++){
-                if($data[$i]!=0){
-                    $formData['image']['_ids'][$i] = $data[$i];
+            foreach ($data as $i => $value){
+                if($value != null && $value != 0){
+                    $formData['image']['_ids'][$i] = $value;
                 }
             }
             $blogPost->Date = time();
@@ -194,9 +194,9 @@ class BlogPostController extends AppController
             $data = $this->request->getData('checkbox');
             $formData = $this->request->getData();
 
-            for($i=0;$i<count($data);$i++){
-                if($data[$i]!=0){
-                    $formData['image']['_ids'][$i] = $data[$i];
+            foreach ($data as $i => $value){
+                if($value != null && $value != 0){
+                    $formData['image']['_ids'][$i] = $value;
                 }
             }
             $blogPost = $this->BlogPost->patchEntity($blogPost, $formData);

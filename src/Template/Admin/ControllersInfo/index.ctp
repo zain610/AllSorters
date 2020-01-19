@@ -17,7 +17,7 @@
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('controller_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('name') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('order') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('Navbar_order') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -26,7 +26,7 @@
             <tr>
                 <td><?= $this->Number->format($controllersInfo->controller_id) ?></td>
                 <td><?= h($controllersInfo->name) ?></td>
-                <td><?= $this->Number->format($controllersInfo->order) ?></td>
+                <td><?= $this->Number->format($controllersInfo->navbar_info) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $controllersInfo->controller_id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $controllersInfo->controller_id]) ?>
