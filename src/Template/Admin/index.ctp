@@ -1,113 +1,151 @@
-<?php
-/**
- * @var \App\View\AppView $this
- * @var \App\Model\Entity\Admin[]|\Cake\Collection\CollectionInterface $admin
- * @var \App\Model\Entity\Request[]|\Cake\Collection\CollectionInterface $request
- */
-?>
 <head>
-    <style>
-        .content h3 {
-            color: #0016be;
-            padding-bottom: 0.5rem;
-            margin-bottom: 20px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>Dashboard</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="css/font-face.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css/theme.css" rel="stylesheet" media="all">
 </head>
-<script type="text/javascript">
-    document.addEventListener('DOMContentLoaded',() =>{
-        var requestArray = <?php echo json_encode($request); ?>;
-        requestArray.forEach((request, index) => {
-            let {Response}= request
-            console.log(Response, index)
-            let tableRows = document.getElementsByClassName('article-row');
-            if (Response!== null){
-                tableRows[index].classList.add('table-dark')
-            } else {
-                tableRows[index].classList.add('table-light')
-            }
-        })
-    })
-</script>
+
+<div class="main-content">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="title-1">Dashboard</h2>
+                </div>
+            </div>
+            <div class="row m-t-25">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="overview-item overview-item--c1">
+                        <div class="overview__inner">
+                            <div class="overview-box clearfix">
+                                <div class="icon">
+                                    <i class="zmdi zmdi-account-o"></i>
+                                </div>
+                                <div class="text">
+                                    <h2><?= $this->Html->link(
+                                            $count_request,
+                                            ['prefix'=>'admin','controller'=>'request','action'=>'index'],
+                                            ['style'=>'color:#f2f2f2']
+                                        )?></h2>
+                                    <span><?= $this->Html->link(
+                                        'Unread Queries',
+                                        ['prefix'=>'admin','controller'=>'request','action'=>'index'],
+                                        ['style'=>'color:#f2f2f2']
+                                        )?>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="overview-chart">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="overview-item overview-item--c2">
+                        <div class="overview__inner">
+                            <div class="overview-box clearfix">
+                                <div class="icon">
+                                    <i class="zmdi zmdi-shopping-cart"></i>
+                                </div>
+                                <div class="text">
+                                    <h2><?= $this->Html->link(
+                                            $count_blog,
+                                            ['prefix'=>'admin','controller'=>'BlogPost','action'=>'index'],
+                                            ['style'=>'color:#f2f2f2']
+                                        )?></h2>
+                                    <span><?= $this->Html->link(
+                                            'Total Blog',
+                                            ['prefix'=>'admin','controller'=>'BlogPost','action'=>'index'],
+                                            ['style'=>'color:#f2f2f2']
+                                        )?>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="overview-chart"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="overview-item overview-item--c3">
+                        <div class="overview__inner">
+                            <div class="overview-box clearfix">
+                                <div class="icon">
+                                    <i class="zmdi zmdi-calendar-note"></i>
+                                </div>
+                                <div class="text">
+                                    <h2><?= $this->Html->link(
+                                            $count_comment,
+                                            ['prefix'=>'admin','controller'=>'BlogPost','action'=>'displayComments'],
+                                            ['style'=>'color:#f2f2f2']
+                                        )?></h2>
+                                    <span><?= $this->Html->link(
+                                            'Total Comments',
+                                            ['prefix'=>'admin','controller'=>'BlogPost','action'=>'displayComments'],
+                                            ['style'=>'color:#f2f2f2']
+                                        )?>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="overview-chart"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="overview-item overview-item--c4">
+                        <div class="overview__inner">
+                            <div class="overview-box clearfix">
+                                <div class="icon">
+                                    <i class="zmdi zmdi-money"></i>
+                                </div>
+                                <div class="text">
+                                    <h2>
+                                        <?= $this->Html->link(
+                                                $count_review,
+                                                ['prefix'=>'admin','controller'=>'Review','action'=>'index'],
+                                                ['style'=>'color:#f2f2f2']
+                                            )?>
+                                    </h2>
+                                    <span><?= $this->Html->link(
+                                            'Total Review',
+                                            ['prefix'=>'admin','controller'=>'Review','action'=>'index'],
+                                            ['style'=>'color:#f2f2f2']
+                                        )?>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="overview-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-9">
+
+                    <div class="table-responsive table--no-card m-b-40">
+                        <table class="table table-borderless table-striped table-earning">
+                        </table>
+                    </div>
+                </div>
+
+            </div>
 
 
-<div class="table table-hover">
-    <h3><?= "Contact Us Queries" ?></h3>
-    <div style="overflow:auto; width:100%; height: 600px; border: 0px solid #000000; margin-top: 0px;">
-        <table class="articles-table table" cellpadding="0" cellspacing="0">
-            <thead>
-            <tr>
-                <th scope="col"><?= $this->Paginator->sort('#') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Request_Email') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Cust_Fname') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Cust_Sname') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Query_info') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Created') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php foreach ($request as $request): ?>
-                <tr id="table-row-content-request" class="article-row">
-                    <td><?= $this->Number->format($request->Request_No) ?></td>
-                    <td><?= h($request->Request_Email) ?></td>
-                    <td><?= h($request->Cust_Fname) ?></td>
-                    <td><?= h($request->Cust_Sname) ?></td>
-                    <td><?= h($request->Query_info) ?></td>
-                    <td><?= h($request->created) ?></td>
-                    <td class="action-col" style="display: block">
-                        <?= $this->element('Admin/Buttons/view', ['url' => ['action' => 'request/view', $request->Request_No]]) ?>
-                        <?= $this->element('Admin/Buttons/delete', ['url' => ['action' => 'request/delete', $request->Request_No]]) ?>
-                    </td>
-                </tr>
-                <td id="table-empty-row"></td>
-            <?php endforeach; ?>
-            </tbody>
-        </table>
-    </div>
-    <h3><?= "Blog Comments" ?></h3>
-
-    <div     style="overflow:auto; width:100%; height: 600px; border: 0px solid #000000;margin-top: 10px;">
-        <table class="articles-table table" cellpadding="0" cellspacing="0">
-            <thead>
-            <tr>
-                <th ><?= $this->Paginator->sort('Blog Post Title') ?></th>
-                <th ><?= $this->Paginator->sort('Comment_Details') ?></th>
-                <th ><?= $this->Paginator->sort('User') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php foreach ($comments as $comment): ?>
-                <tr id="table-row-content-comment" class="article-row">
-                    <td>
-                        <?= $comment->blog_post->title ?>
-                    </td>
-
-                    <td>
-                        <?= $this->Text->truncate($comment->Comment_Details, 50)?>
-                    </td>
-                    <td>
-                        <?= $comment->User_Name . " by " . $comment->User_Email ?>
-                    </td>
-
-                    <td class="action-col" style="display: block">
-                        <?= $this->element('Admin/Buttons/view', ['url' => ['action' => 'blog-post/view',  $comment->Blog_post_id]]) ?>
-                        <?php if($comment['showed']){ ?>
-                            <?= $this->element('Admin/Buttons/publish', ['url' => ['action' => 'blog-post/publishcomment',$comment->Post_Comment_id]]); ?>
-                        <?php } else{ ?>
-                            <?= $this->element('Admin/Buttons/hide', ['url' => ['action' => 'blog-post/publishcomment',$comment['Post_Comment_id']]]); ?>
-                        <?php } ?>
-                    </td>
-                </tr>
-                <td id="table-empty-row"></td>
-
-            <?php endforeach; ?>
-            </tbody>
-        </table>
+        </div>
     </div>
 </div>
 
 
 
-
+<!-- Main JS-->
+<script src="js/main.js"></script>
