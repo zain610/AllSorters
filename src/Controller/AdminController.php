@@ -26,6 +26,7 @@ class AdminController extends AppController
         $this->loadModel('Request');
         $this->loadModel('BlogPost');
         $this->loadModel('post_comment');
+        $this->loadModel('Review');
     }
 
     /**
@@ -38,10 +39,14 @@ class AdminController extends AppController
         $admin = $this->paginate($this->Admin);
         $request = $this->paginate($this->Request);
         $comments = $this->Paginator->paginate($this->post_comment->find('all')->contain('BlogPost'));
-
+        $unres_request = $this->Request->find('all')->where(['Request.Response IS NULL']);
+        $count_request = $unres_request->count();
+        $count_comment = $comments->count();
+        $count_blog = $this->BlogPost->find('all')->count();
+        $count_review = $this->Review->find('all')->count();
         $this->layout ='admin';
-        $this->set(compact('admin','request','comments'));
-
+        $this->set(compact('admin','request','comments','count_comment','count_request'));
+        $this->set(compact('count_blog','count_review'));
     }
 
     /**
