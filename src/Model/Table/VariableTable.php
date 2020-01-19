@@ -33,6 +33,10 @@ class VariableTable extends Table
         $this->setTable('variable');
         $this->setDisplayField('variable_id');
         $this->setPrimaryKey('variable_id');
+
+        $this->belongsTo('ControllersInfo')
+            ->setForeignKey('variable_cid')
+            ->setJoinType('INNER');
     }
 
     /**

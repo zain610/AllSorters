@@ -23,7 +23,8 @@ class VariableTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.Variable'
+        'app.Variable',
+        'app.ControllersInfo'
     ];
 
     /**

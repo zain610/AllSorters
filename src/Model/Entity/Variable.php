@@ -10,6 +10,8 @@ use Cake\ORM\Entity;
  * @property string $variable_key
  * @property string $variable_value
  * @property int|null $variable_cid
+ *
+ * @property \App\Model\Entity\ControllersInfo $controllers_info
  */
 class Variable extends Entity
 {
@@ -25,6 +27,7 @@ class Variable extends Entity
     protected $_accessible = [
         'variable_key' => true,
         'variable_value' => true,
-        'variable_cid' => true
+        'variable_cid' => true,
+        'controllers_info' => true
     ];
 }

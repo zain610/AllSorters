@@ -3,6 +3,21 @@ use Cake\ORM\TableRegistry;
 
 $footer = TableRegistry::getTableLocator()->get('Footer');
 $query = $footer->find();
+
+
+function getNavbarValueFromOrder($order) {
+    $variables = TableRegistry::getTableLocator()->get('Variable')->find()->contain(['ControllersInfo'])->where(['Variable.variable_key' => 'navbar', 'ControllersInfo.navbar_info' =>$order])->execute();
+    return $variables;
+}
+for($i=1;$i<5; $i++) {
+    $value = getNavbarValueFromOrder($i);
+    foreach($value as $item) {
+        debug($item);
+    }
+}
+
+
+
 ?>
 
 <div id="navigation">
@@ -17,8 +32,8 @@ $query = $footer->find();
                     <div style="display: grid;">
                         <h5>Reach out to Mary for more info!</h5>
                         <?php foreach ($query as $footer): ?>
-                        <a style="margin-left: 1rem; color: #00adee" href="tel:<?php echo $footer->Phone; ?>"><i style="padding-right: 15px" class="fas fa-phone-alt fa-lg"></i><?= $footer->Phone ?></a>
-                        <a style="margin-left: 1rem; color: #00adee" href="mailto:<?php echo $footer->Email; ?>"><i style="padding-right: 15px" class="far fa-envelope fa-lg"></i><?= $footer->Email?></a>
+                            <a style="margin-left: 1rem; color: #00adee" href="tel:<?php echo $footer->Phone; ?>"><i style="padding-right: 15px" class="fas fa-phone-alt fa-lg"></i><?= $footer->Phone ?></a>
+                            <a style="margin-left: 1rem; color: #00adee" href="mailto:<?php echo $footer->Email; ?>"><i style="padding-right: 15px" class="far fa-envelope fa-lg"></i><?= $footer->Email?></a>
                         <?php endforeach;?>
                     </div>
                 </div>
@@ -47,7 +62,7 @@ $query = $footer->find();
                 <!--/.navbar-collapse-->
             </nav>
 
-    </div>
+        </div>
 
-</div>
+    </div>
 </div>
