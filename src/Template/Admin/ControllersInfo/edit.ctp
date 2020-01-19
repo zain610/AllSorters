@@ -22,7 +22,7 @@
         <legend><?= __('Edit Controllers Info') ?></legend>
         <?php
             echo $this->Form->control('name');
-            echo $this->Form->control('order');
+            echo $this->Form->control('navbar_info');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

@@ -4,13 +4,16 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * ControllersInfo Entity
+ * Variable Entity
  *
- * @property int $controller_id
- * @property string $name
- * @property int $navbar_info
+ * @property int $variable_id
+ * @property string $variable_key
+ * @property string $variable_value
+ * @property int|null $variable_cid
+ *
+ * @property \App\Model\Entity\ControllersInfo $controllers_info
  */
-class ControllersInfo extends Entity
+class Variable extends Entity
 {
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -22,7 +25,9 @@ class ControllersInfo extends Entity
      * @var array
      */
     protected $_accessible = [
-        'name' => true,
-        'navbar_info' => true
+        'variable_key' => true,
+        'variable_value' => true,
+        'variable_cid' => true,
+        'controllers_info' => true
     ];
 }

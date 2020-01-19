@@ -25,8 +25,8 @@
             <td><?= $this->Number->format($controllersInfo->controller_id) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Order') ?></th>
-            <td><?= $this->Number->format($controllersInfo->order) ?></td>
+            <th scope="row"><?= __('Navbar Info') ?></th>
+            <td><?= $this->Number->format($controllersInfo->navbar_info) ?></td>
         </tr>
     </table>
 </div>
