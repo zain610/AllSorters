@@ -26,3 +26,115 @@ a{
 ::selection {
     background: #499cf1 !important;
 }
+
+.feature-left > .copy {
+    padding-left: 10px !important;
+}
+
+
+.sidenav {
+    width: 130px;
+    z-index: 1;
+    top: 20px;
+    left: 10px;
+    background: #eee;
+    overflow-x: hidden;
+    padding: 8px 0;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #2196F3;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #064579;
+}
+/*!* tab *!*/
+/*.tab-vertical-top{*/
+/*    float:none;*/
+/*    width:100% !important;*/
+/*    padding-bottom:30px;*/
+/*}*/
+
+/*.tab-vertical-bottom{*/
+/*    float:none;*/
+/*    width:100% !important;*/
+/*    padding-left:0px;*/
+/*}*/
+/*!* Tab vertical *!*/
+
+
+
+
+/*.tab-vertical-id{*/
+/*    display:none;*/
+/*}*/
+
+/*.tab-vertical-top{*/
+/*    float:left;*/
+/*    width:31%;*/
+/*    position:relative;*/
+/*    z-index:2;*/
+/*    box-sizing:border-box;*/
+/*    -moz-box-sizing:border-box; !* Firefox *!*/
+/*}*/
+
+/*.tab-vertical-bottom{*/
+/*    float:left;*/
+/*    width:69%;*/
+/*    position:relative;*/
+/*    z-index:1;*/
+/*    padding-left:33px;*/
+/*    box-sizing:border-box;*/
+/*    -moz-box-sizing:border-box; !* Firefox *!*/
+/*}*/
+
+/*.tab-vertical-title{*/
+/*    width:100%;*/
+/*    margin-bottom: 15px;*/
+/*    cursor:pointer;*/
+/*    transition: all 200ms ease-out; !*safari and chrome *!*/
+/*    -webkit-transition: all 200ms ease-out; !*safari and chrome *!*/
+/*    padding:12px 20px;*/
+/*    box-sizing:border-box;*/
+/*    -moz-box-sizing:border-box; !* Firefox *!*/
+/*}*/
+
+/*.tab-vertical-title i{*/
+/*    margin-right:5px;*/
+/*    transition: all 200ms ease-out; !*safari and chrome *!*/
+/*    -webkit-transition: all 200ms ease-out; !*safari and chrome *!*/
+/*    vertical-align:-5px;*/
+/*}*/
+
+
+/*.tab-vertical-title:last-child{*/
+/*    margin-bottom:0px;*/
+/*}*/
+
+/*.tab-vertical-icon{*/
+/*    padding-bottom:0px;*/
+/*}*/
+
+/*.tab-vertical-content{*/
+/*    display:none;*/
+/*    margin-top: -4px;*/
+/*}*/
+
+/*.tab-vertical-content-current{*/
+/*    display:block;*/
+/*}*/
+
+/*.tab-vertical-content p:last-child{*/
+/*    padding-bottom:0px;*/
+/*}*/
+
+/*.content.tab-vertical-content h1, .content.tab-content h1,.content.tab-vertical-content h2, .content.tab-content h2,.content.tab-vertical-content h3, .content.tab-content h3{*/
+/*    padding-top: 0px;*/
+/*    padding-bottom: 22px;*/
+/*}*/
+

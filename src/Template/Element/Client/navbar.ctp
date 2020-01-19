@@ -56,15 +56,15 @@ use Cake\ORM\TableRegistry;
                 </div>
                 <div class="col-xs-10 text-right menu-1">
                     <ul>
+<!--                        class="active"-->
                         <li class="active"><?= $this->Html->link('Home', ['controller' => 'Articles', 'action' => 'home']) ?></li>
                         <li><?= $this->Html->link('About', ['controller' => 'About', 'action' => 'index']) ?></li>
                         <li class="has-dropdown">
-                            <a href="services.html">Services</a>
+                            <a href="#">Services</a>
                             <ul class="dropdown">
-                                <li><a href="#">Web Design</a></li>
-                                <li><a href="#">eCommerce</a></li>
-                                <li><a href="#">Branding</a></li>
-                                <li><a href="#">API</a></li>
+                                <li><?= $this->Html->link('Service1', ['controller' => 'Service', 'action' => 'index']) ?></li>
+                                <li><?= $this->Html->link('Service2', ['controller' => 'Service', 'action' => 'index']) ?></li>
+                                <li><?= $this->Html->link('Service3', ['controller' => 'Service', 'action' => 'index']) ?></li>
                             </ul>
                         </li>
                         <li class="has-dropdown">
