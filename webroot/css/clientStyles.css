@@ -1,0 +1,453 @@
+
+#serviceimg {
+    width: 350px;
+    height: 233.333px;
+    max-width: 100%;
+    max-height: 100%;
+
+}
+.search-form {
+    display: flex;
+    align-items: center;
+}
+.camp1 img {
+    width: 50%;
+}
+.banner-info {
+    margin: 10rem 0;
+}
+.banner {
+    margin: 2.5rem 0 0;
+    height: 100%;
+    background-image: url('../img/bg.jpg');
+
+}
+.logo h1 {
+    margin-top: 0;
+}
+
+h3 {
+    color: inherit!important;
+}
+
+
+/*Slide Show*/
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/* Next & previous buttons */
+
+
+/*
+Services - Card styling
+ */
+.services-card {
+    float: left;
+    border: 2px solid #bbb;
+    padding: 1rem;
+    margin: 15px;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+    top: 30%;
+    left: 0;
+    color: #f2f2f2;
+    /*font-size: 30px;*/
+    padding: 8px 12px;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    z-index: 15;
+
+}
+.text span {
+    color: white;
+    /*font: bold 24px/45px Helvetica, Sans-Serif;*/
+    /*letter-spacing: -1px;*/
+    background: rgb(0, 0, 0); /* fallback color */
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* =============================================================
+ BLOG POST STYLE
+============================================================ */
+.blog-post {
+    padding-bottom:30px;
+    border-bottom:2px solid #f4f4f4;
+    padding-top:30px;
+}
+.blog-post a, .blog-post a:hover {
+    text-decoration:none;
+}
+.blog-post h1 {
+    font-size:30px;
+    line-height:50px;
+}
+.blog-post h4 {
+    font-size:20px;
+    line-height:25px;
+}
+.blog-post p {
+    font-size:20px;
+    line-height:30px;
+    padding-bottom:20px;
+    padding-top:10px;
+}
+#blog-card-content {
+    padding: 10px;
+    margin-bottom: 5px;
+}
+.card {
+    border: 2.5px solid #333333;
+}
+.slick-dots li button:before {
+    font-size: 20px;
+}
+.slick-dotted.slick-slider {
+    display: flex;
+    align-items: center;
+}
+.fa-arrow-left, .fa-arrow-right {
+    margin: 0rem .5rem;
+}
+
+
+
+html, body{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 100%;
+    background:#fff;
+}
+/* =============================================================
+                Navbar Styling
+============================================================ */
+/*!*Change the color when user hovers over navbar item*!*/
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color:#333333!important;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color:#333333;
+    background-color: #fff;
+}
+a.navbar-brand {
+    color: #fff!important;
+}
+#top-header {
+    padding-bottom: 2rem;
+}
+.header-bottom, nav.navbar.navbar-default {
+    background-color: #1a3948!important;
+}
+#navbar-contents {
+    display: block;
+    position: absolute;
+    width: fit-content;
+}
+nav.navbar.navbar-default {
+    height: 5rem;
+    width: 100%;
+    background-color: #5891cc!important;
+    margin: 0;
+}
+.container > nav.navbar.navbar-default{
+    margin: 0!important;
+
+}
+
+#navbar {
+    overflow: visible;
+    width: 100%;
+    padding: 0;
+
+}
+
+/* Navbar links */
+#navbar a {
+    font-size: 1rem;
+    float: left;
+    display: block;
+    color:#2C93FF;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left:0;
+    background-color: #333333;
+    z-index: 20;
+
+
+
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+    padding-top: 60px;
+}
+.contact-info {
+    color: #ff6a7d;
+    float:right;
+    padding: 0 2rem;
+    display: inline-flex;
+    margin: 2rem 0;
+
+
+}
+
+.contact-info-inner {
+    border: 2px solid #1DC7EA;
+    padding: 1rem;
+    background-color: #212529;
+    font-size: 20px
+
+}
+#navigation {
+    background-color: #1a3948!important;
+
+}
+
+
+
+.logo h1 a {
+
+    background-color: #1DC7EA;
+}
+
+/* =============================================================
+Gallery Styling
+============================================================ */
+
+.gallery img {
+    height: 200px;
+    width: 340px;
+    opacity: 0.2;
+}
+hr {
+    margin: 1rem 5rem;
+    border: 0;
+    border-top: 3px solid rgba(0, 0, 0, 0.1);
+}
+body > div.about > div > div.col-md-8.about-right > h4 {
+    position: center;
+    padding-left: 3rem;
+}
+
+.services .container .h4 {
+    color: #333333;
+}
+.hvr-shutter-in-horizontal {
+    display: table;
+}
+div.services.container > div > a > div > button{
+    float: right;
+}
+
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+    background-color: #00b0ff;
+}
+
+
+
+/* =============================================================
+
+        NEWSLETTER styling
+============================================================ */
+#newsletter-signup {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    background-color: #f2f6fe;
+    display: flex;
+    justify-content: center
+}
+#newsletter-signup > small {
+    color: #333333!important;
+}
+#newsletter-signup > label {
+    color: #202528;
+}
+#newsletter-signup > h3, #newsletter-signup > small {
+    color: inherit;
+}
+#submit-subscription {
+    width: fit-content;
+    margin: 0 1rem;
+    height: fit-content;
+}
+#newsletter-form {
+    display: flex;
+    align-items: flex-end;
+}
+.email >label {
+    color: #202528;
+}
+/* =============================================================
+
+    Carousel styling
+============================================================ */
+.carousel-inner {
+    margin: auto;
+    width: 100%;
+}
+.carousel-inner .item img {
+    margin-top: -100px;
+    width: 100%;
+    height: auto;
+    opacity: 0.7;
+    background: rgb(0, 0, 0); /* fallback color */
+    background: rgba(0, 0, 0, 0.7);
+}
+
+
+@media (max-width: 1024px) {
+    .banner-1 {
+        min-height: 300px;
+    }
+
+}
+
+.banner-1{
+    background: url(../img/bg.jpg) center fixed ;
+    background-size: cover;
+    width: 100%;
+    min-height: 350px;
+}
+
+address {
+    margin-bottom: 20px;
+    font-style: normal;
+    color: #D2CCCC;
+    font-size: 1em;
+    line-height: 1.8em;
+    font-weight: 300;
+}
+.copyright {
+    padding: 2em 0;
+    text-align: center;
+}
+ul.social li i {
+    display: inline-block;
+    background: url(../img/img-sprite.png) no-repeat -160px -8px;
+    width: 42px;
+    height: 42px;
+    margin: 0 5px 0 0;
+}
+ul.social li i:hover{
+    background: url(../img/img-sprite.png) no-repeat -160px -55px;
+}
+ul.social li i.facebook {
+    background-position: -7px -7px;
+}
+ul.social li i.facebook:hover{
+    background-position: -7px -55px;
+}
+ul.social li i.goog {
+    background-position: -56px -7px;
+}
+ul.social li i.goog:hover{
+    background-position: -56px -55px;
+}
+ul.social li i.lin {
+    background-position: -109px -7px;
+}
+ul.social li i.lin:hover{
+    background-position: -109px -55px;
+}
+ul.social {
+    padding: 1em 0 0;
+}
+ul.social li {
+    display: inline-block;
+}
+
+/*Before After Gallery*/
+
+
+
+/* additional services and blog styling */
+.services{
+    position: relative;
+    border-radius: 15px;
+}
+.inner-services {
+    float: left;
+
+}
+.inner-blogs {
+    float: right;
+
+}
+.inner-services:after {
+    right: 0;
+    transform-origin: bottom right;
+    transform: skewX(-20deg);
+}
+
+.inner-blogs:after {
+    left: 0;
+    transform-origin: top left;
+    transform: skewX(-20deg);
+}
+
+
+/*.inner-blogs:after {*/
+/*    content:"";*/
+/*    display:inline-block;*/
+/*    left: 0;*/
+/*    transform-origin: top left;*/
+/*    transform: skewX(-20deg);*/
+/*}*/
+
