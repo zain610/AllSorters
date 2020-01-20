@@ -110,14 +110,14 @@
                                 <div class="text">
                                     <h2>
                                         <?= $this->Html->link(
-                                                $count_review,
-                                                ['prefix'=>'admin','controller'=>'Review','action'=>'index'],
-                                                ['style'=>'color:#f2f2f2']
+                                            $count_job,
+                                            ['prefix'=>'admin','controller'=>'Job','action'=>'index'],
+                                            ['style'=>'color:#f2f2f2']
                                             )?>
                                     </h2>
                                     <span><?= $this->Html->link(
-                                            'Total Review',
-                                            ['prefix'=>'admin','controller'=>'Review','action'=>'index'],
+                                            'Incomplete Job',
+                                            ['prefix'=>'admin','controller'=>'Job','action'=>'index'],
                                             ['style'=>'color:#f2f2f2']
                                         )?>
                                     </span>
