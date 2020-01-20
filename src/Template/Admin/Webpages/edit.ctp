@@ -17,7 +17,7 @@
         $name = $webpage->Webpage;
         echo $this->Form->control('Heading');
         $val= h($webpage['Webpage']);
-        if ($val === 'Speaking Engagements') {
+        if ($val === 'Speaking Engagements' OR $val === 'Home page') {
             echo $this->Form->control('Content', ['type' => 'textarea']);
         }
         ?>

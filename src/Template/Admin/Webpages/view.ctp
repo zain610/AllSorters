@@ -13,7 +13,7 @@
             <h4>Heading: </h4>
             <p><?php echo $webpage->Heading?></p>
             <?php $val= h($webpage['Webpage']); ?>
-            <?php if ($val === 'Speaking Engagements') {?>
+            <?php if ($val === 'Speaking Engagements' OR $val === 'Home page') {?>
                 <h4>Content: </h4>
                 <p> <?php echo $webpage->Content ?></p>
             <?php } ?>

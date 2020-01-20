@@ -8,6 +8,8 @@
     <h4><?= __('Webpages') ?></h4>
     <p>Click edit to change headings.</p>
     <p>Edit Speaking Engagements to change the webpage content and the heading.</p>
+    <p>Edit the home page to change the home page text and the heading.</p>
+
 
     <table class="articles-table table">
         <thead>
