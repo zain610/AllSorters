@@ -27,6 +27,8 @@ class AdminController extends AppController
         $this->loadModel('BlogPost');
         $this->loadModel('post_comment');
         $this->loadModel('Review');
+        $this->loadModel('Webpages');
+
     }
 
     /**
@@ -47,6 +49,9 @@ class AdminController extends AppController
         $this->layout ='admin';
         $this->set(compact('admin','request','comments','count_comment','count_request'));
         $this->set(compact('count_blog','count_review'));
+        $webpages = $this->Webpages->find('all');
+        $this->set(compact('webpages'));
+
     }
 
     /**
