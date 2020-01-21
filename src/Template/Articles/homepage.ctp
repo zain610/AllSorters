@@ -19,8 +19,6 @@
                     <div class="item">
                         <a href="#">
                             <?= $this->Html->image("slider_1.jpg", ['fullBase' => true]); ?>
-
-                            <?= $this->Html->image("slider_1.jpg", ['fullBase' => true]); ?>
                             <div class="slider-copy">
                                 <h2>Architecture #1</h2>
                             </div>
