@@ -15,7 +15,7 @@
             <h3>Speaking Engagement description: <?= strip_tags($event->Description) ?></h3>
             <p>Venue: <?= strip_tags($event->Venue) ?></p>
             <p>Date:
-                <?= h($event->Date) ?>
+                <?= h($event->Date->format('d-m-Y')) ?>
 
             </p>
             <p>Time:

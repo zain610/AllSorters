@@ -13,18 +13,18 @@
     <table>
         <thead>
         <tr>
-            <th scope="col"><?= $this->Paginator->sort('Client_Name') ?></th>
-            <th scope="col"><?= $this->Paginator->sort('Month_Year') ?></th>
-            <th scope="col"><?= $this->Paginator->sort('Suburb') ?></th>
-            <th scope="col"><?= $this->Paginator->sort('Review_Details') ?></th>
-            <th scope="col" class="actions"><?= __('Actions') ?></th>
+            <th class="table-column-one" scope="col"><?= $this->Paginator->sort('Client_Name') ?></th>
+            <th class="table-column-one" scope="col"><?= $this->Paginator->sort('Month_Year') ?></th>
+            <th class="table-column-one" scope="col"><?= $this->Paginator->sort('Suburb') ?></th>
+            <th class="table-column-one" scope="col"><?= $this->Paginator->sort('Review_Details') ?></th>
+            <th class="table-column-actions" scope="col" class="actions"><?= __('Actions') ?></th>
         </tr>
         </thead>
         <tbody>
         <?php foreach ($review as $review): ?>
             <tr>
                 <td><?= h($review->Client_Name) ?></td>
-                <td><?= h($review->Month_Year) ?></td>
+                <td><?= h($review->Month_Year->format('d-m-Y')) ?></td>
                 <td><?= h($review->Suburb) ?></td>
                 <td><?= $this->Text->truncate(h(strip_tags($review->Review_Details)), 40, ['ellipsis' => '...',
                         'exact' => false]) ?></td>

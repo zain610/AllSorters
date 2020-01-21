@@ -6,7 +6,7 @@
 ?>
 
 <div class="table table-hover table-striped">
-    <h4><?= __('Jobs') ?></h4>
+    <h4><?= 'Completed Jobs' ?></h4>
     <table class="table table-hover table-striped" width="120%">
         <thead>
         <tr>

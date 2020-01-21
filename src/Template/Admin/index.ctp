@@ -61,7 +61,7 @@
                                             ['style'=>'color:#f2f2f2']
                                         )?></h2>
                                     <span><?= $this->Html->link(
-                                            'Total Blog',
+                                            'Total Blog posts',
                                             ['prefix'=>'admin','controller'=>'BlogPost','action'=>'index'],
                                             ['style'=>'color:#f2f2f2']
                                         )?>
@@ -109,7 +109,7 @@
                                             )?>
                                     </h2>
                                     <span><?= $this->Html->link(
-                                            'Incomplete Job',
+                                            'Incomplete Jobs',
                                             ['prefix'=>'admin','controller'=>'Job','action'=>'index'],
                                             ['style'=>'color:#f2f2f2']
                                         )?>

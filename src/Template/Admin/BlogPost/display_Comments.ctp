@@ -10,7 +10,7 @@ $currentController = $this->request->getParam('controller');
     <div id="searchBarNavBar">
         <?= $this->element('Admin/Buttons/search'); ?>
     </div>
-    <h3><?= __('Blog Post') ?></h3>
+    <h3><?= 'Blog Post Comments' ?></h3>
     <table class="articles-table table">
         <thead>
         <tr>
