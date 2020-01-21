@@ -27,7 +27,6 @@
                         <td class="card" width="50%">
                             <?php echo $this->Html->image($image->path, ['alt' => 'CakePHP']); ?>
                         </td>
-
                     </tr>
                 <?php endforeach; ?>
                 </tbody>

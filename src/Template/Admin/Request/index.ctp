@@ -50,7 +50,7 @@
                 <td><?= h($request->Cust_Fname) ?></td>
                 <td><?= h($request->Cust_Sname) ?></td>
                 <td><?= h($request->Query_info) ?></td>
-                <td><?= h($request->created) ?></td>
+                <td><?= h($request->created->format('d-m-Y')) ?></td>
                 <td class="action-col">
                     <?= $this->element('Admin/Buttons/view', ['url' => ['action' => 'view', $request->Request_No]]) ?>
                     <?= $this->element('Admin/Buttons/delete', ['url' => ['action' => 'delete', $request->Request_No]]) ?>

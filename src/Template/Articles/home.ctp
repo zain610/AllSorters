@@ -55,18 +55,24 @@
     </div>
 </div>
 <hr>
+<?php $heading = "" ?>
+<?php $content = "" ?>
+<?php foreach ($webpages as $webpage): ?>
+    <?php $name = $webpage -> Webpage; ?>
+    <?php if ($name === 'Home page') { ?>
+        <?php $heading = $webpage -> Heading; ?>
+        <?php $content = $webpage -> Content; ?>
+    <?php } ?>
+<?php endforeach ?>
+
 <div class="" style="display: flex">
     <div class="container services inner-services " style="width: 70%; margin: 0 1rem; text-align: center; background: #f2f6ff;">
-        <h3>Our Story</h3>
+        <h3><?php echo $heading ?>
+        </h3>
         <div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <p> <?php echo $content ?>
             </p>
-            <div style="text-align: center">
-                <h4>Our Services Include</h4>
-                <h5><b>Moving // Downsizing // Aged Care // And many more ...</b> </h5>
-            </div>
         </div>
-
     </div>
     <?= $this->element('Client/blogs') ?>
 </div>

@@ -25,7 +25,7 @@
                 <tr>
                     <td><?= strip_tags($event->Venue) ?></td>
                     <td><?= strip_tags($event->Description) ?></td>
-                    <td><?= h($event->Date) ?> <?= $event->Time->i18nFormat([\IntlDateFormatter::NONE, \IntlDateFormatter::SHORT]) ?></td>
+                    <td><?= h($event->Date->format('d-m-Y')) ?> <?= $event->Time->i18nFormat([\IntlDateFormatter::NONE, \IntlDateFormatter::SHORT]) ?></td>
 
                     <td class="actions">
                         <?= $this->element('Admin/Buttons/view', ['url' => ['action' => 'view', $event->id]]) ?>

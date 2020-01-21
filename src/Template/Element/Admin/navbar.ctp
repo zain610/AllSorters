@@ -142,13 +142,13 @@ $isJobActive = $currentController === "Job";
 
         <li class="<?= $isJobActive ? 'active' : '' ?> dropdown">
             <?= $this->Html->link(
-                '<p>Job</p>',
+                '<p>Jobs</p>',
                 '#',
                 ['escape' => false, 'onclick' => 'handleMenuToggle(this)', 'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true',]
             ) ?>
             <ul class="dropdown-menu" aria-labelledby="reviewDropdown">
                 <li><?=$this->Html->link(
-                        '<p>View Jobs</p>',
+                        '<p>View Incomplete Jobs</p>',
                         ['prefix'=>'admin','controller'=>'job','action'=>'index'],
                         ['escape'=>false]
                     )?></li>
@@ -158,7 +158,7 @@ $isJobActive = $currentController === "Job";
                         ['escape'=>false]
                     )?></li>
                 <li><?=$this->Html->link(
-                        '<p>View Job archive</p>',
+                        '<p>View Completed Jobs</p>',
                         ['prefix'=>'admin','controller'=>'job','action'=>'archiveIndex'],
                         ['escape'=>false]
                     )?></li>

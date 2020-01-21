@@ -8,7 +8,7 @@
 
 <div class="table table-hover table-striped">
 
-    <h3><?= __('Blog Post') ?></h3>
+    <h3> Blog Post Archive </h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
@@ -22,7 +22,7 @@
                 <?php if ($blogPost->Archived) { ?>
                     <tr>
                         <td><?= h($blogPost->title) ?></td>
-                        <td><?= h($blogPost->modified) ?></td>
+                        <td><?= h($blogPost->modified->format('d-m-Y')) ?></td>
                         <td class="actions">
                             <?= $this->element('Admin/Buttons/View', ['url' => ['action' => 'view', $blogPost->blog_post_id]]) ?>
                             <?= $this->element('Admin/Buttons/Edit', ['url' => ['action' => 'edit', $blogPost->blog_post_id]]) ?>

@@ -6,7 +6,7 @@
 ?>
 
 <div class="table table-hover table-striped">
-    <h4><?= __('Jobs') ?></h4>
+    <h4><?= 'Completed Jobs' ?></h4>
     <table class="table table-hover table-striped" width="120%">
         <thead>
         <tr>
@@ -24,8 +24,8 @@
             <tr>
                 <td><?= $this->Number->format($job->job_id) ?></td>
                 <td><?= $this->Number->format($job->price) ?></td>
-                <td><?= h($job->duration) ?></td>
-                <td><?= h($job->Commence_Date) ?></td>
+                <td><?= h($job->duration->format('d-m-Y')) ?></td>
+                <td><?= h($job->Commence_Date->format('d-m-Y')) ?></td>
                 <td><?= strip_tags($job->job_detail)?></td>
                 <td class="action" >
                     <?= $this->element('Admin/Buttons/view', ['url' => ['action' => 'view', $job->job_id]]) ?>
@@ -33,6 +33,9 @@
                     <?= $this->element('Admin/Buttons/edit', ['url' => ['action' => 'edit', $job->job_id]]) ?>
                     <br>
                     <?= $this->element('Admin/Buttons/restore', ['url' => ['action' => 'restore', $job->job_id], ['confirm' => __('Are you sure you want to archive # {0}?', $job->job_id)]]) ?>
+                    <br>
+                    <?= $this->element('Admin/Buttons/delete', ['url' => ['action' => 'delete', $job->job_id], ['confirm' => __('Are you sure you want to delete # {0}?', $job->job_id)]]) ?>
+
                 </td>
             </tr>
         <?php }?>
