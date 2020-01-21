@@ -5,16 +5,16 @@ $footer = TableRegistry::getTableLocator()->get('Footer');
 $query = $footer->find();
 
 
-function getNavbarValueFromOrder($order) {
-    $variables = TableRegistry::getTableLocator()->get('Variable')->find()->contain(['ControllersInfo'])->where(['Variable.variable_key' => 'navbar', 'ControllersInfo.navbar_info' =>$order])->execute();
-    return $variables;
-}
-for($i=1;$i<5; $i++) {
-    $value = getNavbarValueFromOrder($i);
-    foreach($value as $item) {
-        debug($item);
-    }
-}
+//function getNavbarValueFromOrder($order) {
+//    $variables = TableRegistry::getTableLocator()->get('Variable')->find()->contain(['ControllersInfo'])->where(['Variable.variable_key' => 'navbar', 'ControllersInfo.navbar_info' =>$order])->execute();
+//    return $variables;
+//}
+//for($i=1;$i<5; $i++) {
+//    $value = getNavbarValueFromOrder($i);
+//    foreach($value as $item) {
+//        debug($item);
+//    }
+//}
 
 
 

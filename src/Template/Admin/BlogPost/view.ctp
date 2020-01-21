@@ -6,6 +6,10 @@
 ?>
 <div class="content table-responsive table-full-width">
     <div class="row">
+        <div class="card-body">
+            <?= $this->element('Admin/Buttons/edit', ['url' => ['action' => 'edit', $blogPost->blog_post_id]]) ?>
+            <?= $this->element('Admin/Buttons/delete', ['url' => ['action' => 'deleteImage', $blogPost->Image_id]]) ?>
+        </div>
         <div class="leftcolumn">
             <h4><?php echo $blogPost->title?></h4>
             <p><?php echo $blogPost->Description?></p>
@@ -23,10 +27,7 @@
                         <td class="card" width="50%">
                             <?php echo $this->Html->image($image->path, ['alt' => 'CakePHP']); ?>
                         </td>
-                        <td class="card-body">
-                            <?= $this->element('Admin/Buttons/edit', ['url' => ['action' => 'edit', $blogPost->blog_post_id]]) ?>
-                            <?= $this->element('Admin/Buttons/delete', ['url' => ['action' => 'deleteImage', $blogPost->Image_id]]) ?>
-                        </td>
+
                     </tr>
                 <?php endforeach; ?>
                 </tbody>
