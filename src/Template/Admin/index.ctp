@@ -28,9 +28,8 @@
                     <div class="overview-item overview-item--c1">
                         <div class="overview__inner">
                             <div class="overview-box clearfix">
-                                <div class="icon">
-                                    <i class="zmdi zmdi-account-o"></i>
-                                </div>
+                                <i class="fa fa-bell">
+                                </i>
                                 <div class="text">
                                     <h2><?= $this->Html->link(
                                             $count_request,
@@ -54,9 +53,7 @@
                     <div class="overview-item overview-item--c2">
                         <div class="overview__inner">
                             <div class="overview-box clearfix">
-                                <div class="icon">
-                                    <i class="zmdi zmdi-shopping-cart"></i>
-                                </div>
+                                <i class="fa fa-book"></i>
                                 <div class="text">
                                     <h2><?= $this->Html->link(
                                             $count_blog,
@@ -79,9 +76,7 @@
                     <div class="overview-item overview-item--c3">
                         <div class="overview__inner">
                             <div class="overview-box clearfix">
-                                <div class="icon">
-                                    <i class="zmdi zmdi-calendar-note"></i>
-                                </div>
+                                <i class="fa fa-comments"></i>
                                 <div class="text">
                                     <h2><?= $this->Html->link(
                                             $count_comment,
@@ -104,9 +99,7 @@
                     <div class="overview-item overview-item--c4">
                         <div class="overview__inner">
                             <div class="overview-box clearfix">
-                                <div class="icon">
-                                    <i class="zmdi zmdi-money"></i>
-                                </div>
+                                <i class="fa fa-calendar"></i>
                                 <div class="text">
                                     <h2>
                                         <?= $this->Html->link(
