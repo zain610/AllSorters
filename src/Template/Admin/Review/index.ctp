@@ -24,7 +24,7 @@
         <?php foreach ($review as $review): ?>
             <tr>
                 <td><?= h($review->Client_Name) ?></td>
-                <td><?= h($review->Month_Year) ?></td>
+                <td><?= h($review->Month_Year->format('d-m-Y')) ?></td>
                 <td><?= h($review->Suburb) ?></td>
                 <td><?= $this->Text->truncate(h(strip_tags($review->Review_Details)), 40, ['ellipsis' => '...',
                         'exact' => false]) ?></td>

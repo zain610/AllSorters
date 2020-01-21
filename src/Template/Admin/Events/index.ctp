@@ -24,7 +24,7 @@
         <?php foreach ($publishedEvents as $event): ?>
             <?php if ($event->Published) { ?>
                 <tr>
-                    <td><?= h($event->Date) ?></td>
+                    <td><?= h($event->Date->format('d-m-Y')) ?></td>
                     <td><?= $event->Time->i18nFormat([\IntlDateFormatter::NONE, \IntlDateFormatter::SHORT]) ?></td>
                     <td><?= strip_tags($event->Description) ?></td>
                     <td><?= strip_tags($event->Venue) ?></td>
