@@ -32,7 +32,7 @@
                     <br>
                     <?= $this->element('Admin/Buttons/edit', ['url' => ['action' => 'edit', $job->job_id]]) ?>
                     <br>
-                    <?= $this->element('Admin/Buttons/archive', ['url' => ['action' => 'archive', $job->job_id], ['confirm' => __('Are you sure you want to archive # {0}?', $job->job_id)]]) ?>
+                    <?= $this->element('Admin/Buttons/complete', ['url' => ['action' => 'archive', $job->job_id], ['confirm' => __('Are you sure you want to archive # {0}?', $job->job_id)]]) ?>
                 </td>
             </tr>
         <?php }; ?>
