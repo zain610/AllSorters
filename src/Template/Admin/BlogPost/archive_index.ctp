@@ -23,7 +23,7 @@
                 <?php if ($blogPost->Archived) { ?>
                     <tr>
                         <td><?= h($blogPost->title) ?></td>
-                        <td><?= h($blogPost->Date) ?></td>
+                        <td><?= h($blogPost->Date->format('d-m-Y')) ?></td>
                         <td><?= h($blogPost->modified) ?></td>
                         <td class="actions">
                             <?= $this->element('Admin/Buttons/View', ['url' => ['action' => 'view', $blogPost->blog_post_id]]) ?>
