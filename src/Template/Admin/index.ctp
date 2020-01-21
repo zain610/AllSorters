@@ -84,7 +84,7 @@
                                             ['style'=>'color:#f2f2f2']
                                         )?></h2>
                                     <span><?= $this->Html->link(
-                                            'Total Blog post Comments',
+                                            'Total Comments',
                                             ['prefix'=>'admin','controller'=>'BlogPost','action'=>'displayComments'],
                                             ['style'=>'color:#f2f2f2']
                                         )?>
