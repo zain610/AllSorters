@@ -24,8 +24,8 @@
             <tr>
                 <td><?= $this->Number->format($job->job_id) ?></td>
                 <td><?= $this->Number->format($job->price) ?></td>
-                <td><?= h($job->duration) ?></td>
-                <td><?= h($job->Commence_Date) ?></td>
+                <td><?= h($job->duration->format('d-m-Y')) ?></td>
+                <td><?= h($job->Commence_Date->format('d-m-Y')) ?></td>
                 <td><?= strip_tags($job->job_detail)?></td>
                 <td class="action" >
                     <?= $this->element('Admin/Buttons/view', ['url' => ['action' => 'view', $job->job_id]]) ?>
