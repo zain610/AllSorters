@@ -148,7 +148,7 @@ $isJobActive = $currentController === "Job";
             ) ?>
             <ul class="dropdown-menu" aria-labelledby="reviewDropdown">
                 <li><?=$this->Html->link(
-                        '<p>View Job incomplete</p>',
+                        '<p>View Incompleted Jobs</p>',
                         ['prefix'=>'admin','controller'=>'job','action'=>'index'],
                         ['escape'=>false]
                     )?></li>
@@ -158,7 +158,7 @@ $isJobActive = $currentController === "Job";
                         ['escape'=>false]
                     )?></li>
                 <li><?=$this->Html->link(
-                        '<p>View Job complete</p>',
+                        '<p>View Completed Jobs</p>',
                         ['prefix'=>'admin','controller'=>'job','action'=>'archiveIndex'],
                         ['escape'=>false]
                     )?></li>
