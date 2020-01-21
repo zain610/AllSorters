@@ -11,21 +11,19 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
         <tr>
-            <th scope="col"><?= $this->Paginator->sort('Date') ?></th>
-            <th scope="col"><?= $this->Paginator->sort('Time') ?></th>
-            <th scope="col"><?= $this->Paginator->sort('Description') ?></th>
-            <th scope="col"><?= $this->Paginator->sort('Venue') ?></th>
-            <th scope="col" class="actions"><?= __('Actions') ?></th>
+            <th class="table-column-one" scope="col"><?= $this->Paginator->sort('Venue') ?></th>
+            <th class="table-column-one" scope="col"><?= $this->Paginator->sort('Description') ?></th>
+            <th class="table-column-one" scope="col"><?= $this->Paginator->sort('Date & Time') ?></th>
+            <th class="table-column-actions" scope="col" class="actions"><?= __('Actions') ?></th>
         </tr>
         </thead>
         <tbody>
         <?php foreach ($archivedEvents as $event): ?>
             <?php if ($event->Archived) { ?>
                 <tr>
-                    <td><?= h($event->Date) ?></td>
-                    <td><?= $event->Time->i18nFormat([\IntlDateFormatter::NONE, \IntlDateFormatter::SHORT]) ?></td>
-                    <td><?= strip_tags($event->Description) ?></td>
                     <td><?= strip_tags($event->Venue) ?></td>
+                    <td><?= strip_tags($event->Description) ?></td>
+                    <td><?= h($event->Date) ?> <?= $event->Time->i18nFormat([\IntlDateFormatter::NONE, \IntlDateFormatter::SHORT]) ?></td>
                     <td class="actions">
                         <?= $this->element('Admin/Buttons/View', ['url' => ['action' => 'view', $event->id]]) ?>
                         <?= $this->element('Admin/Buttons/Edit', ['url' => ['action' => 'edit', $event->id]]) ?>
