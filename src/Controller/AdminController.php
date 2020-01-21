@@ -27,12 +27,9 @@ class AdminController extends AppController
         $this->loadModel('BlogPost');
         $this->loadModel('post_comment');
         $this->loadModel('Review');
-<<<<<<< HEAD
         $this->loadModel('Job');
-=======
         $this->loadModel('Webpages');
 
->>>>>>> acec0e4583dacf5573f935a61469ca4755205376
     }
 
     /**
@@ -53,14 +50,12 @@ class AdminController extends AppController
         $count_job = $this->Job->find('all')->where(['!job_status'])->count();
         $this->layout ='admin';
         $this->set(compact('admin','request','comments','count_comment','count_request'));
-<<<<<<< HEAD
+
         $this->set(compact('count_blog','count_review','count_job'));
-=======
-        $this->set(compact('count_blog','count_review'));
         $webpages = $this->Webpages->find('all');
         $this->set(compact('webpages'));
 
->>>>>>> acec0e4583dacf5573f935a61469ca4755205376
+
     }
 
     /**
