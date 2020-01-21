@@ -142,7 +142,7 @@ $isJobActive = $currentController === "Job";
 
         <li class="<?= $isJobActive ? 'active' : '' ?> dropdown">
             <?= $this->Html->link(
-                '<p>Job</p>',
+                '<p>Jobs</p>',
                 '#',
                 ['escape' => false, 'onclick' => 'handleMenuToggle(this)', 'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true',]
             ) ?>
