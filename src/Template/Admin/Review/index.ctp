@@ -13,11 +13,11 @@
     <table>
         <thead>
         <tr>
-            <th scope="col"><?= $this->Paginator->sort('Client_Name') ?></th>
-            <th scope="col"><?= $this->Paginator->sort('Month_Year') ?></th>
-            <th scope="col"><?= $this->Paginator->sort('Suburb') ?></th>
-            <th scope="col"><?= $this->Paginator->sort('Review_Details') ?></th>
-            <th scope="col" class="actions"><?= __('Actions') ?></th>
+            <th class="table-column-one" scope="col"><?= $this->Paginator->sort('Client_Name') ?></th>
+            <th class="table-column-one" scope="col"><?= $this->Paginator->sort('Month_Year') ?></th>
+            <th class="table-column-one" scope="col"><?= $this->Paginator->sort('Suburb') ?></th>
+            <th class="table-column-one" scope="col"><?= $this->Paginator->sort('Review_Details') ?></th>
+            <th class="table-column-actions" scope="col" class="actions"><?= __('Actions') ?></th>
         </tr>
         </thead>
         <tbody>

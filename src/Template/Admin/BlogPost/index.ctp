@@ -15,8 +15,9 @@ $currentController = $this->request->getParam('controller');
     <table class="articles-table table">
         <thead>
             <tr>
-                <th><?= $this->Paginator->sort('title') ?></th>
-                <th><?= $this->Paginator->sort('created') ?></th>
+                <th class="table-column-one"><?= $this->Paginator->sort('title') ?></th>
+                <th class="table-column-one"><?= $this->Paginator->sort('created') ?></th>
+                <th class="table-column-actions">Actions</th>
             </tr>
         </thead>
         <tbody>

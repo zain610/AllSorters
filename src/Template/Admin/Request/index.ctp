@@ -35,25 +35,23 @@
     <table class="articles-table table" cellpadding="0" cellspacing="0">
         <thead>
         <tr>
-            <th scope="col"><?= $this->Paginator->sort('Request_No') ?></th>
-            <th scope="col"><?= $this->Paginator->sort('Request_Email') ?></th>
-            <th scope="col"><?= $this->Paginator->sort('Cust_Fname') ?></th>
-            <th scope="col"><?= $this->Paginator->sort('Cust_Sname') ?></th>
-            <th scope="col"><?= $this->Paginator->sort('Query_info') ?></th>
-            <th scope="col"><?= $this->Paginator->sort('Created') ?></th>
-            <th scope="col" class="actions"><?= __('Actions') ?></th>
+            <th class="table-column-one" scope="col"><?= $this->Paginator->sort('Request_Email') ?></th>
+            <th class="table-column-one" scope="col"><?= $this->Paginator->sort('Cust_Fname') ?></th>
+            <th class="table-column-one" scope="col"><?= $this->Paginator->sort('Cust_Sname') ?></th>
+            <th class="table-column-one" scope="col"><?= $this->Paginator->sort('Query_info') ?></th>
+            <th class="table-column-one" scope="col"><?= $this->Paginator->sort('Created') ?></th>
+            <th class="table-column-actions" scope="col" class="actions"><?= __('Actions') ?></th>
         </tr>
         </thead>
         <tbody>
         <?php foreach ($request as $request): ?>
             <tr id="table-row-content" class="article-row">
-                <td><?= $this->Number->format($request->Request_No) ?></td>
                 <td><?= h($request->Request_Email) ?></td>
                 <td><?= h($request->Cust_Fname) ?></td>
                 <td><?= h($request->Cust_Sname) ?></td>
                 <td><?= h($request->Query_info) ?></td>
                 <td><?= h($request->created->format('d-m-Y')) ?></td>
-                <td class="action-col" style="display: block">
+                <td class="action-col">
                     <?= $this->element('Admin/Buttons/view', ['url' => ['action' => 'view', $request->Request_No]]) ?>
                     <?= $this->element('Admin/Buttons/delete', ['url' => ['action' => 'delete', $request->Request_No]]) ?>
                 </td>
