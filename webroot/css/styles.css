@@ -11,6 +11,13 @@ table tr th, table tr td {
     font-size: 1.2rem!important;
 }
 
+.table-column-one {
+    width: 15%;
+}
+.table-column-actions {
+    width: 30%;
+ }
+
 .sidebar .nav {
     display:block;
 }

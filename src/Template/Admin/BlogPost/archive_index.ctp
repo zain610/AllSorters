@@ -12,10 +12,9 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('title') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Date') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th class="table-column-one" scope="col"><?= $this->Paginator->sort('title') ?></th>
+                <th class="table-column-one" scope="col"><?= $this->Paginator->sort('modified') ?></th>
+                <th class="table-column-actions" scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>
@@ -23,7 +22,6 @@
                 <?php if ($blogPost->Archived) { ?>
                     <tr>
                         <td><?= h($blogPost->title) ?></td>
-                        <td><?= h($blogPost->Date->format('d-m-Y')) ?></td>
                         <td><?= h($blogPost->modified) ?></td>
                         <td class="actions">
                             <?= $this->element('Admin/Buttons/View', ['url' => ['action' => 'view', $blogPost->blog_post_id]]) ?>
