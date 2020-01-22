@@ -94,7 +94,7 @@
                         <tr class="article-row">
                             <td class="">
                                 <div id="div-blog-checkbox" class="form-check form-check-inline col-sm-3">
-                                    <label id="blog" class="form-check-label" for="<?=$this->Number->format($blog->blog_post_id)?>"><?= h($blog->blog_post_id) ?></label>
+                                    <label style="color: transparent" id="blog" class="form-check-label" for="<?=$this->Number->format($blog->blog_post_id)?>"><?= h($blog->blog_post_id) ?></label>
 
                                     <?= $this->Form->checkbox('bid'.$blog->blog_post_id, ['id'=>$this->Number->format($blog->blog_post_id), 'class'=> 'form-check-input fa-li', 'hiddenField' => false]) ?>
                                 </div>
