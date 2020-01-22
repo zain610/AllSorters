@@ -93,7 +93,7 @@
                                             <td height="30" align="center" valign="middle" ><font style="font-family:'Myriad Pro', Helvetica, Arial, sans-serif; color:#ffffff; font-size:20px;"><strong><?= $blog->title ?></strong></font></td>
                                         </tr>
                                         <tr>
-                                            <td align="center" valign="middle" ><p style="font-family:'Myriad Pro', Helvetica, Arial, sans-serif; color:#ffffff; font-size:14px"><strong><a href="http://ie.infotech.monash.edu/team106/development/blogpost/view/'.$id" target="_blank" style="color:#ffffff; text-decoration:none">view details</a></strong></p></td>
+                                            <td align="center" valign="middle" ><p style="font-family:'Myriad Pro', Helvetica, Arial, sans-serif; color:#ffffff; font-size:14px"><strong><a href=<?="http://ie.infotech.monash.edu/team106/development/blogpost/view/$blog->blog_post_id"?> target="_blank" style="color:#ffffff; text-decoration:none">view details</a></strong></p></td>
                                         </tr>
                                         <tr>
                                             <td align="center" valign="middle">&nbsp;</td>

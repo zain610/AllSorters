@@ -36,6 +36,7 @@
 
     <div class="" style="">
         <h4>Newsletter</h4>
+        <?= $this->Form->button('Submit', ['class'=>'btn btn-primary']); ?>
         <?= $this->Form->textarea('message') ?>
     </div>
     <hr style="border-top: 2px solid darkslategray">
@@ -121,7 +122,6 @@
     </div>
 
 
-    <?= $this->Form->button('Submit', ['class'=>'btn btn-primary']); ?>
 
     <?=  $this->Form->end(); ?>
 

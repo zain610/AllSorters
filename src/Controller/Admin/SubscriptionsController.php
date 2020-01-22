@@ -149,7 +149,6 @@ class SubscriptionsController extends AppController
     private function sendEmails($data) {
         //iterate over each sender and send an email.
         $message = strip_tags($data['message']);
-        $title = "Test number infinite";
         $blogs = $data['blogs'];
 
         if(!empty($data['sender'])) {
@@ -175,7 +174,7 @@ class SubscriptionsController extends AppController
             }
 
             if($email->send()) {
-                $this->request->getSession()->write('mail', $email->getViewVars());
+                $this->request->getSession()->write('mail', $blogs);
             } else {
                 $this->request->getSession()->write('mail', false);
             }
