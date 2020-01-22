@@ -23,11 +23,10 @@
                     <?php echo $this->Form->control('Cust_Fname',[
                         'label' => false,
                         'placeholder' => '* Firstname',
-                        'type' => 'custname',
                         'class' => 'form-control',
                         'required'=>false,
                         'type' => 'custfname',
-                        'pattern' => '[a-zA-Z]+',
+                        'pattern' => "[\s+[a-zA-Z]+",
                         'title' => 'Names can only contain letters',
                         'formnovalidate' => true
                     ]); ?>
@@ -37,13 +36,12 @@
                 </div>
                 <div class="col-md-6" style="margin-top: 20px">
                     <?php echo $this->Form->control('Cust_Sname',[
+                        'pattern' => "[\s+[a-zA-Z]+",
                         'required'=>false,
                         'label' => false,
                         'type' => 'custsname',
                         'placeholder' => '* Surname',
-                        'type' => 'custname',
                         'class' => 'form-control',
-                        'pattern' => '[a-zA-Z]+',
                         'title' => 'Names can only contain letters',
                     ]); ?>
                     <?php if(isset($snameerror)){ ?>
