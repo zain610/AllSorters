@@ -40,7 +40,7 @@ use Cake\ORM\TableRegistry;
                         </ul>
                     </li>
                     <li><?= $this->Html->link('Login', ['controller' => 'Admin', 'action' => 'login']) ?></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><?= $this->Html->link('Contact Us',['controller' => 'Admin', 'action' => 'login'])?></li>
                 </ul>
             </div>
         </div>

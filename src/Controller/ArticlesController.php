@@ -20,6 +20,13 @@ class ArticlesController extends AppController
         $this->Auth->allow(['home', 'homepage']);
 //        $this->viewBuilder()->setLayout('client');
         $this->loadModel('Webpages');
+        $this->loadModel('Service');
+        $this->loadModel('BlogPost');
+        $this->loadModel('Review');
+        $this->loadModel('slideshow');
+        $this->loadModel('gallery_page');
+        $this->loadModel('Image');
+        $this->loadComponent('Paginator');
 
     }
 
@@ -47,6 +54,30 @@ class ArticlesController extends AppController
     }
     public function homepage() {
         $this->viewBuilder()->setLayout('client_default');
+
+        $this->paginate = ['limit'=>3];
+        $services = $this->Service->find('all');
+        $this->set('services', $this->paginate($services));
+
+        $reivews = $this->Review->find('all');
+        $this->set('reviews', $this->paginate($reivews));
+
+        $blogs = $this->BlogPost->find('all')->order(['created' => 'ASC']);;
+        $this->paginate = ['limit'=>2];
+        $this->set('blogs', $this->paginate($blogs));
+
+        $connection = ConnectionManager::get('default');
+        $slideshows = $connection->execute('SELECT * FROM slideshow join image on image.Image_id = slideshow.Image_id ORDER BY image.name LIMIT 4')->fetchAll('assoc');
+        $this->set('slideshows', $slideshows);
+
+        $slideshow_arr = $this->slideshow->find('all');
+        $this->set('slideshow_arr', $slideshow_arr);
+
+        $gallery_images = $this->Image->find('all')->where(['Shown' => true]);
+        $this->set(compact('gallery_images'));
+
+        $images = $this->Image->find('all');
+        $this->set(compact('images'));
     }
 
 }

@@ -10,58 +10,61 @@
 <div class="gtco-loader"></div>
 
 <div id="page">
-
-
     <div class="gtco-container">
         <div class="row">
             <div class="col-lg-6 col-md-12 vert_line" style="padding-top: 10px">
                 <div class="owl-carousel owl-carousel-fullwidth">
+                    <?php foreach ($slideshow_arr as $slideshow):
+                        foreach ($images as $image):
+                            if($image->Image_id == $slideshow->Image_id):
+                                $path = $image->path;
+                            endif;
+                        endforeach;
+                        ?>
                     <div class="item">
-                        <a href="#">
-                            <?= $this->Html->image("slider_1.jpg", ['fullBase' => true]); ?>
-                            <div class="slider-copy">
-                                <h2>Architecture #1</h2>
-                            </div>
-                        </a>
+                        <?php echo $this->Html->image($path,['fullBase' => true])?>
+                        <div class="slider-copy">
+                            <h2><?php echo strip_tags($slideshow->Captions)?></h2>
+                        </div>
                     </div>
-                    <div class="item">
-                        <a href="#">
-                            <?= $this->Html->image("slider_2.jpg", ['fullBase' => true]); ?>
-                            <div class="slider-copy">
-                                <h2>Architecture #1</h2>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="#">
-                            <?= $this->Html->image("slider_3.jpg", ['fullBase' => true]); ?>
-                            <div class="slider-copy">
-                                <h2>Architecture #1</h2>
-                            </div>
-                        </a>
-                    </div>
+                    <?php endforeach?>
                 </div>
             </div>
 
 
             <div class="col-lg-6 col-md-12 gtco-news">
-                <a href="index.html"><h2 style="padding-top: 5px">Blogs</h2>
-                    <ul>
-                        <li>
-                            <a href="#" style="margin-top:-20px">
-                                <span class="post-date">September 10, 2016</span>
-                                <h3 class="blog_Title">Manila Bridge Re-construction</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod...</p>
-                            </a>
-                        </li>
+                <h2 style="padding-top: 5px; color: #4d4d4d; font-weight: 300;font-size: 40px;">Recent Blogs </h2>
+                <p>
+                    <?php echo $this->Html->link(
+                        'More Blogs',
+                        ['controller'=>'BlogPost','action'=>'index'],
+                        [
+                            'escape' => false,
+                            'class' => 'btn btn-sm btn-special',
+                            'style' => 'position:absolute; 
+                                        right:0%; 
+                                        top:2%;'
+                        ]
+                    )?>
+                </p>
 
+                <br>
+                    <ul>
+                        <?php foreach ($blogs as $blog):?>
                         <li>
-                            <a href="#">
-                                <span class="post-date">September 10, 2016</span>
-                                <h3 class="blog_Title">Manila Bridge Re-construction</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod...</p>
-                            </a>
+                            <span class="post-date"><?php echo $blog->Date?></span>
+                            <?php echo $this->Html->link(
+                                '<h3 class="blog_Title">'. $blog->title.'</h3>',
+                                ['controller'=>'BlogPost','action'=>'view/'.$blog->blog_post_id],
+                                ['escape' => false]
+                            )?>
+                            <?php echo $this->Html->link(
+                                '<p>'. $blog->Description.'</p>',
+                                ['controller'=>'BlogPost','action'=>'view/'.$blog->blog_post_id],
+                                ['escape' => false]
+                            )?>
                         </li>
+                        <?php endforeach;?>
                     </ul>
                     <!--					<p><a href="#" class="btn btn-sm btn-special">More News</a></p>-->
             </div>
@@ -84,71 +87,18 @@
 
             <div class="col-md-12">
                 <div class="owl-carousel owl-carousel-carousel">
+                    <?php foreach ($gallery_images as $image): ?>
                     <div class="item">
                         <div class="gtco-item">
-                            <a href="#"><img src="img/img_1.jpg" alt="" class="img-responsive"></a>
-                            <h2><a href="#">New York Arena</h2></a>
-                            <p class="role">New York</p>
+                            <?php
+                                echo $this->Html->image($image->path, [
+                                    'class'=>'img-responsive'
+                                ])
+                            ?>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="gtco-item">
-                            <a href="#"><img src="img/img_2.jpg" alt="" class="img-responsive"></a>
-                            <h2><a href="#">Eagle Park</h2></a>
-                            <p class="role">London</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="gtco-item">
-                            <a href="#"><img src="img/img_3.jpg" alt="" class="img-responsive"></a>
-                            <h2><a href="#">Nationals Park</h2></a>
-                            <p class="role">Paris, France</p>
-                        </div>
-                    </div>
+                    <?php endforeach;?>
 
-                    <div class="item">
-                        <div class="gtco-item">
-                            <a href="#"><img src="img/img_1.jpg" alt="" class="img-responsive"></a>
-                            <h2><a href="#">New York Arena</h2></a>
-                            <p class="role">New York</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="gtco-item">
-                            <a href="#"><img src="img/img_2.jpg" alt="" class="img-responsive"></a>
-                            <h2><a href="#">Eagle Park</h2></a>
-                            <p class="role">London</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="gtco-item">
-                            <a href="#"><img src="img/img_3.jpg" alt="" class="img-responsive"></a>
-                            <h2><a href="#">Nationals Park</h2></a>
-                            <p class="role">Paris, France</p>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="gtco-item">
-                            <a href="#"><img src="img/img_1.jpg" alt="" class="img-responsive"></a>
-                            <h2><a href="#">New York Arena</h2></a>
-                            <p class="role">New York</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="gtco-item">
-                            <a href="#"><img src="img/img_2.jpg" alt="" class="img-responsive"></a>
-                            <h2><a href="#">Eagle Park</h2></a>
-                            <p class="role">London</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="gtco-item">
-                            <a href="#"><img src="img/img_3.jpg" alt="" class="img-responsive"></a>
-                            <h2><a href="#">Nationals Park</h2></a>
-                            <p class="role">Paris, France</p>
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -163,51 +113,48 @@
             <div class="col-md-6 gtco-news">
                 <h2>Services</h2>
                 <ul>
-                    <li>
-                        <a href="#">
-
-                            <h3 class="blog_Title">Manila Bridge Re-construction</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod...
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod...
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod...
-                            </p>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-
-                            <h3 class="blog_Title">Manila Bridge Re-construction</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod...</p>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-
-                            <h3 class="blog_Title">Manila Bridge Re-construction</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod...</p>
-                        </a>
-                    </li>
-                </ul>
-                <p><a href="#" class="btn btn-sm btn-special">More Services</a></p>
+                    <?php foreach($services as $service): ?>
+                    <li><?php echo $this->Html->link(
+                        '<h3 class="blog_Title">'.strip_tags($service->Service_Title).' </h3>',
+                        ['controller'=>'Services','action'=>'view/'.$service->Service_id],
+                        ['escape' => false]
+                        )?>
+                        <?php echo $this->Html->link(
+                            '<p>'.strip_tags($service->Service_Description).' </p>',
+                            ['controller'=>'Services','action'=>'view/'.$service->Service_id],
+                            ['escape' => false]
+                        )?></li>
+                    <?php endforeach?>
+                <p>
+                    <?php echo $this->Html->link(
+                        'More Services',
+                        ['controller'=>'Services','action'=>'index'],
+                        [
+                            'escape' => false,
+                            'class' => 'btn btn-sm btn-special'
+                        ]
+                    )?>
+                </p>
 
             </div>
             <!-- END News -->
             <div class="col-md-6 col-md-push-1 gtco-testimonials">
                 <h2>Testimonials</h2>
+                <?php foreach ($reviews as $review):?>
                 <blockquote>
-                    <p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod erat tincidunt. Donec tincidunt volutpat erat.&ldquo;</p>
-                    <p class="author"><cite>&mdash; John Doe Dueller, Jul 2015</cite></p>
+                    <p><?php echo $review->Review_Details?></p>
+                    <p class="author"><cite><?php echo $review->Client_Name?>,<?php echo $review->Month_Year->format('d-m-Y')?></cite></p>
                 </blockquote>
-                <blockquote>
-                    <p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod erat tincidunt. Donec tincidunt volutpat erat.&ldquo;</p>
-                    <p class="author"><cite>&mdash; John Doe Duelle, Jul 2015</cite></p>
-                </blockquote>
-                <blockquote>
-                    <p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod erat tincidunt. Donec tincidunt volutpat erat.&ldquo;</p>
-                    <p class="author"><cite>&mdash; John Doe Dueller, Jul 2015</cite></p>
-                </blockquote>
+                <?php endforeach;?>
+                    <p><?php echo $this->Html->link(
+                        'More Reviews',
+                        ['controller'=>'Review','action'=>'index'],
+                        [
+                            'escape' => false,
+                            'class' => 'btn btn-sm btn-special',
+                            'style' => 'position:absolute; right:0%;'
+                        ]
+                    )?></p>
             </div>
         </div>
     </div>
