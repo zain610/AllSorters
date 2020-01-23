@@ -37,6 +37,19 @@ class AboutController extends AppController
      */
     public function index()
     {
+
+        $this->loadModel('About');
+        $this->Auth->allow(['index']);
+        $this->Auth->allow(['home']);
+        $this->viewBuilder()->setLayout('client_default');
+
+        $about = $this->paginate($this->About);
+        $this->loadModel("Webpages");
+        $webpages = $this->Webpages->find('all');
+        $this->set(compact('about','webpages'));
+    }
+    public function about2()
+    {
         $this->loadModel('About');
         $this->Auth->allow(['index']);
         $this->Auth->allow(['home']);

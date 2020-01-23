@@ -32,6 +32,35 @@ class ArticlesController extends AppController
 
     public function home()
     {
+        $this->viewBuilder()->setLayout('client_default');
+
+        $this->paginate = ['limit'=>3];
+        $services = $this->Service->find('all');
+        $this->set('services', $this->paginate($services));
+
+        $reivews = $this->Review->find('all');
+        $this->set('reviews', $this->paginate($reivews));
+
+        $blogs = $this->BlogPost->find('all')->order(['created' => 'ASC']);;
+        $this->paginate = ['limit'=>2];
+        $this->set('blogs', $this->paginate($blogs));
+
+        $connection = ConnectionManager::get('default');
+        $slideshow = $connection->execute('SELECT * FROM slideshow join image on image.Image_id = slideshow.Image_id ORDER BY image.name LIMIT 4')->fetchAll('assoc');
+        $this->set('slideshow', $slideshow);
+
+        $slideshow_arr = $this->slideshow->find('all');
+        $this->set('slideshow_arr', $slideshow_arr);
+
+        $gallery_images = $this->Image->find('all')->where(['Shown' => true]);
+        $this->set(compact('gallery_images'));
+
+        $images = $this->Image->find('all');
+        $this->set(compact('images'));
+
+    }
+    public function homepage() {
+
         $this->viewBuilder()->setLayout('client');
 
         $connection = ConnectionManager::get('default');
@@ -51,33 +80,6 @@ class ArticlesController extends AppController
 
         // This view doesn't actually need to load any data to pass to the view,
         // because it is all hardcoded in the src/Templates/Articles/home.ctp template.
-    }
-    public function homepage() {
-        $this->viewBuilder()->setLayout('client_default');
-
-        $this->paginate = ['limit'=>3];
-        $services = $this->Service->find('all');
-        $this->set('services', $this->paginate($services));
-
-        $reivews = $this->Review->find('all');
-        $this->set('reviews', $this->paginate($reivews));
-
-        $blogs = $this->BlogPost->find('all')->order(['created' => 'ASC']);;
-        $this->paginate = ['limit'=>2];
-        $this->set('blogs', $this->paginate($blogs));
-
-        $connection = ConnectionManager::get('default');
-        $slideshows = $connection->execute('SELECT * FROM slideshow join image on image.Image_id = slideshow.Image_id ORDER BY image.name LIMIT 4')->fetchAll('assoc');
-        $this->set('slideshows', $slideshows);
-
-        $slideshow_arr = $this->slideshow->find('all');
-        $this->set('slideshow_arr', $slideshow_arr);
-
-        $gallery_images = $this->Image->find('all')->where(['Shown' => true]);
-        $this->set(compact('gallery_images'));
-
-        $images = $this->Image->find('all');
-        $this->set(compact('images'));
     }
 
 }

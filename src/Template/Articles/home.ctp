@@ -1,100 +1,224 @@
-<!DOCTYPE html>
-<html lang="en">
+
+
+<!DOCTYPE HTML>
+
+<html>
 <head>
     <title>Home</title>
 
 </head>
-
 <body>
-<div>
-    <?php foreach($slideshow as $key=>$slideshow){
-        $item[$key]=$slideshow;
-    }?>
 
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
-        </ol>
+<div class="gtco-loader"></div>
+
+<div id="page">
 
 
-        <div class="carousel-inner">
-            <div class="item active">
-                <?php  echo $this->Html->image($item[0]['path'], ['alt' => $item[0]['Captions']]); ?>
-                <!--                <img src="$item[0]['path]" alt="bg">-->
-                <h1 class="text"><?php echo $item[0]['Captions'];?></h1>
+    <div class="gtco-container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 vert_line" style="padding-top: 10px">
+                <div class="owl-carousel owl-carousel-fullwidth">
+                    <div class="item">
+                        <a href="#">
+                            <img src="img/slider_1.jpg" alt="Free Website Template by FreeHTML5.co">
+                            <div class="slider-copy">
+                                <h2>Architecture #1</h2>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img src="img/slider_2.jpg" alt="Free Website Template by FreeHTML5.co">
+                            <div class="slider-copy">
+                                <h2>Architecture #1</h2>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img src="img/slider_3.jpg" alt="Free Website Template by FreeHTML5.co">
+                            <div class="slider-copy">
+                                <h2>Architecture #1</h2>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
 
 
-            <div class="item">
-                <?php  echo $this->Html->image($item[1]['path'], ['alt' => $item[1]['Captions']]); ?>
-                <h1 class="text"><?php echo $item[1]['Captions'];?></h1>
-            </div>
+            <div class="col-lg-6 col-md-12 gtco-news">
+                <a href="index.html"><h2 style="padding-top: 5px">Blogs</h2>
+                    <ul>
+                        <li>
+                            <a href="#" style="margin-top:-20px">
+                                <span class="post-date">September 10, 2016</span>
+                                <h3 class="blog_Title">Manila Bridge Re-construction</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod...</p>
+                            </a>
+                        </li>
 
-            <div class="item">
-                <?php  echo $this->Html->image($item[2]['path'], ['alt' => $item[2]['Captions']]); ?>
-                <h1 class="text"><?php echo $item[2]['Captions'];?></h1>
+                        <li>
+                            <a href="#">
+                                <span class="post-date">September 10, 2016</span>
+                                <h3 class="blog_Title">Manila Bridge Re-construction</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod...</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <!--					<p><a href="#" class="btn btn-sm btn-special">More News</a></p>-->
             </div>
+        </div>
+    </div>
 
-            <div class="item">
-                <?php  echo $this->Html->image($item[3]['path'], ['alt' => $item[3]['Captions']]); ?>
-                <h1 class="text"><?php echo $item[3]['Captions'];?></h1>
+</div>
+
+
+
+<div class="gtco-section">
+    <div class="gtco-container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 gtco-heading text-center">
+                <h2>About Us</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod erat tincidunt. Donec tincidunt volutpat erat.</p>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="owl-carousel owl-carousel-carousel">
+                    <div class="item">
+                        <div class="gtco-item">
+                            <a href="#"><img src="img/img_1.jpg" alt="" class="img-responsive"></a>
+                            <h2><a href="#">New York Arena</h2></a>
+                            <p class="role">New York</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="gtco-item">
+                            <a href="#"><img src="img/img_2.jpg" alt="" class="img-responsive"></a>
+                            <h2><a href="#">Eagle Park</h2></a>
+                            <p class="role">London</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="gtco-item">
+                            <a href="#"><img src="img/img_3.jpg" alt="" class="img-responsive"></a>
+                            <h2><a href="#">Nationals Park</h2></a>
+                            <p class="role">Paris, France</p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="gtco-item">
+                            <a href="#"><img src="img/img_1.jpg" alt="" class="img-responsive"></a>
+                            <h2><a href="#">New York Arena</h2></a>
+                            <p class="role">New York</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="gtco-item">
+                            <a href="#"><img src="img/img_2.jpg" alt="" class="img-responsive"></a>
+                            <h2><a href="#">Eagle Park</h2></a>
+                            <p class="role">London</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="gtco-item">
+                            <a href="#"><img src="img/img_3.jpg" alt="" class="img-responsive"></a>
+                            <h2><a href="#">Nationals Park</h2></a>
+                            <p class="role">Paris, France</p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="gtco-item">
+                            <a href="#"><img src="img/img_1.jpg" alt="" class="img-responsive"></a>
+                            <h2><a href="#">New York Arena</h2></a>
+                            <p class="role">New York</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="gtco-item">
+                            <a href="#"><img src="img/img_2.jpg" alt="" class="img-responsive"></a>
+                            <h2><a href="#">Eagle Park</h2></a>
+                            <p class="role">London</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="gtco-item">
+                            <a href="#"><img src="img/img_3.jpg" alt="" class="img-responsive"></a>
+                            <h2><a href="#">Nationals Park</h2></a>
+                            <p class="role">Paris, France</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
-
-
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="sr-only">Next</span>
-        </a>
     </div>
 </div>
-<hr>
-<?php $heading = "" ?>
-<?php $content = "" ?>
-<?php foreach ($webpages as $webpage): ?>
-    <?php $name = $webpage -> Webpage; ?>
-    <?php if ($name === 'Home page') { ?>
-        <?php $heading = $webpage -> Heading; ?>
-        <?php $content = $webpage -> Content; ?>
-    <?php } ?>
-<?php endforeach ?>
+<!-- END Work -->
 
-<div class="" style="display: flex">
-    <div class="container services inner-services " style="width: 70%; margin: 0 1rem; text-align: center; background: #f2f6ff;">
-        <h3><?php echo $heading ?>
-        </h3>
-        <div>
-            <p> <?php echo $content ?>
-            </p>
+<div class="gtco-section">
+    <div class="gtco-container">
+        <div class="row">
+            <div class="col-md-6 gtco-news">
+                <h2>Services</h2>
+                <ul>
+                    <li>
+                        <a href="#">
+
+                            <h3 class="blog_Title">Manila Bridge Re-construction</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod...
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod...
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod...
+                            </p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+
+                            <h3 class="blog_Title">Manila Bridge Re-construction</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod...</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+
+                            <h3 class="blog_Title">Manila Bridge Re-construction</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod...</p>
+                        </a>
+                    </li>
+                </ul>
+                <p><a href="#" class="btn btn-sm btn-special">More Services</a></p>
+
+            </div>
+            <!-- END News -->
+            <div class="col-md-6 col-md-push-1 gtco-testimonials">
+                <h2>Testimonials</h2>
+                <blockquote>
+                    <p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod erat tincidunt. Donec tincidunt volutpat erat.&ldquo;</p>
+                    <p class="author"><cite>&mdash; John Doe Dueller, Jul 2015</cite></p>
+                </blockquote>
+                <blockquote>
+                    <p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod erat tincidunt. Donec tincidunt volutpat erat.&ldquo;</p>
+                    <p class="author"><cite>&mdash; John Doe Duelle, Jul 2015</cite></p>
+                </blockquote>
+                <blockquote>
+                    <p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod erat tincidunt. Donec tincidunt volutpat erat.&ldquo;</p>
+                    <p class="author"><cite>&mdash; John Doe Dueller, Jul 2015</cite></p>
+                </blockquote>
+            </div>
         </div>
     </div>
-    <?= $this->element('Client/blogs') ?>
 </div>
+<!-- END  -->
 
-</div>
-<hr>
-<div class="container-fluid" id="newsletter-signup">
-
-    <div class="services" style="padding: 1rem 0">
-        <h3>Sign Up to our Newsletter!</h3>
-
-        <?= $this->element('Client/subscribe'); ?>
-        <small id="emailHelp" class="form-text text-muted">*We'll never share your email with anyone else.</small>
-
-    </div>
 
 </div>
-<hr>
-
-
-
 
 </body>
-
 </html>
+
