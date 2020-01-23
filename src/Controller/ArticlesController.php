@@ -46,8 +46,8 @@ class ArticlesController extends AppController
         $this->set('blogs', $this->paginate($blogs));
 
         $connection = ConnectionManager::get('default');
-        $slideshows = $connection->execute('SELECT * FROM slideshow join image on image.Image_id = slideshow.Image_id ORDER BY image.name LIMIT 4')->fetchAll('assoc');
-        $this->set('slideshows', $slideshows);
+        $slideshow = $connection->execute('SELECT * FROM slideshow join image on image.Image_id = slideshow.Image_id ORDER BY image.name LIMIT 4')->fetchAll('assoc');
+        $this->set('slideshow', $slideshow);
 
         $slideshow_arr = $this->slideshow->find('all');
         $this->set('slideshow_arr', $slideshow_arr);
