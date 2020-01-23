@@ -63,9 +63,9 @@ use Cake\ORM\TableRegistry;
                     <li class="has-dropdown">
                         <a href="#">Services</a>
                         <ul class="dropdown">
-                            <li><?= $this->Html->link('Service1', ['controller' => 'Service', 'action' => 'index']) ?></li>
-                            <li><?= $this->Html->link('Service2', ['controller' => 'Service', 'action' => 'index']) ?></li>
-                            <li><?= $this->Html->link('Service3', ['controller' => 'Service', 'action' => 'index']) ?></li>
+                            <li><?= $this->Html->link('Service1', ['controller' => 'Services', 'action' => 'index']) ?></li>
+                            <li><?= $this->Html->link('Service2', ['controller' => 'Services', 'action' => 'index']) ?></li>
+                            <li><?= $this->Html->link('Service3', ['controller' => 'Services', 'action' => 'index']) ?></li>
                         </ul>
                     </li>
                     <li class="has-dropdown">
