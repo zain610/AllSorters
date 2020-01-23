@@ -53,6 +53,17 @@ a{
 .sidenav a:hover {
     color: #064579;
 }
+
+
+p{
+
+}
+.Testimonials_text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+}
 /*!* tab *!*/
 /*.tab-vertical-top{*/
 /*    float:none;*/

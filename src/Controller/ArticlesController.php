@@ -38,10 +38,10 @@ class ArticlesController extends AppController
         $services = $this->Service->find('all');
         $this->set('services', $this->paginate($services));
 
-        $reivews = $this->Review->find('all');
-        $this->set('reviews', $this->paginate($reivews));
+        $reviews = $this->Review->find('all');
+        $this->set('reviews', $this->paginate($reviews));
 
-        $blogs = $this->BlogPost->find('all')->order(['created' => 'ASC']);;
+        $blogs = $this->BlogPost->find('all')->order(['created' => 'DESC']);;
         $this->paginate = ['limit'=>2];
         $this->set('blogs', $this->paginate($blogs));
 
