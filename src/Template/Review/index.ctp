@@ -12,7 +12,6 @@
 </head>
 <style>
     p {
-        font-size: 25px;
         font-style: italic;
     }
 
@@ -22,11 +21,8 @@
         -webkit-box-shadow: 0 0 3px #ccc;
         box-shadow: 0 0 3px #ccc;
         padding: 18px;
-        width: 80%;
         border: none;
         outline: none;
-        margin-left: 5%;
-        margin-right: 5%;
         border-bottom-color: #00A0D2;
         border-bottom-style: solid;
 
@@ -43,14 +39,12 @@
     }
 
     .quote-text{
-        font-size: 10px;
         margin-top: -65px;
         font-style: italic;
 
     }
 
     .box client{
-        font-size: 22px;
         text-transform: capitalize;
         font-style: normal;
     }
@@ -77,6 +71,8 @@
     $dateObj   = DateTime::createFromFormat('!m', $monthNum);
     $monthName = $dateObj->format('M');
     ?>
+<div class="container">
+
     <blockquote class="box">
         <p class="quotation-mark">
             “
@@ -94,6 +90,7 @@
 
         </div>
     </blockquote>
+</div>
     <?php endforeach ?>
     <br>
     <br>
