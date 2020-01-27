@@ -111,9 +111,9 @@ Services - Card styling
     transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
-    background-color: #717171;
-}
+/*.active, .dot:hover {*/
+/*    background-color: #717171;*/
+/*}*/
 
 /* =============================================================
  BLOG POST STYLE
@@ -169,102 +169,102 @@ html, body{
                 Navbar Styling
 ============================================================ */
 /*!*Change the color when user hovers over navbar item*!*/
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    color:#333333!important;
-}
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-    color:#333333;
-    background-color: #fff;
-}
-a.navbar-brand {
-    color: #fff!important;
-}
-#top-header {
-    padding-bottom: 2rem;
-}
-.header-bottom, nav.navbar.navbar-default {
-    background-color: #1a3948!important;
-}
-#navbar-contents {
-    display: block;
-    position: absolute;
-    width: fit-content;
-}
-nav.navbar.navbar-default {
-    height: 5rem;
-    width: 100%;
-    background-color: #5891cc!important;
-    margin: 0;
-}
-.container > nav.navbar.navbar-default{
-    margin: 0!important;
+/*.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {*/
+/*    color:#333333!important;*/
+/*}*/
+/*.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {*/
+/*    color:#333333;*/
+/*    background-color: #fff;*/
+/*}*/
+/*a.navbar-brand {*/
+/*    color: #fff!important;*/
+/*}*/
+/*#top-header {*/
+/*    padding-bottom: 2rem;*/
+/*}*/
+/*.header-bottom, nav.navbar.navbar-default {*/
+/*    background-color: #1a3948!important;*/
+/*}*/
+/*#navbar-contents {*/
+/*    display: block;*/
+/*    position: absolute;*/
+/*    width: fit-content;*/
+/*}*/
+/*nav.navbar.navbar-default {*/
+/*    height: 5rem;*/
+/*    width: 100%;*/
+/*    background-color: #5891cc!important;*/
+/*    margin: 0;*/
+/*}*/
+/*.container > nav.navbar.navbar-default{*/
+/*    margin: 0!important;*/
 
-}
+/*}*/
 
-#navbar {
-    overflow: visible;
-    width: 100%;
-    padding: 0;
+/*#navbar {*/
+/*    overflow: visible;*/
+/*    width: 100%;*/
+/*    padding: 0;*/
 
-}
+/*}*/
 
-/* Navbar links */
-#navbar a {
-    font-size: 1rem;
-    float: left;
-    display: block;
-    color:#2C93FF;
-    text-align: center;
-    padding: 14px;
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-}
+/*!* Navbar links *!*/
+/*#navbar a {*/
+/*    font-size: 1rem;*/
+/*    float: left;*/
+/*    display: block;*/
+/*    color:#2C93FF;*/
+/*    text-align: center;*/
+/*    padding: 14px;*/
+/*    text-decoration: none;*/
+/*    font-family: 'Montserrat', sans-serif;*/
+/*}*/
 
-/* The sticky class is added to the navbar with JS when it reaches its scroll position */
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    left:0;
-    background-color: #333333;
-    z-index: 20;
-
-
-
-}
-
-/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-.sticky + .content {
-    padding-top: 60px;
-}
-.contact-info {
-    color: #ff6a7d;
-    float:right;
-    padding: 0 2rem;
-    display: inline-flex;
-    margin: 2rem 0;
-
-
-}
-
-.contact-info-inner {
-    border: 2px solid #1DC7EA;
-    padding: 1rem;
-    background-color: #212529;
-    font-size: 20px
-
-}
-#navigation {
-    background-color: #1a3948!important;
-
-}
+/*!* The sticky class is added to the navbar with JS when it reaches its scroll position *!*/
+/*.sticky {*/
+/*    position: fixed;*/
+/*    top: 0;*/
+/*    width: 100%;*/
+/*    left:0;*/
+/*    background-color: #333333;*/
+/*    z-index: 20;*/
 
 
 
-.logo h1 a {
+/*}*/
 
-    background-color: #1DC7EA;
-}
+/*!* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) *!*/
+/*.sticky + .content {*/
+/*    padding-top: 60px;*/
+/*}*/
+/*.contact-info {*/
+/*    color: #ff6a7d;*/
+/*    float:right;*/
+/*    padding: 0 2rem;*/
+/*    display: inline-flex;*/
+/*    margin: 2rem 0;*/
+
+
+/*}*/
+
+/*.contact-info-inner {*/
+/*    border: 2px solid #1DC7EA;*/
+/*    padding: 1rem;*/
+/*    background-color: #212529;*/
+/*    font-size: 20px*/
+
+/*}*/
+/*#navigation {*/
+/*    background-color: #1a3948!important;*/
+
+/*}*/
+
+
+
+/*.logo h1 a {*/
+
+/*    background-color: #1DC7EA;*/
+/*}*/
 
 /* =============================================================
 Gallery Styling

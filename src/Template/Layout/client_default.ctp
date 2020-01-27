@@ -28,5 +28,20 @@
 <?= $this->fetch('content') ?>
 <?= $this->element('/Client/footer'); ?>
 </body>
+
+<script type="text/javascript">
+    $(document).ready(function($) {
+        $(".scroll").click(function(event){
+            event.preventDefault();
+            $('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+        });
+    });
+    $(".client-nav .nav-link-client").on("click", function(){
+
+        $(".client-nav").find(".active").removeClass("active");
+        $(this).addClass("active");
+    });
+
+</script>
 </html>
 

@@ -55,31 +55,25 @@ use Cake\ORM\TableRegistry;
 
             </div>
             <div class="col-xs-10 text-right menu-1">
-                <ul>
+                <ul class="client-nav">
                     <!--                        class="active"-->
-                    <li class="active"><?= $this->Html->link('Home', ['controller' => 'Articles', 'action' => 'home']) ?></li>
-                    <li><?= $this->Html->link('About', ['controller' => 'About', 'action' => 'index']) ?></li>
-                    <li class="has-dropdown">
+                    <li  class="nav-link-client active"><?= $this->Html->link('Home', ['controller' => 'Articles', 'action' => 'home']) ?></li>
+                    <li class="nav-link-client"><?= $this->Html->link('About', ['controller' => 'About', 'action' => 'index']) ?></li>
+                    <li class="nav-link-client">
                         <?= $this->Html->link('Services', ['controller' => 'Services', 'action' => 'index']) ?>
-                        <ul class="dropdown">
-                            <li><?= $this->Html->link('Service1', ['controller' => 'Services', 'action' => 'index']) ?></li>
-                            <li><?= $this->Html->link('Service2', ['controller' => 'Services', 'action' => 'index']) ?></li>
-                            <li><?= $this->Html->link('Service3', ['controller' => 'Services', 'action' => 'index']) ?></li>
-                        </ul>
                     </li>
-                    <li><?= $this->Html->link('Gallery', ['controller' => 'Gallery', 'action' => 'index']) ?></li>
-                    <li><?= $this->Html->link('Testimonials', ['controller' => 'Reviews', 'action' => 'index']) ?></li>
-                    <li><?= $this->Html->link('Speaking Engagements', ['controller' => 'Events', 'action' => 'index']) ?></li>
+                    <li class="nav-link-client"><?= $this->Html->link('Gallery', ['controller' => 'Gallery', 'action' => 'index']) ?></li>
+                    <li class="nav-link-client"><?= $this->Html->link('Testimonials', ['controller' => 'Reviews', 'action' => 'index']) ?></li>
+                    <li class="nav-link-client"><?= $this->Html->link('Speaking Engagements', ['controller' => 'Events', 'action' => 'index']) ?></li>
 
-                    <li class="has-dropdown">
+                    <li class="nav-link-client has-dropdown">
                         <a href="#">Other</a>
                         <ul class="dropdown">
                             <li><?= $this->Html->link('Tips', ['controller' => 'Tips', 'action' => 'index']) ?></li>
                             <li><?= $this->Html->link('Favourites', ['controller' => 'Favourites', 'action' => 'index']) ?></li>
                         </ul>
                     </li>
-                    <li><?= $this->Html->link('Login', ['controller' => 'Admin', 'action' => 'login']) ?></li>
-                    <li><?= $this->Html->link('Contact',['controller' => 'Admin', 'action' => 'login'])?></li>
+                    <li class="nav-link-client"><?= $this->Html->link('Contact',['controller' => 'Request', 'action' => 'add'])?></li>
                 </ul>
             </div>
         </div>

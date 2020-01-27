@@ -17,6 +17,9 @@ table tr th, table tr td {
 .table-column-actions {
     width: 30%;
  }
+#content_ifr {
+    height: 40rem!important;
+}
 
 .sidebar .nav {
     display:block;
