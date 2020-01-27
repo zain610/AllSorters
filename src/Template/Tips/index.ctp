@@ -17,9 +17,6 @@
         border: none;
         text-align: left;
         outline: none;
-        font-size: 28px;
-        margin-left: 5%;
-        margin-right: 5%;
         border-bottom-color: #00A0D2;
         border-bottom-style: solid;
 
@@ -32,7 +29,6 @@
 
     .collapsible:after {
         content: '\02795'; /* Unicode character for "plus" sign (+) */
-        font-size: 13px;
         color: white;
         float: right;
         margin-left: 5px;
@@ -46,15 +42,8 @@
         padding: 0 18px;
         display: none;
         overflow: hidden;
-        background-color: #f1f1f1;
-        margin-left: 5%;
-        margin-right: 5%;
+        background-color: #fcfcfc;
         width: 90%;
-        font-size: 20px;
-
-    }
-    .heading {
-        margin-left: 100pt;
     }
 </style>
 <?php foreach ($webpages as $webpage): ?>
@@ -70,6 +59,7 @@
 <?php endforeach ?>
 
 <?php foreach ($tips as $tips): ?>
+<div class="container">
 
     <button type="button" class="collapsible"><?php echo $tips->Title ?></button>
     <div class="content">
@@ -78,6 +68,7 @@
             <br><br>
         </p>
     </div>
+</div>
     <br>
     <br>
 <?php endforeach ?>
