@@ -35,12 +35,25 @@
             event.preventDefault();
             $('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
         });
-    });
-    $(".client-nav .nav-link-client").on("click", function(){
+        $('.has-dropdown').mouseenter(function(){
 
-        $(".client-nav").find(".active").removeClass("active");
-        $(this).addClass("active");
+            var $this = $(this);
+            $this
+                .find('.dropdown')
+                .css('display', 'block')
+                .addClass('animated-fast fadeInUpMenu');
+
+        }).mouseleave(function(){
+            var $this = $(this);
+
+            $this
+                .find('.dropdown')
+                .css('display', 'none')
+                .removeClass('animated-fast fadeInUpMenu');
+        });
+
     });
+
 
 </script>
 </html>

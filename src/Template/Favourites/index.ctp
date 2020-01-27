@@ -28,7 +28,7 @@
 
         }
 
-        .active, .collapsible:hover {
+        .expand-active, .collapsible:hover {
             box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
             background-color: #f2f2f2;
         }
@@ -41,7 +41,7 @@
             margin-left: 5px;
         }
 
-        .active:after {
+        .expand-active:after {
             content: "\2796"; /* Unicode character for "minus" sign (-) */
         }
 
@@ -97,7 +97,7 @@
 
     for (i = 0; i < coll.length; i++) {
         coll[i].addEventListener("click", function() {
-            this.classList.toggle("active");
+            this.classList.toggle("expand-active");
             var content = this.nextElementSibling;
             if (content.style.display === "block") {
                 content.style.display = "none";

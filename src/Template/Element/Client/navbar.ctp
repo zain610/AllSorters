@@ -1,6 +1,16 @@
 
 <?php
 use Cake\ORM\TableRegistry;
+
+$currentController = $this->request->getParam('controller');
+$currentAction = $this->request->getParam('action');
+$isHomeActive = $currentController === "Articles";
+$isAboutActive = $currentController === "About";
+$isServicesActive = $currentController === "Services";
+$isGalleryActive = $currentController === "GalleryPage";
+$isReviewActive = $currentController === "Review";
+$isOtherActive = $currentController === "Tips" || $currentController === "Favourites";
+
 ?>
 <head>
     <meta charset="utf-8">
@@ -55,25 +65,25 @@ use Cake\ORM\TableRegistry;
 
             </div>
             <div class="col-xs-10 text-right menu-1">
-                <ul class="client-nav">
+                <ul class="">
                     <!--                        class="active"-->
-                    <li  class="nav-link-client active"><?= $this->Html->link('Home', ['controller' => 'Articles', 'action' => 'home']) ?></li>
-                    <li class="nav-link-client"><?= $this->Html->link('About', ['controller' => 'About', 'action' => 'index']) ?></li>
-                    <li class="nav-link-client">
+                    <li  class="<?= $isHomeActive ? 'active' : '' ?>"><?= $this->Html->link('Home', ['controller' => 'Articles', 'action' => 'home']) ?></li>
+                    <li class="<?= $isAboutActive ? 'active' : '' ?>"><?= $this->Html->link('About', ['controller' => 'About', 'action' => 'index']) ?></li>
+                    <li class="<?= $isServicesActive ? 'active' : '' ?>">
                         <?= $this->Html->link('Services', ['controller' => 'Services', 'action' => 'index']) ?>
                     </li>
-                    <li class="nav-link-client"><?= $this->Html->link('Gallery', ['controller' => 'GalleryPage', 'action' => 'index']) ?></li>
-                    <li class="nav-link-client"><?= $this->Html->link('Testimonials', ['controller' => 'Reviews', 'action' => 'index']) ?></li>
-                    <li class="nav-link-client"><?= $this->Html->link('Speaking Engagements', ['controller' => 'Events', 'action' => 'index']) ?></li>
+                    <li class="<?= $isGalleryActive ? 'active' : '' ?>"><?= $this->Html->link('Gallery', ['controller' => 'GalleryPage', 'action' => 'index']) ?></li>
+                    <li class="nav-link-testimonials"><?= $this->Html->link('Testimonials', ['controller' => 'Review', 'action' => 'index']) ?></li>
+                    <li class="nav-link-events"><?= $this->Html->link('Speaking Engagements', ['controller' => 'Events', 'action' => 'index']) ?></li>
 
-                    <li class="nav-link-client has-dropdown">
+                    <li class="has-dropdown <?= $isOtherActive ? 'active' : '' ?>">
                         <a href="#">Other</a>
                         <ul class="dropdown">
                             <li><?= $this->Html->link('Tips', ['controller' => 'Tips', 'action' => 'index']) ?></li>
                             <li><?= $this->Html->link('Favourites', ['controller' => 'Favourites', 'action' => 'index']) ?></li>
                         </ul>
                     </li>
-                    <li class="nav-link-client"><?= $this->Html->link('Contact',['controller' => 'Request', 'action' => 'add'])?></li>
+                    <li class="nav-link-contact"><?= $this->Html->link('Contact',['controller' => 'Request', 'action' => 'add'])?></li>
                 </ul>
             </div>
         </div>

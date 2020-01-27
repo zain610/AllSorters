@@ -40,7 +40,7 @@ class TipsController extends AppController
         $this->loadModel('tips');
         $this->Auth->allow(['index']);
         $this->Auth->allow(['home']);
-        $this->viewBuilder()->setLayout('client');
+        $this->viewBuilder()->setLayout('client_default');
         $this->loadModel("Webpages");
         $webpages = $this->Webpages->find('all');
         $this->set(compact('tips','webpages'));

@@ -17,8 +17,8 @@ class FavouritesController extends AppController
         parent::initialize();
 
         $this->loadModel('Favourites');
-        $this->Auth->allow(['index']);
-        $this->Auth->allow(['home']);
+        $this->loadModel("Webpages");
+        $this->Auth->allow(['index', 'home']);
         $this->viewBuilder()->setLayout('client_default');
     }
     public function isAuthorized($user)
@@ -35,14 +35,6 @@ class FavouritesController extends AppController
     public function index()
     {
         $favourites = $this->paginate($this->Favourites);
-
-        $this->set(compact('favourites'));
-        $this->loadModel('favourites');
-        $this->Auth->allow(['index']);
-        $this->Auth->allow(['home']);
-        $this->viewBuilder()->setLayout('client');
-
-        $this->loadModel("Webpages");
         $webpages = $this->Webpages->find('all');
         $this->set(compact('favourites','webpages'));
 
