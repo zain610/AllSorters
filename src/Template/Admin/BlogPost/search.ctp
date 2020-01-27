@@ -28,11 +28,6 @@ foreach($blogs as $blog) { ?>
             <h2 class="post-title">
                 <?= h($blog->title) ?>
             </h2>
-            <?php if ($blog->Description): ?>
-                <h3 class="post-subtitle">
-                    <?= h($blog->Description) ?>
-                </h3>
-            <?php endif ?>
         </a>
         <p>
             <?= $this->Text->truncate(strip_tags($blog->body), 250, ['exact' => false]) ?>

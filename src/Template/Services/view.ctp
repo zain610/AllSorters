@@ -18,7 +18,6 @@
 
         <div class="well">
             <h4><?php echo $service->Service_Title?></h4>
-            <h4><?php echo $service->Service_Description?></h4>
             <p><?php echo $service->Service_Detail?></p>
         </div>
             <div class="related  col-sm-6">

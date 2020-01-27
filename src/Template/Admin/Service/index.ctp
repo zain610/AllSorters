@@ -15,7 +15,6 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('Service_Title') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Service_Description') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -24,9 +23,6 @@
                 <tr class="article-row">
                     <td style="width: 40%">
                         <?= $this->Html->link($service->Service_Title, ['action' => 'edit', $service->Service_id]) ?>
-                    </td>
-                    <td>
-                        <?= $this->Html->link($service->Service_Description, ['action' => 'edit', $service->Service_id]) ?>
                     </td>
                     <td class="action-col">
                         <?= $this->element('Admin/Buttons/view', ['url' => ['action' => 'view', $service->Service_id]]) ?>

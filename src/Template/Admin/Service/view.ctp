@@ -14,7 +14,6 @@
 
             <h3>Title: <?php echo $service->Service_Title?></h3>
 
-            <h5>Description: <?php echo $service->Service_Description?></h5>
             <p>Details: <?php echo $service->Service_Detail?></p>
 
             <h4><?= __('Related Image') ?></h4>

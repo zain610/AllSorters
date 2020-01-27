@@ -29,11 +29,6 @@ foreach($services as $service) { ?>
             <h2 class="post-title">
                 <?= h($service->Service_Title) ?>
             </h2>
-            <?php if ($service->Service_Description): ?>
-                <h3 class="post-subtitle">
-                    <?= h($service->Service_Description) ?>
-                </h3>
-            <?php endif ?>
         </a>
         <p>
             <?= $this->Text->truncate(strip_tags($service->Service_Detail), 250, ['exact' => false]) ?>

@@ -12,7 +12,6 @@
         </div>
         <div class="leftcolumn">
             <h4><?php echo $blogPost->title?></h4>
-            <p><?php echo $blogPost->Description?></p>
             <a><?php echo $blogPost->Body?></a>
         </div>
 

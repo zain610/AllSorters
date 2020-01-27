@@ -18,7 +18,6 @@ $this->Html->script('/TinyMCE/js/tiny_mce/tiny_mce.js', array(
                 <legend><?= __('Add Services') ?></legend>
                 <?php
                 echo $this->Form->control('Service_Title', ['id' =>'serviceTitleInput']);
-                echo $this->Form->control('Service_Description');
                 echo $this->Form->control('Service_Detail',['type' => 'textarea', 'id' => 'ServiceDetailInput' ]);
                 ?>
                 <ul>

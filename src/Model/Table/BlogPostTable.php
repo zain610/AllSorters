@@ -64,17 +64,12 @@ class BlogPostTable extends Table
             ->requirePresence('title', 'create')
             ->notEmpty('title',false,false);
 
-        $validator
-            ->scalar('Description')
-            ->maxLength('Description', 255)
-            ->requirePresence('Description', 'create')
-            ->notEmpty('Description',false,false);
 
         $validator
             ->scalar('Body')
-            ->maxLength('Service_Description', 255)
-            ->requirePresence('Description', 'create')
-            ->allowEmpty('Service_Description',false,false);
+            ->maxLength('Body', 255)
+            ->requirePresence('Body', 'create')
+            ->allowEmpty('Body',false,false);
 
         $validator
             ->boolean('Published')

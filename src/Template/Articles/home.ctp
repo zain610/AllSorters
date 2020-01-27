@@ -127,11 +127,7 @@
                                 ['controller'=>'Services','action'=>'view/'.$service->Service_id],
                                 ['escape' => false]
                             )?>
-                            <?php echo $this->Html->link(
-                                '<p>'.strip_tags($service->Service_Description).' </p>',
-                                ['controller'=>'Services','action'=>'view/'.$service->Service_id],
-                                ['escape' => false]
-                            )?>
+
                         </li>
                     <?php endforeach?>
 

@@ -63,10 +63,7 @@ class ServiceTable extends Table
             ->requirePresence('Service_Title', 'create')
             ->notEmpty('Service_Title',false,false);
 
-        $validator
-            ->scalar('Service_Description')
-            ->maxLength('Service_Description', 255)
-            ->allowEmpty('Service_Description',false,false);
+
 
         $validator
             ->scalar('Service_Detail')
