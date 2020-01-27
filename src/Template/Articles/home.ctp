@@ -52,7 +52,7 @@
                 <ul>
                     <?php foreach ($blogs as $blog):?>
                         <li>
-                            <span class="post-date"><?php echo $blog->Date?></span>
+                            <span class="post-date"><?php echo $blog->Date->format('d-m-Y')?></span>
                             <?php echo $this->Html->link(
                                 '<h3 class="blog_Title">'. $blog->title.'</h3>',
                                 ['controller'=>'BlogPost','action'=>'view/'.$blog->blog_post_id],

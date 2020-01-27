@@ -29,7 +29,7 @@
             <div class="col-md-12 col-lg-8 main-content">
                 <h1 class="mb-4"><?php echo $blogPost->title?></h1>
                 <div class="post-meta">
-                    <span class="mr-2" style="font-family: Calibri"><?php echo $blogPost->Date?></span>
+                    <span class="mr-2" style="font-family: Calibri"><?php echo $blogPost->Date->format('d-m-Y')?></span>
                 </div>
                 <p><?php echo $blogPost->Description?></p>
 
