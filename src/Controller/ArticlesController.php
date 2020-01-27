@@ -58,6 +58,11 @@ class ArticlesController extends AppController
         $images = $this->Image->find('all');
         $this->set(compact('images'));
 
+
+        $webpages = $this->Webpages->find('all');
+        $this->set(compact('webpages'));
+        $this->set('title', 'Home of AllSorters');
+
     }
     public function homepage() {
 
