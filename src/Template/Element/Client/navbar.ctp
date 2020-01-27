@@ -9,7 +9,9 @@ $isAboutActive = $currentController === "About";
 $isServicesActive = $currentController === "Services";
 $isGalleryActive = $currentController === "GalleryPage";
 $isReviewActive = $currentController === "Review";
+$isEventsActive = $currentController === "Events";
 $isOtherActive = $currentController === "Tips" || $currentController === "Favourites";
+$isContactActive = $currentController === "Request";
 
 ?>
 <head>
@@ -83,7 +85,7 @@ $isOtherActive = $currentController === "Tips" || $currentController === "Favour
                             <li><?= $this->Html->link('Favourites', ['controller' => 'Favourites', 'action' => 'index']) ?></li>
                         </ul>
                     </li>
-                    <li class="nav-link-contact"><?= $this->Html->link('Contact',['controller' => 'Request', 'action' => 'add'])?></li>
+                    <li class="<?= $isContactActive ? 'active': ''?>"><?= $this->Html->link('Contact',['controller' => 'Request', 'action' => 'add'])?></li>
                 </ul>
             </div>
         </div>

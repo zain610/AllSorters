@@ -20,7 +20,7 @@ class ReviewController extends AppController
         $this->Auth->allow(['index','home']);
         $this->loadModel("Webpages");
 
-        $this->viewBuilder()->setLayout('client');
+        $this->viewBuilder()->setLayout('client_default');
     }
 
     /**
