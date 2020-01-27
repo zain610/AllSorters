@@ -33,20 +33,39 @@
 
 
             <div class="col-lg-6 col-md-12 gtco-news">
-                <a href="index.html"><h2 style="padding-top: 5px">Blogs</h2>
-                    <ul>
-                        <?php foreach ($blogs as $blog):?>
-                        <li>
-                            <a href="#">
-                                <span class="post-date"><?php echo $blog->Date->format('d-m-Y')?></span>
-                                <h3 class="blog_Title"><?php echo $blog->title?></h3>
-                                <p><?php echo $blog->Description?></p>
-                            </a>
-                        </li>
+                <h2 style="padding-top: 5px; color: #4d4d4d; font-weight: 300;font-size: 40px;">Recent Blogs </h2>
+                <p>
+                    <?php echo $this->Html->link(
+                        'More Blogs',
+                        ['controller'=>'BlogPost','action'=>'index'],
+                        [
+                            'escape' => false,
+                            'class' => 'btn btn-sm btn-special',
+                            'style' => 'position:absolute; 
+                                        right:0%; 
+                                        top:2%;'
+                        ]
+                    )?>
+                </p>
 
-                        <?php endforeach;?>
-                    </ul>
-                    <!--					<p><a href="#" class="btn btn-sm btn-special">More News</a></p>-->
+                <br>
+                <ul>
+                    <?php foreach ($blogs as $blog):?>
+                        <li>
+                            <span class="post-date"><?php echo $blog->Date?></span>
+                            <?php echo $this->Html->link(
+                                '<h3 class="blog_Title">'. $blog->title.'</h3>',
+                                ['controller'=>'BlogPost','action'=>'view/'.$blog->blog_post_id],
+                                ['escape' => false]
+                            )?>
+                            <?php echo $this->Html->link(
+                                '<p>'. $blog->Description.'</p>',
+                                ['controller'=>'BlogPost','action'=>'view/'.$blog->blog_post_id],
+                                ['escape' => false]
+                            )?>
+                        </li>
+                    <?php endforeach;?>
+                </ul>
             </div>
         </div>
     </div>

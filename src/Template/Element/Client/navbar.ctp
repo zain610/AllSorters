@@ -67,7 +67,7 @@ use Cake\ORM\TableRegistry;
                             <li><?= $this->Html->link('Service3', ['controller' => 'Services', 'action' => 'index']) ?></li>
                         </ul>
                     </li>
-                    <li><?= $this->Html->link('Gallery', ['controller' => 'Gallery', 'action' => 'index']) ?></li>
+                    <li><?= $this->Html->link('Gallery', ['controller' => 'GalleryPage', 'action' => 'index']) ?></li>
                     <li><?= $this->Html->link('Testimonials', ['controller' => 'Review', 'action' => 'index']) ?></li>
                     <li><?= $this->Html->link('Speaking Engagements', ['controller' => 'Events', 'action' => 'index']) ?></li>
 
@@ -79,7 +79,7 @@ use Cake\ORM\TableRegistry;
                         </ul>
                     </li>
                     <li><?= $this->Html->link('Login', ['controller' => 'Admin', 'action' => 'login']) ?></li>
-                    <li><?= $this->Html->link('Contact',['controller' => 'Admin', 'action' => 'login'])?></li>
+                    <li><?= $this->Html->link('Contact',['controller' => 'Request', 'action' => 'add'])?></li>
                 </ul>
             </div>
         </div>
