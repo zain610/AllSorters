@@ -32,8 +32,17 @@
 
 </script>
 <div class="container-fluid">
-    <?= $this->Form->create(null, ['url' => ['controller'=>'Subscriptions', 'action' => 'emailNewsletter'], 'type' => 'post']); ?>
+    <div style="display: flex">
+        <div class="form-check form-check-inline" style="margin: 1rem">
+            <div style="border-radius: 15px; margin-left: auto; padding: 2rem; border: 5px solid;">
+                <h4>Add a subscriber</h4>
+                <?= $this->element('Client/subscribe'); ?>
 
+            </div>
+        </div>
+
+    </div>
+    <?= $this->Form->create(null, ['url' => ['controller'=>'Subscriptions', 'action' => 'emailNewsletter'], 'type' => 'post']); ?>
     <div class="" style="">
         <h4>Newsletter</h4>
         <?= $this->Form->button('Submit', ['class'=>'btn btn-primary']); ?>
@@ -41,19 +50,8 @@
     </div>
     <hr style="border-top: 2px solid darkslategray">
     <div class="" style="">
-        <div style="display: flex">
-            <div class="form-check form-check-inline" style="width: 100%; display: inline-flex; margin: 1rem">
-                <h4 style="width: 60%;margin-right: 1rem; margin-top: auto">Select Users to send email to</h4>
-<!--                <div style="float: right; border-radius: 15px; margin-left: auto; padding: 0 1rem; display: flex">-->
-<!--                    <h4>Add a subscriber</h4>-->
-<!--                    --><?//= $this->element('Client/subscribe'); ?>
-<!---->
-<!--                </div>-->
-            </div>
-
-        </div>
         <div class="container">
-
+            <h4 style="width: 60%;margin-right: 1rem; margin-top: auto">Select Users to send email to</h4>
             <div class="row">
 
 

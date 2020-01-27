@@ -176,9 +176,10 @@
                                             <table class="w580" border="0" cellpadding="0" cellspacing="0" width="580">
                                                 <tbody><tr>
                                                     <td class="w580" width="580">
-                                                        <p class="article-title" align="left"><singleline label="Title">Add a title</singleline></p>
+                                                        <p class="article-title" align="left"><singleline label="Title">Var 1: allsorters - Sorting Houses in Melbourne
+                                                            </singleline></p>
                                                         <div class="article-content" align="left">
-                                                            <multiline label="Description">Enter your description</multiline>
+                                                            <multiline label="Description">Value for variable1: Hi</multiline>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -191,7 +192,7 @@
                                             <table class="w580" border="0" cellpadding="0" cellspacing="0" width="580">
                                                 <tbody><tr>
                                                     <td class="w580" width="580">
-                                                        <p class="article-title" align="left"><singleline label="Title">Add a title</singleline></p>
+                                                        <p class="article-title" align="left"><singleline label="Title">Var2: Dear Readers</singleline></p>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -201,7 +202,7 @@
                                                 <tr>
                                                     <td class="w580" width="580">
                                                         <div class="article-content" align="left">
-                                                            <multiline label="Description">Enter your description</multiline>
+                                                            <multiline label="Description">Value 2: Message content</multiline>
                                                         </div>
                                                     </td>
                                                 </tr>
