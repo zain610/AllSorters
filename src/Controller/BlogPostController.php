@@ -57,7 +57,7 @@ class BlogPostController extends AppController
     }
     public function view($id = null){
         $this->loadComponent('Paginator');
-        $this->viewBuilder()->setLayout('client');
+        $this->viewBuilder()->setLayout('client_default');
         $blogPost = $this->BlogPost->get($id, [
             'contain' => ['image']
         ]);

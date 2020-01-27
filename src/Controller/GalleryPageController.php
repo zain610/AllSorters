@@ -29,7 +29,7 @@ class GalleryPageController extends AppController
     public function index()
     {
 
-        $this->viewBuilder()->setLayout('client');
+        $this->viewBuilder()->setLayout('client_default');
         $this->loadModel('Image');
         $image = $this->Image->find('all')->where(['Shown' => true]);
 
