@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Home</title>
 
-</head>
-
-<body>
 <div>
     <?php foreach($slideshow as $key=>$slideshow){
         $item[$key]=$slideshow;
@@ -91,10 +84,3 @@
 
 </div>
 <hr>
-
-
-
-
-</body>
-
-</html>

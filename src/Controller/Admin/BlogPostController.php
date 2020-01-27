@@ -130,7 +130,7 @@ class BlogPostController extends AppController
 
         try {
             // Returns a long-lived access token
-            $accessToken = $client->getLongLivedAccessToken('EAAKUWwjVoeoBAOsmC8wlZAHXfuZB6DKzOOyukDoJhaDoZCAV9iSXXh9YTbvZAKMrnhDf4QFWzmt906yZBzuzmZA0RoIZADfSLARbSBY3DgxbVfkqNjLNuKYa4I39yBbVTSlaDdtiDCTsiLN6xVF1eNkkA21V714knOZBiPs5rrDtZC4Qs2EWZCct4r5gcecq1fjLPCojjkZCZAZBiFgZDZD');
+            $accessToken = $client->getLongLivedAccessToken('EAAKUWwjVoeoBAOFGfZB4VpnKKM4R6eucaPEc17LOfGFwuaaO0it21ZBmQV5xmNgKJfdYPMB3Cxd8icwXVRFtf0EI2NTMN9EXkwnHbnBQRhYQmBQbUuLZCgzocD1ZBWbYpM24IZAI0wq6O6ZAIJ5sbJ5XVpABKmsWcnPXqfjoFBQAKa6bZBrZAX0ZBek1H1ijfRBKrXzOMdM50ggZDZD');
         } catch(Facebook\Exceptions\FacebookSDKException $e) {
             // There was an error communicating with Graph
             echo $e->getMessage();
