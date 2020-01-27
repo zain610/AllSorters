@@ -58,7 +58,7 @@ use Cake\ORM\TableRegistry;
             <div class="col-xs-10 text-right menu-1">
                 <ul>
                     <!--                        class="active"-->
-                    <li class="active"><?= $this->Html->link('Home', ['controller' => 'Articles', 'action' => 'home']) ?></li>
+                    <li><?= $this->Html->link('Home', ['controller' => 'Articles', 'action' => 'home']) ?></li>
                     <li><?= $this->Html->link('About', ['controller' => 'About', 'action' => 'index']) ?></li>
                     <li class="has-dropdown">
                         <a href="#">Services</a>
@@ -68,8 +68,8 @@ use Cake\ORM\TableRegistry;
                             <li><?= $this->Html->link('Service3', ['controller' => 'Services', 'action' => 'index']) ?></li>
                         </ul>
                     </li>
-                    <li><?= $this->Html->link('Gallery', ['controller' => 'Gallery', 'action' => 'index']) ?></li>
-                    <li><?= $this->Html->link('Testimonials', ['controller' => 'Reviews', 'action' => 'index']) ?></li>
+                    <li><?= $this->Html->link('Gallery', ['controller' => 'GalleryPage', 'action' => 'index']) ?></li>
+                    <li><?= $this->Html->link('Testimonials', ['controller' => 'Review', 'action' => 'index']) ?></li>
                     <li><?= $this->Html->link('Speaking Engagements', ['controller' => 'Events', 'action' => 'index']) ?></li>
 
                     <li class="has-dropdown">
@@ -79,8 +79,7 @@ use Cake\ORM\TableRegistry;
                             <li><?= $this->Html->link('Favourites', ['controller' => 'Favourites', 'action' => 'index']) ?></li>
                         </ul>
                     </li>
-                    <li><?= $this->Html->link('Login', ['controller' => 'Admin', 'action' => 'login']) ?></li>
-                    <li><?= $this->Html->link('Contact',['controller' => 'Admin', 'action' => 'login'])?></li>
+                    <li><?= $this->Html->link('Contact',['controller' => 'Request', 'action' => 'add'])?></li>
                 </ul>
             </div>
         </div>

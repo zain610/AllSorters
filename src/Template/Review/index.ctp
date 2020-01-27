@@ -100,17 +100,13 @@
     <br>
     <br>
     <br>
-    <nav>
-        <div class="paginator">
-            <ul class="pagination justify-content-center pagination-lg">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center pagination-lg" style="margin-left: 35%">
                 <?= $this->Paginator->first('<< ' . __('first')) ?>
                 <?= $this->Paginator->prev('< ' . __('previous')) ?>
                 <?= $this->Paginator->numbers() ?>
                 <?= $this->Paginator->next(__('next') . ' >') ?>
                 <?= $this->Paginator->last(__('last') . ' >>') ?>
-            </ul>
-        </div>
+        </ul>
     </nav>
-
-
 </html>

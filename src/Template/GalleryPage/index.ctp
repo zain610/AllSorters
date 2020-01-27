@@ -37,15 +37,9 @@
 <!--                </div>-->
                 <?php if(!empty($image)):?>
                 <?php foreach ($image as $img):?>
-                <div class="col-md-4 g-left">
-<!--                    <a href="--><!--" rel="title" class="b-link-stripe b-animate-go  thickbox">-->
-                        <figure class="effect-apollo">
+                        <div class="card">
                             <?php echo $this->Html->image($img->path, ['alt' => 'CakePHP']); ?>
-                            <figcaption>
-                            </figcaption>
-                        </figure>
-<!--                    </a>-->
-                </div>
+                        </div>
                 <?php endforeach;?>
                 <?php else:?>
                 <div class="col-md-4 g-left">

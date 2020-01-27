@@ -1,14 +1,4 @@
 
-
-<!DOCTYPE HTML>
-
-<html>
-<head>
-    <title>Home</title>
-
-</head>
-<body>
-
 <div class="gtco-loader"></div>
 
 <div id="page">
@@ -41,20 +31,40 @@
 
 
             <div class="col-lg-6 col-md-12 gtco-news">
-                <a href="index.html"><h2 style="padding-top: 5px">Blogs</h2>
-                    <ul>
+                <h2 style="padding-top: 5px; color: #4d4d4d; font-weight: 300;font-size: 40px;">Recent Blogs </h2>
+                <p>
+                    <?php echo $this->Html->link(
+                        'More Blogs',
+                        ['controller'=>'BlogPost','action'=>'index'],
+                        [
+                            'escape' => false,
+                            'class' => 'btn btn-sm btn-special',
+                            'style' => 'position:absolute; 
+                                        right:0%; 
+                                        top:2%;'
+                        ]
+                    )?>
+                </p>
+
+                <ul>
                         <?php foreach ($blogs as $blog):?>
                         <li>
                             <a href="#">
                                 <span class="post-date"><?php echo $blog->Date->format('d-m-Y')?></span>
-                                <h3 class="blog_Title"><?php echo $blog->title?></h3>
-                                <p><?php echo $blog->Description?></p>
+                                <?php echo $this->Html->link(
+                                    '<h3 class="blog_Title">'. $blog->title.'</h3>',
+                                    ['controller'=>'BlogPost','action'=>'view/'.$blog->blog_post_id],
+                                    ['escape' => false]
+                                )?>
+                                <?php echo $this->Html->link(
+                                    '<p>'. $blog->Description.'</p>',
+                                    ['controller'=>'BlogPost','action'=>'view/'.$blog->blog_post_id],
+                                    ['escape' => false]
+                                )?>
                             </a>
                         </li>
-
                         <?php endforeach;?>
                     </ul>
-                    <!--					<p><a href="#" class="btn btn-sm btn-special">More News</a></p>-->
             </div>
         </div>
     </div>
@@ -78,7 +88,7 @@
                     <?php foreach ($gallery_images as $image): ?>
                     <div class="item">
                         <div class="gtco-item">
-                            <a href="#"><?php echo $this->Html->image($image->path, ['class'=>'img-responsive']) ?></a>
+                            <?php echo $this->Html->image($image->path, ['class'=>'img-responsive']) ?>
                             <h2><a href="#">New York Arena</h2></a>
                             <p class="role">New York</p>
                         </div>
@@ -113,7 +123,16 @@
                     <?php endforeach?>
 
                 </ul>
-                <p><a href="#" class="btn btn-sm btn-special">More Services</a></p>
+                <p>
+                    <?php echo $this->Html->link(
+                        'More Services',
+                        ['controller'=>'Services','action'=>'index'],
+                        [
+                            'escape' => false,
+                            'class' => 'btn btn-sm btn-special'
+                        ]
+                    )?>
+                </p>
 
             </div>
             <!-- END News -->
@@ -134,10 +153,3 @@
     </div>
 </div>
 <!-- END  -->
-
-
-</div>
-
-</body>
-</html>
-

@@ -9,6 +9,12 @@
         <h3>Contact us</h3>
     </div>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <div class="container" style="margin-top: -100px">
     <div class="row">
         <div class="col-md-6 animate-box" >
@@ -81,7 +87,7 @@
                         <?= $this->Form->textarea('Query_info',['label' => false, 'required'=>false,'placeholder' => '* Please enter some messages here', 'class' => 'form-control']); ?>
                     </div>
                 <div style="margin-top: 10px">
-                <?= $this->Form->button('Submit',['class' => 'btn btn-primary','style' => 'margin-left: 15px']) ?>
+                <?= $this->Form->button('Submit',['class' => 'btn btn-sm btn-special','style' => 'margin-left: 15px; color: #ffffffd9 !important']) ?>
                 <?= $this->Form->end() ?>
                 </div>
             </div>
