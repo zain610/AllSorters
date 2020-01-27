@@ -36,13 +36,13 @@
                 <a href="index.html"><h2 style="padding-top: 5px">Blogs</h2>
                     <ul>
                         <?php foreach ($blogs as $blog):?>
-                            <li>
-                                <a href="#">
-                                    <span class="post-date"><?php echo $blog->Date?></span>
-                                    <h3 class="blog_Title"><?php echo $blog->title?></h3>
-                                    <p><?php echo $blog->Description?></p>
-                                </a>
-                            </li>
+                        <li>
+                            <a href="#">
+                                <span class="post-date"><?php echo $blog->Date->format('d-m-Y')?></span>
+                                <h3 class="blog_Title"><?php echo $blog->title?></h3>
+                                <p><?php echo $blog->Description?></p>
+                            </a>
+                        </li>
 
                         <?php endforeach;?>
                     </ul>
