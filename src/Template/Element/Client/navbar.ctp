@@ -24,26 +24,26 @@ use Cake\ORM\TableRegistry;
     <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400|Montserrat:400,700" rel="stylesheet">
 
     <!-- Animate.css -->
-    <link rel="stylesheet" href="css/client2/animate.css">
+    <link rel="stylesheet" href="/../css/client2/animate.css">
     <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="css/client2/icomoon.css">
+    <link rel="stylesheet" href="/../css/client2/icomoon.css">
     <!-- Themify Icons-->
-    <link rel="stylesheet" href="css/client2/themify-icons.css">
+    <link rel="stylesheet" href="/../css/client2/themify-icons.css">
     <!-- Bootstrap  -->
-    <link rel="stylesheet" href="css/client2/bootstrap.css">
+    <link rel="stylesheet" href="/../css/client2/bootstrap.css">
 
     <!-- Owl Carousel  -->
-    <link rel="stylesheet" href="css/client2/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/client2/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/../css/client2/owl.carousel.min.css">
+    <link rel="stylesheet" href="/../css/client2/owl.theme.default.min.css">
 
     <!-- Theme style  -->
-    <link rel="stylesheet" href="css/client2/style.css">
-    <link rel="stylesheet" href="css/client2/clientstyles.css">
+    <link rel="stylesheet" href="/../css/client2/style.css">
+    <link rel="stylesheet" href="/../css/client2/clientstyles.css">
     <!-- Modernizr JS -->
-    <script src="js/client2/modernizr-2.6.2.min.js"></script>
+    <script src="/../js/client2/modernizr-2.6.2.min.js"></script>
     <!-- FOR IE9 below -->
     <!--[if lt IE 9]>
-    <script src="js/client2/respond.min.js"></script>
+    <script src="/../js/client2/respond.min.js"></script>
     <![endif]-->
 
 </head>
@@ -61,7 +61,7 @@ use Cake\ORM\TableRegistry;
                     <li class="active"><?= $this->Html->link('Home', ['controller' => 'Articles', 'action' => 'home']) ?></li>
                     <li><?= $this->Html->link('About', ['controller' => 'About', 'action' => 'index']) ?></li>
                     <li class="has-dropdown">
-                        <a href="#">Services</a>
+                        <?= $this->Html->link('Services', ['controller' => 'Services', 'action' => 'index']) ?>
                         <ul class="dropdown">
                             <li><?= $this->Html->link('Service1', ['controller' => 'Services', 'action' => 'index']) ?></li>
                             <li><?= $this->Html->link('Service2', ['controller' => 'Services', 'action' => 'index']) ?></li>
@@ -88,15 +88,15 @@ use Cake\ORM\TableRegistry;
 </nav>
 
 <!-- jQuery -->
-<script src="js/client2/jquery.min.js"></script>
+<script src="/../js/client2/jquery.min.js"></script>
 <!-- jQuery Easing -->
-<script src="js/client2/jquery.easing.1.3.js"></script>
+<script src="/../js/client2/jquery.easing.1.3.js"></script>
 <!-- Bootstrap -->
-<script src="js/client2/bootstrap.min.js"></script>
+<script src="/../js/client2/bootstrap.min.js"></script>
 <!-- Waypoints -->
-<script src="js/client2/jquery.waypoints.min.js"></script>
+<script src="/../js/client2/jquery.waypoints.min.js"></script>
 <!-- Carousel -->
-<script src="js/client2/owl.carousel.min.js"></script>
+<script src="/../js/client2/owl.carousel.min.js"></script>
 
 <!-- Main -->
-<script src="js/client2/main.js"></script>
+<script src="/../js/client2/main.js"></script>

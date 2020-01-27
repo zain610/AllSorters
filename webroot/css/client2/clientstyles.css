@@ -64,6 +64,24 @@ p{
     text-overflow: ellipsis;
     max-width: 200px;
 }
+
+.input-bar {
+    display: table;
+    width: 100%;
+}
+
+.input-bar-item {
+    display: table-cell;
+}
+
+.input-bar-item > button {
+    margin-left: 5px;
+}
+
+.width100 {
+    width: 100%;
+}
+
 /*!* tab *!*/
 /*.tab-vertical-top{*/
 /*    float:none;*/
