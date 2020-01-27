@@ -20,7 +20,7 @@ class EventsController extends AppController
         $this->loadModel('Events');
         $this->Auth->allow(['index']);
         $this->Auth->allow(['home']);
-        $this->viewBuilder()->setLayout('client');
+        $this->viewBuilder()->setLayout('client_default');
     }
     public function isAuthorized($user)
     {

@@ -95,32 +95,39 @@
     }
 </style>
 
+<div class="gtco-loader"></div>
 
-<?php foreach ($webpages as $webpage): ?>
-    <?php $name = $webpage -> Webpage;?>
-    <?php if ($name === 'Speaking Engagements') { ?>
-        <?php $heading = $webpage -> Heading; ?>
-        <?php $content = $webpage -> Content; ?>
-        <div class="services">
-            <div class="container">
-                <h3> <?php echo $heading ?> </h3>
+<div id="page">
+
+
+    <div class="gtco-section">
+        <div class="gtco-container">
+            <div class="row gtco-heading">
+                <?php foreach ($webpages as $webpage): ?>
+                    <?php $name = $webpage -> Webpage;?>
+                    <?php if ($name === 'Speaking Engagements') { ?>
+                        <?php $heading = $webpage -> Heading; ?>
+                        <?php $content = $webpage -> Content; ?>
+                <div class="col-md-12 text-left" style="">
+                    <h2 align="middle"><?php echo $heading ?></h2>
+                    <p style="padding-top: 10px">
+                        <?php echo $content ?>
+                    </p>
+                </div>
+
+                <?php } ?>
+                <?php endforeach ?>
             </div>
-        </div>
-<div class="container">
-        <p><?php echo $content ?></p>
-</div>
-    <?php } ?>
-<?php endforeach ?>
-<div class="title">
-    <h3>Upcoming Speaking Engagements</h3>
-</div>
-<?php foreach ($events as $event): ?>
-    <?php if ($event->Published) { ?>
-        <div class="row" style="padding-left: 120px; margin-top: 30px">
-            <div class="column">
-                <div class="">
-                    <div class="left">
-                        <div class = "hide"">
+            <div>
+            <h2>Upcoming Speaking Engagement</h2>
+
+            <?php foreach ($events as $event): ?>
+            <?php if ($event->Published) { ?>
+            <div class="row" style=margin-top: 30px">
+                <div class="column">
+                    <div>
+                        <div class="left">
+                            <div class = "hide"">
                             <?=
                             $theDatetime = h($event['Date']);
                             $dt = new DateTime($theDatetime);
@@ -148,42 +155,43 @@
                 </div >
             </div >
 
-        </div >
-        <div class="line" style="padding-top: -10px"></div>
-    <?php } ?>
-<?php endforeach ?>
+        </div>
+        <div class="line" style="padding-top: -100px"></div>
+        <?php } ?>
+        <?php endforeach ?>
+        </div>
+<div style="padding-top: 20px">
+        <h2>Previous Speaking Engagements</h2>
 
-<div class="title">
-    <h3>Previous Speaking Engagements</h3>
-</div>
-<?php foreach ($events as $event): ?>
-    <?php if ($event->Archived) { ?>
-        <div class = "hide">
-            <?=
-            $theDatetime = h($event['Date']);
-            $dt = new DateTime($theDatetime);
-            $theTime = $event->Time;
-            $time = $theTime->format('h:i A');
-            $dateNum  = $dt->format('j');
-            $year  = $dt->format('Y');;
-            $monthNum  = $dt->format('n');
-            $dateObj   = DateTime::createFromFormat('!m', $monthNum);
-            $monthName = $dateObj->format('M');
-            $description = h(strip_tags($event['Description']));
-            $venue =h(strip_tags($event['Venue']));
-            ?>
-        </div>
-        <div class="list">
-            <ul>
-                <li> <?php echo "{$dateNum} {$monthName} {$year}, $time - {$description} - {$venue}"?></li>
-            </ul>
-        </div>
-    <?php } ?>
-<?php endforeach ?>
-<div>
-    <br>
-    <br>
-</div>
+        <?php foreach ($events as $event): ?>
+            <?php if ($event->Archived) { ?>
+                <div class = "hide">
+                    <?=
+                    $theDatetime = h($event['Date']);
+                    $dt = new DateTime($theDatetime);
+                    $theTime = $event->Time;
+                    $time = $theTime->format('h:i A');
+                    $dateNum  = $dt->format('j');
+                    $year  = $dt->format('Y');;
+                    $monthNum  = $dt->format('n');
+                    $dateObj   = DateTime::createFromFormat('!m', $monthNum);
+                    $monthName = $dateObj->format('M');
+                    $description = h(strip_tags($event['Description']));
+                    $venue =h(strip_tags($event['Venue']));
+                    ?>
+                </div>
+                <div class="list">
+                    <ul>
+                        <li> <?php echo "{$dateNum} {$monthName} {$year}, $time - {$description} - {$venue}"?></li>
+                    </ul>
+                </div>
+            <?php } ?>
+        <?php endforeach ?>
+    </div>
+    </div>
+
+
+
 
 </html>
 
