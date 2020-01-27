@@ -12,7 +12,6 @@
 </head>
 <style>
     p {
-        font-family: roboto slab;
         font-size: 25px;
         font-style: italic;
     }
@@ -51,7 +50,6 @@
     }
 
     .box client{
-        font-family: 'Roboto Slab';
         font-size: 22px;
         text-transform: capitalize;
         font-style: normal;
