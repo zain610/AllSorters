@@ -7,7 +7,6 @@
 <div class="container">
     <td class="action-col" style="">
         <h3>Actions</h3>
-        <?php debug($request->Request_No);?>
         <?= $this->element('Admin/Buttons/view', ['url' => ['action' => 'view', $request->Request_No]]) ?>
         <?= $this->element('Admin/Buttons/edit', ['url' => ['action' => 'edit', $request->Request_No]]) ?>
         <?= $this->element('Admin/Buttons/Archive', ['url' => ['action' => 'archive', $request->Request_No], ['confirm' => __('Are you sure you want to archive # {0}?', $request->id)]]) ?>
