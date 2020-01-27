@@ -25,10 +25,18 @@ $currentController = $this->request->getParam('controller');
             </div>
                 <div class="col-md-12 col-lg-8 mb-5">
                     <?php foreach ($blogs as $blogPost): ?>
+                        <?php $truncate = $this->Text->truncate(
+                            $blog->Body,
+                            $length=200,
+                            array(
+                                'ellipsis' => '...',
+                                'exact' => false
+                            )
+                        );?>
                     <div class="blog-post">
                         <h2><?php echo $blogPost->title?></h2>
-                        <h4>Posted by Mary on <?php echo $blogPost->Date?> </h4>
-                        <p><?php echo $blogPost->Description?></p>
+                        <h4>Posted by Mary Harnan on <?php echo $blogPost->Date->format('d-m-Y')?> </h4>
+                        <p><?php echo $truncate?></p>
 
                         <a href='<?php echo $this->Url->build(array('action'=> 'View', $blogPost->blog_post_id))?>' class="btn btn-default btn-lg ">Read More <i class="fa fa-angle-right"></i></a>
                     </div>

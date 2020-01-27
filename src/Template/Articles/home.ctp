@@ -51,6 +51,14 @@
                 <br>
                 <ul>
                     <?php foreach ($blogs as $blog):?>
+                        <?php $truncate = $this->Text->truncate(
+                            $blog->Body,
+                            $length=200,
+                            array(
+                                'ellipsis' => '...',
+                                'exact' => false
+                            )
+                        );?>
                         <li>
                             <span class="post-date"><?php echo $blog->Date->format('d-m-Y')?></span>
                             <?php echo $this->Html->link(
@@ -59,7 +67,7 @@
                                 ['escape' => false]
                             )?>
                             <?php echo $this->Html->link(
-                                '<p>'. $blog->Description.'</p>',
+                                '<p>'. $truncate.'</p>',
                                 ['controller'=>'BlogPost','action'=>'view/'.$blog->blog_post_id],
                                 ['escape' => false]
                             )?>
