@@ -160,7 +160,8 @@ class SubscriptionsController extends AppController
                 $email = new Email('default');
                 $email->setFrom(['allsortMary@gmail.com' => 'All Sorters'])
                     ->setTo($sender_email)
-                    ->setTemplate('default')
+                    ->setTemplate('newsletter_template')
+                    ->setLayout('newsletter_template')
                     ->setEmailFormat('html')
                     ->setViewVars(['message' => strip_tags($data['message']), 'title' => "Newsletter update from AllSorters", 'blogs' => $blogs])
                     ->setSubject("Newsletter update from AllSorters")
