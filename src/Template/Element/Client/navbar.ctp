@@ -62,7 +62,7 @@ use Cake\ORM\TableRegistry;
                     <li class="nav-link-client">
                         <?= $this->Html->link('Services', ['controller' => 'Services', 'action' => 'index']) ?>
                     </li>
-                    <li class="nav-link-client"><?= $this->Html->link('Gallery', ['controller' => 'Gallery', 'action' => 'index']) ?></li>
+                    <li class="nav-link-client"><?= $this->Html->link('Gallery', ['controller' => 'GalleryPage', 'action' => 'index']) ?></li>
                     <li class="nav-link-client"><?= $this->Html->link('Testimonials', ['controller' => 'Reviews', 'action' => 'index']) ?></li>
                     <li class="nav-link-client"><?= $this->Html->link('Speaking Engagements', ['controller' => 'Events', 'action' => 'index']) ?></li>
 
