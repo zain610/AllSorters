@@ -68,18 +68,19 @@ use Cake\ORM\TableRegistry;
                             <li><?= $this->Html->link('Service3', ['controller' => 'Services', 'action' => 'index']) ?></li>
                         </ul>
                     </li>
+                    <li><?= $this->Html->link('Gallery', ['controller' => 'Gallery', 'action' => 'index']) ?></li>
+                    <li><?= $this->Html->link('Testimonials', ['controller' => 'Reviews', 'action' => 'index']) ?></li>
+                    <li><?= $this->Html->link('Speaking Engagements', ['controller' => 'Events', 'action' => 'index']) ?></li>
+
                     <li class="has-dropdown">
-                        <a href="#">Dropdown</a>
+                        <a href="#">Other</a>
                         <ul class="dropdown">
-                            <li><a href="#">HTML5</a></li>
-                            <li><a href="#">CSS3</a></li>
-                            <li><a href="#">Sass</a></li>
-                            <li><a href="#">jQuery</a></li>
+                            <li><?= $this->Html->link('Tips', ['controller' => 'Tips', 'action' => 'index']) ?></li>
+                            <li><?= $this->Html->link('Favourites', ['controller' => 'Favourites', 'action' => 'index']) ?></li>
                         </ul>
                     </li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
                     <li><?= $this->Html->link('Login', ['controller' => 'Admin', 'action' => 'login']) ?></li>
-                    <li><?= $this->Html->link('Contact Us',['controller' => 'Admin', 'action' => 'login'])?></li>
+                    <li><?= $this->Html->link('Contact',['controller' => 'Admin', 'action' => 'login'])?></li>
                 </ul>
             </div>
         </div>

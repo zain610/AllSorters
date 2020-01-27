@@ -23,7 +23,6 @@
             font-size: 28px;
             margin-left: 5%;
             margin-right: 5%;
-            font-family: 'Roboto Slab';
             border-bottom-color: #00A0D2;
             border-bottom-style: solid;
 
