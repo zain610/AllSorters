@@ -51,7 +51,9 @@
                 <br>
                 <ul>
                     <?php foreach ($blogs as $blog):?>
-                        <?php $truncate = $this->Text->truncate(
+                    <?php if ($blog->Published) { ?>
+
+                    <?php $truncate = $this->Text->truncate(
                             $blog->Body,
                             $length=200,
                             array(
@@ -72,6 +74,7 @@
                                 ['escape' => false]
                             )?>
                         </li>
+                        <?php } ?>
                     <?php endforeach;?>
                 </ul>
             </div>
