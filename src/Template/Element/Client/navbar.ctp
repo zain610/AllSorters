@@ -12,6 +12,7 @@ $isReviewActive = $currentController === "Review";
 $isEventsActive = $currentController === "Events";
 $isOtherActive = $currentController === "Tips" || $currentController === "Favourites";
 $isContactActive = $currentController === "Request";
+$isBlogsActive = $currentController === "Blog_post";
 
 ?>
 <head>
@@ -74,6 +75,7 @@ $isContactActive = $currentController === "Request";
                     <li class="<?= $isServicesActive ? 'active' : '' ?>">
                         <?= $this->Html->link('Services', ['controller' => 'Services', 'action' => 'index']) ?>
                     </li>
+                    <li  class="<?= $isBlogsActive ? 'active' : '' ?>"><?= $this->Html->link('Blog', ['controller' => 'Blog_post', 'action' => 'index']) ?></li>
                     <li class="<?= $isGalleryActive ? 'active' : '' ?>"><?= $this->Html->link('Gallery', ['controller' => 'GalleryPage', 'action' => 'index']) ?></li>
                     <li class="nav-link-testimonials"><?= $this->Html->link('Testimonials', ['controller' => 'Review', 'action' => 'index']) ?></li>
                     <li class="nav-link-events"><?= $this->Html->link('Speaking Engagements', ['controller' => 'Events', 'action' => 'index']) ?></li>

@@ -26,7 +26,7 @@
                 <?php foreach ($blogPost as $blogPost): ?>
                 <div class="blog-post">
                     <h2><?php echo $blogPost->title?></h2>
-                    <h4>Posted by Mary on <?php echo $blogPost->Date?> </h4>
+                    <h4>Posted by Mary on <?php echo $blogPost->Date->format('d-m-Y')?> </h4>
                     <p><?php echo $blogPost->Description?></p>
 
                     <a href='<?php echo $this->Url->build(array('action'=> 'View', $blogPost->blog_post_id))?>' class="btn btn-primary btn-lg">Read More <i class="fa fa-angle-right"></i></a>
