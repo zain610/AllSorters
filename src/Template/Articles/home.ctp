@@ -66,7 +66,7 @@
                             <?php echo $this->Html->link(
                                 '<h3 class="blog_Title">'. $blog->title.'</h3>',
                                 ['controller'=>'BlogPost','action'=>'view/'.$blog->blog_post_id],
-                                ['escape' => false]
+                                ['escape' => false],['style'=>"padding-bottom: 0px"]
                             )?>
                             <?php echo $this->Html->link(
                                 '<p>'. $truncate.'</p>',
