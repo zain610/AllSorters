@@ -82,6 +82,10 @@ p{
     width: 100%;
 }
 
+.hometruncatepadding {
+    padding-bottom: 0px !important;
+}
+
 /*!* tab *!*/
 /*.tab-vertical-top{*/
 /*    float:none;*/

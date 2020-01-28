@@ -34,39 +34,48 @@
 
             <div class="col-lg-6 col-md-12 gtco-news">
                 <h2 style="padding-top: 5px; color: #4d4d4d; font-weight: 300;font-size: 40px;">Recent Blogs </h2>
-                <p>
-                    <?php echo $this->Html->link(
-                        'More Blogs',
-                        ['controller'=>'BlogPost','action'=>'index'],
-                        [
-                            'escape' => false,
-                            'class' => 'btn btn-sm btn-special',
-                            'style' => 'position:absolute; 
-                                        right:0%; 
-                                        top:2%;'
-                        ]
-                    )?>
-                </p>
+<!---->
+<!--                    --><?php //echo $this->Html->link(
+//                        'More Blogs',
+//                        ['controller'=>'BlogPost','action'=>'index'],
+//                        [
+//                            'escape' => false,
+//                            'class' => 'btn btn-sm btn-special',
+//                            'style' => 'text-align: right',
+//                        ]
+//                    )?>
 
                 <br>
                 <ul>
                     <?php foreach ($blogs as $blog):?>
+                    <?php if ($blog->Published) { ?>
+
+                    <?php $truncate = $this->Text->truncate(
+                            $blog->Body,
+                            $length=200,
+                            array(
+                                'ellipsis' => '...',
+                                'exact' => false
+                            )
+                        );?>
                         <li>
-                            <span class="post-date"><?php echo $blog->Date?></span>
+                            <span class="post-date"><?php echo $blog->Date->format('d-m-Y')?></span>
+                            <div>
                             <?php echo $this->Html->link(
                                 '<h3 class="blog_Title">'. $blog->title.'</h3>',
                                 ['controller'=>'BlogPost','action'=>'view/'.$blog->blog_post_id],
-                                ['escape' => false]
+                                ['escape' => false,'style'=>"padding-bottom: 0px"]
                             )?>
+                            </div>
                             <?php echo $this->Html->link(
-                                '<p>'. $blog->Body.'</p>',
+                                '<p>'. $truncate.'</p>',
                                 ['controller'=>'BlogPost','action'=>'view/'.$blog->blog_post_id],
                                 ['escape' => false]
                             )?>
                         </li>
+                        <?php } ?>
                     <?php endforeach;?>
                 </ul>
-
             </div>
         </div>
     </div>
@@ -79,7 +88,13 @@
     <div class="gtco-container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 gtco-heading text-center">
-                <h2>About Us</h2>
+                <h2>
+                    <?php foreach ($webpages as $webpage): ?>
+                        <?php if($webpage->Webpage === "Home page") { ?>
+                            <?= $webpage->Heading ?>
+                        <?php }?>
+                    <?php endforeach;?>
+                </h2>
                 <?php foreach ($webpages as $webpage): ?>
                     <?php if($webpage->Webpage === "Home page") { ?>
                         <p><?= $webpage->Content ?></p>
@@ -94,8 +109,9 @@
                     <?php foreach ($gallery_images as $image): ?>
                         <div class="item">
                             <div class="gtco-item">
-                                <?php echo $this->Html->image($image->path, ['class'=>'img-responsive']) ?>
-
+                                <a href="#"><?php echo $this->Html->image($image->path, ['class'=>'img-responsive']) ?></a>
+                                <h2><a href="#">New York Arena</h2></a>
+                                <p class="role">New York</p>
                             </div>
                         </div>
                     <?php endforeach;?>
@@ -107,7 +123,7 @@
 </div>
 <!-- END Work -->
 
-<div class="gtco-section">
+<div class="gtco-section" style="padding-bottom: 100px">
     <div class="gtco-container">
         <div class="row">
             <div class="col-md-6 gtco-news">
