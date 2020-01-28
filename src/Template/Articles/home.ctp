@@ -89,7 +89,13 @@
     <div class="gtco-container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 gtco-heading text-center">
-                <h2>About Us</h2>
+                <h2>
+                    <?php foreach ($webpages as $webpage): ?>
+                        <?php if($webpage->Webpage === "Home page") { ?>
+                            <?= $webpage->Heading ?>
+                        <?php }?>
+                    <?php endforeach;?>
+                </h2>
                 <?php foreach ($webpages as $webpage): ?>
                     <?php if($webpage->Webpage === "Home page") { ?>
                         <p><?= $webpage->Content ?></p>
