@@ -41,8 +41,8 @@
                         [
                             'escape' => false,
                             'class' => 'btn btn-sm btn-special',
-                            'style' => 'position:absolute; 
-                                        right:0%; 
+                            'style' => 'position:absolute;
+                                        right:0%;
                                         top:2%;'
                         ]
                     )?>
