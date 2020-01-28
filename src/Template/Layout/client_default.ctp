@@ -27,6 +27,7 @@
 <?= $this->element('/Client/navbar'); ?>
 <?= $this->fetch('content') ?>
 <?= $this->element('/Client/footer'); ?>
+
 </body>
 
 <script type="text/javascript">
@@ -51,6 +52,7 @@
                 .css('display', 'none')
                 .removeClass('animated-fast fadeInUpMenu');
         });
+        $("#newsletterModal").modal();
 
     });
 
