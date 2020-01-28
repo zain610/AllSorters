@@ -9,17 +9,19 @@ use Cake\Validation\Validator;
 /**
  * About Model
  *
+ * @property |\Cake\ORM\Association\BelongsTo $Image
+ *
  * @method \App\Model\Entity\About get($primaryKey, $options = [])
  * @method \App\Model\Entity\About newEntity($data = null, array $options = [])
  * @method \App\Model\Entity\About[] newEntities(array $data, array $options = [])
  * @method \App\Model\Entity\About|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\About saveOrFail(\Cake\Datasource\EntityInterface $entity, $options = [])
  * @method \App\Model\Entity\About patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
  * @method \App\Model\Entity\About[] patchEntities($entities, array $data, array $options = [])
  * @method \App\Model\Entity\About findOrCreate($search, callable $callback = null, $options = [])
  */
 class AboutTable extends Table
 {
-
     /**
      * Initialize method
      *
@@ -33,6 +35,10 @@ class AboutTable extends Table
         $this->setTable('about');
         $this->setDisplayField('about_id');
         $this->setPrimaryKey('about_id');
+
+        $this->belongsTo('Image', [
+            'foreignKey' => 'image_id'
+        ]);
     }
 
     /**
@@ -45,18 +51,32 @@ class AboutTable extends Table
     {
         $validator
             ->integer('about_id')
-            ->allowEmpty('about_id', 'create');
+            ->allowEmptyString('about_id', 'create');
 
         $validator
             ->scalar('Title')
             ->maxLength('Title', 255)
-            ->allowEmpty('Title');
+            ->allowEmptyString('Title');
 
         $validator
             ->scalar('Content')
-            ->maxLength('Content', 255)
-            ->allowEmpty('Content');
+            ->requirePresence('Content', 'create')
+            ->allowEmptyString('Content', false);
 
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->existsIn(['image_id'], 'Image'));
+
+        return $rules;
     }
 }

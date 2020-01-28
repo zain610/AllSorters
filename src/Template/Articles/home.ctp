@@ -51,32 +51,22 @@
                 <br>
                 <ul>
                     <?php foreach ($blogs as $blog):?>
-                    <?php if ($blog->Published) { ?>
-
-                    <?php $truncate = $this->Text->truncate(
-                            $blog->Body,
-                            $length=200,
-                            array(
-                                'ellipsis' => '...',
-                                'exact' => false
-                            )
-                        );?>
                         <li>
-                            <span class="post-date"><?php echo $blog->Date->format('d-m-Y')?></span>
+                            <span class="post-date"><?php echo $blog->Date?></span>
                             <?php echo $this->Html->link(
                                 '<h3 class="blog_Title">'. $blog->title.'</h3>',
                                 ['controller'=>'BlogPost','action'=>'view/'.$blog->blog_post_id],
                                 ['escape' => false]
                             )?>
                             <?php echo $this->Html->link(
-                                '<p>'. $truncate.'</p>',
+                                '<p>'. $blog->Body.'</p>',
                                 ['controller'=>'BlogPost','action'=>'view/'.$blog->blog_post_id],
                                 ['escape' => false]
                             )?>
                         </li>
-                        <?php } ?>
                     <?php endforeach;?>
                 </ul>
+
             </div>
         </div>
     </div>
@@ -104,9 +94,8 @@
                     <?php foreach ($gallery_images as $image): ?>
                         <div class="item">
                             <div class="gtco-item">
-                                <a href="#"><?php echo $this->Html->image($image->path, ['class'=>'img-responsive']) ?></a>
-                                <h2><a href="#">New York Arena</h2></a>
-                                <p class="role">New York</p>
+                                <?php echo $this->Html->image($image->path, ['class'=>'img-responsive']) ?>
+
                             </div>
                         </div>
                     <?php endforeach;?>
