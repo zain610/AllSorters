@@ -1,8 +1,5 @@
-<?php
-/**
- * @var \App\View\AppView $this
- * @var \App\Model\Entity\BlogPost $blogPost
- */
+<?php use Cake\I18n\Time;
+
 ?>
 <div class="content table-responsive table-full-width">
     <div class="row">
@@ -40,6 +37,8 @@
                     <td><?php echo $comment['User_Name']?></td>
                     <td><?php echo $comment['User_Email']?></td>
                     <td><?php echo $comment['Comment_Details']?></td>
+                    <?php $now = Time::parse( $comment->created); ?>
+                    <td><?php echo $now->i18nFormat('dd-MM-yyyy');; ?></td>
                     <?php if($comment['showed']==0){ ?>
                         <td style="text-align: center"><?= $this->element('Admin/Buttons/publish', ['url' => ['action' => 'publishcomment',$comment['Post_Comment_id']]]); ?></td>
                     <?php }else{ ?>

@@ -30,6 +30,7 @@ class PostComment extends Entity
         'User_Email' => true,
         'Comment_Details' => true,
         'Post_id' => true,
-        'blog_post' => true
+        'blog_post' => true,
+        'created' => true
     ];
 }
