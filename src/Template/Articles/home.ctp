@@ -147,11 +147,14 @@
             <div class="col-md-6 col-md-push-1 gtco-testimonials">
                 <h2>Testimonials</h2>
                 <?php foreach ($reviews as $review):?>
+                <?php $char = strlen($review->Review_Details)?>
+                <?php if($char <= 250) {?>
                     <blockquote>
 
                         <p><?php echo $review->Review_Details?></p>
                         <p class="author"><cite><?php echo $review->Client_Name?>, <?php echo $review->Month_Year->format('d-m-Y')?></cite></p>
                     </blockquote>
+                    <?php } ?>
                 <?php endforeach;?>
                 <p><?php echo $this->Html->link('More Testimonials',['controller'=>'Review','action'=>'index'],
                         ['escape' => false, 'class' => 'btn btn-sm btn-special', 'style' => 'position:absolute;'])?>
