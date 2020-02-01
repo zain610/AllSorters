@@ -20,6 +20,8 @@ class FavouritesController extends AppController
         $this->loadModel("Webpages");
         $this->Auth->allow(['index', 'home']);
         $this->viewBuilder()->setLayout('client_default');
+        $this->loadModel('BlogPost');
+        $this->loadModel('Review');
     }
     public function isAuthorized($user)
     {
@@ -37,6 +39,13 @@ class FavouritesController extends AppController
         $favourites = $this->paginate($this->Favourites);
         $webpages = $this->Webpages->find('all');
         $this->set(compact('favourites','webpages'));
+        $reviews = $this->Review->find('all');
+        $this->paginate = ['limit'=>3];
+        $this->set('reviews', $this->paginate($reviews));
+
+        $blogs = $this->BlogPost->find('all')->order(['created' => 'DESC']);
+        $this->paginate = ['limit'=>2];
+        $this->set('blogs', $this->paginate($blogs));
 
     }
 
