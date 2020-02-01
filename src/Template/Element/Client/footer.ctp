@@ -133,7 +133,6 @@ $query = $footer->find();
                             <div class="form-check form-check-inline" style="display: contents">
                                 <div>
                                     <?= $this->element('Client/subscribe'); ?>
-
                                 </div>
                             </div>
 
