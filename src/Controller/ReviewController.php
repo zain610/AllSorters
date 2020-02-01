@@ -21,6 +21,8 @@ class ReviewController extends AppController
         $this->loadModel("Webpages");
 
         $this->viewBuilder()->setLayout('client_default');
+        $this->loadModel('BlogPost');
+
     }
 
     /**
@@ -39,6 +41,9 @@ class ReviewController extends AppController
 
         $webpages = $this->Webpages->find('all');
         $this->set(compact('review','webpages'));
+        $blogs = $this->BlogPost->find('all')->order(['created' => 'DESC']);
+        $this->paginate = ['limit'=>2];
+        $this->set('blogs', $this->paginate($blogs));
     }
 
     /**
