@@ -38,27 +38,25 @@
 </script>
 <div class="container-fluid">
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newsletterModal" data-whatever="@mdo">Open modal for @mdo</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newsletterModal" data-whatever="@mdo">Add Subscriber</button>
 
     <!-- Modal -->
-    <div class="modal fade" id="newsletterModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal fade" data-backdrop="false" id="newsletterModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="width: 100%;">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Add a Subscriber</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="exampleModalLabel">New message</h4>
+
                 </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="recipient-name" class="control-label">Recipient:</label>
-                            <input type="text" class="form-control" id="recipient-name">
+                <div style="display: flex">
+                    <div class="form-check form-check-inline" style="margin: 1rem">
+                        <div style="border-radius: 15px; margin-left: auto; padding: 2rem; border: 1.5px solid;">
+                            <?= $this->element('Client/subscribe'); ?>
+
                         </div>
-                        <div class="form-group">
-                            <label for="message-text" class="control-label">Message:</label>
-                            <textarea class="form-control" id="message-text"></textarea>
-                        </div>
-                    </form>
+                    </div>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -68,16 +66,7 @@
         </div>
     </div>
 
-    <div style="display: flex">
-        <div class="form-check form-check-inline" style="margin: 1rem">
-            <div style="border-radius: 15px; margin-left: auto; padding: 2rem; border: 5px solid;">
-                <h4>Add a subscriber</h4>
-                <?= $this->element('Client/subscribe'); ?>
 
-            </div>
-        </div>
-
-    </div>
     <?= $this->Form->create(null, ['url' => ['controller'=>'Subscriptions', 'action' => 'emailNewsletter'], 'type' => 'post']); ?>
     <div class="" style="">
         <h4>Newsletter</h4>
