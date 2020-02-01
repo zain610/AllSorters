@@ -10,7 +10,6 @@ use Cake\TestSuite\TestCase;
  */
 class AboutTableTest extends TestCase
 {
-
     /**
      * Test subject
      *
@@ -35,8 +34,8 @@ class AboutTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('About') ? [] : ['className' => AboutTable::class];
-        $this->About = TableRegistry::get('About', $config);
+        $config = TableRegistry::getTableLocator()->exists('About') ? [] : ['className' => AboutTable::class];
+        $this->About = TableRegistry::getTableLocator()->get('About', $config);
     }
 
     /**
