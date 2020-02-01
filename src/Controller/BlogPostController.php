@@ -6,7 +6,7 @@ use Cake\Event\Event;
 use Cake\Log\Log;
 use Cake\Mailer\Email;
 use Cake\Routing\Router;
-
+use Cake\I18n\Time;
 /**
  * BlogPost Controller
  *
@@ -88,6 +88,7 @@ class BlogPostController extends AppController
                 $newComment->User_Email = $this->request->getData()['User_Email'];
                 $newComment->Comment_Details = $this->request->getData()['Comment_Details'];
                 $newComment->showed = 0;
+                $newComment->created= time();
                 $newComment->Blog_post_id = $blogPost->blog_post_id;
                 $sendNotificationEvent = new Event('User.postComment', $newComment);
                 $this->getEventManager()->dispatch($sendNotificationEvent);

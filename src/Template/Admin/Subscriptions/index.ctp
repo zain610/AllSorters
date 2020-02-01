@@ -10,7 +10,12 @@
     function toggle(source) {
         checkboxes = document.getElementsByClassName('form-check-input');
         for(var i=0, n=checkboxes.length;i<n;i++) {
-            checkboxes[i].checked = source.checked;
+            let isSubscriber = checkboxes[i].getAttribute('name').startsWith("sid");
+            if(isSubscriber) {
+                console.log(checkboxes[i], isSubscriber);
+                checkboxes[i].checked = source.checked;
+            }
+
         }
     }
     function deleteSubscriber(something) {
@@ -32,8 +37,48 @@
 
 </script>
 <div class="container-fluid">
-    <?= $this->Form->create(null, ['url' => ['controller'=>'Subscriptions', 'action' => 'emailNewsletter'], 'type' => 'post']); ?>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newsletterModal" data-whatever="@mdo">Open modal for @mdo</button>
 
+    <!-- Modal -->
+    <div class="modal fade" id="newsletterModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">New message</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">Recipient:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="control-label">Message:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: flex">
+        <div class="form-check form-check-inline" style="margin: 1rem">
+            <div style="border-radius: 15px; margin-left: auto; padding: 2rem; border: 5px solid;">
+                <h4>Add a subscriber</h4>
+                <?= $this->element('Client/subscribe'); ?>
+
+            </div>
+        </div>
+
+    </div>
+    <?= $this->Form->create(null, ['url' => ['controller'=>'Subscriptions', 'action' => 'emailNewsletter'], 'type' => 'post']); ?>
     <div class="" style="">
         <h4>Newsletter</h4>
         <?= $this->Form->button('Submit', ['class'=>'btn btn-primary']); ?>
@@ -41,24 +86,19 @@
     </div>
     <hr style="border-top: 2px solid darkslategray">
     <div class="" style="">
-        <div style="display: flex">
-            <div class="form-check form-check-inline" style="width: 100%; display: inline-flex; margin: 1rem">
-                <h4 style="width: 60%;margin-right: 1rem; margin-top: auto">Select Users to send email to</h4>
-<!--                <div style="float: right; border-radius: 15px; margin-left: auto; padding: 0 1rem; display: flex">-->
-<!--                    <h4>Add a subscriber</h4>-->
-<!--                    --><?//= $this->element('Client/subscribe'); ?>
-<!---->
-<!--                </div>-->
-            </div>
-
-        </div>
         <div class="container">
+            <h4 style="width: 60%;margin-right: 1rem; margin-top: auto">Select Users to send email to</h4>
+            <div class="form-check form-check-inline">
+                <input onclick="toggle(this)" class="" type="checkbox" id="selectAll" value="selectAll">
+                <label class="form-check-label" for="selectAll">Select all</label>
+            </div>
 
             <div class="row">
 
 
                 <?php foreach ($subscriptions as $key => $subscription): ?>
                     <div id="div-subscriber-checkbox" class="form-check form-check-inline col-sm-3">
+
                         <?= $this->Form->checkbox('sid'.$subscription->id, ['id'=>$this->Number->format($subscription->id), 'class'=> 'form-check-input']); ?>
                         <label id="subscriber" class="form-check-label" for="<?=$this->Number->format($subscription->id)?>"><?= h($subscription->email_address) ?></label>
 
