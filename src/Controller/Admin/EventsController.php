@@ -32,7 +32,7 @@ class EventsController extends AppController
         $this->getEventManager()->dispatch($event);
 
         $publishedEvents = $this->Paginator->paginate(
-            $this->Events->find('all')->where(['Events.Published' => 1])->contain([])
+            $this->Events->find('all')->where(['Events.Published' => 1])->contain([])->orderDesc('Date')
         );
         $this->set(compact('publishedEvents'));
         $this->set('data', $this->request->getSession()->read('formdata'));
@@ -194,7 +194,7 @@ class EventsController extends AppController
     public function archiveIndex()
     {
         $this->layout ='admin';
-        $archivedEvents = TableRegistry::get('Events')->find('all')->where(['Events.Archived' => 1])->contain([]);
+        $archivedEvents = TableRegistry::get('Events')->find('all')->where(['Events.Archived' => 1])->contain([])->orderDesc('Date');
         $this->set('archivedEvents', $this->paginate($archivedEvents));
     }
 }
