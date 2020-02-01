@@ -4,6 +4,11 @@
  * @var \App\Model\Entity\Request[]|\Cake\Collection\CollectionInterface $request
  */
 ?>
+<style>
+    .table-dark{
+        background-color: #c6c8ca !important;
+    }
+</style>
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', () => {
         //parse the request object to be compatible with javascript

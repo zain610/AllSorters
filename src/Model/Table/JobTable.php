@@ -64,11 +64,13 @@ class JobTable extends Table
 
         $validator
             ->date('duration')
-            ->allowEmptyDate('duration');
+            ->requirePresence('duration', 'create')
+            ->allowEmptyDate('duration', false);
 
         $validator
             ->date('Commence_Date')
-            ->allowEmptyDate('Commence_Date');
+            ->requirePresence('Commence_Date', 'create')
+            ->allowEmptyDate('Commence_Date', false);
 
         $validator
             ->scalar('job_detail')

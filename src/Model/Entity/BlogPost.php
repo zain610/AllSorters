@@ -31,7 +31,6 @@ class BlogPost extends Entity
      */
     protected $_accessible = [
         'title' => true,
-        'Description' => true,
         'Body' => true,
         'created' => true,
         'modified' => true,

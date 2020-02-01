@@ -41,7 +41,7 @@ class ArticlesController extends AppController
         $reviews = $this->Review->find('all');
         $this->set('reviews', $this->paginate($reviews));
 
-        $blogs = $this->BlogPost->find('all')->order(['created' => 'DESC']);;
+        $blogs = $this->BlogPost->find('all')->order(['created' => 'DESC']);
         $this->paginate = ['limit'=>2];
         $this->set('blogs', $this->paginate($blogs));
 

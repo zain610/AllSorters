@@ -20,6 +20,7 @@
         </thead>
         <tbody>
         <?php foreach ($archivedJobs as $job): ?>
+
         <?php if($job->job_status){ ?>
             <tr>
                 <td><?= $this->Number->format($job->job_id) ?></td>

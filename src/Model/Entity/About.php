@@ -7,12 +7,12 @@ use Cake\ORM\Entity;
  * About Entity
  *
  * @property int $about_id
- * @property string $Title
+ * @property string|null $Title
  * @property string $Content
+ * @property int|null $image_id
  */
 class About extends Entity
 {
-
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
      *
@@ -24,6 +24,7 @@ class About extends Entity
      */
     protected $_accessible = [
         'Title' => true,
-        'Content' => true
+        'Content' => true,
+        'image_id' => true
     ];
 }
