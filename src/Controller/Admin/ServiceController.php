@@ -160,7 +160,6 @@ class ServiceController extends AppController
         $services = $this->Service->find()->where([
             'OR' => [
                 'Service_Title LIKE' => $queryTermsWithWildCard,
-                'Service_Description LIKE' => $queryTermsWithWildCard,
                 'Service_Detail LIKE' => $queryTermsWithWildCard
             ]
         ]);
@@ -203,7 +202,6 @@ class ServiceController extends AppController
         foreach($queryTermsArray as $term){
             $queryTermConditions[] = ['OR' => [
                 'Service.Service_Title LIKE' => "%{$term}%",
-                'Service.Service_Description LIKE' => "%{$term}%",
                 'Service.Service_Detail LIKE' => "%{$term}%",
             ]];
         }
