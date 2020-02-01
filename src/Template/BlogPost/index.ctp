@@ -37,7 +37,7 @@
                     <h4>Posted by Mary on <?php echo $blogPost->Date->format('d-m-Y')?> </h4>
                     <p><?php echo $truncate?></p>
 
-                    <a href='<?php echo $this->Url->build(array('action'=> 'View', $blogPost->blog_post_id))?>' class="btn btn-primary btn-lg">Read More <i class="fa fa-angle-right"></i></a>
+                    <a href='<?php echo $this->Url->build(array('action'=> 'View', $blogPost->blog_post_id))?>' class="btn btn-special btn-lg">Read More <i class="fa fa-angle-right"></i></a>
                 </div>
                 <?php endforeach; ?>
             <br />

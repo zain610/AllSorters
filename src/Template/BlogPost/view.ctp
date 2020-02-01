@@ -85,7 +85,7 @@
             <p style="color: red;margin: 0em 0;"><?php echo $commentError; ?></p>
         <?php } ?>
         <br>
-        <?= $this->Form->button('Submit Comment',['class' => 'btn btn-primary']) ?>
+        <?= $this->Form->button('Submit Comment',['class' => 'btn btn-special']) ?>
         <?= $this->Form->end() ?>
 
 

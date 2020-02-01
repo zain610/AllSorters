@@ -9,9 +9,9 @@ use Cake\ORM\Entity;
  * @property int $job_id
  * @property string $price
  * @property int $job_status
- * @property \Cake\I18n\FrozenDate|null $duration
+ * @property \Cake\I18n\FrozenDate $duration
  * @property int $service_id
- * @property \Cake\I18n\FrozenDate|null $Commence_Date
+ * @property \Cake\I18n\FrozenDate $Commence_Date
  * @property string|null $job_detail
  *
  * @property \App\Model\Entity\Service $service
