@@ -26,7 +26,7 @@ $currentController = $this->request->getParam('controller');
                 <div class="col-md-12 col-lg-8 mb-5">
                     <?php foreach ($blogs as $blogPost): ?>
                         <?php $truncate = $this->Text->truncate(
-                            $blog->Body,
+                            $blogPost->Body,
                             $length=200,
                             array(
                                 'ellipsis' => '...',

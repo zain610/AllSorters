@@ -152,7 +152,6 @@ class ServicesController extends AppController
         foreach($queryTermsArray as $term){
             $queryTermConditions[] = ['OR' => [
                 'Service.Service_Title LIKE' => "%{$term}%",
-                'Service.Service_Description LIKE' => "%{$term}%",
                 'Service.Service_Detail LIKE' => "%{$term}%",
             ]];
         }

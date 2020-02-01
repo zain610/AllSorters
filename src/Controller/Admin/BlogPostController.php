@@ -313,7 +313,6 @@ class BlogPostController extends AppController
         $blogs = $this->BlogPost->find()->where([
             'OR' => [
                 'title LIKE' => $queryTermsWithWildCard,
-                'Description LIKE' => $queryTermsWithWildCard,
                 'Body LIKE' => $queryTermsWithWildCard
             ]
         ]);
@@ -356,7 +355,6 @@ class BlogPostController extends AppController
             $queryTermConditions[] = ['OR' => [
                 'BlogPost.title LIKE' => "%{$term}%",
                 'BlogPost.Body LIKE' => "%{$term}%",
-                'BlogPost.Description LIKE' => "%{$term}%",
             ]];
         }
 

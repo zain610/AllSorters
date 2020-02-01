@@ -140,7 +140,6 @@ class BlogPostController extends AppController
             $queryTermConditions[] = ['OR' => [
                 'BlogPost.title LIKE' => "%{$term}%",
                 'BlogPost.Body LIKE' => "%{$term}%",
-                'BlogPost.Description LIKE' => "%{$term}%",
             ]];
         }
 
