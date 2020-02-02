@@ -38,6 +38,7 @@ class Image extends Entity
         'Shown' => true,
         'blog_post' => true,
         'gallery_page' => true,
-        'services' => true
+        'services' => true,
+        'gallery_title' => true
     ];
 }

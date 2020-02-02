@@ -21,7 +21,7 @@
                     <td><?php echo $this->Html->image($img->path, ['alt' => 'CakePHP', 'width' => '100px']); ?></td>
                     <td><?= h($img->name) ?></td>
                     <td class="actions">
-                        <?= $this->element('Admin/Buttons/view', ['url' => ['action' => 'view', $img->Image_id]]) ?>
+                        <?= $this->element('Admin/Buttons/edit', ['url' => ['action' => 'edit', $img->Image_id]]) ?>
                         <?php if (!($img->Shown)): ?>
                         <?= $this->element('Admin/Buttons/display', ['url' => ['action' => 'ShowOnGallery', $img->Image_id]]) ?>
                         <?php else: ?>

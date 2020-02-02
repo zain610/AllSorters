@@ -123,8 +123,9 @@ class ImageController extends AppController
      */
     public function edit($id = null)
     {
+        $this->layout='Admin';
         $image = $this->Image->get($id, [
-            'contain' => ['BlogPost', 'GalleryPage', 'Service']
+            'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $image = $this->Image->patchEntity($image, $this->request->getData());
@@ -135,10 +136,8 @@ class ImageController extends AppController
             }
             $this->Flash->error(__('The image could not be saved. Please, try again.'));
         }
-        $blogPost = $this->Image->BlogPost->find('list', ['limit' => 200]);
-        $galleryPage = $this->Image->GalleryPage->find('list', ['limit' => 200]);
-        $service = $this->Image->Service->find('list', ['limit' => 200]);
-        $this->set(compact('image', 'blogPost', 'galleryPage', 'service'));
+
+        $this->set(compact('image'));
     }
 
     /**

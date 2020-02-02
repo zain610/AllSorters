@@ -42,7 +42,7 @@
                 <?php if(!empty($image)):?>
                     <?php foreach ($image as $img):?>
                 <div class="col-sm-6 col-md-4">
-                        <a class="lightbox" href="img/<?php echo $img->path ?>">
+                        <a class="lightbox" href="img/<?php echo $img->path ?>" data-caption="<?php echo (is_null($img->gallery_title) ? ('placeholder') :  ($img->gallery_title) );?>">
                             <?php echo $this->Html->image($img->path, ['alt' => 'CakePHP',"class"=>"cropped"]); ?>
                         </a>
                 </div>

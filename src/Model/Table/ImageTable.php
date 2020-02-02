@@ -90,6 +90,11 @@ class ImageTable extends Table
             ->boolean('Shown')
             ->allowEmptyString('Shown');
 
+        $validator
+            ->scalar('gallery_title')
+            ->requirePresence('Body', 'create')
+            ->allowEmpty('Body',false,false);
+
         return $validator;
     }
 
