@@ -71,7 +71,7 @@
         margin-bottom:30px;
     }
     .list{
-        margin-left:120px;
+        /*margin-left:120px;*/
         font-size: 15px;
     }
 

@@ -25,7 +25,9 @@
 <?php endforeach ?>
             <div id="searchBarNavBar" class="col-lg-12 col-md-12">
                 <?= $this->element('Client/Buttons/search'); ?>
+                <hr>
             </div>
+
             <?php foreach ($service as $service):?>
                 <div class="col-lg-4 col-sm-6 minist-right">
 <!--                    --><?php //debug($service->image);?>

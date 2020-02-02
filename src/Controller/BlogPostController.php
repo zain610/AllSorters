@@ -45,7 +45,7 @@ class BlogPostController extends AppController
             $this->BlogPost->find('all')
             ->order('Date DESC')
         );
-        $this->viewBuilder()->setLayout('client');
+        $this->viewBuilder()->setLayout('client_default');
 
         //$this->set(compact('blogPost'));
         //$blogPost = $this->paginate($this->BlogPost);
