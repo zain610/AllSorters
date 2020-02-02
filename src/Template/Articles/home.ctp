@@ -33,8 +33,9 @@
 
 
             <div class="col-lg-6 col-md-12 gtco-news">
+                <a href="./blog-post/">
                 <h2 style="padding-top: 5px; color: #4d4d4d; font-weight: 300;font-size: 40px;margin-bottom: 0px">Recent Blogs </h2>
-
+                </a>
                 <br>
                 <ul>
                     <?php foreach ($blogs as $blog):?>
