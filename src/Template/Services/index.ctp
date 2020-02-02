@@ -29,25 +29,25 @@
             </div>
 
             <?php foreach ($service as $service):?>
-                <div class="col-lg-4 col-sm-6 minist-right">
+                <div class="col-lg-4 col-sm-6 minist-right" style="margin-bottom: 20px">
 <!--                    --><?php //debug($service->image);?>
                     <?php if (!empty($service->image)){
                         foreach ($service->image as $image):
-                            echo $this->Html->image($image->path, ['class' => 'img-responsive','id'=>'serviceimg', 'alt' => 'Service image']);
+                            echo $this->Html->image($image->path, ['class' => 'img-responsive cropped','id'=>'serviceimg', 'alt' => 'Service image']);
                             break;
                         endforeach;
                     }
                     else
                     {    ?>
-                        <img src="img/bg.jpg" class="img-responsive" id='serviceimg' alt="Services image">
+                        <img src="img/bg.jpg" class="img-responsive cropped" id='serviceimg' alt="Services image">
                     <?php }?>
 
 
-                    <h4><?php echo $service->Service_Title?></h4>
+                    <h4 style="height: 50px; margin-top: 20px"><?php echo $service->Service_Title?></h4>
 
                     <a href='<?php echo $this->Url->build(array('action'=> 'View', $service->Service_id))?>' class="btn btn-special btn-lg">Read More <i class="fa fa-angle-right"></i></a>
 
-                    <br />  <br />  <br />
+                    <hr>
                 </div>
             <?php endforeach;?>
             <div class="clearfix"> </div>
@@ -61,7 +61,7 @@
 </div>
 </body>
 <!-- END Work -->
-
+<hr>
 <div class="gtco-section" style="padding-bottom: 100px">
     <div class="gtco-container">
         <div class="row">

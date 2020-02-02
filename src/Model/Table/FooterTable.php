@@ -81,10 +81,10 @@ class FooterTable extends Table
             ->requirePresence('Google', 'create')
             ->allowEmptyString('Google', false);
         $validator
-            ->scalar('Tumblr')
-            ->maxLength('Tumblr', 255)
-            ->requirePresence('Tumblr', 'create')
-            ->allowEmptyString('Tumblr', false);
+            ->scalar('Linkedin')
+            ->maxLength('Linkedin', 255)
+            ->requirePresence('Linkedin', 'create')
+            ->allowEmptyString('Linkedin', false);
 
         return $validator;
     }

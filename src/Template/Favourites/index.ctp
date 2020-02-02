@@ -98,7 +98,7 @@
 
 </body>
 <!-- END Work -->
-
+<hr>
 <div class="gtco-section" style="padding-bottom: 100px">
     <div class="gtco-container">
         <div class="row">

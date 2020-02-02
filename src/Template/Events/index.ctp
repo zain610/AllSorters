@@ -119,6 +119,7 @@
                 <?php endforeach ?>
             </div>
             <div>
+                <hr>
             <h2>Upcoming Speaking Engagement</h2>
 
             <?php foreach ($events as $event): ?>
@@ -160,6 +161,7 @@
         <?php } ?>
         <?php endforeach ?>
         </div>
+    <hr>
 <div style="padding-top: 20px">
         <h2>Previous Speaking Engagements</h2>
 
@@ -192,7 +194,7 @@
 
 
 <!-- END Work -->
-
+<hr>
 <div class="gtco-section" style="padding-bottom: 100px">
     <div class="gtco-container">
         <div class="row">

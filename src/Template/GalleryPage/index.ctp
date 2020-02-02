@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Freebie: 4 Bootstrap Gallery Templates</title>
+    <title>Gallery</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
@@ -35,7 +35,7 @@
     <?php } ?>
 <?php endforeach ?>
 
-<div class="container gallery-container">
+<div class="container gallery-container" style="margin-bottom: 30px">
 
     <div class="tz-gallery">
         <div class="row">
@@ -43,13 +43,13 @@
                     <?php foreach ($image as $img):?>
                 <div class="col-sm-6 col-md-4">
                         <a class="lightbox" href="img/<?php echo $img->path ?>">
-                            <?php echo $this->Html->image($img->path, ['alt' => 'CakePHP']); ?>
+                            <?php echo $this->Html->image($img->path, ['alt' => 'CakePHP',"class"=>"cropped"]); ?>
                         </a>
                 </div>
                     <?php endforeach;?>
                 <?php else:?>
                     <div class="col-sm-6 col-md-4">
-                        <a class="lightbox" href="img/6.jpg ?>">
+                        <a class="lightbox" href="img/6.jpg?>">
                             <img src="img/6.jpg" alt="">
                         </a>
                     </div>
@@ -63,14 +63,8 @@
 
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
-<script>
-    baguetteBox.run('.tz-gallery');
-</script>
-</body>
-</html>
 <!-- END Work -->
-
+<hr>
 <div class="gtco-section" style="padding-bottom: 100px">
     <div class="gtco-container">
         <div class="row">
@@ -130,3 +124,10 @@
     </div>
 </div>
 <!-- END  -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+<script>
+    baguetteBox.run('.tz-gallery');
+</script>
+</body>
+</html>

@@ -16,10 +16,9 @@
                         <h3> <?php echo $heading ?> </h3>
             <?php } ?>
         <?php endforeach ?>
-        <div id="searchBarNavBar" class="col-lg-12 col-md-12">
+
             <?= $this->element('Client/Buttons/search'); ?>
         <hr>
-        </div>
             <div class="col-md-12 col-lg-8 mb-5">
                 <?php foreach ($blogPost as $blogPost): ?>
                     <?php $truncate = $this->Text->truncate(

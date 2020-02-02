@@ -156,7 +156,7 @@ class BlogPostController extends AppController
         $this->set('query', $queryTermsString);
 
 //        $this->viewBuilder()->setLayout('client');
-        $this->layout ='client';
+        $this->layout ='client_default';
         $this->viewBuilder()->setTemplate('search');
 
     }

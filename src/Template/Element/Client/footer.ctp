@@ -1,11 +1,4 @@
 <?php
-//use Cake\ORM\TableRegistry;
-//
-//$footer = TableRegistry::getTableLocator()->get('Footer');
-//$query = $footer->find();
-//?>
-
-<?php
 use Cake\ORM\TableRegistry;
 
 $footer = TableRegistry::getTableLocator()->get('Footer');
@@ -56,6 +49,7 @@ $query = $footer->find();
     <![endif]-->
 
 </head>
+
 <div class="gtco-section gto-features">
     <div class="gtco-container">
         <div class="row">
@@ -93,14 +87,15 @@ $query = $footer->find();
     </div>
 </div>
 
+<?php foreach ($query as $footer): ?>
 <footer id="gtco-footer" class="gtco-section" role="contentinfo">
     <div class="gtco-container">
         <div class="row row-pb-md">
             <div class="col-md-4 gtco-widget gtco-footer-paragraph" style="color: #b9b9b9">
                 <h3>Contact</h3>
-                <p><b>Phone: </b>+61 1234567890</p>
-                <p><b>Email: </b>Mary@allsorters.com</p>
-                <p><b>Address: </b>Allsorters, PO Box 1043, Greythorn, Vic, 3104</p>
+                <p><b>Phone: </b><?php echo $footer->Phone; ?></p>
+                <p><b>Email: </b><?php echo $footer->Email; ?></p>
+                <p><b>Address: </b><?php echo $footer->Address; ?></p>
             </div>
             <div class="col-md-4 footer_a">
                 <div class="row">
@@ -117,9 +112,9 @@ $query = $footer->find();
                     <div class="col-md-6 col-sm-2 gtco-footer-link">
                         <h3>Follow Us</h3>
                         <ul class="gtco-list-link">
-                            <li><a href="#">Facebook</a></li>
-                            <li><a href="#">Google+</a></li>
-                            <li><a href="#">Linkedin</a></li>
+                            <li><a href="<?php echo $footer->Facebook; ?>">Facebook</a></li>
+                            <li><a href="<?php echo $footer->Google; ?>">Google+</a></li>
+                            <li><a href="<?php echo $footer->Tumblr; ?>">Linkedin</a></li>
                         </ul>
                     </div>
                 </div>
@@ -150,7 +145,7 @@ $query = $footer->find();
     </div>
 </footer>
 <!-- END footer -->
-
+<?php endforeach; ?>
 
 
 <div class="gototop js-top">

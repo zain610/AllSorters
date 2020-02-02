@@ -20,7 +20,7 @@
                             <h4>Twitter: </h4><?=$footer->Twitter?>
                             <h4>Facebook: </h4><?=$footer->Facebook?>
                             <h4>Google: </h4><?=$footer->Google?>
-                            <h4>Tumblr: </h4><?=$footer->Tumblr?>
+                            <h4>Linkedin: </h4><?=$footer->Linkedin?>
                         </div>
                     </div>
                 </div>
