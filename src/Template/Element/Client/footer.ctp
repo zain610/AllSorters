@@ -126,17 +126,13 @@ $query = $footer->find();
             </div>
             <div class="col-md-4 gtco-footer-subscribe">
                 <form class="form-inline">
-                    <div class="form-group gtco-footer-link">
-
-                        <div class="col-md-12">
-                            <h3>Subscribe Newsletter</h3>
-                            <div class="form-check form-check-inline" style="display: contents">
-                                <div>
-                                    <?= $this->element('Client/subscribe'); ?>
-                                </div>
-                            </div>
-
+                    <div class="form-group gtco-footer-link" style="padding-left: 0px">
+                        <h3>Subscribe Newsletter</h3>
+                        <div class="col-md-6" style="padding-left: 0px">
+                            <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                            <?= $this->element('Client/subscribe'); ?>
                         </div>
+
                     </div>
 
                 </form>

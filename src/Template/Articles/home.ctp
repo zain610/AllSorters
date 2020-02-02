@@ -33,17 +33,7 @@
 
 
             <div class="col-lg-6 col-md-12 gtco-news">
-                <h2 style="padding-top: 5px; color: #4d4d4d; font-weight: 300;font-size: 40px;">Recent Blogs </h2>
-<!---->
-<!--                    --><?php //echo $this->Html->link(
-//                        'More Blogs',
-//                        ['controller'=>'BlogPost','action'=>'index'],
-//                        [
-//                            'escape' => false,
-//                            'class' => 'btn btn-sm btn-special',
-//                            'style' => 'text-align: right',
-//                        ]
-//                    )?>
+                <h2 style="padding-top: 5px; color: #4d4d4d; font-weight: 300;font-size: 40px;margin-bottom: 0px">Recent Blogs </h2>
 
                 <br>
                 <ul>
@@ -64,13 +54,13 @@
                             <?php echo $this->Html->link(
                                 '<h3 class="blog_Title">'. $blog->title.'</h3>',
                                 ['controller'=>'BlogPost','action'=>'view/'.$blog->blog_post_id],
-                                ['escape' => false,'style'=>"padding-bottom: 0px"]
+                                ['escape' => false,'style'=>"padding-bottom: 0px; margin-bottom: 0px"]
                             )?>
                             </div>
                             <?php echo $this->Html->link(
                                 '<p>'. $truncate.'</p>',
                                 ['controller'=>'BlogPost','action'=>'view/'.$blog->blog_post_id],
-                                ['escape' => false]
+                                ['escape' => false,'style'=>"padding-bottom: 0px; margin-bottom: 0px"]
                             )?>
                         </li>
                         <?php } ?>
@@ -109,7 +99,7 @@
                     <?php foreach ($gallery_images as $image): ?>
                         <div class="item">
                             <div class="gtco-item">
-                                <a href="#"><?php echo $this->Html->image($image->path, ['class'=>'img-responsive']) ?></a>
+                                <a href="#"><?php echo $this->Html->image($image->path, ['class'=>'img-responsive cropped']) ?></a>
                                 <h2><a href="#">New York Arena</h2></a>
                                 <p class="role">New York</p>
                             </div>
