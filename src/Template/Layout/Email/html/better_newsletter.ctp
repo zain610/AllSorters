@@ -12,10 +12,13 @@
         body {
             margin: 0;
             padding: 0;
+            text-align: -webkit-center;
+            background-color: #8d8e90;
         }
         table {
             border-collapse: collapse;
             table-layout: fixed;
+            border: 5px solid black;
         }
         * {
             line-height: inherit;
@@ -433,9 +436,9 @@
 <body class="mso">
 <![endif]-->
 <!--[if !mso]><!-->
-<body class="no-padding" style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%;">
+<body class="no-padding" style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%; text-align: -webkit-center; background-color: #8d8e90;" bgcolor="#8d8e90">
 <!--<![endif]-->
-<table class="wrapper" style="border-collapse: collapse;table-layout: fixed;min-width: 320px;width: 100%;background-color: #fff;" cellpadding="0" cellspacing="0" role="presentation"><tbody><tr><td>
+<table class="wrapper" style="border-collapse: collapse;table-layout: fixed;min-width: 320px;width: 80%;background-color: #fff;" align="center" cellpadding="0" cellspacing="0" role="presentation"><tbody><tr><td>
             <div role="banner">
                 <div class="preheader" style="Margin: 0 auto;max-width: 560px;min-width: 280px; width: 280px;width: calc(28000% - 167440px);">
                     <div style="border-collapse: collapse;display: table;width: 100%;">
@@ -492,53 +495,51 @@
                 <div style="background-color: #fff;">
                     <div class="layout two-col stack" style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
                         <div class="layout__inner" style="border-collapse: collapse;display: table;width: 100%;">
-                            <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" role="presentation"><tr class="layout-full-width" style="background-color: #fff;"><td class="layout__edges">&nbsp;</td><td style="width: 300px" valign="top" class="w260"><![endif]-->
-                            <?php foreach($blogs as $blog): ?>
+                            <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" role="presentation"><tr class="layout-full-width" style="background-color: #fff;"><td class="layout__edges">&nbsp;</td><![endif]-->
+
                             <div class="column" style="text-align: left;color: #8e959c;font-size: 14px;line-height: 21px;font-family: sans-serif;max-width: 320px;min-width: 300px; width: 320px;width: calc(12300px - 2000%);Float: left;">
 
-                                <div style="Margin-left: 20px;Margin-right: 20px;">
-                                    <div style="mso-line-height-rule: exactly;line-height: 25px;font-size: 1px;">&nbsp;</div>
-                                </div>
 
-                                <div style="Margin-left: 20px;Margin-right: 20px;">
-                                    <div style="mso-line-height-rule: exactly;mso-text-raise: 4px;">
-                                        <h3 style="Margin-top: 0;Margin-bottom: 12px;font-style: normal;font-weight: normal;color: #281557;font-size: 18px;line-height: 26px;font-family: Avenir,sans-serif;"><strong><?= $blog->title ?></strong></h3>
+                                <?php foreach($blogs as $blog): ?>
+                                    <div style="Margin-left: 20px;Margin-right: 20px;">
+                                        <div style="mso-line-height-rule: exactly;line-height: 25px;font-size: 1px;">&nbsp;</div>
                                     </div>
-                                </div>
-                                <?php $truncate = $this->Text->truncate(
-                                    $blog->Body,
-                                    $length=100,
-                                    array(
-                                        'ellipsis' => '...',
-                                        'exact' => false
-                                    )
-                                );?>
-                                <div style="Margin-left: 20px;Margin-right: 20px;">
-                                    <div style="mso-line-height-rule: exactly;mso-text-raise: 4px;">
-                                        <p style="Margin-top: 0;Margin-bottom: 20px;"><?= $truncate ?></p>
+                                    <div style="Margin-left: 20px;Margin-right: 20px;">
+                                        <div style="mso-line-height-rule: exactly;mso-text-raise: 4px;">
+                                            <h3 style="Margin-top: 0;Margin-bottom: 12px;font-style: normal;font-weight: normal;color: #281557;font-size: 18px;line-height: 26px;font-family: Avenir,sans-serif;"><strong><?= $blog->title ?></strong></h3>
+                                        </div>
                                     </div>
-                                </div>
+                                    <?php $truncate = $this->Text->truncate(
+                                        $blog->Body,
+                                        $length=100,
+                                        array(
+                                            'ellipsis' => '...',
+                                            'exact' => false
+                                        )
+                                    );
+                                    ?>
+                                    <div style="Margin-left: 20px;Margin-right: 20px;">
+                                        <div style="mso-line-height-rule: exactly;mso-text-raise: 4px;">
+                                            <p style="Margin-top: 0;Margin-bottom: 20px;"><?= $blog->Body?></p>
+                                        </div>
+                                    </div>
 
-                                <div style="Margin-left: 20px;Margin-right: 20px;">
-                                    <div class="btn btn--flat btn--medium" style="Margin-bottom: 20px;text-align: left;">
-                                        <![if !mso]><a style="border-radius: 4px;display: inline-block;font-size: 12px;font-weight: bold;line-height: 22px;padding: 10px 20px;text-align: center;text-decoration: none !important;transition: opacity 0.1s ease-in;color: #fff !important;background-color: #394fd1;font-family: Avenir, sans-serif;" href='<?php echo $this->Url->build(array('action'=> 'View', $blog->blog_post_id))?>'>Read Now</a><![endif]>
-                                        <!--[if mso]><p style="line-height:0;margin:0;">&nbsp;</p><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="http://test.com" style="width:98px" arcsize="10%" fillcolor="#394FD1" stroke="f"><v:textbox style="mso-fit-shape-to-text:t" inset="0px,9px,0px,9px"><center style="font-size:12px;line-height:22px;color:#FFFFFF;font-family:Avenir,sans-serif;font-weight:bold;mso-line-height-rule:exactly;mso-text-raise:4px">Read Now</center></v:textbox></v:roundrect><![endif]--></div>
-                                </div>
+                                    <div style="Margin-left: 20px;Margin-right: 20px;">
+                                        <div class="btn btn--flat btn--medium" style="Margin-bottom: 20px;text-align: left;">
+                                            <![if !mso]><a style="border-radius: 4px;display: inline-block;font-size: 12px;font-weight: bold;line-height: 22px;padding: 10px 20px;text-align: center;text-decoration: none !important;transition: opacity 0.1s ease-in;color: #fff !important;background-color: #394fd1;font-family: Avenir, sans-serif;" href=<?="http://ie.infotech.monash.edu/team106/development/blogpost/view/'.$blog->blog_post_id"?>>Read Now</a><![endif]>
+                                            <!--[if mso]><p style="line-height:0;margin:0;">&nbsp;</p><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="http://test.com" style="width:98px" arcsize="10%" fillcolor="#394FD1" stroke="f"><v:textbox style="mso-fit-shape-to-text:t" inset="0px,9px,0px,9px"><center style="font-size:12px;line-height:22px;color:#FFFFFF;font-family:Avenir,sans-serif;font-weight:bold;mso-line-height-rule:exactly;mso-text-raise:4px">Read Now</center></v:textbox></v:roundrect><![endif]--></div>
+                                    </div>
 
-                                <div style="Margin-left: 20px;Margin-right: 20px;">
-                                    <div style="mso-line-height-rule: exactly;line-height: 15px;font-size: 1px;">&nbsp;</div>
-                                </div>
+                                    <div style="Margin-left: 20px;Margin-right: 20px;">
+                                        <div style="mso-line-height-rule: exactly;line-height: 15px;font-size: 1px;">&nbsp;</div>
+                                    </div>
+                                <?php endforeach ?>
+
 
                             </div>
-                            <!--[if (mso)|(IE)]></td><td style="width: 300px" valign="top" class="w260"><![endif]-->
-                            <?php endforeach ?>
-                            <!--[if (mso)|(IE)]></td><td class="layout__edges">&nbsp;</td></tr></table><![endif]-->
                         </div>
                     </div>
                 </div>
-
-                <div style="mso-line-height-rule: exactly;line-height: 50px;font-size: 50px;">&nbsp;</div>
-
                 <div style="background-color: #394fd1;">
                     <div class="layout one-col stack" style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
                         <div class="layout__inner" style="border-collapse: collapse;display: table;width: 100%;">
