@@ -36,6 +36,10 @@
         <?= $this->Html->link(__('Back'), $this->request->referer(), ['class' => 'btn btn-oval btn-primary','style'=>'float:left']) ?>
     <div class="paginator">
         <ul class="pagination">
+            <?php $this->Paginator->options(['url'=>[
+                'prefix'=> 'admin', 'controller'=>'Image','action'=>'index'
+            ]])?>
+
             <?= $this->Paginator->first('<< ' . __('first')) ?>
             <?= $this->Paginator->prev('< ' . __('previous')) ?>
             <?= $this->Paginator->numbers() ?>
