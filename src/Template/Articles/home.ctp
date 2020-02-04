@@ -86,11 +86,14 @@
                         <?php }?>
                     <?php endforeach;?>
                 </h2>
+                <div class="col-md-12 text-left">
                 <?php foreach ($webpages as $webpage): ?>
                     <?php if($webpage->Webpage === "Home page") { ?>
-                        <p><?= $webpage->Content ?></p>
+                        <p><?= $webpage->Content ?></>
                     <?php }?>
                 <?php endforeach;?>
+                </div>
+
             </div>
         </div>
         <div class="row">
