@@ -6,7 +6,7 @@
  */
 
 echo $this->Form->postLink(
-    '<i class="fa fa-bullhorn"></i> Publish',
+    '<i class="fa fa-bullhorn"></i> Push to Facebook',
     isset($disabled) && $disabled ? [] : $url,
     [
         'class' => 'btn btn-oval btn-info btn-edit',

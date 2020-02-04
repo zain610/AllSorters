@@ -288,7 +288,7 @@ class BlogPostController extends AppController
     public function archiveIndex()
     {
         $this->layout ='admin';
-        $archivedBlogPosts = TableRegistry::get('BlogPost')->find('all')->where(['BlogPost.Archived' => 1])->contain([]);
+        $archivedBlogPosts = TableRegistry::get('BlogPost')->find('all')->where(['BlogPost.Archived' => 1])->contain([])->orderDesc('Modified');
         $this->set('archivedBlogPosts', $this->paginate($archivedBlogPosts));
     }
     /**
