@@ -230,8 +230,11 @@ class AdminController extends AppController
                 //if the user is logged in, display the admin homepage
                 return $this->redirect(['controller' => 'Admin', 'action' => 'index']);
             }
+            else{
+                $this->Flash->error("Incorrect username or password");
+            }
+
         }
-        $this->Flash->error("Incorrect username or password");
     }
     public function logout(){
         $this->Flash->success('You are logged out');
