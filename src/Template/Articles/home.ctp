@@ -100,9 +100,8 @@
                     <?php foreach ($gallery_images as $image): ?>
                         <div class="item">
                             <div class="gtco-item">
-                                <a href="#"><?php echo $this->Html->image($image->path, ['class'=>'img-responsive cropped']) ?></a>
-                                <h2><a href="#">New York Arena</h2></a>
-                                <p class="role">New York</p>
+                                <?php echo $this->Html->image($image->path, ['class'=>'img-responsive cropped']) ?>
+                                <h2><?php echo (is_null($image->gallery_title) ? ('placeholder') :  ($image->gallery_title) );?></h2>
                             </div>
                         </div>
                     <?php endforeach;?>

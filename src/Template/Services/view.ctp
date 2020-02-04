@@ -20,21 +20,6 @@
             <h4><?php echo $service->Service_Title?></h4>
             <p><?php echo $service->Service_Detail?></p>
         </div>
-            <div class="related  col-sm-6">
-                <?php if (!empty($service->image)): ?>
-                    <table cellpadding="0" cellspacing="0">
-                        <tbody>
-                        <?php foreach ($service->image as $image): ?>
-                            <tr>
-                                <td class="card" width="50%">
-                                    <?php echo $this->Html->image($image->path, ['alt' => 'CakePHP']); ?>
-                                </td>
-                            </tr>
-                        <?php endforeach; ?>
-                        </tbody>
-                    </table>
-                <?php endif; ?>
-            </div>
         <div class="clearfix"> </div>
 
     </div>
