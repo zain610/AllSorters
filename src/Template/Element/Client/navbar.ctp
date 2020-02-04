@@ -14,7 +14,9 @@ $isOtherActive = $currentController === "Tips" || $currentController === "Favour
 $isContactActive = $currentController === "Request";
 $isBlogsActive = $currentController === "Blog_post";
 
+
 ?>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -60,7 +62,10 @@ $isBlogsActive = $currentController === "Blog_post";
 
 </head>
 <nav class="gtco-nav" role="navigation">
+    <div style ="background-color:#3bc3ff;">
     <div class="gtco-container">
+
+
 
         <div class="row">
             <div class="col-sm-2 col-xs-12">
