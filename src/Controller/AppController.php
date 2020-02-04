@@ -70,7 +70,7 @@ class AppController extends Controller
                 'action'=>'login'
             ],
             'loginRedirect'=>[
-                'controller'=>'Articles',
+                'controller'=>'Allsorters',
                 'action'=>'home'
             ]
         ]);

@@ -1,5 +1,9 @@
 
-
+<head>
+    <title>
+        <title><?= h($this->fetch('title')) ?></title>
+    </title>
+</head>
 
 <div class="gtco-loader"></div>
 
@@ -133,7 +137,9 @@
                     <?php endforeach?>
 
                 </ul>
-                <p><a href="#" class="btn btn-sm btn-special">More Services</a></p>
+                <p><?php echo $this->Html->link('More Services',['controller'=>'services','action'=>'index'],
+                        ['escape' => false, 'class' => 'btn btn-sm btn-special', 'style' => 'position:absolute;'])?>
+                </p>
 
             </div>
             <!-- END News -->
