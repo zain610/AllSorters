@@ -447,9 +447,6 @@
 
                         </div>
                         <!--[if (mso)|(IE)]></td><td style="width: 280px" valign="top"><![endif]-->
-                        <div class="webversion" style="display: table-cell;Float: left;font-size: 12px;line-height: 19px;max-width: 280px;min-width: 139px; width: 139px;width: calc(14100% - 78680px);padding: 10px 0 5px 0;text-align: right;color: #adb3b9;font-family: sans-serif;">
-                            <p style="Margin-top: 0;Margin-bottom: 0;">No images? <webversion style="text-decoration: underline;">Click here</webversion></p>
-                        </div>
                         <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
                     </div>
                 </div>
@@ -481,7 +478,7 @@
 
                             <div style="Margin-left: 20px;Margin-right: 20px;">
                                 <div style="mso-line-height-rule: exactly;mso-text-raise: 4px;">
-                                    <h3 class="size-18" style="Margin-top: 0;padding:1rem; color: #281557"><?= $message ?></h3>
+                                    <p class="size-18" style="Margin-top: 0;padding:1rem; color: #281557"><?= $message ?></p>
                                     <h2 style="Margin-top: 0;Margin-bottom: 0;font-style: normal;font-weight: normal;color: #e31212;font-size: 26px;line-height: 34px;font-family: Avenir,sans-serif;text-align: center;"><span style="color:#18527c"><strong>Check out my recent blogs</strong></span></h2>
                                 </div>
                             </div>
@@ -606,7 +603,7 @@
                             <div class="column" style="text-align: left;font-size: 12px;line-height: 19px;color: #adb3b9;font-family: sans-serif;">
                                 <div style="Margin-left: 20px;Margin-right: 20px;Margin-top: 10px;Margin-bottom: 10px;">
                                     <div style="font-size: 12px;line-height: 19px;">
-                                        <span><preferences style="text-decoration: underline;" lang="en">Preferences</preferences>&nbsp;&nbsp;|&nbsp;&nbsp;</span><unsubscribe style="text-decoration: underline;">Unsubscribe</unsubscribe>
+                                        <span><preferences style="text-decoration: underline;" lang="en">Preferences</preferences>&nbsp;&nbsp;|&nbsp;&nbsp;</span><a href="https://google.com"><unsubscribe style="text-decoration: underline">Unsubscribe</unsubscribe></a>
                                     </div>
                                 </div>
                             </div>
