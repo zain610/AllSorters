@@ -17,7 +17,7 @@
         <h3>Our Services</h3>
 
         <div class="well">
-            <h1><?php echo $service->Service_Title?></h1>
+            <h4><?php echo $service->Service_Title?></h4>
             <p><?php echo $service->Service_Detail?></p>
         </div>
         <div class="clearfix"> </div>
