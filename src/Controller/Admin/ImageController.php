@@ -26,7 +26,7 @@ class ImageController extends AppController
      */
     public function view($id = null)
     {
-
+        $this->layout='admin';
 //        $image = $this->paginate($this->Image);
 //
 //        $this->set(compact('image'));

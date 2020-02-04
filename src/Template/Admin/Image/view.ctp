@@ -4,7 +4,6 @@
  * @var \App\Model\Entity\Image[]|\Cake\Collection\CollectionInterface $image
  */
 ?>
-<?= $this->layout('Admin') ?>
 
 <div class="content table-responsive table-full-width">
     <div class="col-md-3">
