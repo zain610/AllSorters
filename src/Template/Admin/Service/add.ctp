@@ -16,8 +16,7 @@ $this->Html->script('/TinyMCE/js/tiny_mce/tiny_mce.js', array(
 </style>
 <?php echo $this->Html->css('image_checkbox'); ?>
 
-<div class="col-md-8">
-   <div class="content table-responsive table-full-width">
+
        <div class="card">
             <?= $this->Form->create($service) ?>
             <fieldset>
@@ -41,5 +40,4 @@ $this->Html->script('/TinyMCE/js/tiny_mce/tiny_mce.js', array(
            <?= $this->Form->end() ?>
 
         </div>
-   </div>
-</div>
+
