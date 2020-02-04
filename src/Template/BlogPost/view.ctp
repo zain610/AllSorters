@@ -24,7 +24,6 @@
 </style>
 <div class="services">
     <div class="container">
-        <?= $this->Flash->render(); ?>
         <div class="row blog-entries">
             <div class="col-md-12 col-lg-8 main-content">
                 <h1 class="mb-4"><?php echo $blogPost->title?></h1>
