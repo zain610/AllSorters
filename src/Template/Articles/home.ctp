@@ -95,19 +95,6 @@
         </div>
         <div class="row">
 
-            <div class="col-md-12">
-                <div class="owl-carousel owl-carousel-carousel">
-                    <?php foreach ($gallery_images as $image): ?>
-                        <div class="item">
-                            <div class="gtco-item">
-                                <a href="#"><?php echo $this->Html->image($image->path, ['class'=>'img-responsive cropped']) ?></a>
-                                <h2><a href="#">New York Arena</h2></a>
-                                <p class="role">New York</p>
-                            </div>
-                        </div>
-                    <?php endforeach;?>
-                </div>
-            </div>
 
         </div>
     </div>
