@@ -9,16 +9,17 @@
 
     <?= $this->Html->meta('icon') ?>
 
-
-    <link rel="stylesheet" href="/../css/client2/animate.css" />
-    <link rel="stylesheet" href="/../css/client2/bootstrap.css" />
-    <link rel="stylesheet" href="/../css/client2/clientstyles.css" />
-    <link rel="stylesheet" href="/../css/client2/flexslider.css" />
-    <link rel="stylesheet" href="/../css/client2/icomoon.css" />
-    <link rel="stylesheet" href="/../css/client2/owl.carousel.min.css" />
-    <link rel="stylesheet" href="/../css/client2/owl.theme.default.min.css" />
-    <link rel="stylesheet" href="/../css/client2/style.css" />
-    <link rel="stylesheet" href="/../css/client2/themify-icons.css" />
+    <?php
+        echo $this->Html->css('client2/animate.css');
+        echo $this->Html->css('client2/bootstrap.css');
+        echo $this->Html->css('client2/clientstyles.css');
+        echo $this->Html->css('client2/flexslider.css');
+        echo $this->Html->css('client2/icomoon.css');
+        echo $this->Html->css('client2/owl.carousel.min.css');
+        echo $this->Html->css('client2/owl.theme.default.min.css');
+        echo $this->Html->css('client2/style.css');
+        echo $this->Html->css('client2/themify-icons.css');
+    ?>
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:500i|Roboto:300,400,700|Roboto+Mono" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
