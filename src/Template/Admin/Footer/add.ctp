@@ -16,7 +16,6 @@
         <legend><?= __('Add Footer') ?></legend>
         <?php
             echo $this->Form->control('Phone');
-            echo $this->Form->control('Email');
             echo $this->Form->control('Address');
         ?>
     </fieldset>

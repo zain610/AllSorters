@@ -9,7 +9,6 @@
     <div class="row">
         <div class="leftcolumn">
             <h4>Phone: </h4><?= $footer->Phone?>
-            <h4>Email: </h4><?=$footer->Email?>
             <h4>Address: </h4><?=$footer->Address?>
         </div>
     </div>

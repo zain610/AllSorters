@@ -15,12 +15,9 @@
                     <div class="row">
                         <div class="leftcolumn">
                             <h4>Phone: </h4><?= $footer->Phone?>
-                            <h4>Email: </h4><?=$footer->Email?>
                             <h4>Address: </h4><?=$footer->Address?>
-                            <h4>Twitter: </h4><?=$footer->Twitter?>
                             <h4>Facebook: </h4><?=$footer->Facebook?>
-                            <h4>Google: </h4><?=$footer->Google?>
-                            <h4>Linkedin: </h4><?=$footer->Linkedin?>
+                            <h4>LinkedIn: </h4><?=$footer->Linkedin?>
                         </div>
                     </div>
                 </div>
