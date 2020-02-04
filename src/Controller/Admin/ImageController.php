@@ -26,16 +26,18 @@ class ImageController extends AppController
      */
     public function view($id = null)
     {
+
 //        $image = $this->paginate($this->Image);
 //
 //        $this->set(compact('image'));
 //      $image = $this->Image->find('all');
 //        $this->set('image', $image);
+
         $image = $this->Image->get($id, [
             'contain' => []
         ]);
 
-        $this->set('image', $image);
+        $this->set('image', $this->paginate($image));
     }
 
     /**
@@ -49,13 +51,12 @@ class ImageController extends AppController
     {
         $this->viewBuilder()->setLayout('admin');
 
-
         $this->loadComponent('Paginator');
-        $image = $this->Paginator->paginate(
-            $this->Image->find('all'),[
-                'limit' => 10
-            ]
-        );
+        $this->paginate=[
+            'limit' => 5
+        ];
+        $image =$this->paginate($this->Image->find('all'));
+
         $this->set(compact('image'));
     }
 

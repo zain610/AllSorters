@@ -48,6 +48,8 @@ class ImageTable extends Table
 
         $this->belongsTo('GalleryPage', [
             'foreignKey' => 'gallery_page',
+            'dependent'  => true,
+            'cascadeCallbacks' => true
         ]);
 
         $this->belongsToMany('Services', [
