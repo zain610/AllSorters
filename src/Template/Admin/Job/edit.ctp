@@ -4,7 +4,11 @@
  * @var \App\Model\Entity\Job $job
  */
 ?>
-
+<style>
+    .card{
+        width: 100%;
+    }
+</style>
 <div class="job form large-9 medium-8 columns content">
     <?= $this->Form->create($job) ?>
     <fieldset>

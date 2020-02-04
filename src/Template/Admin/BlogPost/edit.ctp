@@ -5,7 +5,11 @@
  */
 ?>
 <?php echo $this->Html->css('image_checkbox'); ?>
-
+<style>
+    .card{
+        width: 100%;
+    }
+</style>
 <div class="card">
     <?= $this->Form->create($blogPost) ?>
     <fieldset>

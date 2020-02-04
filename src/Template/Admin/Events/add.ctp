@@ -4,7 +4,11 @@
  * @var \App\Model\Entity\Event $event
  */
 ?>
-
+<style>
+    .card{
+        width: 100%;
+    }
+</style>
 </nav>
 <div class="card">
     <?= $this->Form->create($event) ?>

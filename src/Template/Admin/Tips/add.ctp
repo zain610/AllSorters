@@ -4,6 +4,11 @@
  * @var \App\Model\Entity\Tip $tip
  */
 ?>
+<style>
+    .card{
+        width: 100%;
+    }
+</style>
 <div class="card">
     <?= $this->Form->create($tip) ?>
     <fieldset>
