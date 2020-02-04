@@ -42,7 +42,7 @@ class ArticlesController extends AppController
         $this->set('reviews', $this->paginate($reviews));
 
         $blogs = $this->BlogPost->find('all')->order(['created' => 'DESC']);
-        $this->paginate = ['limit'=>2];
+        $this->paginate = ['limit'=>3];
         $this->set('blogs', $this->paginate($blogs));
 
         $connection = ConnectionManager::get('default');
