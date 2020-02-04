@@ -122,7 +122,7 @@ $query = $footer->find();
             <div class="col-md-4 gtco-footer-subscribe">
                 <form class="form-inline">
                     <div class="form-group gtco-footer-link" style="padding-left: 0px">
-                        <h3>Subscribe Newsletter</h3>
+                        <h3>Newsletter Subscription</h3>
                         <div class="col-md-6"style="padding-left: 0px">
                             <label class="sr-only" for="exampleInputEmail3">Email address</label>
                             <?= $this->element('Client/subscribe'); ?>
