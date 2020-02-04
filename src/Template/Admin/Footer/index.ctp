@@ -17,7 +17,7 @@
                             <h4>Phone: </h4><?= $footer->Phone?>
                             <h4>Address: </h4><?=$footer->Address?>
                             <h4>Facebook: </h4><?=$footer->Facebook?>
-                            <h4>Linkedin: </h4><?=$footer->Linkedin?>
+                            <h4>LinkedIn: </h4><?=$footer->Linkedin?>
                         </div>
                     </div>
                 </div>
