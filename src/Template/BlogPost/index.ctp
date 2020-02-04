@@ -34,7 +34,7 @@
                     <h4>Posted by Mary on <?php echo $blogPost->Date->format('d-m-Y')?> </h4>
                     <p><?php echo $truncate?></p>
 
-                    <?php echo $this->Html->link('Read More',['controller'=>'BlogPost','action'=>'View',$blogPost],
+                    <?php echo $this->Html->link('Read More',['controller'=>'BlogPost','action'=>'View',$blogPost->blog_post_id],
                         ['escape' => false, 'class' => 'btn btn-special btn-lg'])?>
                 </div>
                     <hr>
