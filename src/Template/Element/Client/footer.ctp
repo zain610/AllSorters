@@ -90,7 +90,7 @@ $query = $footer->find();
         <div class="gtco-container">
             <div class="row">
                 <div class="col-md-6 text-left">
-                    <p><small>Copyright © <b>all sorters</b> home sorting specialists 2020. All Rights Reserved.</small></p>
+                    <p><small>Copyright © <b>all sorters</b> ... home sorting specialists 2020. All Rights Reserved.</small></p>
                 </div>
             </div>
         </div>
