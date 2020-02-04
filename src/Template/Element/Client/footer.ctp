@@ -72,7 +72,7 @@ $query = $footer->find();
                 </div>
             </div>
             <div class="col-md-4 gtco-footer-subscribe">
-                <form class="form-inline">
+                <div class="form-inline">
                     <div class="form-group gtco-footer-link" style="padding-left: 0px">
                         <h3>Newsletter Subscription</h3>
                         <div class="col-md-6"style="padding-left: 0px">
@@ -82,7 +82,7 @@ $query = $footer->find();
 
                     </div>
 
-                </form>
+                </div>
             </div>
         </div>
     </div>
