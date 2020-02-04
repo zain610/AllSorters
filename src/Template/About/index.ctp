@@ -42,7 +42,6 @@
                     <?php if ($key==0) { ?>
                     <h2 align="middle"><?php echo $about->Title ?></h2>
                     <p style="padding-top: 10px">
-                        <img src="img/Mary.jpg" align="left" class="img-responsive" style="padding-right: 20px" width="500px">
                         <?php echo $about->Content ?>
                     </p>
                     <?php }

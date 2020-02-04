@@ -4,7 +4,11 @@
  * @var \App\Model\Entity\Favourite $favourite
  */
 ?>
-
+<style>
+    .card{
+        width: 100%;
+    }
+</style>
 <div class="card">
     <?= $this->Form->create($favourite) ?>
     <fieldset>
