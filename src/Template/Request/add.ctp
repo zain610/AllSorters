@@ -57,10 +57,12 @@
 
                 <div class="col-md-6" style="margin-top: 20px">
                     <?php echo $this->Form->email('Request_Email',[
+                        'pattern' => '^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$',
                         'label' => false,
                         'placeholder' => 'Email',
                         'required'=>false,
-                        'class' => 'form-control'
+                        'class' => 'form-control',
+                        'title' => 'Please enter a valid Email Address.'
                     ]); ?>
                     <?php if(isset($emailError)){ ?>
                     <p style="color: red;font-weight: bold"><?php echo $emailError?></p>
@@ -68,13 +70,13 @@
                 </div>
                 <div class="col-md-6" style="margin-top: 20px">
                     <?php echo $this->Form->control('Phone',[
+                        'pattern' => '^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$',
                         'label' => false,
                         'type' => 'tel',
                         'placeholder' => 'Phone',
                         'required'=>false,
                         'class' => 'form-control',
-                        'pattern' => '^04(\s?[0-9]{2}\s?)([0-9]{3}\s?[0-9]{3}|[0-9]{2}\s?[0-9]{2}\s?[0-9]{2})$',
-                        'title' => 'Mobile numbers must start with "04" and be 10 digits in length'
+                        'title' => 'Please enter a valid Phone number.'
                     ]); ?>
                     <?php if(isset($PhoneError)){ ?>
                     <p style="color: red;font-weight: bold"><?php echo $PhoneError?></p>

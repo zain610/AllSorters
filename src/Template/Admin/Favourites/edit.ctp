@@ -15,7 +15,7 @@
         <legend><?= __('Edit Favourites') ?></legend>
         <?php
         echo "<br>";
-        echo $this->Form->control('Title', ['type'=> 'textarea']);
+        echo $this->Form->control('Title');
         echo $this->Form->control('Content',['type'=> 'textarea']);
         ?>
     </fieldset>

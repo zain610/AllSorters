@@ -34,16 +34,20 @@ class ReviewController extends AppController
     {
         $this->loadComponent('Paginator');
         $this->paginate = array(
-            'limit' => 5
+            'limit' => 5,
         );
-
-        $review = $this->paginate($this->Review->find('all'));
+        $review = $this->paginate(
+            $this->Review->find('all')
+                ->order('Month_Year DESC')
+        );
 
         $webpages = $this->Webpages->find('all');
         $this->set(compact('review','webpages'));
         $blogs = $this->BlogPost->find('all')->order(['created' => 'DESC']);
-        $this->paginate = ['limit'=>2];
-        $this->set('blogs', $this->paginate($blogs));
+//        $this->paginate = ['limit'=>2];
+//        $this->set('blogs', $this->paginate($blogs));
+
+        $this->viewBuilder()->setLayout('client_default');
     }
 
     /**

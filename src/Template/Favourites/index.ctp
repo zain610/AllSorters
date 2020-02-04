@@ -7,49 +7,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        .collapsible {
-            background-color: white;
-            -moz-box-shadow: 0 0 3px #ccc;
-            -webkit-box-shadow: 0 0 3px #ccc;
-            box-shadow: 0 0 3px #ccc;
-            color: #00A0D2;
-            cursor: pointer;
-            padding: 18px;
-            width: 90%;
-            border: none;
-            text-align: left;
-            outline: none;
-            border-bottom-color: #00A0D2;
-            border-bottom-style: solid;
 
-        }
-
-        .expand-active, .collapsible:hover {
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-            background-color: #f2f2f2;
-        }
-
-        .collapsible:after {
-            content: '\02795'; /* Unicode character for "plus" sign (+) */
-            color: white;
-            float: right;
-            margin-left: 5px;
-        }
-
-        .expand-active:after {
-            content: "\2796"; /* Unicode character for "minus" sign (-) */
-        }
-
-        .content {
-            padding: 0 18px;
-            display: none;
-            overflow: hidden;
-            background-color: #fcfcfc;
-            width: 90%;
-        }
-
-    </style>
 </head>
 <body>
 
@@ -66,17 +24,23 @@
     <?php endforeach ?>
 
 <?php foreach ($favourites as $favourites): ?>
-<div class="container">
-
-    <button type="button" class="collapsible"><?php echo $favourites->Title ?></button>
-    <div class="content">
-        <p>
-            <?php echo $favourites->Content ?>
-        </p>
+    <div id="page">
+        <div class="gtco-section">
+            <div class="gtco-container">
+                <div class="row gtco-heading">
+                    <div class="col-md-12 text-left">
+                        <h2 align="middle"><?php echo $favourites->Title ?></h2>
+                        <p style="padding-top: 10px">
+                            <?php echo $favourites->Content ?>
+                        </p>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
     </div>
-</div>
-    <br>
 <?php endforeach ?>
+
 
 
 <script>
