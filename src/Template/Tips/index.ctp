@@ -23,7 +23,7 @@
         <div class="gtco-container">
             <div class="row gtco-heading">
                 <div class="col-md-12 text-left">
-                    <h2 align="middle"><?php echo $tips->Title ?></h2>
+                    <h3 align="middle"><?php echo $tips->Title ?></h3>
                     <p style="padding-top: 10px">
                         <?php echo $tips->Content ?>
                     </p>

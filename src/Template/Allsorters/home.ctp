@@ -9,7 +9,7 @@
 <div class="gtco-loader"></div>
 
 <div id="page">
-
+    <?php echo $this->Flash->render() ?>
     <div class="gtco-container">
         <div class="row">
             <div class="col-lg-6 col-md-12 vert_line" style="padding-top: 10px">

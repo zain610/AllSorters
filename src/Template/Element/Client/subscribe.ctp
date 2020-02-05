@@ -24,7 +24,7 @@ $prefix = $this->request->getParam('prefix');
     <fieldset style="width: 20rem; height: fit-content;">
         <?php
         echo "<br>";
-        echo $this->Form->control('email_address', ['type' => 'email', 'placeholder'=> 'Enter Email','empty' => true, 'class' => 'form-control']);
+        echo $this->Form->control('email_address', ['type' => 'email', 'placeholder'=> 'Enter Email','empty' => true, 'class' => 'form-control','label' => false]);
         ?>
     </fieldset>
 

@@ -80,7 +80,7 @@ class SubscriptionsController extends AppController
         if ($this->request->is('post')) {
             $subscription = $this->Subscriptions->patchEntity($subscription, $this->request->getData());
             if ($this->Subscriptions->save($subscription)) {
-                $this->Flash->success(__('The subscription has been saved.'));
+                $this->Flash->success(__('You have successfully subcribed.'));
 
                 return $this->redirect(['prefix' => false, 'controller' => 'Allsorters', 'action' => 'home']);
             }
@@ -202,9 +202,9 @@ class SubscriptionsController extends AppController
             'contain' => []
         ]);
         if ($this->Subscriptions->delete($subscription_to_delete)) {
-            $this->Flash->success(__('The subscription has been deleted.'));
+            $this->Flash->success(__('The subscriber has been deleted.'));
         } else {
-            $this->Flash->error(__('The subscription could not be deleted. Please, try again.'));
+            $this->Flash->error(__('The subscriber could not be deleted. Please, try again.'));
         }
         return $this->redirect(['action' => 'index']);
 
