@@ -69,7 +69,7 @@
         <br>
         <br>
         <h4>Leave a Comment</h4>
-
+        <?= $this->Flash->render('comment_sent') ?>
         <?= $this->Form->create($newComment); ?>
         <span>Name (required)</span><?php echo $this->Form->control('User_Name',['label'=>false,'required'=>false,'class'=>'form-control','style'=>'width:50%']) ?>
         <?php if(isset($nameError)){ ?>

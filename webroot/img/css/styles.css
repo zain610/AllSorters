@@ -1,0 +1,159 @@
+/**
+Built for AllSorters Admin Side By Team106
+Please write all the admin side CSS here so it is easier to track and modify
+HTML components on top of the loaded 3rd Party style libraries.
+ */
+
+.row {
+    max-width: 100rem!important;
+}
+table tr th, table tr td {
+    font-size: 1.2rem!important;
+}
+
+.table-column-one {
+    width: 15%;
+}
+.table-column-actions {
+    width: 30%;
+ }
+#content_ifr {
+    height: 40rem!important;
+}
+
+.sidebar .nav {
+    display:block;
+}
+.sidebar .nav li > a {
+    display: flex;
+    align-items: center;
+}
+.dropdown-toggle::after {
+    border-top: .5em solid;
+    border-right: .5em solid transparent;
+    border-bottom: 0;
+    border-left: .5em solid transparent;
+}
+.dropdown-menu {
+    left: 10%;
+}
+/*div.sidebar > div > ul > li:nth-child(2) > ul > li:nth-child(1) > a*/
+ul.dropdown-menu > li > a {
+    color: #333333!important;
+}
+ul.dropdown-menu {
+    left: 1%;
+}
+
+body > div > div.main-panel > div > div > div > div > div > ul > li {
+    line-height: 4rem;
+    padding: .5rem;
+}
+body > div > div.main-panel > nav > div > ul {
+    display: inline;
+}
+body > div > div.main-panel > div > div > div > div > div > p {
+    padding: 5% 0;
+}
+label {
+    font-size: 1.5rem!important;
+}
+select {
+    margin: 0 0.5rem;
+}
+input, textarea {
+    font-size: 1.5rem!important;
+    height: 100%!important;
+    margin-bottom: 1rem;
+}
+.input, .textarea {
+    font-size: 1.5rem!important;
+    height: 100%!important;
+    margin-bottom: 1rem;
+}
+/*
+This selector converts to class="content table-responsive table-full-width"
+which should be placed on the main div of every view
+ */
+body > div > div.main-panel > div > div > div > div {
+    max-width: 100%;
+    height: 20%;
+}
+.card {
+    padding: 1.5rem;
+}
+.card.card-user {
+    height: 100%;
+}
+#searchBarNavBar {
+    display: inline-flex;
+    margin: 0 0 3rem 2rem;
+}
+#searchBarNavBar > form > input
+{
+    width: 55rem;
+    margin: 0 1rem;
+}
+#search-show, #searchBarNavBar > form > input  {
+    margin: 0 1rem;
+    float: left;
+}
+table.articles-table {
+    height: 100%;
+}
+#table-row-content {
+    -webkit-transition:box-shadow 0.3s linear;
+    -moz-transition:box-shadow 0.3s linear;
+    -o-transition:box-shadow 0.3s linear;
+    -ms-transition:box-shadow 0.3s linear;
+    transition:box-shadow 0.3s linear;
+}
+#table-row-content:hover {
+    -webkit-box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#table-empty-row {
+    border-left: none;
+    border-right: none;
+    background: transparent!important;
+    padding: 5px;
+}
+
+table td.action-col {
+    display: inline-flex;
+}
+table td.action-col a {
+    margin: .5rem;
+}
+
+div.sidebar-wrapper {
+    /*margin: 0 0 30px 0;*/
+    height: 100%;
+
+}
+.sidebar .sidebar-wrapper {
+    overflow-y: scroll;
+}
+.message-container {
+    margin-top: 5%;
+    border: 5px solid #eaa;
+    padding: 10px;
+    height: fit-content;
+}
+.message-container > h2 {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 1px solid black;
+}
+
+#div-subscriber-checkbox {
+    margin: 10px;
+    border-bottom: 1px solid #333333;
+    padding: 5px;
+
+}
+input[type="checkbox"] {
+    margin: 0;
+}
+

@@ -3,6 +3,7 @@
     <title>
         <title><?= h($this->fetch('title')) ?></title>
     </title>
+
 </head>
 
 <div class="gtco-loader"></div>

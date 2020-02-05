@@ -77,6 +77,8 @@
     <div class="" style="">
         <div class="container">
             <h4 style="width: 60%;margin-right: 1rem; margin-top: auto">Select Users to send email to</h4>
+            <P style="color: #be140b">(* Delete Subscribers by clicking <span aria-hidden="true">×</span>)</P>
+
             <div class="form-check form-check-inline">
                 <input onclick="toggle(this)" class="" type="checkbox" id="selectAll" value="selectAll">
                 <label class="form-check-label" for="selectAll">Select all</label>
@@ -87,7 +89,6 @@
 
                 <?php foreach ($subscriptions as $key => $subscription): ?>
                     <div id="div-subscriber-checkbox" class="form-check form-check-inline col-sm-3">
-
                         <?= $this->Form->checkbox('sid'.$subscription->id, ['id'=>$this->Number->format($subscription->id), 'class'=> 'form-check-input']); ?>
                         <label id="subscriber" class="form-check-label" for="<?=$this->Number->format($subscription->id)?>"><?= h($subscription->email_address) ?></label>
 

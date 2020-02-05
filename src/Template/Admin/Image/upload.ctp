@@ -6,6 +6,7 @@
 ?>
 <?= $this->layout('Admin'); ?>
 <div class="content table-responsive table-full-width">
+    <?= $this->Flash->render() ?>
 <div class="row">
     <div class="col-md-6 offset-md-3">
         <div class="card">

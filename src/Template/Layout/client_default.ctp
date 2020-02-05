@@ -7,8 +7,12 @@
         <?= $this->fetch('title', 'Allsorters') ?>
     </title>
 
-    <?= $this->Html->meta('icon') ?>
-
+    <?= $this->Html->meta(
+        'favicon.ico',
+        '/favicon.ico',
+        ['type' => 'icon']
+    );
+    ?>
     <?php
         echo $this->Html->css('client2/animate.css');
         echo $this->Html->css('client2/bootstrap.css');
