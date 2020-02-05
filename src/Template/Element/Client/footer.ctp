@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 use Cake\ORM\TableRegistry;
 
 $footer = TableRegistry::getTableLocator()->get('Footer');
