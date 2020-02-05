@@ -24,7 +24,7 @@ class SubscriptionsController extends AppController
         parent::initialize();
     }
     public $paginate = [
-        'maxLimit' => 10,
+        'maxLimit' => 5,
         'order' => [
             'BlogPost.modified' => 'desc',
             'Subscriptions.email_address' => 'asc'

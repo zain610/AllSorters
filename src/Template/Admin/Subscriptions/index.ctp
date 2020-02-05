@@ -120,7 +120,6 @@
                     <tr>
                         <th scope="col" style="width: 10%;">Select</th>
                         <th scope="col"><?= $this->Paginator->sort('title', ['model' => 'BlogPost']) ?></th>
-                        <th scope="col"><?= $this->Paginator->sort('Description', ['model' => 'BlogPost']) ?></th>
                         <th scope="col"><?= $this->Paginator->sort('modified', ['model' => 'BlogPost']) ?></th>
                         <th scope="col" class="actions"><?= __('Actions') ?></th>
                     </tr>
@@ -137,9 +136,6 @@
                             </td>
                             <td style="">
                                 <?= h($blog->title) ?>
-                            </td>
-                            <td>
-                                <?= h($blog->Description) ?>
                             </td>
                             <td>
                                 <?=h($blog->modified) ?>
