@@ -26,16 +26,18 @@ class ImageController extends AppController
      */
     public function view($id = null)
     {
+        $this->layout='admin';
 //        $image = $this->paginate($this->Image);
 //
 //        $this->set(compact('image'));
 //      $image = $this->Image->find('all');
 //        $this->set('image', $image);
+
         $image = $this->Image->get($id, [
             'contain' => []
         ]);
 
-        $this->set('image', $image);
+        $this->set('image', $this->paginate($image));
     }
 
     /**
@@ -49,13 +51,12 @@ class ImageController extends AppController
     {
         $this->viewBuilder()->setLayout('admin');
 
-
         $this->loadComponent('Paginator');
-        $image = $this->Paginator->paginate(
-            $this->Image->find('all'),[
-                'limit' => 10
-            ]
-        );
+        $this->paginate=[
+            'limit' => 5
+        ];
+        $image =$this->paginate($this->Image->find('all'));
+
         $this->set(compact('image'));
     }
 
@@ -123,8 +124,9 @@ class ImageController extends AppController
      */
     public function edit($id = null)
     {
+        $this->layout='Admin';
         $image = $this->Image->get($id, [
-            'contain' => ['BlogPost', 'GalleryPage', 'Service']
+            'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $image = $this->Image->patchEntity($image, $this->request->getData());
@@ -135,10 +137,8 @@ class ImageController extends AppController
             }
             $this->Flash->error(__('The image could not be saved. Please, try again.'));
         }
-        $blogPost = $this->Image->BlogPost->find('list', ['limit' => 200]);
-        $galleryPage = $this->Image->GalleryPage->find('list', ['limit' => 200]);
-        $service = $this->Image->Service->find('list', ['limit' => 200]);
-        $this->set(compact('image', 'blogPost', 'galleryPage', 'service'));
+
+        $this->set(compact('image'));
     }
 
     /**

@@ -49,7 +49,7 @@ Router::scope('/', function (RouteBuilder $routes) {
      * its action called 'display', and we pass a param to select the view file
      * to use (in this case, src/Template/Pages/home.ctp)...
      */
-    $routes->connect('/', ['controller' => 'Articles', 'action' => 'home']);
+    $routes->connect('/', ['controller' => 'Allsorters', 'action' => 'home']);
     //Catching the login and logout routes for which the functionalities are in AdminController and not to be mistaken for page with Admin prefix
     $routes->connect('/admin/login', ['controller' => 'Admin', 'action' => 'login']);
     $routes->connect('/admin/booking', ['controller' => 'Admin', 'action' => 'booking']);

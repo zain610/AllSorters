@@ -29,6 +29,6 @@ class Footer extends Entity
         'Twitter' => true,
         'Facebook' => true,
         'Google' => true,
-        'Tumblr' => true
+        'Linkedin' => true
     ];
 }

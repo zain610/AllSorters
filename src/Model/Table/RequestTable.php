@@ -81,9 +81,8 @@ class RequestTable extends Table
             ->allowEmpty('Response');
 
         $validator
-            ->integer('Phone')
-            ->allowEmpty('Phone','Phone Number must follow the pattern');
-
+            ->scalar('Phone')
+            ->allowEmpty('Phone');
 
         return $validator;
     }

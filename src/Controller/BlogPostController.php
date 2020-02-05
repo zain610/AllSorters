@@ -45,7 +45,7 @@ class BlogPostController extends AppController
             $this->BlogPost->find('all')
             ->order('Date DESC')
         );
-        $this->viewBuilder()->setLayout('client');
+        $this->viewBuilder()->setLayout('client_default');
 
         //$this->set(compact('blogPost'));
         //$blogPost = $this->paginate($this->BlogPost);
@@ -140,7 +140,6 @@ class BlogPostController extends AppController
             $queryTermConditions[] = ['OR' => [
                 'BlogPost.title LIKE' => "%{$term}%",
                 'BlogPost.Body LIKE' => "%{$term}%",
-                'BlogPost.Description LIKE' => "%{$term}%",
             ]];
         }
 
@@ -157,7 +156,7 @@ class BlogPostController extends AppController
         $this->set('query', $queryTermsString);
 
 //        $this->viewBuilder()->setLayout('client');
-        $this->layout ='client';
+        $this->layout ='client_default';
         $this->viewBuilder()->setTemplate('search');
 
     }

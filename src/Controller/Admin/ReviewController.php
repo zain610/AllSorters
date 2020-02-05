@@ -19,7 +19,7 @@ class ReviewController extends AppController
     public function index()
     {
 
-        $review = $this->paginate($this->Review);
+        $review = $this->paginate($this->Review->find('all')->contain([])->orderDesc('Month_Year'));
         $this->layout ='admin';
         $this->set(compact('review'));
     }

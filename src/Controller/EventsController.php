@@ -21,6 +21,8 @@ class EventsController extends AppController
         $this->Auth->allow(['index']);
         $this->Auth->allow(['home']);
         $this->viewBuilder()->setLayout('client_default');
+        $this->loadModel('BlogPost');
+        $this->loadModel('Review');
     }
     public function isAuthorized($user)
     {
@@ -43,6 +45,13 @@ class EventsController extends AppController
         $this->loadModel("Webpages");
         $webpages = $this->Webpages->find('all');
         $this->set(compact('events','webpages'));
+        $reviews = $this->Review->find('all');
+        $this->paginate = ['limit'=>3];
+        $this->set('reviews', $this->paginate($reviews));
+
+        $blogs = $this->BlogPost->find('all')->order(['created' => 'DESC']);
+        $this->paginate = ['limit'=>2];
+        $this->set('blogs', $this->paginate($blogs));
     }
 
 

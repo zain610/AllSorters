@@ -1,11 +1,4 @@
 <?php
-//use Cake\ORM\TableRegistry;
-//
-//$footer = TableRegistry::getTableLocator()->get('Footer');
-//$query = $footer->find();
-//?>
-
-<?php
 use Cake\ORM\TableRegistry;
 
 $footer = TableRegistry::getTableLocator()->get('Footer');
@@ -56,86 +49,40 @@ $query = $footer->find();
     <![endif]-->
 
 </head>
-<div class="gtco-section gto-features">
-    <div class="gtco-container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="feature-left">
-                    <i class="ti-comment icon"></i>
-                    <div class="copy">
-                        <h3>Allsorter Tips</h3>
-                        <p>Lorem ipsum dolor sit ameteista, consectetur adipiscing is not elitistaris.</p>
-                        <p><a href="#" class="gtco-more" style="color: #298ad6">Learn more</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="feature-left">
-                    <i class="ti-calendar icon"></i>
-                    <div class="copy">
-                        <h3>Upcoming Events</h3>
-                        <p>Lorem ipsum dolor sit ameteista, consectetur adipiscing is not elitistaris.</p>
-                        <p><a href="#" class="gtco-more" style="color: #298ad6">Learn more</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="feature-left">
-                    <i class="ti-mobile icon"></i>
-                    <div class="copy">
-                        <h3>Contact Us</h3>
-                        <p>Lorem ipsum dolor sit ameteista, consectetur adipiscing is not elitistaris.</p>
-                        <p><a href="#" class="gtco-more" style="color: #298ad6">Learn more</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
+
+<?php foreach ($query as $footer): ?>
 <footer id="gtco-footer" class="gtco-section" role="contentinfo">
     <div class="gtco-container">
         <div class="row row-pb-md">
             <div class="col-md-4 gtco-widget gtco-footer-paragraph" style="color: #b9b9b9">
                 <h3>Contact</h3>
-                <p><b>Phone: </b>+61 1234567890</p>
-                <p><b>Email: </b>Mary@allsorters.com</p>
-                <p><b>Address: </b>Allsorters, PO Box 1043, Greythorn, Vic, 3104</p>
+                <p><b>Phone: </b><?php echo $footer->Phone; ?></p>
+                <p><b>Address: </b><?php echo $footer->Address; ?></p>
             </div>
             <div class="col-md-4 footer_a">
                 <div class="row">
                     <div class="col-md-6 col-sm-2 gtco-footer-link">
-                        <h3>Links</h3>
-                        <ul class="gtco-list-link">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Features</a></li>
-                            <li><a href="#">Products</a></li>
-                            <li><a href="#">Testimonial</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 col-sm-2 gtco-footer-link">
                         <h3>Follow Us</h3>
                         <ul class="gtco-list-link">
-                            <li><a href="#">Facebook</a></li>
-                            <li><a href="#">Google+</a></li>
-                            <li><a href="#">Linkedin</a></li>
+                            <li><a href="<?php echo $footer->Facebook; ?>">Facebook</a></li>
+                            <li><a href="<?php echo $footer->Tumblr; ?>">Linkedin</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 gtco-footer-subscribe">
-                <form class="form-inline">
-                    <div class="form-group gtco-footer-link">
-                        <h3>Subscribe Newsletter</h3>
-                        <div class="col-md-12">
+                <div class="form-inline">
+                    <div class="form-group gtco-footer-link" style="padding-left: 0px">
+                        <h3>Newsletter Subscription</h3>
+                        <div class="col-md-6"style="padding-left: 0px">
                             <label class="sr-only" for="exampleInputEmail3">Email address</label>
-                            <input type="email" class="form-control" id="" placeholder="Email">
-                            <button type="submit" class="btn btn-sm btn-special">Send</button>
+                            <?= $this->element('Client/subscribe'); ?>
                         </div>
+
                     </div>
 
-                </form>
+                </div>
             </div>
         </div>
     </div>
@@ -143,14 +90,14 @@ $query = $footer->find();
         <div class="gtco-container">
             <div class="row">
                 <div class="col-md-6 text-left">
-                    <p><small>Copyright © <b>all sorters</b> home sorting specialists 2020. All Rights Reserved.</small></p>
+                    <p><small>Copyright © <b>all sorters</b> ... home sorting specialists 2020. All Rights Reserved.</small></p>
                 </div>
             </div>
         </div>
     </div>
 </footer>
 <!-- END footer -->
-
+<?php endforeach; ?>
 
 
 <div class="gototop js-top">

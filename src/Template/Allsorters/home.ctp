@@ -1,5 +1,9 @@
 
-
+<head>
+    <title>
+        <title><?= h($this->fetch('title')) ?></title>
+    </title>
+</head>
 
 <div class="gtco-loader"></div>
 
@@ -33,18 +37,9 @@
 
 
             <div class="col-lg-6 col-md-12 gtco-news">
-                <h2 style="padding-top: 5px; color: #4d4d4d; font-weight: 300;font-size: 40px;">Recent Blogs </h2>
-<!---->
-<!--                    --><?php //echo $this->Html->link(
-//                        'More Blogs',
-//                        ['controller'=>'BlogPost','action'=>'index'],
-//                        [
-//                            'escape' => false,
-//                            'class' => 'btn btn-sm btn-special',
-//                            'style' => 'text-align: right',
-//                        ]
-//                    )?>
-
+                <a href="./blog-post/">
+                <h2 style="padding-top: 5px; color: #4d4d4d; font-weight: 300;font-size: 40px;margin-bottom: 0px">Recent Blogs </h2>
+                </a>
                 <br>
                 <ul>
                     <?php foreach ($blogs as $blog):?>
@@ -64,13 +59,13 @@
                             <?php echo $this->Html->link(
                                 '<h3 class="blog_Title">'. $blog->title.'</h3>',
                                 ['controller'=>'BlogPost','action'=>'view/'.$blog->blog_post_id],
-                                ['escape' => false,'style'=>"padding-bottom: 0px"]
+                                ['escape' => false,'style'=>"padding-bottom: 0px; margin-bottom: 0px"]
                             )?>
                             </div>
                             <?php echo $this->Html->link(
                                 '<p>'. $truncate.'</p>',
                                 ['controller'=>'BlogPost','action'=>'view/'.$blog->blog_post_id],
-                                ['escape' => false]
+                                ['escape' => false,'style'=>"padding-bottom: 0px; margin-bottom: 0px"]
                             )?>
                         </li>
                         <?php } ?>
@@ -95,11 +90,14 @@
                         <?php }?>
                     <?php endforeach;?>
                 </h2>
+                <div class="col-md-12 text-left">
                 <?php foreach ($webpages as $webpage): ?>
                     <?php if($webpage->Webpage === "Home page") { ?>
-                        <p><?= $webpage->Content ?></p>
+                        <p><?= $webpage->Content ?></>
                     <?php }?>
                 <?php endforeach;?>
+                </div>
+
             </div>
         </div>
         <div class="row">
@@ -109,9 +107,8 @@
                     <?php foreach ($gallery_images as $image): ?>
                         <div class="item">
                             <div class="gtco-item">
-                                <a href="#"><?php echo $this->Html->image($image->path, ['class'=>'img-responsive']) ?></a>
-                                <h2><a href="#">New York Arena</h2></a>
-                                <p class="role">New York</p>
+                                <?php echo $this->Html->image($image->path, ['class'=>'img-responsive cropped']) ?>
+                                <h2><?php echo (is_null($image->gallery_title) ? ('placeholder') :  ($image->gallery_title) );?></h2>
                             </div>
                         </div>
                     <?php endforeach;?>
@@ -140,18 +137,23 @@
                     <?php endforeach?>
 
                 </ul>
-                <p><a href="#" class="btn btn-sm btn-special">More Services</a></p>
+                <p><?php echo $this->Html->link('More Services',['controller'=>'services','action'=>'index'],
+                        ['escape' => false, 'class' => 'btn btn-sm btn-special', 'style' => 'position:absolute;'])?>
+                </p>
 
             </div>
             <!-- END News -->
             <div class="col-md-6 col-md-push-1 gtco-testimonials">
                 <h2>Testimonials</h2>
                 <?php foreach ($reviews as $review):?>
+                <?php $char = strlen($review->Review_Details)?>
+                <?php if($char <= 250) {?>
                     <blockquote>
 
                         <p><?php echo $review->Review_Details?></p>
                         <p class="author"><cite><?php echo $review->Client_Name?>, <?php echo $review->Month_Year->format('d-m-Y')?></cite></p>
                     </blockquote>
+                    <?php } ?>
                 <?php endforeach;?>
                 <p><?php echo $this->Html->link('More Testimonials',['controller'=>'Review','action'=>'index'],
                         ['escape' => false, 'class' => 'btn btn-sm btn-special', 'style' => 'position:absolute;'])?>

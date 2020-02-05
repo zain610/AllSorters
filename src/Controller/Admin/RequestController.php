@@ -21,7 +21,7 @@ class RequestController extends AppController
     public function index()
     {
         $this->layout ='admin';
-        $request = $this->paginate($this->Request);
+        $request = $this->paginate($this->Request->find('all')->orderDesc('created'));
 
         $this->set('response Sent', $this->getRequest()->getSession()->read('sent'));
         $this->set(compact('request'));

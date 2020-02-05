@@ -4,14 +4,18 @@
  * @var \App\Model\Entity\Favourite $favourite
  */
 ?>
-
+<style>
+    .card{
+        width: 100%;
+    }
+</style>
 <div class="card">
     <?= $this->Form->create($favourite) ?>
     <fieldset>
         <legend><?= __('Add to Favourites') ?></legend>
         <?php
         echo "<br>";
-        echo $this->Form->control('Title', ['type'=> 'textarea']);
+        echo $this->Form->control('Title');
         echo $this->Form->control('Content',['type'=> 'textarea']);
         ?>
     </fieldset>

@@ -288,7 +288,7 @@ class BlogPostController extends AppController
     public function archiveIndex()
     {
         $this->layout ='admin';
-        $archivedBlogPosts = TableRegistry::get('BlogPost')->find('all')->where(['BlogPost.Archived' => 1])->contain([]);
+        $archivedBlogPosts = TableRegistry::get('BlogPost')->find('all')->where(['BlogPost.Archived' => 1])->contain([])->orderDesc('Modified');
         $this->set('archivedBlogPosts', $this->paginate($archivedBlogPosts));
     }
     /**
@@ -313,7 +313,6 @@ class BlogPostController extends AppController
         $blogs = $this->BlogPost->find()->where([
             'OR' => [
                 'title LIKE' => $queryTermsWithWildCard,
-                'Description LIKE' => $queryTermsWithWildCard,
                 'Body LIKE' => $queryTermsWithWildCard
             ]
         ]);
@@ -356,7 +355,6 @@ class BlogPostController extends AppController
             $queryTermConditions[] = ['OR' => [
                 'BlogPost.title LIKE' => "%{$term}%",
                 'BlogPost.Body LIKE' => "%{$term}%",
-                'BlogPost.Description LIKE' => "%{$term}%",
             ]];
         }
 

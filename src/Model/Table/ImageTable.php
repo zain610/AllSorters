@@ -41,17 +41,23 @@ class ImageTable extends Table
         $this->belongsToMany('BlogPost', [
             'foreignKey' => 'Image_id',
             'targetForeignKey' => 'blog_post_id',
-            'joinTable' => 'blog_post_image'
+            'joinTable' => 'blog_post_image',
+            'dependent'  => true,
+            'cascadeCallbacks' => true
         ]);
 
         $this->belongsTo('GalleryPage', [
             'foreignKey' => 'gallery_page',
+            'dependent'  => true,
+            'cascadeCallbacks' => true
         ]);
 
         $this->belongsToMany('Services', [
             'foreignKey' => 'image_id',
             'targetForeignKey' => 'service_id',
-            'joinTable' => 'service_image'
+            'joinTable' => 'service_image',
+            'dependent'  => true,
+            'cascadeCallbacks' => true
         ]);
     }
 
@@ -89,6 +95,11 @@ class ImageTable extends Table
         $validator
             ->boolean('Shown')
             ->allowEmptyString('Shown');
+
+        $validator
+            ->scalar('gallery_title')
+            ->requirePresence('Body', 'create')
+            ->allowEmpty('Body',false,false);
 
         return $validator;
     }

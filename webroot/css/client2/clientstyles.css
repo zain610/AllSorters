@@ -86,6 +86,29 @@ p{
     padding-bottom: 0px !important;
 }
 
+.cropped {
+    width: 300px; /* width of container */
+    height: 200px; /* height of container */
+    overflow: hidden;
+}
+
+.cropped img {
+    margin: -10px 0px 0px -180px;
+}
+
+.slideshowcropped {
+    width: 534px; /* width of container */
+    height: 312.203px; /* height of container */
+    overflow: hidden;
+}
+
+.slideshowcropped img {
+    margin: -10px 0px 0px -180px;
+}
+
+
+
+
 /*!* tab *!*/
 /*.tab-vertical-top{*/
 /*    float:none;*/

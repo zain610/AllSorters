@@ -21,7 +21,7 @@
                     <td><?php echo $this->Html->image($img->path, ['alt' => 'CakePHP', 'width' => '100px']); ?></td>
                     <td><?= h($img->name) ?></td>
                     <td class="actions">
-                        <?= $this->element('Admin/Buttons/view', ['url' => ['action' => 'view', $img->Image_id]]) ?>
+                        <?= $this->element('Admin/Buttons/edit', ['url' => ['action' => 'edit', $img->Image_id]]) ?>
                         <?php if (!($img->Shown)): ?>
                         <?= $this->element('Admin/Buttons/display', ['url' => ['action' => 'ShowOnGallery', $img->Image_id]]) ?>
                         <?php else: ?>
@@ -36,6 +36,10 @@
         <?= $this->Html->link(__('Back'), $this->request->referer(), ['class' => 'btn btn-oval btn-primary','style'=>'float:left']) ?>
     <div class="paginator">
         <ul class="pagination">
+            <?php $this->Paginator->options(['url'=>[
+                'prefix'=> 'admin', 'controller'=>'Image','action'=>'index'
+            ]])?>
+
             <?= $this->Paginator->first('<< ' . __('first')) ?>
             <?= $this->Paginator->prev('< ' . __('previous')) ?>
             <?= $this->Paginator->numbers() ?>

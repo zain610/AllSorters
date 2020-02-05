@@ -9,10 +9,13 @@
     <title>Dashboard</title>
 
     <!-- Fontfaces CSS-->
-    <link href="css/font-face.css" rel="stylesheet" media="all">
+
+    <?php echo $this->Html->css('font-face.css')?>
+
 
     <!-- Main CSS-->
-    <link href="css/theme.css" rel="stylesheet" media="all">
+
+    <?php echo $this->Html->css('theme.css')?>
 </head>
 
 <div class="main-content">
@@ -141,4 +144,4 @@
 
 
 <!-- Main JS-->
-<script src="js/main.js"></script>
+<?php echo $this->Html->script('main.js')?>

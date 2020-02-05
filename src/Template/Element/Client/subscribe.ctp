@@ -19,7 +19,7 @@ $prefix = $this->request->getParam('prefix');
 </style>
 
 <div class="form-group">
-    <?= $this->Form->create(null, ['url' => ['controller' => 'Subscriptions', 'action' => 'add'], 'method' => 'POST', 'id'=>'newsletter-form']);
+    <?= $this->Form->create(null, ['url' => ['prefix'=> 'admin','controller' => 'Subscriptions', 'action' => 'add'], 'method' => 'POST', 'id'=>'newsletter-form']);
     ?>
     <fieldset style="width: 20rem; height: fit-content;">
         <?php
@@ -30,9 +30,8 @@ $prefix = $this->request->getParam('prefix');
 
     <?= $this->Form->button(__(' Submit'),
         ['formnovalidate' => true,
-            "id" =>"submit-subscription",
-            "class" => "btn btn-primary",
+            "class" => "btn btn-sm btn-special",
             "escape",
-            'url' => ['controller' => 'Subscriptions', 'action' => 'add'], 'method' => 'POST']) ?>
+            'url' => ['prefix' => 'admin', 'controller' => 'Subscriptions', 'action' => 'add'], 'method' => 'POST']) ?>
     <?= $this->Form->end() ?>
 </div>

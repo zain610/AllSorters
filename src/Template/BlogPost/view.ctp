@@ -24,9 +24,9 @@
 </style>
 <div class="services">
     <div class="container">
-        <?= $this->Flash->render(); ?>
         <div class="row blog-entries">
             <div class="col-md-12 col-lg-8 main-content">
+                <div class="well">
                 <h1 class="mb-4"><?php echo $blogPost->title?></h1>
                 <div class="post-meta">
                     <span class="mr-2" style="font-family: Calibri"><?php echo $blogPost->Date->format('d-m-Y')?></span>
@@ -48,6 +48,7 @@
                     </div>
                 </div>
                 <div class="clearfix"> </div>
+            </div>
             </div>
         </div>
         <hr>

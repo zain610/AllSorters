@@ -4,7 +4,7 @@ use Cake\ORM\TableRegistry;
 
 $currentController = $this->request->getParam('controller');
 $currentAction = $this->request->getParam('action');
-$isHomeActive = $currentController === "Articles";
+$isHomeActive = $currentController === "Allsorters";
 $isAboutActive = $currentController === "About";
 $isServicesActive = $currentController === "Services";
 $isGalleryActive = $currentController === "GalleryPage";
@@ -69,13 +69,13 @@ $isBlogsActive = $currentController === "Blog_post";
 
         <div class="row">
             <div class="col-sm-2 col-xs-12">
-                <div id="gtco-logo"><?= $this->Html->link('Allsorters', ['controller' => 'Articles', 'action' => 'home']) ?></div>
+                <div id="gtco-logo"><?= $this->Html->link('Allsorters', ['controller' => 'Allsorters', 'action' => 'home']) ?></div>
 
             </div>
             <div class="col-xs-10 text-right menu-1">
                 <ul class="">
                     <!--                        class="active"-->
-                    <li  class="<?= $isHomeActive ? 'active' : '' ?>"><?= $this->Html->link('Home', ['controller' => 'Articles', 'action' => 'home']) ?></li>
+                    <li  class="<?= $isHomeActive ? 'active' : '' ?>"><?= $this->Html->link('Home', ['controller' => 'Allsorters', 'action' => 'home']) ?></li>
                     <li class="<?= $isAboutActive ? 'active' : '' ?>"><?= $this->Html->link('About', ['controller' => 'About', 'action' => 'index']) ?></li>
                     <li class="<?= $isServicesActive ? 'active' : '' ?>">
                         <?= $this->Html->link('Services', ['controller' => 'Services', 'action' => 'index']) ?>
@@ -103,6 +103,7 @@ $isBlogsActive = $currentController === "Blog_post";
 <!-- jQuery -->
 <script src="/../js/client2/jquery.min.js"></script>
 <!-- jQuery Easing -->
+
 <script src="/../js/client2/jquery.easing.1.3.js"></script>
 <!-- Bootstrap -->
 <script src="/../js/client2/bootstrap.min.js"></script>

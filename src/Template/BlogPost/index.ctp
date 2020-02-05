@@ -2,10 +2,6 @@
 <head>
     <title>Blog</title>
 
-    <!-- BOOTSTRAP CORE STYLE -->
-
-    <!-- FONT AWESOME ICON STYLE -->
-    <link href="css/font-awesome.css" rel   ="stylesheet" />
 
 
 </head>
@@ -22,6 +18,7 @@
         <?php endforeach ?>
 
             <?= $this->element('Client/Buttons/search'); ?>
+        <hr>
             <div class="col-md-12 col-lg-8 mb-5">
                 <?php foreach ($blogPost as $blogPost): ?>
                     <?php $truncate = $this->Text->truncate(
@@ -37,8 +34,10 @@
                     <h4>Posted by Mary on <?php echo $blogPost->Date->format('d-m-Y')?> </h4>
                     <p><?php echo $truncate?></p>
 
-                    <a href='<?php echo $this->Url->build(array('action'=> 'View', $blogPost->blog_post_id))?>' class="btn btn-special btn-lg">Read More <i class="fa fa-angle-right"></i></a>
+                    <?php echo $this->Html->link('Read More',['controller'=>'BlogPost','action'=>'View',$blogPost->blog_post_id],
+                        ['escape' => false, 'class' => 'btn btn-special btn-lg'])?>
                 </div>
+                    <hr>
                 <?php endforeach; ?>
             <br />
                 <nav>

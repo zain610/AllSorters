@@ -77,7 +77,7 @@ class SubscriptionsController extends AppController
             if ($this->Subscriptions->save($subscription)) {
                 $this->Flash->success(__('The subscription has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['prefix' => false, 'controller' => 'Allsorters', 'action' => 'home']);
             }
             $this->Flash->error(__('The subscription could not be saved. Please, try again.'));
         }
@@ -160,8 +160,8 @@ class SubscriptionsController extends AppController
                 $email = new Email('default');
                 $email->setFrom(['allsortMary@gmail.com' => 'All Sorters'])
                     ->setTo($sender_email)
-                    ->setTemplate('newsletter_template')
-                    ->setLayout('newsletter_template')
+                    ->setTemplate('better_newsletter')
+                    ->setLayout('better_newsletter')
                     ->setEmailFormat('html')
                     ->setViewVars(['message' => strip_tags($data['message']), 'title' => "Newsletter update from AllSorters", 'blogs' => $blogs])
                     ->setSubject("Newsletter update from AllSorters")

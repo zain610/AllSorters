@@ -9,13 +9,13 @@ use Cake\ORM\TableRegistry;
 
         <div class="row">
             <div class="col-sm-2 col-xs-12">
-                <div id="gtco-logo"><?= $this->Html->link('Allsorters', ['controller' => 'Articles', 'action' => 'home']) ?></div>
+                <div id="gtco-logo"><?= $this->Html->link('Allsorters', ['controller' => 'Allsorters', 'action' => 'home']) ?></div>
 
             </div>
             <div class="col-xs-10 text-right menu-1">
                 <ul>
                     <!--                        class="active"-->
-                    <li class="active"><?= $this->Html->link('Home', ['controller' => 'Articles', 'action' => 'home']) ?></li>
+                    <li class="active"><?= $this->Html->link('Home', ['controller' => 'Allsorters', 'action' => 'home']) ?></li>
                     <li><?= $this->Html->link('About', ['controller' => 'About', 'action' => 'index']) ?></li>
                     <li><?= $this->Html->link('About', ['controller' => 'About', 'action' => 'index']) ?></li>
                     <li class="has-dropdown">
