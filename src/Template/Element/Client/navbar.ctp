@@ -4,7 +4,7 @@ use Cake\ORM\TableRegistry;
 
 $currentController = $this->request->getParam('controller');
 $currentAction = $this->request->getParam('action');
-$isHomeActive = $currentController === "Articles";
+$isHomeActive = $currentController === "Allsorters";
 $isAboutActive = $currentController === "About";
 $isServicesActive = $currentController === "Services";
 $isGalleryActive = $currentController === "GalleryPage";
@@ -14,7 +14,9 @@ $isOtherActive = $currentController === "Tips" || $currentController === "Favour
 $isContactActive = $currentController === "Request";
 $isBlogsActive = $currentController === "Blog_post";
 
+
 ?>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -60,17 +62,20 @@ $isBlogsActive = $currentController === "Blog_post";
 
 </head>
 <nav class="gtco-nav" role="navigation">
+    <div style ="background-color:#3bc3ff;">
     <div class="gtco-container">
+
+
 
         <div class="row">
             <div class="col-sm-2 col-xs-12">
-                <div id="gtco-logo"><?= $this->Html->link('Allsorters', ['controller' => 'Articles', 'action' => 'home']) ?></div>
+                <div id="gtco-logo"><?= $this->Html->link('Allsorters', ['controller' => 'Allsorters', 'action' => 'home']) ?></div>
 
             </div>
             <div class="col-xs-10 text-right menu-1">
                 <ul class="">
                     <!--                        class="active"-->
-                    <li  class="<?= $isHomeActive ? 'active' : '' ?>"><?= $this->Html->link('Home', ['controller' => 'Articles', 'action' => 'home']) ?></li>
+                    <li  class="<?= $isHomeActive ? 'active' : '' ?>"><?= $this->Html->link('Home', ['controller' => 'Allsorters', 'action' => 'home']) ?></li>
                     <li class="<?= $isAboutActive ? 'active' : '' ?>"><?= $this->Html->link('About', ['controller' => 'About', 'action' => 'index']) ?></li>
                     <li class="<?= $isServicesActive ? 'active' : '' ?>">
                         <?= $this->Html->link('Services', ['controller' => 'Services', 'action' => 'index']) ?>

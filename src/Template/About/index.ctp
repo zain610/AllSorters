@@ -29,7 +29,7 @@
 <!--    --><?php //} ?>
 <?php //endforeach ?>
 
-<?php foreach ($about as  $key=>$about): ?>
+<?php foreach ($about as $about): ?>
 
 
 <div id="page">
@@ -39,20 +39,11 @@
         <div class="gtco-container">
             <div class="row gtco-heading">
                 <div class="col-md-12 text-left">
-                    <?php if ($key==0) { ?>
                     <h2 align="middle"><?php echo $about->Title ?></h2>
                     <p style="padding-top: 10px">
                         <?php echo $about->Content ?>
                     </p>
-                    <?php }
-                    else { ?>
-                    <h2 align="middle"><?php echo $about->Title ?></h2>
-                    <p style="padding-top: 10px">
-                        <?php echo $about->Content ?>
-                    </p>
-                    <?php } ?>
                 </div>
-
             </div>
             <hr>
         </div>

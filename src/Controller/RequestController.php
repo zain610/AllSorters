@@ -122,23 +122,23 @@ class RequestController extends AppController
      * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
-    public function edit($id = null)
-    {
-        $request = $this->Request->get($id, [
-            'contain' => []
-        ]);
-        if ($this->request->is(['patch', 'post', 'put'])) {
-            $request = $this->Request->patchEntity($request, $this->request->getData());
-            if ($this->Request->save($request)) {
-                $this->Flash->success(__('The request has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The request could not be saved. Please, try again.'));
-        }
-        $client = $this->Request->Client->find('list', ['limit' => 200]);
-        $this->set(compact('request', 'client'));
-    }
+//    public function edit($id = null)
+//    {
+//        $request = $this->Request->get($id, [
+//            'contain' => []
+//        ]);
+//        if ($this->request->is(['patch', 'post', 'put'])) {
+//            $request = $this->Request->patchEntity($request, $this->request->getData());
+//            if ($this->Request->save($request)) {
+//                $this->Flash->success(__('The request has been saved.'));
+//
+//                return $this->redirect(['action' => 'index']);
+//            }
+//            $this->Flash->error(__('The request could not be saved. Please, try again.'));
+//        }
+//        $client = $this->Request->Client->find('list', ['limit' => 200]);
+//        $this->set(compact('request', 'client'));
+//    }
 
     /**
      * Delete method

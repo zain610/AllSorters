@@ -54,7 +54,6 @@ class FavouritesTable extends Table
 
         $validator
             ->scalar('Content')
-            ->maxLength('Content', 255)
             ->allowEmpty('Content');
 
         return $validator;
