@@ -595,11 +595,11 @@
                             <div class="column wide" style="text-align: left;font-size: 12px;line-height: 19px;color: #adb3b9;font-family: sans-serif;Float: left;max-width: 400px;min-width: 320px; width: 320px;width: calc(8000% - 47600px);">
                                 <div style="Margin-left: 20px;Margin-right: 20px;Margin-top: 10px;Margin-bottom: 10px;">
 
-                                    <div style="font-size: 12px;line-height: 19px;">
+                                    <div style="font-size: 12px;line-height: 19px; text-align: right">
                                         <div>www.allsorters.com.au</div>
                                     </div>
                                     <div style="font-size: 12px;line-height: 19px;Margin-top: 18px;">
-                                        <div>Explain why your subscribers are receiving this email</div>
+                                        <div>If you have receieved this email by mistake, or no longer wish to recieve our newsletters you can unsubscribe below.</div>
                                     </div>
                                     <!--[if mso]>&nbsp;<![endif]-->
                                 </div>
@@ -612,6 +612,7 @@
                             </div>
                             <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
                         </div>
+                    </div>
                     </div>
                     <div class="layout one-col email-footer" style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
                         <div class="layout__inner" style="border-collapse: collapse;display: table;width: 100%;">

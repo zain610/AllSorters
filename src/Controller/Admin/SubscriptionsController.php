@@ -31,10 +31,6 @@ class SubscriptionsController extends AppController
      */
     public function index()
     {
-//        $cssToInlineStyles = new CssToInlineStyles();
-//        $html = file_get_contents(__DIR__ . '/../../Template/Layout/Email/html/default.ctp');
-//        $css = file_get_contents(__DIR__.'/../../../webroot/css/email_styling.css');
-//        debug($cssToInlineStyles->convert($html, $css));
         $this->layout = 'admin';
         $subscriptions = $this->paginate($this->Subscriptions);
         $subscribers = $this->request->getSession()->read('subscribers');
@@ -46,6 +42,7 @@ class SubscriptionsController extends AppController
         $this->set('email', $this->request->getSession()->read('mail'));
         $this->set('id', $this->request->getSession()->read('id'));
         $this->set(compact('subscriptions'));
+        $this->set('title', "Send Newsletter");
     }
 
     /**

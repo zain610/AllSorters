@@ -24,13 +24,14 @@ class FavouritesController extends AppController
 
         $this->set(compact('favourites'));
         $this->layout ='admin';
-
+        $this->set('title', 'Favourites');
         $this->loadComponent('Paginator');
     }
 
     public function initialize()
     {
         parent::initialize();
+        $this->set('title', 'Favourites ');
 
         $this->loadModel('Favourites');
         $this->loadModel('Favourites');
@@ -50,6 +51,7 @@ class FavouritesController extends AppController
         $favourite = $this->Favourites->get($id, [
             'contain' => []
         ]);
+        $this->set('title', 'View Favourite #'.$id);
 
         $this->set('favourite', $favourite);
     }

@@ -40,11 +40,13 @@ class BlogPostController extends AppController
 
         $this->set(compact('publishedBlogPosts'));
         $this->set('message', $this->request->getSession()->read('message'));
+        $this->set('title', 'Published Blogs');
 
     }
 
     public function initialize()
     {
+        $this->set('title', 'Blogs');
         parent::initialize();
         $this->loadModel('BlogPost');
     }
@@ -72,6 +74,8 @@ class BlogPostController extends AppController
         $this->set('comment',$comment);
 
         $this->set('blogPost', $blogPost);
+        $this->set('title', 'View Blog # '.$id);
+
     }
 
     /**
@@ -111,6 +115,8 @@ class BlogPostController extends AppController
         $img_ob = $this->BlogPost->Image->find('all');
 
         $this->set(compact('blogPost','image','img_ob'));
+        $this->set('title', 'Add New Blog');
+
 
 
     }
@@ -217,6 +223,8 @@ class BlogPostController extends AppController
         $img_ob = $this->BlogPost->Image->find('all');
 
         $this->set(compact('blogPost','image','img_ob'));
+        $this->set('title', 'Edit Blog # '.$id);
+
     }
 
     /**K
@@ -290,6 +298,8 @@ class BlogPostController extends AppController
         $this->layout ='admin';
         $archivedBlogPosts = TableRegistry::get('BlogPost')->find('all')->where(['BlogPost.Archived' => 1])->contain([])->orderDesc('Modified');
         $this->set('archivedBlogPosts', $this->paginate($archivedBlogPosts));
+        $this->set('title', 'Archived Blogs');
+
     }
     /**
      * This checks for articles containing an exact phrase in either the title or the body.
@@ -393,6 +403,8 @@ class BlogPostController extends AppController
         $this->loadModel('post_comment');
         $comments = $this->paginate($this->post_comment->find('all')->contain(['BlogPost']));
         $this->set(compact('comments'));
+        $this->set('title', 'View Blog Comments');
+
     }
 
 }
