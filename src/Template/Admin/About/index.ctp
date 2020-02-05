@@ -9,7 +9,10 @@
     <?= $this->Html->link('Add to About Us', ['action' => 'add'], ['class' => 'pull-right btn btn-oval btn-primary']) ?>
 
     <h3><?= __('About Us') ?></h3>
+
+
     <table cellpadding="0" cellspacing="0">
+        <?= $this->Flash->render() ?>
         <thead>
         <tr>
             <th scope="col"><?= $this->Paginator->sort('Title') ?></th>

@@ -10,6 +10,7 @@
         <?= $this->Html->link('Add Review Post', ['action' => 'add'], ['class' => 'pull-right btn btn-oval btn-primary']) ?>
     </div>
     <h3><?= __('Reviews') ?></h3>
+    <?= $this->Flash->render() ?>
     <table>
         <thead>
         <tr>

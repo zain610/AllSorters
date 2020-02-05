@@ -11,6 +11,7 @@
 </style>
 </nav>
 <div class="card">
+    <?= $this->Flash->render() ?>
     <?= $this->Form->create($event) ?>
     <fieldset>
         <legend><?= __('Add a Speaking Engagement') ?></legend>

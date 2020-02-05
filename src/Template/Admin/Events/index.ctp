@@ -11,6 +11,8 @@
 
     <h3><?= __('Speaking Engagements') ?></h3>
     <table cellpadding="0" cellspacing="0">
+        <?= $this->Flash->render() ?>
+
         <thead>
         <tr>
             <th class="table-column-one" scope="col"><?= $this->Paginator->sort('Venue') ?></th>

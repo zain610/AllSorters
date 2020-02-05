@@ -1,7 +1,9 @@
 <?php use Cake\I18n\Time;
 
 ?>
+
 <div class="content table-responsive table-full-width">
+    <?= $this->Flash->render() ?>
     <div class="row">
         <div class="card-body">
             <?= $this->element('Admin/Buttons/edit', ['url' => ['action' => 'edit', $blogPost->blog_post_id]]) ?>
@@ -40,7 +42,7 @@
                     <?php $now = Time::parse( $comment->created); ?>
                     <td><?php echo $now->i18nFormat('dd-MM-yyyy');; ?></td>
                     <?php if($comment['showed']==0){ ?>
-                        <td style="text-align: center"><?= $this->element('Admin/Buttons/publish', ['url' => ['action' => 'publishcomment',$comment['Post_Comment_id']]]); ?></td>
+                        <td style="text-align: center"><?= $this->element('Admin/Buttons/comment', ['url' => ['action' => 'publishcomment',$comment['Post_Comment_id']]]); ?></td>
                     <?php }else{ ?>
                         <td style="text-align: center"><?= $this->element('Admin/Buttons/hide', ['url' => ['action' => 'publishcomment',$comment['Post_Comment_id']]]); ?></td>
                     <?php } ?>

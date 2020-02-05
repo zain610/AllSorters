@@ -244,7 +244,7 @@ class BlogPostController extends AppController
             $this->Flash->error(__('The blog post could not be deleted. Please, try again.'));
         }
 
-        return $this->redirect(['action' => 'index']);
+        return $this->redirect($this->referer());
     }
 // delete image function in view page
 // cannot work need to fix
@@ -393,8 +393,15 @@ class BlogPostController extends AppController
         else{
             $comment->showed=0;
         }
-        $this->PostComment->save($comment);
-        $this->redirect(['action'=>'view',$comment->Blog_post_id]);
+        if($this->PostComment->save($comment)){
+            $this->Flash->success(__('Change saved'));
+        }
+        else{
+            $this->Flash->success(__('Changed cannot be saved. Please try Again.'));
+
+        }
+
+        return $this->redirect($this->referer());
 
     }
     public function displayComments() {

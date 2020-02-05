@@ -181,8 +181,10 @@ class SubscriptionsController extends AppController
 
             if($email->send()) {
                 $this->request->getSession()->write('mail', $blogs);
+                $this->Flash->success(__('Newsletter has been successfully sent.'));
             } else {
                 $this->request->getSession()->write('mail', false);
+                $this->Flash->error(__('Something Wrong, please try again.'));
             }
 
         }

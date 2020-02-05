@@ -8,10 +8,11 @@
     <?= $this->element('Admin/Buttons/search'); ?>
     <?= $this->Html->link('Add Services', ['action' => 'add'], ['class' => 'pull-right btn btn-oval btn-primary']) ?>
 </div>
-
 <div class="table table-hover table-striped">
     <h4><?= __('Services') ?></h4>
     <table class="articles-table table">
+        <?= $this->Flash->render() ?>
+
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('Service_Title') ?></th>

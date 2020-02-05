@@ -35,8 +35,10 @@
 <div id="searchBarNavBar">
     <?= $this->element('Admin/Buttons/search'); ?>
 </div>
+
 <div class="table table-hover">
     <h3><?= __('Request') ?></h3>
+    <?= $this->Flash->render() ?>
     <table class="articles-table table" cellpadding="0" cellspacing="0">
         <thead>
         <tr>

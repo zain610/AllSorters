@@ -51,9 +51,10 @@ $isBlogsActive = $currentController === "Blog_post";
     ?>
 
 </head>
-<nav class="gtco-nav" role="navigation" style="background-color:#3bc3ff;">
+<nav class="gtco-nav" role="navigation">
+    <div style ="background-color:#3bc3ff;">
+        <div class="gtco-container">
 
-    <div class="gtco-container">
 
 
 

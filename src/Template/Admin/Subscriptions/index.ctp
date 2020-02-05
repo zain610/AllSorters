@@ -40,6 +40,7 @@
 
 
 </script>
+<?= $this->Flash->render() ?>
 
 <div class="container-fluid">
     <!-- Button trigger modal -->

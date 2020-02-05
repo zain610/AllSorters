@@ -11,12 +11,14 @@ $currentController = $this->request->getParam('controller');
         <?= $this->element('Admin/Buttons/search'); ?>
     </div>
     <h3><?= 'Blog Post Comments' ?></h3>
+    <?= $this->Flash->render() ?>
     <table class="articles-table table">
         <thead>
         <tr>
             <th ><?= $this->Paginator->sort('Blog Post Title') ?></th>
             <th ><?= $this->Paginator->sort('Comment_Details') ?></th>
             <th ><?= $this->Paginator->sort('User') ?></th>
+            <th class="table-column-actions" scope="col" class="actions"><?= __('Actions') ?></th>
         </tr>
         </thead>
         <tbody>
@@ -36,7 +38,7 @@ $currentController = $this->request->getParam('controller');
                     <td class="action-col" style="">
                         <?= $this->element('Admin/Buttons/view', ['url' => ['action' => 'view',  $comment->Blog_post_id]]) ?>
                         <?php if($comment['showed']){ ?>
-                            <?= $this->element('Admin/Buttons/publish', ['url' => ['action' => 'publishcomment',$comment->Post_Comment_id]]); ?>
+                            <?= $this->element('Admin/Buttons/comment', ['url' => ['action' => 'publishcomment',$comment->Post_Comment_id]]); ?>
                         <?php } else{ ?>
                             <?= $this->element('Admin/Buttons/hide', ['url' => ['action' => 'publishcomment',$comment['Post_Comment_id']]]); ?>
                         <?php } ?>

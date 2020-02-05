@@ -12,7 +12,9 @@ $currentController = $this->request->getParam('controller');
         <?= $this->Html->link('Add Blog Post', ['action' => 'add'], ['class' => 'pull-right btn btn-oval btn-primary']) ?>
     </div>
     <h3><?= __('Blog Post') ?></h3>
+
     <table class="articles-table table">
+        <?= $this->Flash->render() ?>
         <thead>
             <tr>
                 <th class="table-column-one"><?= $this->Paginator->sort('title') ?></th>

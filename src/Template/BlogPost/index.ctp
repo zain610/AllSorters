@@ -19,7 +19,8 @@
 
             <?= $this->element('Client/Buttons/search'); ?>
         <hr>
-            <div class="col-md-12 col-lg-8 mb-5">
+
+        <div class="col-md-12 col-lg-8 mb-5">
                 <?php foreach ($blogPost as $blogPost): ?>
                     <?php $truncate = $this->Text->truncate(
                         $blogPost->Body,
