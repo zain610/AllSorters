@@ -38,27 +38,17 @@ $isBlogsActive = $currentController === "Blog_post";
     <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400|Montserrat:400,700" rel="stylesheet">
 
     <!-- Animate.css -->
-    <link rel="stylesheet" href="/../css/client2/animate.css">
-    <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="/../css/client2/icomoon.css">
-    <!-- Themify Icons-->
-    <link rel="stylesheet" href="/../css/client2/themify-icons.css">
-    <!-- Bootstrap  -->
-    <link rel="stylesheet" href="/../css/client2/bootstrap.css">
-
-    <!-- Owl Carousel  -->
-    <link rel="stylesheet" href="/../css/client2/owl.carousel.min.css">
-    <link rel="stylesheet" href="/../css/client2/owl.theme.default.min.css">
-
-    <!-- Theme style  -->
-    <link rel="stylesheet" href="/../css/client2/style.css">
-    <link rel="stylesheet" href="/../css/client2/clientstyles.css">
-    <!-- Modernizr JS -->
-    <script src="/../js/client2/modernizr-2.6.2.min.js"></script>
-    <!-- FOR IE9 below -->
-    <!--[if lt IE 9]>
-    <script src="/../js/client2/respond.min.js"></script>
-    <![endif]-->
+    <?php
+    echo $this->Html->css('client2/animate.css');
+    echo $this->Html->css('client2/bootstrap.css');
+    echo $this->Html->css('client2/clientstyles.css');
+    echo $this->Html->css('client2/flexslider.css');
+    echo $this->Html->css('client2/icomoon.css');
+    echo $this->Html->css('client2/owl.carousel.min.css');
+    echo $this->Html->css('client2/owl.theme.default.min.css');
+    echo $this->Html->css('client2/style.css');
+    echo $this->Html->css('client2/themify-icons.css');
+    ?>
 
 </head>
 <nav class="gtco-nav" role="navigation">
@@ -100,17 +90,12 @@ $isBlogsActive = $currentController === "Blog_post";
     </div>
 </nav>
 
-<!-- jQuery -->
-<script src="/../js/client2/jquery.min.js"></script>
-<!-- jQuery Easing -->
-
-<script src="/../js/client2/jquery.easing.1.3.js"></script>
-<!-- Bootstrap -->
-<script src="/../js/client2/bootstrap.min.js"></script>
-<!-- Waypoints -->
-<script src="/../js/client2/jquery.waypoints.min.js"></script>
-<!-- Carousel -->
-<script src="/../js/client2/owl.carousel.min.js"></script>
-
-<!-- Main -->
-<script src="/../js/client2/main.js"></script>
+<?php
+echo $this->Html->script('client2/respond.min.js');
+echo $this->Html->script('client2/modernizr-2.6.2.min.js');
+echo $this->Html->script('client2/jquery.min.js');
+echo $this->Html->script('client2/jquery.easing.1.3.js');
+echo $this->Html->script('client2/bootstrap.min.js');
+echo $this->Html->script('client2/jquery.waypoints.min.js');
+echo $this->Html->script('client2/owl.carousel.min.js');
+?>
