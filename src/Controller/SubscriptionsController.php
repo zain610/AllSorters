@@ -54,7 +54,6 @@ class SubscriptionsController extends AppController
      */
     public function add()
     {
-
         $subscription = $this->Subscriptions->newEntity();
         if ($this->request->is('post')) {
             $subscription = $this->Subscriptions->patchEntity($subscription, $this->request->getData());
