@@ -25,7 +25,7 @@ $currentController = $this->request->getParam('controller');
 <?php
 foreach($services as $service) { ?>
     <div class="container">
-        <a href="<?= $this->Url->build(['controller' => 'Services', 'action' => 'view', $service->Service_id]) ?>">
+        <a href="<?= $this->Url->build(['controller' => 'Service', 'action' => 'view', $service->Service_id]) ?>">
             <h2 class="post-title">
                 <?= h($service->Service_Title) ?>
             </h2>
