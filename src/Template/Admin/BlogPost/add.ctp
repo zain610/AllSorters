@@ -11,6 +11,7 @@
     }
 </style>
 <div class="card">
+    <?= $this->Flash->render() ?>
     <?= $this->Form->create($blogPost) ?>
     <fieldset>
         <legend><?= __('Add Blog Post') ?></legend>

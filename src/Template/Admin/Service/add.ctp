@@ -18,6 +18,7 @@ $this->Html->script('/TinyMCE/js/tiny_mce/tiny_mce.js', array(
 
 
        <div class="card">
+           <?= $this->Flash->render() ?>
             <?= $this->Form->create($service) ?>
             <fieldset>
                 <legend><?= __('Add Services') ?></legend>

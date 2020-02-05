@@ -15,6 +15,7 @@ $this->Html->script('/TinyMCE/js/tiny_mce/tiny_mce.js', array(
 <div class="col-md-8">
     <div class="content table-responsive table-full-width">
         <div class="card">
+            <?= $this->Flash->render() ?>
             <?= $this->Form->create($review) ?>
             <fieldset>
                 <legend><?= __('Add Review') ?></legend>

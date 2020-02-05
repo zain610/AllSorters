@@ -15,6 +15,7 @@ $this->Html->script('/TinyMCE/js/tiny_mce/tiny_mce.js', array(
 <?php echo $this->Html->css('image_checkbox'); ?>
 
         <div class="card">
+            <?= $this->Flash->render() ?>
     <?= $this->Form->create($service) ?>
     <fieldset>
         <legend><?= __('Edit Services') ?></legend>

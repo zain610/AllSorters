@@ -11,6 +11,7 @@
     </ul>
 </nav>
 <div class="footer form large-9 medium-8 columns content">
+    <?= $this->Flash->render() ?>
     <?= $this->Form->create($footer) ?>
     <fieldset>
         <legend><?= __('Add Footer') ?></legend>

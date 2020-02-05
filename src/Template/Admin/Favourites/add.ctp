@@ -10,6 +10,7 @@
     }
 </style>
 <div class="card">
+    <?= $this->Flash->render() ?>
     <?= $this->Form->create($favourite) ?>
     <fieldset>
         <legend><?= __('Add to Favourites') ?></legend>
