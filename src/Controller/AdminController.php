@@ -53,6 +53,7 @@ class AdminController extends AppController
         $this->set(compact('count_blog','count_review','count_job'));
         $webpages = $this->Webpages->find('all');
         $this->set(compact('webpages'));
+        $this->set('title', 'Dashboard');
 
     }
 
@@ -134,32 +135,43 @@ class AdminController extends AppController
 
     public function changepassword()
     {
-        $this->layout ='admin';
+        $this->layout = 'admin';
         $user_id = $this->Auth->user()['id'];
         $admin = $this->Admin->find()->where('Admin.id ='.$user_id)->toArray()[0];
 
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $myemail = $admin['email'];
-            debug($myemail);
+            $Entered_PW = $this->request->getData('Enter_Your_Passward');
+            $Comfirm_PW = $this->request->getData('Confirm_Password');
+            $New_PW = $this->request->getData('New_Password');
+
             $admin = $this->Admin->patchEntity($admin, $this->request->getData());
-//            debug($this->request->getData('password'));
-//            debug($this->request->getData('confirm_password'));
-            if ($this->Admin->save($admin)) {
-                $this->Flash->success(__('The admin has been saved.'));
-                $email = new Email('default');
-                $email->setFrom(['allsortMary@gmail.com' => 'AllSorters'])
-                    ->setTo($myemail)
-                    ->setTemplate('default')
-//                            ->setViewVars(['title' => "Reset Password", 'content'=> 'Hello '.$myemail.' Please click link below to reset your password: http://localhost:8765/admin/resetpassword/'.$mytoken])
-                    ->setViewVars(['title' => "Update Account Details", 'content'=> 'Hello, you successfully have updated your account details. If you think someone else changed your detail, change password immediately.'])
-                    ->setSubject("Details updated successfully.");
-                $email->send();
-                return $this->redirect(['action' => 'index']);
+            if ((new DefaultPasswordHasher)->check($Entered_PW, $admin['password'])) {
+                if (strlen($New_PW) >= 8) {
+                    if ($New_PW == $Comfirm_PW) {
+                        $admin->password = $New_PW;
+                        if ($this->Admin->save($admin)) {
+                            $this->Flash->success(__('Password has been changed!'));
+                        } else {
+                            $this->Flash->error(__('Password cannot be changed, please try again.'));
+                        }
+                    } else {
+                        $this->Flash->error(__('Comfirm Password must be same, please try again.'));
+                    }
+                } else {
+                    $this->Flash->error(__('Password must have more than 8 digits.'));
+                }
+
+            } else {
+                $this->Flash->error(__('Please enter the correct current password.'));
             }
-            $this->Flash->error(__('The admin could not be saved. Please, try again.'));
+
         }
 
         $this->set(compact('admin'));
+
+
+
+
     }
 
     /**
@@ -208,7 +220,7 @@ class AdminController extends AppController
             $adminTable = TableRegistry::get('admin');
             $admin = $adminTable->find('all')->where(['token'=>$token])->first();
             $this->request->is('post');
-            $mypass = $this->request->getData('password');
+            $mypass = $this->request->getData(' ');
             if(strlen($mypass)<8){
                 $this->Flash->error('Password must be at least 8 digits.');
             }
