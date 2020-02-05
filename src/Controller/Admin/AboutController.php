@@ -25,11 +25,14 @@ class AboutController extends AppController
         $this->set(compact('about'));
 
         $this->loadComponent('Paginator');
+        $this->set('title', 'About Page');
+
     }
 
     public function initialize()
     {
         parent::initialize();
+        $this->set('title', 'About Page');
 
         $this->loadModel('About');
         $this->Auth->allow(['index']);
@@ -53,8 +56,9 @@ class AboutController extends AppController
         $about = $this->About->get($id, [
             'contain' => []
         ]);
-
         $this->set('about', $about);
+        $this->set('title', 'Viewing About Us # '.$id);
+
     }
 
     /**
@@ -75,6 +79,8 @@ class AboutController extends AppController
             }
             $this->Flash->error(__('The content could not be saved. Please, try again.'));
         }
+        $this->set('title', 'Add About Us # ');
+
         $this->set(compact('about'));
     }
 

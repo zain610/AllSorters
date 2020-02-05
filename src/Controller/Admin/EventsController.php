@@ -36,11 +36,13 @@ class EventsController extends AppController
         );
         $this->set(compact('publishedEvents'));
         $this->set('data', $this->request->getSession()->read('formdata'));
+        $this->set('title', 'Speaking Engagements');
+
     }
     public function initialize()
     {
         parent::initialize();
-
+        $this->set('title', 'Speaking Engagements');
         $this->loadModel('Events');
     }
 
@@ -62,6 +64,7 @@ class EventsController extends AppController
         $event = $this->Events->get($id, [
             'contain' => []
         ]);
+        $this->set('title', 'View Speaking Engagements # '.$id);
 
         $this->set('event', $event);
     }
@@ -85,6 +88,8 @@ class EventsController extends AppController
             $this->Flash->error(__('The event could not be saved. Please, try again.'));
         }
         $this->set(compact('event'));
+        $this->set('title', 'Add Speaking Engagements');
+
     }
 
 
@@ -129,6 +134,8 @@ class EventsController extends AppController
         $event->date = $date;
         $event->time = $time;
         $this->set(compact('event'));
+        $this->set('title', 'Edit Speaking Engagement # '.$id);
+
 
 
     }
@@ -196,6 +203,8 @@ class EventsController extends AppController
         $this->layout ='admin';
         $archivedEvents = TableRegistry::get('Events')->find('all')->where(['Events.Archived' => 1])->contain([])->orderDesc('Date');
         $this->set('archivedEvents', $this->paginate($archivedEvents));
+        $this->set('title', 'Archived Speaking Engagements ');
+
     }
 }
 

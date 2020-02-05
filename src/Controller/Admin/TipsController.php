@@ -34,6 +34,8 @@ class TipsController extends AppController
 
         $this->loadModel('Favourites');
         $this->Auth->allow(['index']);
+        $this->set('title', 'Tips');
+
     }
 
     /**
@@ -52,6 +54,8 @@ class TipsController extends AppController
         ]);
 
         $this->set('tip', $tip);
+        $this->set('title', 'View Tip # '.$id);
+
     }
 
     /**
@@ -73,6 +77,8 @@ class TipsController extends AppController
             $this->Flash->error(__('The tip could not be saved. Please, try again.'));
         }
         $this->set(compact('tip'));
+        $this->set('title', 'Add Tip ');
+
     }
 
     /**
@@ -98,6 +104,8 @@ class TipsController extends AppController
             $this->Flash->error(__('The tip could not be saved. Please, try again.'));
         }
         $this->set(compact('tip'));
+        $this->set('title', 'Edit Tip # '.$id);
+
     }
 
     /**

@@ -53,6 +53,7 @@ class AdminController extends AppController
         $this->set(compact('count_blog','count_review','count_job'));
         $webpages = $this->Webpages->find('all');
         $this->set(compact('webpages'));
+        $this->set('title', 'Dashboard');
 
     }
 

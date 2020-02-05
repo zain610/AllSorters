@@ -24,6 +24,8 @@ class WebpagesController extends AppController
         $webpages = $this->paginate($this->Webpages);
 
         $this->set(compact('webpages'));
+        $this->set('title', 'Webpages');
+
     }
 
     public function initialize()
@@ -51,27 +53,6 @@ class WebpagesController extends AppController
     }
 
     /**
-     * Add method
-     *
-     * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
-     */
-//    public function add()
-//    {
-//        $this->layout ='admin';
-//        $webpage = $this->Webpages->newEntity();
-//        if ($this->request->is('post')) {
-//            $webpage = $this->Webpages->patchEntity($webpage, $this->request->getData());
-//            if ($this->Webpages->save($webpage)) {
-//                $this->Flash->success(__('The webpage has been saved.'));
-//
-//                return $this->redirect(['action' => 'index']);
-//            }
-//            $this->Flash->error(__('The webpage could not be saved. Please, try again.'));
-//        }
-//        $this->set(compact('webpage'));
-//    }
-
-    /**
      * Edit method
      *
      * @param string|null $id Webpage id.
@@ -94,25 +75,8 @@ class WebpagesController extends AppController
             $this->Flash->error(__('The webpage could not be saved. Please, try again.'));
         }
         $this->set(compact('webpage'));
+        $this->set('title', 'Edit Webpage # '.$id);
+
     }
 
-    /**
-     * Delete method
-     *
-     * @param string|null $id Webpage id.
-     * @return \Cake\Http\Response|null Redirects to index.
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
-//    public function delete($id = null)
-//    {
-//        $this->request->allowMethod(['post', 'delete']);
-//        $webpage = $this->Webpages->get($id);
-//        if ($this->Webpages->delete($webpage)) {
-//            $this->Flash->success(__('The webpage has been deleted.'));
-//        } else {
-//            $this->Flash->error(__('The webpage could not be deleted. Please, try again.'));
-//        }
-//
-//        return $this->redirect(['action' => 'index']);
-//    }
 }
