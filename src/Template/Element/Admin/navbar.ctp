@@ -25,8 +25,11 @@ $isJobActive = $currentController === "Job";
 
 <div class="sidebar-wrapper">
     <div class="logo" >
-        <a href="/admin" class="simple-text">
-            All Sorters
+        <?php echo $this->Html->link(
+            'AllSorters',
+            ['controller' => 'Admin', 'action' => 'index'],['class'=>'simple-text']
+        );?>
+
         </a>
     </div>
 
