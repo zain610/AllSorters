@@ -103,8 +103,8 @@ class BlogPostController extends AppController
                 $email->setViewVars(['username' => $this->request->getData()['User_Name'],'userEmail'=>$this->request->getData()['User_Email'],'userComment'=>$this->request->getData()['Comment_Details']]);
 
 
-                if ($this->PostComment->save($newComment)&&$email->send()) {
-                    $this->Flash->success(__('Your comment has been submitted'));
+                if ($this->PostComment->save($newComment) && $email->send()) {
+                    $this->Flash->success('Your comment has been submitted',['key'=>'comment_sent']);
 
                     return $this->redirect(['action' => 'view', $id]);
                 }
