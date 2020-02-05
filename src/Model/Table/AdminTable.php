@@ -64,7 +64,6 @@ class AdminTable extends Table
             ->requirePresence('password', 'create')
             ->notEmpty('password');
 
-
         $validator
             ->scalar('New_password')
             ->minLength('New_password',8,'Password should be at least 8 digits.')

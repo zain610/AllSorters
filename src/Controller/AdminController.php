@@ -95,43 +95,36 @@ class AdminController extends AppController
         $this->set(compact('admin'));
     }
 
-    /**
-     * Edit method
-     *
-     * @param string|null $id Admin id.
-     * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
-     * @throws \Cake\Network\Exception\NotFoundException When record not found.
-     */
-    public function edit($id = null)
+    public function changeprofile()
     {
-        $this->layout ='admin';
-        $admin = $this->Admin->get($id, [
-            'contain' => []
-        ]);
+        $this->layout = 'admin';
+        $user_id = $this->Auth->user()['id'];
+        $admin = $this->Admin->find()->where('Admin.id ='.$user_id)->toArray()[0];
+
         if ($this->request->is(['patch', 'post', 'put'])) {
+            $Confirmed_PW = $this->request->getData('Confirm_Password');
+
             $admin = $this->Admin->patchEntity($admin, $this->request->getData());
-            if ($this->Admin->save($admin)) {
-                $this->Flash->success(__('The admin has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
+            if ((new DefaultPasswordHasher)->check($Confirmed_PW, $admin->password)) {
+                $admin->username = $this->request->getData('username');
+                $admin->email = $this->request->getData('email');
+                $admin->phone = $this->request->getData('phone');
+                if ($this->Admin->save($admin)) {
+                    $this->Flash->success(__('Profile has been changed!'));
+                } else {
+                    debug($admin);
+                    $this->Flash->error(__('Profile cannot be changed, please try again.'));
+                }
             }
-            $this->Flash->error(__('The admin could not be saved. Please, try again.'));
+            else {
+                $Confirmed_PW = $this->request->getData('Confirm_Your_Password');
+                $this->Flash->error(__('Please enter the correct current password.'));
+            }
         }
-
         $this->set(compact('admin'));
+        $this->set('title', 'Profile');
     }
-    public function delete($id = null)
-    {
-        $this->request->allowMethod(['post', 'delete']);
-        $admin = $this->Admin->get($id);
-        if ($this->Admin->delete($admin)) {
-            $this->Flash->success(__('The admin has been deleted.'));
-        } else {
-            $this->Flash->error(__('The admin could not be deleted. Please, try again.'));
-        }
 
-        return $this->redirect(['action' => 'index']);
-    }
 
     public function changepassword()
     {
@@ -168,6 +161,7 @@ class AdminController extends AppController
         }
 
         $this->set(compact('admin'));
+        $this->set('title', 'Change Password');
 
 
 
