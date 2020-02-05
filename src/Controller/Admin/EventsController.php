@@ -17,6 +17,9 @@ use Cake\Event\Event;
  */
 class EventsController extends AppController
 {
+    public $paginate = [
+        'maxLimit' => 10
+    ];
 
     /**
      * Index method

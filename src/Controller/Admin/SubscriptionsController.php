@@ -23,6 +23,13 @@ class SubscriptionsController extends AppController
     {
         parent::initialize();
     }
+    public $paginate = [
+        'maxLimit' => 5,
+        'order' => [
+            'BlogPost.modified' => 'desc',
+            'Subscriptions.email_address' => 'asc'
+        ]
+    ];
 
     /**
      * Index method
@@ -32,11 +39,12 @@ class SubscriptionsController extends AppController
     public function index()
     {
         $this->layout = 'admin';
-        $subscriptions = $this->paginate($this->Subscriptions);
+        $subscriptions = $this->paginate($this->Subscriptions, ['scope' => 'Subscriptions']);
         $subscribers = $this->request->getSession()->read('subscribers');
         $BlogPost = $this->loadModel('BlogPost');
         $blogPosts = $BlogPost->find('all')->toArray();
-        $this->set('blogs', $blogPosts);
+        $blogs = $this->paginate($BlogPost, ['scope' => 'BlogPost']);
+        $this->set('blogs', $blogs);
         $this->set('subscribers', $subscribers);
         $this->set('formdata', $this->request->getSession()->read('formdata'));
         $this->set('email', $this->request->getSession()->read('mail'));

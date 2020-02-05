@@ -13,6 +13,9 @@ use App\Controller\AppController;
 class ServiceController extends AppController
 {
 
+    public $paginate = [
+        'maxLimit' => 10
+    ];
     /**
      * Index method
      *
