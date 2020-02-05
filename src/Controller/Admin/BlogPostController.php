@@ -298,6 +298,8 @@ class BlogPostController extends AppController
         $this->layout ='admin';
         $archivedBlogPosts = TableRegistry::get('BlogPost')->find('all')->where(['BlogPost.Archived' => 1])->contain([])->orderDesc('Modified');
         $this->set('archivedBlogPosts', $this->paginate($archivedBlogPosts));
+        $this->set('title', 'Archived Blogs');
+
     }
     /**
      * This checks for articles containing an exact phrase in either the title or the body.
