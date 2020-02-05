@@ -63,7 +63,7 @@ select {
 }
 input, textarea {
     font-size: 1.5rem!important;
-    height: 100%!important;
+
     margin-bottom: 1rem;
 }
 .input, .textarea {

@@ -132,7 +132,7 @@
                                 <div id="div-blog-checkbox" class="form-check form-check-inline col-sm-3">
                                     <label style="color: transparent" id="blog" class="form-check-label" for="<?=$this->Number->format($blog->blog_post_id)?>"><?= h($blog->blog_post_id) ?></label>
 
-                                    <?= $this->Form->checkbox('bid'.$blog->blog_post_id, ['id'=>$this->Number->format($blog->blog_post_id), 'class'=> 'form-check-input fa-li', 'hiddenField' => false]) ?>
+                                    <?= $this->Form->checkbox('bid'.$blog->blog_post_id, ['id'=>$this->Number->format($blog->blog_post_id), 'class'=> 'form-check-input', 'hiddenField' => false]) ?>
                                 </div>
                             </td>
                             <td style="">
@@ -145,7 +145,7 @@
                                 <?=h($blog->modified) ?>
                             </td>
                             <td class="action-col">
-                                <?= $this->element('Admin/Buttons/view', ['url' => ['action' => 'view', $blog->blog_post_id]]) ?>
+                                <?= $this->element('Admin/Buttons/view', ['url' => ['controller'=>'BlogPost','action' => 'view', $blog->blog_post_id]]) ?>
                                 <?= $this->element('Admin/Buttons/edit', ['url' => ['action' => 'edit', $blog->blog_post_id]]) ?>
                             </td>
                         </tr>
