@@ -277,11 +277,6 @@ $isJobActive = $currentController === "Job";
             <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
 
                 <li><?=$this->Html->link(
-                        '<p>Account Settings</p>',
-                        ['prefix' => false, 'controller' => 'admin', 'action' => 'changepassword'],
-                        ['escape'=>false]
-                    )?></li>
-                <li><?=$this->Html->link(
                         '<p>Footer</p>',
                         ['prefix' => 'admin', 'controller' => 'Footer', 'action' => 'edit'],
                         ['escape'=>false]
