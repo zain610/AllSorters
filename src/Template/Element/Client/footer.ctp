@@ -26,26 +26,26 @@ $query = $footer->find();
     <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400|Montserrat:400,700" rel="stylesheet">
 
     <!-- Animate.css -->
-    <link rel="stylesheet" href="http://ie.infotech.monash.edu/team106/development/css/client2/animate.css">
+    <link rel="stylesheet" href="http://ie.infotech.monash.edu/team106/expo/css/client2/animate.css">
     <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="http://ie.infotech.monash.edu/team106/development/css/client2/icomoon.css">
+    <link rel="stylesheet" href="http://ie.infotech.monash.edu/team106/expo/css/client2/icomoon.css">
     <!-- Themify Icons-->
-    <link rel="stylesheet" href="http://ie.infotech.monash.edu/team106/development/css/client2/themify-icons.css">
+    <link rel="stylesheet" href="http://ie.infotech.monash.edu/team106/expo/css/client2/themify-icons.css">
     <!-- Bootstrap  -->
-    <link rel="stylesheet" href="http://ie.infotech.monash.edu/team106/development/css/client2/bootstrap.css">
+    <link rel="stylesheet" href="http://ie.infotech.monash.edu/team106/expo/css/client2/bootstrap.css">
 
     <!-- Owl Carousel  -->
-    <link rel="stylesheet" href="http://ie.infotech.monash.edu/team106/development/css/client2/owl.carousel.min.css">
-    <link rel="stylesheet" href="http://ie.infotech.monash.edu/team106/development/css/client2/owl.theme.default.min.css">
+    <link rel="stylesheet" href="http://ie.infotech.monash.edu/team106/expo/css/client2/owl.carousel.min.css">
+    <link rel="stylesheet" href="http://ie.infotech.monash.edu/team106/expo/css/client2/owl.theme.default.min.css">
 
     <!-- Theme style  -->
-    <link rel="stylesheet" href="http://ie.infotech.monash.edu/team106/development/css/client2/style.css">
-    <link rel="stylesheet" href="http://ie.infotech.monash.edu/team106/development/css/client2/clientstyles.css">
+    <link rel="stylesheet" href="http://ie.infotech.monash.edu/team106/expo/css/client2/style.css">
+    <link rel="stylesheet" href="http://ie.infotech.monash.edu/team106/expo/css/client2/clientstyles.css">
     <!-- Modernizr JS -->
-    <script src="http://ie.infotech.monash.edu/team106/development/js/client2/modernizr-2.6.2.min.js"></script>
+    <script src="http://ie.infotech.monash.edu/team106/expo/js/client2/modernizr-2.6.2.min.js"></script>
     <!-- FOR IE9 below -->
     <!--[if lt IE 9]>
-    <script src="http://ie.infotech.monash.edu/team106/development/js/client2/respond.min.js"></script>
+    <script src="http://ie.infotech.monash.edu/team106/expo/js/client2/respond.min.js"></script>
     <![endif]-->
 
 </head>
@@ -105,15 +105,15 @@ $query = $footer->find();
 </div>
 
 <!-- jQuery -->
-<script src="http://ie.infotech.monash.edu/team106/development/js/client2/jquery.min.js"></script>
+<script src="http://ie.infotech.monash.edu/team106/expo/js/client2/jquery.min.js"></script>
 <!-- jQuery Easing -->
-<script src="http://ie.infotech.monash.edu/team106/development/js/client2/jquery.easing.1.3.js"></script>
+<script src="http://ie.infotech.monash.edu/team106/expo/js/client2/jquery.easing.1.3.js"></script>
 <!-- Bootstrap -->
-<script src="http://ie.infotech.monash.edu/team106/development/js/client2/bootstrap.min.js"></script>
+<script src="http://ie.infotech.monash.edu/team106/expo/js/client2/bootstrap.min.js"></script>
 <!-- Waypoints -->
-<script src="http://ie.infotech.monash.edu/team106/development/js/client2/jquery.waypoints.min.js"></script>
+<script src="http://ie.infotech.monash.edu/team106/expo/js/client2/jquery.waypoints.min.js"></script>
 <!-- Carousel -->
-<script src="http://ie.infotech.monash.edu/team106/development/js/client2/owl.carousel.min.js"></script>
+<script src="http://ie.infotech.monash.edu/team106/expo/js/client2/owl.carousel.min.js"></script>
 
 <!-- Main -->
-<script src="http://ie.infotech.monash.edu/team106/development/js/client2/main.js"></script>
+<script src="http://ie.infotech.monash.edu/team106/expo/js/client2/main.js"></script>

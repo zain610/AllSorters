@@ -22,6 +22,7 @@ class SubscriptionsController extends AppController
     public function initialize()
     {
         parent::initialize();
+        $this->Auth->allow(['add']);
     }
     public $paginate = [
         'maxLimit' => 5,
