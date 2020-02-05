@@ -173,7 +173,7 @@ class ImageController extends AppController
         } else {
             $this->Flash->error(__('Unable to publish your image.'));
         }
-        return $this->redirect(['action' => 'index']);
+        return $this->redirect($this->referer());
 
     }
     public function NotShowOnGallery($id = null)
@@ -190,7 +190,7 @@ class ImageController extends AppController
         } else {
             $this->Flash->error(__('Unable to publish your image.'));
         }
-        return $this->redirect(['action' => 'index']);
+        return $this->redirect($this->referer());
 
     }
 }
