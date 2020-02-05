@@ -65,13 +65,17 @@ class AdminTable extends Table
             ->notEmpty('password');
 
         $validator
-            ->sameAs('confirm_password','password','Confirm Password failed.');
+            ->scalar('New_password')
+            ->minLength('New_password',8,'Password should be at least 8 digits.')
+            ->maxLength('New_password', 255)
+            ->requirePresence('New_password', 'create')
+            ->notEmpty('New_password');
 
-//        $validator
-//            ->scalar('confirm_password')
-//            ->maxLength('confirm_password', 255)
-//            ->requirePresence('confirm_password', 'create')
-//            ->notEmpty('confirm_password');
+        $validator
+            ->scalar('confirm_password')
+            ->maxLength('confirm_password', 255)
+            ->requirePresence('confirm_password', 'create')
+            ->notEmpty('confirm_password');
 
         $validator
             ->email('email')

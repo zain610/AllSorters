@@ -31,7 +31,6 @@ class Admin extends Entity
         'id' =>false,
         'username' => true,
         'password' => true,
-        'confirm_password' => true,
         'email' => true,
         'phone' => true,
         'created' => true,
@@ -42,4 +41,5 @@ class Admin extends Entity
     protected function _setPassword($password){
         return(new DefaultPasswordHasher)->hash($password);
     }
+
 }

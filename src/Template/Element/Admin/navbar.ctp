@@ -25,8 +25,11 @@ $isJobActive = $currentController === "Job";
 
 <div class="sidebar-wrapper">
     <div class="logo" >
-        <a href="/admin" class="simple-text">
-            All Sorters
+        <?php echo $this->Html->link(
+            'AllSorters',
+            ['controller' => 'Admin', 'action' => 'index'],['class'=>'simple-text']
+        );?>
+
         </a>
     </div>
 
@@ -275,6 +278,16 @@ $isJobActive = $currentController === "Job";
                 ['escape' => false, 'class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'aria-expanded' => 'true',]
             ) ?>
             <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                <li><?=$this->Html->link(
+                        '<p>Change Profile</p>',
+                        ['prefix' => false, 'controller' => 'admin', 'action' => 'changeprofile'],
+                        ['escape'=>false]
+                    )?></li>
+                <li><?=$this->Html->link(
+                        '<p>Change Password</p>',
+                        ['prefix' => false, 'controller' => 'admin', 'action' => 'changepassword'],
+                        ['escape'=>false]
+                    )?></li>
 
                 <li><?=$this->Html->link(
                         '<p>Footer</p>',

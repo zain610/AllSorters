@@ -6,6 +6,10 @@
  * use Cake\Routing\Route\DashedRoute;
  */
 ?>
+<head>
+</head>
+<?php echo $this->Html->script('tinymce/tinymce.min.js');?>
+
 <script type="text/javascript">
     function toggle(source) {
         checkboxes = document.getElementsByClassName('form-check-input');
@@ -36,6 +40,7 @@
 
 
 </script>
+
 <div class="container-fluid">
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newsletterModal" data-whatever="@mdo">Add Subscriber</button>

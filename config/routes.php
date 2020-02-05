@@ -58,6 +58,7 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/admin/forgotpassword/*', ['controller' => 'Admin', 'action' => 'forgotpassword']);
     $routes->connect('/admin/resetpassword/*', ['controller' => 'Admin', 'action' => 'resetpassword']);
     $routes->connect('/admin/changepassword/*', ['controller' => 'Admin', 'action' => 'changepassword']);
+    $routes->connect('/admin/editprofile/*', ['controller' => 'Admin', 'action' => 'changeprofile']);
 
     $routes->connect('/admin/booking', ['controller' => 'Admin', 'action' => 'booking']);
     $routes->connect('/admin/bookingdelete/*', ['controller' => 'Admin', 'action' => 'bookingdelete']);

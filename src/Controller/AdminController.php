@@ -95,72 +95,77 @@ class AdminController extends AppController
         $this->set(compact('admin'));
     }
 
-    /**
-     * Edit method
-     *
-     * @param string|null $id Admin id.
-     * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
-     * @throws \Cake\Network\Exception\NotFoundException When record not found.
-     */
-    public function edit($id = null)
+    public function changeprofile()
     {
-        $this->layout ='admin';
-        $admin = $this->Admin->get($id, [
-            'contain' => []
-        ]);
-        if ($this->request->is(['patch', 'post', 'put'])) {
-            $admin = $this->Admin->patchEntity($admin, $this->request->getData());
-            if ($this->Admin->save($admin)) {
-                $this->Flash->success(__('The admin has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The admin could not be saved. Please, try again.'));
-        }
-
-        $this->set(compact('admin'));
-    }
-    public function delete($id = null)
-    {
-        $this->request->allowMethod(['post', 'delete']);
-        $admin = $this->Admin->get($id);
-        if ($this->Admin->delete($admin)) {
-            $this->Flash->success(__('The admin has been deleted.'));
-        } else {
-            $this->Flash->error(__('The admin could not be deleted. Please, try again.'));
-        }
-
-        return $this->redirect(['action' => 'index']);
-    }
-
-    public function changepassword()
-    {
-        $this->layout ='admin';
+        $this->layout = 'admin';
         $user_id = $this->Auth->user()['id'];
         $admin = $this->Admin->find()->where('Admin.id ='.$user_id)->toArray()[0];
 
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $myemail = $admin['email'];
-            debug($myemail);
+            $Confirmed_PW = $this->request->getData('Confirm_Password');
+
             $admin = $this->Admin->patchEntity($admin, $this->request->getData());
-//            debug($this->request->getData('password'));
-//            debug($this->request->getData('confirm_password'));
-            if ($this->Admin->save($admin)) {
-                $this->Flash->success(__('The admin has been saved.'));
-                $email = new Email('default');
-                $email->setFrom(['allsortMary@gmail.com' => 'AllSorters'])
-                    ->setTo($myemail)
-                    ->setTemplate('default')
-//                            ->setViewVars(['title' => "Reset Password", 'content'=> 'Hello '.$myemail.' Please click link below to reset your password: http://localhost:8765/admin/resetpassword/'.$mytoken])
-                    ->setViewVars(['title' => "Update Account Details", 'content'=> 'Hello, you successfully have updated your account details. If you think someone else changed your detail, change password immediately.'])
-                    ->setSubject("Details updated successfully.");
-                $email->send();
-                return $this->redirect(['action' => 'index']);
+            if ((new DefaultPasswordHasher)->check($Confirmed_PW, $admin->password)) {
+                $admin->username = $this->request->getData('username');
+                $admin->email = $this->request->getData('email');
+                $admin->phone = $this->request->getData('phone');
+                if ($this->Admin->save($admin)) {
+                    $this->Flash->success(__('Profile has been changed!'));
+                } else {
+                    debug($admin);
+                    $this->Flash->error(__('Profile cannot be changed, please try again.'));
+                }
             }
-            $this->Flash->error(__('The admin could not be saved. Please, try again.'));
+            else {
+                $Confirmed_PW = $this->request->getData('Confirm_Your_Password');
+                $this->Flash->error(__('Please enter the correct current password.'));
+            }
+        }
+        $this->set(compact('admin'));
+        $this->set('title', 'Profile');
+    }
+
+
+    public function changepassword()
+    {
+        $this->layout = 'admin';
+        $user_id = $this->Auth->user()['id'];
+        $admin = $this->Admin->find()->where('Admin.id ='.$user_id)->toArray()[0];
+
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $Entered_PW = $this->request->getData('Enter_Your_Passward');
+            $Comfirm_PW = $this->request->getData('Confirm_Password');
+            $New_PW = $this->request->getData('New_Password');
+
+            $admin = $this->Admin->patchEntity($admin, $this->request->getData());
+            if ((new DefaultPasswordHasher)->check($Entered_PW, $admin['password'])) {
+                if (strlen($New_PW) >= 8) {
+                    if ($New_PW == $Comfirm_PW) {
+                        $admin->password = $New_PW;
+                        if ($this->Admin->save($admin)) {
+                            $this->Flash->success(__('Password has been changed!'));
+                        } else {
+                            $this->Flash->error(__('Password cannot be changed, please try again.'));
+                        }
+                    } else {
+                        $this->Flash->error(__('Comfirm Password must be same, please try again.'));
+                    }
+                } else {
+                    $this->Flash->error(__('Password must have more than 8 digits.'));
+                }
+
+            } else {
+                $this->Flash->error(__('Please enter the correct current password.'));
+            }
+
         }
 
         $this->set(compact('admin'));
+        $this->set('title', 'Change Password');
+
+
+
+
     }
 
     /**
@@ -209,7 +214,7 @@ class AdminController extends AppController
             $adminTable = TableRegistry::get('admin');
             $admin = $adminTable->find('all')->where(['token'=>$token])->first();
             $this->request->is('post');
-            $mypass = $this->request->getData('password');
+            $mypass = $this->request->getData(' ');
             if(strlen($mypass)<8){
                 $this->Flash->error('Password must be at least 8 digits.');
             }
