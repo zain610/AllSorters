@@ -114,9 +114,9 @@
                     <thead>
                     <tr>
                         <th scope="col" style="width: 10%;">Select</th>
-                        <th scope="col"><?= $this->Paginator->sort('title') ?></th>
-                        <th scope="col"><?= $this->Paginator->sort('Description') ?></th>
-                        <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
+                        <th scope="col"><?= $this->Paginator->sort('title', ['model' => 'BlogPost']) ?></th>
+                        <th scope="col"><?= $this->Paginator->sort('Description', ['model' => 'BlogPost']) ?></th>
+                        <th scope="col"><?= $this->Paginator->sort('modified', ['model' => 'BlogPost']) ?></th>
                         <th scope="col" class="actions"><?= __('Actions') ?></th>
                     </tr>
                     </thead>
@@ -147,7 +147,21 @@
                     <?php endforeach; ?>
                     </tbody>
                 </table>
+                <?= $this->Html->link(__('Back'), $this->request->referer(), ['class' => 'btn btn-oval btn-primary','style'=>'float:left']) ?>
+                <div class="paginator">
+                    <ul class="pagination">
+
+                        <?= $this->Paginator->first('<< ' . __('first')) ?>
+                        <?= $this->Paginator->prev('< ' . __('previous')) ?>
+                        <?= $this->Paginator->numbers() ?>
+                        <?= $this->Paginator->next(__('next') . ' >') ?>
+                        <?= $this->Paginator->last(__('last') . ' >>') ?>
+                    </ul>
+
+                    <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
+                </div>
             </div>
+
         </div>
     </div>
 
