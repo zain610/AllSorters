@@ -25,7 +25,6 @@ class SubscriptionsController extends AppController
         $this->Auth->allow(['add']);
     }
     public $paginate = [
-        'maxLimit' => 5,
         'order' => [
             'BlogPost.modified' => 'desc',
             'Subscriptions.email_address' => 'asc'
@@ -81,13 +80,19 @@ class SubscriptionsController extends AppController
         if ($this->request->is('post')) {
             $subscription = $this->Subscriptions->patchEntity($subscription, $this->request->getData());
             if ($this->Subscriptions->save($subscription)) {
-                $this->Flash->success(__('You have successfully subcribed.'));
+                $this->Flash->success(__('The subscription has been saved.'));
 
                 return $this->redirect(['prefix' => false, 'controller' => 'Allsorters', 'action' => 'home']);
             }
-            $this->Flash->error(__('The subscription could not be saved. Please, try again.'));
+            else{
+
+                $this->Flash->error(__('The subscription could not be saved. Please, try again.'));
+                return $this->redirect(['prefix' => false, 'controller' => 'Allsorters', 'action' => 'home']);
+
+            }
         }
         $this->set(compact('subscription'));
+
 
     }
 
