@@ -25,7 +25,6 @@ class SubscriptionsController extends AppController
         $this->Auth->allow(['add']);
     }
     public $paginate = [
-        'maxLimit' => 5,
         'order' => [
             'BlogPost.modified' => 'desc',
             'Subscriptions.email_address' => 'asc'
